@@ -3,6 +3,8 @@ module Sportradar
     class Soccer
       attr_accessor :league, :access_level
       def initialize(league = 'na', access_level = 't')
+        raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
+        raise Sportradar::Api::Error::InvalidLeague unless allowed_leagues.include? league
         @league = league
         @access_level = access_level
       end
@@ -67,6 +69,14 @@ module Sportradar
 
       def version
         Sportradar::Api.version('soccer')
+      end
+
+      def allowed_access_levels
+        ['p', 't']
+      end
+
+      def allowed_leagues
+        ['eu', 'na', 'sa', 'wc', 'as', 'af']
       end
     end
   end

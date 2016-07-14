@@ -4,6 +4,9 @@ module Sportradar
       class AuthenticationError < StandardError; end
       class NoApiKey < AuthenticationError; end
       class InvalidResponseFormat < TypeError; end
+      class InvalidLeague < StandardError; end
+      class InvalidAccessLevel < StandardError; end
+      class InvalidSeason < StandardError; end
       class Timeout < Timeout::Error ; end
       class NoData < EOFError; end
 

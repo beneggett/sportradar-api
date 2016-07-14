@@ -9,6 +9,7 @@ require "sportradar/api/error"
 require "sportradar/api/request"
 
 require "sportradar/api/soccer"
+require "sportradar/api/nfl"
 
 module Sportradar
   module Api
