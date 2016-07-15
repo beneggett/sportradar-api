@@ -13,7 +13,7 @@ module Sportradar
       end
 
       def schedule(year = Date.today.year, season = 'reg')
-        raise Sportradar::Api::Error::InvalidLeague unless allowed_seasons.include? season
+        raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? season
         get request_url("games/#{ year }/#{ season }/schedule")
       end
 
