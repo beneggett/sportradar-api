@@ -1,3 +1,9 @@
+[![Gem Version](https://badge.fury.io/rb/sportradar-api.svg)](https://badge.fury.io/rb/sportradar-api)
+[![Build Status](https://travis-ci.org/beneggett/sportradar-api.svg?branch=master)](https://travis-ci.org/beneggett/sportradar-api)
+[![Code Climate](https://codeclimate.com/github/beneggett/sportradar-api/badges/gpa.svg)](https://codeclimate.com/github/beneggett/sportradar-api)
+[![Coverage Status](https://coveralls.io/repos/github/beneggett/sportradar-api/badge.svg?branch=master)](https://coveralls.io/github/beneggett/sportradar-api?branch=master)
+
+
 # Sportradar API
 
 The SportRadar API extensively covers league & sports data. This gem wraps it up, marshals the data into Ruby Objects we know and love.

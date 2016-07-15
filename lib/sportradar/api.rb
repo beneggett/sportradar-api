@@ -10,6 +10,7 @@ require "sportradar/api/request"
 
 require "sportradar/api/soccer"
 require "sportradar/api/nfl"
+require "sportradar/api/images"
 
 module Sportradar
   module Api
@@ -48,7 +49,7 @@ module Sportradar
     end
 
     def self.api_key(api)
-      ENV.fetch("SPORTRADAR_#{api.to_s.upcase}", "api_key missing for #{api}")
+      ENV.fetch("SPORTRADAR_#{api.to_s.upcase.gsub('-', '_')}", "api_key missing for #{api}")
     end
 
     def self.version(api)
