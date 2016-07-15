@@ -14,15 +14,15 @@ module Sportradar
       end
 
       def daily_schedule(date = Date.today)
-        get request_url("matches/#{date.year}/#{date.month}/#{date.day}/schedule")
+        get request_url("matches/#{date_path(date)}/schedule")
       end
 
       def daily_summary(date = Date.today)
-        get request_url("matches/#{date.year}/#{date.month}/#{date.day}/summary")
+        get request_url("matches/#{date_path(date)}/summary")
       end
 
       def daily_boxscore(date = Date.today)
-        get request_url("matches/#{date.year}/#{date.month}/#{date.day}/boxscore")
+        get request_url("matches/#{date_path(date)}/boxscore")
       end
 
       # match_id  = "357607e9-87cd-4848-b53e-0485d9c1a3bc"

@@ -18,7 +18,7 @@ module Sportradar
       end
 
       def weekly_schedule(year = Date.today.year, season = 'reg', week = 1)
-        get request_url("games/#{ year }/#{ season }/#{ week }/schedule")
+        get request_url("games/#{ week_path(year, season, week) }/schedule")
       end
 
       def standings(year = Date.today.year)
@@ -26,15 +26,15 @@ module Sportradar
       end
 
       def weekly_depth_charts(year = Date.today.year, season = 'reg', week = 1)
-        get request_url("seasontd/#{ year }/#{ season }/#{ week }/depth_charts")
+        get request_url("seasontd/#{ week_path(year, season, week) }/depth_charts")
       end
 
       def weekly_injuries(year = Date.today.year, season = 'reg', week = 1)
-        get request_url("seasontd/#{ year }/#{ season }/#{ week }/injuries")
+        get request_url("seasontd/#{ week_path(year, season, week) }/injuries")
       end
 
       def daily_change_log(date = Date.today)
-        get request_url("league/#{ date.year }/#{ date.month }/#{ date.day }/changes")
+        get request_url("league/#{date_path(date)}/changes")
       end
 
       # past_game_id = "0141a0a5-13e5-4b28-b19f-0c3923aaef6e"

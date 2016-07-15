@@ -31,6 +31,15 @@ module Sportradar
         url += path
       end
 
+      def date_path(date = Date.today)
+        "#{date.year}/#{date.month}/#{date.day}"
+      end
+
+      def week_path(year, season, week)
+        "#{ year }/#{ season }/#{ week }"
+      end
+
+
       def format
         ".#{Sportradar::Api.config.format}"
       end
