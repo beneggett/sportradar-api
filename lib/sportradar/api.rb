@@ -12,6 +12,8 @@ require "sportradar/api/soccer"
 require "sportradar/api/nfl"
 require "sportradar/api/images"
 require "sportradar/api/live_images"
+require "sportradar/api/content"
+require "sportradar/api/odds"
 
 module Sportradar
   module Api

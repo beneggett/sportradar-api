@@ -17,9 +17,11 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 
 [Current API Versions](http://developer.sportradar.us/api_gallery)
 
+🙋 = Basic Api wrapped
+
 | API | Version | Docs | Implemented? | Priority |
 | --- | --- | --- | --- | --- |
-| NFL | 1 | [📚](http://developer.sportradar.us/page/NFL_Official) | - | 👍 |
+| NFL | 1 | [📚](http://developer.sportradar.us/page/NFL_Official) | 🙋 | 👍 |
 | MLB | 5 | [📚](http://developer.sportradar.us/docs/MLB_API) | - | - |
 | NHL | 3 | [📚](http://developer.sportradar.us/docs/NHL_API) | - | - |
 | NBA | 3 | [📚](http://developer.sportradar.us/docs/NBA_API) | - | - |
@@ -27,12 +29,12 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 | NCAAFB  | 1 | [📚](http://developer.sportradar.us/docs/NCAA_Football_API) | - | - |
 | Golf  | 2 | [📚](http://developer.sportradar.us/docs/Golf_API) | - | - |
 | NASCAR  | 3 | [📚](http://developer.sportradar.us/page/NASCAR_Official) | - | - |
-| Odds  | 1 | [📚](http://developer.sportradar.us/docs/Odds_API) | - | 👍 |
-| Content | 3 | [📚](http://developer.sportradar.us/docs/Content_API) | - | 👍 |
-| Images  | 2 | [📚](http://developer.sportradar.us/docs/Images_API) | - | 👍 |
-| Live Images | 1 | [📚](http://developer.sportradar.us/docs/Live_Images_API) | - | 👍 |
+| Odds  | 1 | [📚](http://developer.sportradar.us/docs/Odds_API) | 🙋 | 👍 |
+| Content | 3 | [📚](http://developer.sportradar.us/docs/Content_API) | 🙋 | 👍 |
+| Images  | 2 | [📚](http://developer.sportradar.us/docs/Images_API) | 🙋 | 👍 |
+| Live Images | 1 | [📚](http://developer.sportradar.us/docs/Live_Images_API) | 🙋 | 👍 |
 | Olympics  | 2 | [📚](http://developer.sportradar.us/docs/Olympics_API_v2) | - | - |
-| Soccer  | 2 | [📚](http://developer.sportradar.us/docs/Soccer_API) | - | 👍 |
+| Soccer  | 2 | [📚](http://developer.sportradar.us/docs/Soccer_API) | 🙋️ | 👍 |
 | NCAAWB  | 3 | [📚](http://developer.sportradar.us/docs/read/NCAA_Womens_Basketball) | - | - |
 | MMA | 1 | [📚](http://developer.sportradar.us/docs/MMA_API) | - | - |
 | Cricket   | 1 | [📚](http://developer.sportradar.us/docs/cricket_API) | - | - |

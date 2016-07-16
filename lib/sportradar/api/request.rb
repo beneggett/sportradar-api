@@ -7,8 +7,9 @@ module Sportradar
       attr_reader :url, :headers, :timeout, :api_key
 
       def base_setup(path, options={})
-        @url = set_base(path) + format
-        @headers = set_headers
+        @url = set_base(path)
+        @url += format unless options[:format] == 'none'
+        @headers = set_headers unless options[:format] == 'none'
         @api_key = options[:api_key]
         @timeout = options.delete(:api_timeout) || Sportradar::Api.config.api_timeout
       end
@@ -31,7 +32,7 @@ module Sportradar
         url += path
       end
 
-      def date_path(date = Date.today)
+      def date_path(date)
         "#{date.year}/#{date.month}/#{date.day}"
       end
 
@@ -41,7 +42,7 @@ module Sportradar
 
 
       def format
-        ".#{Sportradar::Api.config.format}"
+        ".#{Sportradar::Api.config.format}" if Sportradar::Api.config.format
       end
 
       def set_headers

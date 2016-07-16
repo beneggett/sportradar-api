@@ -1,9 +1,9 @@
 module Sportradar
   module Api
     class LiveImages < Request
-      attr_accessor :sport, :league, :access_level
+      attr_accessor :sport, :access_level
 
-      def initialize( sport, league = nil, access_level = 't')
+      def initialize( sport, access_level = 't')
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
