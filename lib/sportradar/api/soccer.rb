@@ -19,6 +19,7 @@ module Sportradar
         Sportradar::Api::Soccer::Schedule.new response
       end
 
+      # date =  Date.parse('2016-07-17')
       def daily_summary(date = Date.today)
         response = get request_url("matches/#{date_path(date)}/summary")
         Sportradar::Api::Soccer::Summary.new response

@@ -10,6 +10,7 @@ require "sportradar/api/request"
 
 require "sportradar/api/soccer"
 require "sportradar/api/soccer/boxscore"
+require "sportradar/api/soccer/fact"
 require "sportradar/api/soccer/match"
 require "sportradar/api/soccer/player"
 require "sportradar/api/soccer/schedule"

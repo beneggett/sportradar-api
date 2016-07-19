@@ -25,7 +25,7 @@ module Sportradar
         @period = data["period"]
         @clock = data["clock"]
         @referee = OpenStruct.new data["referee"] if data["referee"]
-        @facts = data["facts"]["fact"].map {|fact| OpenStruct.new fact } if data["facts"]
+        @facts = data["facts"]["fact"].map {|fact| Sportradar::Api::Soccer::Fact.new  fact } if data["facts"]
         @response = data
       end
 
