@@ -12,13 +12,14 @@ module Sportradar
       class Timeout < Timeout::Error ; end
       class NoData < EOFError; end
 
-      attr_reader :message, :status_code, :status
+      attr_reader :message, :code, :response
 
-      def initialize(response_status, response_code, response_message = nil)
-        @status_code = response_code
-        @status = response_status
+      def initialize( code, message, response)
+        @code = response_code
         @message = response_message
+        @response = response
       end
+
     end
   end
 end

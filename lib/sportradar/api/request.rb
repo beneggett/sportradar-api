@@ -17,11 +17,16 @@ module Sportradar
       def get(path, options={})
         base_setup(path, options)
         puts url
-        results = self.class.get(url, headers: headers, query: options.merge(api_key), timeout: timeout)
+        response = self.class.get(url, headers: headers, query: options.merge(api_key), timeout: timeout)
         rescue Net::ReadTimeout, Net::OpenTimeout
           raise Sportradar::Api::Error::Timeout
         rescue EOFError
           raise Sportradar::Api::Error::NoData
+        if response.success?
+          response
+        else
+          Sportradar::Api::Error.new(response.code, response.message, response)
+        end
       end
 
       private
