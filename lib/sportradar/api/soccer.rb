@@ -14,12 +14,13 @@ module Sportradar
         Sportradar::Api::Soccer::Schedule.new response
       end
 
+      # date =  Date.parse('2016-07-17')
       def daily_schedule(date = Date.today)
         response = get request_url("matches/#{date_path(date)}/schedule")
         Sportradar::Api::Soccer::Schedule.new response
       end
 
-      # date =  Date.parse('2016-07-17')
+
       def daily_summary(date = Date.today)
         response = get request_url("matches/#{date_path(date)}/summary")
         Sportradar::Api::Soccer::Summary.new response
@@ -48,7 +49,6 @@ module Sportradar
         Sportradar::Api::Soccer::Team.new response["profile"]["team"] if response.success?
       end
 
-
       # player_id = "2aeacd39-3f9c-42af-957e-9df8573973c4"
       def player_profile(player_id)
         response = get request_url("players/#{player_id}/profile")
@@ -56,15 +56,18 @@ module Sportradar
       end
 
       def player_rankings
-        get request_url("players/leader")
+        response = get request_url("players/leader")
+        Sportradar::Api::Soccer::Ranking.new response["leaders"] if response.success? && response["leaders"]
       end
 
       def team_hierarchy
-        get request_url("teams/hierarchy")
+        response = get request_url("teams/hierarchy")
+        Sportradar::Api::Soccer::Hierarchy.new response["hierarchy"] if response.success? && response["hierarchy"]
       end
 
       def team_standings
-        get request_url("teams/standing")
+        response = get request_url("teams/standing")
+        Sportradar::Api::Soccer::Standing.new response["standings"] if response.success? && response["standings"]
       end
 
       private

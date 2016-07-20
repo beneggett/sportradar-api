@@ -1,21 +1,22 @@
 module Sportradar
   module Api
-    class Soccer::Match
+    class Soccer::Match < Data
 
       attr_accessor :id, :status, :scheduled, :scratched, :season_id, :reference_id, :category, :tournament_group, :tournament, :home, :away, :venue, :round, :coverage, :period, :clock, :referee, :facts, :response
 
       def initialize(data)
+        @response = data
         @id = data["id"]
         @reference_id = data["reference_id"]
         @scheduled = Date.parse data["scheduled"]
         @scratched = data["scratched"] == "true"
         @season_id = data["season_id"]
         @status = data["status"]
-        @category = OpenStruct.new data["category"]
+        @category = Sportradar::Api::Soccer::Category.new data["category"] if data["category"]
         @coverage = OpenStruct.new data["coverage"]
         @round = OpenStruct.new data["round"]
-        @tournament = OpenStruct.new data["tournament"]
-        @tournament_group = OpenStruct.new data["tournament_group"]
+        @tournament = Sportradar::Api::Soccer::Tournament.new data["tournament"] if data["tournament"]
+        @tournament_group = Sportradar::Api::Soccer::TournamentGroup.new data["tournament_group"] if data["tournament_group"]
 
         @away = Sportradar::Api::Soccer::Team.new data["away"]
         @home = Sportradar::Api::Soccer::Team.new data["home"]
@@ -26,7 +27,6 @@ module Sportradar
         @clock = data["clock"]
         @referee = OpenStruct.new data["referee"] if data["referee"]
         @facts = data["facts"]["fact"].map {|fact| Sportradar::Api::Soccer::Fact.new  fact } if data["facts"]
-        @response = data
       end
 
       def period_name

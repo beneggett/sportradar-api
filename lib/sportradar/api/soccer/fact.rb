@@ -1,10 +1,11 @@
 module Sportradar
   module Api
-    class Soccer::Fact
+    class Soccer::Fact < Data
 
       attr_accessor :id, :type, :time, :updated_time, :scratch, :reference_id, :clock, :team_id, :description, :period, :x, :y, :player_id, :card, :injury_time, :home_score, :away_score, :player_out_id, :player_in_id, :penalty, :owngoal, :header, :assist1_id, :winner_id, :draw, :response
 
       def initialize(data)
+        @response = data
         @id = data["id"]
         @type = data["type"]
         @time = data["time"]
@@ -30,7 +31,6 @@ module Sportradar
         @assist1_id = data["assist1_id"]
         @winner_id = data["winner_id"]
         @draw = data["draw"]
-        @response = data
       end
 
       ## Fact Types

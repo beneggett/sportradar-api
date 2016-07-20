@@ -1,10 +1,9 @@
 module Sportradar
   module Api
-    class Soccer::Boxscore
-      attr_accessor :response, :updated_at, :matches
+    class Soccer::Boxscore < Data
+      attr_accessor :response, :matches
 
       def initialize(data)
-        @updated_at = data["boxscore"]["generated"]
         @response = data
         set_matches
       end

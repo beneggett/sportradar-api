@@ -1,14 +1,13 @@
 module Sportradar
   module Api
-    class Soccer::Summary
-      attr_accessor :response, :updated_at, :matches
+    class Soccer::Summary < Data
+      attr_accessor :response, :matches
 
       def initialize(data)
-        @updated_at = data["summary"]["generated"]
         @response = data
         set_matches
-
       end
+
       private
 
       def set_matches
