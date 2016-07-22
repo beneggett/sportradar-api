@@ -33,7 +33,12 @@ module Sportradar
       end
 
       def find_winner
-        @home.winner == "true" ? @home : @away
+        if @home.winner == 'draw'
+          'draw'
+        else
+          [@home, @away].find {|team| team.winner == "true" }
+        end
+
       end
 
       def period_name
