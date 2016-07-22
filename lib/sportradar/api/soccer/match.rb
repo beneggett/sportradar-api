@@ -22,7 +22,7 @@ module Sportradar
         @home = Sportradar::Api::Soccer::Team.new data["home"]
         @venue = Sportradar::Api::Soccer::Venue.new data["venue"] if data["venue"]
 
-        @future_game = @scheduled > Time.now
+        @future_game = @scheduled > Time.now.utc
         @winner = find_winner unless future_game
 
         # Actual stats from match summary
