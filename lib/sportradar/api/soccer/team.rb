@@ -36,8 +36,8 @@ module Sportradar
         @away = OpenStruct.new data["away"] if data["away"]
 
         @scoring =  OpenStruct.new data["scoring"] if data["scoring"]
-        @first_half_score = data["scoring"]["half"].find {|x| x["number"] == "1"}["points"] if data["scoring"]
-        @second_half_score = data["scoring"]["half"].find {|x| x["number"] == "2"}["points"] if data["scoring"]
+        parse_scoring if scoring
+
         @statistics =  OpenStruct.new data["statistics"] if data["statistics"]
         @players = data["players"]["player"].map {|player| Sportradar::Api::Soccer::Player.new player } if data["players"]
 
@@ -47,6 +47,16 @@ module Sportradar
 
       alias_method :roster, :players
 
+      private
+
+      def parse_scoring
+        if scoring.half.is_a?(Array)
+          @first_half_score = scoring.half.find {|x| x["number"] == "1"}["points"]
+          @second_half_score = scoring.half.find {|x| x["number"] == "2"}["points"]
+        elsif scoring.half.is_a?(Hash)
+          @first_half_score = scoring.half["points"]
+        end
+      end
     end
   end
 end

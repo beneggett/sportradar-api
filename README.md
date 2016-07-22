@@ -70,6 +70,18 @@ Manage your ruby environment through `.ruby-version` and `.ruby-gemset` files.
 Create `.env` for environment variables. Follow the `.env.sample` for guidance.
 
 
+## Simulation Games
+
+http://developer.sportradar.us/page/Live_Game_Simulation
+
+Soccer
+
+```
+sim = Sportradar::Api::Soccer.new('na', 't', true)
+summary = sim.match_summary(sim.simulation_match)
+boxscore = sim.match_boxscore(sim.simulation_match)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
