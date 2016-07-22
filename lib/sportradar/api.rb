@@ -1,5 +1,5 @@
 require "rubygems"
-
+require "active_support/all"
 require "httparty"
 
 require "sportradar/api/version"
