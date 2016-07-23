@@ -8,7 +8,7 @@ module Sportradar
         @response = data
         @id = data["id"]
         @reference_id = data["reference_id"]
-        @scheduled = Time.parse data["scheduled"]
+        @scheduled = Time.parse(data["scheduled"]) if data["scheduled"]
         @scratched = data["scratched"] == "true"
         @season_id = data["season_id"]
         @status = data["status"]
