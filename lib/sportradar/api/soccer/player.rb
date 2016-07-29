@@ -2,7 +2,7 @@ module Sportradar
   module Api
     class Soccer::Player < Data
 
-      attr_accessor :id, :first_name, :last_name, :country_code, :country, :reference_id, :full_first_name, :full_last_name, :position, :started, :jersey_number, :tactical_position, :tactical_order, :statistics, :preferred_foot, :birthdate, :height_in, :weight_lb, :height_cm, :weight_kg, :teams, :response, :rank, :total, :statistics, :last_modified
+      attr_accessor :id, :first_name, :last_name, :country_code, :country, :reference_id, :full_first_name, :full_last_name, :position, :started, :jersey_number, :tactical_position, :tactical_order, :statistics, :preferred_foot, :birthdate, :height_in, :weight_lb, :height_cm, :weight_kg, :teams, :response, :rank, :total, :statistics, :last_modified, :age
 
       def initialize(data)
         @response = data
@@ -28,6 +28,7 @@ module Sportradar
         @weight_lb = data["weight_lb"]
         @height_cm = data["height_cm"]
         @weight_kg = data["weight_kg"]
+        @age = age
         set_teams
 
         @rank = data["rank"]
@@ -53,6 +54,12 @@ module Sportradar
       def tactical_position_name
         tactical_positions = { "0" => "Unknown", "1" => "Goalkeeper", "2" => "Right back", "3" => "Central defender", "4" => "Left back", "5" => "Right winger", "6" => "Central midfielder", "7" => "Left winger", "8" => "Forward" }
         tactical_positions[tactical_position] if tactical_position
+      end
+
+      def age
+        now = Time.now.utc.to_date
+        dob = @birthdate.to_date
+        now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
       end
 
       private
