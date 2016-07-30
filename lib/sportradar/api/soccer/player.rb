@@ -17,7 +17,7 @@ module Sportradar
         @full_last_name = data["full_last_name"]
         @full_name = full_name
         @position = data["position"]
-        @position_name = position_name
+        @position_name = get_position_name
         @started = data["started"]
         @jersey_number = data["jersey_number"]
         @tactical_position = data["tactical_position"]
@@ -28,11 +28,11 @@ module Sportradar
         @preferred_foot = data["preferred_foot"]
         @birthdate = data["birthdate"]
         @height_in = data["height_in"]
-        @height_ft = height_ft
+        @height_ft = get_height_ft
         @weight_lb = data["weight_lb"]
         @height_cm = data["height_cm"]
         @weight_kg = data["weight_kg"]
-        @age = age
+        @age = get_age
         set_teams
 
         @rank = data["rank"]
@@ -42,18 +42,20 @@ module Sportradar
       end
 
       def name
-        [@first_name, @last_name].join(' ')
+        [first_name, last_name].join(' ')
       end
 
       def full_name
-        full = [@full_first_name, @full_last_name].join(' ')
-        full == " " ? name : @full
+        full = [full_first_name, full_last_name].join(' ')
+        full == " " ? name : full
       end
 
-      def position_name
+      def get_position_name
         positions = {"G" => "Goalie", "D" => "Defender", "M" => "Midfielder", "F" => "Forward"}
-        if @teams
-          @teams.map do |team|
+        if position.present?
+          positions[position]
+        elsif teams.present?
+          teams.map do |team|
             if team.position.present?
               positions[team.position]
             end
@@ -66,14 +68,14 @@ module Sportradar
         tactical_positions[tactical_position] if tactical_position
       end
 
-      def age
+      def get_age
         now = Time.now.utc.to_date
-        dob = @birthdate.to_date
+        dob = birthdate.to_date
         now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
       end
 
-      def height_ft
-        feet, inches = @height_in.to_i.divmod(12)
+      def get_height_ft
+        feet, inches = height_in.to_i.divmod(12)
         "#{feet}' #{inches}\""
       end
 
