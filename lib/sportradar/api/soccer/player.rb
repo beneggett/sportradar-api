@@ -2,19 +2,22 @@ module Sportradar
   module Api
     class Soccer::Player < Data
 
-      attr_accessor :id, :first_name, :last_name, :country_code, :country, :reference_id, :full_first_name, :full_last_name, :position, :started, :jersey_number, :tactical_position, :tactical_order, :statistics, :preferred_foot, :birthdate, :height_in, :weight_lb, :height_cm, :weight_kg, :teams, :response, :rank, :total, :statistics, :last_modified, :age
+      attr_accessor :id, :first_name, :last_name, :country_code, :country, :reference_id, :full_first_name, :full_last_name, :position, :started, :jersey_number, :tactical_position, :tactical_order, :statistics, :preferred_foot, :birthdate, :height_in, :weight_lb, :height_cm, :weight_kg, :teams, :response, :rank, :total, :statistics, :last_modified, :age, :height_ft, :position_name, :tactical_position_name, :name, :full_name
 
       def initialize(data)
         @response = data
         @id = data["id"]
         @first_name = data["first_name"]
         @last_name = data["last_name"]
+        @name = name
         @country_code = data["country_code"]
         @country = data["country"]
         @reference_id = data["reference_id"]
         @full_first_name = data["full_first_name"]
         @full_last_name = data["full_last_name"]
+        @full_name = full_name
         @position = data["position"]
+        @position_name = position_name
         @started = data["started"]
         @jersey_number = data["jersey_number"]
         @tactical_position = data["tactical_position"]
@@ -25,6 +28,7 @@ module Sportradar
         @preferred_foot = data["preferred_foot"]
         @birthdate = data["birthdate"]
         @height_in = data["height_in"]
+        @height_ft = height_ft
         @weight_lb = data["weight_lb"]
         @height_cm = data["height_cm"]
         @weight_kg = data["weight_kg"]
@@ -38,17 +42,23 @@ module Sportradar
       end
 
       def name
-        [first_name, last_name].join(' ')
+        [@first_name, @last_name].join(' ')
       end
 
       def full_name
-        full = [full_first_name, full_last_name].join(' ')
-        full == " " ? name : full
+        full = [@full_first_name, @full_last_name].join(' ')
+        full == " " ? name : @full
       end
 
       def position_name
         positions = {"G" => "Goalie", "D" => "Defender", "M" => "Midfielder", "F" => "Forward"}
-        positions[position] if position
+        if @teams
+          @teams.map do |team|
+            if team.position.present?
+              positions[team.position]
+            end
+          end.uniq.join(", ")
+        end
       end
 
       def tactical_position_name
@@ -60,6 +70,11 @@ module Sportradar
         now = Time.now.utc.to_date
         dob = @birthdate.to_date
         now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+      end
+
+      def height_ft
+        feet, inches = @height_in.to_i.divmod(12)
+        "#{feet}' #{inches}\""
       end
 
       private
