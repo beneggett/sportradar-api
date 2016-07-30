@@ -69,14 +69,18 @@ module Sportradar
       end
 
       def get_age
-        now = Time.now.utc.to_date
-        dob = birthdate.to_date
-        now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+        if birthdate.present?
+          now = Time.now.utc.to_date
+          dob = birthdate.to_date
+          now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+        end
       end
 
       def get_height_ft
-        feet, inches = height_in.to_i.divmod(12)
-        "#{feet}' #{inches}\""
+        if height_in.present?
+          feet, inches = height_in.to_i.divmod(12)
+          "#{feet}' #{inches}\""
+        end
       end
 
       private
