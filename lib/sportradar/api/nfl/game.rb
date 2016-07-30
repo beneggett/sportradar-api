@@ -9,7 +9,7 @@ module Sportradar
         @status = data["status"]
         @reference = data["reference"]
         @number = data["number"]
-        @scheduled = data["scheduled"]
+        @scheduled = Time.parse(data["scheduled"]) if data["scheduled"]
         @entry_mode = data["entry_mode"]
 
         # game boxscore
