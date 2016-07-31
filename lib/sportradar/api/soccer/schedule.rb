@@ -5,7 +5,7 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        @matches = data["schedule"]["matches"]["match"].map {|x| Sportradar::Api::Soccer::Match.new x } if data["schedule"]["matches"]["match"]
+        set_matches
       end
 
       def league(league_name)
@@ -16,6 +16,16 @@ module Sportradar
         matches.map {|match| match.tournament_group.name}.uniq
       end
 
+      private
+      def set_matches
+        if response["schedule"]["matches"]["match"]
+          if response["schedule"]["matches"]["match"].is_a?(Array)
+            @matches = response["schedule"]["matches"]["match"].map {|x| Sportradar::Api::Soccer::Match.new x }
+          elsif response["schedule"]["matches"]["match"].is_a?(Hash)
+            @matches = [ Sportradar::Api::Soccer::Match.new(response["schedule"]["matches"]["match"]) ]
+          end
+        end
+      end
 
     end
   end
