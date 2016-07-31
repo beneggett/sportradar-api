@@ -2,24 +2,22 @@ module Sportradar
   module Api
     class Soccer::Player < Data
 
-      attr_accessor :id, :first_name, :last_name, :country_code, :country, :reference_id, :full_first_name, :full_last_name, :position, :started, :jersey_number, :tactical_position, :tactical_order, :statistics, :preferred_foot, :birthdate, :height_in, :weight_lb, :height_cm, :weight_kg, :teams, :response, :rank, :total, :statistics, :last_modified, :age, :height_ft, :position_name, :tactical_position_name, :name, :full_name
+      attr_accessor :id, :first_name, :last_name, :country_code, :country, :reference_id, :full_first_name, :full_last_name, :position, :started, :jersey_number, :tactical_position, :tactical_order, :statistics, :preferred_foot, :birthdate, :height_in, :weight_lb, :height_cm, :weight_kg, :teams, :response, :rank, :total, :statistics, :last_modified
 
       def initialize(data)
         @response = data
+        set_teams
         @id = data["id"]
         @first_name = data["first_name"]
         @last_name = data["last_name"]
-        @name = name
         @country_code = data["country_code"]
         @country = data["country"]
         @reference_id = data["reference_id"]
         @full_first_name = data["full_first_name"]
         @full_last_name = data["full_last_name"]
-        @full_name = full_name
-        @position = data["position"]
-
+        @position = data["position"] || primary_team.try(:position)
         @started = data["started"]
-        @jersey_number = data["jersey_number"]
+        @jersey_number = data["jersey_number"] || primary_team.try(:jersey_number)
         @tactical_position = data["tactical_position"]
         @tactical_order = data["tactical_order"]
         @last_modified = data["last_modified"]
@@ -28,13 +26,9 @@ module Sportradar
         @preferred_foot = data["preferred_foot"]
         @birthdate = data["birthdate"]
         @height_in = data["height_in"]
-        @height_ft = get_height_ft
         @weight_lb = data["weight_lb"]
         @height_cm = data["height_cm"]
         @weight_kg = data["weight_kg"]
-        @age = get_age
-        set_teams
-        @position_name = get_position_name
         @rank = data["rank"]
         @total = OpenStruct.new data["total"] if data["total"]
 
@@ -50,25 +44,30 @@ module Sportradar
         full == " " ? name : full
       end
 
-      def get_position_name
-        positions = {"G" => "Goalie", "D" => "Defender", "M" => "Midfielder", "F" => "Forward"}
-        if position.present?
+      def position_name
+        positions = {"G" => "Goalie", "D" => "Defender", "M" => "Midfielder", "F" => "Forward", "" => "N/A"}
+        if position
           positions[position]
-        elsif teams.present?
-          teams.map do |team|
-            if team.position.present?
-              positions[team.position]
-            end
-          end.uniq.join(", ")
+        elsif primary_team.present?
+          positions[primary_team.position]
         end
       end
+
+      def primary_team
+        if teams.count == 1
+          teams.first
+        else
+          teams.find {|team| team.name != team.country_code}
+        end if teams
+      end
+
 
       def tactical_position_name
         tactical_positions = { "0" => "Unknown", "1" => "Goalkeeper", "2" => "Right back", "3" => "Central defender", "4" => "Left back", "5" => "Right winger", "6" => "Central midfielder", "7" => "Left winger", "8" => "Forward" }
         tactical_positions[tactical_position] if tactical_position
       end
 
-      def get_age
+      def age
         if birthdate.present?
           now = Time.now.utc.to_date
           dob = birthdate.to_date
@@ -76,7 +75,7 @@ module Sportradar
         end
       end
 
-      def get_height_ft
+      def height_ft
         if height_in.present?
           feet, inches = height_in.to_i.divmod(12)
           "#{feet}' #{inches}\""
