@@ -17,7 +17,7 @@ module Sportradar
         @full_last_name = data["full_last_name"]
         @full_name = full_name
         @position = data["position"]
-        @position_name = get_position_name
+
         @started = data["started"]
         @jersey_number = data["jersey_number"]
         @tactical_position = data["tactical_position"]
@@ -34,7 +34,7 @@ module Sportradar
         @weight_kg = data["weight_kg"]
         @age = get_age
         set_teams
-
+        @position_name = get_position_name
         @rank = data["rank"]
         @total = OpenStruct.new data["total"] if data["total"]
 
