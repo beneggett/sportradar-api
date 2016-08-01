@@ -10,7 +10,7 @@ module Sportradar
 
       private
       def set_matches
-        if response["boxscore"]["matches"]["match"]
+        if response['boxscore'] && response['boxscore']['matches'] && response["boxscore"]["matches"]["match"]
           if response["boxscore"]["matches"]["match"].is_a?(Array)
             @matches = response["boxscore"]["matches"]["match"].map {|x| Sportradar::Api::Soccer::Match.new x }
           elsif response["boxscore"]["matches"]["match"].is_a?(Hash)
