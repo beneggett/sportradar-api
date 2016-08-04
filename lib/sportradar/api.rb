@@ -54,8 +54,15 @@ require "sportradar/api/nfl/team"
 require "sportradar/api/nfl/venue"
 require "sportradar/api/nfl/week"
 
-require "sportradar/api/images"
 require "sportradar/api/live_images"
+require "sportradar/api/images"
+require "sportradar/api/images/asset_list"
+require "sportradar/api/images/asset"
+require "sportradar/api/images/link"
+require "sportradar/api/images/tag"
+
+
+
 require "sportradar/api/content"
 require "sportradar/api/odds"
 
@@ -91,12 +98,12 @@ module Sportradar
 
     private
 
-    def self.api_key_params(api)
-      { api_key: self.api_key(api) }
+    def self.api_key_params(api, access_level = 'trial')
+      { api_key: self.api_key(api, access_level) }
     end
 
-    def self.api_key(api)
-      ENV.fetch("SPORTRADAR_#{api.to_s.upcase.gsub('-', '_')}", "api_key missing for #{api}")
+    def self.api_key(api, access_level = 'trial')
+      ENV.fetch("SPORTRADAR_#{api.to_s.upcase.gsub('-', '_')}#{'_PRODUCTION' if access_level == 'production'}", "api_key missing for #{api}")
     end
 
     def self.version(api)

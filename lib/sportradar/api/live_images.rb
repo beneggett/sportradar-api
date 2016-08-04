@@ -11,13 +11,14 @@ module Sportradar
       end
 
       def daily_manifest(date = Date.today )
-        get request_url("#{image_type }/#{date.to_s}/manifests/all_assets")
+        response = get request_url("#{image_type }/#{date.to_s}/manifests/all_assets")
+        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
       end
       alias_method :all_images, :daily_manifest
 
       # The Event images APIs aren't really meant to be used directly, the manifests return an href path of an image we can pass it into the image_url method to get the entire image url
       def image_url(href)
-        href.slice!(0) # remove initial '/'
+        href.slice!(0) if href.chars.first == '/'  # remove initial '/'
         set_base request_url(href) + api_key_query_string
       end
 
@@ -28,7 +29,12 @@ module Sportradar
       end
 
       def api_key
-        Sportradar::Api.api_key_params("live_images_#{sport}")
+        if access_level == 'p'
+          Sportradar::Api.api_key_params("live_images_#{sport}", "production")
+        else
+          Sportradar::Api.api_key_params("live_images_#{sport}")
+        end
+
       end
 
       def api_key_query_string

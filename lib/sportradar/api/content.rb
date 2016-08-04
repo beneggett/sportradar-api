@@ -27,7 +27,11 @@ module Sportradar
       end
 
       def api_key
-        Sportradar::Api.api_key_params("content_#{sport}")
+        if access_level == 'p'
+          Sportradar::Api.api_key_params("content_#{sport}", "production")
+        else
+          Sportradar::Api.api_key_params("content_#{sport}")
+        end
       end
 
       def provider

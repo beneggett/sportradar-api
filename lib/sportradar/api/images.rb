@@ -2,7 +2,7 @@ module Sportradar
   module Api
     class Images < Request
       attr_accessor :sport, :league, :access_level
-      def initialize( sport, league = nil, access_level = 't')
+      def initialize( sport, access_level = 't', league = nil)
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
         raise Sportradar::Api::Error::InvalidLeague unless soccer_leagues.include?(league) || league.nil?
@@ -14,29 +14,33 @@ module Sportradar
 
       def player_manifests(year = Date.today.year)
         if league
-          get request_url("#{league}/#{image_type}/players/#{year}/manifest")
+          response = get request_url("#{league}/#{image_type}/players/#{year}/manifest")
         else
-          get request_url("players/#{image_type}/manifests/all_assets")
+          response = get request_url("players/#{image_type}/manifests/all_assets")
         end
+        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
       end
+
       alias_method :all_players, :player_manifests
       # Coach Manifests
 
       def coach_manifests
         raise Sportradar::Api::Error::InvalidLeague unless league.nil?
-        get request_url("coaches/#{image_type}/manifests/all_assets")
+        response = get request_url("coaches/#{image_type}/manifests/all_assets")
+        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
       end
       alias_method :all_coaches, :coach_manifests
 
       def venue_manifests
         raise Sportradar::Api::Error::InvalidLeague unless league.nil?
-        get request_url("venues/manifests/all_assets")
+        response = get request_url("venues/manifests/all_assets")
+        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
       end
       alias_method :all_venues, :venue_manifests
 
       # The Player Images, Coach Images, Venue Images APIs aren't really meant to be used directly, the manifests return an href path of an image we can pass it into the image_url method to get the entire image url
       def image_url(href)
-        href.slice!(0) # remove initial '/'
+        href.slice!(0) if href.chars.first == '/' # remove initial '/'
         set_base request_url(href) + api_key_query_string
       end
       alias_method :player_images, :image_url
@@ -51,9 +55,17 @@ module Sportradar
 
       def api_key
         if league
-          Sportradar::Api.api_key_params("images_#{league}")
+          if access_level == 'p'
+            Sportradar::Api.api_key_params("images_#{league}", "production")
+          else
+            Sportradar::Api.api_key_params("images_#{league}")
+          end
         else
-          Sportradar::Api.api_key_params("images_#{sport}")
+          if access_level == 'p'
+            Sportradar::Api.api_key_params("images_#{sport}", "production")
+          else
+            Sportradar::Api.api_key_params("images_#{sport}")
+          end
         end
       end
 

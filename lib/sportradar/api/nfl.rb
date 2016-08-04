@@ -9,7 +9,6 @@ module Sportradar
         @access_level = access_level
       end
 
-
       def schedule(year = Date.today.year, season = "reg")
         raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? season
         response = get request_url("games/#{ year }/#{ season }/schedule")
@@ -95,7 +94,11 @@ module Sportradar
       end
 
       def api_key
-        Sportradar::Api.api_key_params("nfl")
+        if access_level == 'o'
+          Sportradar::Api.api_key_params("nfl", "production")
+        else
+          Sportradar::Api.api_key_params("nfl")
+        end
       end
 
       def version

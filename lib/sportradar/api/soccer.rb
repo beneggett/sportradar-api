@@ -86,7 +86,11 @@ module Sportradar
       end
 
       def api_key
-        Sportradar::Api.api_key_params("soccer_#{league}")
+        if access_level == 'p'
+          Sportradar::Api.api_key_params("soccer_#{league}", "production")
+        else
+          Sportradar::Api.api_key_params("soccer_#{league}")
+        end
       end
 
       def version
