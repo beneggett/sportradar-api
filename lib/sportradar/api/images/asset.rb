@@ -1,16 +1,18 @@
 module Sportradar
   module Api
     class Images::Asset < Data
-      attr_accessor :response, :id, :created, :updated, :title, :description, :copyright, :links, :tags
+      attr_accessor :response, :id, :player_id, :created, :updated, :title, :description, :copyright, :links, :tags
 
       def initialize(data)
         @response = data
         @id = data["id"]
+        @player_id = data["player_id"]
         @created = data["created"]
         @updated = data["updated"]
         @title = data["title"]
         @description = data["description"]
         @copyright = data["copyright"]
+
         set_links
         set_tags
       end
