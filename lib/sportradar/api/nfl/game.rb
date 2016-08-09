@@ -6,6 +6,7 @@ module Sportradar
       def initialize(data)
         @response = data
         @id = data["id"]
+
         @status = data["status"]
         @reference = data["reference"]
         @number = data["number"]

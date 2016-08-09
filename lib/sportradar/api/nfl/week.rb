@@ -9,7 +9,19 @@ module Sportradar
         @id = data["id"]
         @sequence = data["sequence"]
         @title = data["title"]
-        @games = data["game"].map {|game| Sportradar::Api::Nfl::Game.new game } if data["game"]
+        set_games
+      end
+
+      private
+
+      def set_games
+        if response["game"]
+          if response["game"].is_a?(Array)
+            @games = response["game"].map {|game| Sportradar::Api::Nfl::Game.new game }
+          elsif response["game"].is_a?(Hash)
+            @games = [ Sportradar::Api::Nfl::Game.new(response["game"]) ]
+          end
+        end
       end
 
     end
