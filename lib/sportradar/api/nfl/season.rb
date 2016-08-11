@@ -9,7 +9,7 @@ module Sportradar
         @year = data["year"]
         @type = data["type"]
         @name = data["name"]
-        @team = Sportradar::Api::Nfl::Team.new data["team"] if data["team"]
+        @team = Sportradar::Api::Nfl::Team.new(data["team"]) if data["team"].is_a?(Hash)
         @injuries = data["injuries"]["team"].map {|team| Sportradar::Api::Nfl::Team.new team } if data["injuries"] && data["injuries"]["team"]
         set_weeks
       end
