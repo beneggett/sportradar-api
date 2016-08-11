@@ -65,6 +65,7 @@ module Sportradar
          raise Sportradar::Api::Error::InvalidLeague unless allowed_seasons.include? season
         response = get request_url("seasontd/#{ year }/#{ season }/teams/#{ team_id }/statistics")
         Sportradar::Api::Nfl::Season.new response["season"]  if response.success? && response["season"]
+        # TODO: Object map team & player records - statistics
       end
 
       def team_profile(team_id)
