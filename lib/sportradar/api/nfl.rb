@@ -79,8 +79,9 @@ module Sportradar
       end
 
       def standings(year = Date.today.year)
-        get request_url("seasontd/#{ year }/standings")
-        # TODO Needs implemented with more attention
+        response = get request_url("seasontd/#{ year }/standings")
+        Sportradar::Api::Nfl::Season.new  response["season"] if response.success? && response["season"]
+        # TODO Needs implement rankings/records/stats on team
       end
 
       def daily_change_log(date = Date.today)
