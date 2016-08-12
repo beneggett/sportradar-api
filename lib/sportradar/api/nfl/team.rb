@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Team < Data
-      attr_accessor :response, :id, :name, :alias, :game_number, :defense, :special_teams, :offense, :players, :statistics, :team_records, :player_records, :market, :franchise, :venue, :hierarchy, :coaches, :players
+      attr_accessor :response, :id, :name, :alias, :game_number, :defense, :special_teams, :offense, :players, :statistics, :team_records, :player_records, :market, :franchise, :venue, :hierarchy, :coaches, :players, :used_timeouts, :remaining_timeouts, :points
 
 
       def initialize(data)
@@ -11,6 +11,12 @@ module Sportradar
         @alias = data["alias"]
         @game_number = data["game_number"]
         @market = data["market"]
+
+        # These come from boxscore summary
+        @used_timeouts = data["used_timeouts"]
+        @remaining_timeouts = data["remaining_timeouts"]
+        @points = data["points"]
+
         @franchise = Sportradar::Api::Nfl::Franchise.new data["franchise"] if data["franchise"]
         @venue = Sportradar::Api::Nfl::Venue.new data["venue"] if data["venue"]
         @hierarchy = Sportradar::Api::Nfl::Hierarchy.new data["hierarchy"] if data["hierarchy"]
@@ -24,6 +30,10 @@ module Sportradar
 
         set_players
         set_coaches
+      end
+
+      def full_name
+        [market, name].join(' ')
       end
 
       private

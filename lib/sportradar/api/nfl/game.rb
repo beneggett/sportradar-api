@@ -30,8 +30,10 @@ module Sportradar
         @home = Sportradar::Api::Nfl::Team.new data["home"] if data["home"]
         @away = Sportradar::Api::Nfl::Team.new data["away"] if data["away"]
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
+      end
 
-
+      def current_score
+        "#{summary.home.points}-#{summary.away.points}" if summary
       end
 
       private

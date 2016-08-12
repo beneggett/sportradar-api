@@ -2,12 +2,11 @@ module Sportradar
   module Api
     class Soccer < Request
       attr_accessor :league, :access_level, :simulation
-      def initialize(league = "na", access_level = "t", simulation = false)
+      def initialize(league = "na", access_level = "t")
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         raise Sportradar::Api::Error::InvalidLeague unless allowed_leagues.include? league
         @league = league
         @access_level = access_level
-        @simulation = simulation
       end
 
       def schedule
@@ -34,12 +33,14 @@ module Sportradar
 
       # match_id  = "357607e9-87cd-4848-b53e-0485d9c1a3bc"
       def match_summary(match_id)
+        check_simulation(match_id)
         response = get request_url("matches/#{match_id}/summary")
         Sportradar::Api::Soccer::Summary.new response
       end
 
       # match_id  = "357607e9-87cd-4848-b53e-0485d9c1a3bc"
       def match_boxscore(match_id)
+        check_simulation(match_id)
         response = get request_url("matches/#{match_id}/boxscore")
         Sportradar::Api::Soccer::Boxscore.new response
       end
@@ -76,6 +77,10 @@ module Sportradar
       end
 
       private
+
+      def check_simulation(match_id)
+        @simulation = true if match_id == simulation_match
+      end
 
       def request_url(path)
         if simulation

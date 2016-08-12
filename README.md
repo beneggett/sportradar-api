@@ -17,7 +17,8 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 
 [Current API Versions](http://developer.sportradar.us/api_gallery)
 
-🙋 = Basic Api wrapped
+🙋 = Basic API wrapped/object mapping in progress
+✅ = API implemented and wrapped in proper objects
 
 | API | Version | Docs | Implemented? | Priority |
 | --- | --- | --- | --- | --- |
@@ -30,11 +31,11 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 | Golf  | 2 | [📚](http://developer.sportradar.us/docs/Golf_API) | - | - |
 | NASCAR  | 3 | [📚](http://developer.sportradar.us/page/NASCAR_Official) | - | - |
 | Odds  | 1 | [📚](http://developer.sportradar.us/docs/Odds_API) | 🙋 | 👍 |
-| Content | 3 | [📚](http://developer.sportradar.us/docs/Content_API) | 🙋 | 👍 |
-| Images  | 2 | [📚](http://developer.sportradar.us/docs/Images_API) | 🙋 | 👍 |
-| Live Images | 1 | [📚](http://developer.sportradar.us/docs/Live_Images_API) | 🙋 | 👍 |
+| Content | 3 | [📚](http://developer.sportradar.us/docs/Content_API) | ✅ | 👍 |
+| Images  | 2 | [📚](http://developer.sportradar.us/docs/Images_API) | ✅ | 👍 |
+| Live Images | 1 | [📚](http://developer.sportradar.us/docs/Live_Images_API) | ✅ | 👍 |
 | Olympics  | 2 | [📚](http://developer.sportradar.us/docs/Olympics_API_v2) | - | - |
-| Soccer  | 2 | [📚](http://developer.sportradar.us/docs/Soccer_API) | 🙋️ | 👍 |
+| Soccer  | 2 | [📚](http://developer.sportradar.us/docs/Soccer_API) | ✅️ | 👍 |
 | NCAAWB  | 3 | [📚](http://developer.sportradar.us/docs/read/NCAA_Womens_Basketball) | - | - |
 | MMA | 1 | [📚](http://developer.sportradar.us/docs/MMA_API) | - | - |
 | Cricket   | 1 | [📚](http://developer.sportradar.us/docs/cricket_API) | - | - |
@@ -44,6 +45,7 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 | Rugby | 1 | [📚](http://developer.sportradar.us/docs/Rugby_API) | - | - |
 | Tennis  | 1 | [📚](http://developer.sportradar.us/docs/Tennis_API) | - | - |
 | ESPORTS | 1 | [📚](http://developer.sportradar.us/docs/ESPORTS_API) | - | - |
+| Simulation APIs | 1 | [📚](http://developer.sportradar.us/page/Live_Game_Simulation) | 🙋 | 👍|
 
 ## Installation
 

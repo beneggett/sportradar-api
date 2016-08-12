@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl < Request
-      attr_accessor :league, :access_level
+      attr_accessor :league, :access_level, :simulation
 
       def initialize( access_level = "ot")
         @league = "nfl"
@@ -33,16 +33,19 @@ module Sportradar
       # past_game_id = "0141a0a5-13e5-4b28-b19f-0c3923aaef6e"
       # future_game_id = "28290722-4ceb-4a4c-a4e5-1f9bec7283b3"
       def game_boxscore(game_id)
+        check_simulation(game_id)
         response = get request_url("games/#{ game_id }/boxscore")
         Sportradar::Api::Nfl::Game.new response["game"]   if response.success? && response["game"] # mostly done, just missing play statistics
       end
 
       def game_roster(game_id)
+        check_simulation(game_id)
         response = get request_url("games/#{ game_id }/roster")
         Sportradar::Api::Nfl::Game.new response["game"]  if response.success? && response["game"]
       end
 
       def game_statistics(game_id)
+        check_simulation(game_id)
         response = get request_url("games/#{ game_id }/statistics")
         Sportradar::Api::Nfl::Game.new response["game"]  if response.success? && response["game"]
         ## Need to properly implement statistics
@@ -89,10 +92,35 @@ module Sportradar
         Sportradar::Api::Nfl::Changelog.new response["league"]["changelog"] if response.success? && response["league"] && response["league"]["changelog"]
       end
 
+      def simulation_matches
+        [
+          "f45b4a31-b009-4039-8394-42efbc6d5532",
+          "5a7042cb-fe7a-4838-b93f-6b8c167ec384",
+          "7f761bb5-7963-43ea-a01b-baf4f5d50fe3"
+        ]
+      end
+
+      def active_simulation_match
+        game = simulation_matches.lazy.map {|game_id| game_boxscore game_id }.find{ |game| game.status == 'inprogress'}
+        if game
+          puts "Live Game: #{game.summary.home.full_name} vs #{game.summary.away.full_name}. Q#{game.quarter} #{game.clock}.  game_id='#{game.id}'"
+        else
+          "No active simulation"
+        end
+      end
+
       private
 
+      def check_simulation(game_id)
+        @simulation = true if simulation_matches.include?(game_id)
+      end
+
       def request_url(path)
-        "/nfl-#{access_level}#{version}/#{path}"
+        if simulation
+          "/nfl-sim1/#{path}"
+        else
+          "/nfl-#{access_level}#{version}/#{path}"
+        end
       end
 
       def api_key
