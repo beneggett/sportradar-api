@@ -52,6 +52,7 @@ module Sportradar
       end
 
       def play_by_play(game_id)
+        check_simulation(game_id)
         response = get request_url("games/#{ game_id }/pbp")
         Sportradar::Api::Nfl::Game.new response["game"]  if response.success? && response["game"]
         # need to get into quarters, drives, plays, stats more still
