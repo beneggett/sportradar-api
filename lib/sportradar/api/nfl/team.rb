@@ -43,8 +43,9 @@ module Sportradar
       end
 
       def record
-        return '' unless wins && losses && ties
-        "#{wins}-#{losses}" << (ties == '0' ? '' : "-#{ties}")
+        if wins && losses && ties
+          "#{wins}-#{losses}" << (ties == '0' ? '' : "-#{ties}")
+        end
       end
 
       private
