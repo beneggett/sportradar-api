@@ -92,7 +92,7 @@ module Sportradar
         Sportradar::Api::Nfl::Changelog.new response["league"]["changelog"] if response.success? && response["league"] && response["league"]["changelog"]
       end
 
-      def simulation_matches
+      def simulation_games
         [
           "f45b4a31-b009-4039-8394-42efbc6d5532",
           "5a7042cb-fe7a-4838-b93f-6b8c167ec384",
@@ -100,8 +100,8 @@ module Sportradar
         ]
       end
 
-      def active_simulation_match
-        game = simulation_matches.lazy.map {|game_id| game_boxscore game_id }.find{ |game| game.status == 'inprogress'}
+      def active_simulation
+        game = simulation_games.lazy.map {|game_id| game_boxscore game_id }.find{ |game| game.status == 'inprogress'}
         if game
           puts "Live Game: #{game.summary.home.full_name} vs #{game.summary.away.full_name}. Q#{game.quarter} #{game.clock}.  game_id='#{game.id}'"
         else
@@ -112,7 +112,7 @@ module Sportradar
       private
 
       def check_simulation(game_id)
-        @simulation = true if simulation_matches.include?(game_id)
+        @simulation = true if simulation_games.include?(game_id)
       end
 
       def request_url(path)
