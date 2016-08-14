@@ -24,7 +24,7 @@ module Sportradar
         @losses = data["losses"]
         @losses = data["losses"]
         @ties = data["ties"]
-        @win_pct = data["win_pct"].to_f
+        @win_pct = data["win_pct"].to_f if data["win_pct"]
         @rank = data["rank"]
 
         @defense = data["defense"]["position"].map {|position| Sportradar::Api::Nfl::Position.new position } if data["defense"] && data["defense"]["position"]
