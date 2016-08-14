@@ -26,9 +26,10 @@ module Sportradar
         @scoring = Sportradar::Api::Nfl::Scoring.new data["scoring"] if data["scoring"]
         set_scoring_drives
 
-        @venue = Sportradar::Api::Nfl::Venue.new data["venue"] if data["venue"]
-        @home = Sportradar::Api::Nfl::Team.new data["home"] if data["home"]
-        @away = Sportradar::Api::Nfl::Team.new data["away"] if data["away"]
+        location = data["summary"] || data
+        @venue = Sportradar::Api::Nfl::Venue.new location["venue"] if location["venue"]
+        @home = Sportradar::Api::Nfl::Team.new   location["home"]  if location["home"]
+        @away = Sportradar::Api::Nfl::Team.new   location["away"]  if location["away"]
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
       end
 

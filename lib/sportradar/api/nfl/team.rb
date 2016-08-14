@@ -1,8 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Team < Data
-      attr_accessor :response, :id, :name, :alias, :game_number, :defense, :special_teams, :offense, :players, :statistics, :team_records, :player_records, :market, :franchise, :venue, :hierarchy, :coaches, :players, :used_timeouts, :remaining_timeouts, :points
-
+      attr_accessor :response, :id, :name, :alias, :game_number, :defense, :special_teams, :offense, :players, :statistics, :team_records, :player_records, :market, :franchise, :venue, :hierarchy, :coaches, :players, :used_timeouts, :remaining_timeouts, :points, :wins, :losses, :ties, :win_pct, :rank
 
       def initialize(data)
         @response = data
@@ -21,6 +20,13 @@ module Sportradar
         @venue = Sportradar::Api::Nfl::Venue.new data["venue"] if data["venue"]
         @hierarchy = Sportradar::Api::Nfl::Hierarchy.new data["hierarchy"] if data["hierarchy"]
 
+        @wins = data["wins"]
+        @losses = data["losses"]
+        @losses = data["losses"]
+        @ties = data["ties"]
+        @win_pct = data["win_pct"].to_f if data["win_pct"]
+        @rank = data["rank"]
+
         @defense = data["defense"]["position"].map {|position| Sportradar::Api::Nfl::Position.new position } if data["defense"] && data["defense"]["position"]
         @offense = data["offense"]["position"].map {|position| Sportradar::Api::Nfl::Position.new position } if data["offense"] && data["offense"]["position"]
         @special_teams = data["special_teams"]["position"].map {|position| Sportradar::Api::Nfl::Position.new position } if data["special_teams"] && data["special_teams"]["position"]
@@ -34,6 +40,12 @@ module Sportradar
 
       def full_name
         [market, name].join(' ')
+      end
+
+      def record
+        if wins && losses && ties
+          "#{wins}-#{losses}" << (ties == '0' ? '' : "-#{ties}")
+        end
       end
 
       private
