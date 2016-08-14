@@ -9,7 +9,7 @@ module Sportradar
         @id = data["id"]
         @reference_id = data["reference_id"]
         @name = data["name"]
-        @full_name = data["full_name"]
+        @full_name = data["full_name"] || data["name"]
         @alias = data["alias"]
         @country_code = data["country_code"]
         @country = data["country"]
