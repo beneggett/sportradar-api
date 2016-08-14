@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Game < Data
-      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives
+      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters
 
       def initialize(data)
         @response = data
@@ -19,7 +19,11 @@ module Sportradar
         @utc_offset = data["utc_offset"]
         @weather = data["weather"]
         @clock = data["clock"]
-        @quarter = data["quarter"]
+        if data["quarter"]
+          @quarter = data["quarter"][0]
+          quarter_data = data["quarter"][1].is_a?(Hash) ? [ data["quarter"][1] ] : data["quarter"][1]
+          @quarters = quarter_data&.map { |hash| Sportradar::Api::Nfl::Quarter.new(hash) }
+        end
         @summary = Sportradar::Api::Nfl::Summary.new data["summary"] if data["summary"]
         @situation = Sportradar::Api::Nfl::Situation.new data["situation"] if data["situation"]
         @last_event = Sportradar::Api::Nfl::Event.new data["last_event"]["event"] if data["last_event"] && data["last_event"]["event"]
@@ -35,6 +39,12 @@ module Sportradar
 
       def current_score
         "#{summary.home.points}-#{summary.away.points}" if summary
+      end
+      def drives
+        quarters&.flat_map(&:drives)
+      end
+      def plays
+        drives&.flat_map(&:plays)
       end
 
       private
