@@ -105,8 +105,9 @@ module Sportradar
         game = simulation_games.lazy.map {|game_id| game_boxscore game_id }.find{ |game| game.status == 'inprogress'}
         if game
           puts "Live Game: #{game.summary.home.full_name} vs #{game.summary.away.full_name}. Q#{game.quarter} #{game.clock}.  game_id='#{game.id}'"
+          game
         else
-          "No active simulation"
+          puts "No active simulation"
         end
       end
 
