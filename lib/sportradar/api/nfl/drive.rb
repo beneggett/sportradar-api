@@ -30,6 +30,12 @@ module Sportradar
           elsif response["plays"]["play"].is_a?(Hash)
             @plays = [ Sportradar::Api::Nfl::Play.new(response["plays"]["play"]) ]
           end
+        elsif response["play"]
+          if response["play"].is_a?(Array)
+            @plays = response["play"].map {|play| Sportradar::Api::Nfl::Play.new play }
+          elsif response["play"].is_a?(Hash)
+            @plays = [ Sportradar::Api::Nfl::Play.new(response["play"]) ]
+          end
         end
       end
 

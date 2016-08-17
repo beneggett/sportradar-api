@@ -5,7 +5,8 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        @quarters = data['quarter'].map { |quarter| Sportradar::Api::Nfl::Quarter.new quarter} if data['quarter']
+        # @quarters = data['quarter'].map { |quarter| Sportradar::Api::Nfl::Quarter.new quarter} if data['quarter']
+        # this is causing a problem in some scenarios, receiving ['1', 'id-hash']
       end
 
       def final

@@ -76,12 +76,23 @@ Create `.env` for environment variables. Follow the `.env.sample` for guidance.
 
 http://developer.sportradar.us/page/Live_Game_Simulation
 
-Soccer
+### Soccer
 
 ```
 sim = Sportradar::Api::Soccer.new('na', 't', true)
 summary = sim.match_summary(sim.simulation_match)
 boxscore = sim.match_boxscore(sim.simulation_match)
+```
+
+### NFL
+
+It's possible to find the current simulation game:
+
+```
+Sportradar::Api::Nfl.new('o').active_simulation
+=> 
+https://api.sportradar.us/nfl-sim1/games/f45b4a31-b009-4039-8394-42efbc6d5532/boxscore.xml
+Live Game: Green Bay Packers vs Minnesota Vikings. Q2 00:08.  game_id='f45b4a31-b009-4039-8394-42efbc6d5532'
 ```
 
 ## Development
