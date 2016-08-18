@@ -13,5 +13,6 @@ module Sportradar
         @redzone_attempts  = data["redzone_attempts"]
       end
     end
+    
   end
 end

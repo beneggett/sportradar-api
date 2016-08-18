@@ -2,9 +2,9 @@ module Sportradar
   module Api
     class Nfl::Stat::Penalties < Nfl::StatPack
       def set_stats(data)
-        data = data[1] if data.is_a? Array
-        @penalties = data['penalties']
-        @yard      = data['yards']    
+        @response  = data[1] if data.is_a? Array
+        @penalties = response['penalties']
+        @yards     = response['yards']    
       end
     end
 

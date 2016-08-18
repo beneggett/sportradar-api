@@ -11,5 +11,6 @@ module Sportradar
         @longest_touchdown = data["longest_touchdown"]
       end
     end
+
   end
 end

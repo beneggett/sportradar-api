@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Game < Data
-      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters
+      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters, :stats
 
       def initialize(data)
         @response = data
@@ -35,6 +35,11 @@ module Sportradar
         @home = Sportradar::Api::Nfl::Team.new   location["home"]  if location["home"]
         @away = Sportradar::Api::Nfl::Team.new   location["away"]  if location["away"]
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
+        if data["team"]
+          both_stats = data["team"].map { |hash| [hash["id"], Sportradar::Api::Nfl::GameStatistic.new(hash)] }.to_h
+          @home.stats = both_stats[@home.id]
+          @away.stats = both_stats[@away.id]
+        end
       end
 
       def current_score

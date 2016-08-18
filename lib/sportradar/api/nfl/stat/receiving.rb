@@ -13,7 +13,7 @@ module Sportradar
         @redzone_targets   = data["redzone_targets"]
         @air_yards         = data["air_yards"]
       end
-
     end
+
   end
 end
