@@ -1,14 +1,16 @@
 module Sportradar
   module Api
     class Nfl::Stat::Kickoffs < Nfl::StatPack
-      def set_stats(data)
-        @kickoffs      = data["kickoffs"]
-        @endzone       = data["endzone"]
-        @inside_20     = data["inside_20"]
-        @return_yards  = data["return_yards"]
-        @touchbacks    = data["touchbacks"]
-        @yards         = data["yards"]
-        @out_of_bounds = data["out_of_bounds"]
+      attr_accessor :kickoffs, :endzone, :inside_20, :return_yards, :touchbacks, :yards, :out_of_bounds
+
+      def set_stats
+        @kickoffs      = response["kickoffs"]
+        @endzone       = response["endzone"]
+        @inside_20     = response["inside_20"]
+        @return_yards  = response["return_yards"]
+        @touchbacks    = response["touchbacks"]
+        @yards         = response["yards"]
+        @out_of_bounds = response["out_of_bounds"]
       end
     end
 

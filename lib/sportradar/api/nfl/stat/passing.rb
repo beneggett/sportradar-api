@@ -1,22 +1,24 @@
 module Sportradar
   module Api
     class Nfl::Stat::Passing < Nfl::StatPack
+      attr_accessor :attempts, :completions, :cmp_pct, :yards, :avg_yards, :sacks, :sack_yards, :touchdowns, :longest, :interceptions, :rating, :longest_touchdown, :air_yards, :net_yards, :redzone_attempts
 
-      def set_stats(data)
-        @attempts          = data["attempts"]
-        @completions       = data["completions"]
-        @cmp_pct           = data["cmp_pct"]
-        @yards             = data["yards"]
-        @avg_yards         = data["avg_yards"]
-        @sacks             = data["sacks"]
-        @sack_yards        = data["sack_yards"]
-        @touchdowns        = data["touchdowns"]
-        @longest           = data["longest"]
-        @interceptions     = data["interceptions"]
-        @rating            = data["rating"]
-        @longest_touchdown = data["longest_touchdown"]
-        @air_yards         = data["air_yards"]
-        @redzone_attempts  = data["redzone_attempts"]
+      def set_stats
+        @attempts          = response["attempts"]
+        @completions       = response["completions"]
+        @cmp_pct           = response["cmp_pct"]
+        @yards             = response["yards"]
+        @avg_yards         = response["avg_yards"]
+        @sacks             = response["sacks"]
+        @sack_yards        = response["sack_yards"]
+        @touchdowns        = response["touchdowns"]
+        @longest           = response["longest"]
+        @interceptions     = response["interceptions"]
+        @rating            = response["rating"]
+        @longest_touchdown = response["longest_touchdown"]
+        @air_yards         = response["air_yards"]
+        @net_yards         = response["net_yards"]
+        @redzone_attempts  = response["redzone_attempts"]
       end
     end
 

@@ -1,17 +1,19 @@
 module Sportradar
   module Api
     class Nfl::Stat::Punts < Nfl::StatPack
-      def set_stats(data)
-        @avg_yards     = data["avg_yards"]
-        @yards         = data["yards"]
-        @attempts      = data["attempts"]
-        @blocked       = data["blocked"]
-        @longest       = data["longest"]
-        @touchbacks    = data["touchbacks"]
-        @inside_20     = data["inside_20"]
-        @avg_net_yards = data["avg_net_yards"]
-        @return_yards  = data["return_yards"]
-        @net_yards     = data["net_yards"]
+      attr_accessor :avg_yards, :yards, :attempts, :blocked, :longest, :touchbacks, :inside_20, :avg_net_yards, :return_yards, :net_yards
+
+      def set_stats
+        @avg_yards     = response["avg_yards"]
+        @yards         = response["yards"]
+        @attempts      = response["attempts"]
+        @blocked       = response["blocked"]
+        @longest       = response["longest"]
+        @touchbacks    = response["touchbacks"]
+        @inside_20     = response["inside_20"]
+        @avg_net_yards = response["avg_net_yards"]
+        @return_yards  = response["return_yards"]
+        @net_yards     = response["net_yards"]
       end
     end
 

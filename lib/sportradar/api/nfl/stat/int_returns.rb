@@ -1,13 +1,15 @@
 module Sportradar
   module Api
     class Nfl::Stat::IntReturns < Nfl::StatPack
-      def set_stats(data)
-        @returns           = data["returns"]
-        @yards             = data["yards"]
-        @avg_yards         = data["avg_yards"]
-        @touchdowns        = data["touchdowns"]
-        @longest           = data["longest"]
-        @longest_touchdown = data["longest_touchdown"]
+      attr_accessor :returns, :yards, :avg_yards, :touchdowns, :longest, :longest_touchdown
+
+      def set_stats
+        @returns           = response["returns"]
+        @yards             = response["yards"]
+        @avg_yards         = response["avg_yards"]
+        @touchdowns        = response["touchdowns"]
+        @longest           = response["longest"]
+        @longest_touchdown = response["longest_touchdown"]
       end
     end
 

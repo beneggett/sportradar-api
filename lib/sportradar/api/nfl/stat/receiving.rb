@@ -1,17 +1,19 @@
 module Sportradar
   module Api
     class Nfl::Stat::Receiving < Nfl::StatPack
-      def set_stats(data)
-        @avg_yards         = data["avg_yards"]
-        @yards             = data["yards"]
-        @touchdowns        = data["touchdowns"]
-        @longest           = data["longest"]
-        @longest_touchdown = data["longest_touchdown"]
-        @targets           = data["targets"]
-        @receptions        = data["receptions"]
-        @yards_after_catch = data["yards_after_catch"]
-        @redzone_targets   = data["redzone_targets"]
-        @air_yards         = data["air_yards"]
+      attr_accessor :avg_yards, :yards, :touchdowns, :longest, :longest_touchdown, :targets, :receptions, :yards_after_catch, :redzone_targets, :air_yards
+
+      def set_stats
+        @avg_yards         = response["avg_yards"]
+        @yards             = response["yards"]
+        @touchdowns        = response["touchdowns"]
+        @longest           = response["longest"]
+        @longest_touchdown = response["longest_touchdown"]
+        @targets           = response["targets"]
+        @receptions        = response["receptions"]
+        @yards_after_catch = response["yards_after_catch"]
+        @redzone_targets   = response["redzone_targets"]
+        @air_yards         = response["air_yards"]
       end
     end
 

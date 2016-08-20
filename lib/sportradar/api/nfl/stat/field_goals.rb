@@ -1,13 +1,15 @@
 module Sportradar
   module Api
     class Nfl::Stat::FieldGoals < Nfl::StatPack
-      def set_stats(data)
-          @attempts  = data["attempts"]
-          @made      = data["made"]
-          @blocked   = data["blocked"]
-          @yards     = data["yards"]
-          @avg_yards = data["avg_yards"]
-          @longest   = data["longest"]
+      attr_accessor :attempts, :made, :blocked, :yards, :avg_yards, :longest
+
+      def set_stats
+        @attempts  = response["attempts"]
+        @made      = response["made"]
+        @blocked   = response["blocked"]
+        @yards     = response["yards"]
+        @avg_yards = response["avg_yards"]
+        @longest   = response["longest"]
       end
     end
 

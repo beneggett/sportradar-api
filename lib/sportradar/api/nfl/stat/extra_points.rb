@@ -1,19 +1,21 @@
 module Sportradar
   module Api
     class Nfl::Stat::ExtraPoints < Nfl::StatPack
-      def set_stats(data)
-        kick_data = data['kicks'] || data
-        @attempts = kick_data["attempts"]
-        @made     = kick_data["made"]
-        @blocked  = kick_data["blocked"]
-        if data['conversions']
-          @pass_attempts      = data["pass_attempts"]
-          @pass_successes     = data["pass_successes"]
-          @rush_attempts      = data["rush_attempts"]
-          @rush_successes     = data["rush_successes"]
-          @defense_attempts   = data["defense_attempts"]
-          @defense_successes  = data["defense_successes"]
-          @turnover_successes = data["turnover_successes"]
+      attr_accessor :attempts, :made, :blocked, :pass_attempts, :pass_successes, :rush_attempts, :rush_successes, :defense_attempts, :defense_successes, :turnover_successes
+
+      def set_stats
+        kick_data = response['kicks'] || response
+        @attempts = kick_response["attempts"]
+        @made     = kick_response["made"]
+        @blocked  = kick_response["blocked"]
+        if response['conversions']
+          @pass_attempts      = response["pass_attempts"]
+          @pass_successes     = response["pass_successes"]
+          @rush_attempts      = response["rush_attempts"]
+          @rush_successes     = response["rush_successes"]
+          @defense_attempts   = response["defense_attempts"]
+          @defense_successes  = response["defense_successes"]
+          @turnover_successes = response["turnover_successes"]
         end
       end
 

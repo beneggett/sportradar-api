@@ -1,30 +1,32 @@
 module Sportradar
   module Api
     class Nfl::Stat::Defense < Nfl::StatPack
-      def set_stats(data)
-        @tackles                = data["tackles"]
-        @assists                = data["assists"]
-        @combined               = data["combined"]
-        @sacks                  = data["sacks"]
-        @sack_yards             = data["sack_yards"]
-        @interceptions          = data["interceptions"]
-        @passes_defended        = data["passes_defended"]
-        @forced_fumbles         = data["forced_fumbles"]
-        @fumble_recoveries      = data["fumble_recoveries"]
-        @qb_hits                = data["qb_hits"]
-        @tloss                  = data["tloss"]
-        @tloss_yards            = data["tloss_yards"]
-        @safeties               = data["safeties"]
-        @sp_tackles             = data["sp_tackles"]
-        @sp_assists             = data["sp_assists"]
-        @sp_forced_fumbles      = data["sp_forced_fumbles"]
-        @sp_fumble_recoveries   = data["sp_fumble_recoveries"]
-        @sp_blocks              = data["sp_blocks"]
-        @misc_tackles           = data["misc_tackles"]
-        @misc_assists           = data["misc_assists"]
-        @misc_forced_fumbles    = data["misc_forced_fumbles"]
-        @misc_fumble_recoveries = data["misc_fumble_recoveries"]
-        @missed_tackles         = data["missed_tackles"]
+      attr_accessor :tackles, :assists, :combined, :sacks, :sack_yards, :interceptions, :passes_defended, :forced_fumbles, :fumble_recoveries, :qb_hits, :tloss, :tloss_yards, :safeties, :sp_tackles, :sp_assists, :sp_forced_fumbles, :sp_fumble_recoveries, :sp_blocks, :misc_tackles, :misc_assists, :misc_forced_fumbles, :misc_fumble_recoveries, :missed_tackles
+      
+      def set_stats
+        @tackles                = response["tackles"]
+        @assists                = response["assists"]
+        @combined               = response["combined"]
+        @sacks                  = response["sacks"]
+        @sack_yards             = response["sack_yards"]
+        @interceptions          = response["interceptions"]
+        @passes_defended        = response["passes_defended"]
+        @forced_fumbles         = response["forced_fumbles"]
+        @fumble_recoveries      = response["fumble_recoveries"]
+        @qb_hits                = response["qb_hits"]
+        @tloss                  = response["tloss"]
+        @tloss_yards            = response["tloss_yards"]
+        @safeties               = response["safeties"]
+        @sp_tackles             = response["sp_tackles"]
+        @sp_assists             = response["sp_assists"]
+        @sp_forced_fumbles      = response["sp_forced_fumbles"]
+        @sp_fumble_recoveries   = response["sp_fumble_recoveries"]
+        @sp_blocks              = response["sp_blocks"]
+        @misc_tackles           = response["misc_tackles"]
+        @misc_assists           = response["misc_assists"]
+        @misc_forced_fumbles    = response["misc_forced_fumbles"]
+        @misc_fumble_recoveries = response["misc_fumble_recoveries"]
+        @missed_tackles         = response["missed_tackles"]
       end
     end
 

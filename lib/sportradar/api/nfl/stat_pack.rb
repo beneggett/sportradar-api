@@ -1,14 +1,19 @@
 module Sportradar
   module Api
     class Nfl::StatPack < Data
-      attr_accessor :response, :player, :players, :name, :id, :position
+      attr_accessor :response, :player, :name, :id, :position, :yards
 
       def initialize(data)
-        @response          = data
-        set_stats(response)
-        set_players
+        @response = data
+        set_stats
         @player = Sportradar::Api::Nfl::Player.new(response) if response['name']
       end
+
+      def players
+        @players ||= set_players
+      end
+
+      private
 
       def set_players
         if response["player"]
