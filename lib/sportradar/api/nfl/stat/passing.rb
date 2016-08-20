@@ -17,7 +17,7 @@ module Sportradar
         @rating            = response["rating"]
         @longest_touchdown = response["longest_touchdown"]
         @air_yards         = response["air_yards"]
-        @net_yards         = response["net_yards"]
+        @net_yards         = response["net_yards"] # passing net_yards is the correct measure for team stats, as it includes sack yardage. that is how NFL counts team yardage
         @redzone_attempts  = response["redzone_attempts"]
       end
     end

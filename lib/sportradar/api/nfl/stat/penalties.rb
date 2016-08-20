@@ -10,7 +10,7 @@ module Sportradar
         @penalties = response['penalties']
         @yards     = response['yards']    
       end
-      def formatted # do we care about using `#display` as the name? it's semantically accurate
+      def formatted
         "#{count}-#{yards}"
       end
     end
