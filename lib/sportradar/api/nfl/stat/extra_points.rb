@@ -23,28 +23,29 @@ module Sportradar
   end
 end
 
-extra_points = 
-  {"kicks"=>
-    {"player"=>
-      [
-       {"name"=>"Aldrick Rosas",
-        "jersey"=>"03",
-        "reference"=>"00-0032870",
-        "id"=>"8fb2ca06-3d13-4552-98e0-7b913b4ab5b9",
-        "position"=>"K",
-        "attempts"=>"1",
-        "made"=>"1",
-        "blocked"=>"0"}],
-     "attempts"=>"3",
-     "blocked"=>"0",
-     "made"=>"3"},
-  "conversions"=> {
-    "pass_attempts"=>"0",
-    "pass_successes"=>"0",
-    "rush_attempts"=>"0",
-    "rush_successes"=>"0",
-    "defense_attempts"=>"0",
-    "defense_successes"=>"0",
-    "turnover_successes"=>"0"
-    }
-  }
+# # sample response
+# extra_points = 
+#   {"kicks"=>
+#     {"player"=>
+#       [
+#        {"name"=>"Aldrick Rosas",
+#         "jersey"=>"03",
+#         "reference"=>"00-0032870",
+#         "id"=>"8fb2ca06-3d13-4552-98e0-7b913b4ab5b9",
+#         "position"=>"K",
+#         "attempts"=>"1",
+#         "made"=>"1",
+#         "blocked"=>"0"}],
+#      "attempts"=>"3",
+#      "blocked"=>"0",
+#      "made"=>"3"},
+#   "conversions"=> {
+#     "pass_attempts"=>"0",
+#     "pass_successes"=>"0",
+#     "rush_attempts"=>"0",
+#     "rush_successes"=>"0",
+#     "defense_attempts"=>"0",
+#     "defense_successes"=>"0",
+#     "turnover_successes"=>"0"
+#     }
+#   }

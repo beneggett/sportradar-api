@@ -15,6 +15,10 @@ module Sportradar
 
       private
 
+      def set_stats
+        raise NotImplementedError, "Please implement `#{self.class}#set_stats`"
+      end
+
       def set_players
         if response["player"]
           if response["player"].is_a? Hash
