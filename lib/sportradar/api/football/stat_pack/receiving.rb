@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::Receiving < Nfl::StatPack
+    class Football::StatPack::Receiving < Football::StatPack
       attr_accessor :avg_yards, :yards, :touchdowns, :longest, :longest_touchdown, :targets, :receptions, :yards_after_catch, :redzone_targets, :air_yards
 
       def set_stats

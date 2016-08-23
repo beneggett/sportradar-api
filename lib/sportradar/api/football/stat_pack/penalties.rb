@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::Penalties < Nfl::StatPack
+    class Football::StatPack::Penalties < Football::StatPack
       attr_accessor :penalties, :yards
 
       alias :count :penalties

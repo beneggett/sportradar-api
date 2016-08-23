@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::PuntReturns < Nfl::StatPack
+    class Football::StatPack::KickReturns < Football::StatPack
       attr_accessor :returns, :yards, :avg_yards, :touchdowns, :longest, :faircatches, :longest_touchdown
 
       def set_stats

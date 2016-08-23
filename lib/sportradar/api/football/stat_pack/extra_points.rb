@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::ExtraPoints < Nfl::StatPack
+    class Football::StatPack::ExtraPoints < Football::StatPack
       attr_accessor :attempts, :made, :blocked, :pass_attempts, :pass_successes, :rush_attempts, :rush_successes, :defense_attempts, :defense_successes, :turnover_successes
 
       def set_stats

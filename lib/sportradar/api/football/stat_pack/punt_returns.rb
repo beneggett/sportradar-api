@@ -1,7 +1,7 @@
 module Sportradar
   module Api
-    class Nfl::Stat::IntReturns < Nfl::StatPack
-      attr_accessor :returns, :yards, :avg_yards, :touchdowns, :longest, :longest_touchdown
+    class Football::StatPack::PuntReturns < Football::StatPack
+      attr_accessor :returns, :yards, :avg_yards, :touchdowns, :longest, :faircatches, :longest_touchdown
 
       def set_stats
         @returns           = response["returns"]
@@ -9,6 +9,7 @@ module Sportradar
         @avg_yards         = response["avg_yards"]
         @touchdowns        = response["touchdowns"]
         @longest           = response["longest"]
+        @faircatches       = response["faircatches"]
         @longest_touchdown = response["longest_touchdown"]
       end
     end

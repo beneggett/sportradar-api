@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::Fumbles < Nfl::StatPack
+    class Football::StatPack::Fumbles < Football::StatPack
       attr_accessor :response, :fumbles, :lost_fumbles, :own_rec, :own_rec_yards, :opp_rec, :opp_rec_yards, :out_of_bounds, :forced_fumbles, :own_rec_tds, :opp_rec_tds, :ez_rec_tds
 
       def set_stats

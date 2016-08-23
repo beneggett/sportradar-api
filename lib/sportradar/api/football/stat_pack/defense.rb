@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::Defense < Nfl::StatPack
+    class Football::StatPack::Defense < Football::StatPack
       attr_accessor :tackles, :assists, :combined, :sacks, :sack_yards, :interceptions, :passes_defended, :forced_fumbles, :fumble_recoveries, :qb_hits, :tloss, :tloss_yards, :safeties, :sp_tackles, :sp_assists, :sp_forced_fumbles, :sp_fumble_recoveries, :sp_blocks, :misc_tackles, :misc_assists, :misc_forced_fumbles, :misc_fumble_recoveries, :missed_tackles
       
       def set_stats

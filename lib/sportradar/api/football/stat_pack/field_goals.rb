@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::FieldGoals < Nfl::StatPack
+    class Football::StatPack::FieldGoals < Football::StatPack
       attr_accessor :attempts, :made, :blocked, :yards, :avg_yards, :longest
 
       def set_stats

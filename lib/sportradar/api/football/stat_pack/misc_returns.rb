@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::MiscReturns < Nfl::StatPack
+    class Football::StatPack::MiscReturns < Football::StatPack
       attr_accessor :returns, :yards, :touchdowns, :blk_fg_touchdowns, :blk_punt_touchdowns, :fg_return_touchdowns, :ez_rec_touchdowns
 
       def set_stats

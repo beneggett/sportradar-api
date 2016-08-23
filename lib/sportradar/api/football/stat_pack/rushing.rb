@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::Rushing < Nfl::StatPack
+    class Football::StatPack::Rushing < Football::StatPack
       attr_accessor :avg_yards, :yards, :touchdowns, :longest, :longest_touchdown, :attempts, :tlost, :tlost_yards, :redzone_attempts
 
       def set_stats

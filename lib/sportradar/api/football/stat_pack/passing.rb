@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::Passing < Nfl::StatPack
+    class Football::StatPack::Passing < Football::StatPack
       attr_accessor :attempts, :completions, :cmp_pct, :yards, :avg_yards, :sacks, :sack_yards, :touchdowns, :longest, :interceptions, :rating, :longest_touchdown, :air_yards, :net_yards, :redzone_attempts
 
       def set_stats

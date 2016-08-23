@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Nfl::Stat::Kickoffs < Nfl::StatPack
+    class Football::StatPack::Kickoffs < Football::StatPack
       attr_accessor :kickoffs, :endzone, :inside_20, :return_yards, :touchbacks, :yards, :out_of_bounds
 
       def set_stats
