@@ -22,7 +22,7 @@ module Sportradar
 
       def weekly_depth_charts(week = 1, year = Date.today.year, season = "reg" )
         response = get request_url("seasontd/#{ week_path(year, season, week) }/depth_charts")
-        Sportradar::Api::Nfl::DepthChart.new response
+        Sportradar::Api::Nfl::LeagueDepthChart.new response
       end
 
       def weekly_injuries(week = 1, year = Date.today.year, season = "reg")
