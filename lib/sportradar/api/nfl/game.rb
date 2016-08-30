@@ -31,9 +31,9 @@ module Sportradar
         set_scoring_drives
 
         location = data["summary"] || data
-        @venue = Sportradar::Api::Nfl::Venue.new location["venue"] if location["venue"]
-        @home = Sportradar::Api::Nfl::Team.new   location["home"]  if location["home"]
-        @away = Sportradar::Api::Nfl::Team.new   location["away"]  if location["away"]
+        @venue = Sportradar::Api::Nfl::Venue.new data["venue"] || location["venue"] if data["venue"] || location["venue"]
+        @home = Sportradar::Api::Nfl::Team.new   data["home"]  || location["home"]  if data["home"]  || location["home"]
+        @away = Sportradar::Api::Nfl::Team.new   data["away"]  || location["away"]  if data["away"]  || location["away"]
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
         if data["team"]
           both_stats = data["team"].map { |hash| [hash["id"], Sportradar::Api::Nfl::GameStatistic.new(hash)] }.to_h
