@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Game < Data
-      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters, :stats
+      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters, :stats, :week, :season
 
       def initialize(data)
         @response = data
@@ -11,6 +11,8 @@ module Sportradar
         @reference = data["reference"]
         @number = data["number"]
         @scheduled = Time.parse(data["scheduled"]) if data["scheduled"]
+        @week = Sportradar::Api::Nfl::Week.new data.dig("summary", "week") if data.dig("summary", "week")
+        @season = Sportradar::Api::Nfl::Season.new data.dig("summary", "season") if data.dig("summary", "season")
         @entry_mode = data["entry_mode"]
 
         # game boxscore
