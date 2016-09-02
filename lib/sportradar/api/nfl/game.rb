@@ -32,8 +32,8 @@ module Sportradar
 
         location = data["summary"] || data
         @venue = Sportradar::Api::Nfl::Venue.new location["venue"] if location["venue"]
-        @home = Sportradar::Api::Nfl::Team.new   location["home"]  if location["home"]
-        @away = Sportradar::Api::Nfl::Team.new   location["away"]  if location["away"]
+        @home = Sportradar::Api::Nfl::Team.new(location["home"], data["home"]) if location["home"]
+        @away = Sportradar::Api::Nfl::Team.new(location["away"], data["away"]) if location["away"]
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
         if data["team"]
           both_stats = data["team"].map { |hash| [hash["id"], Sportradar::Api::Nfl::GameStatistic.new(hash)] }.to_h
@@ -45,11 +45,13 @@ module Sportradar
       def current_score
         "#{summary.home.points}-#{summary.away.points}" if summary
       end
+
       def drives
-        quarters&.flat_map(&:drives)
+        quarters&.flat_map(&:drives) if quarters.present?
       end
+
       def plays
-        drives&.flat_map(&:plays)
+        drives&.flat_map{|x| x&.plays} if drives.present?
       end
 
       private
