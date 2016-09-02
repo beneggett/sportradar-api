@@ -1,12 +1,13 @@
 module Sportradar
   module Api
     class Nfl::Team < Data
-      attr_accessor :response, :id, :name, :alias, :game_number, :defense, :special_teams, :offense, :players, :statistics, :team_records, :player_records, :market, :franchise, :venue, :hierarchy, :coaches, :players, :used_timeouts, :remaining_timeouts, :points, :wins, :losses, :ties, :win_pct, :rank, :stats
+      attr_accessor :response, :roster_data, :id, :name, :alias, :game_number, :defense, :special_teams, :offense, :statistics, :team_records, :player_records, :market, :franchise, :venue, :hierarchy, :coaches, :used_timeouts, :remaining_timeouts, :points, :wins, :losses, :ties, :win_pct, :rank, :stats
 
       alias :score :points
 
-      def initialize(data)
+      def initialize(data, roster_data = nil)
         @response = data
+        @roster_data = roster_data
         @id = data["id"]
         @name = data["name"]
         @alias = data["alias"]
@@ -36,7 +37,6 @@ module Sportradar
         @team_records = OpenStruct.new data["team_records"] if data["team_records"] # TODO Implement better?
         @player_records = OpenStruct.new data["player_records"] if data["player_records"] # TODO Implement better?
 
-        set_players
         set_coaches
       end
 
@@ -50,23 +50,17 @@ module Sportradar
         end
       end
 
-      private
-
-      def set_players
-        if response["player"]
-          if response["player"].is_a?(Array)
-            @players = response["player"].map {|player| Sportradar::Api::Nfl::Player.new player }
-          elsif response["player"].is_a?(Hash)
-            @players = [ Sportradar::Api::Nfl::Player.new(response["player"]) ]
-          end
-        elsif response["players"] && response["players"]["player"]
-          if response["players"]["player"].is_a?(Array)
-            @players = response["players"]["player"].map {|player| Sportradar::Api::Nfl::Player.new player }
-          elsif response["players"]["player"].is_a?(Hash)
-            @players = [ Sportradar::Api::Nfl::Player.new(response["players"]["player"]) ]
-          end
-        end
+      def players
+        @players ||= if roster_data['player']
+                       [roster_data['player']].flatten.map {|player| Sportradar::Api::Nfl::Player.new player }
+                      elsif roster_data.dig('players', 'player')
+                        [roster_data.dig('players', 'player')].flatten.map {|player| Sportradar::Api::Nfl::Player.new player }
+                      else
+                        []
+                      end
       end
+
+      private
 
       def set_coaches
         if response["coaches"] && response["coaches"]["coach"]
