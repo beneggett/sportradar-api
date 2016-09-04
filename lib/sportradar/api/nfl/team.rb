@@ -3,7 +3,7 @@ module Sportradar
     class Nfl::Team < Data
       attr_accessor :response, :id, :name, :alias, :game_number, :defense, :special_teams, :offense, :players, :statistics, :team_records, :player_records, :market, :franchise, :venue, :hierarchy, :coaches, :players, :used_timeouts, :remaining_timeouts, :points, :wins, :losses, :ties, :win_pct, :rank, :stats
 
-      alias :score :points
+      alias_method :score, :points
 
       def initialize(data)
         @response = data
