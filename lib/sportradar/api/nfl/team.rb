@@ -65,6 +65,8 @@ module Sportradar
           elsif response["players"]["player"].is_a?(Hash)
             @players = [ Sportradar::Api::Nfl::Player.new(response["players"]["player"]) ]
           end
+        else
+          @players = []
         end
       end
 
