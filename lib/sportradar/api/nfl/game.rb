@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Game < Data
-      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters, :stats
+      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters, :stats, :week, :season
 
       def initialize(data)
         @response = data
@@ -11,6 +11,8 @@ module Sportradar
         @reference = data["reference"]
         @number = data["number"]
         @scheduled = Time.parse(data["scheduled"]) if data["scheduled"]
+        @week = Sportradar::Api::Nfl::Week.new data.dig("summary", "week") if data.dig("summary", "week")
+        @season = Sportradar::Api::Nfl::Season.new data.dig("summary", "season") if data.dig("summary", "season")
         @entry_mode = data["entry_mode"]
 
         # game boxscore
@@ -31,9 +33,9 @@ module Sportradar
         set_scoring_drives
 
         location = data["summary"] || data
-        @venue = Sportradar::Api::Nfl::Venue.new location["venue"] if location["venue"]
-        @home = Sportradar::Api::Nfl::Team.new   location["home"]  if location["home"]
-        @away = Sportradar::Api::Nfl::Team.new   location["away"]  if location["away"]
+        @venue = Sportradar::Api::Nfl::Venue.new data["venue"] || location["venue"] if data["venue"] || location["venue"]
+        @home = Sportradar::Api::Nfl::Team.new   data["home"]  || location["home"]  if data["home"]  || location["home"]
+        @away = Sportradar::Api::Nfl::Team.new   data["away"]  || location["away"]  if data["away"]  || location["away"]
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
         if data["team"]
           both_stats = data["team"].map { |hash| [hash["id"], Sportradar::Api::Nfl::GameStatistic.new(hash)] }.to_h
