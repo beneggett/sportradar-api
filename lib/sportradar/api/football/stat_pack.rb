@@ -7,7 +7,7 @@ module Sportradar
         def initialize(data)
           @response = data
           set_stats
-          # @player = Sportradar::Api::Nfl::Player.new(response) if response['name'] # this isn't used yet, and we need to determine a better solution
+          @player = Sportradar::Api::Nfl::Player.new(response) if response['name'] # this isn't used yet, and we need to determine a better solution
         end
 
         def players

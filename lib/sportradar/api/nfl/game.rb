@@ -38,9 +38,9 @@ module Sportradar
         @away = Sportradar::Api::Nfl::Team.new   data["away"]  || location["away"]  if data["away"]  || location["away"]
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
         if data["team"]
-          both_stats = data["team"].map { |hash| [hash["id"], Sportradar::Api::Nfl::GameStatistic.new(hash)] }.to_h
-          @home.stats = both_stats[@home.id]
-          @away.stats = both_stats[@away.id]
+          @stats = data["team"].map { |hash| [hash["id"], Sportradar::Api::Nfl::GameStatistic.new(hash)] }.to_h
+          @home.stats = @stats[@home.id]
+          @away.stats = @stats[@away.id]
         end
       end
 
