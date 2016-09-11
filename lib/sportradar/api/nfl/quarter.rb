@@ -12,9 +12,11 @@ module Sportradar
         # @home_points = response['scoring']['home']['points'] # from play_by_play
         @away_points = data["away_points"]
         # @away_points = response['scoring']['away']['points'] # from play_by_play
-        if (raw_drives = data.dig("play_by_play", 'drive'))
+        @drives = if (raw_drives = data.dig("play_by_play", 'drive'))
           raw_drives = raw_drives.is_a?(Hash) ? [ raw_drives ] : raw_drives
-          @drives = raw_drives.map{ |drive| Sportradar::Api::Nfl::Drive.new drive }
+          raw_drives.map{ |drive| Sportradar::Api::Nfl::Drive.new drive }
+        else
+          []
         end
       end
 
