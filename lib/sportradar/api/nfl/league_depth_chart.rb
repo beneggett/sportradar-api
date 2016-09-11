@@ -1,6 +1,7 @@
 module Sportradar
   module Api
     class Nfl::LeagueDepthChart < Data
+      include Enumerable
       attr_accessor :response, :season, :charts
 
       def initialize(data)
@@ -17,6 +18,10 @@ module Sportradar
       # id is preferred search, but we allow for team abbreviation too
       def team(id = nil, abbrev: nil)
         @charts.detect { |chart| chart.team_id == id || chart.abbrev == abbrev }
+      end
+
+      def each
+        self.charts.each { |chart| yield chart }
       end
 
     end

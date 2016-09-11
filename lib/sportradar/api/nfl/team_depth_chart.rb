@@ -1,6 +1,7 @@
 module Sportradar
   module Api
     class Nfl::TeamDepthChart < Data
+      include Enumerable
       attr_accessor :response, :season, :team_id, :abbrev
 
       # data.keys => ["offense", "defense", "special_teams", "name", "market", "alias", "id"]
@@ -25,6 +26,10 @@ module Sportradar
 
       def team
         @team ||= Sportradar::Api::Nfl::Team.new(response).tap { |team| team.depth_chart = self }
+      end
+
+      def each
+        [:offense, :defense, :special_teams].each { |type| yield type, send(type) }
       end
 
       private
