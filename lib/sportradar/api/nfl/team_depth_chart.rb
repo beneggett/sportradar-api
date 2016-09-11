@@ -1,12 +1,14 @@
 module Sportradar
   module Api
     class Nfl::TeamDepthChart < Data
-      attr_accessor :response, :season
+      attr_accessor :response, :season, :team_id, :abbrev
 
       # data.keys => ["offense", "defense", "special_teams", "name", "market", "alias", "id"]
       def initialize(data, season)
         @response = data
         @season = season
+        @team_id = response['id']
+        @abbrev = response['alias']
       end
 
       def offense

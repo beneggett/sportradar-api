@@ -4,6 +4,7 @@ module Sportradar
       attr_accessor :response, :id, :sequence, :title, :game, :name, :jersey, :reference, :position, :depth, :injury, :age, :birth_date, :birth_place, :college, :college_conf, :draft, :first_name, :height, :high_school, :last_name, :preferred_name, :references, :rookie_year, :status, :weight, :abbr_name, :seasons, :team
 
       def initialize(data)
+        data = [data].to_h if data.is_a? Array # for kickers in depth charts
         @response = data
         @depth = data["depth"]
         @game = data["game"] # Games

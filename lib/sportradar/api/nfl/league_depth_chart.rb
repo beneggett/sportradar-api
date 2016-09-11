@@ -10,7 +10,13 @@ module Sportradar
         # @teams = depth_chart_data["team"].map {|team| Sportradar::Api::Nfl::Team.new team } if depth_chart_data["team"]
         @charts = depth_chart_data["team"].map {|team| Sportradar::Api::Nfl::TeamDepthChart.new(team, season) } if depth_chart_data["team"]
       rescue => e
-        binding.pry
+        puts e.message
+        # binding.pry
+      end
+
+      # id is preferred search, but we allow for team abbreviation too
+      def team(id = nil, abbrev: nil)
+        @charts.detect { |chart| chart.team_id == id || chart.abbrev == abbrev }
       end
 
     end
