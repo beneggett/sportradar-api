@@ -22,7 +22,7 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 
 | API | Version | Docs | Implemented? | Priority |
 | --- | --- | --- | --- | --- |
-| NFL | 1 | [📚](http://developer.sportradar.us/page/NFL_Official) | 🙋 | 👍 |
+| NFL | 1 | [📚](http://developer.sportradar.us/page/NFL_Official) | ✅ | 👍 |
 | MLB | 5 | [📚](http://developer.sportradar.us/docs/MLB_API) | - | - |
 | NHL | 3 | [📚](http://developer.sportradar.us/docs/NHL_API) | - | - |
 | NBA | 3 | [📚](http://developer.sportradar.us/docs/NBA_API) | - | - |
@@ -45,7 +45,7 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 | Rugby | 1 | [📚](http://developer.sportradar.us/docs/Rugby_API) | - | - |
 | Tennis  | 1 | [📚](http://developer.sportradar.us/docs/Tennis_API) | - | - |
 | ESPORTS | 1 | [📚](http://developer.sportradar.us/docs/ESPORTS_API) | - | - |
-| Simulation APIs | 1 | [📚](http://developer.sportradar.us/page/Live_Game_Simulation) | 🙋 | 👍|
+| Simulation APIs | 1 | [📚](http://developer.sportradar.us/page/Live_Game_Simulation) | ✅ | 👍|
 
 ## Installation
 
@@ -90,7 +90,7 @@ It's possible to find the current simulation game:
 
 ```
 Sportradar::Api::Nfl.new('o').active_simulation
-=> 
+=>
 https://api.sportradar.us/nfl-sim1/games/f45b4a31-b009-4039-8394-42efbc6d5532/boxscore.xml
 Live Game: Green Bay Packers vs Minnesota Vikings. Q2 00:08.  game_id='f45b4a31-b009-4039-8394-42efbc6d5532'
 ```

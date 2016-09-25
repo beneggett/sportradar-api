@@ -69,7 +69,11 @@ require "sportradar/api/images/tag"
 
 
 
+
 require "sportradar/api/content"
+require "sportradar/api/content/article_list"
+require "sportradar/api/content/article"
+require "sportradar/api/content/reference"
 require "sportradar/api/odds"
 
 module Sportradar

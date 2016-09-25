@@ -12,12 +12,14 @@ module Sportradar
 
       def news( date = Date.today, content_type = 'all' )
         raise Sportradar::Api::Error::InvalidType unless allowed_news_types.include? content_type
-        get request_url("#{provider }/news/#{date_path(date)}/#{content_type}")
+        response = get request_url("#{provider }/news/#{date_path(date)}/#{content_type}")
+        Sportradar::Api::Content::ArticleList.new response["content"]  if response.success? && response["content"]
       end
 
       def analysis( date = Date.today, content_type = 'all' )
         raise Sportradar::Api::Error::InvalidType unless allowed_analysis_types.include? content_type
-        get request_url("#{provider }/analysis/#{date_path(date)}/#{content_type}")
+        response = get request_url("#{provider }/analysis/#{date_path(date)}/#{content_type}")
+        Sportradar::Api::Content::ArticleList.new response["content"]  if response.success? && response["content"]
       end
 
       private
