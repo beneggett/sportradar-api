@@ -20,12 +20,13 @@ module Sportradar
       end
 
       def transaction?
-        !!transaction
+        transaction == 'true'
       end
 
       def injury?
-        !!injury
+        injury == 'true'
       end
+
       private
       def set_references
         if response["refs"] && response["refs"]["ref"]
