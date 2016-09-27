@@ -5,7 +5,7 @@ module Sportradar
         attr_accessor :response, :player, :name, :id, :position, :yards
 
         def initialize(data)
-          @response = data
+          @response = data || {}
           set_stats
           @player = Sportradar::Api::Nfl::Player.new(response) if response['name'] # this isn't used yet, and we need to determine a better solution
         end

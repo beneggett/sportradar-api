@@ -6,9 +6,9 @@ module Sportradar
       alias :count :penalties
 
       def set_stats
-        @response  = response[1] if response.is_a? Array
-        @penalties = response['penalties']
-        @yards     = response['yards']    
+        @response  = (response.dig(1) || {}) if response.is_a? Array
+        @penalties = response.dig('penalties')
+        @yards     = response.dig('yards')
       end
       def formatted
         "#{count}-#{yards}"
