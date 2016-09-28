@@ -15,6 +15,8 @@ require 'minitest/focus'
 require 'webmock/minitest'
 require 'vcr'
 
+Coveralls.wear!
+
 def api_key(api)
   ENV.fetch("SPORTRADAR_#{api.to_s.upcase}") {'VALID_SPORTRADAR_API_KEY'}
 end
