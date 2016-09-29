@@ -17,4 +17,6 @@ class Sportradar::ApiTest < Minitest::Test
   def test_it_finds_the_appropriate_api_version
     assert_equal Sportradar::Api.version(:nascar), 3
   end
+
+
 end

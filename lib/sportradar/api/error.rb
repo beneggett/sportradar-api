@@ -15,11 +15,14 @@ module Sportradar
       attr_reader :message, :code, :response
 
       def initialize( code, message, response)
-        @code = response_code
-        @message = response_message
+        @code = code
+        @message = message
         @response = response
       end
 
+      def success?
+        false
+      end
     end
   end
 end
