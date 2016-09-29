@@ -11,6 +11,14 @@ module Sportradar
         self.instance_variables.map{|attribute| attribute.to_s.gsub('@', '').to_sym }
       end
 
+      def parse_into_array(selector: , klass: )
+        if selector.is_a?(Array)
+          selector.map {|x| klass.new x }
+        elsif selector.is_a?(Hash)
+          [ klass.new(selector) ]
+        end
+      end
+
     end
 
   end

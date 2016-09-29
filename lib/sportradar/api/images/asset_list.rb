@@ -7,18 +7,7 @@ module Sportradar
         @response = data
         @type = data["type"]
         @sport = data["sport"]
-        set_assets
-      end
-
-      private
-      def set_assets
-        if response["asset"]
-          if response["asset"].is_a?(Array)
-            @assets = response["asset"].map {|x| Sportradar::Api::Images::Asset.new x }
-          elsif response["asset"].is_a?(Hash)
-            @assets = [ Sportradar::Api::Images::Asset.new(response["asset"]) ]
-          end
-        end
+        @assets = parse_into_array(selector: response["asset"], klass: Sportradar::Api::Images::Asset)  if response["asset"]
       end
 
     end
