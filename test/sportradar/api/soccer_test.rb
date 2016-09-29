@@ -2,14 +2,6 @@ require 'test_helper'
 
 class Sportradar::Api::SoccerTest < Minitest::Test
 
-  def good_date
-    Date.parse('2016-07-17')
-  end
-
-  def old_date
-    Date.parse('1950-07-17')
-  end
-
   def match_id
     "357607e9-87cd-4848-b53e-0485d9c1a3bc"
   end
