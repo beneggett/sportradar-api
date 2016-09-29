@@ -18,7 +18,11 @@ module Sportradar
         else
           response = get request_url("players/#{image_type}/manifests/all_assets")
         end
-        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
+        if response.success? && response["assetlist"]
+          Sportradar::Api::Images::AssetList.new response["assetlist"]
+        else
+          response
+        end
       end
 
       alias_method :all_players, :player_manifests
@@ -27,14 +31,22 @@ module Sportradar
       def coach_manifests
         raise Sportradar::Api::Error::InvalidLeague unless league.nil?
         response = get request_url("coaches/#{image_type}/manifests/all_assets")
-        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
+        if response.success? && response["assetlist"]
+          Sportradar::Api::Images::AssetList.new response["assetlist"]
+        else
+          response
+        end
       end
       alias_method :all_coaches, :coach_manifests
 
       def venue_manifests
         raise Sportradar::Api::Error::InvalidLeague unless league.nil?
         response = get request_url("venues/manifests/all_assets")
-        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
+        if response.success? && response["assetlist"]
+          Sportradar::Api::Images::AssetList.new response["assetlist"]
+        else
+          response
+        end
       end
       alias_method :all_venues, :venue_manifests
 
@@ -121,9 +133,10 @@ module Sportradar
         ['bundesliga', 'epl', 'serie-a', 'la-liga', 'ligue-1']
       end
 
-      def additional_content_sports
-        ['mlb', 'nba', 'nfl', 'nhl']
-      end
+      # Was going to use this to prevent access to venues/coaches for sports that aren't this
+      # def additional_content_sports
+      #   ['mlb', 'nba', 'nfl', 'nhl']
+      # end
 
     end
   end
