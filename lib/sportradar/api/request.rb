@@ -34,6 +34,15 @@ module Sportradar
         url += path
       end
 
+      def process_response(response, klass:, klass_args: response, conditional: true )
+        if response.success? && conditional
+          klass.new klass_args
+        else
+          response
+        end
+      end
+
+
       def date_path(date)
         "#{date.year}/#{date.month}/#{date.day}"
       end

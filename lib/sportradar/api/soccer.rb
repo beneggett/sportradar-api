@@ -11,109 +11,66 @@ module Sportradar
 
       def schedule
         response = get request_url("matches/schedule")
-        if response.success?
-          Sportradar::Api::Soccer::Schedule.new response
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Schedule )
       end
 
       # date =  Date.parse('2016-07-17')
       def daily_schedule(date = Date.today)
         response = get request_url("matches/#{date_path(date)}/schedule")
-        if response.success?
-          Sportradar::Api::Soccer::Schedule.new response
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Schedule )
       end
 
 
       def daily_summary(date = Date.today)
         response = get request_url("matches/#{date_path(date)}/summary")
-        if response.success?
-          Sportradar::Api::Soccer::Summary.new response
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Summary )
       end
 
       def daily_boxscore(date = Date.today)
         response = get request_url("matches/#{date_path(date)}/boxscore")
-        if response.success?
-          Sportradar::Api::Soccer::Boxscore.new response
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Boxscore )
       end
 
       # match_id  = "357607e9-87cd-4848-b53e-0485d9c1a3bc"
       def match_summary(match_id)
         check_simulation(match_id)
         response = get request_url("matches/#{match_id}/summary")
-        if response.success?
-          Sportradar::Api::Soccer::Summary.new response
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Summary )
       end
 
       # match_id  = "357607e9-87cd-4848-b53e-0485d9c1a3bc"
       def match_boxscore(match_id)
         check_simulation(match_id)
         response = get request_url("matches/#{match_id}/boxscore")
-        if response.success?
-          Sportradar::Api::Soccer::Boxscore.new response
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Boxscore )
       end
 
       # team_id = "b78b9f61-0697-4347-a1b6-b7685a130eb1"
       def team_profile(team_id)
         response = get request_url("teams/#{team_id}/profile")
-        if response.success? && response["profile"] && response["profile"]["team"]
-          Sportradar::Api::Soccer::Team.new response["profile"]["team"]
-        else
-          response
-        end
+
+        process_response( response, klass: Sportradar::Api::Soccer::Team, klass_args: 'response["profile"]["team"]', conditional: response["profile"] && response["profile"]["team"] )
       end
 
       # player_id = "2aeacd39-3f9c-42af-957e-9df8573973c4"
       def player_profile(player_id)
         response = get request_url("players/#{player_id}/profile")
-        if response.success? && response["profile"] && response["profile"]["player"]
-          Sportradar::Api::Soccer::Player.new response["profile"]["player"]
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Player, klass_args: response["profile"]["player"], conditional: response["profile"] && response["profile"]["player"] )
       end
 
       def player_rankings
         response = get request_url("players/leader")
-        if response.success? && response["leaders"]
-          Sportradar::Api::Soccer::Ranking.new response["leaders"]
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Ranking, klass_args: response["leaders"], conditional: response["leaders"] )
       end
 
       def team_hierarchy
         response = get request_url("teams/hierarchy")
-        if response.success? && response["hierarchy"]
-          Sportradar::Api::Soccer::Hierarchy.new response["hierarchy"]
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Hierarchy, klass_args: response["hierarchy"], conditional: response["hierarchy"] )
       end
 
       def team_standings
         response = get request_url("teams/standing")
-        if response.success?
-          Sportradar::Api::Soccer::Standing.new response["standings"]
-        else
-          response
-        end
+        process_response( response, klass: Sportradar::Api::Soccer::Standing, klass_args: response["standings"], conditional: response["standings"] )
       end
 
       def simulation_match
