@@ -1,0 +1,510 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nfl-ot1/teams/97354895-8c77-4fd4-a860-32e62ea7382a/profile.xml?api_key=<NFL_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 01:39:14 GMT
+      Expires:
+      - Thu, 29 Sep 2016 01:39:16 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-114.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '7819'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '3'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '36726'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!-- Generation started @ 2016-09-29 01:31:54 +0000 -->
+        <team xmlns="http://feed.elasticstats.com/schema/nfl/premium/team-v2.0.xsd" name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a">
+          <franchise id="c95b688d-810a-4323-9dad-fa3696ed8a37" name="Patriots" alias="NE">
+            <references>
+              <reference id="17" origin="gsis"/>
+            </references>
+          </franchise>
+          <venue id="e43310b1-cb82-4df9-8be5-e9b39637031b" name="Gillette Stadium" city="Foxborough" state="MA" country="USA" zip="02035" address="One Patriot Place" capacity="68756" surface="artificial" roof_type="outdoor"/>
+          <hierarchy>
+            <division id="b95cd27d-d631-4fe1-bc05-0ae47fc0b14b" name="AFC East" alias="AFC_EAST"/>
+            <conference id="1bdefe12-6cb2-4d6a-b208-b04602ae79c3" name="AFC" alias="AFC"/>
+          </hierarchy>
+          <references>
+            <reference id="NE" origin="gsis"/>
+          </references>
+          <coaches>
+            <coach id="1a10c6e6-5e9c-49cb-b1ba-cb0e9f564a0e" full_name="Josh McDaniels" first_name="Josh" last_name="McDaniels" position="Offensive Coordinator"/>
+            <coach id="25fd8a96-446e-4a72-be98-91052a05a856" full_name="Bill Belichick" first_name="Bill" last_name="Belichick" position="Head Coach"/>
+            <coach id="a5b8bdfd-9097-4357-b31c-d41462de89c9" full_name="Matt Patricia" first_name="Matt" last_name="Patricia" position="Defensive Coordinator"/>
+          </coaches>
+          <players>
+            <player name="Martellus Bennett" jersey="88" last_name="Bennett" first_name="Martellus" abbr_name="M.Bennett" preferred_name="Martellus" birth_date="1987-03-10" weight="273.0" height="78" status="A01" id="0ca741f8-58bd-4933-9d5c-0e04de3f4cff" position="TE" birth_place="Houston, TX, USA" high_school="Alief Taylor (TX)" college="Texas A&amp;M" college_conf="Big Twelve Conference" rookie_year="2008">
+              <draft year="2008" round="2" number="61">
+                <team name="Cowboys" market="Dallas" alias="DAL" id="e627eec7-bbae-4fa4-8e73-8e1d6bc5c060"/>
+              </draft>
+              <references>
+                <reference id="33142" origin="nflx"/>
+                <reference id="00-0026201" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jordan Richards" jersey="37" last_name="Richards" first_name="Jordan" abbr_name="J.Richards" preferred_name="Jordan" birth_date="1993-01-21" weight="210.0" height="71" status="A01" id="13f716fb-7249-4b0a-9858-8af8cb83f78b" position="SS" birth_place="Folsom, CA, USA" high_school="Folsom High School" college="Stanford" college_conf="Pacific Twelve Conference" rookie_year="2015">
+              <draft year="2015" round="2" number="64">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="42407" origin="nflx"/>
+                <reference id="00-0031559" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Robert Gronkowski" jersey="87" last_name="Gronkowski" first_name="Robert" abbr_name="R.Gronkowski" preferred_name="Rob" birth_date="1989-05-14" weight="265.0" height="78" status="A01" id="2142a164-48ad-47d6-bb27-0bc58c6b2e62" position="TE" birth_place="Amherst, NY, USA" high_school="Woodland Hills (PA)" college="Arizona" college_conf="Pacific Ten Conference" rookie_year="2010">
+              <draft year="2010" round="2" number="42">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="35481" origin="nflx"/>
+                <reference id="00-0027656" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Cameron Fleming" jersey="71" last_name="Fleming" first_name="Cameron" abbr_name="C.Fleming" preferred_name="Cameron" birth_date="1992-09-03" weight="320.0" height="78" status="A01" id="248b6e0b-bb1b-4dd7-8eb2-b5f7e98c77b1" position="T" birth_place="Fort Hood, TX, USA" high_school="Cypress Creek (TX)" college="Stanford" college_conf="Pacific Twelve Conference" rookie_year="2014">
+              <draft year="2014" round="4" number="140">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0031067" origin="gsis"/>
+                <reference id="41369" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Julian Edelman" jersey="11" last_name="Edelman" first_name="Julian" abbr_name="J.Edelman" preferred_name="Julian" birth_date="1986-05-22" weight="200.0" height="70" status="A01" id="2bb70d56-a79a-4fa1-ae37-99858a3ffd55" position="WR" birth_place="Redwood City, CA, USA" high_school="Woodside (CA)" college="Kent State" college_conf="Mid-American Conference" rookie_year="2009">
+              <draft year="2009" round="7" number="232">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="34683" origin="nflx"/>
+                <reference id="00-0027150" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Christopher Long" jersey="95" last_name="Long" first_name="Christopher" abbr_name="C.Long" preferred_name="Chris" birth_date="1985-03-28" weight="268.0" height="75" status="A01" id="2c9cbc74-9a26-4ccf-9552-c9fa99ef3663" position="DE" birth_place="Santa Monica, CA, USA" high_school="St. Anne's-Belfield (VA)" college="Virginia" college_conf="Atlantic Coast Conference" rookie_year="2008">
+              <draft year="2008" round="1" number="2">
+                <team name="Rams" market="St. Louis" alias="STL" id="39f349de-6463-4803-ad70-f1e0f144f5ed"/>
+              </draft>
+              <references>
+                <reference id="33083" origin="nflx"/>
+                <reference id="00-0026142" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Nelson Rowe" jersey="25" last_name="Rowe" first_name="Nelson" abbr_name="E.Rowe" preferred_name="Eric" birth_date="1992-10-03" weight="205.0" height="73" status="A01" id="30b045f1-b8e4-4ae9-b062-5181847b508c" position="CB" birth_place="Spring, TX, USA" high_school="Klein" college="Utah" college_conf="Pacific Twelve Conference" rookie_year="2015">
+              <draft year="2015" round="2" number="47">
+                <team name="Eagles" market="Philadelphia" alias="PHI" id="386bdbf9-9eea-4869-bb9a-274b0bc66e80"/>
+              </draft>
+              <references>
+                <reference id="00-0031555" origin="gsis"/>
+                <reference id="42390" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Cyrus Jones" jersey="24" last_name="Jones" first_name="Cyrus" abbr_name="C.Jones" preferred_name="Cyrus" birth_date="1993-11-29" weight="196.0" height="70" status="A01" id="342fe758-e8d0-4baf-af71-1fa568197837" position="CB" birth_place="Baltimore, MD, USA" high_school="Gilman" college="Alabama" college_conf="Southeastern Conference" rookie_year="2016">
+              <draft year="2016" round="2" number="60">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="43349" origin="nflx"/>
+                <reference id="00-0032390" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Darryll Foster" jersey="27" last_name="Foster" first_name="Darryll" abbr_name="D.Foster" preferred_name="D.J." birth_date="1993-11-22" weight="195.0" height="72" status="A01" id="39d12962-65a4-4107-8924-56f48fce31ef" position="RB" birth_place="Scottsdale, AZ, USA" high_school="Scottsdale (AZ) Saguaro" college="Arizona State" college_conf="Pacific Twelve Conference" rookie_year="2016">
+              <references>
+                <reference id="00-0032577" origin="gsis"/>
+                <reference id="43697" origin="nflx"/>
+              </references>
+            </player>
+            <player name="James White" jersey="28" last_name="White" first_name="James" abbr_name="J.White" preferred_name="James" birth_date="1992-02-03" weight="206.0" height="70" status="A01" id="39f70428-a78a-494c-8676-438d953c289e" position="RB" birth_place="Fort Lauderdale, FL, USA" high_school="Saint Thomas Aquinas (FL)" college="Wisconsin" college_conf="Big Ten Conference" rookie_year="2014">
+              <draft year="2014" round="4" number="130">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="41359" origin="nflx"/>
+                <reference id="00-0031062" origin="gsis"/>
+              </references>
+            </player>
+            <player name="James Garoppolo" jersey="10" last_name="Garoppolo" first_name="James" abbr_name="J.Garoppolo" preferred_name="Jimmy" birth_date="1991-11-02" weight="225.0" height="74" status="A01" id="42de9d1d-0352-460b-9172-9452414fd7fd" position="QB" birth_place="Arlington Heights, IL, USA" high_school="Rolling Meadows (IL)" college="Eastern Illinois" college_conf="Ohio Valley Conference" rookie_year="2014">
+              <draft year="2014" round="2" number="62">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0031345" origin="gsis"/>
+                <reference id="41291" origin="nflx"/>
+              </references>
+            </player>
+            <player name="LaAdrian Waddle" jersey="68" last_name="Waddle" first_name="LaAdrian" abbr_name="L.Waddle" preferred_name="LaAdrian" birth_date="1991-07-21" weight="328.0" height="78" status="A01" id="45039bcf-634a-48a7-8102-f0131491cf66" position="T" birth_place="College Station, TX, USA" high_school="Columbus (TX)" college="Texas Tech" college_conf="Big Twelve Conference" rookie_year="2013">
+              <references>
+                <reference id="00-0029886" origin="gsis"/>
+                <reference id="40343" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Joseph Thuney" jersey="62" last_name="Thuney" first_name="Joseph" abbr_name="J.Thuney" preferred_name="Joe" birth_date="1992-11-19" weight="295.0" height="77" status="A01" id="4ee0937c-1250-4456-93d4-2d6afa064d5a" position="G" birth_place="Centerville, OH, USA" high_school="Archbishop Alter" college="North Carolina State" college_conf="Atlantic Coast Conference" rookie_year="2016">
+              <draft year="2016" round="3" number="78">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0032391" origin="gsis"/>
+                <reference id="43367" origin="nflx"/>
+              </references>
+            </player>
+            <player name="John Hughes" jersey="93" last_name="Hughes" first_name="John" abbr_name="J.Hughes" preferred_name="John" birth_date="1988-04-27" weight="320.0" height="74" status="A01" id="51e6e64c-7150-4588-847a-44b9ce7e0903" position="DE" birth_place="Gahanna, OH, USA" high_school="Lincoln (OH)" college="Cincinnati" college_conf="Big East" rookie_year="2012">
+              <draft year="2012" round="3" number="87">
+                <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e"/>
+              </draft>
+              <references>
+                <reference id="38617" origin="nflx"/>
+                <reference id="00-0029266" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jonathan Jones" jersey="31" last_name="Jones" first_name="Jonathan" abbr_name="J.Jones" preferred_name="Jonathan" birth_date="1993-09-20" weight="181.0" height="70" status="A01" id="537c88d4-c403-43f4-94a1-fdccea0ee24a" position="CB" birth_place="Carrollton, GA, USA" high_school="Carrollton" college="Auburn" college_conf="Southeastern Conference" rookie_year="2016">
+              <references>
+                <reference id="43700" origin="nflx"/>
+                <reference id="00-0032580" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Trey Flowers" jersey="98" last_name="Flowers" first_name="Trey" abbr_name="T.Flowers" preferred_name="Trey" birth_date="1993-08-16" weight="266.0" height="74" status="A01" id="57deb6ba-ce26-4ccc-a859-adf0564fb78e" position="DE" birth_place="Huntsville, AL, USA" high_school="Columbia" college="Arkansas" college_conf="Southeastern Conference" rookie_year="2015">
+              <draft year="2015" round="4" number="101">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0031566" origin="gsis"/>
+                <reference id="42444" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Patrick Chung" jersey="23" last_name="Chung" first_name="Patrick" abbr_name="P.Chung" preferred_name="Patrick" birth_date="1987-08-19" weight="215.0" height="71" status="A01" id="64e89f8b-3e8f-4e07-bb73-c48f2a1dd8e2" position="SS" birth_place="Kingston,, JAM" high_school="Rancho Cucamonga (CA)" college="Oregon" college_conf="Pacific Ten Conference" rookie_year="2009">
+              <draft year="2009" round="2" number="34">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="34485" origin="nflx"/>
+                <reference id="00-0027010" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Ted Karras" jersey="75" last_name="Karras" first_name="Ted" abbr_name="T.Karras" preferred_name="Ted" birth_date="1993-03-15" weight="310.0" height="76" status="A01" id="7830196e-cdca-4b86-bee2-eae97de2ee26" position="G" birth_place="Indianapolis, IN, USA" high_school="Cathedral (IL)" college="Illinois" college_conf="Big Ten Conference" rookie_year="2016">
+              <draft year="2016" round="6" number="221">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="43510" origin="nflx"/>
+                <reference id="00-0032445" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jabaal Sheard" jersey="93" last_name="Sheard" first_name="Jabaal" abbr_name="J.Sheard" preferred_name="Jabaal" birth_date="1989-05-10" weight="264.0" height="75" status="A01" id="7bad73a1-c023-4b53-bd4c-dedf18480b8a" position="DE" birth_place="Fort Lauderdale, FL, USA" high_school="Hollywood Hills (FL)" college="Pittsburgh" college_conf="Big East" rookie_year="2011">
+              <draft year="2011" round="2" number="37">
+                <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e"/>
+              </draft>
+              <references>
+                <reference id="37112" origin="nflx"/>
+                <reference id="00-0027975" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Malcom Brown" jersey="90" last_name="Brown" first_name="Malcom" abbr_name="M.Brown" preferred_name="Malcom" birth_date="1994-02-02" weight="320.0" height="74" status="A01" id="7f911008-146b-43e9-a292-9ad90c621087" position="DT" birth_place="Brenham, TX, USA" high_school="Brenham" college="Texas" college_conf="Big Twelve Conference" rookie_year="2015">
+              <draft year="2015" round="1" number="32">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0032261" origin="gsis"/>
+                <reference id="42375" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Devin McCourty" jersey="32" last_name="McCourty" first_name="Devin" abbr_name="D.McCourty" preferred_name="Devin" birth_date="1987-08-13" weight="195.0" height="70" status="A01" id="88d2dbf4-3b9f-43ea-bac6-a8722cb24f43" position="FS" birth_place="Nyack, NY, USA" high_school="St. Joseph (NJ)" college="Rutgers" college_conf="Big East" rookie_year="2010">
+              <draft year="2010" round="1" number="27">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0027647" origin="gsis"/>
+                <reference id="35466" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Vincent Valentine" jersey="99" last_name="Valentine" first_name="Vincent" abbr_name="V.Valentine" preferred_name="Vincent" birth_date="1994-02-23" weight="325.0" height="76" status="A01" id="89781fd0-0817-4de8-ac16-c9cf095b333e" position="DT" birth_place="Edwardsville, IL, USA" high_school="Edwardsville" college="Nebraska" college_conf="Big Ten Conference" rookie_year="2016">
+              <draft year="2016" round="3" number="96">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0032396" origin="gsis"/>
+                <reference id="43385" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Chris Hogan" jersey="15" last_name="Hogan" first_name="Chris" abbr_name="C.Hogan" preferred_name="Chris" birth_date="1988-10-24" weight="220.0" height="73" status="A01" id="8fc65820-f565-44e2-8635-3e1cdf165bf6" position="WR" birth_place="Ramapo, NY, USA" high_school="Ramapo (NJ)" college="Monmouth, N.J." college_conf="Big South Conference" rookie_year="2011">
+              <references>
+                <reference id="00-0028237" origin="gsis"/>
+                <reference id="37737" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Joe Cardona" jersey="49" last_name="Cardona" first_name="Joe" abbr_name="J.Cardona" preferred_name="Joe" birth_date="1992-04-16" weight="236.0" height="75" status="A01" id="90517709-322d-47af-9360-77775a93496b" position="LS" birth_place="El Cajon, CA, USA" high_school="Granite Hill High School" college="Navy" college_conf="Independent" rookie_year="2015">
+              <draft year="2015" round="5" number="166">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0032228" origin="gsis"/>
+                <reference id="42509" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Barkevious Mingo" jersey="51" last_name="Mingo" first_name="Barkevious" abbr_name="B.Mingo" preferred_name="Barkevious" birth_date="1990-10-04" weight="240.0" height="76" status="A01" id="92503804-7aff-4f22-adca-421800786179" position="OLB" birth_place="Belle Glade, FL, USA" high_school="West Monroe (LA)" college="Louisiana State" college_conf="Southeastern Conference" rookie_year="2013">
+              <draft year="2013" round="1" number="6">
+                <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e"/>
+              </draft>
+              <references>
+                <reference id="39952" origin="nflx"/>
+                <reference id="00-0030558" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Nate Ebner" jersey="43" last_name="Ebner" first_name="Nate" abbr_name="N.Ebner" preferred_name="Nate" birth_date="1988-12-14" weight="220.0" height="72" status="A01" id="93927d6e-9271-4c1e-8239-cc20fd788ba9" position="FS" birth_place="Dublin, OH, USA" high_school="Hilliard Davidson (OH)" college="Ohio State" college_conf="Big Ten Conference" rookie_year="2012">
+              <draft year="2012" round="6" number="197">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="38737" origin="nflx"/>
+                <reference id="00-0029570" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jams Andrews" jersey="60" last_name="Andrews" first_name="Jams" abbr_name="D.Andrews" preferred_name="David" birth_date="1992-07-10" weight="294.0" height="75" status="A01" id="94560629-fb01-43b5-b9ea-ca8372c18368" position="C" birth_place="John's Creek, GA, USA" high_school="Wesleyan" college="Georgia" college_conf="Southeastern Conference" rookie_year="2015">
+              <references>
+                <reference id="42883" origin="nflx"/>
+                <reference id="00-0031852" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Shea McClellin" jersey="58" last_name="McClellin" first_name="Shea" abbr_name="S.McClellin" preferred_name="Shea" birth_date="1989-08-01" weight="245.0" height="75" status="A01" id="96981fd3-bd93-4134-84fc-3506197ac7eb" position="OLB" birth_place="Caldwell, ID, USA" high_school="Marsing (ID)" college="Boise State" college_conf="Mountain West Conference" rookie_year="2012">
+              <draft year="2012" round="1" number="19">
+                <team name="Bears" market="Chicago" alias="CHI" id="7b112545-38e6-483c-a55c-96cf6ee49cb8"/>
+              </draft>
+              <references>
+                <reference id="38549" origin="nflx"/>
+                <reference id="00-0029250" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Daniel Amendola" jersey="80" last_name="Amendola" first_name="Daniel" abbr_name="D.Amendola" preferred_name="Danny" birth_date="1985-11-02" weight="190.0" height="71" status="A01" id="973bfe3c-6d0d-4130-a79c-f860650b1da6" position="WR" birth_place="The Woodlands, TX, USA" high_school="The Woodlands (TX)" college="Texas Tech" college_conf="Big Twelve Conference" rookie_year="2008">
+              <references>
+                <reference id="00-0026035" origin="gsis"/>
+                <reference id="33566" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Marcus Cannon" jersey="61" last_name="Cannon" first_name="Marcus" abbr_name="M.Cannon" preferred_name="Marcus" birth_date="1988-05-06" weight="335.0" height="77" status="A01" id="99b8d78e-6d23-4e85-8eef-d286ba5ddc0c" position="T" birth_place="Odessa, TX, USA" high_school="Odessa (TX)" college="Texas Christian" college_conf="Mountain West Conference" rookie_year="2011">
+              <draft year="2011" round="5" number="138">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="37213" origin="nflx"/>
+                <reference id="00-0028076" origin="gsis"/>
+              </references>
+            </player>
+            <player name="James Develin" jersey="46" last_name="Develin" first_name="James" abbr_name="J.Develin" preferred_name="James" birth_date="1988-07-23" weight="255.0" height="75" status="A01" id="9d04accc-a404-406f-b93c-0878410e55a6" position="FB" birth_place="Dublin, OH, USA" high_school="Boyertown Area (PA)" college="Brown" college_conf="Ivy League" rookie_year="2011">
+              <references>
+                <reference id="00-0027925" origin="gsis"/>
+                <reference id="36473" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Matthew Slater" jersey="18" last_name="Slater" first_name="Matthew" abbr_name="M.Slater" preferred_name="Matt" birth_date="1985-09-09" weight="205.0" height="72" status="A01" id="9d404288-65c5-414f-8ea5-ceb97eccaea0" position="WR" birth_place="Baldwin Park, CA, USA" high_school="Servite (CA)" college="UCLA" college_conf="Pacific Ten Conference" rookie_year="2008">
+              <draft year="2008" round="5" number="153">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0026293" origin="gsis"/>
+                <reference id="33234" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Duron Harmon" jersey="30" last_name="Harmon" first_name="Duron" abbr_name="D.Harmon" preferred_name="Duron" birth_date="1991-01-24" weight="205.0" height="73" status="A01" id="a2802951-e573-4e8f-ad31-14b9ae5f8e7c" position="SS" birth_place="Magnolia, DE, USA" high_school="Caesar Rodney (DE)" college="Rutgers" college_conf="Big East" rookie_year="2013">
+              <draft year="2013" round="3" number="91">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0030383" origin="gsis"/>
+                <reference id="40039" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Stephen Gostkowski" jersey="3" last_name="Gostkowski" first_name="Stephen" abbr_name="S.Gostkowski" preferred_name="Stephen" birth_date="1984-01-28" weight="215.0" height="73" status="A01" id="a527b7db-0b52-4379-9e4c-2e08c1fe1bed" position="K" birth_place="Baton Rouge, LA, USA" high_school="Madison Central (MS)" college="Memphis" college_conf="Conference USA" rookie_year="2006">
+              <draft year="2006" round="4" number="118">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="30932" origin="nflx"/>
+                <reference id="00-0024333" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Shaquille Mason" jersey="69" last_name="Mason" first_name="Shaquille" abbr_name="S.Mason" preferred_name="Shaquille" birth_date="1993-08-28" weight="300.0" height="73" status="A01" id="a8ac7c7d-301a-4e1e-afd4-04f88cad848e" position="G" birth_place="Columbia, TN, USA" high_school="Columbia Central" college="Georgia Tech" college_conf="Atlantic Coast Conference" rookie_year="2015">
+              <draft year="2015" round="4" number="131">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="42474" origin="nflx"/>
+                <reference id="00-0031580" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Malcolm Butler" jersey="21" last_name="Butler" first_name="Malcolm" abbr_name="M.Butler" preferred_name="Malcolm" birth_date="1990-03-02" weight="190.0" height="71" status="A01" id="ab49bafe-7023-46ce-9606-9a9823eabee6" position="CB" birth_place="Vicksburg, MS, USA" high_school="Vicksburg (MS)" college="West Alabama" college_conf="Gulf South Conference" rookie_year="2014">
+              <references>
+                <reference id="42006" origin="nflx"/>
+                <reference id="00-0031218" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jacoby Brissett" jersey="7" last_name="Brissett" first_name="Jacoby" abbr_name="J.Brissett" preferred_name="Jacoby" birth_date="1992-12-11" weight="231.0" height="76" status="A01" id="ad2258ab-67f0-41c2-bcf3-f3ba145187dc" position="QB" birth_place="West Palm Beach, FL, USA" high_school="William T. Dwyer" college="North Carolina State" college_conf="Atlantic Coast Conference" rookie_year="2016">
+              <draft year="2016" round="3" number="91">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="43380" origin="nflx"/>
+                <reference id="00-0033119" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Nathaniel Solder" jersey="77" last_name="Solder" first_name="Nathaniel" abbr_name="N.Solder" preferred_name="Nate" birth_date="1988-04-12" weight="325.0" height="80" status="A01" id="b077b3b2-2fed-4c9f-9b8f-c4ff50a4f911" position="T" birth_place="Denver, CO, USA" high_school="Buena Vista (CO)" college="Colorado" college_conf="Big Twelve Conference" rookie_year="2011">
+              <draft year="2011" round="1" number="17">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0027955" origin="gsis"/>
+                <reference id="37090" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Ryan Allen" jersey="6" last_name="Allen" first_name="Ryan" abbr_name="R.Allen" preferred_name="Ryan" birth_date="1990-02-28" weight="220.0" height="74" status="A01" id="b1a2aa6e-7104-4e35-910d-fbefddd74a78" position="P" birth_place="Salem, OR, USA" high_school="West Salem (OR)" college="Louisiana Tech" college_conf="Western Athletic Conference" rookie_year="2013">
+              <references>
+                <reference id="00-0029984" origin="gsis"/>
+                <reference id="40437" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jonathan Freeny" jersey="55" last_name="Freeny" first_name="Jonathan" abbr_name="J.Freeny" preferred_name="Jonathan" birth_date="1989-06-15" weight="254.0" height="74" status="A01" id="c3315876-1a17-4c6e-b024-07db4489e016" position="OLB" birth_place="Margate, FL, USA" high_school="Coconut Creek (FL)" college="Rutgers" college_conf="Big East" rookie_year="2011">
+              <references>
+                <reference id="00-0028454" origin="gsis"/>
+                <reference id="37934" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Malcolm Mitchell" jersey="19" last_name="Mitchell" first_name="Malcolm" abbr_name="M.Mitchell" preferred_name="Malcolm" birth_date="1993-07-20" weight="195.0" height="73" status="A01" id="c3ed9a9b-3e7d-4533-8224-a0b89adcd9da" position="WR" birth_place="Valdosta, GA, USA" high_school="Valdosta (GA)" college="Georgia" college_conf="Southeastern Conference" rookie_year="2016">
+              <draft year="2016" round="4" number="112">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0032400" origin="gsis"/>
+                <reference id="43401" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jamie Collins" jersey="91" last_name="Collins" first_name="Jamie" abbr_name="J.Collins" preferred_name="Jamie" birth_date="1989-10-20" weight="250.0" height="75" status="A01" id="ca760cb5-83dd-4415-acc8-ef8b508ba976" position="OLB" birth_place="McCall Creek, MS, USA" high_school="Franklin County (MS)" college="Southern Mississippi" college_conf="Conference USA" rookie_year="2013">
+              <draft year="2013" round="2" number="52">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0030421" origin="gsis"/>
+                <reference id="40000" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Clayton Harbor" jersey="81" last_name="Harbor" first_name="Clayton" abbr_name="C.Harbor" preferred_name="Clay" birth_date="1987-07-02" weight="255.0" height="75" status="A01" id="d579af24-53b8-42bf-b767-c50944afb7ec" position="TE" birth_place="Libertyville, IL, USA" high_school="Dwight (IL)" college="Missouri State" college_conf="Missouri Valley Football Conference" rookie_year="2010">
+              <draft year="2010" round="4" number="125">
+                <team name="Eagles" market="Philadelphia" alias="PHI" id="386bdbf9-9eea-4869-bb9a-274b0bc66e80"/>
+              </draft>
+              <references>
+                <reference id="00-0027725" origin="gsis"/>
+                <reference id="35564" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Brandon King" jersey="36" last_name="King" first_name="Brandon" abbr_name="B.King" preferred_name="Brandon" birth_date="1993-06-08" weight="213.0" height="74" status="A01" id="d5ed27ed-e5f3-4d4a-a8af-79887c1881a0" position="FS" birth_place="Alabaster, AL, USA" high_school="Thompson" college="Auburn" college_conf="Southeastern Conference" rookie_year="2015">
+              <references>
+                <reference id="00-0031856" origin="gsis"/>
+                <reference id="42887" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jonathan Cooper" jersey="65" last_name="Cooper" first_name="Jonathan" abbr_name="J.Cooper" preferred_name="Jonathan" birth_date="1990-01-19" weight="312.0" height="74" status="A01" id="d6aea7ed-2c24-4be5-b789-41e3ba0c2137" position="G" birth_place="Wilmington, NC, USA" high_school="Hoggard (NC)" college="North Carolina" college_conf="Atlantic Coast Conference" rookie_year="2013">
+              <draft year="2013" round="1" number="7">
+                <team name="Cardinals" market="Arizona" alias="ARI" id="de760528-1dc0-416a-a978-b510d20692ff"/>
+              </draft>
+              <references>
+                <reference id="00-0030590" origin="gsis"/>
+                <reference id="39953" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Justin Coleman" jersey="22" last_name="Coleman" first_name="Justin" abbr_name="J.Coleman" preferred_name="Justin" birth_date="1993-03-27" weight="188.0" height="70" status="A01" id="d766ee35-8ece-447d-94e6-1d33ba427b02" position="CB" birth_place="Brunswick, GA, USA" high_school="Brunswick High School" college="Tennessee" college_conf="Southeastern Conference" rookie_year="2015">
+              <references>
+                <reference id="42827" origin="nflx"/>
+                <reference id="00-0031796" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Brandon Bolden" jersey="38" last_name="Bolden" first_name="Brandon" abbr_name="B.Bolden" preferred_name="Brandon" birth_date="1990-01-26" weight="220.0" height="71" status="A01" id="dba5e3ec-2c77-4f65-ad6e-cee246f816ef" position="RB" birth_place="Baton Rouge, LA, USA" high_school="Scotlandville Magnet (LA)" college="Mississippi" college_conf="Southeastern Conference" rookie_year="2012">
+              <references>
+                <reference id="39212" origin="nflx"/>
+                <reference id="00-0029239" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Qualin Hightower" jersey="54" last_name="Hightower" first_name="Qualin" abbr_name="D.Hightower" preferred_name="Dont'a" birth_date="1990-03-12" weight="265.0" height="75" status="A01" id="e7a18744-0608-4118-888f-f51de5645ce9" position="MLB" birth_place="Lewisburg, TN, USA" high_school="Marshall County (TN)" college="Alabama" college_conf="Southeastern Conference" rookie_year="2012">
+              <draft year="2012" round="1" number="25">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="38555" origin="nflx"/>
+                <reference id="00-0029669" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Logan Ryan" jersey="26" last_name="Ryan" first_name="Logan" abbr_name="L.Ryan" preferred_name="Logan" birth_date="1991-02-09" weight="195.0" height="71" status="A01" id="e829aa7e-04a7-425a-9717-c334ca9febe9" position="CB" birth_place="Berlin, NJ, USA" high_school="Eastern (NJ)" college="Rutgers" college_conf="Big East" rookie_year="2013">
+              <draft year="2013" round="3" number="83">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="40031" origin="nflx"/>
+                <reference id="00-0030411" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Alan Branch" jersey="97" last_name="Branch" first_name="Alan" abbr_name="A.Branch" preferred_name="Alan" birth_date="1984-12-29" weight="350.0" height="78" status="A01" id="eb02d9d3-87a1-4e50-9809-094946c73c46" position="DT" birth_place="Rio Rancho, NM, USA" high_school="Cibola (NM)" college="Michigan" college_conf="Big Ten Conference" rookie_year="2007">
+              <draft year="2007" round="2" number="33">
+                <team name="Cardinals" market="Arizona" alias="ARI" id="de760528-1dc0-416a-a978-b510d20692ff"/>
+              </draft>
+              <references>
+                <reference id="00-0025420" origin="gsis"/>
+                <reference id="32226" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Alexander Derby" jersey="86" last_name="Derby" first_name="Alexander" abbr_name="A.Derby" preferred_name="A.J." birth_date="1991-09-20" weight="255.0" height="77" status="A01" id="f0805b80-e01c-46fd-99a6-dae1134fb764" position="TE" birth_place="Iowa City, IA, USA" high_school="City" college="Arkansas" college_conf="Southeastern Conference" rookie_year="2015">
+              <draft year="2015" round="6" number="202">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="00-0031609" origin="gsis"/>
+                <reference id="42545" origin="nflx"/>
+              </references>
+            </player>
+            <player name="LeGarrette Blount" jersey="29" last_name="Blount" first_name="LeGarrette" abbr_name="L.Blount" preferred_name="LeGarrette" birth_date="1986-12-05" weight="250.0" height="72" status="A01" id="f5d20030-d934-45e3-8282-e34c6c83ad84" position="RB" birth_place="Madison, FL, USA" high_school="Taylor (FL)" college="Oregon" college_conf="Pacific Ten Conference" rookie_year="2010">
+              <references>
+                <reference id="35838" origin="nflx"/>
+                <reference id="00-0027325" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Elandon Roberts" jersey="52" last_name="Roberts" first_name="Elandon" abbr_name="E.Roberts" preferred_name="Elandon" birth_date="1994-04-22" weight="235.0" height="72" status="A01" id="f6d7cf0f-72d2-473f-a44b-4a253587ca0f" position="MLB" birth_place="Port Arthur, TX, USA" high_school="Memorial" college="Houston" college_conf="American Athletic Conference" rookie_year="2016">
+              <draft year="2016" round="6" number="214">
+                <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a"/>
+              </draft>
+              <references>
+                <reference id="43503" origin="nflx"/>
+                <reference id="00-0032442" origin="gsis"/>
+              </references>
+            </player>
+          </players>
+        </team>
+        <!-- Generation ended @ 2016-09-29 01:31:54 +0000 -->
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 01:39:14 GMT
+recorded_with: VCR 3.0.3

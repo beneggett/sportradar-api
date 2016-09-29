@@ -19,21 +19,21 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Cache-Control:
-      - public,must-revalidate,max-age=275
+      - public,must-revalidate,max-age=104
       Content-Type:
       - text/xml
       Date:
-      - Thu, 29 Sep 2016 01:02:13 GMT
+      - Thu, 29 Sep 2016 01:36:26 GMT
       Etag:
-      - '"2d306a9d7033518fb475846cdbf39e82"'
+      - '"a92348e0e24fd0733d1305d0d3be6d4d"'
       Expires:
-      - Thu, 29 Sep 2016 01:06:00 -0000
+      - Thu, 29 Sep 2016 01:41:00 -0000
       Last-Modified:
-      - Thu, 29 Sep 2016 01:01:14 GMT
+      - Thu, 29 Sep 2016 01:36:25 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-122.mashery.com
+      - prod-j-worker-us-east-1b-112.mashery.com
       X-Plan-Qps-Allotted:
       - '1'
       X-Plan-Qps-Current:
@@ -41,18 +41,18 @@ http_interactions:
       X-Plan-Quota-Allotted:
       - '15000'
       X-Plan-Quota-Current:
-      - '13'
+      - '16'
       X-Via:
       - Nginx-S3-Proxy
       Content-Length:
-      - '542450'
+      - '542441'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
-        <schedule generated="2016-09-29T01:01:13Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-schedule.xsd">
+        <schedule generated="2016-09-29T01:36:23Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-schedule.xsd">
           <matches>
             <match id="fdb06a92-8db1-4bc6-93c1-01425b058573" status="closed" scheduled="2016-08-18T00:00:00Z" scratched="false" season_id="42881571-769d-4877-9f85-71868dc510d1" reference_id="sr:match:9693979">
               <category id="c4ef0886-dfee-4725-81eb-1bb919be832a" name="International Clubs" country_code="XZ" country="International" reference_id="sr:category:393"/>
@@ -2175,7 +2175,7 @@ http_interactions:
               <coverage lineup="NONE" formations="0" injuries="0" scout="VENUE" ballspotting="true" cornersonly="true" multicast="false" liveodds="true" deeper="false" tactical="false" stats="true"/>
               <!-- 9693961/109319/22007 -->
             </match>
-            <match id="3e86a26b-b240-4641-91d2-b0dde363983e" status="inprogress" scheduled="2016-09-28T23:30:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697890">
+            <match id="3e86a26b-b240-4641-91d2-b0dde363983e" status="closed" scheduled="2016-09-28T23:30:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697890">
               <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
               <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
               <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
@@ -2197,7 +2197,7 @@ http_interactions:
               <coverage lineup="CONFIRMED" formations="0" injuries="1" scout="VENUE" ballspotting="true" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
               <!-- 8697892/7080/52237 -->
             </match>
-            <match id="a8fd19d0-e028-4079-b1da-539e5d35c5c6" status="inprogress" scheduled="2016-09-28T23:30:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697894">
+            <match id="a8fd19d0-e028-4079-b1da-539e5d35c5c6" status="closed" scheduled="2016-09-28T23:30:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697894">
               <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
               <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
               <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
@@ -2249,7 +2249,7 @@ http_interactions:
               <away id="281a3005-b57d-4f9c-b542-f2306a51616c" name="Central" full_name="Central FC" alias="CEN" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:214212"/>
               <venue id="2c0d4057-2a1a-4102-b058-4d68b9ecacec" name="BC Place" country_code="CAN" country="Canada" city="Vancouver" capacity="21000" coordinates="49.276667,-123.111944" reference_id="sr:venue:2293"/>
               <round type="table" number="5" week="39"/>
-              <coverage lineup="NONE" formations="0" injuries="0" scout="VENUE" ballspotting="false" cornersonly="true" multicast="false" liveodds="true" deeper="false" tactical="false" stats="true"/>
+              <coverage lineup="NONE" formations="0" injuries="0" scout="VENUE" ballspotting="true" cornersonly="true" multicast="false" liveodds="true" deeper="false" tactical="false" stats="true"/>
               <!-- 9693973/22010/214212 -->
             </match>
             <match id="b12104d5-181e-4d8a-a530-3c8c30c6117b" status="scheduled" scheduled="2016-09-29T02:30:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697896">
@@ -3157,17 +3157,6 @@ http_interactions:
               <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
               <!-- 8697952/2513/2512 -->
             </match>
-            <match id="43d77a81-0395-47e7-8914-1ad7c3dc0934" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697956">
-              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
-              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
-              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
-              <home id="bf1354b5-e5b2-4818-b1f6-a8584104bbfd" name="New England" full_name="New England Revolution" alias="NEE" country_code="USA" country="United States" type="team" reference_id="sr:team:2511"/>
-              <away id="c6c59cc6-d4b7-40d0-bf4a-ca044d75cbb4" name="Montreal" full_name="Montreal Impact" alias="MON" country_code="USA" country="United States" type="team" reference_id="sr:team:22006"/>
-              <venue id="81e2e5eb-0b4e-4ff3-aa35-fbabc9d4c38e" name="Gillette Stadium" country_code="USA" country="United States" city="Foxborough" capacity="68800" coordinates="42.090944,-71.264344" reference_id="sr:venue:2379"/>
-              <round type="table" number="31" week="42"/>
-              <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
-              <!-- 8697956/2511/22006 -->
-            </match>
             <match id="eb5b871d-117b-48ac-b3d9-acf2b61d6b62" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697960">
               <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
               <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
@@ -3178,6 +3167,17 @@ http_interactions:
               <round type="table" number="31" week="42"/>
               <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
               <!-- 8697960/39833/2506 -->
+            </match>
+            <match id="43d77a81-0395-47e7-8914-1ad7c3dc0934" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697956">
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
+              <home id="bf1354b5-e5b2-4818-b1f6-a8584104bbfd" name="New England" full_name="New England Revolution" alias="NEE" country_code="USA" country="United States" type="team" reference_id="sr:team:2511"/>
+              <away id="c6c59cc6-d4b7-40d0-bf4a-ca044d75cbb4" name="Montreal" full_name="Montreal Impact" alias="MON" country_code="USA" country="United States" type="team" reference_id="sr:team:22006"/>
+              <venue id="81e2e5eb-0b4e-4ff3-aa35-fbabc9d4c38e" name="Gillette Stadium" country_code="USA" country="United States" city="Foxborough" capacity="68800" coordinates="42.090944,-71.264344" reference_id="sr:venue:2379"/>
+              <round type="table" number="31" week="42"/>
+              <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
+              <!-- 8697956/2511/22006 -->
             </match>
             <match id="64dc90ed-45e9-4f99-ba1a-771c65967819" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697948">
               <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
@@ -3501,5 +3501,5 @@ http_interactions:
           </matches>
         </schedule>
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:02:26 GMT
+  recorded_at: Thu, 29 Sep 2016 01:39:18 GMT
 recorded_with: VCR 3.0.3

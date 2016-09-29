@@ -1,0 +1,1186 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nfl-ot1/seasontd/2016/reg/1/injuries.xml?api_key=<NFL_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 01:39:14 GMT
+      Expires:
+      - Thu, 29 Sep 2016 01:39:16 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-117.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '7820'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '63524'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!-- Generation started @ 2016-09-14 11:21:58 +0000 -->
+        <season xmlns="http://feed.elasticstats.com/schema/nfl/premium/injuries-v2.0.xsd" id="49037b4f-71c4-4e4d-8963-4f9b83e0b4bc" year="2016" type="REG" name="REG">
+          <week id="fca6b835-3977-4979-8a74-4d3f46e3be24" sequence="1" title="1"/>
+          <injuries>
+            <team name="Bengals" market="Cincinnati" alias="CIN" id="ad4ae08f-d808-42d5-a1e6-e9bc4e34d123">
+              <player name="Tyler Eifert" jersey="85" reference="00-0030549" id="14ecf9dd-3a77-4847-8e62-407cd1182f1c" position="TE">
+                <injury status="Out" status_date="2016-09-09T16:23:30+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="James Wright" jersey="86" reference="00-0031291" id="c0968ade-8af6-49f3-b812-bf15b6379334" position="WR">
+                <injury status_date="2016-09-09T16:22:33+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Anthony Johnson" jersey="60" reference="00-0030126" id="dadcbaf3-cd13-43dd-8b7a-9f81db468872" position="C">
+                <injury status_date="2016-09-09T16:18:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Adam Jones" jersey="24" reference="00-0023441" id="69d9c13c-2293-4eed-ae35-01c90dd45c1b" position="CB">
+                <injury status_date="2016-09-09T16:18:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Darqueze Dennard" jersey="21" reference="00-0031380" id="05b308c7-13f6-4ea7-baed-4314896663cb" position="CB">
+                <injury status="Doubtful" status_date="2016-09-09T16:24:15+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Michael Burkhead" jersey="33" reference="00-0030288" id="bd8052bd-0898-430b-99c9-2529e895ae79" position="RB">
+                <injury status_date="2016-09-09T16:18:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Tyler Kroft" jersey="81" reference="00-0032214" id="36f54823-9d51-4180-9c91-d10281deb4bf" position="TE">
+                <injury status_date="2016-09-09T16:18:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Jake Fisher" jersey="74" reference="00-0032196" id="aacd2e1d-0882-4698-87dc-f033382257a7" position="T">
+                <injury status_date="2016-09-09T16:18:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Eric Winston" jersey="73" reference="00-0024281" id="979f7f83-00e8-4ec8-9420-9e5a53f0b406" position="G">
+                <injury status_date="2016-09-08T18:01:57+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                </injury>
+              </player>
+              <player name="Cody Core" jersey="16" reference="00-0032795" id="fa6b16fe-d3cd-4296-a0e6-03ad13d27a57" position="WR">
+                <injury status_date="2016-09-09T16:22:01+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Patrick Sims" jersey="92" reference="00-0026217" id="1f20aaed-7f06-45c8-a868-bb5fee0be950" position="NT">
+                <injury status_date="2016-09-09T16:18:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Cedric Ogbuehi" jersey="70" reference="00-0032233" id="b2805ba0-6faa-404d-b0b5-7c8ccce85f3a" position="T">
+                <injury status_date="2016-09-09T16:18:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Colts" market="Indianapolis" alias="IND" id="82cf9565-6eb9-4f01-bdbd-5aa0d472fcd9">
+              <player name="Clayton Geathers" jersey="26" reference="00-0031571" id="c6392013-57ae-46b3-8a86-791f94bc0c79" position="FS">
+                <injury status="Out" status_date="2016-09-09T19:28:26+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Andrew Luck" jersey="12" reference="00-0029668" id="e3181493-6a2a-4e95-aa6f-3fc1ddeb7512" position="QB">
+                <injury status_date="2016-09-09T19:23:06+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Joseph Haeg" jersey="73" reference="00-0032419" id="6d9f5816-f0f7-4562-9db0-26b1eb487f68" position="T">
+                <injury status="Questionable" status_date="2016-09-09T19:28:55+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Vontae Davis" jersey="21" reference="00-0027001" id="1e3967fb-21cc-43b8-9f36-1c2e3b280cec" position="CB">
+                <injury status="Out" status_date="2016-09-09T19:27:59+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Joseph Reitz" jersey="76" reference="00-0026408" id="1400c086-a5b0-45b1-a0f8-7cdc9e803917" position="T">
+                <injury status_date="2016-09-09T19:23:40+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Henry Anderson" jersey="96" reference="00-0032269" id="2d3a6c81-183f-431b-9b3f-d7f1ce2b294b" position="DT">
+                <injury status="Out" status_date="2016-09-09T19:25:53+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Kendall Langford" jersey="90" reference="00-0026206" id="53f8b594-314d-4f34-9444-a2b3e7eb0185" position="DE">
+                <injury status_date="2016-09-09T19:22:51+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                </injury>
+              </player>
+              <player name="Darius Butler" jersey="20" reference="00-0027017" id="1efa534b-cff5-4b6c-ab66-d402efc99b0e" position="CB">
+                <injury status="Out" status_date="2016-09-09T19:27:39+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Snorsio Moore" jersey="55" reference="00-0030529" id="e2aeac51-e24f-47db-bbfa-2b6ba91b5139" position="ILB">
+                <injury status="Questionable" status_date="2016-09-09T19:30:14+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Jack Mewhort" jersey="75" reference="00-0031046" id="0fa7b955-04fe-4d85-b9f1-6ce4db29c9e8" position="G">
+                <injury status="Questionable" status_date="2016-09-09T19:33:32+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624">
+              <player name="Spencer Long" jersey="61" reference="00-0031047" id="5d03f256-0569-4908-a0bf-5f95325c8be3" position="G">
+                <injury status="Questionable" status_date="2016-09-10T17:30:59+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Attauyo Nsekhe" jersey="79" reference="00-0029709" id="d723ebff-0e9d-42f8-93d2-fe0c02252de8" position="T">
+                <injury status_date="2016-09-10T17:29:49+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Kendall Reyes" jersey="97" reference="00-0029256" id="8d7729c6-3a84-4769-8c2c-2ed11557be20" position="DE">
+                <injury status="Questionable" status_date="2016-09-10T17:30:59+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Groin</primary>
+                </injury>
+              </player>
+              <player name="Kedric Golston" jersey="64" reference="00-0024410" id="8d079fe0-46d4-41d8-878b-98141320bcfc" position="NT">
+                <injury status="Questionable" status_date="2016-09-10T17:30:59+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Back</primary>
+                </injury>
+              </player>
+              <player name="Joshua Doctson" jersey="18" reference="00-0032760" id="c80914e5-5b9b-4ed8-a993-bcdf5f77f5f6" position="WR">
+                <injury status="Questionable" status_date="2016-09-10T17:30:59+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Achilles</primary>
+                </injury>
+              </player>
+              <player name="Matt Jones" jersey="31" reference="00-0031939" id="2641d36d-7c61-445f-980f-313671f2e8ce" position="RB">
+                <injury status="Questionable" status_date="2016-09-10T17:30:59+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Jets" market="New York" alias="NYJ" id="5fee86ae-74ab-4bdd-8416-42a9dd9964f3">
+              <player name="Stephen McLendon" jersey="99" reference="00-0026564" id="cee49408-2e91-487a-a8ec-d3314ebf539d" position="NT">
+                <injury status_date="2016-09-09T18:47:49+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Darryl Roberts" jersey="27" reference="00-0031628" id="5ce96781-4dea-4995-a6ae-7e8ba7acfdbc" position="CB">
+                <injury status="Out" status_date="2016-09-09T18:49:07+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Bryce Petty" jersey="9" reference="00-0031568" id="609ab653-c3d4-4138-a2d9-c697a34174ad" position="QB">
+                <injury status="Out" status_date="2016-09-09T18:48:36+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>right Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Bruce Carter" jersey="54" reference="00-0027978" id="6fbd5f30-db84-4c38-98ea-69631bdbc53f" position="ILB">
+                <injury status="Questionable" status_date="2016-09-09T18:50:11+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Brandon Marshall" jersey="15" reference="00-0024334" id="bbca096b-fd15-498a-86c2-feb44737363f" position="WR">
+                <injury status_date="2016-09-09T18:47:49+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="David Harris" jersey="52" reference="00-0025434" id="c348bf8a-bc99-45fb-b1c8-04f487418d3c" position="ILB">
+                <injury status="Questionable" status_date="2016-09-09T18:50:30+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Jordan Jenkins" jersey="48" reference="00-0032970" id="ae3bb00f-84e8-439f-ab56-38c6838b8b97" position="LB">
+                <injury status="Doubtful" status_date="2016-09-09T18:49:23+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Calf</primary>
+                </injury>
+              </player>
+              <player name="Leonard Williams" jersey="92" reference="00-0031933" id="2b5152aa-cbcc-439c-b72a-ac7577c8422b" position="DE">
+                <injury status_date="2016-09-09T18:47:54+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Muhammad Wilkerson" jersey="96" reference="00-0027968" id="3877e0ba-222f-4bd2-887c-1db8f1a5e7d1" position="DE">
+                <injury status_date="2016-09-09T18:47:49+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Onachie Enunwa" jersey="81" reference="00-0031023" id="0adf5b2c-35bd-41f2-8e73-3dad53454d78" position="WR">
+                <injury status_date="2016-09-09T18:47:49+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Bills" market="Buffalo" alias="BUF" id="768c92aa-75ff-4a43-bcc0-f2798c2e1724">
+              <player name="Ryan Groy" jersey="72" reference="00-0031128" id="a2e26ea7-db98-4611-8947-692b0cedb541" position="G">
+                <injury status="Questionable" status_date="2016-09-09T17:12:13+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Ribs</primary>
+                </injury>
+              </player>
+              <player name="Jonathan Williams" jersey="31" reference="00-0032975" id="697200ea-cabb-40b8-aeac-e52763310306" position="RB">
+                <injury status="Questionable" status_date="2016-09-09T17:12:43+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Ribs</primary>
+                </injury>
+              </player>
+              <player name="Cardale Jones" jersey="7" reference="00-0033098" id="92c02ef1-8400-4f5a-9420-6458755e14d4" position="QB">
+                <injury status="Questionable" status_date="2016-09-09T17:12:29+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>right Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Colt Anderson" jersey="33" reference="00-0026578" id="3c57a63e-cdce-48ab-9dfc-66c6e809697c" position="S">
+                <injury status="Out" status_date="2016-09-09T17:11:37+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Kevon Seymour" jersey="29" reference="00-0032942" id="e431a42b-5abe-49de-9c8c-f143f393591c" position="CB">
+                <injury status="Out" status_date="2016-09-09T17:11:57+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Steelers" market="Pittsburgh" alias="PIT" id="cb2f9f1f-ac67-424e-9e72-1475cb0ed398">
+              <player name="Roosevelt Nix" jersey="45" reference="00-0030741" id="f611f87a-1e49-4196-9088-8c760f26006d" position="FB">
+                <injury status="Out" status_date="2016-09-10T16:43:59+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Back</primary>
+                </injury>
+              </player>
+              <player name="Javon Hargrave" jersey="79" reference="00-0033109" id="3f8e4972-2361-4939-b5e3-c5f6c63b9f68" position="DT">
+                <injury status_date="2016-09-10T16:43:30+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Cameron Heyward" jersey="97" reference="00-0027969" id="9779acc7-ed88-4a16-b78d-230ace9ec3eb" position="DE">
+                <injury status_date="2016-09-10T16:43:30+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Senquez Golson" jersey="27" reference="00-0032105" id="5519045c-6923-4ca9-8486-66c35de06614" position="DB">
+                <injury status="Out" status_date="2016-09-10T16:43:54+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Markus Wheaton" jersey="11" reference="00-0030460" id="f9036897-99d5-4d9a-8965-0c7e0f9e43bd" position="WR">
+                <injury status="Out" status_date="2016-09-10T16:44:09+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Cody Wallace" jersey="72" reference="00-0026247" id="adeb92c4-bbf2-4cfa-8c76-55b1d30d1c1b" position="C">
+                <injury status="Out" status_date="2016-09-10T16:44:03+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Marcus Gilbert" jersey="77" reference="00-0028001" id="cb332cbe-4490-48c6-9a21-046475206e07" position="T">
+                <injury status_date="2016-09-10T16:43:30+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Shamarko Thomas" jersey="29" reference="00-0030412" id="ecb0a97f-f70b-4ea7-a741-e1d4e764edfb" position="SS">
+                <injury status_date="2016-09-10T16:43:30+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Daniel McCullers" jersey="93" reference="00-0031193" id="f6ff73b1-d607-4226-83ab-b523bdc0be4e" position="NT">
+                <injury status_date="2016-09-10T16:43:30+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Bears" market="Chicago" alias="CHI" id="7b112545-38e6-483c-a55c-96cf6ee49cb8">
+              <player name="Cornelius Washington" jersey="90" reference="00-0030048" id="adf28620-33a3-4619-b511-1853f2f12ef0" position="DE">
+                <injury status="Questionable" status_date="2016-09-09T18:20:51+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Ankle</primary>
+                  <secondary>Knee</secondary>
+                </injury>
+              </player>
+              <player name="Josh Bellamy" jersey="11" reference="00-0029319" id="1b8db398-7a7e-44df-922e-d979507e6bdb" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T18:16:44+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Paula Lasike" jersey="47" reference="00-0031706" id="8c41a5e8-4979-4b88-a71b-e25be9ee55e5" position="FB">
+                <injury status="Questionable" status_date="2016-09-09T18:18:42+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Wrist</primary>
+                </injury>
+              </player>
+              <player name="Bryce Callahan" jersey="37" reference="00-0031904" id="8a7fa9bc-f589-4458-9a58-8ac3432a3df9" position="CB">
+                <injury status="Questionable" status_date="2016-09-09T18:17:43+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Groin</primary>
+                </injury>
+              </player>
+              <player name="Kyle Long" jersey="75" reference="00-0030441" id="8e6af99d-a697-4be5-ae7f-f1ddc12bd15a" position="G">
+                <injury status="Questionable" status_date="2016-09-09T18:19:50+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Deon Bush" jersey="26" reference="00-0032774" id="abb612d4-f5b9-4644-b9ed-f13fa0da7e98" position="S">
+                <injury status="Questionable" status_date="2016-09-09T18:17:14+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Deonte Thompson" jersey="14" reference="00-0029388" id="c323cdb9-74bc-4d68-9358-609f80eedbb7" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T18:20:17+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                  <secondary>Ankle</secondary>
+                </injury>
+              </player>
+              <player name="Kyle Fuller" jersey="23" reference="00-0031041" id="054f4c09-6bc9-49c9-a466-80abd2a39e74" position="CB">
+                <injury status="Questionable" status_date="2016-09-09T18:18:06+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Kevin White" jersey="13" reference="00-0031545" id="5b496c58-83ef-4763-b1e0-5f052af46b3e" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T18:21:06+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Packers" market="Green Bay" alias="GB" id="a20471b4-a8d9-40c7-95ad-90cc30e46932">
+              <player name="Ayorunmi Banjo" jersey="32" reference="00-0029747" id="6c7704c2-f833-46aa-9f9c-d975d5ad1297" position="FS">
+                <injury status="Doubtful" status_date="2016-09-09T19:29:49+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Trevor Davis" jersey="11" reference="00-0032423" id="bc175901-4a1f-4132-abb4-e49cc7d35e12" position="WR">
+                <injury status="Doubtful" status_date="2016-09-09T19:30:31+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Justin Perillo" jersey="80" reference="00-0030758" id="22dc9bf1-bf01-4b65-9792-15c0cae4d25e" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T19:31:55+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Joshua Hawkins" jersey="28" reference="00-0032635" id="2f01f1dc-8e8c-4d74-95d9-1b36b42257fb" position="CB">
+                <injury status="Out" status_date="2016-09-09T19:31:17+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Jeff Janis" jersey="83" reference="00-0031001" id="7b1c1855-fc6d-42aa-ac3e-588e82333146" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T19:31:37+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Hand</primary>
+                </injury>
+              </player>
+              <player name="Jayrone Elliott" jersey="91" reference="00-0030752" id="4642915e-8c37-4692-9169-fa210b6efc8c" position="OLB">
+                <injury status="Doubtful" status_date="2016-09-09T19:30:55+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Chargers" market="San Diego" alias="SD" id="9dbb9060-ba0f-4920-829e-16d4d9246b5d">
+              <player name="Keenan Allen" jersey="13" reference="00-0030279" id="5f424505-f29f-433c-b3f2-1a143a04a010" position="WR">
+                <injury status_date="2016-09-09T18:59:38+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Danny Fluker" jersey="76" reference="00-0030505" id="a3855ea8-e71c-4028-86fb-5a1abbd94488" position="G">
+                <injury status_date="2016-09-09T18:59:21+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Jason Verrett" jersey="22" reference="00-0031334" id="13112f4f-03c9-432c-a033-454870cda46b" position="CB">
+                <injury status_date="2016-09-09T18:59:21+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Eagles" market="Philadelphia" alias="PHI" id="386bdbf9-9eea-4869-bb9a-274b0bc66e80">
+              <player name="Bryce Treggs" jersey="16" reference="00-0032724" id="be921e61-4abb-43ff-aa4d-ccf9f9a66d67" position="WR">
+                <injury status="Out" status_date="2016-09-09T18:21:15+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Lawrence Burton" jersey="47" reference="00-0030710" id="bc0f07a4-3e7b-4e61-987a-05533dc225be" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T18:20:59+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Calf</primary>
+                </injury>
+              </player>
+              <player name="Vincent Curry" jersey="75" reference="00-0029412" id="e929b3d8-6f7b-41f2-acfa-fe3840d03509" position="DE">
+                <injury status="Questionable" status_date="2016-09-09T18:21:34+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a">
+              <player name="Chris Hogan" jersey="15" reference="00-0028237" id="8fc65820-f565-44e2-8635-3e1cdf165bf6" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T19:49:52+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Trey Flowers" jersey="98" reference="00-0031566" id="57deb6ba-ce26-4ccc-a859-adf0564fb78e" position="DE">
+                <injury status="Questionable" status_date="2016-09-09T19:46:16+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Shaquille Mason" jersey="69" reference="00-0031580" id="a8ac7c7d-301a-4e1e-afd4-04f88cad848e" position="G">
+                <injury status="Questionable" status_date="2016-09-09T19:47:20+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hand</primary>
+                </injury>
+              </player>
+              <player name="Shea McClellin" jersey="58" reference="00-0029250" id="96981fd3-bd93-4134-84fc-3506197ac7eb" position="OLB">
+                <injury status="Questionable" status_date="2016-09-09T19:47:47+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Jonathan Cooper" jersey="65" reference="00-0030590" id="d6aea7ed-2c24-4be5-b789-41e3ba0c2137" position="G">
+                <injury status="Questionable" status_date="2016-09-10T16:48:51+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Nathaniel Solder" jersey="77" reference="00-0027955" id="b077b3b2-2fed-4c9f-9b8f-c4ff50a4f911" position="T">
+                <injury status="Questionable" status_date="2016-09-10T16:48:56+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Malcolm Mitchell" jersey="19" reference="00-0032400" id="c3ed9a9b-3e7d-4533-8224-a0b89adcd9da" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T19:48:30+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Elbow</primary>
+                </injury>
+              </player>
+              <player name="Robert Gronkowski" jersey="87" reference="00-0027656" id="2142a164-48ad-47d6-bb27-0bc58c6b2e62" position="TE">
+                <injury status="Questionable" status_date="2016-09-10T16:49:03+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Texans" market="Houston" alias="HOU" id="82d2d380-3834-4938-835f-aec541e5ece7">
+              <player name="Justin Watt" jersey="99" reference="00-0027949" id="dc11299d-6c24-4048-8b2f-f929e4ed0b92" position="DE">
+                <injury status_date="2016-09-09T19:21:32+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Derek Newton" jersey="72" reference="00-0028152" id="044d5384-6a9f-4843-ad3e-909d362381f6" position="T">
+                <injury status_date="2016-09-09T19:21:17+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Duane Brown" jersey="76" reference="00-0026166" id="f26bd260-a1eb-42ab-8768-bc8ad24e4f9e" position="T">
+                <injury status="Out" status_date="2016-09-09T19:22:05+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="William Fuller" jersey="15" reference="00-0033127" id="095e0c1a-0bea-4bc6-868f-e4bbe2ce6c30" position="WR">
+                <injury status_date="2016-09-09T19:21:28+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Akeem Dent" jersey="50" reference="00-0028029" id="9f897fa7-7363-47cc-9020-a2904ce3a3de" position="ILB">
+                <injury status_date="2016-09-09T19:21:17+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="49ers" market="San Francisco" alias="SF" id="f0e724b0-4cbf-495a-be47-013907608da9">
+              <player name="Anthony Davis" jersey="76" reference="00-0027863" id="02f3eb16-982c-48ff-b731-7456812ab200" position="T">
+                <injury status="Questionable" status_date="2016-09-10T20:40:33+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Not Injury Related</primary>
+                </injury>
+              </player>
+              <player name="Keith Reaser" jersey="27" reference="00-0031020" id="ff05fdc3-e3a4-4d18-861e-5b1f8553d773" position="CB">
+                <injury status="Questionable" status_date="2016-09-10T20:40:33+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Nick Bellore" jersey="50" reference="00-0028292" id="eeb9e3f4-e378-44ca-94b6-a724011ad710" position="ILB">
+                <injury status="Questionable" status_date="2016-09-10T20:40:33+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Christopher Davis" jersey="43" reference="00-0030917" id="d77e2ccd-d900-4a4a-8b0c-46b5d0eee907" position="CB">
+                <injury status="Doubtful" status_date="2016-09-10T20:41:34+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Arik Armstead" jersey="91" reference="00-0032164" id="acb7169f-3ffa-4386-9866-e06af6ed7fef" position="DT">
+                <injury status="Questionable" status_date="2016-09-10T20:41:15+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Quinton Dial" jersey="92" reference="00-0030088" id="2d915e15-6716-436d-b5fa-6b77d28b0982" position="DT">
+                <injury status="Questionable" status_date="2016-09-10T20:40:33+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Glenn Dorsey" jersey="90" reference="00-0026145" id="e01f12e9-7591-44ae-90e5-3df205611ac9" position="DT">
+                <injury status="Questionable" status_date="2016-09-10T20:40:33+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Ravens" market="Baltimore" alias="BAL" id="ebd87119-b331-4469-9ea6-d51fe3ce2f1c">
+              <player name="Maxx Williams" jersey="87" reference="00-0031558" id="52f4a43a-64a9-4d69-a9e2-28bd60f68e49" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T18:19:26+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Courtney Powers" jersey="26" reference="00-0027064" id="aa784a08-fa35-45af-9cc5-f731446b4cb5" position="CB">
+                <injury status="Out" status_date="2016-09-09T18:18:35+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Dennis Pitta" jersey="88" reference="00-0027714" id="e2577abf-7f24-4987-89f5-51676c39c2f6" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T18:18:49+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Finger</primary>
+                </injury>
+              </player>
+              <player name="John Urschel" jersey="64" reference="00-0030996" id="29889672-5f01-41d8-a1e0-4060e6971e85" position="G">
+                <injury status="Questionable" status_date="2016-09-09T18:19:07+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Kenneth Dixon" jersey="30" reference="00-0032411" id="997525cb-5d0d-4f3b-bd56-7488b62627ec" position="RB">
+                <injury status="Out" status_date="2016-09-09T18:17:47+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Shareece Wright" jersey="24" reference="00-0028027" id="221abfe3-f41c-4c1f-aa88-ca06fc57ed8e" position="CB">
+                <injury status="Questionable" status_date="2016-09-09T18:19:43+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Elvis Dumervil" jersey="58" reference="00-0024341" id="854a4f9f-fd7d-406f-a545-b23e3f16a201" position="OLB">
+                <injury status="Out" status_date="2016-09-09T18:18:17+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Rams" market="Los Angeles" alias="LA" id="2eff2a03-54d4-46ba-890e-2bc3925548f3">
+              <player name="Pharoh Cooper" jersey="10" reference="00-0033111" id="4f724338-aa8c-436d-90b2-45299572c53e" position="WR">
+                <injury status="Out" status_date="2016-09-10T20:30:02+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Shoulder</primary>
+                </injury>
+              </player>
+              <player name="Edwin Gaines" jersey="33" reference="00-0031394" id="ab7df007-37bf-407b-b77d-0e719c80f065" position="CB">
+                <injury status="Out" status_date="2016-09-10T20:30:22+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Thigh</primary>
+                </injury>
+              </player>
+              <player name="Bryce Hager" jersey="54" reference="00-0032248" id="ba447b79-44c1-48a7-b30a-a2460f219afe" position="MLB">
+                <injury status="Questionable" status_date="2016-09-10T20:31:02+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Concussion</primary>
+                </injury>
+              </player>
+              <player name="Nelson Spruce" jersey="86" reference="00-0032685" id="c50fbbf2-7f97-430c-8c96-71a3da27e3f4" position="WR">
+                <injury status="Out" status_date="2016-09-10T20:31:47+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Robert Havenstein" jersey="79" reference="00-0032242" id="ec810fdb-ae6f-49ad-9538-31d1e6dfa578" position="T">
+                <injury status="Questionable" status_date="2016-09-10T20:31:23+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Buccaneers" market="Tampa Bay" alias="TB" id="4254d319-1bc7-4f81-b4ab-b5e6f3402b69">
+              <player name="Devante Bond" jersey="59" reference="00-0032789" id="bd6ca667-99e9-42ea-9be7-a680945eece9" position="LB">
+                <injury status="Out" status_date="2016-09-09T17:52:58+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Ryan Smith" jersey="29" reference="00-0032772" id="479b4819-3377-4255-9156-c1ce82cbf1d4" position="CB">
+                <injury status="Questionable" status_date="2016-09-09T17:53:18+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Hand</primary>
+                </injury>
+              </player>
+              <player name="Lucas Stocker" jersey="88" reference="00-0028042" id="5b712aed-201c-43dd-b978-b7b6ef91178e" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T17:53:32+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Back</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e">
+              <player name="Emmanuel Ogbah" jersey="90" reference="00-0033073" id="2300fe3b-c81f-4786-ae0c-0c229644239d" position="OLB">
+                <injury status_date="2016-09-09T18:25:33+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Marcus Burley" jersey="26" reference="00-0029942" id="a486fc4b-e475-4ff2-b22a-f454c266819a" position="CB">
+                <injury status="Out" status_date="2016-09-09T18:26:17+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Groin</primary>
+                </injury>
+              </player>
+              <player name="Tramon Williams" jersey="22" reference="00-0024061" id="640710b9-72f2-47e1-9afa-f3070b23c119" position="CB">
+                <injury status_date="2016-09-09T18:25:13+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Ricardo Louis" jersey="80" reference="00-0033079" id="b3cac48b-ecf9-4bf9-963f-a10aeca6a350" position="WR">
+                <injury status_date="2016-09-09T18:25:13+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Tracy Howard" jersey="41" reference="00-0032987" id="2371d124-7c43-4af0-b893-0c1485345fa8" position="CB">
+                <injury status_date="2016-09-09T18:25:13+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Joe Thomas" jersey="73" reference="00-0025390" id="318b9670-1dde-4e65-a92f-65df6e80824d" position="T">
+                <injury status_date="2016-09-08T20:58:48+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Cardinals" market="Arizona" alias="ARI" id="de760528-1dc0-416a-a978-b510d20692ff">
+              <player name="Justin Bethel" jersey="28" reference="00-0029530" id="f403d099-29d4-43cd-bf79-4aeeb8dc6cd3" position="CB">
+                <injury status="Questionable" status_date="2016-09-09T20:14:53+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Lamar Louis" jersey="52" reference="00-0032502" id="84e5d7f6-88a3-4c0f-b2f7-7663199509df" position="ILB">
+                <injury status="Questionable" status_date="2016-09-09T20:14:53+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Kareem Martin" jersey="96" reference="00-0031050" id="69c1e87f-7ffc-487d-8724-09f4fba12b59" position="OLB">
+                <injury status="Out" status_date="2016-09-09T20:15:07+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Alex Okafor" jersey="57" reference="00-0030503" id="b200f413-296d-49f3-9ef2-f60e21c2f5fd" position="OLB">
+                <injury status_date="2016-09-09T20:14:37+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Frostee Rucker" jersey="92" reference="00-0024306" id="36648f14-5fe5-40f3-ade1-ef53c8f93bdf" position="DT">
+                <injury status_date="2016-09-09T20:14:48+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Stepfan Taylor" jersey="30" reference="00-0030282" id="01547e57-de64-4860-a521-525509dacf5b" position="RB">
+                <injury status="Questionable" status_date="2016-09-09T20:14:53+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Vikings" market="Minnesota" alias="MIN" id="33405046-04ee-4058-a950-d606f8c30852">
+              <player name="Matthew Kalil" jersey="75" reference="00-0029687" id="d9168af9-6bf7-47de-ba56-19d6a3a4548b" position="T">
+                <injury status_date="2016-09-09T18:36:10+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="MyCole Pruitt" jersey="83" reference="00-0031585" id="f22b34cf-6ecf-4522-9c77-1da275dfda7d" position="TE">
+                <injury status="Out" status_date="2016-09-09T18:48:44+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Anthony Harris" jersey="41" reference="00-0031799" id="a7413fb5-8d05-457f-a97f-504bee73a910" position="FS">
+                <injury status_date="2016-09-09T18:36:10+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Charles Johnson" jersey="12" reference="00-0030113" id="be08946a-31ea-46da-b572-19c1e1948d14" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T18:49:18+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Quadricep</primary>
+                </injury>
+              </player>
+              <player name="Rhett Ellison" jersey="85" reference="00-0029587" id="cccc9f16-9508-434f-b7a4-9a29cb0cacf9" position="TE">
+                <injury status_date="2016-09-09T18:36:10+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Jerick McKinnon" jersey="21" reference="00-0031376" id="f77479d7-51a5-41f9-8924-69526dd078cd" position="RB">
+                <injury status="Questionable" status_date="2016-09-09T18:50:18+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Foot</primary>
+                </injury>
+              </player>
+              <player name="Xavier Rhodes" jersey="29" reference="00-0030575" id="81a5c010-2e89-4b65-a924-015cf4ea3f94" position="CB">
+                <injury status_date="2016-09-09T18:36:22+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Nicholas Easton" jersey="62" reference="00-0031765" id="6e150bf7-49da-4d65-9b8e-e39dc074c539" position="C">
+                <injury status="Out" status_date="2016-09-09T18:47:22+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Jaguars" market="Jacksonville" alias="JAC" id="f7ddd7fa-0bae-4f90-bc8e-669e4d6cf2de">
+              <player name="Jared Odrick" jersey="75" reference="00-0027878" id="a763f347-f201-4247-9f48-47060de57d41" position="DE">
+                <injury status="Questionable" status_date="2016-09-09T15:16:32+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Jaw</primary>
+                  <secondary>Head</secondary>
+                </injury>
+              </player>
+              <player name="Christopher Ivory" jersey="33" reference="00-0027531" id="72f5a27a-544f-468a-b10b-89a1fc5d0e9f" position="RB">
+                <injury status="Questionable" status_date="2016-09-09T15:16:50+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Calf</primary>
+                </injury>
+              </player>
+              <player name="Roy Miller" jersey="97" reference="00-0027055" id="2678c1f7-f4ee-4f6b-83c4-4fe5a1e0a0f4" position="DT">
+                <injury status_date="2016-09-09T15:15:34+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Broncos" market="Denver" alias="DEN" id="ce92bd47-93d5-4fe9-ada4-0fc681e6caa0">
+              <player name="Max Garcia" jersey="76" reference="00-0032132" id="f19b687d-b81f-4104-9151-92e2af7d234d" position="G">
+                <injury status_date="2016-09-07T17:50:18+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Tyler Sambrailo" jersey="74" reference="00-0032147" id="1f7fb52c-0320-4a3f-af26-608e99699fb3" position="T">
+                <injury status="Questionable" status_date="2016-09-07T17:54:02+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Elbow</primary>
+                </injury>
+              </player>
+              <player name="Jeff Heuerman" jersey="82" reference="00-0032227" id="1fe3aadd-336b-4838-888e-8c9609747afc" position="TE">
+                <injury status="Questionable" status_date="2016-09-07T17:53:50+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Darrion Weems" jersey="77" reference="00-0029080" id="2768da89-2265-4e20-aafc-0261fca287bc" position="T">
+                <injury status_date="2016-09-07T17:50:18+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="DeMarcus Ware" jersey="94" reference="00-0023445" id="f5fa509a-fc67-4c74-be9f-cb9cc8815a6f" position="OLB">
+                <injury status_date="2016-09-07T17:50:18+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Bennie Fowler" jersey="16" reference="00-0030670" id="132721b4-fd32-4795-b214-ab4baaaceb3a" position="WR">
+                <injury status="Out" status_date="2016-09-07T17:53:18+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Elbow</primary>
+                </injury>
+              </player>
+              <player name="William Winn" jersey="97" reference="00-0029303" id="408aff57-2b32-41f7-9520-0064ad14af21" position="DE">
+                <injury status_date="2016-09-07T17:50:18+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Kapri Bibbs" jersey="35" reference="00-0031102" id="4402b8d5-d6bf-43d0-9198-651506abba76" position="RB">
+                <injury status_date="2016-09-07T17:50:18+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="James Ferentz" jersey="53" reference="00-0031039" id="b57c9d4e-b06b-4281-98d8-1295684c2e55" position="C">
+                <injury status="Questionable" status_date="2016-09-07T17:54:30+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Cowboys" market="Dallas" alias="DAL" id="e627eec7-bbae-4fa4-8e73-8e1d6bc5c060">
+              <player name="Charles Tapper" jersey="99" reference="00-0033075" id="9aeb2a34-dbc9-463f-9c94-7161336f37cf" position="DE">
+                <injury status="Out" status_date="2016-09-09T19:04:56+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Back</primary>
+                </injury>
+              </player>
+              <player name="Tony Romo" jersey="9" reference="00-0021678" id="c32d8200-2b85-4638-8db3-9a52fb86b207" position="QB">
+                <injury status="Out" status_date="2016-09-09T19:04:44+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Back</primary>
+                </injury>
+              </player>
+              <player name="Mark Nzeocha" jersey="53" reference="00-0031961" id="6f1bc007-d446-48f2-a6e5-58c5e53df94f" position="MLB">
+                <injury status="Out" status_date="2016-09-09T19:04:31+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Achilles</primary>
+                </injury>
+              </player>
+              <player name="Ronald Leary" jersey="65" reference="00-0029010" id="1d127c62-d7f3-4fe5-b30d-9b7a9cef6637" position="G">
+                <injury status="Questionable" status_date="2016-09-09T19:03:57+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Groin</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Falcons" market="Atlanta" alias="ATL" id="e6aa13a4-0055-48a9-bc41-be28dc106929">
+              <player name="Keanu Neal" jersey="22" reference="00-0032382" id="cc9c2006-e72b-4073-afcc-69c187cb28b7" position="S">
+                <injury status="Out" status_date="2016-09-09T19:01:34+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Quintorris Jones" jersey="11" reference="00-0027944" id="0b3217b9-ba37-4222-95cb-a7a222441e8b" position="WR">
+                <injury status_date="2016-09-09T18:58:41+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Robenson Therezie" jersey="27" reference="00-0031680" id="e73ef17d-9ef4-4469-bcb2-0841c3c4d27f" position="S">
+                <injury status_date="2016-09-09T18:59:23+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                </injury>
+              </player>
+              <player name="Jonathan Babineaux" jersey="95" reference="00-0023494" id="691fb762-1b61-420c-8ef6-91e66b2aeecf" position="DT">
+                <injury status_date="2016-09-09T18:59:00+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Terron Ward" jersey="28" reference="00-0031682" id="003f8716-bc1a-4328-9a98-80ed932eb4e5" position="RB">
+                <injury status="Questionable" status_date="2016-09-09T19:02:13+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Kemal Ishmael" jersey="36" reference="00-0030427" id="e4039abe-35b3-4b78-9752-e714ef01cecd" position="S">
+                <injury status_date="2016-09-09T18:59:11+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Dwight Freeney" jersey="93" reference="00-0021146" id="e77c194a-dfc8-4584-8bc1-a8b2adef859d" position="DE">
+                <injury status_date="2016-09-09T18:58:41+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Adrian Clayborn" jersey="99" reference="00-0027958" id="072ec285-1430-48d4-9342-5a1b9af527f3" position="DE">
+                <injury status_date="2016-09-09T18:59:04+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Dashon Goldson" jersey="38" reference="00-0025513" id="8fd45946-17e7-4e01-91df-bb866f268309" position="S">
+                <injury status="Questionable" status_date="2016-09-09T19:01:58+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06">
+              <player name="Isaiah Pead" jersey="22" reference="00-0029626" id="37acea2b-df62-4aa6-a064-cf63f20efc12" position="RB">
+                <injury status="Questionable" status_date="2016-09-09T20:47:11+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Terrence Fede" jersey="78" reference="00-0031317" id="5064d069-aa24-4828-81c9-c78e0e56fb78" position="DE">
+                <injury status="Questionable" status_date="2016-09-09T20:47:11+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="DeVante Parker" jersey="11" reference="00-0031547" id="e9ee9209-dd8f-4e4a-be3c-407756a2749c" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T20:47:11+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+              <player name="Jay Ajayi" jersey="23" reference="00-0031590" id="bb78a66a-a8ec-4294-8858-c7e5a1d15106" position="RB">
+                <injury status="Out" status_date="2016-09-09T20:47:31+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Not Injury Related</primary>
+                </injury>
+              </player>
+              <player name="Jelani Jenkins" jersey="53" reference="00-0030384" id="9f1a0910-090f-4f28-bb5e-0593e6f0a3bc" position="OLB">
+                <injury status="Questionable" status_date="2016-09-09T20:47:11+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="James Pouncey" jersey="51" reference="00-0027953" id="041c36ad-0d7d-4ed1-8157-95092b3027a4" position="C">
+                <injury status="Out" status_date="2016-09-09T20:47:56+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Hip</primary>
+                </injury>
+              </player>
+              <player name="Earl Mitchell" jersey="90" reference="00-0027684" id="c9fe00a2-7620-49f3-a744-7d04c5b30560" position="DT">
+                <injury status="Questionable" status_date="2016-09-09T20:47:11+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Calf</primary>
+                </injury>
+              </player>
+              <player name="Laremy Tunsil" jersey="67" reference="00-0032380" id="813c2073-8f69-4f6f-94a6-6819cd14b4f3" position="T">
+                <injury status="Questionable" status_date="2016-09-09T20:47:11+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Seahawks" market="Seattle" alias="SEA" id="3d08af9e-c767-4f88-a7dc-b920c6d2b4a8">
+              <player name="Jarran Reed" jersey="90" reference="00-0032387" id="c02b49d3-ddc1-4ffc-9f40-487199882fa5" position="DT">
+                <injury status_date="2016-09-10T01:25:54+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Jimmy Graham" jersey="88" reference="00-0027696" id="fd85786d-3900-4dc0-9b30-334ee30413ed" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T20:02:11+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Germain Ifedi" jersey="76" reference="00-0032384" id="23ce41df-3f29-4f67-9fb5-b9778ac931f8" position="G">
+                <injury status="Questionable" status_date="2016-09-09T20:02:40+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Tharold Simon" jersey="27" reference="00-0030487" id="21a71d59-6198-4c30-9895-3c5967605397" position="CB">
+                <injury status_date="2016-09-10T01:26:21+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Nicholas Vannett" jersey="81" reference="00-0032394" id="c731aa8a-778b-4ccd-a19f-517eb66f47b7" position="TE">
+                <injury status="Out" status_date="2016-09-09T20:02:23+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Thomas Rawls" jersey="34" reference="00-0031897" id="488c3707-26ee-4e1a-8742-494a06f77801" position="RB">
+                <injury status_date="2016-09-10T01:26:31+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Panthers" market="Carolina" alias="CAR" id="f14bf5cc-9a82-4a38-bc15-d39f75ed5314">
+              <player name="Vernon Butler" jersey="92" reference="00-0032967" id="73e84e89-4bd3-480e-b862-68502c8c295a" position="DT">
+                <injury status="Questionable" status_date="2016-09-07T14:57:41+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Hand</primary>
+                </injury>
+              </player>
+              <player name="Aaron Klein" jersey="56" reference="00-0030463" id="9342eba6-e307-4c55-a0f7-993518dd4415" position="MLB">
+                <injury status="Questionable" status_date="2016-09-07T14:57:29+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Back</primary>
+                </injury>
+              </player>
+              <player name="Dean Marlowe" jersey="29" reference="00-0031870" id="461b6e57-a2b0-4648-ab1f-b3ca4b111fe3" position="SS">
+                <injury status="Doubtful" status_date="2016-09-07T14:57:09+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Giants" market="New York" alias="NYG" id="04aa1c9d-66da-489d-b16a-1dee3f2eec4d">
+              <player name="Jonathan Casillas" jersey="52" reference="00-0026832" id="9277ab2c-45d0-4dec-8898-4510d27069a1" position="OLB">
+                <injury status_date="2016-09-09T18:04:52+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Robert Thomas" jersey="99" reference="00-0031006" id="de3f11e3-90ae-4ad2-880f-48e9b6f729f8" position="DT">
+                <injury status="Out" status_date="2016-09-09T18:06:51+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Illness</primary>
+                </injury>
+              </player>
+              <player name="Darian Thompson" jersey="27" reference="00-0033083" id="3ec4f630-592c-4848-a76c-c30ecc090ecb" position="FS">
+                <injury status_date="2016-09-09T18:04:52+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Chiefs" market="Kansas City" alias="KC" id="6680d28d-d4d2-49f6-aace-5292d3ec02c2">
+              <player name="Charcandrick West" jersey="35" reference="00-0030668" id="65f91b8b-6794-4273-bf42-4d00b5973ddd" position="RB">
+                <injury status_date="2016-09-09T19:14:17+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Tamba Hali" jersey="91" reference="00-0024235" id="8f44e573-a6dc-4730-93fd-e8abb403c160" position="OLB">
+                <injury status_date="2016-09-09T19:14:40+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                </injury>
+              </player>
+              <player name="Jamaal Charles" jersey="25" reference="00-0026213" id="aca06a5e-0e3a-4285-a025-199f8fa0376f" position="RB">
+                <injury status="Doubtful" status_date="2016-09-09T19:16:59+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                </injury>
+              </player>
+              <player name="Phillip Gaines" jersey="23" reference="00-0031015" id="5f173aec-86fc-40b5-b0ae-805b46476022" position="CB">
+                <injury status_date="2016-09-09T19:14:17+00:00">
+                  <practice status="Full Participation in Practice"/>
+                </injury>
+              </player>
+            </team>
+            <team name="Saints" market="New Orleans" alias="NO" id="0d855753-ea21-4953-89f9-0e20aff9eb73">
+              <player name="Chris Manhertz" jersey="86" reference="00-0031484" id="7c7b5515-7786-4e24-9ce0-34e6a8bd5727" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T19:54:15+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Head</primary>
+                </injury>
+              </player>
+              <player name="Michael Thomas" jersey="13" reference="00-0032765" id="90c1756d-1f47-41b7-89fe-b113c9850bc1" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T19:54:15+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Terron Armstead" jersey="72" reference="00-0030067" id="0cb6209d-2397-4be2-9cb7-f990bfb67e69" position="T">
+                <injury status="Questionable" status_date="2016-09-09T19:54:15+00:00">
+                  <practice status="Limited Participation in Practice"/>
+                  <primary>Knee</primary>
+                  <secondary>Quadricep</secondary>
+                </injury>
+              </player>
+              <player name="Dannell Ellerbe" jersey="59" reference="00-0026857" id="ef0eb4eb-da05-4fc2-998e-811b6307b27f" position="OLB">
+                <injury status="Out" status_date="2016-09-09T19:54:38+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Quadricep</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Titans" market="Tennessee" alias="TEN" id="d26a1ca5-722d-4274-8f97-c92e49c96315">
+              <player name="Kendall Wright" jersey="13" reference="00-0029708" id="441e8866-33f1-4820-9fa3-3aa2c7535975" position="WR">
+                <injury status="Out" status_date="2016-09-09T18:19:46+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Hamstring</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Lions" market="Detroit" alias="DET" id="c5a59daa-53a7-4de0-851f-fb12be893e9e">
+              <player name="Golden Tate" jersey="15" reference="00-0027891" id="c88d9352-b835-45ed-a909-1cfec09a58bc" position="WR">
+                <injury status="Questionable" status_date="2016-09-09T19:54:55+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Corey Robinson" jersey="70" reference="00-0031627" id="c1e82d78-b03b-4aac-b4f3-0720e2811ec4" position="T">
+                <injury status="Questionable" status_date="2016-09-09T19:54:55+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Eric Ebron" jersey="85" reference="00-0031387" id="9fbcfae9-dd14-415c-8952-9b1b5dff0dfc" position="TE">
+                <injury status="Questionable" status_date="2016-09-09T19:54:55+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+              <player name="Graham Glasgow" jersey="60" reference="00-0032395" id="22b2030e-ec57-4f96-b722-57b3e495c83d" position="C">
+                <injury status="Questionable" status_date="2016-09-09T19:54:55+00:00">
+                  <practice status="Full Participation in Practice"/>
+                  <primary>Toe</primary>
+                </injury>
+              </player>
+            </team>
+            <team name="Raiders" market="Oakland" alias="OAK" id="1c1cec48-6352-4556-b789-35304c1a6ae1">
+              <player name="Austin Howard" jersey="77" reference="00-0027297" id="2fc398c0-2e7c-47ad-bf3f-803c2dcf11ce" position="T">
+                <injury status="Out" status_date="2016-09-09T19:50:24+00:00">
+                  <practice status="Did Not Participate In Practice"/>
+                  <primary>Ankle</primary>
+                </injury>
+              </player>
+            </team>
+          </injuries>
+        </season>
+        <!-- Generation ended @ 2016-09-14 11:22:00 +0000 -->
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 01:39:15 GMT
+recorded_with: VCR 3.0.3

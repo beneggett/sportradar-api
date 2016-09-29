@@ -19,7 +19,7 @@ http_interactions:
       Content-Type:
       - text/xml
       Date:
-      - Thu, 29 Sep 2016 01:02:27 GMT
+      - Thu, 29 Sep 2016 01:39:16 GMT
       Server:
       - Mashery Proxy
       X-Error-Detail-Header:
@@ -27,7 +27,7 @@ http_interactions:
       X-Mashery-Error-Code:
       - ERR_403_DEVELOPER_INACTIVE
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-127.mashery.com
+      - prod-j-worker-us-east-1d-122.mashery.com
       Content-Length:
       - '27'
       Connection:
@@ -36,5 +36,5 @@ http_interactions:
       encoding: UTF-8
       string: "<h1>Developer Inactive</h1>"
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:02:27 GMT
+  recorded_at: Thu, 29 Sep 2016 01:39:16 GMT
 recorded_with: VCR 3.0.3

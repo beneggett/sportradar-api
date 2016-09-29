@@ -1,0 +1,247 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nfl-ot1/games/0141a0a5-13e5-4b28-b19f-0c3923aaef6e/statistics.xml?api_key=<NFL_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 01:39:10 GMT
+      Expires:
+      - Thu, 29 Sep 2016 01:39:12 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-117.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '7810'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '42537'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml-stylesheet type="text/xsl" charset="UTF-8" href="/xslt/nfl/premium/statistics-v2.0.xsl"?>
+        <!-- Generation started @ 2016-08-26 15:56:16 +0000 -->
+        <game xmlns="http://feed.elasticstats.com/schema/nfl/premium/statistics-v2.0.xsd" id="0141a0a5-13e5-4b28-b19f-0c3923aaef6e" status="closed" reference="56510" number="8" scheduled="2015-09-13T17:02:41+00:00" attendance="76512" utc_offset="-5" entry_mode="INGEST" weather="Partly Cloudy Temp: 69 F, Humidity: 58%, Wind: NW 10 mph" clock="00:00" quarter="4">
+          <summary>
+            <season id="46aa2ca3-c2fc-455d-8256-1f7893a87113" year="2015" type="REG" name="REG"/>
+            <week id="581edacd-e641-43d6-9e69-76b29a306643" sequence="1" title="1"/>
+            <venue id="7c11bb2d-4a53-4842-b842-0f1c63ed78e9" name="FedExField" city="Landover" state="MD" country="USA" zip="20785" address="1600 FedEx Way" capacity="83000" surface="turf" roof_type="outdoor"/>
+            <home name="Redskins" market="Washington" alias="WAS" reference="4971" used_timeouts="3" remaining_timeouts="0" id="22052ff7-c065-42ee-bc8f-c4691c50e624" points="10"/>
+            <away name="Dolphins" market="Miami" alias="MIA" reference="4958" used_timeouts="1" remaining_timeouts="2" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" points="17"/>
+          </summary>
+          <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" possession_time="37:54" avg_gain="5.1" safeties="0" turnovers="2" play_count="69" rush_plays="37" total_yards="349" fumbles="1" lost_fumbles="0" penalties="11" penalty_yards="88" return_yards="23">
+            <rushing avg_yards="4.4" attempts="37" touchdowns="0" tlost="3" tlost_yards="-6" yards="161" longest="14" longest_touchdown="0" redzone_attempts="2">
+              <player name="Jamison Crowder" jersey="80" reference="00-0031941" id="8002dd5e-a75a-4d72-9a8c-0f4dbc80d459" position="WR" avg_yards="2.0" attempts="1" touchdowns="0" yards="2" longest="2" longest_touchdown="0" redzone_attempts="0" tlost="0" tlost_yards="0"/>
+              <player name="Chris Thompson" jersey="25" reference="00-0030404" id="0366fd06-19a3-4b69-8448-6bfbfad1250b" position="RB" avg_yards="3.7" attempts="3" touchdowns="0" yards="11" longest="7" longest_touchdown="0" redzone_attempts="0" tlost="0" tlost_yards="0"/>
+              <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB" avg_yards="-0.5" attempts="2" touchdowns="0" yards="-1" longest="0" longest_touchdown="0" redzone_attempts="0" tlost="0" tlost_yards="0"/>
+              <player name="Matt Jones" jersey="31" reference="00-0031939" id="2641d36d-7c61-445f-980f-313671f2e8ce" position="RB" avg_yards="4.7" attempts="6" touchdowns="0" yards="28" longest="9" longest_touchdown="0" redzone_attempts="0" tlost="0" tlost_yards="0"/>
+              <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB" avg_yards="4.8" attempts="25" touchdowns="0" yards="121" longest="14" longest_touchdown="0" redzone_attempts="2" tlost="3" tlost_yards="-6"/>
+            </rushing>
+            <receiving targets="31" receptions="21" avg_yards="9.333" yards="196" touchdowns="1" yards_after_catch="64" longest="25" longest_touchdown="4" redzone_targets="3" air_yards="132">
+              <player name="DeSean Jackson" jersey="11" reference="00-0026189" id="3e618eb6-41f2-4f20-ad70-2460f9366f43" position="WR" receptions="0" targets="1" yards="0" avg_yards="0.0" longest="0" touchdowns="0" longest_touchdown="0" yards_after_catch="0" redzone_targets="0" air_yards="0"/>
+              <player name="Pierre Garcon" jersey="88" reference="00-0026345" id="a824d9ff-12a4-4ed2-812d-404b0b4e52f9" position="WR" receptions="6" targets="8" yards="74" avg_yards="12.3" longest="22" touchdowns="0" longest_touchdown="0" yards_after_catch="12" redzone_targets="0" air_yards="62"/>
+              <player name="Jordan Reed" jersey="86" reference="00-0030472" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE" receptions="7" targets="11" yards="63" avg_yards="9.0" longest="25" touchdowns="1" longest_touchdown="4" yards_after_catch="26" redzone_targets="1" air_yards="37"/>
+              <player name="Jamison Crowder" jersey="80" reference="00-0031941" id="8002dd5e-a75a-4d72-9a8c-0f4dbc80d459" position="WR" receptions="1" targets="1" yards="0" avg_yards="0.0" longest="0" touchdowns="0" longest_touchdown="0" yards_after_catch="3" redzone_targets="0" air_yards="-3"/>
+              <player name="Derek Carrier" jersey="89" reference="00-0029119" id="d3fab07b-f02a-433d-9612-cb0a751f324d" position="TE" receptions="2" targets="2" yards="8" avg_yards="4.0" longest="9" touchdowns="0" longest_touchdown="0" yards_after_catch="8" redzone_targets="1" air_yards="0"/>
+              <player name="Ryan Grant" jersey="14" reference="00-0031068" id="cc9df25a-bb22-4737-83df-ff01d3fd7695" position="WR" receptions="1" targets="2" yards="15" avg_yards="15.0" longest="15" touchdowns="0" longest_touchdown="0" yards_after_catch="1" redzone_targets="1" air_yards="14"/>
+              <player name="Andre Roberts" jersey="12" reference="00-0027691" id="9691f874-be36-4529-a7eb-dde22ee4a848" position="WR" receptions="3" targets="4" yards="36" avg_yards="12.0" longest="18" touchdowns="0" longest_touchdown="0" yards_after_catch="6" redzone_targets="0" air_yards="30"/>
+              <player name="Chris Thompson" jersey="25" reference="00-0030404" id="0366fd06-19a3-4b69-8448-6bfbfad1250b" position="RB" receptions="0" targets="1" yards="0" avg_yards="0.0" longest="0" touchdowns="0" longest_touchdown="0" yards_after_catch="0" redzone_targets="0" air_yards="0"/>
+              <player name="Darrel Young" jersey="36" reference="00-0026852" id="e174b76d-323a-41c5-be68-e766aa060d5c" position="FB" receptions="1" targets="1" yards="0" avg_yards="0.0" longest="0" touchdowns="0" longest_touchdown="0" yards_after_catch="8" redzone_targets="0" air_yards="-8"/>
+            </receiving>
+            <punts attempts="3" yards="124" net_yards="30" blocked="0" touchbacks="1" inside_20="1" return_yards="74" avg_net_yards="10.0" avg_yards="41.3" longest="54">
+              <player name="Tress Way" jersey="05" reference="00-0030140" id="55e1ecbd-96c5-456e-833b-9cd3f046f3fc" position="P" attempts="3" yards="124" avg_yards="41.3" blocked="0" longest="54" touchbacks="1" inside_20="1" avg_net_yards="10.0" return_yards="74" net_yards="30"/>
+            </punts>
+            <punt_returns avg_yards="11.5" returns="2" yards="23" longest="13" touchdowns="0" longest_touchdown="0" faircatches="1">
+              <player name="Jamison Crowder" jersey="80" reference="00-0031941" id="8002dd5e-a75a-4d72-9a8c-0f4dbc80d459" position="WR" returns="2" yards="23" avg_yards="11.5" touchdowns="0" longest="13" faircatches="1" longest_touchdown="0"/>
+            </punt_returns>
+            <penalties penalties="11" yards="88">
+              <player name="Keenan Robinson" jersey="52" reference="00-0029545" id="af1648a4-2df1-40ef-b9fe-081d6961a416" position="LB" penalties="1" yards="3"/>
+              <player name="Ty Nsekhe" jersey="79" reference="00-0029709" id="d723ebff-0e9d-42f8-93d2-fe0c02252de8" position="T" penalties="1" yards="10"/>
+              <player name="Jordan Reed" jersey="86" reference="00-0030472" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE" penalties="2" yards="19"/>
+              <player name="Morgan Moses" jersey="76" reference="00-0031330" id="e15a26bb-db24-4e5a-b3a5-cc4d4eb4f0b6" position="T" penalties="2" yards="11"/>
+              <player name="Chris Baker" jersey="92" reference="00-0026512" id="5659e779-d0af-4107-aa75-d24dc3db90e3" position="DL" penalties="1" yards="15"/>
+              <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB" penalties="1" yards="5"/>
+              <player name="Trent Williams" jersey="71" reference="00-0027857" id="b070601c-7985-4a1c-b71a-9f72bb5dbc59" position="T" penalties="1" yards="5"/>
+              <player name="Pierre Garcon" jersey="88" reference="00-0026345" id="a824d9ff-12a4-4ed2-812d-404b0b4e52f9" position="WR" penalties="1" yards="10"/>
+              <player name="Derek Carrier" jersey="89" reference="00-0029119" id="d3fab07b-f02a-433d-9612-cb0a751f324d" position="TE" penalties="1" yards="10"/>
+            </penalties>
+            <passing attempts="31" completions="21" cmp_pct="67.7" interceptions="2" sack_yards="8" rating="68.8" touchdowns="1" avg_yards="5.9" sacks="1" longest="25" longest_touchdown="4" air_yards="132" redzone_attempts="3" net_yards="188" yards="196">
+              <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB" attempts="31" completions="21" cmp_pct="67.7" yards="196" avg_yards="6.3" sacks="1" sack_yards="8" touchdowns="1" longest="25" interceptions="2" rating="68.8" longest_touchdown="4" air_yards="132" redzone_attempts="3"/>
+            </passing>
+            <misc_returns returns="0" yards="0" touchdowns="0" blk_fg_touchdowns="0" blk_punt_touchdowns="0" fg_return_touchdowns="0" ez_rec_touchdowns="0">
+            </misc_returns>
+            <kickoffs kickoffs="3" endzone="1" inside_20="0" return_yards="54" touchbacks="1" yards="201" out_of_bounds="0">
+              <player name="Kai Forbath" jersey="02" reference="00-0028787" id="5514afb6-bd43-49a8-9bf7-b8baaaecdabe" position="K" kickoffs="3" endzone="1" inside_20="0" return_yards="54" touchbacks="1" yards="201" out_of_bounds="0"/>
+            </kickoffs>
+            <kick_returns avg_yards="36.0" returns="1" yards="36" longest="36" touchdowns="0" longest_touchdown="0" faircatches="0">
+              <player name="Chris Thompson" jersey="25" reference="00-0030404" id="0366fd06-19a3-4b69-8448-6bfbfad1250b" position="RB" returns="1" yards="36" avg_yards="36.0" touchdowns="0" longest="36" faircatches="0" longest_touchdown="0"/>
+            </kick_returns>
+            <int_returns avg_yards="0.0" returns="0" yards="0" touchdowns="0">
+            </int_returns>
+            <fumbles fumbles="1" lost_fumbles="0" own_rec="0" own_rec_yards="-3" opp_rec="1" opp_rec_yards="0" out_of_bounds="1" forced_fumbles="2" own_rec_tds="0" opp_rec_tds="0" ez_rec_tds="0">
+              <player name="Preston Smith" jersey="94" reference="00-0031935" id="ede260be-5ae6-4a06-887b-e4a130932705" position="LB" fumbles="0" lost_fumbles="0" own_rec="0" own_rec_yards="0" opp_rec="1" opp_rec_yards="0" out_of_bounds="0" forced_fumbles="2" own_rec_tds="0" opp_rec_tds="0" ez_rec_tds="0"/>
+              <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB" fumbles="1" lost_fumbles="0" own_rec="0" own_rec_yards="-3" opp_rec="0" opp_rec_yards="0" out_of_bounds="1" forced_fumbles="0" own_rec_tds="0" opp_rec_tds="0" ez_rec_tds="0"/>
+            </fumbles>
+            <field_goals attempts="2" made="1" blocked="0" yards="45" avg_yards="22.5" longest="45" net_attempts="2">
+              <player name="Kai Forbath" jersey="02" reference="00-0028787" id="5514afb6-bd43-49a8-9bf7-b8baaaecdabe" position="K" attempts="2" made="1" blocked="0" yards="45" avg_yards="22.5" longest="45"/>
+            </field_goals>
+            <extra_points>
+              <kicks attempts="1" blocked="0" made="1">
+                <player name="Kai Forbath" jersey="02" reference="00-0028787" id="5514afb6-bd43-49a8-9bf7-b8baaaecdabe" position="K" attempts="1" made="1" blocked="0"/>
+              </kicks>
+              <conversions pass_attempts="0" pass_successes="0" rush_attempts="0" rush_successes="0" defense_attempts="0" defense_successes="0" turnover_successes="0">
+              </conversions>
+            </extra_points>
+            <defense tackles="32" assists="22" combined="54" sacks="3.0" sack_yards="44.0" interceptions="0" passes_defended="5" forced_fumbles="1" fumble_recoveries="1" qb_hits="5" tloss="3.0" tloss_yards="7.0" safeties="0" sp_tackles="4" sp_assists="1" sp_forced_fumbles="1" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="10">
+              <player name="Jeron Johnson" jersey="20" reference="00-0028441" id="d58339ad-6ec1-41cd-98d7-964ac47d7225" position="S" tackles="0" assists="0" combined="0" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="1" sp_assists="1" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Trent Murphy" jersey="93" reference="00-0031300" id="5d98bad5-1730-4095-825d-3ff8d10d1116" position="LB" tackles="0" assists="3" combined="3" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              <player name="Terrance Knighton" jersey="98" reference="00-0027046" id="e84b685e-6b52-4214-b264-123ce0672021" position="NT" tackles="1" assists="0" combined="1" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Keenan Robinson" jersey="52" reference="00-0029545" id="af1648a4-2df1-40ef-b9fe-081d6961a416" position="LB" tackles="3" assists="2" combined="5" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="4"/>
+              <player name="Duke Ihenacho" jersey="24" reference="00-0028942" id="81fed5e8-2a1a-4f77-904e-78912a4a91bb" position="S" tackles="1" assists="2" combined="3" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Chris Culliver" jersey="29" reference="00-0028018" id="0c68f083-c3a0-433f-931e-d8216dc3fcd4" position="CB" tackles="0" assists="1" combined="1" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              <player name="Ryan Kerrigan" jersey="91" reference="00-0027954" id="a25f92e6-6e67-4463-a32f-77976807b3d8" position="LB" tackles="1" assists="1" combined="2" sacks="0.5" sack_yards="2.5" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="1" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="David Amerson" jersey="39" reference="00-0030420" id="2ba5bdad-0b7c-4637-89a3-5b7b34d215b0" position="CB" tackles="2" assists="0" combined="2" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Justin Rogers" jersey="35" reference="00-0028144" id="cd027e2e-1b7e-48cc-908e-fec67cf2c05d" position="CB" tackles="1" assists="3" combined="4" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Jason Hatcher" jersey="97" reference="00-0024307" id="75f4e314-a25d-4833-b39e-02014853d7bb" position="DE" tackles="3" assists="1" combined="4" sacks="1.0" sack_yards="1.0" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="1" tloss="1.0" tloss_yards="1.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="2"/>
+              <player name="Martrell Spaight" jersey="50" reference="00-0031945" id="5e576254-2f7e-4456-8bbb-26964d1e67b6" position="LB" tackles="0" assists="0" combined="0" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="1" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Kyshoen Jarrett" jersey="30" reference="00-0031952" id="27779031-2c71-4c9a-80ee-28b9cd06814c" position="S" tackles="0" assists="0" combined="0" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="1" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Perry Riley" jersey="56" reference="00-0027704" id="5726ab42-606e-4139-9f2a-d677a858dbdb" position="LB" tackles="1" assists="2" combined="3" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Trenton Robinson" jersey="34" reference="00-0029297" id="215fd07e-7e6a-4060-a545-3fe5fb7add4f" position="S" tackles="6" assists="2" combined="8" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="1.0" tloss_yards="6.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="2"/>
+              <player name="Dashon Goldson" jersey="38" reference="00-0025513" id="8fd45946-17e7-4e01-91df-bb866f268309" position="S" tackles="6" assists="0" combined="6" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Preston Smith" jersey="94" reference="00-0031935" id="ede260be-5ae6-4a06-887b-e4a130932705" position="LB" tackles="1" assists="0" combined="1" sacks="1.0" sack_yards="38.0" interceptions="0" passes_defended="0" forced_fumbles="1" fumble_recoveries="1" qb_hits="1" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="1" sp_assists="0" sp_forced_fumbles="1" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Chris Baker" jersey="92" reference="00-0026512" id="5659e779-d0af-4107-aa75-d24dc3db90e3" position="DL" tackles="0" assists="3" combined="3" sacks="0.5" sack_yards="2.5" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="2" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="DeAngelo Hall" jersey="23" reference="00-0022923" id="5f7dbabc-4a86-45f5-9983-eea57e7ccb38" position="CB" tackles="6" assists="2" combined="8" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="1.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+            </defense>
+            <efficiency>
+              <goaltogo attempts="1" successes="1" pct="100.0"/>
+              <redzone attempts="1" successes="1" pct="100.0"/>
+              <thirddown attempts="14" successes="6" pct="42.857"/>
+              <fourthdown attempts="1" successes="0" pct="0.0"/>
+            </efficiency>
+            <first_downs pass="12" penalty="2" rush="6" total="20"/>
+            <interceptions interceptions="0" return_yards="0" returned="0"/>
+            <touchdowns pass="1" rush="0" total_return="0" total="1" fumble_return="0" int_return="0" kick_return="0" punt_return="0" other="0"/>
+          </team>
+          <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" possession_time="22:06" avg_gain="4.7" safeties="0" turnovers="1" play_count="55" rush_plays="18" total_yards="256" fumbles="2" lost_fumbles="1" penalties="6" penalty_yards="39" return_yards="76">
+            <rushing avg_yards="4.1" attempts="18" touchdowns="0" tlost="1" tlost_yards="-6" yards="74" longest="17" longest_touchdown="0" redzone_attempts="2">
+              <player name="Lamar Miller" jersey="26" reference="00-0029615" id="a212c5d8-67f8-48b9-99be-2c121ee56366" position="RB" avg_yards="4.1" attempts="13" touchdowns="0" yards="53" longest="17" longest_touchdown="0" redzone_attempts="0" tlost="1" tlost_yards="-6"/>
+              <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR" avg_yards="14.0" attempts="1" touchdowns="0" yards="14" longest="14" longest_touchdown="0" redzone_attempts="0" tlost="0" tlost_yards="0"/>
+              <player name="Damien Williams" jersey="34" reference="00-0030874" id="90908a56-901b-466d-8689-943075da96fe" position="RB" avg_yards="0.0" attempts="1" touchdowns="0" yards="0" longest="0" longest_touchdown="0" redzone_attempts="1" tlost="0" tlost_yards="0"/>
+              <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB" avg_yards="2.3" attempts="3" touchdowns="0" yards="7" longest="5" longest_touchdown="0" redzone_attempts="1" tlost="0" tlost_yards="0"/>
+            </rushing>
+            <receiving targets="34" receptions="22" avg_yards="10.273" yards="226" touchdowns="1" yards_after_catch="78" longest="27" longest_touchdown="3" redzone_targets="7" air_yards="148">
+              <player name="Dion Sims" jersey="80" reference="00-0030422" id="9c04a540-cb7c-41dc-8e7c-50b7af29a3a2" position="TE" receptions="0" targets="1" yards="0" avg_yards="0.0" longest="0" touchdowns="0" longest_touchdown="0" yards_after_catch="0" redzone_targets="0" air_yards="0"/>
+              <player name="Greg Jennings" jersey="85" reference="00-0024267" id="ff937065-a20f-4968-a138-8ecd3a8b7cdb" position="WR" receptions="3" targets="3" yards="29" avg_yards="9.7" longest="11" touchdowns="0" longest_touchdown="0" yards_after_catch="2" redzone_targets="0" air_yards="27"/>
+              <player name="Rishard Matthews" jersey="18" reference="00-0029580" id="969a4d68-1d76-4e64-bfff-e898a9ac6bd4" position="WR" receptions="4" targets="6" yards="34" avg_yards="8.5" longest="15" touchdowns="1" longest_touchdown="3" yards_after_catch="4" redzone_targets="1" air_yards="30"/>
+              <player name="Damien Williams" jersey="34" reference="00-0030874" id="90908a56-901b-466d-8689-943075da96fe" position="RB" receptions="1" targets="1" yards="3" avg_yards="3.0" longest="3" touchdowns="0" longest_touchdown="0" yards_after_catch="2" redzone_targets="1" air_yards="1"/>
+              <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR" receptions="8" targets="12" yards="53" avg_yards="6.6" longest="20" touchdowns="0" longest_touchdown="0" yards_after_catch="35" redzone_targets="3" air_yards="18"/>
+              <player name="Kenny Stills" jersey="10" reference="00-0030085" id="4734f8dc-2ca4-4437-88f2-c8b8974abefc" position="WR" receptions="1" targets="3" yards="12" avg_yards="12.0" longest="12" touchdowns="0" longest_touchdown="0" yards_after_catch="0" redzone_targets="0" air_yards="12"/>
+              <player name="Jordan Cameron" jersey="84" reference="00-0028040" id="44257544-0a90-4bca-b759-e589a70cf168" position="TE" receptions="4" targets="7" yards="73" avg_yards="18.3" longest="27" touchdowns="0" longest_touchdown="0" yards_after_catch="9" redzone_targets="2" air_yards="64"/>
+              <player name="Lamar Miller" jersey="26" reference="00-0029615" id="a212c5d8-67f8-48b9-99be-2c121ee56366" position="RB" receptions="1" targets="1" yards="22" avg_yards="22.0" longest="22" touchdowns="0" longest_touchdown="0" yards_after_catch="26" redzone_targets="0" air_yards="-4"/>
+            </receiving>
+            <punts attempts="4" yards="217" net_yards="174" blocked="0" touchbacks="1" inside_20="1" return_yards="23" avg_net_yards="43.5" avg_yards="54.3" longest="63">
+              <player name="Matt Darr" jersey="04" reference="00-0031716" id="325735c1-9fa1-48ee-bb8d-2ae45781f28d" position="P" attempts="4" yards="217" avg_yards="54.3" blocked="0" longest="63" touchbacks="1" inside_20="1" avg_net_yards="43.5" return_yards="23" net_yards="174"/>
+            </punts>
+            <punt_returns avg_yards="37.0" returns="2" yards="74" longest="69" touchdowns="1" longest_touchdown="69" faircatches="0">
+              <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR" returns="2" yards="74" avg_yards="37.0" touchdowns="1" longest="69" faircatches="0" longest_touchdown="69"/>
+            </punt_returns>
+            <penalties penalties="6" yards="39">
+              <player name="Bobby McCain" jersey="28" reference="00-0031587" id="7f32c3e6-113f-4922-b51d-a1a5a1d43bcf" position="CB" penalties="1" yards="15"/>
+              <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB" penalties="1" yards="5"/>
+              <player name="Jamar Taylor" jersey="22" reference="00-0030484" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB" penalties="2" yards="9"/>
+              <player name="Cameron Wake" jersey="91" reference="00-0023368" id="2d23b5d1-fbee-41df-bd6f-dd984d03a4d1" position="DE" penalties="1" yards="5"/>
+              <player name="Matt Darr" jersey="04" reference="00-0031716" id="325735c1-9fa1-48ee-bb8d-2ae45781f28d" position="P" penalties="1" yards="5"/>
+            </penalties>
+            <passing attempts="34" completions="22" cmp_pct="64.7" interceptions="0" sack_yards="44" rating="93.5" touchdowns="1" avg_yards="4.9" sacks="3" longest="27" longest_touchdown="3" air_yards="148" redzone_attempts="7" net_yards="182" yards="226">
+              <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB" attempts="34" completions="22" cmp_pct="64.7" yards="226" avg_yards="6.6" sacks="3" sack_yards="44" touchdowns="1" longest="27" interceptions="0" rating="93.5" longest_touchdown="3" air_yards="148" redzone_attempts="7"/>
+            </passing>
+            <misc_returns returns="0" yards="0" touchdowns="0" blk_fg_touchdowns="0" blk_punt_touchdowns="0" fg_return_touchdowns="0" ez_rec_touchdowns="0">
+            </misc_returns>
+            <kickoffs kickoffs="4" endzone="1" inside_20="0" return_yards="36" touchbacks="3" yards="261" out_of_bounds="0">
+              <player name="Andrew Franks" jersey="03" reference="00-0031718" id="59da7aea-f21a-43c5-b0bf-2d1e8b19da80" position="K" kickoffs="4" endzone="1" inside_20="0" return_yards="36" touchbacks="3" yards="261" out_of_bounds="0"/>
+            </kickoffs>
+            <kick_returns avg_yards="27.0" returns="2" yards="54" longest="29" touchdowns="0" longest_touchdown="0" faircatches="0">
+              <player name="LaMichael James" jersey="27" reference="00-0029260" id="c9c6ff4b-952e-41d5-863a-5d5313afcfa6" position="RB" returns="2" yards="54" avg_yards="27.0" touchdowns="0" longest="29" faircatches="0" longest_touchdown="0"/>
+            </kick_returns>
+            <int_returns avg_yards="1.0" returns="2" yards="2" longest="2" touchdowns="0" longest_touchdown="0">
+              <player name="Brent Grimes" jersey="21" reference="00-0024183" id="7979b613-6dbf-4534-8166-6430433c1ec3" position="CB" returns="1" yards="2" avg_yards="2.0" touchdowns="0" longest="2" longest_touchdown="0"/>
+              <player name="Brice McCain" jersey="24" reference="00-0026935" id="33a653a5-d73b-4502-85d2-42c087278a74" position="CB" returns="1" yards="0" avg_yards="0.0" touchdowns="0" longest="0" longest_touchdown="0"/>
+            </int_returns>
+            <fumbles fumbles="2" lost_fumbles="1" own_rec="1" own_rec_yards="0" opp_rec="0" opp_rec_yards="0" out_of_bounds="0" forced_fumbles="0" own_rec_tds="0" opp_rec_tds="0" ez_rec_tds="0">
+              <player name="LaMichael James" jersey="27" reference="00-0029260" id="c9c6ff4b-952e-41d5-863a-5d5313afcfa6" position="RB" fumbles="1" lost_fumbles="0" own_rec="1" own_rec_yards="0" opp_rec="0" opp_rec_yards="0" out_of_bounds="0" forced_fumbles="0" own_rec_tds="0" opp_rec_tds="0" ez_rec_tds="0"/>
+              <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB" fumbles="1" lost_fumbles="1" own_rec="0" own_rec_yards="0" opp_rec="0" opp_rec_yards="0" out_of_bounds="0" forced_fumbles="0" own_rec_tds="0" opp_rec_tds="0" ez_rec_tds="0"/>
+            </fumbles>
+            <field_goals attempts="1" made="1" blocked="0" yards="22" avg_yards="22.0" longest="22" net_attempts="1">
+              <player name="Andrew Franks" jersey="03" reference="00-0031718" id="59da7aea-f21a-43c5-b0bf-2d1e8b19da80" position="K" attempts="1" made="1" blocked="0" yards="22" avg_yards="22.0" longest="22"/>
+            </field_goals>
+            <extra_points>
+              <kicks attempts="2" blocked="0" made="2">
+                <player name="Andrew Franks" jersey="03" reference="00-0031718" id="59da7aea-f21a-43c5-b0bf-2d1e8b19da80" position="K" attempts="2" made="2" blocked="0"/>
+              </kicks>
+              <conversions pass_attempts="0" pass_successes="0" rush_attempts="0" rush_successes="0" defense_attempts="0" defense_successes="0" turnover_successes="0">
+              </conversions>
+            </extra_points>
+            <defense tackles="49" assists="26" combined="75" sacks="1.0" sack_yards="8.0" interceptions="2" passes_defended="4" forced_fumbles="0" fumble_recoveries="0" qb_hits="1" tloss="4.0" tloss_yards="14.0" safeties="0" sp_tackles="2" sp_assists="2" sp_forced_fumbles="0" sp_fumble_recoveries="1" sp_blocks="0" misc_tackles="1" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="5">
+              <player name="Brice McCain" jersey="24" reference="00-0026935" id="33a653a5-d73b-4502-85d2-42c087278a74" position="CB" tackles="2" assists="4" combined="6" sacks="0.0" sack_yards="0.0" interceptions="1" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB" tackles="0" assists="0" combined="0" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="1" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Brent Grimes" jersey="21" reference="00-0024183" id="7979b613-6dbf-4534-8166-6430433c1ec3" position="CB" tackles="1" assists="1" combined="2" sacks="0.0" sack_yards="0.0" interceptions="1" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Spencer Paysinger" jersey="42" reference="00-0028368" id="284f5b6f-cb48-42b6-97be-d1957e4d0bdb" position="LB" tackles="0" assists="0" combined="0" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="1" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="LaMichael James" jersey="27" reference="00-0029260" id="c9c6ff4b-952e-41d5-863a-5d5313afcfa6" position="RB" tackles="0" assists="0" combined="0" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="1" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0"/>
+              <player name="Koa Misi" jersey="55" reference="00-0027883" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB" tackles="9" assists="2" combined="11" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="1.0" tloss_yards="1.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              <player name="Terrence Fede" jersey="78" reference="00-0031317" id="5064d069-aa24-4828-81c9-c78e0e56fb78" position="DE" tackles="4" assists="2" combined="6" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Jelani Jenkins" jersey="53" reference="00-0030384" id="9f1a0910-090f-4f28-bb5e-0593e6f0a3bc" position="LB" tackles="7" assists="4" combined="11" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              <player name="Kelvin Sheppard" jersey="52" reference="00-0028006" id="7190fb71-0916-4f9d-88a0-8c1a8c1c9d0d" position="LB" tackles="3" assists="2" combined="5" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Jordan Phillips" jersey="97" reference="00-0031557" id="023af11a-3aa1-4266-b163-31cf6369ef3b" position="DT" tackles="1" assists="0" combined="1" sacks="1.0" sack_yards="8.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="1" tloss="1.0" tloss_yards="8.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Zackary Bowman" jersey="30" reference="00-0026282" id="73513c4e-03b6-4ad6-922d-11943e406479" position="CB" tackles="0" assists="0" combined="0" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="1" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="C.J. Mosley" jersey="94" reference="00-0023624" id="45466510-c943-4541-812f-9cbd126a6cb2" position="DT" tackles="1" assists="0" combined="1" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Zach Vigil" jersey="49" reference="00-0031728" id="775d6455-bc3c-4fd0-9adf-ae105f71fc95" position="LB" tackles="1" assists="0" combined="1" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Jamar Taylor" jersey="22" reference="00-0030484" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB" tackles="6" assists="3" combined="9" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Michael Thomas" jersey="31" reference="00-0028908" id="16e13f52-32b1-416f-83ae-1cbf2f92cffc" position="S" tackles="1" assists="0" combined="1" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="1" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              <player name="Earl Mitchell" jersey="90" reference="00-0027684" id="c9fe00a2-7620-49f3-a744-7d04c5b30560" position="DT" tackles="3" assists="1" combined="4" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="1.0" tloss_yards="2.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Walt Aikens" jersey="35" reference="00-0031307" id="19403487-1d34-434b-8fc2-a8852167af76" position="S" tackles="2" assists="0" combined="2" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="1" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS" tackles="7" assists="5" combined="12" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="1.0" tloss_yards="3.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+              <player name="Ndamukong Suh" jersey="93" reference="00-0027855" id="f0f60621-a075-41f6-a07d-74fd9e1348f2" position="DT" tackles="1" assists="1" combined="2" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              <player name="Derrick Shelby" jersey="79" reference="00-0029111" id="86a412bb-7db6-4c6a-86b0-499afd326fd9" position="DE" tackles="0" assists="1" combined="1" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="0" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="0"/>
+            </defense>
+            <efficiency>
+              <goaltogo attempts="2" successes="1" pct="50.0"/>
+              <redzone attempts="3" successes="1" pct="33.333"/>
+              <thirddown attempts="12" successes="5" pct="41.667"/>
+              <fourthdown attempts="1" successes="0" pct="0.0"/>
+            </efficiency>
+            <first_downs pass="12" penalty="2" rush="5" total="19"/>
+            <interceptions interceptions="2" return_yards="2" returned="2"/>
+            <touchdowns pass="1" rush="0" total_return="1" total="2" fumble_return="0" int_return="0" kick_return="0" punt_return="1" other="0"/>
+          </team>
+        </game>
+        <!-- Generation ended @ 2016-08-26 15:56:17 +0000 -->
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 01:39:09 GMT
+recorded_with: VCR 3.0.3

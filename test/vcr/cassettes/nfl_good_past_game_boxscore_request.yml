@@ -1,0 +1,1563 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nfl-ot1/games/0141a0a5-13e5-4b28-b19f-0c3923aaef6e/boxscore.xml?api_key=<NFL_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 01:39:00 GMT
+      Expires:
+      - Thu, 29 Sep 2016 01:39:02 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-118.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '7796'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '131707'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml-stylesheet type="text/xsl" charset="UTF-8" href="/xslt/nfl/premium/boxscore-v2.0.xsl"?>
+        <!-- Generation started @ 2016-08-26 15:56:16 +0000 -->
+        <game xmlns="http://feed.elasticstats.com/schema/nfl/premium/boxscore-v2.0.xsd" id="0141a0a5-13e5-4b28-b19f-0c3923aaef6e" status="closed" reference="56510" number="8" scheduled="2015-09-13T17:02:41+00:00" attendance="76512" utc_offset="-5" entry_mode="INGEST" weather="Partly Cloudy Temp: 69 F, Humidity: 58%, Wind: NW 10 mph" clock="00:00" quarter="4">
+          <summary>
+            <season id="46aa2ca3-c2fc-455d-8256-1f7893a87113" year="2015" type="REG" name="REG"/>
+            <week id="581edacd-e641-43d6-9e69-76b29a306643" sequence="1" title="1"/>
+            <venue id="7c11bb2d-4a53-4842-b842-0f1c63ed78e9" name="FedExField" city="Landover" state="MD" country="USA" zip="20785" address="1600 FedEx Way" capacity="83000" surface="turf" roof_type="outdoor"/>
+            <home name="Redskins" market="Washington" alias="WAS" reference="4971" used_timeouts="3" remaining_timeouts="0" id="22052ff7-c065-42ee-bc8f-c4691c50e624" points="10"/>
+            <away name="Dolphins" market="Miami" alias="MIA" reference="4958" used_timeouts="1" remaining_timeouts="2" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" points="17"/>
+          </summary>
+          <situation clock="00:00" down="2" yfd="11">
+            <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+            <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="45"/>
+          </situation>
+          <last_event>
+            <event id="c68447b0-425f-4e7b-8200-581ca222c03d" sequence="4228.0" reference="4228" clock="00:00" type="game_over">
+              <description>END GAME</description>
+              <alt-description>END GAME</alt-description>
+            </event>
+          </last_event>
+          <scoring>
+            <quarter id="fd31368b-a159-4f56-a022-afc691e34755" number="1" sequence="1" home_points="3" away_points="0"/>
+            <quarter id="17ee8c4c-3e1c-4dbb-83eb-f54fabe2a117" number="2" sequence="2" home_points="7" away_points="7"/>
+            <quarter id="da1c72aa-a5eb-44db-a23f-f9e2284d7968" number="3" sequence="3" home_points="0" away_points="0"/>
+            <quarter id="99063002-e5ee-4239-b686-f5aaa192e5d8" number="4" sequence="4" home_points="0" away_points="10"/>
+          </scoring>
+          <scoring_drives>
+            <drive id="a956d9cb-d8ab-408c-91fc-442f06e338ff" sequence="1" start_reason="Kickoff" end_reason="Field Goal" play_count="12" duration="7:21" first_downs="4" gain="54" penalty_yards="-1" scoring_drive="true">
+              <quarter id="fd31368b-a159-4f56-a022-afc691e34755" number="1" sequence="1"/>
+              <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              <plays>
+                <play id="9de4c5df-5e94-4fe2-b646-ba1dca0a1afd" sequence="63.0" reference="63" clock="15:00" home_points="0" away_points="0" type="kickoff" play_clock="12" wall_clock="2015-09-13T17:02:41+00:00">
+                  <start_situation clock="15:00" down="0" yfd="0">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="35"/>
+                  </start_situation>
+                  <end_situation clock="15:00" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </end_situation>
+                  <description>3-A.Franks kicks 65 yards from MIA 35 to end zone, Touchback.</description>
+                  <alt-description>A.Franks kicks 65 yards from MIA 35 to end zone, Touchback.</alt-description>
+                  <statistics>
+                    <kick attempt="1" yards="65" gross_yards="74" touchback="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Andrew Franks" jersey="03" reference="00-0031718" id="59da7aea-f21a-43c5-b0bf-2d1e8b19da80" position="K"/>
+                    </kick>
+                    <return touchback="1" category="kick_return">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </return>
+                  </statistics>
+                </play>
+                <play id="3a2e9bb4-6b79-473a-b86a-522b92e88c71" sequence="82.0" reference="82" clock="15:00" home_points="0" away_points="0" type="rush" play_clock="12" wall_clock="2015-09-13T17:03:26+00:00">
+                  <start_situation clock="15:00" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </start_situation>
+                  <end_situation clock="14:30" down="2" yfd="5">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="25"/>
+                  </end_situation>
+                  <description>(15:00) 46-A.Morris left tackle to WAS 25 for 5 yards (52-K.Sheppard).</description>
+                  <alt-description>(15:00) A.Morris left tackle to WAS 25 for 5 yards (K.Sheppard).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="5" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Kelvin Sheppard" jersey="52" reference="00-0028006" id="7190fb71-0916-4f9d-88a0-8c1a8c1c9d0d" position="LB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="7e49db54-68d0-444d-b244-690f3930b77b" sequence="103.0" reference="103" clock="14:30" home_points="0" away_points="0" type="pass" wall_clock="2015-09-13T17:03:57+00:00">
+                  <start_situation clock="14:30" down="2" yfd="5">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="25"/>
+                  </start_situation>
+                  <end_situation clock="13:56" down="3" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="29"/>
+                  </end_situation>
+                  <description>(14:30) (Shotgun) 8-K.Cousins pass short right to 12-A.Roberts to WAS 29 for 4 yards (21-B.Grimes).</description>
+                  <alt-description>(14:30) (Shotgun) K.Cousins pass short right to A.Roberts to WAS 29 for 4 yards (B.Grimes).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="4" att_yards="2" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive target="1" reception="1" yards="4" yards_after_catch="2" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Andre Roberts" jersey="12" reference="00-0027691" id="9691f874-be36-4529-a7eb-dde22ee4a848" position="WR"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Brent Grimes" jersey="21" reference="00-0024183" id="7979b613-6dbf-4534-8166-6430433c1ec3" position="CB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="e59e692c-02b7-4e1b-8340-257e3373c6e9" sequence="127.0" reference="127" clock="13:56" home_points="0" away_points="0" type="pass" play_clock="13" wall_clock="2015-09-13T17:04:31+00:00">
+                  <start_situation clock="13:56" down="3" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="29"/>
+                  </start_situation>
+                  <end_situation clock="13:51" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="33"/>
+                  </end_situation>
+                  <description>(13:56) (Shotgun) 8-K.Cousins pass incomplete short right to 11-D.Jackson (22-J.Taylor). PENALTY on MIA-22-J.Taylor, Defensive Pass Interference, 4 yards, enforced at WAS 29 - No Play.</description>
+                  <alt-description>(13:56) (Shotgun) K.Cousins pass incomplete short right to D.Jackson (J.Taylor). PENALTY on MIA-J.Taylor, Defensive Pass Interference, 4 yards, enforced at WAS 29 - No Play.</alt-description>
+                  <statistics>
+                    <pass nullified="true" attempt="1" complete="0" att_yards="4" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive nullified="true" target="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="DeSean Jackson" jersey="11" reference="00-0026189" id="3e618eb6-41f2-4f20-ad70-2460f9366f43" position="WR"/>
+                    </receive>
+                    <penalty penalty="1" yards="4">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jamar Taylor" jersey="22" reference="00-0030484" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB"/>
+                    </penalty>
+                    <defense nullified="true" pass_defended="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jamar Taylor" jersey="22" reference="00-0030484" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB"/>
+                    </defense>
+                    <first_down category="penalty">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="632ef462-7b79-4b56-ae14-308e90bad097" sequence="160.0" reference="160" clock="13:51" home_points="0" away_points="0" type="rush" play_clock="13" wall_clock="2015-09-13T17:05:15+00:00">
+                  <start_situation clock="13:51" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="33"/>
+                  </start_situation>
+                  <end_situation clock="13:19" down="2" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="39"/>
+                  </end_situation>
+                  <description>(13:51) (Shotgun) 46-A.Morris right guard to WAS 39 for 6 yards (55-K.Misi).</description>
+                  <alt-description>(13:51) (Shotgun) A.Morris right guard to WAS 39 for 6 yards (K.Misi).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="6" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Koa Misi" jersey="55" reference="00-0027883" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="ed8b267d-0124-4e90-b0c1-1c66097257f8" sequence="181.0" reference="181" clock="13:19" home_points="0" away_points="0" type="pass" play_clock="13" wall_clock="2015-09-13T17:05:48+00:00">
+                  <start_situation clock="13:19" down="2" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="39"/>
+                  </start_situation>
+                  <end_situation clock="12:40" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="49"/>
+                  </end_situation>
+                  <description>(13:19) 8-K.Cousins pass short left to 86-J.Reed to MIA 49 for 12 yards (24-Br.McCain, 22-J.Taylor).</description>
+                  <alt-description>(13:19) K.Cousins pass short left to J.Reed to MIA 49 for 12 yards (Br.McCain, J.Taylor).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="12" att_yards="0" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="12" yards_after_catch="12" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Jordan Reed" jersey="86" reference="00-0030472" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE"/>
+                    </receive>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jamar Taylor" jersey="22" reference="00-0030484" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Brice McCain" jersey="24" reference="00-0026935" id="33a653a5-d73b-4502-85d2-42c087278a74" position="CB"/>
+                    </defense>
+                    <first_down category="pass">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="ee8e073f-e597-4142-b5c9-8e2ff407b309" sequence="205.0" reference="205" clock="12:40" home_points="0" away_points="0" type="penalty" play_clock="12" wall_clock="2015-09-13T17:06:26+00:00">
+                  <start_situation clock="12:40" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="49"/>
+                  </start_situation>
+                  <end_situation clock="12:16" down="1" yfd="15">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="46"/>
+                  </end_situation>
+                  <description>(12:40) PENALTY on WAS-71-Trent.Williams, False Start, 5 yards, enforced at MIA 49 - No Play.</description>
+                  <alt-description>(12:40) PENALTY on WAS-Trent.Williams, False Start, 5 yards, enforced at MIA 49 - No Play.</alt-description>
+                  <statistics>
+                    <penalty penalty="1" yards="5">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Trent Williams" jersey="71" reference="00-0027857" id="b070601c-7985-4a1c-b71a-9f72bb5dbc59" position="T"/>
+                    </penalty>
+                  </statistics>
+                </play>
+                <play id="180da5bf-94b7-4d10-b7a7-1c78d2ab24b6" sequence="228.0" reference="228" clock="12:16" home_points="0" away_points="0" type="rush" play_clock="4" wall_clock="2015-09-13T17:07:10+00:00">
+                  <start_situation clock="12:16" down="1" yfd="15">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="46"/>
+                  </start_situation>
+                  <end_situation clock="11:40" down="2" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="45"/>
+                  </end_situation>
+                  <description>(12:16) 46-A.Morris right guard to MIA 45 for 9 yards (55-K.Misi, 20-R.Jones).</description>
+                  <alt-description>(12:16) A.Morris right guard to MIA 45 for 9 yards (K.Misi, R.Jones).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="9" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Koa Misi" jersey="55" reference="00-0027883" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="6c966538-0cbc-4bb7-a548-6e656dcf1a15" sequence="249.0" reference="249" clock="11:40" home_points="0" away_points="0" type="rush" play_clock="11" wall_clock="2015-09-13T17:07:45+00:00">
+                  <start_situation clock="11:40" down="2" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="45"/>
+                  </start_situation>
+                  <end_situation clock="11:40" down="3" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="45"/>
+                  </end_situation>
+                  <description>(11:40) 46-A.Morris left end to MIA 45 for no gain (55-K.Misi, 52-K.Sheppard).</description>
+                  <alt-description>(11:40) A.Morris left end to MIA 45 for no gain (K.Misi, K.Sheppard).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="0" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Koa Misi" jersey="55" reference="00-0027883" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Kelvin Sheppard" jersey="52" reference="00-0028006" id="7190fb71-0916-4f9d-88a0-8c1a8c1c9d0d" position="LB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="4e3e46d5-8af1-4ced-b5b5-8083042b5d96" sequence="270.0" reference="270" clock="11:40" home_points="0" away_points="0" type="pass">
+                  <start_situation clock="11:40" down="3" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="45"/>
+                  </start_situation>
+                  <end_situation clock="10:20" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="36"/>
+                  </end_situation>
+                  <description>(11:40) (Shotgun) 8-K.Cousins pass short left to 86-J.Reed to MIA 36 for 9 yards (93-N.Suh; 20-R.Jones).</description>
+                  <alt-description>(11:40) (Shotgun) K.Cousins pass short left to J.Reed to MIA 36 for 9 yards (N.Suh; R.Jones).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="9" att_yards="4" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="9" yards_after_catch="5" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Jordan Reed" jersey="86" reference="00-0030472" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE"/>
+                    </receive>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ndamukong Suh" jersey="93" reference="00-0027855" id="f0f60621-a075-41f6-a07d-74fd9e1348f2" position="DT"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                    <down_conversion down="3" attempt="1" complete="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </down_conversion>
+                    <first_down category="pass">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="035f76c1-d02a-47f0-b115-a677aa68f624" sequence="294.0" reference="294" clock="10:20" home_points="0" away_points="0" type="rush" play_clock="10" wall_clock="2015-09-13T17:09:15+00:00">
+                  <start_situation clock="10:20" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="36"/>
+                  </start_situation>
+                  <end_situation clock="9:40" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="26"/>
+                  </end_situation>
+                  <description>(10:20) 46-A.Morris left end to MIA 26 for 10 yards (53-J.Jenkins).</description>
+                  <alt-description>(10:20) A.Morris left end to MIA 26 for 10 yards (J.Jenkins).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="10" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jelani Jenkins" jersey="53" reference="00-0030384" id="9f1a0910-090f-4f28-bb5e-0593e6f0a3bc" position="LB"/>
+                    </defense>
+                    <first_down category="rush">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="556b318a-f944-4b37-86dd-4b0dba4d0644" sequence="315.0" reference="315" clock="9:40" home_points="0" away_points="0" type="pass" play_clock="6" wall_clock="2015-09-13T17:09:46+00:00">
+                  <start_situation clock="9:40" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="26"/>
+                  </start_situation>
+                  <end_situation clock="9:00" down="2" yfd="18">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="34"/>
+                  </end_situation>
+                  <description>(9:40) 8-K.Cousins sacked at MIA 34 for -8 yards (97-J.Phillips).</description>
+                  <alt-description>(9:40) K.Cousins sacked at MIA 34 for -8 yards (J.Phillips).</alt-description>
+                  <statistics>
+                    <pass sack="1" sack_yards="-8" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <defense tackle="1" sack="1" sack_yards="-8.0" qb_hit="1" tlost="1" tlost_yards="8">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jordan Phillips" jersey="97" reference="00-0031557" id="023af11a-3aa1-4266-b163-31cf6369ef3b" position="DT"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="909d3af3-1fbe-4e42-bb29-009e5f5f0747" sequence="334.0" reference="334" clock="9:00" home_points="0" away_points="0" type="rush" play_clock="4" wall_clock="2015-09-13T17:10:26+00:00">
+                  <start_situation clock="9:00" down="2" yfd="18">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="34"/>
+                  </start_situation>
+                  <end_situation clock="8:24" down="3" yfd="13">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="29"/>
+                  </end_situation>
+                  <description>(9:00) 46-A.Morris up the middle to MIA 29 for 5 yards (55-K.Misi).</description>
+                  <alt-description>(9:00) A.Morris up the middle to MIA 29 for 5 yards (K.Misi).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="5" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Koa Misi" jersey="55" reference="00-0027883" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="60ac4212-66ae-455b-a080-4b7c176e1895" sequence="355.0" reference="355" clock="8:24" home_points="0" away_points="0" type="rush" play_clock="10" wall_clock="2015-09-13T17:11:01+00:00">
+                  <start_situation clock="8:24" down="3" yfd="13">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="29"/>
+                  </start_situation>
+                  <end_situation clock="7:45" down="4" yfd="11">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="27"/>
+                  </end_situation>
+                  <description>(8:24) (Shotgun) 25-C.Thompson right guard to MIA 27 for 2 yards (55-K.Misi).</description>
+                  <alt-description>(8:24) (Shotgun) C.Thompson right guard to MIA 27 for 2 yards (K.Misi).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="2" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Chris Thompson" jersey="25" reference="00-0030404" id="0366fd06-19a3-4b69-8448-6bfbfad1250b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Koa Misi" jersey="55" reference="00-0027883" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB"/>
+                    </defense>
+                    <down_conversion down="3" attempt="1" complete="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </down_conversion>
+                  </statistics>
+                </play>
+                <play id="6b212e2e-b958-4e24-ba46-f05493050d84" sequence="376.0" reference="376" clock="7:45" home_points="3" away_points="0" type="field_goal" scoring_play="true" play_clock="7" wall_clock="2015-09-13T17:11:41+00:00">
+                  <start_situation clock="7:45" down="4" yfd="11">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="27"/>
+                  </start_situation>
+                  <end_situation clock="7:39" down="0" yfd="0">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="35"/>
+                  </end_situation>
+                  <description>(7:45) 2-K.Forbath 45 yard field goal is GOOD, Center-57-N.Sundberg, Holder-5-T.Way.</description>
+                  <alt-description>(7:45) K.Forbath 45 yard field goal is GOOD, Center-N.Sundberg, Holder-T.Way.</alt-description>
+                  <score sequence="1" clock="7:39" points="3" home_points="3" away_points="0">
+                  </score>
+                  <statistics>
+                    <field_goal attempt="1" att_yards="45" yards="45" missed="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kai Forbath" jersey="02" reference="00-0028787" id="5514afb6-bd43-49a8-9bf7-b8baaaecdabe" position="K"/>
+                    </field_goal>
+                  </statistics>
+                </play>
+              </plays>
+            </drive>
+            <drive id="37c135a1-9d50-4da7-a975-f93a5bc2bfb5" sequence="7" start_reason="Downs" end_reason="Touchdown" play_count="17" duration="8:49" first_downs="7" gain="98" penalty_yards="-10" inside_20="true" scoring_drive="true">
+              <quarter id="17ee8c4c-3e1c-4dbb-83eb-f54fabe2a117" number="2" sequence="2"/>
+              <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              <plays>
+                <play id="9826a87c-ddf4-4ef8-ab08-dfb19bfec542" sequence="1233.0" reference="1233" clock="10:38" home_points="3" away_points="0" type="rush" wall_clock="2015-09-13T17:56:00+00:00">
+                  <start_situation clock="10:38" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="12"/>
+                  </start_situation>
+                  <end_situation clock="10:16" down="1" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="16"/>
+                  </end_situation>
+                  <description>(10:38) 46-A.Morris right guard to WAS 26 for 14 yards (20-R.Jones). PENALTY on WAS-86-J.Reed, Offensive Holding, 10 yards, enforced at WAS 26.</description>
+                  <alt-description>(10:38) A.Morris right guard to WAS 26 for 14 yards (R.Jones). PENALTY on WAS-J.Reed, Offensive Holding, 10 yards, enforced at WAS 26.</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="14" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <penalty penalty="1" yards="10">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Jordan Reed" jersey="86" reference="00-0030472" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE"/>
+                    </penalty>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="561c5a7b-305d-489d-a948-8da556b554e1" sequence="1265.0" reference="1265" clock="10:16" home_points="3" away_points="0" type="rush" play_clock="14" wall_clock="2015-09-13T17:56:54+00:00">
+                  <start_situation clock="10:16" down="1" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="16"/>
+                  </start_situation>
+                  <end_situation clock="9:48" down="2" yfd="2">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </end_situation>
+                  <description>(10:16) 46-A.Morris right guard to WAS 20 for 4 yards (53-J.Jenkins).</description>
+                  <alt-description>(10:16) A.Morris right guard to WAS 20 for 4 yards (J.Jenkins).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="4" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jelani Jenkins" jersey="53" reference="00-0030384" id="9f1a0910-090f-4f28-bb5e-0593e6f0a3bc" position="LB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="5bad26f1-70ae-4f57-9f0b-46f2be755461" sequence="1289.0" reference="1289" clock="9:48" home_points="3" away_points="0" type="rush" play_clock="20" wall_clock="2015-09-13T17:57:23+00:00">
+                  <start_situation clock="9:48" down="2" yfd="2">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </start_situation>
+                  <end_situation clock="9:13" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="24"/>
+                  </end_situation>
+                  <description>(9:48) 46-A.Morris left tackle to WAS 24 for 4 yards (55-K.Misi).</description>
+                  <alt-description>(9:48) A.Morris left tackle to WAS 24 for 4 yards (K.Misi).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="4" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Koa Misi" jersey="55" reference="00-0027883" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB"/>
+                    </defense>
+                    <first_down category="rush">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="4ef6846f-a3ef-4b95-a103-1d89d39d2584" sequence="1311.0" reference="1311" clock="9:13" home_points="3" away_points="0" type="pass" play_clock="12" wall_clock="2015-09-13T17:57:58+00:00">
+                  <start_situation clock="9:13" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="24"/>
+                  </start_situation>
+                  <end_situation clock="8:28" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="46"/>
+                  </end_situation>
+                  <description>(9:13) 8-K.Cousins pass deep middle to 88-P.Garcon to WAS 46 for 22 yards (24-Br.McCain).</description>
+                  <alt-description>(9:13) K.Cousins pass deep middle to P.Garcon to WAS 46 for 22 yards (Br.McCain).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="22" att_yards="17" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="22" yards_after_catch="5" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Pierre Garcon" jersey="88" reference="00-0026345" id="a824d9ff-12a4-4ed2-812d-404b0b4e52f9" position="WR"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Brice McCain" jersey="24" reference="00-0026935" id="33a653a5-d73b-4502-85d2-42c087278a74" position="CB"/>
+                    </defense>
+                    <first_down category="pass">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="6829a228-3775-4bf3-9d50-24542bfa2e6c" sequence="1340.0" reference="1340" clock="8:28" home_points="3" away_points="0" type="rush" play_clock="3" wall_clock="2015-09-13T17:58:42+00:00">
+                  <start_situation clock="8:28" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="46"/>
+                  </start_situation>
+                  <end_situation clock="7:53" down="2" yfd="5">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="49"/>
+                  </end_situation>
+                  <description>(8:28) 31-M.Jones left guard to MIA 49 for 5 yards (49-Z.Vigil, 20-R.Jones).</description>
+                  <alt-description>(8:28) M.Jones left guard to MIA 49 for 5 yards (Z.Vigil, R.Jones).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="5" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Matt Jones" jersey="31" reference="00-0031939" id="2641d36d-7c61-445f-980f-313671f2e8ce" position="RB"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Zach Vigil" jersey="49" reference="00-0031728" id="775d6455-bc3c-4fd0-9adf-ae105f71fc95" position="LB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="e85b2fce-59c2-4fdf-95fe-4f9dd48bdecc" sequence="1361.0" reference="1361" clock="7:53" home_points="3" away_points="0" type="rush" play_clock="11" wall_clock="2015-09-13T17:59:18+00:00">
+                  <start_situation clock="7:53" down="2" yfd="5">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="49"/>
+                  </start_situation>
+                  <end_situation clock="7:13" down="3" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="45"/>
+                  </end_situation>
+                  <description>(7:53) 31-M.Jones left tackle to MIA 45 for 4 yards (90-E.Mitchell, 52-K.Sheppard).</description>
+                  <alt-description>(7:53) M.Jones left tackle to MIA 45 for 4 yards (E.Mitchell, K.Sheppard).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="4" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Matt Jones" jersey="31" reference="00-0031939" id="2641d36d-7c61-445f-980f-313671f2e8ce" position="RB"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Earl Mitchell" jersey="90" reference="00-0027684" id="c9fe00a2-7620-49f3-a744-7d04c5b30560" position="DT"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Kelvin Sheppard" jersey="52" reference="00-0028006" id="7190fb71-0916-4f9d-88a0-8c1a8c1c9d0d" position="LB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="7a32a29a-6ef1-4558-b5f2-804425d74d4c" sequence="1382.0" reference="1382" clock="7:13" home_points="3" away_points="0" type="rush" play_clock="6" wall_clock="2015-09-13T17:59:58+00:00">
+                  <start_situation clock="7:13" down="3" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="45"/>
+                  </start_situation>
+                  <end_situation clock="6:31" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="39"/>
+                  </end_situation>
+                  <description>(7:13) 31-M.Jones right end to MIA 39 for 6 yards (20-R.Jones, 24-Br.McCain).</description>
+                  <alt-description>(7:13) M.Jones right end to MIA 39 for 6 yards (R.Jones, Br.McCain).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="6" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Matt Jones" jersey="31" reference="00-0031939" id="2641d36d-7c61-445f-980f-313671f2e8ce" position="RB"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Brice McCain" jersey="24" reference="00-0026935" id="33a653a5-d73b-4502-85d2-42c087278a74" position="CB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                    <down_conversion down="3" attempt="1" complete="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </down_conversion>
+                    <first_down category="rush">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="129e3da3-d251-4305-95b8-b3271b31fa73" sequence="1403.0" reference="1403" clock="6:31" home_points="3" away_points="0" type="rush" play_clock="7" wall_clock="2015-09-13T18:00:39+00:00">
+                  <start_situation clock="6:31" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="39"/>
+                  </start_situation>
+                  <end_situation clock="5:50" down="2" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="35"/>
+                  </end_situation>
+                  <description>(6:31) 31-M.Jones up the middle to MIA 35 for 4 yards (53-J.Jenkins, 24-Br.McCain).</description>
+                  <alt-description>(6:31) M.Jones up the middle to MIA 35 for 4 yards (J.Jenkins, Br.McCain).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="4" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Matt Jones" jersey="31" reference="00-0031939" id="2641d36d-7c61-445f-980f-313671f2e8ce" position="RB"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jelani Jenkins" jersey="53" reference="00-0030384" id="9f1a0910-090f-4f28-bb5e-0593e6f0a3bc" position="LB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Brice McCain" jersey="24" reference="00-0026935" id="33a653a5-d73b-4502-85d2-42c087278a74" position="CB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="893f0e8f-8708-44be-84a1-8ba6f30df324" sequence="1424.0" reference="1424" clock="5:50" home_points="3" away_points="0" type="rush" play_clock="7" wall_clock="2015-09-13T18:01:21+00:00">
+                  <start_situation clock="5:50" down="2" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="35"/>
+                  </start_situation>
+                  <end_situation clock="5:06" down="3" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="33"/>
+                  </end_situation>
+                  <description>(5:50) 80-J.Crowder left end to MIA 33 for 2 yards (20-R.Jones). End around</description>
+                  <alt-description>(5:50) J.Crowder left end to MIA 33 for 2 yards (R.Jones). End around</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="2" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Jamison Crowder" jersey="80" reference="00-0031941" id="8002dd5e-a75a-4d72-9a8c-0f4dbc80d459" position="WR"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="054b9a5d-a7ee-44bb-befa-7c7a1f18aa4b" sequence="1449.0" reference="1449" clock="5:06" home_points="3" away_points="0" type="pass" play_clock="30" wall_clock="2015-09-13T18:02:05+00:00">
+                  <start_situation clock="5:06" down="3" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="33"/>
+                  </start_situation>
+                  <end_situation clock="4:22" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="27"/>
+                  </end_situation>
+                  <description>(5:06) (Shotgun) 8-K.Cousins pass short left to 86-J.Reed to MIA 27 for 6 yards (20-R.Jones; 22-J.Taylor).</description>
+                  <alt-description>(5:06) (Shotgun) K.Cousins pass short left to J.Reed to MIA 27 for 6 yards (R.Jones; J.Taylor).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="6" att_yards="4" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="6" yards_after_catch="2" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Jordan Reed" jersey="86" reference="00-0030472" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE"/>
+                    </receive>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jamar Taylor" jersey="22" reference="00-0030484" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB"/>
+                    </defense>
+                    <down_conversion down="3" attempt="1" complete="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </down_conversion>
+                    <first_down category="pass">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="5b01ecd3-ff17-4291-9432-70bfe58ed107" sequence="1473.0" reference="1473" clock="4:22" home_points="3" away_points="0" type="pass" play_clock="4" wall_clock="2015-09-13T18:02:48+00:00">
+                  <start_situation clock="4:22" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="27"/>
+                  </start_situation>
+                  <end_situation clock="3:35" down="2" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="23"/>
+                  </end_situation>
+                  <description>(4:22) (Shotgun) 8-K.Cousins pass short left to 88-P.Garcon to MIA 23 for 4 yards (22-J.Taylor).</description>
+                  <alt-description>(4:22) (Shotgun) K.Cousins pass short left to P.Garcon to MIA 23 for 4 yards (J.Taylor).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="4" att_yards="4" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive target="1" reception="1" yards="4" yards_after_catch="0" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Pierre Garcon" jersey="88" reference="00-0026345" id="a824d9ff-12a4-4ed2-812d-404b0b4e52f9" position="WR"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jamar Taylor" jersey="22" reference="00-0030484" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="57e6d6a7-2b11-424f-9b8b-f86f0c672767" sequence="1497.0" reference="1497" clock="3:35" home_points="3" away_points="0" type="rush" play_clock="4" wall_clock="2015-09-13T18:03:36+00:00">
+                  <start_situation clock="3:35" down="2" yfd="6">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="23"/>
+                  </start_situation>
+                  <end_situation clock="2:56" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="14"/>
+                  </end_situation>
+                  <description>(3:35) 46-A.Morris left end to MIA 14 for 9 yards (93-N.Suh).</description>
+                  <alt-description>(3:35) A.Morris left end to MIA 14 for 9 yards (N.Suh).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="9" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ndamukong Suh" jersey="93" reference="00-0027855" id="f0f60621-a075-41f6-a07d-74fd9e1348f2" position="DT"/>
+                    </defense>
+                    <first_down category="rush">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="01c46622-2111-4734-8a78-9f4199407b15" sequence="1518.0" reference="1518" clock="2:56" home_points="3" away_points="0" type="pass" play_clock="6" wall_clock="2015-09-13T18:04:15+00:00">
+                  <start_situation clock="2:56" down="1" yfd="10">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="14"/>
+                  </start_situation>
+                  <end_situation clock="2:38" down="2" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="5"/>
+                  </end_situation>
+                  <description>(2:56) (No Huddle, Shotgun) 8-K.Cousins pass short left to 89-D.Carrier pushed ob at MIA 5 for 9 yards (53-J.Jenkins).</description>
+                  <alt-description>(2:56) (No Huddle, Shotgun) K.Cousins pass short left to D.Carrier pushed ob at MIA 5 for 9 yards (J.Jenkins).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="9" att_yards="1" inside_20="1" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive target="1" reception="1" yards="9" yards_after_catch="8" inside_20="1" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Derek Carrier" jersey="89" reference="00-0029119" id="d3fab07b-f02a-433d-9612-cb0a751f324d" position="TE"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jelani Jenkins" jersey="53" reference="00-0030384" id="9f1a0910-090f-4f28-bb5e-0593e6f0a3bc" position="LB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="9a62c65e-484f-4997-b8b7-cd43b464daba" sequence="1559.0" reference="1559" clock="2:38" home_points="3" away_points="0" type="rush" play_clock="14" wall_clock="2015-09-13T18:05:56+00:00">
+                  <start_situation clock="2:38" down="2" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="5"/>
+                  </start_situation>
+                  <end_situation clock="2:05" down="1" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="1"/>
+                  </end_situation>
+                  <description>(2:38) 46-A.Morris up the middle to MIA 1 for 4 yards (78-T.Fede).</description>
+                  <alt-description>(2:38) A.Morris up the middle to MIA 1 for 4 yards (T.Fede).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="4" firstdown="1" inside_20="1" goaltogo="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Terrence Fede" jersey="78" reference="00-0031317" id="5064d069-aa24-4828-81c9-c78e0e56fb78" position="DE"/>
+                    </defense>
+                    <first_down category="rush">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="aae86add-5c3b-4387-bfe9-5459be08a6ef" sequence="1580.0" reference="1580" clock="2:05" home_points="3" away_points="0" type="rush" goaltogo="true" play_clock="13" wall_clock="2015-09-13T18:06:29+00:00">
+                  <start_situation clock="2:05" down="1" yfd="1">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="1"/>
+                  </start_situation>
+                  <end_situation clock="2:00" down="2" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="4"/>
+                  </end_situation>
+                  <description>(2:05) 46-A.Morris left tackle to MIA 4 for -3 yards (20-R.Jones).</description>
+                  <alt-description>(2:05) A.Morris left tackle to MIA 4 for -3 yards (R.Jones).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="-3" inside_20="1" goaltogo="1" tlost="1" tlost_yards="-3">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Alfred Morris" jersey="46" reference="00-0029141" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB"/>
+                    </rush>
+                    <defense tackle="1" tlost="1" tlost_yards="3">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Reshad Jones" jersey="20" reference="00-0027762" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="674a2c36-ee7f-4814-a4ca-b469dbbf5ddc" sequence="1618.0" reference="1618" clock="2:00" home_points="3" away_points="0" type="pass" goaltogo="true" play_clock="15" wall_clock="2015-09-13T18:09:29+00:00">
+                  <start_situation clock="2:00" down="2" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="4"/>
+                  </start_situation>
+                  <end_situation clock="1:54" down="3" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="4"/>
+                  </end_situation>
+                  <description>(2:00) 8-K.Cousins pass incomplete short right to 14-R.Grant.</description>
+                  <alt-description>(2:00) K.Cousins pass incomplete short right to R.Grant.</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="0" att_yards="4" inside_20="1" goaltogo="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive target="1" inside_20="1" goaltogo="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Ryan Grant" jersey="14" reference="00-0031068" id="cc9df25a-bb22-4737-83df-ff01d3fd7695" position="WR"/>
+                    </receive>
+                  </statistics>
+                </play>
+                <play id="d91c5f99-15df-410b-9a95-5c97b1d1eac2" sequence="1640.0" reference="1640" clock="1:54" home_points="10" away_points="0" type="pass" scoring_play="true" goaltogo="true" play_clock="5" wall_clock="2015-09-13T18:10:11+00:00">
+                  <start_situation clock="1:54" down="3" yfd="4">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="4"/>
+                  </start_situation>
+                  <end_situation clock="1:49" down="0" yfd="0">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="15"/>
+                  </end_situation>
+                  <description>(1:54) (Shotgun) 8-K.Cousins pass short left to 86-J.Reed for 4 yards, TOUCHDOWN.</description>
+                  <alt-description>(1:54) (Shotgun) K.Cousins pass short left to J.Reed for 4 yards, TOUCHDOWN.</alt-description>
+                  <score sequence="2" clock="1:49" points="7" home_points="10" away_points="0">
+                    <points-after-play id="199d8639-fabd-417a-a94c-befd45ae674c" sequence="1660.0" reference="1660" type="extra_point"/>
+                  </score>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="4" att_yards="4" firstdown="1" touchdown="1" inside_20="1" goaltogo="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kirk Cousins" jersey="08" reference="00-0029604" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" touchdown="1" target="1" reception="1" yards="4" yards_after_catch="0" inside_20="1" goaltogo="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Jordan Reed" jersey="86" reference="00-0030472" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE"/>
+                    </receive>
+                    <down_conversion down="3" attempt="1" complete="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </down_conversion>
+                    <first_down category="pass">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="199d8639-fabd-417a-a94c-befd45ae674c" sequence="1660.0" reference="1660" clock="1:49" home_points="10" away_points="0" type="extra_point" scoring_play="true" wall_clock="2015-09-13T18:11:08+00:00">
+                  <start_situation clock="1:49" down="0" yfd="0">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="15"/>
+                  </start_situation>
+                  <end_situation clock="1:49" down="0" yfd="0">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="35"/>
+                  </end_situation>
+                  <description>2-K.Forbath extra point is GOOD, Center-57-N.Sundberg, Holder-5-T.Way.</description>
+                  <alt-description>K.Forbath extra point is GOOD, Center-N.Sundberg, Holder-T.Way.</alt-description>
+                  <statistics>
+                    <extra_point attempt="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kai Forbath" jersey="02" reference="00-0028787" id="5514afb6-bd43-49a8-9bf7-b8baaaecdabe" position="K"/>
+                    </extra_point>
+                  </statistics>
+                </play>
+              </plays>
+            </drive>
+            <drive id="d7474f02-e785-4638-b604-1065174d4a67" sequence="8" start_reason="Kickoff" end_reason="Touchdown" play_count="9" duration="1:22" first_downs="6" gain="65" penalty_yards="15" inside_20="true" scoring_drive="true">
+              <quarter id="17ee8c4c-3e1c-4dbb-83eb-f54fabe2a117" number="2" sequence="2"/>
+              <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              <plays>
+                <play id="bb0d426f-3394-4a2e-b45e-8fec99c3dcd8" sequence="1676.0" reference="1676" clock="1:49" home_points="10" away_points="0" type="kickoff" play_clock="7" wall_clock="2015-09-13T18:13:34+00:00">
+                  <start_situation clock="1:49" down="0" yfd="0">
+                    <possession name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="35"/>
+                  </start_situation>
+                  <end_situation clock="1:49" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="20"/>
+                  </end_situation>
+                  <description>2-K.Forbath kicks 65 yards from WAS 35 to end zone, Touchback.</description>
+                  <alt-description>K.Forbath kicks 65 yards from WAS 35 to end zone, Touchback.</alt-description>
+                  <statistics>
+                    <kick attempt="1" yards="65" gross_yards="72" touchback="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Kai Forbath" jersey="02" reference="00-0028787" id="5514afb6-bd43-49a8-9bf7-b8baaaecdabe" position="K"/>
+                    </kick>
+                    <return touchback="1" category="kick_return">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </return>
+                  </statistics>
+                </play>
+                <play id="16415bdf-05e4-4a48-8d65-b53dee0600c4" sequence="1695.0" reference="1695" clock="1:49" home_points="10" away_points="0" type="pass" play_clock="7" wall_clock="2015-09-13T18:14:15+00:00">
+                  <start_situation clock="1:49" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="20"/>
+                  </start_situation>
+                  <end_situation clock="1:38" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="47"/>
+                  </end_situation>
+                  <description>(1:49) (Shotgun) 17-R.Tannehill pass deep right to 84-J.Cameron to MIA 47 for 27 yards (34-T.Robinson). WAS-23-D.Hall was injured during the play.</description>
+                  <alt-description>(1:49) (Shotgun) R.Tannehill pass deep right to J.Cameron to MIA 47 for 27 yards (T.Robinson). WAS-D.Hall was injured during the play.</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="27" att_yards="20" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="27" yards_after_catch="7" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jordan Cameron" jersey="84" reference="00-0028040" id="44257544-0a90-4bca-b759-e589a70cf168" position="TE"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Trenton Robinson" jersey="34" reference="00-0029297" id="215fd07e-7e6a-4060-a545-3fe5fb7add4f" position="S"/>
+                    </defense>
+                    <first_down category="pass">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="d282def6-df9d-45f5-99f1-e9fc56bbb680" sequence="1778.0" reference="1778" clock="1:38" home_points="10" away_points="0" type="pass" play_clock="32" wall_clock="2015-09-13T18:16:55+00:00">
+                  <start_situation clock="1:38" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="47"/>
+                  </start_situation>
+                  <end_situation clock="1:31" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="27"/>
+                  </end_situation>
+                  <description>(1:38) (Shotgun) 17-R.Tannehill pass short right to 85-G.Jennings ran ob at WAS 42 for 11 yards [92-C.Baker]. PENALTY on WAS-92-C.Baker, Roughing the Passer, 15 yards, enforced at WAS 42.</description>
+                  <alt-description>(1:38) (Shotgun) R.Tannehill pass short right to G.Jennings ran ob at WAS 42 for 11 yards [C.Baker]. PENALTY on WAS-C.Baker, Roughing the Passer, 15 yards, enforced at WAS 42.</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="11" att_yards="11" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="11" yards_after_catch="0" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Greg Jennings" jersey="85" reference="00-0024267" id="ff937065-a20f-4968-a138-8ecd3a8b7cdb" position="WR"/>
+                    </receive>
+                    <penalty penalty="1" yards="15">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Chris Baker" jersey="92" reference="00-0026512" id="5659e779-d0af-4107-aa75-d24dc3db90e3" position="DL"/>
+                    </penalty>
+                    <defense qb_hit="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Chris Baker" jersey="92" reference="00-0026512" id="5659e779-d0af-4107-aa75-d24dc3db90e3" position="DL"/>
+                    </defense>
+                    <first_down category="pass">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                    <first_down category="penalty">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="6b50f3be-7468-40f0-a6e9-5d259a8d2ef2" sequence="1822.0" reference="1822" clock="1:31" home_points="10" away_points="0" type="pass" wall_clock="2015-09-13T18:17:57+00:00">
+                  <start_situation clock="1:31" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="27"/>
+                  </start_situation>
+                  <end_situation clock="1:02" down="2" yfd="11">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="28"/>
+                  </end_situation>
+                  <description>(1:31) (Shotgun) 17-R.Tannehill sacked at WAS 28 for -1 yards (97-J.Hatcher).</description>
+                  <alt-description>(1:31) (Shotgun) R.Tannehill sacked at WAS 28 for -1 yards (J.Hatcher).</alt-description>
+                  <statistics>
+                    <pass sack="1" sack_yards="-1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <defense tackle="1" sack="1" sack_yards="-1.0" qb_hit="1" tlost="1" tlost_yards="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Jason Hatcher" jersey="97" reference="00-0024307" id="75f4e314-a25d-4833-b39e-02014853d7bb" position="DE"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="a8d7f144-e39c-43c3-9327-b321c87a2350" sequence="1845.0" reference="1845" clock="1:02" home_points="10" away_points="0" type="pass" play_clock="20" wall_clock="2015-09-13T18:18:27+00:00">
+                  <start_situation clock="1:02" down="2" yfd="11">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="28"/>
+                  </start_situation>
+                  <end_situation clock="00:58" down="3" yfd="11">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="28"/>
+                  </end_situation>
+                  <description>(1:02) (No Huddle, Shotgun) 17-R.Tannehill pass incomplete deep right to 10-K.Stills.</description>
+                  <alt-description>(1:02) (No Huddle, Shotgun) R.Tannehill pass incomplete deep right to K.Stills.</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="0" att_yards="24" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive target="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Kenny Stills" jersey="10" reference="00-0030085" id="4734f8dc-2ca4-4437-88f2-c8b8974abefc" position="WR"/>
+                    </receive>
+                  </statistics>
+                </play>
+                <play id="fa55377d-a09f-4310-aba9-7b4b702c3a2a" sequence="1878.0" reference="1878" clock="00:58" home_points="10" away_points="0" type="pass" play_clock="4" wall_clock="2015-09-13T18:19:08+00:00">
+                  <start_situation clock="00:58" down="3" yfd="11">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="28"/>
+                  </start_situation>
+                  <end_situation clock="00:50" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="16"/>
+                  </end_situation>
+                  <description>(:58) (Shotgun) 17-R.Tannehill pass short right to 10-K.Stills to WAS 16 for 12 yards (39-D.Amerson). Penalty on WAS-29-C.Culliver, Illegal Use of Hands, declined.</description>
+                  <alt-description>(:58) (Shotgun) R.Tannehill pass short right to K.Stills to WAS 16 for 12 yards (D.Amerson). Penalty on WAS-C.Culliver, Illegal Use of Hands, declined.</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="12" att_yards="12" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="12" yards_after_catch="0" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Kenny Stills" jersey="10" reference="00-0030085" id="4734f8dc-2ca4-4437-88f2-c8b8974abefc" position="WR"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="David Amerson" jersey="39" reference="00-0030420" id="2ba5bdad-0b7c-4637-89a3-5b7b34d215b0" position="CB"/>
+                    </defense>
+                    <down_conversion down="3" attempt="1" complete="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </down_conversion>
+                    <first_down category="pass">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="634de9fe-f3f3-4f9e-8ce3-9e02704246bb" sequence="1915.0" reference="1915" clock="00:50" home_points="10" away_points="0" type="pass" play_clock="29" wall_clock="2015-09-13T18:20:09+00:00">
+                  <start_situation clock="00:50" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="16"/>
+                  </start_situation>
+                  <end_situation clock="00:46" down="2" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="16"/>
+                  </end_situation>
+                  <description>(:50) (Shotgun) 17-R.Tannehill pass incomplete deep right to 84-J.Cameron.</description>
+                  <alt-description>(:50) (Shotgun) R.Tannehill pass incomplete deep right to J.Cameron.</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="0" att_yards="16" inside_20="1" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive target="1" inside_20="1" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jordan Cameron" jersey="84" reference="00-0028040" id="44257544-0a90-4bca-b759-e589a70cf168" position="TE"/>
+                    </receive>
+                  </statistics>
+                </play>
+                <play id="f6dbc5b6-4cbd-4ce1-b895-03eac44567b0" sequence="1937.0" reference="1937" clock="00:46" home_points="10" away_points="0" type="pass" play_clock="7" wall_clock="2015-09-13T18:20:49+00:00">
+                  <start_situation clock="00:46" down="2" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="16"/>
+                  </start_situation>
+                  <end_situation clock="00:37" down="1" yfd="3">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="3"/>
+                  </end_situation>
+                  <description>(:46) (Shotgun) 17-R.Tannehill pass short right to 84-J.Cameron to WAS 3 for 13 yards (39-D.Amerson).</description>
+                  <alt-description>(:46) (Shotgun) R.Tannehill pass short right to J.Cameron to WAS 3 for 13 yards (D.Amerson).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="13" att_yards="13" firstdown="1" inside_20="1" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="13" yards_after_catch="0" inside_20="1" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jordan Cameron" jersey="84" reference="00-0028040" id="44257544-0a90-4bca-b759-e589a70cf168" position="TE"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="David Amerson" jersey="39" reference="00-0030420" id="2ba5bdad-0b7c-4637-89a3-5b7b34d215b0" position="CB"/>
+                    </defense>
+                    <first_down category="pass">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="0b24bec4-80d9-4054-a7fa-7faea2f58bb1" sequence="1980.0" reference="1980" clock="00:37" home_points="10" away_points="0" type="pass" goaltogo="true" play_clock="9" wall_clock="2015-09-13T18:22:05+00:00">
+                  <start_situation clock="00:37" down="1" yfd="3">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="3"/>
+                  </start_situation>
+                  <end_situation clock="00:32" down="2" yfd="3">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="3"/>
+                  </end_situation>
+                  <description>(:37) (Shotgun) 17-R.Tannehill pass incomplete short right to 14-J.Landry (39-D.Amerson).</description>
+                  <alt-description>(:37) (Shotgun) R.Tannehill pass incomplete short right to J.Landry (D.Amerson).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="0" att_yards="3" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive target="1" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR"/>
+                    </receive>
+                    <defense pass_defended="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="David Amerson" jersey="39" reference="00-0030420" id="2ba5bdad-0b7c-4637-89a3-5b7b34d215b0" position="CB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="41a240ac-a733-49f2-b8d6-ecfed34cf16b" sequence="2014.0" reference="2014" clock="00:32" home_points="10" away_points="7" type="pass" scoring_play="true" goaltogo="true" play_clock="2" wall_clock="2015-09-13T18:22:50+00:00">
+                  <start_situation clock="00:32" down="2" yfd="3">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="3"/>
+                  </start_situation>
+                  <end_situation clock="00:27" down="0" yfd="0">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="15"/>
+                  </end_situation>
+                  <description>(:32) (Shotgun) 17-R.Tannehill pass short right to 18-R.Matthews for 3 yards, TOUCHDOWN.</description>
+                  <alt-description>(:32) (Shotgun) R.Tannehill pass short right to R.Matthews for 3 yards, TOUCHDOWN.</alt-description>
+                  <score sequence="3" clock="00:27" points="7" home_points="10" away_points="7">
+                    <points-after-play id="503b6c0a-ca1d-4efd-8085-b0baa86f7551" sequence="2034.0" reference="2034" type="extra_point"/>
+                  </score>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="3" att_yards="2" firstdown="1" touchdown="1" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" touchdown="1" target="1" reception="1" yards="3" yards_after_catch="1" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Rishard Matthews" jersey="18" reference="00-0029580" id="969a4d68-1d76-4e64-bfff-e898a9ac6bd4" position="WR"/>
+                    </receive>
+                    <first_down category="pass">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="503b6c0a-ca1d-4efd-8085-b0baa86f7551" sequence="2034.0" reference="2034" clock="00:27" home_points="10" away_points="7" type="extra_point" scoring_play="true" wall_clock="2015-09-13T18:23:38+00:00">
+                  <start_situation clock="00:27" down="0" yfd="0">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="15"/>
+                  </start_situation>
+                  <end_situation clock="00:27" down="0" yfd="0">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="35"/>
+                  </end_situation>
+                  <description>3-A.Franks extra point is GOOD, Center-92-J.Denney, Holder-4-M.Darr.</description>
+                  <alt-description>A.Franks extra point is GOOD, Center-J.Denney, Holder-M.Darr.</alt-description>
+                  <statistics>
+                    <extra_point attempt="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Andrew Franks" jersey="03" reference="00-0031718" id="59da7aea-f21a-43c5-b0bf-2d1e8b19da80" position="K"/>
+                    </extra_point>
+                  </statistics>
+                </play>
+              </plays>
+            </drive>
+            <drive id="3b6e7850-bfa5-4ac8-90f4-9bd14a5a12c9" sequence="14" start_reason="Punt" end_reason="Field Goal" play_count="10" duration="5:13" first_downs="6" gain="78" penalty_yards="-2" inside_20="true" scoring_drive="true">
+              <quarter id="da1c72aa-a5eb-44db-a23f-f9e2284d7968" number="3" sequence="3"/>
+              <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              <plays>
+                <play id="4a6daf55-2393-4900-a2f8-3019523bac62" sequence="2954.0" reference="2954" clock="1:47" home_points="10" away_points="7" type="pass" play_clock="14" wall_clock="2015-09-13T19:11:35+00:00">
+                  <start_situation clock="1:47" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="20"/>
+                  </start_situation>
+                  <end_situation clock="1:19" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="31"/>
+                  </end_situation>
+                  <description>(1:47) (Shotgun) 17-R.Tannehill pass short right to 14-J.Landry pushed ob at MIA 31 for 11 yards (35-J.Rogers; 23-D.Hall).</description>
+                  <alt-description>(1:47) (Shotgun) R.Tannehill pass short right to J.Landry pushed ob at MIA 31 for 11 yards (J.Rogers; D.Hall).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="11" att_yards="8" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="11" yards_after_catch="3" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR"/>
+                    </receive>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Justin Rogers" jersey="35" reference="00-0028144" id="cd027e2e-1b7e-48cc-908e-fec67cf2c05d" position="CB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="DeAngelo Hall" jersey="23" reference="00-0022923" id="5f7dbabc-4a86-45f5-9983-eea57e7ccb38" position="CB"/>
+                    </defense>
+                    <first_down category="pass">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="1d8950e7-9c54-4480-acc2-55699a10ec6d" sequence="2978.0" reference="2978" clock="1:19" home_points="10" away_points="7" type="rush" play_clock="14" wall_clock="2015-09-13T19:12:13+00:00">
+                  <start_situation clock="1:19" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="31"/>
+                  </start_situation>
+                  <end_situation clock="00:43" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="43"/>
+                  </end_situation>
+                  <description>(1:19) (Shotgun) 26-L.Miller right tackle to MIA 43 for 12 yards (34-T.Robinson).</description>
+                  <alt-description>(1:19) (Shotgun) L.Miller right tackle to MIA 43 for 12 yards (T.Robinson).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="12" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Lamar Miller" jersey="26" reference="00-0029615" id="a212c5d8-67f8-48b9-99be-2c121ee56366" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Trenton Robinson" jersey="34" reference="00-0029297" id="215fd07e-7e6a-4060-a545-3fe5fb7add4f" position="S"/>
+                    </defense>
+                    <first_down category="rush">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="528aa82e-7228-4b9a-b72b-a03edbda0706" sequence="2999.0" reference="2999" clock="00:43" home_points="10" away_points="7" type="rush" wall_clock="2015-09-13T19:12:48+00:00">
+                  <start_situation clock="00:43" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="43"/>
+                  </start_situation>
+                  <end_situation clock="00:01" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="40"/>
+                  </end_situation>
+                  <description>(:43) (Shotgun) 26-L.Miller right end to WAS 40 for 17 yards (23-D.Hall).</description>
+                  <alt-description>(:43) (Shotgun) L.Miller right end to WAS 40 for 17 yards (D.Hall).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="17" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Lamar Miller" jersey="26" reference="00-0029615" id="a212c5d8-67f8-48b9-99be-2c121ee56366" position="RB"/>
+                    </rush>
+                    <defense tackle="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="DeAngelo Hall" jersey="23" reference="00-0022923" id="5f7dbabc-4a86-45f5-9983-eea57e7ccb38" position="CB"/>
+                    </defense>
+                    <first_down category="rush">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="0e30ee24-0363-4bd7-9b9d-ec4f50292c42" sequence="3020.0" reference="3020" clock="00:01" home_points="10" away_points="7" type="pass" play_clock="6" wall_clock="2015-09-13T19:13:31+00:00">
+                  <start_situation clock="00:01" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="40"/>
+                  </start_situation>
+                  <end_situation clock="15:00" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </end_situation>
+                  <description>(:01) (Shotgun) 17-R.Tannehill pass short middle to 14-J.Landry to WAS 20 for 20 yards (23-D.Hall).</description>
+                  <alt-description>(:01) (Shotgun) R.Tannehill pass short middle to J.Landry to WAS 20 for 20 yards (D.Hall).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="20" att_yards="15" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive firstdown="1" target="1" reception="1" yards="20" yards_after_catch="5" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR"/>
+                    </receive>
+                    <defense tackle="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="DeAngelo Hall" jersey="23" reference="00-0022923" id="5f7dbabc-4a86-45f5-9983-eea57e7ccb38" position="CB"/>
+                    </defense>
+                    <first_down category="pass">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="b9767831-de14-4e09-aa4f-74b6d38d12ce" sequence="3060.0" reference="3060" clock="15:00" home_points="10" away_points="7" type="pass" play_clock="13" wall_clock="2015-09-13T19:16:19+00:00">
+                  <start_situation clock="15:00" down="1" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </start_situation>
+                  <end_situation clock="14:56" down="2" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </end_situation>
+                  <description>(15:00) (Shotgun) 17-R.Tannehill pass incomplete short left to 10-K.Stills (52-K.Robinson).</description>
+                  <alt-description>(15:00) (Shotgun) R.Tannehill pass incomplete short left to K.Stills (K.Robinson).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="0" att_yards="7" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive target="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Kenny Stills" jersey="10" reference="00-0030085" id="4734f8dc-2ca4-4437-88f2-c8b8974abefc" position="WR"/>
+                    </receive>
+                    <defense pass_defended="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Keenan Robinson" jersey="52" reference="00-0029545" id="af1648a4-2df1-40ef-b9fe-081d6961a416" position="LB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="de6bd37c-b75d-4a8d-b12d-63abd317fd20" sequence="3082.0" reference="3082" clock="14:56" home_points="10" away_points="7" type="rush" play_clock="8" wall_clock="2015-09-13T19:16:57+00:00">
+                  <start_situation clock="14:56" down="2" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="20"/>
+                  </start_situation>
+                  <end_situation clock="14:14" down="1" yfd="6">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="6"/>
+                  </end_situation>
+                  <description>(14:56) (Shotgun) 14-J.Landry left tackle to WAS 6 for 14 yards (34-T.Robinson, 35-J.Rogers). end around</description>
+                  <alt-description>(14:56) (Shotgun) J.Landry left tackle to WAS 6 for 14 yards (T.Robinson, J.Rogers). end around</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="14" firstdown="1" inside_20="0" goaltogo="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Trenton Robinson" jersey="34" reference="00-0029297" id="215fd07e-7e6a-4060-a545-3fe5fb7add4f" position="S"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Justin Rogers" jersey="35" reference="00-0028144" id="cd027e2e-1b7e-48cc-908e-fec67cf2c05d" position="CB"/>
+                    </defense>
+                    <first_down category="rush">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="73cab744-b5cc-403d-a287-eecadab62d8b" sequence="3107.0" reference="3107" clock="14:14" home_points="10" away_points="7" type="pass" goaltogo="true" play_clock="5" wall_clock="2015-09-13T19:17:39+00:00">
+                  <start_situation clock="14:14" down="1" yfd="6">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="6"/>
+                  </start_situation>
+                  <end_situation clock="14:09" down="1" yfd="3">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="3"/>
+                  </end_situation>
+                  <description>(14:14) (Shotgun) 17-R.Tannehill pass incomplete short left to 84-J.Cameron (52-K.Robinson) [90-S.Paea]. PENALTY on WAS-52-K.Robinson, Defensive Pass Interference, 3 yards, enforced at WAS 6 - No Play.</description>
+                  <alt-description>(14:14) (Shotgun) R.Tannehill pass incomplete short left to J.Cameron (K.Robinson) [S.Paea]. PENALTY on WAS-K.Robinson, Defensive Pass Interference, 3 yards, enforced at WAS 6 - No Play.</alt-description>
+                  <statistics>
+                    <pass nullified="true" attempt="1" complete="0" att_yards="4" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive nullified="true" target="1" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jordan Cameron" jersey="84" reference="00-0028040" id="44257544-0a90-4bca-b759-e589a70cf168" position="TE"/>
+                    </receive>
+                    <penalty penalty="1" yards="3">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Keenan Robinson" jersey="52" reference="00-0029545" id="af1648a4-2df1-40ef-b9fe-081d6961a416" position="LB"/>
+                    </penalty>
+                    <defense nullified="true" qb_hit="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Stephen Paea" jersey="90" reference="00-0027991" id="92608d14-9444-4ee0-bf1a-a8905e5d4475" position="DE"/>
+                    </defense>
+                    <defense nullified="true" pass_defended="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Keenan Robinson" jersey="52" reference="00-0029545" id="af1648a4-2df1-40ef-b9fe-081d6961a416" position="LB"/>
+                    </defense>
+                    <first_down category="penalty">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </first_down>
+                  </statistics>
+                </play>
+                <play id="616319b6-6c6e-4bfd-999b-e26802fe3848" sequence="3140.0" reference="3140" clock="14:09" home_points="10" away_points="7" type="pass" goaltogo="true" play_clock="14" wall_clock="2015-09-13T19:18:38+00:00">
+                  <start_situation clock="14:09" down="1" yfd="3">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="3"/>
+                  </start_situation>
+                  <end_situation clock="13:18" down="2" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="10"/>
+                  </end_situation>
+                  <description>(14:09) 17-R.Tannehill pass short right to 14-J.Landry to WAS 10 for -7 yards (23-D.Hall, 29-C.Culliver).</description>
+                  <alt-description>(14:09) R.Tannehill pass short right to J.Landry to WAS 10 for -7 yards (D.Hall, C.Culliver).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="-7" att_yards="-7" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive target="1" reception="1" yards="-7" yards_after_catch="0" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR"/>
+                    </receive>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Chris Culliver" jersey="29" reference="00-0028018" id="0c68f083-c3a0-433f-931e-d8216dc3fcd4" position="CB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="1" tlost="1">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="DeAngelo Hall" jersey="23" reference="00-0022923" id="5f7dbabc-4a86-45f5-9983-eea57e7ccb38" position="CB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="b8f1b7ef-06d5-4041-9bb2-bdfb835beec5" sequence="3164.0" reference="3164" clock="13:18" home_points="10" away_points="7" type="rush" goaltogo="true" play_clock="3" wall_clock="2015-09-13T19:19:29+00:00">
+                  <start_situation clock="13:18" down="2" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="10"/>
+                  </start_situation>
+                  <end_situation clock="12:42" down="3" yfd="5">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="5"/>
+                  </end_situation>
+                  <description>(13:18) (Shotgun) 17-R.Tannehill right end pushed ob at WAS 5 for 5 yards (23-D.Hall; 56-P.Riley).</description>
+                  <alt-description>(13:18) (Shotgun) R.Tannehill right end pushed ob at WAS 5 for 5 yards (D.Hall; P.Riley).</alt-description>
+                  <statistics>
+                    <rush attempt="1" yards="5" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </rush>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Perry Riley" jersey="56" reference="00-0027704" id="5726ab42-606e-4139-9f2a-d677a858dbdb" position="LB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="DeAngelo Hall" jersey="23" reference="00-0022923" id="5f7dbabc-4a86-45f5-9983-eea57e7ccb38" position="CB"/>
+                    </defense>
+                  </statistics>
+                </play>
+                <play id="455b7a81-872e-40fa-8bdb-3fcc3ab28504" sequence="3185.0" reference="3185" clock="12:42" home_points="10" away_points="7" type="penalty" goaltogo="true" play_clock="1" wall_clock="2015-09-13T19:20:17+00:00">
+                  <start_situation clock="12:42" down="3" yfd="5">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="5"/>
+                  </start_situation>
+                  <end_situation clock="12:20" down="3" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="10"/>
+                  </end_situation>
+                  <description>(12:42) (Shotgun) PENALTY on MIA-17-R.Tannehill, Delay of Game, 5 yards, enforced at WAS 5 - No Play.</description>
+                  <alt-description>(12:42) (Shotgun) PENALTY on MIA-R.Tannehill, Delay of Game, 5 yards, enforced at WAS 5 - No Play.</alt-description>
+                  <statistics>
+                    <penalty penalty="1" yards="5">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </penalty>
+                  </statistics>
+                </play>
+                <play id="d5ac668c-33d0-41ce-8e64-e775f92e7732" sequence="3208.0" reference="3208" clock="12:20" home_points="10" away_points="7" type="pass" goaltogo="true" wall_clock="2015-09-13T19:21:07+00:00">
+                  <start_situation clock="12:20" down="3" yfd="10">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="10"/>
+                  </start_situation>
+                  <end_situation clock="12:10" down="4" yfd="4">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="4"/>
+                  </end_situation>
+                  <description>(12:20) (Shotgun) 17-R.Tannehill pass short left to 14-J.Landry to WAS 4 for 6 yards (93-T.Murphy; 35-J.Rogers).</description>
+                  <alt-description>(12:20) (Shotgun) R.Tannehill pass short left to J.Landry to WAS 4 for 6 yards (T.Murphy; J.Rogers).</alt-description>
+                  <statistics>
+                    <pass attempt="1" complete="1" yards="6" att_yards="6" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Ryan Tannehill" jersey="17" reference="00-0029701" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB"/>
+                    </pass>
+                    <receive target="1" reception="1" yards="6" yards_after_catch="0" inside_20="1" goaltogo="1">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Jarvis Landry" jersey="14" reference="00-0031382" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR"/>
+                    </receive>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Trent Murphy" jersey="93" reference="00-0031300" id="5d98bad5-1730-4095-825d-3ff8d10d1116" position="LB"/>
+                    </defense>
+                    <defense ast_tackle="1" primary="0">
+                      <team name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+                      <player name="Justin Rogers" jersey="35" reference="00-0028144" id="cd027e2e-1b7e-48cc-908e-fec67cf2c05d" position="CB"/>
+                    </defense>
+                    <down_conversion down="3" attempt="1" complete="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    </down_conversion>
+                  </statistics>
+                </play>
+                <play id="d84a3b27-d49d-4970-a52a-0c97440ecf9b" sequence="3232.0" reference="3232" clock="12:10" home_points="10" away_points="10" type="field_goal" scoring_play="true" goaltogo="true" wall_clock="2015-09-13T19:21:43+00:00">
+                  <start_situation clock="12:10" down="4" yfd="4">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624" yardline="4"/>
+                  </start_situation>
+                  <end_situation clock="11:34" down="0" yfd="0">
+                    <possession name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                    <location name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" yardline="35"/>
+                  </end_situation>
+                  <description>(12:10) 3-A.Franks 22 yard field goal is GOOD, Center-92-J.Denney, Holder-4-M.Darr.</description>
+                  <alt-description>(12:10) A.Franks 22 yard field goal is GOOD, Center-J.Denney, Holder-M.Darr.</alt-description>
+                  <score sequence="4" clock="11:34" points="3" home_points="10" away_points="10">
+                  </score>
+                  <statistics>
+                    <field_goal attempt="1" att_yards="22" yards="22" missed="0">
+                      <team name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+                      <player name="Andrew Franks" jersey="03" reference="00-0031718" id="59da7aea-f21a-43c5-b0bf-2d1e8b19da80" position="K"/>
+                    </field_goal>
+                  </statistics>
+                </play>
+              </plays>
+            </drive>
+          </scoring_drives>
+        </game>
+        <!-- Generation ended @ 2016-08-26 15:56:18 +0000 -->
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 01:39:01 GMT
+recorded_with: VCR 3.0.3

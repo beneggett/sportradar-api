@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nfl-ot1/players/ede260be-5ae6-4a06-887b-e4a130932705/profile.xml?api_key=<NFL_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 01:39:09 GMT
+      Expires:
+      - Thu, 29 Sep 2016 01:39:11 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-120.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '7812'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '3396'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!-- Generation started @ 2016-09-28 16:24:03 +0000 -->
+        <player xmlns="http://feed.elasticstats.com/schema/nfl/premium/profile-v2.0.xsd" name="Preston Smith" jersey="94" last_name="Smith" first_name="Preston" abbr_name="P.Smith" preferred_name="Preston" birth_date="1992-11-17" weight="271.0" height="77" id="ede260be-5ae6-4a06-887b-e4a130932705" position="OLB" birth_place="Stone Mountain, GA, USA" high_school="Stephenson" college="Mississippi State" college_conf="Southeastern Conference" rookie_year="2015" status="A01">
+          <references>
+            <reference id="00-0031935" origin="gsis"/>
+            <reference id="SMI576520" origin="elias"/>
+            <reference id="42381" origin="nflx"/>
+          </references>
+          <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+          <draft year="2015" round="2" number="38">
+            <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+          </draft>
+          <season id="279aae01-091e-4757-af17-0a3f36fc9592" year="2015" type="PST" name="PST">
+            <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624">
+              <statistics games_played="1" games_started="0">
+                <defense tackles="2" assists="1" combined="3" sacks="1.0" sack_yards="5.0" interceptions="0" passes_defended="0" forced_fumbles="0" fumble_recoveries="0" qb_hits="1" tloss="1.0" tloss_yards="5.0" safeties="1" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="2"/>
+              </statistics>
+            </team>
+          </season>
+          <season id="46aa2ca3-c2fc-455d-8256-1f7893a87113" year="2015" type="REG" name="REG">
+            <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624">
+              <statistics games_played="16" games_started="2">
+                <fumbles fumbles="0" lost_fumbles="0" own_rec="0" own_rec_yards="0" opp_rec="1" opp_rec_yards="0" out_of_bounds="0" forced_fumbles="3" own_rec_tds="0" opp_rec_tds="0" ez_rec_tds="0"/>
+                <defense tackles="20" assists="10" combined="30" sacks="8.0" sack_yards="77.0" interceptions="0" passes_defended="4" forced_fumbles="2" fumble_recoveries="1" qb_hits="10" tloss="6.0" tloss_yards="39.0" safeties="0" sp_tackles="4" sp_assists="1" sp_forced_fumbles="1" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="3"/>
+              </statistics>
+            </team>
+          </season>
+          <season id="49037b4f-71c4-4e4d-8963-4f9b83e0b4bc" year="2016" type="REG" name="REG">
+            <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624">
+              <statistics games_played="3" games_started="3">
+                <penalties penalties="1" yards="5"/>
+                <defense tackles="4" assists="5" combined="9" sacks="0.0" sack_yards="0.0" interceptions="0" passes_defended="1" forced_fumbles="0" fumble_recoveries="0" qb_hits="1" tloss="0.0" tloss_yards="0.0" safeties="0" sp_tackles="0" sp_assists="0" sp_forced_fumbles="0" sp_fumble_recoveries="0" sp_blocks="0" misc_tackles="0" misc_assists="0" misc_forced_fumbles="0" misc_fumble_recoveries="0" missed_tackles="1"/>
+              </statistics>
+            </team>
+          </season>
+        </player>
+        <!-- Generation ended @ 2016-09-28 16:24:03 +0000 -->
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 01:39:10 GMT
+recorded_with: VCR 3.0.3

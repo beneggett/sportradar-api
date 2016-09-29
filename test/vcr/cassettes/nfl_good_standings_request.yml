@@ -1,0 +1,592 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nfl-ot1/seasontd/2016/standings.xml?api_key=<NFL_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 01:39:04 GMT
+      Etag:
+      - '"ad90fc3bab9bc40448d5ca9b791ec23f"'
+      Last-Modified:
+      - Thu, 29 Sep 2016 00:51:55 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-109.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '7801'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '2'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '36649'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!-- Generation started @ 2016-09-29 00:51:54 +0000 -->
+        <season xmlns="http://feed.elasticstats.com/schema/nfl/premium/standings-v2.0.xsd" id="49037b4f-71c4-4e4d-8963-4f9b83e0b4bc" year="2016" type="REG" name="REG">
+          <week id="6e4849c8-c8a8-44d2-96d9-8165d7cc7a6f" sequence="3" title="3"/>
+          <conference id="1bdefe12-6cb2-4d6a-b208-b04602ae79c3" alias="AFC" name="AFC">
+            <division id="b95cd27d-d631-4fe1-bc05-0ae47fc0b14b" alias="AFC_EAST" name="AFC East">
+              <team name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a" wins="3" losses="0" ties="0" win_pct="1.0" points_for="81" points_against="45" points_rank="10" touchdown_diff="3" conf_h2h="0">
+                <rank conference="1" division="1"/>
+                <streak>
+                  <win length="3" desc="Won 3"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.444" wins="4" total="9"/>
+                <records>
+                  <record category="afc" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="2" losses="0" ties="0" win_pct="1.0" points_for="58" points_against="24" points_rank="5"/>
+                  <record category="division" wins="1" losses="0" ties="0" win_pct="1.0" points_for="31" points_against="24"/>
+                  <record category="home" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="road" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Jets" market="New York" alias="NYJ" id="5fee86ae-74ab-4bdd-8416-42a9dd9964f3" wins="1" losses="2" ties="0" win_pct="0.333" points_for="62" points_against="78" points_rank="44" touchdown_diff="-3" conf_h2h="0">
+                <rank conference="9" division="2"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="1" losses="2" ties="0" win_pct="0.333"/>
+                  <record category="conference" wins="1" losses="2" ties="0" win_pct="0.333" points_for="62" points_against="78" points_rank="22"/>
+                  <record category="division" wins="1" losses="0" ties="0" win_pct="1.0" points_for="37" points_against="31"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="road" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                </records>
+              </team>
+              <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06" wins="1" losses="2" ties="0" win_pct="0.333" points_for="64" points_against="67" points_rank="35" touchdown_diff="1" conf_h2h="0">
+                <rank conference="17" division="3"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.0" wins="0" total="3"/>
+                <records>
+                  <record category="afc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="54" points_against="55" points_rank="17"/>
+                  <record category="division" wins="0" losses="1" ties="0" win_pct="0.0" points_for="24" points_against="31"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="road" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+              <team name="Bills" market="Buffalo" alias="BUF" id="768c92aa-75ff-4a43-bcc0-f2798c2e1724" wins="1" losses="2" ties="0" win_pct="0.333" points_for="71" points_against="68" points_rank="32" touchdown_diff="2" conf_h2h="0">
+                <rank conference="13" division="4"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="0" losses="2" ties="0" win_pct="0.0" points_for="38" points_against="50" points_rank="15"/>
+                  <record category="division" wins="0" losses="1" ties="0" win_pct="0.0" points_for="31" points_against="37"/>
+                  <record category="home" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="nfc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+            </division>
+            <division id="eb60da78-4eb5-4184-971e-2c5cd4ab4988" alias="AFC_NORTH" name="AFC North">
+              <team name="Ravens" market="Baltimore" alias="BAL" id="ebd87119-b331-4469-9ea6-d51fe3ce2f1c" wins="3" losses="0" ties="0" win_pct="1.0" points_for="57" points_against="44" points_rank="28" touchdown_diff="-2" conf_h2h="0">
+                <rank conference="3" division="1"/>
+                <streak>
+                  <win length="3" desc="Won 3"/>
+                </streak>
+                <strength-of-schedule sos="0.111111" wins="1" total="9"/>
+                <strength-of-victory sov="0.111" wins="1" total="9"/>
+                <records>
+                  <record category="afc" wins="3" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="3" losses="0" ties="0" win_pct="1.0" points_for="57" points_against="44" points_rank="12"/>
+                  <record category="division" wins="1" losses="0" ties="0" win_pct="1.0" points_for="25" points_against="20"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="road" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Steelers" market="Pittsburgh" alias="PIT" id="cb2f9f1f-ac67-424e-9e72-1475cb0ed398" wins="2" losses="1" ties="0" win_pct="0.667" points_for="65" points_against="66" points_rank="33" touchdown_diff="2" conf_h2h="0">
+                <rank conference="5" division="2"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.333" wins="2" total="6"/>
+                <records>
+                  <record category="afc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="1" losses="0" ties="0" win_pct="1.0" points_for="24" points_against="16" points_rank="15"/>
+                  <record category="division" wins="1" losses="0" ties="0" win_pct="1.0" points_for="24" points_against="16"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                </records>
+              </team>
+              <team name="Bengals" market="Cincinnati" alias="CIN" id="ad4ae08f-d808-42d5-a1e6-e9bc4e34d123" wins="1" losses="2" ties="0" win_pct="0.333" points_for="56" points_against="75" points_rank="45" touchdown_diff="-4" conf_h2h="0">
+                <rank conference="8" division="3"/>
+                <streak>
+                  <loss length="2" desc="Lost 2"/>
+                </streak>
+                <strength-of-schedule sos="0.666667" wins="6" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="1" losses="2" ties="0" win_pct="0.333"/>
+                  <record category="conference" wins="1" losses="2" ties="0" win_pct="0.333" points_for="56" points_against="75" points_rank="23"/>
+                  <record category="division" wins="0" losses="1" ties="0" win_pct="0.0" points_for="16" points_against="24"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="road" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                </records>
+              </team>
+              <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e" wins="0" losses="3" ties="0" win_pct="0.0" points_for="54" points_against="84" points_rank="51" touchdown_diff="-3" conf_h2h="0">
+                <rank conference="15" division="4"/>
+                <streak>
+                  <loss length="3" desc="Lost 3"/>
+                </streak>
+                <strength-of-schedule sos="0.777778" wins="7" total="9"/>
+                <strength-of-victory sov="0.0" wins="0" total="0"/>
+                <records>
+                  <record category="afc" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="0" losses="2" ties="0" win_pct="0.0" points_for="44" points_against="55" points_rank="27"/>
+                  <record category="division" wins="0" losses="1" ties="0" win_pct="0.0" points_for="20" points_against="25"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="road" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+            </division>
+            <division id="e447e7c0-5997-4bb7-bea3-aaae48aedcb8" alias="AFC_SOUTH" name="AFC South">
+              <team name="Texans" market="Houston" alias="HOU" id="82d2d380-3834-4938-835f-aec541e5ece7" wins="2" losses="1" ties="0" win_pct="0.667" points_for="42" points_against="53" points_rank="38" touchdown_diff="-2" conf_h2h="0">
+                <rank conference="4" division="1"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.333" wins="2" total="6"/>
+                <records>
+                  <record category="afc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="19" points_against="39" points_rank="19"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+              <team name="Titans" market="Tennessee" alias="TEN" id="d26a1ca5-722d-4274-8f97-c92e49c96315" wins="1" losses="2" ties="0" win_pct="0.333" points_for="42" points_against="57" points_rank="39" touchdown_diff="0" conf_h2h="0">
+                <rank conference="11" division="2"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.666667" wins="6" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="0" losses="1" ties="0" win_pct="0.0" points_for="10" points_against="17" points_rank="20"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Colts" market="Indianapolis" alias="IND" id="82cf9565-6eb9-4f01-bdbd-5aa0d472fcd9" wins="1" losses="2" ties="0" win_pct="0.333" points_for="81" points_against="95" points_rank="35" touchdown_diff="-1" conf_h2h="0">
+                <rank conference="14" division="3"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="46" points_against="56" points_rank="19"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="nfc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+              <team name="Jaguars" market="Jacksonville" alias="JAC" id="f7ddd7fa-0bae-4f90-bc8e-669e4d6cf2de" wins="0" losses="3" ties="0" win_pct="0.0" points_for="54" points_against="84" points_rank="51" touchdown_diff="-3" conf_h2h="0">
+                <rank conference="16" division="4"/>
+                <streak>
+                  <loss length="3" desc="Lost 3"/>
+                </streak>
+                <strength-of-schedule sos="0.666667" wins="6" total="9"/>
+                <strength-of-victory sov="0.0" wins="0" total="0"/>
+                <records>
+                  <record category="afc" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="0" losses="2" ties="0" win_pct="0.0" points_for="31" points_against="57" points_rank="27"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+            </division>
+            <division id="324decdd-aa1b-4074-8958-c009d8fac31a" alias="AFC_WEST" name="AFC West">
+              <team name="Broncos" market="Denver" alias="DEN" id="ce92bd47-93d5-4fe9-ada4-0fc681e6caa0" wins="3" losses="0" ties="0" win_pct="1.0" points_for="84" points_against="57" points_rank="12" touchdown_diff="4" conf_h2h="0">
+                <rank conference="2" division="1"/>
+                <streak>
+                  <win length="3" desc="Won 3"/>
+                </streak>
+                <strength-of-schedule sos="0.333333" wins="3" total="9"/>
+                <strength-of-victory sov="0.333" wins="3" total="9"/>
+                <records>
+                  <record category="afc" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="2" losses="0" ties="0" win_pct="1.0" points_for="63" points_against="37" points_rank="7"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="road" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Chiefs" market="Kansas City" alias="KC" id="6680d28d-d4d2-49f6-aace-5292d3ec02c2" wins="2" losses="1" ties="0" win_pct="0.667" points_for="69" points_against="49" points_rank="23" touchdown_diff="3" conf_h2h="0">
+                <rank conference="6" division="2"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.333" wins="2" total="6"/>
+                <records>
+                  <record category="afc" wins="2" losses="1" ties="0" win_pct="0.667"/>
+                  <record category="conference" wins="2" losses="1" ties="0" win_pct="0.667" points_for="69" points_against="49" points_rank="10"/>
+                  <record category="division" wins="1" losses="0" ties="0" win_pct="1.0" points_for="33" points_against="27"/>
+                  <record category="home" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+              <team name="Raiders" market="Oakland" alias="OAK" id="1c1cec48-6352-4556-b789-35304c1a6ae1" wins="2" losses="1" ties="0" win_pct="0.667" points_for="80" points_against="79" points_rank="30" touchdown_diff="1" conf_h2h="0">
+                <rank conference="7" division="3"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.333333" wins="3" total="9"/>
+                <strength-of-victory sov="0.167" wins="1" total="6"/>
+                <records>
+                  <record category="afc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="1" losses="0" ties="0" win_pct="1.0" points_for="17" points_against="10" points_rank="18"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Chargers" market="San Diego" alias="SD" id="9dbb9060-ba0f-4920-829e-16d4d9246b5d" wins="1" losses="2" ties="0" win_pct="0.333" points_for="87" points_against="73" points_rank="22" touchdown_diff="1" conf_h2h="0">
+                <rank conference="10" division="4"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.333333" wins="3" total="9"/>
+                <strength-of-victory sov="0.0" wins="0" total="3"/>
+                <records>
+                  <record category="afc" wins="1" losses="2" ties="0" win_pct="0.333"/>
+                  <record category="conference" wins="1" losses="2" ties="0" win_pct="0.333" points_for="87" points_against="73" points_rank="11"/>
+                  <record category="division" wins="0" losses="1" ties="0" win_pct="0.0" points_for="27" points_against="33"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="road" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+            </division>
+          </conference>
+          <conference id="b1808e5f-d40b-47c0-8af8-5175c0fdcd26" alias="NFC" name="NFC">
+            <division id="6dab3ca1-b9cb-403f-91dd-b2a3708ab060" alias="NFC_EAST" name="NFC East">
+              <team name="Eagles" market="Philadelphia" alias="PHI" id="386bdbf9-9eea-4869-bb9a-274b0bc66e80" wins="3" losses="0" ties="0" win_pct="1.0" points_for="92" points_against="27" points_rank="3" touchdown_diff="7" conf_h2h="0">
+                <rank conference="2" division="1"/>
+                <streak>
+                  <win length="3" desc="Won 3"/>
+                </streak>
+                <strength-of-schedule sos="0.222222" wins="2" total="9"/>
+                <strength-of-victory sov="0.222" wins="2" total="9"/>
+                <records>
+                  <record category="afc" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="1" losses="0" ties="0" win_pct="1.0" points_for="29" points_against="14" points_rank="3"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="road" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Giants" market="New York" alias="NYG" id="04aa1c9d-66da-489d-b16a-1dee3f2eec4d" wins="2" losses="1" ties="0" win_pct="0.667" points_for="63" points_against="61" points_rank="33" touchdown_diff="3" conf_h2h="0">
+                <rank conference="5" division="2"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.333333" wins="3" total="9"/>
+                <strength-of-victory sov="0.333" wins="2" total="6"/>
+                <records>
+                  <record category="afc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="conference" wins="2" losses="1" ties="0" win_pct="0.667" points_for="63" points_against="61" points_rank="18"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="47" points_against="48"/>
+                  <record category="home" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="nfc" wins="2" losses="1" ties="0" win_pct="0.667"/>
+                  <record category="road" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Cowboys" market="Dallas" alias="DAL" id="e627eec7-bbae-4fa4-8e73-8e1d6bc5c060" wins="2" losses="1" ties="0" win_pct="0.667" points_for="77" points_against="60" points_rank="21" touchdown_diff="1" conf_h2h="0">
+                <rank conference="6" division="3"/>
+                <streak>
+                  <win length="2" desc="Won 2"/>
+                </streak>
+                <strength-of-schedule sos="0.333333" wins="3" total="9"/>
+                <strength-of-victory sov="0.167" wins="1" total="6"/>
+                <records>
+                  <record category="afc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="conference" wins="2" losses="1" ties="0" win_pct="0.667" points_for="77" points_against="60" points_rank="10"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="46" points_against="43"/>
+                  <record category="home" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="nfc" wins="2" losses="1" ties="0" win_pct="0.667"/>
+                  <record category="road" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624" wins="1" losses="2" ties="0" win_pct="0.333" points_for="68" points_against="92" points_rank="47" touchdown_diff="-6" conf_h2h="0">
+                <rank conference="9" division="4"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.666667" wins="6" total="9"/>
+                <strength-of-victory sov="0.667" wins="2" total="3"/>
+                <records>
+                  <record category="afc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="52" points_against="54" points_rank="25"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="52" points_against="54"/>
+                  <record category="home" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+            </division>
+            <division id="6dc1933f-ca90-46e6-aaf7-9b95cc44306a" alias="NFC_NORTH" name="NFC North">
+              <team name="Vikings" market="Minnesota" alias="MIN" id="33405046-04ee-4058-a950-d606f8c30852" wins="3" losses="0" ties="0" win_pct="1.0" points_for="64" points_against="40" points_rank="23" touchdown_diff="1" conf_h2h="0">
+                <rank conference="1" division="1"/>
+                <streak>
+                  <win length="3" desc="Won 3"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.444" wins="4" total="9"/>
+                <records>
+                  <record category="afc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="2" losses="0" ties="0" win_pct="1.0" points_for="39" points_against="24" points_rank="15"/>
+                  <record category="division" wins="1" losses="0" ties="0" win_pct="1.0" points_for="17" points_against="14"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="road" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Packers" market="Green Bay" alias="GB" id="a20471b4-a8d9-40c7-95ad-90cc30e46932" wins="2" losses="1" ties="0" win_pct="0.667" points_for="75" points_against="67" points_rank="28" touchdown_diff="2" conf_h2h="0">
+                <rank conference="8" division="2"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.167" wins="1" total="6"/>
+                <records>
+                  <record category="afc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="48" points_against="44" points_rank="16"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="48" points_against="44"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                </records>
+              </team>
+              <team name="Lions" market="Detroit" alias="DET" id="c5a59daa-53a7-4de0-851f-fb12be893e9e" wins="1" losses="2" ties="0" win_pct="0.333" points_for="81" points_against="85" points_rank="32" touchdown_diff="-1" conf_h2h="0">
+                <rank conference="12" division="3"/>
+                <streak>
+                  <loss length="2" desc="Lost 2"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="conference" wins="0" losses="1" ties="0" win_pct="0.0" points_for="27" points_against="34" points_rank="15"/>
+                  <record category="division" wins="0" losses="1" ties="0" win_pct="0.0" points_for="27" points_against="34"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="road" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                </records>
+              </team>
+              <team name="Bears" market="Chicago" alias="CHI" id="7b112545-38e6-483c-a55c-96cf6ee49cb8" wins="0" losses="3" ties="0" win_pct="0.0" points_for="45" points_against="83" points_rank="53" touchdown_diff="-3" conf_h2h="0">
+                <rank conference="16" division="4"/>
+                <streak>
+                  <loss length="3" desc="Lost 3"/>
+                </streak>
+                <strength-of-schedule sos="0.777778" wins="7" total="9"/>
+                <strength-of-victory sov="0.0" wins="0" total="0"/>
+                <records>
+                  <record category="afc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="0" losses="2" ties="0" win_pct="0.0" points_for="31" points_against="60" points_rank="26"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="road" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+            </division>
+            <division id="2a46bf95-b036-4c6c-b69f-a80c4b6c46bf" alias="NFC_SOUTH" name="NFC South">
+              <team name="Falcons" market="Atlanta" alias="ATL" id="e6aa13a4-0055-48a9-bc41-be28dc106929" wins="2" losses="1" ties="0" win_pct="0.667" points_for="104" points_against="91" points_rank="29" touchdown_diff="0" conf_h2h="0">
+                <rank conference="4" division="1"/>
+                <streak>
+                  <win length="2" desc="Won 2"/>
+                </streak>
+                <strength-of-schedule sos="0.333333" wins="3" total="9"/>
+                <strength-of-victory sov="0.333" wins="2" total="6"/>
+                <records>
+                  <record category="afc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="69" points_against="63" points_rank="14"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="69" points_against="63"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                </records>
+              </team>
+              <team name="Buccaneers" market="Tampa Bay" alias="TB" id="4254d319-1bc7-4f81-b4ab-b5e6f3402b69" wins="1" losses="2" ties="0" win_pct="0.333" points_for="70" points_against="101" points_rank="48" touchdown_diff="-2" conf_h2h="0">
+                <rank conference="11" division="2"/>
+                <streak>
+                  <loss length="2" desc="Lost 2"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.667" wins="2" total="3"/>
+                <records>
+                  <record category="afc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="conference" wins="1" losses="2" ties="0" win_pct="0.333" points_for="70" points_against="101" points_rank="26"/>
+                  <record category="division" wins="1" losses="0" ties="0" win_pct="1.0" points_for="31" points_against="24"/>
+                  <record category="home" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="1" losses="2" ties="0" win_pct="0.333"/>
+                  <record category="road" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                </records>
+              </team>
+              <team name="Panthers" market="Carolina" alias="CAR" id="f14bf5cc-9a82-4a38-bc15-d39f75ed5314" wins="1" losses="2" ties="0" win_pct="0.333" points_for="76" points_against="70" points_rank="30" touchdown_diff="0" conf_h2h="0">
+                <rank conference="15" division="3"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.777778" wins="7" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="56" points_against="49" points_rank="16"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+              <team name="Saints" market="New Orleans" alias="NO" id="0d855753-ea21-4953-89f9-0e20aff9eb73" wins="0" losses="3" ties="0" win_pct="0.0" points_for="79" points_against="96" points_rank="40" touchdown_diff="-2" conf_h2h="0">
+                <rank conference="17" division="4"/>
+                <streak>
+                  <loss length="3" desc="Lost 3"/>
+                </streak>
+                <strength-of-schedule sos="0.666667" wins="6" total="9"/>
+                <strength-of-victory sov="0.0" wins="0" total="0"/>
+                <records>
+                  <record category="afc" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="0" losses="2" ties="0" win_pct="0.0" points_for="45" points_against="61" points_rank="19"/>
+                  <record category="division" wins="0" losses="1" ties="0" win_pct="0.0" points_for="32" points_against="45"/>
+                  <record category="home" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="nfc" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+            </division>
+            <division id="390d000d-9949-42e6-bf5e-b166dc463675" alias="NFC_WEST" name="NFC West">
+              <team name="Rams" market="Los Angeles" alias="LA" id="2eff2a03-54d4-46ba-890e-2bc3925548f3" wins="2" losses="1" ties="0" win_pct="0.667" points_for="46" points_against="63" points_rank="41" touchdown_diff="-4" conf_h2h="0">
+                <rank conference="3" division="1"/>
+                <streak>
+                  <win length="2" desc="Won 2"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.5" wins="3" total="6"/>
+                <records>
+                  <record category="afc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="conference" wins="2" losses="1" ties="0" win_pct="0.667" points_for="46" points_against="63" points_rank="21"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="9" points_against="31"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="2" losses="1" ties="0" win_pct="0.667"/>
+                  <record category="road" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                </records>
+              </team>
+              <team name="Seahawks" market="Seattle" alias="SEA" id="3d08af9e-c767-4f88-a7dc-b920c6d2b4a8" wins="2" losses="1" ties="0" win_pct="0.667" points_for="52" points_against="37" points_rank="30" touchdown_diff="2" conf_h2h="0">
+                <rank conference="7" division="2"/>
+                <streak>
+                  <win length="1" desc="Won 1"/>
+                </streak>
+                <strength-of-schedule sos="0.444444" wins="4" total="9"/>
+                <strength-of-victory sov="0.333" wins="2" total="6"/>
+                <records>
+                  <record category="afc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="conference" wins="1" losses="1" ties="0" win_pct="0.5" points_for="40" points_against="27" points_rank="16"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="40" points_against="27"/>
+                  <record category="home" wins="2" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+              <team name="49ers" market="San Francisco" alias="SF" id="f0e724b0-4cbf-495a-be47-013907608da9" wins="1" losses="2" ties="0" win_pct="0.333" points_for="73" points_against="83" points_rank="37" touchdown_diff="0" conf_h2h="0">
+                <rank conference="10" division="3"/>
+                <streak>
+                  <loss length="2" desc="Lost 2"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.667" wins="2" total="3"/>
+                <records>
+                  <record category="afc" wins="0" losses="0" ties="0" win_pct="0"/>
+                  <record category="conference" wins="1" losses="2" ties="0" win_pct="0.333" points_for="73" points_against="83" points_rank="19"/>
+                  <record category="division" wins="1" losses="1" ties="0" win_pct="0.5" points_for="46" points_against="37"/>
+                  <record category="home" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="nfc" wins="1" losses="2" ties="0" win_pct="0.333"/>
+                  <record category="road" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+              <team name="Cardinals" market="Arizona" alias="ARI" id="de760528-1dc0-416a-a978-b510d20692ff" wins="1" losses="2" ties="0" win_pct="0.333" points_for="79" points_against="63" points_rank="21" touchdown_diff="3" conf_h2h="0">
+                <rank conference="14" division="4"/>
+                <streak>
+                  <loss length="1" desc="Lost 1"/>
+                </streak>
+                <strength-of-schedule sos="0.555556" wins="5" total="9"/>
+                <strength-of-victory sov="0.333" wins="1" total="3"/>
+                <records>
+                  <record category="afc" wins="0" losses="2" ties="0" win_pct="0.0"/>
+                  <record category="conference" wins="1" losses="0" ties="0" win_pct="1.0" points_for="40" points_against="7" points_rank="10"/>
+                  <record category="division" wins="0" losses="0" ties="0" win_pct="0" points_for="0" points_against="0"/>
+                  <record category="home" wins="1" losses="1" ties="0" win_pct="0.5"/>
+                  <record category="nfc" wins="1" losses="0" ties="0" win_pct="1.0"/>
+                  <record category="road" wins="0" losses="1" ties="0" win_pct="0.0"/>
+                </records>
+              </team>
+            </division>
+          </conference>
+        </season>
+        <!-- Generation ended @ 2016-09-29 00:51:54 +0000 -->
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 01:39:03 GMT
+recorded_with: VCR 3.0.3
