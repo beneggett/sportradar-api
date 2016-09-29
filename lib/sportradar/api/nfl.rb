@@ -154,7 +154,7 @@ module Sportradar
       end
 
       def active_simulation
-        game = simulation_games.lazy.map {|game_id| game_boxscore game_id }.find{ |game| game.status == 'inprogress' if game.is_a?(Sportradar::Api::Nfl::Game) }
+        game = simulation_games.lazy.map {|game_id| game_boxscore game_id }.find{ |g| g.status == 'inprogress' if g.is_a?(Sportradar::Api::Nfl::Game) }
         if game
           puts "Live Game: #{game.summary.home.full_name} vs #{game.summary.away.full_name}. Q#{game.quarter} #{game.clock}.  game_id='#{game.id}'"
           game
