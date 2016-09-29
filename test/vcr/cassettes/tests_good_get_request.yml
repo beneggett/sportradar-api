@@ -19,21 +19,21 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Cache-Control:
-      - public, must-revalidate, max-age=279
+      - public,must-revalidate,max-age=275
       Content-Type:
       - text/xml
       Date:
-      - Thu, 29 Sep 2016 00:30:32 GMT
+      - Thu, 29 Sep 2016 01:02:13 GMT
       Etag:
-      - '"05a6e97cdd6d485f4bd532f59b0e6d92"'
+      - '"2d306a9d7033518fb475846cdbf39e82"'
       Expires:
-      - Thu, 29 Sep 2016 00:31:00 -0000
+      - Thu, 29 Sep 2016 01:06:00 -0000
       Last-Modified:
-      - Thu, 29 Sep 2016 00:26:24 GMT
+      - Thu, 29 Sep 2016 01:01:14 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-114.mashery.com
+      - prod-j-worker-us-east-1d-122.mashery.com
       X-Plan-Qps-Allotted:
       - '1'
       X-Plan-Qps-Current:
@@ -41,7 +41,7 @@ http_interactions:
       X-Plan-Quota-Allotted:
       - '15000'
       X-Plan-Quota-Current:
-      - '12'
+      - '13'
       X-Via:
       - Nginx-S3-Proxy
       Content-Length:
@@ -52,7 +52,7 @@ http_interactions:
       encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
-        <schedule generated="2016-09-29T00:26:20Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-schedule.xsd">
+        <schedule generated="2016-09-29T01:01:13Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-schedule.xsd">
           <matches>
             <match id="fdb06a92-8db1-4bc6-93c1-01425b058573" status="closed" scheduled="2016-08-18T00:00:00Z" scratched="false" season_id="42881571-769d-4877-9f85-71868dc510d1" reference_id="sr:match:9693979">
               <category id="c4ef0886-dfee-4725-81eb-1bb919be832a" name="International Clubs" country_code="XZ" country="International" reference_id="sr:category:393"/>
@@ -2871,17 +2871,6 @@ http_interactions:
               <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
               <!-- 8697940/5133/2509 -->
             </match>
-            <match id="2b30314b-00aa-427c-9905-dd0bf0675f4c" status="scheduled" scheduled="2016-10-16T21:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697938">
-              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
-              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
-              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
-              <home id="0a9ec7c8-37d8-4213-a2fa-4e6416969409" name="Houston" full_name="Houston Dynamo" alias="HOU" country_code="USA" country="United States" type="team" reference_id="sr:team:2508"/>
-              <away id="1244d8fb-7f61-4e71-81b1-1c264d976859" name="LA Galaxy" full_name="LA Galaxy" alias="LAG" country_code="USA" country="United States" type="team" reference_id="sr:team:2513"/>
-              <venue id="4e74d253-2d54-4824-baf8-30b4c4bdf39e" name="BBVA Compass Stadium" country_code="USA" country="United States" city="Houston" capacity="22000" coordinates="29.752058,-95.352371" reference_id="sr:venue:4454"/>
-              <round type="table" number="30" week="41"/>
-              <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
-              <!-- 8697938/2508/2513 -->
-            </match>
             <match id="cd750e64-93ed-4558-8bc5-cf07e5f1a22f" status="scheduled" scheduled="2016-10-16T21:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697942">
               <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
               <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
@@ -2892,6 +2881,17 @@ http_interactions:
               <round type="table" number="30" week="41"/>
               <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
               <!-- 8697942/21825/22010 -->
+            </match>
+            <match id="2b30314b-00aa-427c-9905-dd0bf0675f4c" status="scheduled" scheduled="2016-10-16T21:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697938">
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
+              <home id="0a9ec7c8-37d8-4213-a2fa-4e6416969409" name="Houston" full_name="Houston Dynamo" alias="HOU" country_code="USA" country="United States" type="team" reference_id="sr:team:2508"/>
+              <away id="1244d8fb-7f61-4e71-81b1-1c264d976859" name="LA Galaxy" full_name="LA Galaxy" alias="LAG" country_code="USA" country="United States" type="team" reference_id="sr:team:2513"/>
+              <venue id="4e74d253-2d54-4824-baf8-30b4c4bdf39e" name="BBVA Compass Stadium" country_code="USA" country="United States" city="Houston" capacity="22000" coordinates="29.752058,-95.352371" reference_id="sr:venue:4454"/>
+              <round type="table" number="30" week="41"/>
+              <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
+              <!-- 8697938/2508/2513 -->
             </match>
             <match id="f3e2ea7c-e76e-4d0d-b264-377a916157bf" status="scheduled" scheduled="2016-10-16T23:00:00Z" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9612419">
               <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
@@ -3501,5 +3501,5 @@ http_interactions:
           </matches>
         </schedule>
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 00:30:34 GMT
+  recorded_at: Thu, 29 Sep 2016 01:02:26 GMT
 recorded_with: VCR 3.0.3

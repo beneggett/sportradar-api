@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sportradar.us/nfl-images-t2/usat/coaches/headshots/manifests/all_assets.xml?api_key=<IMAGES_NFL_API_KEY>
+    uri: https://api.sportradar.us/nfl-liveimages-t1/usat/news/2016-09-28/manifests/all_assets.xml?api_key=<LIVE_IMAGES_NFL_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       Content-Type:
       - text/xml
       Date:
-      - Thu, 29 Sep 2016 01:02:27 GMT
+      - Thu, 29 Sep 2016 01:02:24 GMT
       Server:
       - Mashery Proxy
       X-Error-Detail-Header:
@@ -27,7 +27,7 @@ http_interactions:
       X-Mashery-Error-Code:
       - ERR_403_DEVELOPER_INACTIVE
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-118.mashery.com
+      - prod-j-worker-us-east-1e-127.mashery.com
       Content-Length:
       - '27'
       Connection:
@@ -36,5 +36,5 @@ http_interactions:
       encoding: UTF-8
       string: "<h1>Developer Inactive</h1>"
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:02:27 GMT
+  recorded_at: Thu, 29 Sep 2016 01:02:24 GMT
 recorded_with: VCR 3.0.3
