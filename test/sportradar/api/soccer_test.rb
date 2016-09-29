@@ -2,6 +2,14 @@ require 'test_helper'
 
 class Sportradar::Api::SoccerTest < Minitest::Test
 
+  def good_date
+    Date.parse('2016-07-17')
+  end
+
+  def old_date
+    Date.parse('1950-07-17')
+  end
+
   def match_id
     "357607e9-87cd-4848-b53e-0485d9c1a3bc"
   end
@@ -126,6 +134,13 @@ class Sportradar::Api::SoccerTest < Minitest::Test
     end
   end
 
+  def test_it_makes_a_bad_team_profile_request
+    VCR.use_cassette("soccer bad team profile request") do
+      request = Sportradar::Api::Soccer.new.team_profile('dumb')
+      assert_kind_of Sportradar::Api::Error, request
+    end
+  end
+
   def test_it_makes_a_good_player_profile_request
     VCR.use_cassette("soccer good player profile request") do
       request = Sportradar::Api::Soccer.new.player_profile(player_id)
@@ -160,6 +175,7 @@ class Sportradar::Api::SoccerTest < Minitest::Test
       assert_kind_of Sportradar::Api::Soccer::Standing, request
     end
   end
+
 
   def test_simulation_match
     assert_equal simulation_game_id, Sportradar::Api::Soccer.new.simulation_match

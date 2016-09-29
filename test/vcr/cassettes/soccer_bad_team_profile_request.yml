@@ -19,11 +19,11 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Thu, 29 Sep 2016 06:22:48 GMT
+      - Thu, 29 Sep 2016 05:49:57 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-126.mashery.com
+      - prod-j-worker-us-east-1b-109.mashery.com
       X-Plan-Qps-Allotted:
       - '1'
       X-Plan-Qps-Current:
@@ -31,9 +31,9 @@ http_interactions:
       X-Plan-Quota-Allotted:
       - '15000'
       X-Plan-Quota-Current:
-      - '81'
+      - '63'
       Content-Length:
-      - '131899'
+      - '131904'
       Connection:
       - keep-alive
     body:
@@ -1492,19 +1492,19 @@ http_interactions:
         class=\"code\"><div>close</div></td>\n         </tr>\n         \n         <tr>\n
         \          <td>HTTP_HOST</td>\n           <td class=\"code\"><div>feed.ps.provider.elasticstats.com</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>HTTP_HTTP_REMOTE_ADDR</td>\n
-        \          <td class=\"code\"><div>10.164.116.22</div></td>\n         </tr>\n
+        \          <td class=\"code\"><div>10.203.175.244</div></td>\n         </tr>\n
         \        \n         <tr>\n           <td>HTTP_REMOTE_ADDR</td>\n           <td
-        class=\"code\"><div>10.164.116.22</div></td>\n         </tr>\n         \n
+        class=\"code\"><div>10.203.175.244</div></td>\n         </tr>\n         \n
         \        <tr>\n           <td>HTTP_USER_AGENT</td>\n           <td class=\"code\"><div>Mashery
         Proxy</div></td>\n         </tr>\n         \n         <tr>\n           <td>HTTP_X_FORWARDED_FOR</td>\n
-        \          <td class=\"code\"><div>10.164.116.22</div></td>\n         </tr>\n
+        \          <td class=\"code\"><div>10.203.175.244</div></td>\n         </tr>\n
         \        \n         <tr>\n           <td>HTTP_X_FORWARDED_PORT</td>\n           <td
         class=\"code\"><div>80</div></td>\n         </tr>\n         \n         <tr>\n
         \          <td>HTTP_X_FORWARDED_PROTO</td>\n           <td class=\"code\"><div>http</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>HTTP_X_ORIGINATING_IP</td>\n
-        \          <td class=\"code\"><div>10.164.116.22</div></td>\n         </tr>\n
+        \          <td class=\"code\"><div>10.203.175.244</div></td>\n         </tr>\n
         \        \n         <tr>\n           <td>HTTP_X_REAL_IP</td>\n           <td
-        class=\"code\"><div>10.164.116.22</div></td>\n         </tr>\n         \n
+        class=\"code\"><div>10.203.175.244</div></td>\n         </tr>\n         \n
         \        <tr>\n           <td>PATH_INFO</td>\n           <td class=\"code\"><div>&#x2F;feed&#x2F;soccer&#x2F;v1&#x2F;na&#x2F;teams&#x2F;dumb&#x2F;profile.xml</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>QUERY_STRING</td>\n
         \          <td class=\"code\"><div></div></td>\n         </tr>\n         \n
@@ -1523,26 +1523,26 @@ http_interactions:
         \          <td class=\"code\"><div>80</div></td>\n         </tr>\n         \n
         \        <tr>\n           <td>SERVER_SOFTWARE</td>\n           <td class=\"code\"><div>Apache
         Tomcat&#x2F;7.0.57</div></td>\n         </tr>\n         \n         <tr>\n
-        \          <td>java.servlet_context</td>\n           <td class=\"code\"><div>#&lt;Java::OrgApacheCatalinaCore::ApplicationContextFacade:0x73dd9a09&gt;</div></td>\n
+        \          <td>java.servlet_context</td>\n           <td class=\"code\"><div>#&lt;Java::OrgApacheCatalinaCore::ApplicationContextFacade:0x6f2d18aa&gt;</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>java.servlet_request</td>\n
-        \          <td class=\"code\"><div>#&lt;Java::OrgApacheCatalinaConnector::RequestFacade:0x45f3ef5c&gt;</div></td>\n
+        \          <td class=\"code\"><div>#&lt;Java::OrgApacheCatalinaConnector::RequestFacade:0x311c4972&gt;</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>java.servlet_response</td>\n
-        \          <td class=\"code\"><div>#&lt;Java::OrgApacheCatalinaConnector::ResponseFacade:0x11e7a4e5&gt;</div></td>\n
+        \          <td class=\"code\"><div>#&lt;Java::OrgApacheCatalinaConnector::ResponseFacade:0x3819f48e&gt;</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>jruby.rack.jruby.version</td>\n
         \          <td class=\"code\"><div>1.7.19</div></td>\n         </tr>\n         \n
         \        <tr>\n           <td>jruby.rack.rack.release</td>\n           <td
         class=\"code\"><div>1.6.4</div></td>\n         </tr>\n         \n         <tr>\n
         \          <td>jruby.rack.version</td>\n           <td class=\"code\"><div>1.1.20</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>rack.errors</td>\n
-        \          <td class=\"code\"><div>#&lt;Object:0x783b2c8&gt;</div></td>\n
+        \          <td class=\"code\"><div>#&lt;Object:0x32463248&gt;</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>rack.input</td>\n
-        \          <td class=\"code\"><div>#&lt;JRuby::Rack::Input:0x1aeaeb31&gt;</div></td>\n
+        \          <td class=\"code\"><div>#&lt;JRuby::Rack::Input:0x69b2f08f&gt;</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>rack.logger</td>\n
-        \          <td class=\"code\"><div>#&lt;Logger:0x34f6ebc5 @logdev=#&lt;Logger::LogDevice:0x3ef0edad
-        @shift_age=nil, @filename=nil, @dev=#&lt;JRuby::Rack::ServletLog:0x3b841923
-        @context=#&lt;Java::OrgJrubyRackServlet::DefaultServletRackContext:0x4706e02e&gt;&gt;,
-        @mutex=#&lt;Logger::LogDevice::LogDeviceMutex:0x5d8e675b @mon_count=0, @mon_mutex=#&lt;Mutex:0x3023b759&gt;,
-        @mon_owner=nil&gt;, @shift_size=nil&gt;, @formatter=nil, @progname=nil, @default_formatter=#&lt;Logger::Formatter:0x78da4cbf
+        \          <td class=\"code\"><div>#&lt;Logger:0x62cf727f @logdev=#&lt;Logger::LogDevice:0x21662287
+        @shift_age=nil, @filename=nil, @dev=#&lt;JRuby::Rack::ServletLog:0x3864de32
+        @context=#&lt;Java::OrgJrubyRackServlet::DefaultServletRackContext:0x88140ed&gt;&gt;,
+        @mutex=#&lt;Logger::LogDevice::LogDeviceMutex:0x6637c18a @mon_count=0, @mon_mutex=#&lt;Mutex:0x56837f73&gt;,
+        @mon_owner=nil&gt;, @shift_size=nil&gt;, @formatter=nil, @progname=nil, @default_formatter=#&lt;Logger::Formatter:0x53248364
         @datetime_format=nil&gt;, @level=1&gt;</div></td>\n         </tr>\n         \n
         \        <tr>\n           <td>rack.multiprocess</td>\n           <td class=\"code\"><div>false</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>rack.multithread</td>\n
@@ -1557,7 +1557,7 @@ http_interactions:
         \          <td class=\"code\"><div>http</div></td>\n         </tr>\n         \n
         \        <tr>\n           <td>rack.version</td>\n           <td class=\"code\"><div>[1,
         3]</div></td>\n         </tr>\n         \n         <tr>\n           <td>sinatra.accept</td>\n
-        \          <td class=\"code\"><div>[#&lt;Sinatra::Request::AcceptEntry:0x62751405
+        \          <td class=\"code\"><div>[#&lt;Sinatra::Request::AcceptEntry:0x2bac10e5
         @params={}, @q=1.0, @type=&quot;application&#x2F;xml&quot;, @entry=&quot;application&#x2F;xml&quot;&gt;]</div></td>\n
         \        </tr>\n         \n         <tr>\n           <td>sinatra.commonlogger</td>\n
         \          <td class=\"code\"><div>true</div></td>\n         </tr>\n         \n
@@ -1570,5 +1570,5 @@ http_interactions:
         error because you have\nenabled the <code>show_exceptions</code> setting.</p>\n
         \ </div> <!-- /WRAP -->\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 06:22:48 GMT
+  recorded_at: Thu, 29 Sep 2016 05:49:59 GMT
 recorded_with: VCR 3.0.3

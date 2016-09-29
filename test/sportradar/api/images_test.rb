@@ -28,7 +28,7 @@ class Sportradar::Api::ImagesTest < Minitest::Test
 
   def test_it_makes_a_good_player_manifests_request
     VCR.use_cassette("tests good player manifests request") do
-      request = Sportradar::Api::Images.new('nfl', 't').player_manifests(good_date)
+      request = Sportradar::Api::Images.new('nfl', 't').player_manifests
       refute_kind_of Sportradar::Api::Images, request
       assert_kind_of Sportradar::Api::Error, request # The code above will fail until I have a good api key
     end

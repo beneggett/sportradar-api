@@ -22,15 +22,7 @@ require 'webmock/minitest'
 require 'vcr'
 
 def api_key(api)
-  ENV.fetch("SPORTRADAR_#{api.to_s.upcase}") {'VALID_SPORTRADAR_API_KEY'}
-end
-
-def good_date
-  Date.parse('2016-07-17')
-end
-
-def old_date
-  Date.parse('1950-07-17')
+ENV.fetch("SPORTRADAR_#{api.to_s.upcase}") {'VALID_SPORTRADAR_API_KEY'}
 end
 
 VCR.configure do |c|
