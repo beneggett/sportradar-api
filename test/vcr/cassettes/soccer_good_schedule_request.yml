@@ -19,21 +19,21 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Cache-Control:
-      - public,must-revalidate,max-age=167
+      - public,must-revalidate,max-age=273
       Content-Type:
       - text/xml
       Date:
-      - Thu, 29 Sep 2016 05:37:53 GMT
+      - Thu, 29 Sep 2016 05:47:45 GMT
       Etag:
-      - '"289c2d568cfe5a42c5783aabdbf8f6f1"'
+      - '"ac42b90c6af10fe490f52b8ccb70e218"'
       Expires:
-      - Thu, 29 Sep 2016 05:41:00 -0000
+      - Thu, 29 Sep 2016 05:51:00 -0000
       Last-Modified:
-      - Thu, 29 Sep 2016 05:36:12 GMT
+      - Thu, 29 Sep 2016 05:46:12 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-117.mashery.com
+      - prod-j-worker-us-east-1e-127.mashery.com
       X-Plan-Qps-Allotted:
       - '1'
       X-Plan-Qps-Current:
@@ -41,7 +41,7 @@ http_interactions:
       X-Plan-Quota-Allotted:
       - '15000'
       X-Plan-Quota-Current:
-      - '46'
+      - '51'
       X-Via:
       - Nginx-S3-Proxy
       Content-Length:
@@ -52,7 +52,7 @@ http_interactions:
       encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
-        <schedule generated="2016-09-29T05:36:12Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-schedule.xsd">
+        <schedule generated="2016-09-29T05:46:12Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-schedule.xsd">
           <matches>
             <match id="fdb06a92-8db1-4bc6-93c1-01425b058573" status="closed" scheduled="2016-08-18T00:00:00Z" scratched="false" season_id="42881571-769d-4877-9f85-71868dc510d1" reference_id="sr:match:9693979">
               <category id="c4ef0886-dfee-4725-81eb-1bb919be832a" name="International Clubs" country_code="XZ" country="International" reference_id="sr:category:393"/>
@@ -3157,17 +3157,6 @@ http_interactions:
               <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
               <!-- 8697952/2513/2512 -->
             </match>
-            <match id="eb5b871d-117b-48ac-b3d9-acf2b61d6b62" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697960">
-              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
-              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
-              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
-              <home id="ca2ff256-706c-41cb-b0db-6c2e611c2bb7" name="Philadelphia" full_name="Philadelphia Union" alias="PHI" country_code="USA" country="United States" type="team" reference_id="sr:team:39833"/>
-              <away id="443f4c7c-4a1e-4062-b04d-d3fcfec9838b" name="New York" full_name="NY Red Bulls" alias="NYRB" country_code="USA" country="United States" type="team" reference_id="sr:team:2506"/>
-              <venue id="bcd71bfd-4d7f-44a9-8b4c-c4585a045972" name="Talen Energy Stadium" country_code="USA" country="United States" city="Chester" capacity="18500" coordinates="39.832794,-75.378479" reference_id="sr:venue:2301"/>
-              <round type="table" number="31" week="42"/>
-              <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
-              <!-- 8697960/39833/2506 -->
-            </match>
             <match id="43d77a81-0395-47e7-8914-1ad7c3dc0934" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697956">
               <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
               <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
@@ -3178,6 +3167,17 @@ http_interactions:
               <round type="table" number="31" week="42"/>
               <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
               <!-- 8697956/2511/22006 -->
+            </match>
+            <match id="eb5b871d-117b-48ac-b3d9-acf2b61d6b62" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697960">
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18"/>
+              <home id="ca2ff256-706c-41cb-b0db-6c2e611c2bb7" name="Philadelphia" full_name="Philadelphia Union" alias="PHI" country_code="USA" country="United States" type="team" reference_id="sr:team:39833"/>
+              <away id="443f4c7c-4a1e-4062-b04d-d3fcfec9838b" name="New York" full_name="NY Red Bulls" alias="NYRB" country_code="USA" country="United States" type="team" reference_id="sr:team:2506"/>
+              <venue id="bcd71bfd-4d7f-44a9-8b4c-c4585a045972" name="Talen Energy Stadium" country_code="USA" country="United States" city="Chester" capacity="18500" coordinates="39.832794,-75.378479" reference_id="sr:venue:2301"/>
+              <round type="table" number="31" week="42"/>
+              <coverage lineup="NONE" formations="0" injuries="1" scout="VENUE" ballspotting="false" cornersonly="false" multicast="true" liveodds="true" deeper="true" tactical="true" stats="true"/>
+              <!-- 8697960/39833/2506 -->
             </match>
             <match id="64dc90ed-45e9-4f99-ba1a-771c65967819" status="scheduled" scheduled="2016-10-23T20:00:00Z" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697948">
               <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
@@ -3501,5 +3501,5 @@ http_interactions:
           </matches>
         </schedule>
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 05:39:56 GMT
+  recorded_at: Thu, 29 Sep 2016 05:48:00 GMT
 recorded_with: VCR 3.0.3

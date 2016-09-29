@@ -21,21 +21,21 @@ http_interactions:
       Content-Type:
       - application/xml;charset=utf-8
       Date:
-      - Thu, 29 Sep 2016 01:39:14 GMT
+      - Thu, 29 Sep 2016 05:39:40 GMT
       Expires:
-      - Thu, 29 Sep 2016 01:39:16 GMT
+      - Thu, 29 Sep 2016 05:39:42 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-114.mashery.com
+      - prod-j-worker-us-east-1e-120.mashery.com
       X-Packagekey-Quota-Allotted:
       - '30000'
       X-Packagekey-Quota-Current:
-      - '7819'
+      - '7871'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
-      - '3'
+      - '1'
       X-Via:
       - S3-Proxy
       Content-Length:
@@ -46,7 +46,7 @@ http_interactions:
       encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
-        <!-- Generation started @ 2016-09-29 01:31:54 +0000 -->
+        <!-- Generation started @ 2016-09-29 05:31:52 +0000 -->
         <team xmlns="http://feed.elasticstats.com/schema/nfl/premium/team-v2.0.xsd" name="Patriots" market="New England" alias="NE" id="97354895-8c77-4fd4-a860-32e62ea7382a">
           <franchise id="c95b688d-810a-4323-9dad-fa3696ed8a37" name="Patriots" alias="NE">
             <references>
@@ -504,7 +504,7 @@ http_interactions:
             </player>
           </players>
         </team>
-        <!-- Generation ended @ 2016-09-29 01:31:54 +0000 -->
+        <!-- Generation ended @ 2016-09-29 05:31:53 +0000 -->
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:39:14 GMT
+  recorded_at: Thu, 29 Sep 2016 05:39:39 GMT
 recorded_with: VCR 3.0.3

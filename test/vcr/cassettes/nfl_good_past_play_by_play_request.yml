@@ -21,17 +21,17 @@ http_interactions:
       Content-Type:
       - application/xml;charset=utf-8
       Date:
-      - Thu, 29 Sep 2016 01:39:05 GMT
+      - Thu, 29 Sep 2016 05:39:47 GMT
       Expires:
-      - Thu, 29 Sep 2016 01:39:07 GMT
+      - Thu, 29 Sep 2016 05:39:49 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-118.mashery.com
+      - prod-j-worker-us-east-1e-120.mashery.com
       X-Packagekey-Quota-Allotted:
       - '30000'
       X-Packagekey-Quota-Current:
-      - '7804'
+      - '7887'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
@@ -4291,5 +4291,5 @@ http_interactions:
         </game>
         <!-- Generation ended @ 2016-08-26 15:56:18 +0000 -->
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:39:06 GMT
+  recorded_at: Thu, 29 Sep 2016 05:39:49 GMT
 recorded_with: VCR 3.0.3

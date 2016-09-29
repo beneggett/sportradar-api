@@ -19,15 +19,15 @@ http_interactions:
       Content-Type:
       - text/html;charset=utf-8
       Date:
-      - Thu, 29 Sep 2016 01:39:12 GMT
+      - Thu, 29 Sep 2016 05:39:43 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-119.mashery.com
+      - prod-j-worker-us-east-1b-118.mashery.com
       X-Packagekey-Quota-Allotted:
       - '30000'
       X-Packagekey-Quota-Current:
-      - '7814'
+      - '7880'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
@@ -42,5 +42,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:39:13 GMT
+  recorded_at: Thu, 29 Sep 2016 05:39:44 GMT
 recorded_with: VCR 3.0.3

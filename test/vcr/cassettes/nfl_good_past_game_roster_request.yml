@@ -16,32 +16,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Accept-Ranges:
-      - bytes
       Cache-Control:
       - public, must-revalidate, max-age=2
       Content-Type:
-      - application/xml; charset=utf-8
+      - application/xml;charset=utf-8
       Date:
-      - Thu, 29 Sep 2016 01:39:09 GMT
-      Etag:
-      - '"af90f204077a7ddea7c3da2f9b0f440b"'
-      Last-Modified:
-      - Fri, 26 Aug 2016 15:56:17 GMT
+      - Thu, 29 Sep 2016 05:39:39 GMT
+      Expires:
+      - Thu, 29 Sep 2016 05:39:41 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-122.mashery.com
+      - prod-j-worker-us-east-1e-117.mashery.com
       X-Packagekey-Quota-Allotted:
       - '30000'
       X-Packagekey-Quota-Current:
-      - '7809'
+      - '7870'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
-      - '2'
+      - '1'
       X-Via:
-      - Nginx-S3-Proxy
+      - S3-Proxy
       Content-Length:
       - '72984'
       Connection:
@@ -938,5 +934,5 @@ http_interactions:
         </game>
         <!-- Generation ended @ 2016-08-26 15:56:17 +0000 -->
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:39:08 GMT
+  recorded_at: Thu, 29 Sep 2016 05:39:38 GMT
 recorded_with: VCR 3.0.3

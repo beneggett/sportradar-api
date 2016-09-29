@@ -16,32 +16,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Accept-Ranges:
-      - bytes
       Cache-Control:
       - public, must-revalidate, max-age=2
       Content-Type:
-      - application/xml; charset=utf-8
+      - application/xml;charset=utf-8
       Date:
-      - Thu, 29 Sep 2016 01:39:04 GMT
-      Etag:
-      - '"ad90fc3bab9bc40448d5ca9b791ec23f"'
-      Last-Modified:
-      - Thu, 29 Sep 2016 00:51:55 GMT
+      - Thu, 29 Sep 2016 05:39:46 GMT
+      Expires:
+      - Thu, 29 Sep 2016 05:39:48 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1b-109.mashery.com
+      - prod-j-worker-us-east-1b-121.mashery.com
       X-Packagekey-Quota-Allotted:
       - '30000'
       X-Packagekey-Quota-Current:
-      - '7801'
+      - '7886'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
       - '2'
       X-Via:
-      - Nginx-S3-Proxy
+      - S3-Proxy
       Content-Length:
       - '36649'
       Connection:
@@ -50,7 +46,7 @@ http_interactions:
       encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
-        <!-- Generation started @ 2016-09-29 00:51:54 +0000 -->
+        <!-- Generation started @ 2016-09-29 05:31:55 +0000 -->
         <season xmlns="http://feed.elasticstats.com/schema/nfl/premium/standings-v2.0.xsd" id="49037b4f-71c4-4e4d-8963-4f9b83e0b4bc" year="2016" type="REG" name="REG">
           <week id="6e4849c8-c8a8-44d2-96d9-8165d7cc7a6f" sequence="3" title="3"/>
           <conference id="1bdefe12-6cb2-4d6a-b208-b04602ae79c3" alias="AFC" name="AFC">
@@ -586,7 +582,7 @@ http_interactions:
             </division>
           </conference>
         </season>
-        <!-- Generation ended @ 2016-09-29 00:51:54 +0000 -->
+        <!-- Generation ended @ 2016-09-29 05:31:56 +0000 -->
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:39:03 GMT
+  recorded_at: Thu, 29 Sep 2016 05:39:46 GMT
 recorded_with: VCR 3.0.3

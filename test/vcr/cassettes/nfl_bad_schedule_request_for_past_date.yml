@@ -19,19 +19,19 @@ http_interactions:
       Content-Type:
       - text/html;charset=utf-8
       Date:
-      - Thu, 29 Sep 2016 01:39:09 GMT
+      - Thu, 29 Sep 2016 05:39:51 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-125.mashery.com
+      - prod-j-worker-us-east-1d-119.mashery.com
       X-Packagekey-Quota-Allotted:
       - '30000'
       X-Packagekey-Quota-Current:
-      - '7806'
+      - '7890'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
-      - '2'
+      - '1'
       X-Server-Error:
       - '{"type":"String","message":"Unknown Season 1950 reg"}'
       Content-Length:
@@ -42,5 +42,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:39:07 GMT
+  recorded_at: Thu, 29 Sep 2016 05:39:51 GMT
 recorded_with: VCR 3.0.3

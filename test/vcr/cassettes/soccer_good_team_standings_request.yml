@@ -1,0 +1,425 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-t2/na/teams/standing.xml?api_key=<SOCCER_NA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 29 Sep 2016 06:00:01 GMT
+      Etag:
+      - '"d5ace56bff46f94624d707e3bea480ca"'
+      Last-Modified:
+      - Thu, 29 Sep 2016 05:53:52 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-114.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '15000'
+      X-Plan-Quota-Current:
+      - '79'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '49886'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <standings generated="2016-09-29T05:53:53Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/teams-standing.xsd">
+          <categories>
+            <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12">
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" season_start="2016-07-15T22:00:00Z" season_end="2017-06-24T21:59:00Z" season="2016" reference_id="sr:tournamentgroup:352">
+                <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" season_start="2016-07-15T22:00:00Z" season_end="2017-06-24T21:59:00Z" season="2016" type="group" reference_id="sr:tournament:28">
+                  <team id="50c96149-b75d-4961-83bf-516900533fb1" name="Tijuana" full_name="Club Tijuana" alias="TIJ" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:36525" rank="1" win="7" draw="3" loss="1" goals_for="20" goals_against="9" points="24" change="1" goals_diff="11">
+                    <home rank="1" change="0" win="5" draw="0" loss="0" goals_for="11" goals_against="1" points="15"/>
+                    <away rank="2" change="5" win="2" draw="3" loss="1" goals_for="9" goals_against="8" points="9"/>
+                  </team>
+                  <team id="d733c2ab-d2fd-4ee2-9025-e3b9b9f051e4" name="Tigres" full_name="UANL Tigres" alias="TIG" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1940" rank="2" win="6" draw="5" loss="0" goals_for="14" goals_against="4" points="23" change="-1" goals_diff="10">
+                    <home rank="5" change="-1" win="3" draw="3" loss="0" goals_for="8" goals_against="4" points="12"/>
+                    <away rank="1" change="0" win="3" draw="2" loss="0" goals_for="6" goals_against="0" points="11"/>
+                  </team>
+                  <team id="429e7aec-82e3-4b37-8651-7611cbbf7eb5" name="Pachuca" full_name="CF Pachuca" alias="PAC" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1936" rank="3" win="6" draw="2" loss="3" goals_for="23" goals_against="12" points="20" change="0" goals_diff="11">
+                    <home rank="3" change="0" win="4" draw="2" loss="0" goals_for="14" goals_against="4" points="14"/>
+                    <away rank="9" change="-3" win="2" draw="0" loss="3" goals_for="9" goals_against="8" points="6"/>
+                  </team>
+                  <team id="8baedd04-7013-4d28-a1a6-32e51ef25d64" name="America" full_name="America de Mexico" alias="AME" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1939" rank="4" win="5" draw="3" loss="3" goals_for="19" goals_against="19" points="18" change="2" goals_diff="0">
+                    <home rank="7" change="9" win="3" draw="1" loss="3" goals_for="8" goals_against="11" points="10"/>
+                    <away rank="4" change="-2" win="2" draw="2" loss="0" goals_for="11" goals_against="8" points="8"/>
+                  </team>
+                  <team id="9eee39ac-f6f5-4876-b69a-b61707eb21d1" name="Toluca" full_name="Deportivo Toluca" alias="TOL" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1931" rank="5" win="4" draw="5" loss="2" goals_for="14" goals_against="11" points="17" change="0" goals_diff="3">
+                    <home rank="9" change="-1" win="2" draw="3" loss="0" goals_for="7" goals_against="4" points="9"/>
+                    <away rank="7" change="-3" win="2" draw="2" loss="2" goals_for="7" goals_against="7" points="8"/>
+                  </team>
+                  <team id="68a406c2-fc04-427a-95d0-d37d582f81df" name="Unam Pumas" full_name="Unam Pumas" alias="PUM" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1933" rank="6" win="5" draw="2" loss="4" goals_for="17" goals_against="15" points="17" change="-2" goals_diff="2">
+                    <home rank="2" change="0" win="5" draw="0" loss="0" goals_for="13" goals_against="4" points="15"/>
+                    <away rank="16" change="0" win="0" draw="2" loss="4" goals_for="4" goals_against="11" points="2"/>
+                  </team>
+                  <team id="ae86d852-2b72-476e-aac1-204c94d7c234" name="G. Chivas" full_name="Guadalajara Chivas" alias="GDC" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1938" rank="7" win="5" draw="2" loss="4" goals_for="11" goals_against="10" points="17" change="1" goals_diff="1">
+                    <home rank="10" change="-1" win="2" draw="2" loss="1" goals_for="5" goals_against="3" points="8"/>
+                    <away rank="3" change="5" win="3" draw="0" loss="3" goals_for="6" goals_against="7" points="9"/>
+                  </team>
+                  <team id="a054937f-3368-4723-8e5f-e15c15643f85" name="Puebla" full_name="FC Puebla" alias="PUE" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1941" rank="8" win="4" draw="3" loss="4" goals_for="19" goals_against="18" points="15" change="2" goals_diff="1">
+                    <home rank="12" change="-1" win="2" draw="2" loss="1" goals_for="8" goals_against="8" points="8"/>
+                    <away rank="8" change="2" win="2" draw="1" loss="3" goals_for="11" goals_against="10" points="7"/>
+                  </team>
+                  <team id="173727d1-8f3a-4df1-981a-23f43d430a2d" name="Monarcas" full_name="Monarcas Morelia" alias="MOR" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1946" rank="9" win="4" draw="3" loss="4" goals_for="21" goals_against="24" points="15" change="-2" goals_diff="-3">
+                    <home rank="16" change="-1" win="2" draw="1" loss="3" goals_for="11" goals_against="16" points="7"/>
+                    <away rank="6" change="-3" win="2" draw="2" loss="1" goals_for="10" goals_against="8" points="8"/>
+                  </team>
+                  <team id="b0524ead-bdc4-4231-a6eb-49c153ced098" name="Atlas" full_name="Atlas" alias="ATS" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1949" rank="10" win="3" draw="5" loss="3" goals_for="14" goals_against="16" points="14" change="4" goals_diff="-2">
+                    <home rank="4" change="3" win="3" draw="3" loss="0" goals_for="9" goals_against="5" points="12"/>
+                    <away rank="14" change="1" win="0" draw="2" loss="3" goals_for="5" goals_against="11" points="2"/>
+                  </team>
+                  <team id="7bd1840c-37f9-431a-ae1f-86dd23f0cc2e" name="Monterrey" full_name="CF Monterrey" alias="MTY" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1932" rank="11" win="3" draw="4" loss="4" goals_for="17" goals_against="16" points="13" change="-2" goals_diff="1">
+                    <home rank="8" change="-2" win="2" draw="3" loss="0" goals_for="9" goals_against="5" points="9"/>
+                    <away rank="11" change="0" win="1" draw="1" loss="4" goals_for="8" goals_against="11" points="4"/>
+                  </team>
+                  <team id="ec974edc-5dce-404e-9253-f5876c271549" name="Necaxa" full_name="Necaxa" alias="NCX" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1944" rank="12" win="2" draw="7" loss="2" goals_for="11" goals_against="11" points="13" change="-1" goals_diff="0">
+                    <home rank="13" change="-1" win="1" draw="4" loss="0" goals_for="6" goals_against="5" points="7"/>
+                    <away rank="10" change="-1" win="1" draw="3" loss="2" goals_for="5" goals_against="6" points="6"/>
+                  </team>
+                  <team id="9ca06516-f133-42f7-931f-157bbba82999" name="Cruz Azul" full_name="Cruz Azul" alias="CAZ" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1947" rank="13" win="2" draw="6" loss="3" goals_for="12" goals_against="10" points="12" change="0" goals_diff="2">
+                    <home rank="18" change="-1" win="1" draw="1" loss="3" goals_for="7" goals_against="8" points="4"/>
+                    <away rank="5" change="0" win="1" draw="5" loss="0" goals_for="5" goals_against="2" points="8"/>
+                  </team>
+                  <team id="d7944e9d-8785-4dda-a2eb-b9d863eb6726" name="Queretaro" full_name="Gallos Blancos Queretaro" alias="QRO" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1951" rank="14" win="3" draw="3" loss="5" goals_for="11" goals_against="15" points="12" change="-2" goals_diff="-4">
+                    <home rank="6" change="-1" win="3" draw="1" loss="1" goals_for="6" goals_against="3" points="10"/>
+                    <away rank="15" change="-1" win="0" draw="2" loss="4" goals_for="5" goals_against="12" points="2"/>
+                  </team>
+                  <team id="6fc639b9-5a02-477d-98cf-b68c22db3763" name="Leon" full_name="Leon" alias="LEN" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:36534" rank="15" win="3" draw="3" loss="5" goals_for="10" goals_against="15" points="12" change="0" goals_diff="-5">
+                    <home rank="11" change="-1" win="2" draw="2" loss="1" goals_for="6" goals_against="5" points="8"/>
+                    <away rank="12" change="0" win="1" draw="1" loss="4" goals_for="4" goals_against="10" points="4"/>
+                  </team>
+                  <team id="96df6275-2e8c-4639-8315-df560bd9b3de" name="Veracruz" full_name="Tiburones Rojos de Veracruz" alias="VER" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1942" rank="16" win="2" draw="3" loss="6" goals_for="12" goals_against="18" points="9" change="0" goals_diff="-6">
+                    <home rank="15" change="-1" win="2" draw="1" loss="3" goals_for="8" goals_against="10" points="7"/>
+                    <away rank="13" change="0" win="0" draw="2" loss="3" goals_for="4" goals_against="8" points="2"/>
+                  </team>
+                  <team id="5dd96f68-1a54-4b31-93c2-e7c2a70cc0b1" name="Santos" full_name="Santos Laguna" alias="SNT" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1948" rank="17" win="2" draw="2" loss="7" goals_for="11" goals_against="20" points="8" change="0" goals_diff="-9">
+                    <home rank="14" change="-1" win="2" draw="1" loss="3" goals_for="7" goals_against="8" points="7"/>
+                    <away rank="18" change="0" win="0" draw="1" loss="4" goals_for="4" goals_against="12" points="1"/>
+                  </team>
+                  <team id="7f5ef57a-02a4-4165-9b39-a3453f9cdf03" name="Jaguares" full_name="Jaguares de Chiapas" alias="RSL" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1953" rank="18" win="1" draw="3" loss="7" goals_for="6" goals_against="19" points="6" change="0" goals_diff="-13">
+                    <home rank="17" change="1" win="1" draw="2" loss="3" goals_for="4" goals_against="11" points="5"/>
+                    <away rank="17" change="0" win="0" draw="1" loss="4" goals_for="2" goals_against="8" points="1"/>
+                  </team>
+                </tournament>
+                <tournament id="57823d13-1c31-4286-8c51-9b71b9fadeb5" name="Primera Division, Apertura Playoffs" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" season_start="2016-07-15T22:00:00Z" season_end="2017-06-24T21:59:00Z" season="2016" type="playoff" reference_id="sr:tournament:16755">
+                </tournament>
+                <tournament id="09422c44-3adc-4238-993e-845080a86cc2" name="Primera Division, Clausura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" season_start="2016-07-15T22:00:00Z" season_end="2017-06-24T21:59:00Z" season="2016" type="group" reference_id="sr:tournament:16753">
+                </tournament>
+                <tournament id="cc11b9ce-a59c-4d30-940c-b6d09d1a69f5" name="Primera Division, Clausura Playoffs" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" season_start="2016-07-15T22:00:00Z" season_end="2017-06-24T21:59:00Z" season="2016" type="playoff" reference_id="sr:tournament:16754">
+                </tournament>
+              </tournament_group>
+            </category>
+            <category id="c4ef0886-dfee-4725-81eb-1bb919be832a" name="International Clubs" country_code="XZ" country="International" reference_id="sr:category:393">
+              <tournament_group id="dc3ea36c-1a29-41e3-b830-9dd2c685670a" name="CONCACAF CL" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" reference_id="sr:tournamentgroup:498">
+                <tournament id="59b4b7d7-2714-4201-8e76-d1216059726e" name="CONCACAF Champions League, Group 1" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="1" reference_id="sr:tournament:8477">
+                  <team id="68a406c2-fc04-427a-95d0-d37d582f81df" name="Unam Pumas" full_name="Unam Pumas" alias="PUM" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1933" rank="1" win="2" draw="0" loss="1" goals_for="7" goals_against="4" points="6" change="0" goals_diff="3">
+                    <home rank="1" change="0" win="1" draw="0" loss="0" goals_for="2" goals_against="0" points="3"/>
+                    <away rank="1" change="0" win="1" draw="0" loss="1" goals_for="5" goals_against="4" points="3"/>
+                  </team>
+                  <team id="1abaa8ae-c36f-48d3-89ea-80b9beb8f93d" name="Honduras Progreso" full_name="CD Honduras Progreso" alias="HON" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:166204" rank="2" win="1" draw="1" loss="1" goals_for="3" goals_against="4" points="4" change="0" goals_diff="-1">
+                    <home rank="2" change="1" win="1" draw="0" loss="0" goals_for="2" goals_against="1" points="3"/>
+                    <away rank="2" change="0" win="0" draw="1" loss="1" goals_for="1" goals_against="3" points="1"/>
+                  </team>
+                  <team id="909d996c-ce1a-43ad-a2e7-4d161bc62511" name="W Connection" full_name="W Connection FC" alias="WCO" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:36405" rank="3" win="0" draw="1" loss="1" goals_for="3" goals_against="5" points="1" change="0" goals_diff="-2">
+                    <home rank="3" change="-1" win="0" draw="1" loss="1" goals_for="3" goals_against="5" points="1"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="0" goals_for="0" goals_against="0" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="a4fff9a3-9a87-4c2c-a898-b62a0304a7d7" name="CONCACAF Champions League, Group 2" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="2" reference_id="sr:tournament:8478">
+                  <team id="55353072-3970-4d14-988a-ec591dff2afd" name="Saprissa" full_name="Deportivo Saprissa" alias="SAP" country_code="CRI" country="Costa Rica" type="team" reference_id="sr:team:6574" rank="1" win="2" draw="1" loss="0" goals_for="10" goals_against="2" points="7" change="0" goals_diff="8">
+                    <home rank="1" change="0" win="2" draw="0" loss="0" goals_for="10" goals_against="2" points="6"/>
+                    <away rank="2" change="-1" win="0" draw="1" loss="0" goals_for="0" goals_against="0" points="1"/>
+                  </team>
+                  <team id="33fa3d0b-22a2-4e9d-b2dd-68057548ff06" name="Portland" full_name="Portland Timbers" alias="POR" country_code="USA" country="United States" type="team" reference_id="sr:team:22007" rank="2" win="2" draw="0" loss="1" goals_for="6" goals_against="6" points="6" change="0" goals_diff="0">
+                    <home rank="2" change="0" win="1" draw="0" loss="0" goals_for="2" goals_against="1" points="3"/>
+                    <away rank="1" change="1" win="1" draw="0" loss="1" goals_for="4" goals_against="5" points="3"/>
+                  </team>
+                  <team id="dd2848dc-a121-4550-9a2f-a72e22c70781" name="Dragon" full_name="CD Dragon" alias="DGN" country_code="SLV" country="El Salvador" type="team" reference_id="sr:team:109319" rank="3" win="0" draw="1" loss="3" goals_for="2" goals_against="10" points="1" change="0" goals_diff="-8">
+                    <home rank="3" change="0" win="0" draw="1" loss="1" goals_for="1" goals_against="2" points="1"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="2" goals_for="1" goals_against="8" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="891c961a-f64b-485b-9de0-6b544bae6dd6" name="CONCACAF Champions League, Group 3" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="3" reference_id="sr:tournament:8479">
+                  <team id="b9df6f63-ba46-4df9-afbd-f925bce7b012" name="Vancouver" full_name="Vancouver Whitecaps FC" alias="VAN" country_code="USA" country="United States" type="team" reference_id="sr:team:22010" rank="1" win="4" draw="0" loss="0" goals_for="10" goals_against="2" points="12" change="0" goals_diff="8">
+                    <home rank="1" change="0" win="2" draw="0" loss="0" goals_for="7" goals_against="1" points="6"/>
+                    <away rank="1" change="0" win="2" draw="0" loss="0" goals_for="3" goals_against="1" points="6"/>
+                  </team>
+                  <team id="0ca11d17-e01a-4685-8793-1d2128777bef" name="Kansas City" full_name="Sporting Kansas City" alias="SKC" country_code="USA" country="United States" type="team" reference_id="sr:team:2509" rank="2" win="0" draw="1" loss="2" goals_for="3" goals_against="7" points="1" change="0" goals_diff="-4">
+                    <home rank="3" change="0" win="0" draw="0" loss="1" goals_for="1" goals_against="2" points="0"/>
+                    <away rank="2" change="0" win="0" draw="1" loss="1" goals_for="2" goals_against="5" points="1"/>
+                  </team>
+                  <team id="281a3005-b57d-4f9c-b542-f2306a51616c" name="Central" full_name="Central FC" alias="CEN" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:214212" rank="3" win="0" draw="1" loss="2" goals_for="3" goals_against="7" points="1" change="0" goals_diff="-4">
+                    <home rank="2" change="0" win="0" draw="1" loss="1" goals_for="2" goals_against="3" points="1"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="1" goals_for="1" goals_against="4" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="be6fb575-9ec2-4d33-aea8-053b405cb270" name="CONCACAF Champions League, Group 4" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="4" reference_id="sr:tournament:8480">
+                  <team id="0f2c4e42-aef6-4afc-8380-61ca4f3ac76e" name="Arabe Unido" full_name="CD Arabe Unido" alias="AUN" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:36406" rank="1" win="3" draw="0" loss="0" goals_for="10" goals_against="5" points="9" change="0" goals_diff="5">
+                    <home rank="1" change="0" win="1" draw="0" loss="0" goals_for="2" goals_against="1" points="3"/>
+                    <away rank="1" change="0" win="2" draw="0" loss="0" goals_for="8" goals_against="4" points="6"/>
+                  </team>
+                  <team id="7bd1840c-37f9-431a-ae1f-86dd23f0cc2e" name="Monterrey" full_name="CF Monterrey" alias="MTY" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1932" rank="2" win="2" draw="0" loss="2" goals_for="9" goals_against="5" points="6" change="0" goals_diff="4">
+                    <home rank="2" change="0" win="1" draw="0" loss="1" goals_for="5" goals_against="3" points="3"/>
+                    <away rank="2" change="0" win="1" draw="0" loss="1" goals_for="4" goals_against="2" points="3"/>
+                  </team>
+                  <team id="412e6cb3-03df-4bfe-8b96-31ac6ab21128" name="Don Bosco" full_name="Don Bosco" alias="DON" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:268191" rank="3" win="0" draw="0" loss="3" goals_for="2" goals_against="11" points="0" change="0" goals_diff="-9">
+                    <home rank="3" change="0" win="0" draw="0" loss="2" goals_for="2" goals_against="8" points="0"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="1" goals_for="0" goals_against="3" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="c6b22c43-0e13-412a-9f0d-66ca1e3f9d51" name="CONCACAF Champions League, Group 5" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="5" reference_id="sr:tournament:21398">
+                  <team id="429e7aec-82e3-4b37-8651-7611cbbf7eb5" name="Pachuca" full_name="CF Pachuca" alias="PAC" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1936" rank="1" win="3" draw="0" loss="0" goals_for="15" goals_against="0" points="9" change="0" goals_diff="15">
+                    <home rank="1" change="0" win="2" draw="0" loss="0" goals_for="4" goals_against="0" points="6"/>
+                    <away rank="1" change="0" win="1" draw="0" loss="0" goals_for="11" goals_against="0" points="3"/>
+                  </team>
+                  <team id="d4fe17a0-745b-4abb-be38-20814a235258" name="Olimpia" full_name="CD Olimpia" alias="OLI" country_code="HND" country="Honduras" type="team" reference_id="sr:team:25358" rank="2" win="1" draw="0" loss="1" goals_for="4" goals_against="1" points="3" change="0" goals_diff="3">
+                    <home rank="2" change="0" win="1" draw="0" loss="0" goals_for="4" goals_against="0" points="3"/>
+                    <away rank="2" change="0" win="0" draw="0" loss="1" goals_for="0" goals_against="1" points="0"/>
+                  </team>
+                  <team id="57ebb898-c0f3-473c-b8b6-47ed3473ad05" name="Police Utd" full_name="Police United" alias="POU" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:161082" rank="3" win="0" draw="0" loss="3" goals_for="0" goals_against="18" points="0" change="0" goals_diff="-18">
+                    <home rank="3" change="0" win="0" draw="0" loss="1" goals_for="0" goals_against="11" points="0"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="2" goals_for="0" goals_against="7" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="f1651216-f4f1-4e61-bd58-92a80df54df3" name="CONCACAF Champions League, Group 6" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="6" reference_id="sr:tournament:21399">
+                  <team id="443f4c7c-4a1e-4062-b04d-d3fcfec9838b" name="New York" full_name="NY Red Bulls" alias="NYRB" country_code="USA" country="United States" type="team" reference_id="sr:team:2506" rank="1" win="2" draw="2" loss="0" goals_for="5" goals_against="1" points="8" change="0" goals_diff="4">
+                    <home rank="1" change="0" win="2" draw="0" loss="0" goals_for="4" goals_against="0" points="6"/>
+                    <away rank="1" change="0" win="0" draw="2" loss="0" goals_for="1" goals_against="1" points="2"/>
+                  </team>
+                  <team id="c92860b3-ddf6-4087-be98-3f10f2e32984" name="Antigua" full_name="Antigua GFC" alias="ATG" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:163296" rank="2" win="0" draw="2" loss="1" goals_for="1" goals_against="4" points="2" change="1" goals_diff="-3">
+                    <home rank="3" change="0" win="0" draw="1" loss="0" goals_for="0" goals_against="0" points="1"/>
+                    <away rank="2" change="0" win="0" draw="1" loss="1" goals_for="1" goals_against="4" points="1"/>
+                  </team>
+                  <team id="10d90cf4-d1cf-42fb-8443-9be75bfc2f46" name="Alianza" full_name="Alianza FC" alias="ALI" country_code="SLV" country="El Salvador" type="team" reference_id="sr:team:24383" rank="3" win="0" draw="2" loss="1" goals_for="2" goals_against="3" points="2" change="-1" goals_diff="-1">
+                    <home rank="2" change="0" win="0" draw="2" loss="0" goals_for="2" goals_against="2" points="2"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="1" goals_for="0" goals_against="1" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="c163fcff-d3a5-4ed2-8bec-1f5e1875b734" name="CONCACAF Champions League, Group 7" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="7" reference_id="sr:tournament:21400">
+                  <team id="d733c2ab-d2fd-4ee2-9025-e3b9b9f051e4" name="Tigres" full_name="UANL Tigres" alias="TIG" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1940" rank="1" win="2" draw="0" loss="1" goals_for="6" goals_against="3" points="6" change="0" goals_diff="3">
+                    <home rank="2" change="-1" win="1" draw="0" loss="0" goals_for="3" goals_against="1" points="3"/>
+                    <away rank="1" change="0" win="1" draw="0" loss="1" goals_for="3" goals_against="2" points="3"/>
+                  </team>
+                  <team id="6ad0f098-abf6-4835-9ad0-c7ffc70fd33f" name="Herediano" full_name="CS Herediano" alias="HER" country_code="CRI" country="Costa Rica" type="team" reference_id="sr:team:7045" rank="2" win="1" draw="1" loss="1" goals_for="4" goals_against="4" points="4" change="0" goals_diff="0">
+                    <home rank="3" change="-1" win="1" draw="0" loss="1" goals_for="3" goals_against="3" points="3"/>
+                    <away rank="2" change="0" win="0" draw="1" loss="0" goals_for="1" goals_against="1" points="1"/>
+                  </team>
+                  <team id="a3a52e4b-90a8-4866-8829-f50c04f17d97" name="Amador" full_name="Plaza Amador" alias="PLA" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:168806" rank="3" win="1" draw="1" loss="2" goals_for="3" goals_against="6" points="4" change="0" goals_diff="-3">
+                    <home rank="1" change="2" win="1" draw="1" loss="0" goals_for="2" goals_against="1" points="4"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="2" goals_for="1" goals_against="5" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="5ac0154b-9da3-4aca-8b31-73d652eb37b8" name="CONCACAF Champions League, Group 8" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="group" type_group_id="8" reference_id="sr:tournament:21401">
+                  <team id="b4c42dd9-9405-4f6f-861e-931d744a3be8" name="Dallas" full_name="FC Dallas" alias="DAL" country_code="USA" country="United States" type="team" reference_id="sr:team:2512" rank="1" win="1" draw="2" loss="0" goals_for="3" goals_against="2" points="5" change="0" goals_diff="1">
+                    <home rank="1" change="0" win="1" draw="1" loss="0" goals_for="2" goals_against="1" points="4"/>
+                    <away rank="2" change="-1" win="0" draw="1" loss="0" goals_for="1" goals_against="1" points="1"/>
+                  </team>
+                  <team id="c9c472a7-0a2c-4be8-97d4-8c99c6ede123" name="Suchitepequez" full_name="CD Suchitepequez" alias="SUC" country_code="GTM" country="Guatemala" type="team" reference_id="sr:team:7022" rank="2" win="1" draw="2" loss="0" goals_for="2" goals_against="1" points="5" change="0" goals_diff="1">
+                    <home rank="2" change="0" win="1" draw="0" loss="0" goals_for="1" goals_against="0" points="3"/>
+                    <away rank="1" change="0" win="0" draw="2" loss="0" goals_for="1" goals_against="1" points="2"/>
+                  </team>
+                  <team id="583db4fa-2e71-4504-b080-fea96c948edc" name="Esteli" full_name="Real Esteli" alias="EST" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:25353" rank="3" win="0" draw="2" loss="2" goals_for="3" goals_against="5" points="2" change="0" goals_diff="-2">
+                    <home rank="3" change="0" win="0" draw="2" loss="0" goals_for="2" goals_against="2" points="2"/>
+                    <away rank="3" change="0" win="0" draw="0" loss="2" goals_for="1" goals_against="3" points="0"/>
+                  </team>
+                </tournament>
+                <tournament id="0ebaf97c-28f7-4b6a-9405-d86bae93b3a9" name="CONCACAF Champions League, Knockout stage" season_id="42881571-769d-4877-9f85-71868dc510d1" season_start="2016-08-01T22:00:00Z" season_end="2017-04-27T21:59:00Z" season="2016" type="playoff" reference_id="sr:tournament:9895">
+                </tournament>
+              </tournament_group>
+            </category>
+            <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26">
+              <tournament_group id="ea86ac27-8e64-48bd-a578-e1d263f98d6b" name="National Womens Soccer League" season_start="2016-04-15T22:00:00Z" season_end="2016-10-02T21:59:00Z" season="2016" reference_id="sr:tournamentgroup:1690">
+                <tournament id="2631d63d-f7ba-49f1-af80-b01a89fb0bcc" name="National Women's Soccer League" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" season_start="2016-04-15T22:00:00Z" season_end="2016-10-02T21:59:00Z" season="2016" type="group" reference_id="sr:tournament:26540">
+                </tournament>
+                <tournament id="6b6f1c72-be5c-4858-a7e7-6ffe558df284" name="National Womens Soccer League, Playoffs" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" season_start="2016-04-15T22:00:00Z" season_end="2016-10-02T21:59:00Z" season="2016" type="playoff" reference_id="sr:tournament:37913">
+                </tournament>
+              </tournament_group>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:242">
+                <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:18">
+                  <team id="b4c42dd9-9405-4f6f-861e-931d744a3be8" name="Dallas" full_name="FC Dallas" alias="DAL" country_code="USA" country="United States" type="team" reference_id="sr:team:2512" rank="1" win="15" draw="8" loss="8" goals_for="47" goals_against="39" points="53" change="0" goals_diff="8">
+                    <home rank="3" change="0" win="10" draw="4" loss="1" goals_for="30" goals_against="11" points="34"/>
+                    <away rank="3" change="0" win="5" draw="4" loss="7" goals_for="17" goals_against="28" points="19"/>
+                  </team>
+                  <team id="71e60dd4-b0b1-4771-821b-09200d5c8874" name="Toronto" full_name="Toronto FC" alias="TOR" country_code="USA" country="United States" type="team" reference_id="sr:team:7080" rank="2" win="13" draw="10" loss="8" goals_for="45" goals_against="33" points="49" change="1" goals_diff="12">
+                    <home rank="11" change="-1" win="7" draw="6" loss="2" goals_for="24" goals_against="13" points="27"/>
+                    <away rank="1" change="0" win="6" draw="4" loss="6" goals_for="21" goals_against="20" points="22"/>
+                  </team>
+                  <team id="443f4c7c-4a1e-4062-b04d-d3fcfec9838b" name="New York" full_name="NY Red Bulls" alias="NYRB" country_code="USA" country="United States" type="team" reference_id="sr:team:2506" rank="3" win="13" draw="9" loss="9" goals_for="53" goals_against="40" points="48" change="-1" goals_diff="13">
+                    <home rank="1" change="0" win="11" draw="2" loss="2" goals_for="30" goals_against="13" points="35"/>
+                    <away rank="12" change="0" win="2" draw="7" loss="7" goals_for="23" goals_against="27" points="13"/>
+                  </team>
+                  <team id="dfb39488-8712-4336-9fc2-74b70607f05e" name="NYC FC" full_name="New York City FC" alias="NYC" country_code="USA" country="United States" type="team" reference_id="sr:team:167510" rank="4" win="13" draw="9" loss="9" goals_for="55" goals_against="53" points="48" change="0" goals_diff="2">
+                    <home rank="12" change="-3" win="7" draw="6" loss="3" goals_for="31" goals_against="27" points="27"/>
+                    <away rank="2" change="0" win="6" draw="3" loss="6" goals_for="24" goals_against="26" points="21"/>
+                  </team>
+                  <team id="5d539702-77f2-4fb1-80e5-94f4bd71c560" name="Colorado" full_name="Colorado Rapids" alias="COL" country_code="USA" country="United States" type="team" reference_id="sr:team:2510" rank="5" win="12" draw="12" loss="5" goals_for="32" goals_against="27" points="48" change="0" goals_diff="5">
+                    <home rank="4" change="0" win="9" draw="5" loss="0" goals_for="16" goals_against="5" points="32"/>
+                    <away rank="6" change="0" win="3" draw="7" loss="5" goals_for="16" goals_against="22" points="16"/>
+                  </team>
+                  <team id="1244d8fb-7f61-4e71-81b1-1c264d976859" name="LA Galaxy" full_name="LA Galaxy" alias="LAG" country_code="USA" country="United States" type="team" reference_id="sr:team:2513" rank="6" win="11" draw="15" loss="5" goals_for="53" goals_against="38" points="48" change="0" goals_diff="15">
+                    <home rank="5" change="0" win="8" draw="7" loss="1" goals_for="32" goals_against="18" points="31"/>
+                    <away rank="4" change="0" win="3" draw="8" loss="4" goals_for="21" goals_against="20" points="17"/>
+                  </team>
+                  <team id="b78b9f61-0697-4347-a1b6-b7685a130eb1" name="Salt Lake" full_name="Real Salt Lake" alias="SAL" country_code="USA" country="United States" type="team" reference_id="sr:team:5133" rank="7" win="12" draw="9" loss="10" goals_for="42" goals_against="42" points="45" change="0" goals_diff="0">
+                    <home rank="6" change="0" win="8" draw="7" loss="1" goals_for="22" goals_against="14" points="31"/>
+                    <away rank="7" change="0" win="4" draw="2" loss="9" goals_for="20" goals_against="28" points="14"/>
+                  </team>
+                  <team id="0ca11d17-e01a-4685-8793-1d2128777bef" name="Kansas City" full_name="Sporting Kansas City" alias="SKC" country_code="USA" country="United States" type="team" reference_id="sr:team:2509" rank="8" win="12" draw="7" loss="12" goals_for="39" goals_against="38" points="43" change="0" goals_diff="1">
+                    <home rank="7" change="0" win="9" draw="3" loss="4" goals_for="28" goals_against="19" points="30"/>
+                    <away rank="10" change="0" win="3" draw="4" loss="8" goals_for="11" goals_against="19" points="13"/>
+                  </team>
+                  <team id="ca2ff256-706c-41cb-b0db-6c2e611c2bb7" name="Philadelphia" full_name="Philadelphia Union" alias="PHI" country_code="USA" country="United States" type="team" reference_id="sr:team:39833" rank="9" win="11" draw="9" loss="11" goals_for="50" goals_against="48" points="42" change="0" goals_diff="2">
+                    <home rank="10" change="-2" win="8" draw="4" loss="3" goals_for="30" goals_against="20" points="28"/>
+                    <away rank="9" change="0" win="3" draw="5" loss="8" goals_for="20" goals_against="28" points="14"/>
+                  </team>
+                  <team id="dc0a40c9-5141-4366-95ef-56c999b7105c" name="Seattle" full_name="Seattle Sounders" alias="SEA" country_code="USA" country="United States" type="team" reference_id="sr:team:22009" rank="10" win="12" draw="5" loss="13" goals_for="39" goals_against="39" points="41" change="1" goals_diff="0">
+                    <home rank="8" change="3" win="9" draw="1" loss="5" goals_for="20" goals_against="11" points="28"/>
+                    <away rank="11" change="0" win="3" draw="4" loss="8" goals_for="19" goals_against="28" points="13"/>
+                  </team>
+                  <team id="33fa3d0b-22a2-4e9d-b2dd-68057548ff06" name="Portland" full_name="Portland Timbers" alias="POR" country_code="USA" country="United States" type="team" reference_id="sr:team:22007" rank="11" win="11" draw="8" loss="12" goals_for="46" goals_against="48" points="41" change="-1" goals_diff="-2">
+                    <home rank="2" change="0" win="11" draw="2" loss="3" goals_for="34" goals_against="21" points="35"/>
+                    <away rank="19" change="0" win="0" draw="6" loss="9" goals_for="12" goals_against="27" points="6"/>
+                  </team>
+                  <team id="c6c59cc6-d4b7-40d0-bf4a-ca044d75cbb4" name="Montreal" full_name="Montreal Impact" alias="MON" country_code="USA" country="United States" type="team" reference_id="sr:team:22006" rank="12" win="10" draw="11" loss="10" goals_for="46" goals_against="48" points="41" change="0" goals_diff="-2">
+                    <home rank="13" change="3" win="7" draw="4" loss="5" goals_for="29" goals_against="27" points="25"/>
+                    <away rank="5" change="0" win="3" draw="7" loss="5" goals_for="17" goals_against="21" points="16"/>
+                  </team>
+                  <team id="bfe1812d-0c53-4035-b29d-192e2f213f45" name="DC United" full_name="DC United" alias="DCU" country_code="USA" country="United States" type="team" reference_id="sr:team:2502" rank="13" win="9" draw="13" loss="9" goals_for="46" goals_against="41" points="40" change="0" goals_diff="5">
+                    <home rank="9" change="3" win="8" draw="4" loss="4" goals_for="32" goals_against="17" points="28"/>
+                    <away rank="14" change="0" win="1" draw="9" loss="5" goals_for="14" goals_against="24" points="12"/>
+                  </team>
+                  <team id="bf1354b5-e5b2-4818-b1f6-a8584104bbfd" name="New England" full_name="New England Revolution" alias="NEE" country_code="USA" country="United States" type="team" reference_id="sr:team:2511" rank="14" win="9" draw="9" loss="13" goals_for="37" goals_against="51" points="36" change="0" goals_diff="-14">
+                    <home rank="14" change="-1" win="7" draw="4" loss="4" goals_for="20" goals_against="18" points="25"/>
+                    <away rank="15" change="0" win="2" draw="5" loss="9" goals_for="17" goals_against="33" points="11"/>
+                  </team>
+                  <team id="b9df6f63-ba46-4df9-afbd-f925bce7b012" name="Vancouver" full_name="Vancouver Whitecaps FC" alias="VAN" country_code="USA" country="United States" type="team" reference_id="sr:team:22010" rank="15" win="9" draw="8" loss="14" goals_for="40" goals_against="49" points="35" change="0" goals_diff="-9">
+                    <home rank="20" change="0" win="5" draw="6" loss="4" goals_for="23" goals_against="19" points="21"/>
+                    <away rank="8" change="0" win="4" draw="2" loss="10" goals_for="17" goals_against="30" points="14"/>
+                  </team>
+                  <team id="ac3cbdd4-ccf8-449d-88b7-7ce21ff2455d" name="Orlando" full_name="Orlando City SC" alias="OSC" country_code="USA" country="United States" type="team" reference_id="sr:team:52237" rank="16" win="7" draw="14" loss="10" goals_for="49" goals_against="57" points="35" change="1" goals_diff="-8">
+                    <home rank="19" change="0" win="5" draw="7" loss="3" goals_for="27" goals_against="25" points="22"/>
+                    <away rank="13" change="0" win="2" draw="7" loss="7" goals_for="22" goals_against="32" points="13"/>
+                  </team>
+                  <team id="3660ff77-4d9c-4bfc-bb53-39356c29f9eb" name="San Jose" full_name="San Jose Earthquakes" alias="SJE" country_code="USA" country="United States" type="team" reference_id="sr:team:21825" rank="17" win="7" draw="13" loss="10" goals_for="29" goals_against="35" points="34" change="-1" goals_diff="-6">
+                    <home rank="15" change="-1" win="6" draw="6" loss="3" goals_for="16" goals_against="11" points="24"/>
+                    <away rank="17" change="0" win="1" draw="7" loss="7" goals_for="13" goals_against="24" points="10"/>
+                  </team>
+                  <team id="0a9ec7c8-37d8-4213-a2fa-4e6416969409" name="Houston" full_name="Houston Dynamo" alias="HOU" country_code="USA" country="United States" type="team" reference_id="sr:team:2508" rank="18" win="7" draw="11" loss="11" goals_for="36" goals_against="38" points="32" change="0" goals_diff="-2">
+                    <home rank="17" change="0" win="5" draw="7" loss="2" goals_for="21" goals_against="15" points="22"/>
+                    <away rank="16" change="0" win="2" draw="4" loss="9" goals_for="15" goals_against="23" points="10"/>
+                  </team>
+                  <team id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" name="Columbus Crew" full_name="Columbus Crew" alias="COC" country_code="USA" country="United States" type="team" reference_id="sr:team:2504" rank="19" win="7" draw="11" loss="12" goals_for="42" goals_against="49" points="32" change="0" goals_diff="-7">
+                    <home rank="16" change="-1" win="5" draw="8" loss="3" goals_for="28" goals_against="25" points="23"/>
+                    <away rank="18" change="0" win="2" draw="3" loss="9" goals_for="14" goals_against="24" points="9"/>
+                  </team>
+                  <team id="7de6b0a1-e7c7-4a24-b04d-d0e00db01aeb" name="Chicago Fire" full_name="Chicago Fire" alias="CHI" country_code="USA" country="United States" type="team" reference_id="sr:team:2505" rank="20" win="6" draw="9" loss="15" goals_for="36" goals_against="49" points="27" change="0" goals_diff="-13">
+                    <home rank="18" change="0" win="5" draw="7" loss="3" goals_for="22" goals_against="18" points="22"/>
+                    <away rank="20" change="0" win="1" draw="2" loss="12" goals_for="14" goals_against="31" points="5"/>
+                  </team>
+                </tournament>
+                <tournament id="3cf3ead8-96f4-463f-8208-02aee064b2b5" name="Major League Soccer, Playoffs" season_id="34913769-58a6-487d-aa7a-1883c8f87909" season_start="2016-03-05T23:00:00Z" season_end="2016-12-11T22:59:00Z" season="2016" type="playoff" reference_id="sr:tournament:7048">
+                </tournament>
+              </tournament_group>
+            </category>
+            <category id="843cfbca-4acf-48ca-a291-6ed9356570a6" name="Canada" country_code="CAN" country="Canada" reference_id="sr:category:388">
+              <tournament_group id="f77f2995-ab27-4330-a62f-67eca79774e6" name="Canadian Soccer League" season_start="2016-05-20T22:00:00Z" season_end="2016-11-06T22:59:00Z" season="2016" reference_id="sr:tournamentgroup:482">
+                <tournament id="5091c40e-0c9c-4ff9-ae84-980ee5a303ec" name="Canadian Soccer League" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" season_start="2016-05-20T22:00:00Z" season_end="2016-11-06T22:59:00Z" season="2016" type="group" reference_id="sr:tournament:4707">
+                </tournament>
+                <tournament id="c59fc15b-926a-4d7a-8cf5-56f2a4d1e8c8" name="Canadian Soccer League, Playoffs" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" season_start="2016-05-20T22:00:00Z" season_end="2016-11-06T22:59:00Z" season="2016" type="playoff" reference_id="sr:tournament:9269">
+                </tournament>
+              </tournament_group>
+            </category>
+            <category id="ccb3c550-8bdb-435f-9f4e-8c125f7298b9" name="International" country_code="XZ" country="International" reference_id="sr:category:4">
+              <tournament_group id="f287e0ed-70ba-483d-be9c-3b0e763c5e7b" name="Confederations Cup" season_start="2015-10-09T22:00:00Z" season_end="2017-07-02T21:59:00Z" season="2017" reference_id="sr:tournamentgroup:460">
+                <tournament id="5c8ed8b7-84c1-42ac-be87-93a83cb0bd7f" name="Confederations Cup, CONCACAF Playoff" season_id="18c31137-1103-4f3f-bffa-31def6fe7452" season_start="2015-10-09T22:00:00Z" season_end="2017-07-02T21:59:00Z" season="2017" type="playoff" reference_id="sr:tournament:46437">
+                </tournament>
+              </tournament_group>
+              <tournament_group id="e6dc38c3-6af6-43d8-85f6-7ebb6498d592" name="Gold Cup" season_start="2015-07-05T22:00:00Z" season_end="2015-07-28T21:59:00Z" season="2015" reference_id="sr:tournamentgroup:140">
+                <tournament id="e55ebdb6-2c14-4dff-84d4-07a3cb350f7c" name="CONCACAF Gold Cup, Group A" season_id="023d5ded-123c-4c9b-ae4d-ca6f6438ae77" season_start="2015-07-05T22:00:00Z" season_end="2015-07-28T21:59:00Z" season="2015" type="group" type_group_id="1" reference_id="sr:tournament:3328">
+                  <team id="79a99f09-13ca-45c4-b3f0-2a61f94e0651" name="USA" full_name="USA" alias="USA" country_code="USA" country="United States" type="team" reference_id="sr:team:4724" rank="1" win="2" draw="1" loss="0" goals_for="4" goals_against="2" points="7" change="0" goals_diff="2">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="ebe6d919-3610-41e3-a1b1-297dab59b4ea" name="Haiti" full_name="Haiti" alias="HAI" country_code="HTI" country="Haiti" type="team" reference_id="sr:team:7229" rank="2" win="1" draw="1" loss="1" goals_for="2" goals_against="2" points="4" change="2" goals_diff="0">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="747b6d63-51b3-430b-a359-e661d2ee770e" name="Panama" full_name="Panama" alias="PAN" country_code="PAN" country="Panama" type="team" reference_id="sr:team:5164" rank="3" win="0" draw="3" loss="0" goals_for="3" goals_against="3" points="3" change="-1" goals_diff="0">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="f68fcef3-42f2-4031-983e-81c0b79801d5" name="Honduras" full_name="Honduras" alias="HON" country_code="HND" country="Honduras" type="team" reference_id="sr:team:4827" rank="4" win="0" draw="1" loss="2" goals_for="2" goals_against="4" points="1" change="-1" goals_diff="-2">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                </tournament>
+                <tournament id="6abc61d8-3cae-495e-b958-b62dc484294d" name="CONCACAF Gold Cup, Group B" season_id="023d5ded-123c-4c9b-ae4d-ca6f6438ae77" season_start="2015-07-05T22:00:00Z" season_end="2015-07-28T21:59:00Z" season="2015" type="group" type_group_id="2" reference_id="sr:tournament:3329">
+                  <team id="6b439c5f-9881-4942-9924-48eb5588d25c" name="Jamaica" full_name="Jamaica" alias="JAM" country_code="JAM" country="Jamaica" type="team" reference_id="sr:team:4769" rank="1" win="2" draw="1" loss="0" goals_for="4" goals_against="2" points="7" change="0" goals_diff="2">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="9a48caf7-0a32-4742-89c5-1d7af11bfffb" name="Costa Rica" full_name="Costa Rica" alias="CRC" country_code="CRI" country="Costa Rica" type="team" reference_id="sr:team:4756" rank="2" win="0" draw="3" loss="0" goals_for="3" goals_against="3" points="3" change="0" goals_diff="0">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="6033f3a9-a322-4901-b0f3-8dab7fdf38c7" name="El Salvador" full_name="El Salvador" alias="ESA" country_code="SLV" country="El Salvador" type="team" reference_id="sr:team:4825" rank="3" win="0" draw="2" loss="1" goals_for="1" goals_against="2" points="2" change="0" goals_diff="-1">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="4e4e08f9-0ad8-4083-b9ca-8215339ac4da" name="Canada" full_name="Canada" alias="CAN" country_code="CAN" country="Canada" type="team" reference_id="sr:team:4752" rank="4" win="0" draw="2" loss="1" goals_for="0" goals_against="1" points="2" change="0" goals_diff="-1">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                </tournament>
+                <tournament id="c6835e47-3c0b-42a4-b6c1-7f88fbf85239" name="CONCACAF Gold Cup, Group C" season_id="023d5ded-123c-4c9b-ae4d-ca6f6438ae77" season_start="2015-07-05T22:00:00Z" season_end="2015-07-28T21:59:00Z" season="2015" type="group" type_group_id="3" reference_id="sr:tournament:3330">
+                  <team id="f7def3a4-d9c4-43bb-822b-3d127b4cb4ae" name="Trinidad &amp; Tobago" full_name="Trinidad and Tobago" alias="TRI" country_code="TTO" country="Trinidad and Tobago" type="team" reference_id="sr:team:5162" rank="1" win="2" draw="1" loss="0" goals_for="9" goals_against="5" points="7" change="0" goals_diff="4">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="0d6a26e4-3afa-49d7-bc95-61536650fbdd" name="Mexico" full_name="Mexico" alias="MEX" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:4781" rank="2" win="1" draw="2" loss="0" goals_for="10" goals_against="4" points="5" change="0" goals_diff="6">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="c7c2eb78-2595-4ee3-b206-8d12db2a3974" name="Cuba" full_name="Cuba" alias="CUB" country_code="CUB" country="Cuba" type="team" reference_id="sr:team:4824" rank="3" win="1" draw="0" loss="2" goals_for="1" goals_against="8" points="3" change="1" goals_diff="-7">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                  <team id="ebb76a8e-6634-4514-9c41-1a34e953fc44" name="Guatemala" full_name="Guatemala" alias="GUA" country_code="GTM" country="Guatemala" type="team" reference_id="sr:team:5163" rank="4" win="0" draw="1" loss="2" goals_for="1" goals_against="4" points="1" change="-1" goals_diff="-3">
+                    <home rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                    <away rank="" change="" win="" draw="" loss="" goals_for="" goals_against="" points=""/>
+                  </team>
+                </tournament>
+                <tournament id="d0db1ec9-1857-4623-a9d5-b400241aa35e" name="CONCACAF Gold Cup, Knockout stage" season_id="023d5ded-123c-4c9b-ae4d-ca6f6438ae77" season_start="2015-07-05T22:00:00Z" season_end="2015-07-28T21:59:00Z" season="2015" type="playoff" reference_id="sr:tournament:6289">
+                </tournament>
+              </tournament_group>
+            </category>
+          </categories>
+        </standings>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 06:00:23 GMT
+recorded_with: VCR 3.0.3

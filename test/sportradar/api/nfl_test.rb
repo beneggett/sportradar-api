@@ -217,7 +217,8 @@ class Sportradar::Api::NflTest < Minitest::Test
   end
 
   def test_it_makes_a_good_simulation_game_boxscore_request
-    VCR.use_cassette("nfl good past game boxscore request") do
+    skip "SIM API IS CURRENTLY BROKEN OR RETURNING NOT AUTHORIZED"
+    VCR.use_cassette("nfl good simulation game boxscore request") do
       request = Sportradar::Api::Nfl.new.game_boxscore(simulation_game_id)
       assert_kind_of Sportradar::Api::Nfl::Game, request
     end
@@ -228,7 +229,7 @@ class Sportradar::Api::NflTest < Minitest::Test
     VCR.use_cassette("nfl finds active simulation") do
       simulation = Sportradar::Api::Nfl.new.active_simulation
       if simulation.is_a?(String)
-        assert_kind_of Sportradar::Api::Nfl::String, simulation
+        assert_kind_of String, simulation
       else
         assert_kind_of Sportradar::Api::Nfl::Game, simulation
       end

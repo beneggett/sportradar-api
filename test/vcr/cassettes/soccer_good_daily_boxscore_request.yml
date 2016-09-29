@@ -1,0 +1,538 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-t2/na/matches/2016/7/17/boxscore.xml?api_key=<SOCCER_NA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=10
+      Content-Type:
+      - text/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 05:49:20 GMT
+      Expires:
+      - Thu, 29 Sep 2016 05:49:30 -0000
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-121.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '15000'
+      X-Plan-Quota-Current:
+      - '56'
+      Content-Length:
+      - '49042'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <boxscore generated="2016-09-29T05:49:20Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-boxscore.xsd">
+          <matches>
+            <match id="4569971b-fd46-423e-ba3f-8c727cee56d0" status="closed" period="P2" scheduled="2016-07-17T00:00:00Z" clock="" scratched="false" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" reference_id="sr:match:9446877">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="843cfbca-4acf-48ca-a291-6ed9356570a6" name="Canada" country_code="CAN" country="Canada" reference_id="sr:category:388"/>
+              <tournament_group id="f77f2995-ab27-4330-a62f-67eca79774e6" name="Canadian Soccer League" reference_id="sr:tournamentgroup:482"/>
+              <tournament id="5091c40e-0c9c-4ff9-ae84-980ee5a303ec" name="Canadian Soccer League" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" type="group" reference_id="sr:tournament:4707"/>
+              <round type="table" number="1" week="28"/>
+              <home id="1bc5505f-7a0a-49d6-983a-790b8c4e5fea" name="Scarborough" full_name="Scarborough SC" alias="SCA" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:202451" formation="" score="1" regular_score="1" penalty_score="" winner="true">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics/>
+              </home>
+              <away id="2584dff5-766b-42d1-974f-bc4147eee6e3" name="Hamilton City" full_name="Hamilton City SC" alias="HAC" country_code="CAN" country="Canada" type="team" reference_id="sr:team:22778" formation="" score="0" regular_score="0" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics/>
+              </away>
+              <venue id="4763b6f1-fd78-42ff-aff9-a13b6aa19173" name="Birchmount Stadium" country_code="CAN" country="Canada" city="Scarborough" capacity="2000" coordinates="43.695805,-79.260768" reference_id="sr:venue:16722"/>
+              <!-- 9446877/202451/22778 -->
+            </match>
+            <match id="a1b33c86-6af0-4204-8f16-bb1aa285b977" status="closed" period="P2" scheduled="2016-07-17T00:00:00Z" clock="" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9608543">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" reference_id="sr:tournamentgroup:352"/>
+              <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" type="group" reference_id="sr:tournament:28"/>
+              <round type="table" number="1" week="28"/>
+              <home id="7bd1840c-37f9-431a-ae1f-86dd23f0cc2e" name="Monterrey" full_name="CF Monterrey" alias="MTY" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1932" formation="" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics red_card="1"/>
+              </home>
+              <away id="a054937f-3368-4723-8e5f-e15c15643f85" name="Puebla" full_name="FC Puebla" alias="PUE" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1941" formation="" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics red_card="0"/>
+              </away>
+              <venue id="148eea38-cdb9-4071-864e-adc95100ca82" name="Estadio BBVA Bancomer" country_code="MEX" country="Mexico" city="Monterrey" capacity="51000" coordinates="25.670172,-100.243700" reference_id="sr:venue:16526"/>
+              <!-- 9608543/1932/1941 -->
+            </match>
+            <match id="00685a80-74a0-4e72-9d7e-9d3b2c87abba" status="closed" period="P2" scheduled="2016-07-17T00:00:00Z" clock="" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9608545">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" reference_id="sr:tournamentgroup:352"/>
+              <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" type="group" reference_id="sr:tournament:28"/>
+              <round type="table" number="1" week="28"/>
+              <home id="b0524ead-bdc4-4231-a6eb-49c153ced098" name="Atlas" full_name="Atlas" alias="ATS" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1949" formation="" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics red_card="1"/>
+              </home>
+              <away id="9eee39ac-f6f5-4876-b69a-b61707eb21d1" name="Toluca" full_name="Deportivo Toluca" alias="TOL" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1931" formation="" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics red_card="0"/>
+              </away>
+              <venue id="d191a32a-703e-43d8-8158-35290ae62201" name="Estadio Jalisco" country_code="MEX" country="Mexico" city="Guadalajara" capacity="63163" coordinates="20.705000,-103.328056" reference_id="sr:venue:985"/>
+              <!-- 9608545/1949/1931 -->
+            </match>
+            <match id="d68057da-bc2d-43d5-86ce-8aa80f012074" status="closed" period="P2" scheduled="2016-07-17T00:06:00Z" clock="" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9608605">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" reference_id="sr:tournamentgroup:352"/>
+              <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" type="group" reference_id="sr:tournament:28"/>
+              <round type="table" number="1" week="28"/>
+              <home id="429e7aec-82e3-4b37-8651-7611cbbf7eb5" name="Pachuca" full_name="CF Pachuca" alias="PAC" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1936" formation="4-2-3-1" score="5" regular_score="5" penalty_score="" winner="true">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="3" number="2"/>
+                </scoring>
+                <statistics attacks="85" ball_safe="84" corner_kicks="3" dangerous_attacks="54" fouls="14" free_kicks="15" goal_attempts="15" goal_kicks="16" offsides="3" red_card="0" saves="3" substitutions="3" throw_ins="16" yellow_card="1" shots_on_target="10" shots_off_target="5" shots_total="15" possessions="57"/>
+              </home>
+              <away id="6fc639b9-5a02-477d-98cf-b68c22db3763" name="Leon" full_name="Leon" alias="LEN" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:36534" formation="4-2-3-1" score="1" regular_score="1" penalty_score="" winner="false">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="74" ball_safe="74" corner_kicks="3" dangerous_attacks="42" fouls="14" free_kicks="17" goal_attempts="14" goal_kicks="11" offsides="1" red_card="1" saves="5" substitutions="3" throw_ins="14" yellow_card="5" shots_on_target="4" shots_off_target="10" shots_total="14" possessions="43"/>
+              </away>
+              <venue id="f46c970f-5901-4a16-90db-e4fb1ea8f2e7" name="Estadio Miguel Hidalgo" country_code="MEX" country="Mexico" city="Pachuca de Soto" capacity="30000" coordinates="20.105331,-98.756706" reference_id="sr:venue:2044"/>
+              <!-- 9608605/1936/36534 -->
+            </match>
+            <match id="1920039f-a2d9-45c9-8262-a6a7ad9469e6" status="closed" period="P2" scheduled="2016-07-17T00:30:00Z" clock="" scratched="false" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" reference_id="sr:match:8952621">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="ea86ac27-8e64-48bd-a578-e1d263f98d6b" name="National Womens Soccer League" reference_id="sr:tournamentgroup:1690"/>
+              <tournament id="2631d63d-f7ba-49f1-af80-b01a89fb0bcc" name="National Women's Soccer League" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" type="group" reference_id="sr:tournament:26540"/>
+              <round type="table" number="13" week="28"/>
+              <home id="6f946c7a-0dd7-408d-af9c-a8d38ff5c9dd" name="Houston" full_name="Houston Dash" alias="HDA" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:151006" formation="" score="3" regular_score="3" penalty_score="" winner="true">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="2" number="2"/>
+                </scoring>
+                <statistics/>
+              </home>
+              <away id="c3aab3de-0e94-48ce-a1e1-436eef7a0565" name="Portland Thorns" full_name="Portland Thorns FC" alias="PTH" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:151008" formation="" score="0" regular_score="0" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics/>
+              </away>
+              <venue id="4e74d253-2d54-4824-baf8-30b4c4bdf39e" name="BBVA Compass Stadium" country_code="USA" country="United States" city="Houston" capacity="22000" coordinates="29.752058,-95.352371" reference_id="sr:venue:4454"/>
+              <!-- 8952621/151006/151008 -->
+            </match>
+            <match id="ea97e7b2-741f-41f4-bcd9-bb9ed3ee84f3" status="closed" period="P2" scheduled="2016-07-17T01:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697670">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="5d539702-77f2-4fb1-80e5-94f4bd71c560" name="Colorado" full_name="Colorado Rapids" alias="COL" country_code="USA" country="United States" type="team" reference_id="sr:team:2510" formation="4-2-3-1" score="1" regular_score="1" penalty_score="" winner="true">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="91" ball_safe="99" corner_kicks="3" dangerous_attacks="47" fouls="7" free_kicks="16" goal_attempts="6" goal_kicks="12" offsides="6" saves="2" substitutions="2" throw_ins="26" yellow_card="1" shots_on_target="2" shots_off_target="4" shots_total="6" possessions="51"/>
+              </home>
+              <away id="0ca11d17-e01a-4685-8793-1d2128777bef" name="Kansas City" full_name="Sporting Kansas City" alias="SKC" country_code="USA" country="United States" type="team" reference_id="sr:team:2509" formation="4-3-3" score="0" regular_score="0" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="99" ball_safe="83" corner_kicks="8" dangerous_attacks="56" fouls="16" free_kicks="13" goal_attempts="5" goal_kicks="6" offsides="0" saves="1" substitutions="3" throw_ins="29" yellow_card="2" shots_on_target="2" shots_off_target="3" shots_total="5" possessions="49"/>
+              </away>
+              <venue id="359f851b-43e1-4e44-838b-dede120fb674" name="Dick's Sporting Goods Park" country_code="USA" country="United States" city="Commerce City" capacity="19680" coordinates="39.805676,-104.891800" reference_id="sr:venue:2302"/>
+              <!-- 8697670/2510/2509 -->
+            </match>
+            <match id="6cbec0b7-4695-4a98-b5df-d619fc33fad2" status="closed" period="P2" scheduled="2016-07-17T01:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697668">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="b4c42dd9-9405-4f6f-861e-931d744a3be8" name="Dallas" full_name="FC Dallas" alias="DAL" country_code="USA" country="United States" type="team" reference_id="sr:team:2512" formation="4-3-3" score="3" regular_score="3" penalty_score="" winner="true">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="109" ball_safe="89" corner_kicks="4" dangerous_attacks="53" fouls="10" free_kicks="8" goal_attempts="15" goal_kicks="7" offsides="2" saves="3" substitutions="3" throw_ins="20" shots_on_target="9" shots_off_target="6" shots_total="15" possessions="55"/>
+              </home>
+              <away id="7de6b0a1-e7c7-4a24-b04d-d0e00db01aeb" name="Chicago Fire" full_name="Chicago Fire" alias="CHI" country_code="USA" country="United States" type="team" reference_id="sr:team:2505" formation="4-4-2" score="1" regular_score="1" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="93" ball_safe="101" corner_kicks="5" dangerous_attacks="37" fouls="7" free_kicks="12" goal_attempts="8" goal_kicks="10" offsides="1" saves="6" substitutions="3" throw_ins="22" shots_on_target="4" shots_off_target="4" shots_total="8" possessions="45"/>
+              </away>
+              <venue id="be2c2421-9b4d-487d-af6b-069d631d021f" name="Toyota Stadium" country_code="USA" country="United States" city="Frisco" capacity="20500" coordinates="33.154327,-96.835213" reference_id="sr:venue:2298"/>
+              <!-- 8697668/2512/2505 -->
+            </match>
+            <match id="22b674ea-5ab3-457f-be7e-9711b904b886" status="closed" period="P2" scheduled="2016-07-17T02:00:00Z" clock="" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9608663">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" reference_id="sr:tournamentgroup:352"/>
+              <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" type="group" reference_id="sr:tournament:28"/>
+              <round type="table" number="1" week="28"/>
+              <home id="ec974edc-5dce-404e-9253-f5876c271549" name="Necaxa" full_name="Necaxa" alias="NCX" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1944" formation="4-4-2" score="0" regular_score="0" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="73" ball_safe="79" corner_kicks="3" dangerous_attacks="43" fouls="14" free_kicks="13" goal_attempts="4" goal_kicks="9" offsides="1" saves="2" substitutions="3" throw_ins="30" yellow_card="2" shots_on_target="3" shots_off_target="1" shots_total="4" possessions="51"/>
+              </home>
+              <away id="9ca06516-f133-42f7-931f-157bbba82999" name="Cruz Azul" full_name="Cruz Azul" alias="CAZ" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1947" formation="4-5-1" score="0" regular_score="0" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="83" ball_safe="79" corner_kicks="7" dangerous_attacks="45" fouls="11" free_kicks="15" goal_attempts="7" goal_kicks="4" offsides="2" saves="3" substitutions="3" throw_ins="24" yellow_card="1" shots_on_target="2" shots_off_target="5" shots_total="7" possessions="49"/>
+              </away>
+              <venue id="08df1ad0-fd00-4bcc-849c-f854d97ab0bb" name="Estadio Victoria" country_code="MEX" country="Mexico" city="Aguascalientes" capacity="35000" coordinates="21.880653,-102.275483" reference_id="sr:venue:12397"/>
+              <!-- 9608663/1944/1947 -->
+            </match>
+            <match id="941b3f79-c38d-46ec-9812-eabdaedd7c97" status="closed" period="P2" scheduled="2016-07-17T02:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697672">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="b78b9f61-0697-4347-a1b6-b7685a130eb1" name="Salt Lake" full_name="Real Salt Lake" alias="SAL" country_code="USA" country="United States" type="team" reference_id="sr:team:5133" formation="4-3-3" score="0" regular_score="0" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="79" ball_safe="74" corner_kicks="1" dangerous_attacks="38" fouls="13" free_kicks="20" goal_attempts="11" goal_kicks="9" offsides="0" saves="2" substitutions="3" throw_ins="21" yellow_card="1" shots_on_target="2" shots_off_target="9" shots_total="11" possessions="52"/>
+              </home>
+              <away id="bf1354b5-e5b2-4818-b1f6-a8584104bbfd" name="New England" full_name="New England Revolution" alias="NEE" country_code="USA" country="United States" type="team" reference_id="sr:team:2511" formation="4-2-3-1" score="0" regular_score="0" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="86" ball_safe="74" corner_kicks="6" dangerous_attacks="45" fouls="17" free_kicks="13" goal_attempts="8" goal_kicks="15" offsides="3" saves="2" substitutions="3" throw_ins="19" yellow_card="3" shots_on_target="2" shots_off_target="6" shots_total="8" possessions="48"/>
+              </away>
+              <venue id="45715ae7-c817-495c-baf9-7ebbe8585092" name="Rio Tinto Stadium" country_code="USA" country="United States" city="Sandy" capacity="20008" coordinates="40.582905,-111.893349" reference_id="sr:venue:2304"/>
+              <!-- 8697672/5133/2511 -->
+            </match>
+            <match id="fea90a8a-0628-4f44-ae8f-6d7e78020bcd" status="closed" period="P2" scheduled="2016-07-17T02:00:00Z" clock="" scratched="false" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" reference_id="sr:match:8952623">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="ea86ac27-8e64-48bd-a578-e1d263f98d6b" name="National Womens Soccer League" reference_id="sr:tournamentgroup:1690"/>
+              <tournament id="2631d63d-f7ba-49f1-af80-b01a89fb0bcc" name="National Women's Soccer League" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" type="group" reference_id="sr:tournament:26540"/>
+              <round type="table" number="13" week="28"/>
+              <home id="738e28be-c65f-4c84-ac1a-8952634fa626" name="Seattle Reign" full_name="Seattle Reign FC" alias="SRG" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:151010" formation="" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics/>
+              </home>
+              <away id="1486837b-a827-4774-92ad-aa8e99657779" name="New York Flash" full_name="Western New York Flash" alias="NYF" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:49787" formation="" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics/>
+              </away>
+              <venue id="9760f406-7cfe-4cc0-a0cc-c82eeaabd7a9" name="Memorial Stadium" country_code="USA" country="United States" city="Seattle" capacity="12000" coordinates="47.622811,-122.349886" reference_id="sr:venue:13932"/>
+              <!-- 8952623/151010/49787 -->
+            </match>
+            <match id="947bfb23-959d-4c70-892e-f8abd1eb5a6b" status="closed" period="P2" scheduled="2016-07-17T02:00:00Z" clock="" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9608719">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="true" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" reference_id="sr:tournamentgroup:352"/>
+              <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" type="group" reference_id="sr:tournament:28"/>
+              <round type="table" number="1" week="28"/>
+              <home id="8baedd04-7013-4d28-a1a6-32e51ef25d64" name="America" full_name="America de Mexico" alias="AME" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1939" formation="" score="2" regular_score="2" penalty_score="" winner="true">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="2" number="2"/>
+                </scoring>
+                <statistics ball_safe="70" corner_kicks="4" dangerous_attacks="53" yellow_card="0"/>
+              </home>
+              <away id="7f5ef57a-02a4-4165-9b39-a3453f9cdf03" name="Jaguares" full_name="Jaguares de Chiapas" alias="RSL" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1953" formation="" score="0" regular_score="0" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics ball_safe="77" corner_kicks="9" dangerous_attacks="51" yellow_card="1"/>
+              </away>
+              <venue id="e8057e4e-f756-45a9-8bfd-71adfe551a09" name="Azteca" country_code="MEX" country="Mexico" city="Mexico City" capacity="105000" coordinates="19.302773,-99.150452" reference_id="sr:venue:1004"/>
+              <!-- 9608719/1939/1953 -->
+            </match>
+            <match id="d47d8445-da37-484f-b455-19e8c3aebf6c" status="closed" period="P2" scheduled="2016-07-17T02:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697664">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="b9df6f63-ba46-4df9-afbd-f925bce7b012" name="Vancouver" full_name="Vancouver Whitecaps FC" alias="VAN" country_code="USA" country="United States" type="team" reference_id="sr:team:22010" formation="4-2-3-1" score="2" regular_score="2" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="74" ball_safe="76" corner_kicks="6" dangerous_attacks="38" fouls="15" free_kicks="10" goal_attempts="10" goal_kicks="9" offsides="1" saves="2" substitutions="3" throw_ins="20" yellow_card="1" shots_on_target="4" shots_off_target="6" shots_total="10" possessions="42"/>
+              </home>
+              <away id="ac3cbdd4-ccf8-449d-88b7-7ce21ff2455d" name="Orlando" full_name="Orlando City SC" alias="OSC" country_code="USA" country="United States" type="team" reference_id="sr:team:52237" formation="4-2-3-1" score="2" regular_score="2" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="75" ball_safe="78" corner_kicks="6" dangerous_attacks="42" fouls="9" free_kicks="16" goal_attempts="9" goal_kicks="8" offsides="1" saves="1" substitutions="2" throw_ins="15" yellow_card="1" shots_on_target="4" shots_off_target="5" shots_total="9" possessions="58"/>
+              </away>
+              <venue id="2c0d4057-2a1a-4102-b058-4d68b9ecacec" name="BC Place" country_code="CAN" country="Canada" city="Vancouver" capacity="21000" coordinates="49.276667,-123.111944" reference_id="sr:venue:2293"/>
+              <!-- 8697664/22010/52237 -->
+            </match>
+            <match id="08c717c2-f6e5-4615-b6f1-8175fdffd6f2" status="closed" period="P2" scheduled="2016-07-17T02:30:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697674">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="3660ff77-4d9c-4bfc-bb53-39356c29f9eb" name="San Jose" full_name="San Jose Earthquakes" alias="SJE" country_code="USA" country="United States" type="team" reference_id="sr:team:21825" formation="4-4-2" score="2" regular_score="2" penalty_score="" winner="true">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="82" ball_safe="92" corner_kicks="1" dangerous_attacks="37" fouls="12" free_kicks="6" goal_attempts="5" goal_kicks="15" offsides="3" red_card="2" saves="3" substitutions="3" throw_ins="16" yellow_card="1" shots_on_target="3" shots_off_target="2" shots_total="5" possessions="42"/>
+              </home>
+              <away id="71e60dd4-b0b1-4771-821b-09200d5c8874" name="Toronto" full_name="Toronto FC" alias="TOR" country_code="USA" country="United States" type="team" reference_id="sr:team:7080" formation="4-4-2" score="1" regular_score="1" penalty_score="" winner="false">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="115" ball_safe="82" corner_kicks="7" dangerous_attacks="78" fouls="5" free_kicks="15" goal_attempts="12" goal_kicks="3" offsides="1" red_card="0" saves="1" substitutions="3" throw_ins="26" yellow_card="0" shots_on_target="5" shots_off_target="7" shots_total="12" possessions="58"/>
+              </away>
+              <venue id="a4cee3dc-f2e3-475e-9d44-139e13a6d2eb" name="Avaya Stadium" country_code="USA" country="United States" city="San Jose" capacity="18000" coordinates="37.351389,-121.925000" reference_id="sr:venue:15670"/>
+              <!-- 8697674/21825/7080 -->
+            </match>
+            <match id="a9e6b4ac-e047-4387-a375-8cf971484301" status="closed" period="P2" scheduled="2016-07-17T17:00:00Z" clock="" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9608721">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" reference_id="sr:tournamentgroup:352"/>
+              <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" type="group" reference_id="sr:tournament:28"/>
+              <round type="table" number="1" week="28"/>
+              <home id="68a406c2-fc04-427a-95d0-d37d582f81df" name="Unam Pumas" full_name="Unam Pumas" alias="PUM" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1933" formation="4-4-2" score="1" regular_score="1" penalty_score="" winner="true">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="88" ball_safe="91" corner_kicks="1" dangerous_attacks="30" fouls="13" free_kicks="14" goal_attempts="5" goal_kicks="14" offsides="0" saves="4" substitutions="3" throw_ins="28" yellow_card="3" shots_on_target="2" shots_off_target="3" shots_total="5" possessions="38"/>
+              </home>
+              <away id="ae86d852-2b72-476e-aac1-204c94d7c234" name="G. Chivas" full_name="Guadalajara Chivas" alias="GDC" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1938" formation="4-2-3-1" score="0" regular_score="0" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="107" ball_safe="95" corner_kicks="10" dangerous_attacks="55" fouls="13" free_kicks="13" goal_attempts="9" goal_kicks="5" offsides="1" saves="2" substitutions="3" throw_ins="26" yellow_card="2" shots_on_target="3" shots_off_target="6" shots_total="9" possessions="62"/>
+              </away>
+              <venue id="3155a138-6894-49ce-bca1-768b8aba1a51" name="Estadio Olimpico Universitario" country_code="MEX" country="Mexico" city="Mexico City" capacity="52000" coordinates="19.331928,-99.192106" reference_id="sr:venue:4560"/>
+              <!-- 9608721/1933/1938 -->
+            </match>
+            <match id="b90d0b7a-8345-4a15-a3d2-2b2293323cbf" status="closed" period="P2" scheduled="2016-07-17T19:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697676">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="33fa3d0b-22a2-4e9d-b2dd-68057548ff06" name="Portland" full_name="Portland Timbers" alias="POR" country_code="USA" country="United States" type="team" reference_id="sr:team:22007" formation="4-2-3-1" score="3" regular_score="3" penalty_score="" winner="true">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="2" number="2"/>
+                </scoring>
+                <statistics attacks="108" ball_safe="108" corner_kicks="4" dangerous_attacks="39" fouls="12" free_kicks="10" goal_attempts="11" goal_kicks="13" offsides="2" saves="4" substitutions="3" throw_ins="15" yellow_card="1" shots_on_target="7" shots_off_target="4" shots_total="11" possessions="47"/>
+              </home>
+              <away id="dc0a40c9-5141-4366-95ef-56c999b7105c" name="Seattle" full_name="Seattle Sounders" alias="SEA" country_code="USA" country="United States" type="team" reference_id="sr:team:22009" formation="4-3-3" score="1" regular_score="1" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="98" ball_safe="91" corner_kicks="12" dangerous_attacks="57" fouls="9" free_kicks="14" goal_attempts="11" goal_kicks="8" offsides="1" saves="3" substitutions="3" throw_ins="14" yellow_card="2" shots_on_target="5" shots_off_target="6" shots_total="11" possessions="53"/>
+              </away>
+              <venue id="bb228539-599c-42c7-9a7f-e656284b33dc" name="Providence Park" country_code="USA" country="United States" city="Portland" capacity="20323" coordinates="45.521492,-122.691811" reference_id="sr:venue:2303"/>
+              <!-- 8697676/22007/22009 -->
+            </match>
+            <match id="a58aee54-b0cb-41fb-991b-e18e3b466476" status="closed" period="P2" scheduled="2016-07-17T20:00:00Z" clock="" scratched="false" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" reference_id="sr:match:9446881">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="843cfbca-4acf-48ca-a291-6ed9356570a6" name="Canada" country_code="CAN" country="Canada" reference_id="sr:category:388"/>
+              <tournament_group id="f77f2995-ab27-4330-a62f-67eca79774e6" name="Canadian Soccer League" reference_id="sr:tournamentgroup:482"/>
+              <tournament id="5091c40e-0c9c-4ff9-ae84-980ee5a303ec" name="Canadian Soccer League" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" type="group" reference_id="sr:tournament:4707"/>
+              <round type="table" number="1" week="28"/>
+              <home id="41db60ea-3e84-455b-9441-b267dfe78bfc" name="FC Ukraine United" full_name="FC Ukraine United" alias="FC " country_code="UNK" country="Unknown" type="team" reference_id="sr:team:257707" formation="" score="4" regular_score="4" penalty_score="" winner="true">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="3" number="2"/>
+                </scoring>
+                <statistics attacks="108" ball_safe="20" corner_kicks="3" dangerous_attacks="82" yellow_card="3"/>
+              </home>
+              <away id="fa34783c-28a5-43d0-93ad-10efb9bcfa84" name="Brantford Galaxy" full_name="Brantford Galaxy SC" alias="BRG" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:41851" formation="" score="2" regular_score="2" penalty_score="" winner="false">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="94" ball_safe="18" corner_kicks="0" dangerous_attacks="64" yellow_card="6"/>
+              </away>
+              <venue id="0eab9d5c-d3c3-4dc5-9ea0-4bb64a548b97" name="Fc Ukraine Stadium" country_code="CAN" country="Canada" city="Toronto" capacity="500" coordinates="43.774756,-79.444052" reference_id="sr:venue:18245"/>
+              <!-- 9446881/257707/41851 -->
+            </match>
+            <match id="91449ef2-a6f1-44d3-81a3-9e87103b154f" status="closed" period="P2" scheduled="2016-07-17T21:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697678">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="c6c59cc6-d4b7-40d0-bf4a-ca044d75cbb4" name="Montreal" full_name="Montreal Impact" alias="MON" country_code="USA" country="United States" type="team" reference_id="sr:team:22006" formation="4-4-2" score="1" regular_score="1" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="104" ball_safe="85" corner_kicks="11" dangerous_attacks="58" fouls="10" free_kicks="10" goal_attempts="10" goal_kicks="3" offsides="1" saves="1" substitutions="3" throw_ins="20" yellow_card="3" shots_on_target="5" shots_off_target="5" shots_total="10" possessions="48"/>
+              </home>
+              <away id="dfb39488-8712-4336-9fc2-74b70607f05e" name="NYC FC" full_name="New York City FC" alias="NYC" country_code="USA" country="United States" type="team" reference_id="sr:team:167510" formation="4-3-3" score="3" regular_score="3" penalty_score="" winner="true">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="81" ball_safe="93" corner_kicks="5" dangerous_attacks="45" fouls="10" free_kicks="11" goal_attempts="6" goal_kicks="11" offsides="0" saves="4" substitutions="3" throw_ins="20" yellow_card="2" shots_on_target="4" shots_off_target="2" shots_total="6" possessions="52"/>
+              </away>
+              <venue id="db79eaa0-b426-45a1-aed6-400ab6d6e86b" name="Saputo Stadium" country_code="CAN" country="Canada" city="Montreal" capacity="20801" coordinates="45.563075,-73.552656" reference_id="sr:venue:4154"/>
+              <!-- 8697678/22006/167510 -->
+            </match>
+            <match id="6d340866-6d3b-411f-bf5c-0bab12fe8295" status="closed" period="P2" scheduled="2016-07-17T21:00:00Z" clock="" scratched="false" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" reference_id="sr:match:8952629">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="ea86ac27-8e64-48bd-a578-e1d263f98d6b" name="National Womens Soccer League" reference_id="sr:tournamentgroup:1690"/>
+              <tournament id="2631d63d-f7ba-49f1-af80-b01a89fb0bcc" name="National Women's Soccer League" season_id="abb85d78-e6da-4a9b-9409-05a7b0ed85a5" type="group" reference_id="sr:tournament:26540"/>
+              <round type="table" number="13" week="28"/>
+              <home id="66f6cafd-45ef-4e43-a4ec-95b97be4c424" name="Boston" full_name="Boston Breakers" alias="BOS" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:2514" formation="" score="2" regular_score="2" penalty_score="" winner="false">
+                <scoring>
+                  <half points="1" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="86" ball_safe="26" corner_kicks="3" dangerous_attacks="32"/>
+              </home>
+              <away id="dd88c0fd-ff85-4e0b-997f-e9f69609b0b3" name="Sky Blue" full_name="Sky Blue FC" alias="SKY" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:34718" formation="" score="3" regular_score="3" penalty_score="" winner="true">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="99" ball_safe="47" corner_kicks="6" dangerous_attacks="33"/>
+              </away>
+              <venue id="070427b5-0365-481b-b0df-950d75a66063" name="Harvard Stadium" country_code="USA" country="United States" city="Boston, MA" capacity="30323" coordinates="42.366389,-71.127222" reference_id="sr:venue:4310"/>
+              <!-- 8952629/2514/34718 -->
+            </match>
+            <match id="75704076-453d-4e3e-9492-1a7e76eeea0e" status="closed" period="P2" scheduled="2016-07-17T22:30:00Z" clock="" scratched="false" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" reference_id="sr:match:9446879">
+              <coverage lineups="0" tactical_lineups="false" corner_facts="false" extended_facts="false" deep_facts="false" statistics="true"/>
+              <category id="843cfbca-4acf-48ca-a291-6ed9356570a6" name="Canada" country_code="CAN" country="Canada" reference_id="sr:category:388"/>
+              <tournament_group id="f77f2995-ab27-4330-a62f-67eca79774e6" name="Canadian Soccer League" reference_id="sr:tournamentgroup:482"/>
+              <tournament id="5091c40e-0c9c-4ff9-ae84-980ee5a303ec" name="Canadian Soccer League" season_id="388cd6b3-a4ff-4aed-8a1b-82869e139263" type="group" reference_id="sr:tournament:4707"/>
+              <round type="table" number="1" week="28"/>
+              <home id="0ca3fa50-d769-4c02-ba7f-87260c89f219" name="Shooters" full_name="Region Shooters" alias="YRS" country_code="CAN" country="Canada" type="team" reference_id="sr:team:22777" formation="" score="4" regular_score="4" penalty_score="" winner="true">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="2" number="2"/>
+                </scoring>
+                <statistics attacks="116" ball_safe="28" corner_kicks="2" dangerous_attacks="80" yellow_card="0"/>
+              </home>
+              <away id="6cb5ea34-5c8b-43d8-a587-09134d62fc24" name="Toronto Atomic" full_name="Toronto Atomic FC" alias="ATO" country_code="UNK" country="Unknown" type="team" reference_id="sr:team:202453" formation="" score="0" regular_score="0" penalty_score="" winner="false">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="107" ball_safe="16" corner_kicks="2" dangerous_attacks="77" yellow_card="2"/>
+              </away>
+              <venue id="265782fc-26bf-4fd8-8fc3-110e82873ae6" name="St. Joan Of Arc Turf Field" country_code="CAN" country="Canada" city="Maple" capacity="1000" coordinates="43.861538,-79.516834" reference_id="sr:venue:4164"/>
+              <!-- 9446879/22777/202453 -->
+            </match>
+            <match id="19f7c29d-1e4f-4f6f-ac7b-4f624cf6e1eb" status="closed" period="P2" scheduled="2016-07-17T23:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697680">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <round type="table" number="19" week="28"/>
+              <home id="ca2ff256-706c-41cb-b0db-6c2e611c2bb7" name="Philadelphia" full_name="Philadelphia Union" alias="PHI" country_code="USA" country="United States" type="team" reference_id="sr:team:39833" formation="4-2-3-1" score="2" regular_score="2" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="2" number="2"/>
+                </scoring>
+                <statistics attacks="91" ball_safe="110" corner_kicks="7" dangerous_attacks="38" fouls="10" free_kicks="17" goal_attempts="12" goal_kicks="5" offsides="9" red_card="1" saves="3" substitutions="3" throw_ins="18" yellow_card="2" shots_on_target="8" shots_off_target="4" shots_total="12" possessions="53"/>
+              </home>
+              <away id="443f4c7c-4a1e-4062-b04d-d3fcfec9838b" name="New York" full_name="NY Red Bulls" alias="NYRB" country_code="USA" country="United States" type="team" reference_id="sr:team:2506" formation="4-2-3-1" score="2" regular_score="2" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="2" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="110" ball_safe="95" corner_kicks="4" dangerous_attacks="42" fouls="16" free_kicks="19" goal_attempts="7" goal_kicks="10" offsides="1" red_card="0" saves="6" substitutions="3" throw_ins="19" yellow_card="2" shots_on_target="5" shots_off_target="2" shots_total="7" possessions="47"/>
+              </away>
+              <venue id="bcd71bfd-4d7f-44a9-8b4c-c4585a045972" name="Talen Energy Stadium" country_code="USA" country="United States" city="Chester" capacity="18500" coordinates="39.832794,-75.378479" reference_id="sr:venue:2301"/>
+              <!-- 8697680/39833/2506 -->
+            </match>
+            <match id="1c391342-8126-4939-a24b-d9848551aa68" status="closed" period="P2" scheduled="2016-07-17T23:00:00Z" clock="" scratched="false" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" reference_id="sr:match:9608841">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="ab5bfdbe-ed48-45e8-a6b9-eda3a8aaad3b" name="Mexico" country_code="MEX" country="Mexico" reference_id="sr:category:12"/>
+              <tournament_group id="3baac5eb-2bd1-4561-ab76-b96d267dfe2a" name="Primera Division" reference_id="sr:tournamentgroup:352"/>
+              <tournament id="3022ecee-5b9c-4e48-b6f8-7b0338e88b0f" name="Primera Division, Apertura" season_id="72a31835-d37e-470f-8370-b6b5e278fe60" type="group" reference_id="sr:tournament:28"/>
+              <round type="table" number="1" week="28"/>
+              <home id="5dd96f68-1a54-4b31-93c2-e7c2a70cc0b1" name="Santos" full_name="Santos Laguna" alias="SNT" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1948" formation="4-2-2-2" score="0" regular_score="0" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="78" ball_safe="77" corner_kicks="8" dangerous_attacks="41" fouls="13" free_kicks="13" goal_attempts="8" goal_kicks="5" offsides="1" saves="4" substitutions="3" throw_ins="13" yellow_card="1" shots_on_target="5" shots_off_target="3" shots_total="8" possessions="41"/>
+              </home>
+              <away id="d733c2ab-d2fd-4ee2-9025-e3b9b9f051e4" name="Tigres" full_name="UANL Tigres" alias="TIG" country_code="MEX" country="Mexico" type="team" reference_id="sr:team:1940" formation="4-2-3-1" score="0" regular_score="0" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="96" ball_safe="95" corner_kicks="8" dangerous_attacks="48" fouls="11" free_kicks="14" goal_attempts="6" goal_kicks="8" offsides="2" saves="2" substitutions="3" throw_ins="12" yellow_card="0" shots_on_target="4" shots_off_target="2" shots_total="6" possessions="59"/>
+              </away>
+              <venue id="46c3a513-6f5b-4138-a8f0-3fda47d70507" name="Estadio Corona" country_code="MEX" country="Mexico" city="Torreon" capacity="30000" coordinates="25.555000,-103.403056" reference_id="sr:venue:2400"/>
+              <!-- 9608841/1948/1940 -->
+            </match>
+          </matches>
+        </boxscore>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 05:49:20 GMT
+recorded_with: VCR 3.0.3

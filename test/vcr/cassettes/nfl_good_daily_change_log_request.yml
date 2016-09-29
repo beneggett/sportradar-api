@@ -21,17 +21,17 @@ http_interactions:
       Content-Type:
       - application/xml;charset=utf-8
       Date:
-      - Thu, 29 Sep 2016 01:39:12 GMT
+      - Thu, 29 Sep 2016 05:39:53 GMT
       Expires:
-      - Thu, 29 Sep 2016 01:39:14 GMT
+      - Thu, 29 Sep 2016 05:39:55 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-120.mashery.com
+      - prod-j-worker-us-east-1b-127.mashery.com
       X-Packagekey-Quota-Allotted:
       - '30000'
       X-Packagekey-Quota-Current:
-      - '7815'
+      - '7891'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
@@ -46,7 +46,7 @@ http_interactions:
       encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
-        <!-- Generation started @ 2016-09-29 01:31:52 +0000 -->
+        <!-- Generation started @ 2016-09-29 03:51:52 +0000 -->
         <league xmlns="http://feed.elasticstats.com/schema/nfl/premium/changelog-v2.0.xsd" id="3c6d318a-6164-4290-9bbc-bf9bb21cc4b8" name="National Football League" alias="NFL">
           <changelog start_time="2016-09-28T04:00:00+00:00" end_time="2016-09-29T03:59:59+00:00">
             <profiles>
@@ -327,7 +327,7 @@ http_interactions:
             </games>
           </changelog>
         </league>
-        <!-- Generation ended @ 2016-09-29 01:31:52 +0000 -->
+        <!-- Generation ended @ 2016-09-29 03:51:52 +0000 -->
     http_version: 
-  recorded_at: Thu, 29 Sep 2016 01:39:13 GMT
+  recorded_at: Thu, 29 Sep 2016 05:39:52 GMT
 recorded_with: VCR 3.0.3
