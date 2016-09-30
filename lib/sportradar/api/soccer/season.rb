@@ -6,20 +6,7 @@ module Sportradar
       def initialize(data)
         @response = data
         @year = data["year"]
-        set_statistics
-
-      end
-
-      private
-
-      def set_statistics
-        if response["statistic"]
-          if response["statistic"].is_a?(Array)
-            @statistics = response["statistic"].map {|statistic| Sportradar::Api::Soccer::Statistic.new statistic }
-          elsif response["statistic"].is_a?(Hash)
-            @statistics = [ Sportradar::Api::Soccer::Statistic.new(response["statistic"]) ]
-          end
-        end
+        @statistics = parse_into_array(selector: response["statistic"], klass: Sportradar::Api::Soccer::Statistic)  if response["statistic"]
       end
 
     end

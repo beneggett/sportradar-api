@@ -12,20 +12,7 @@ module Sportradar
         @season = data["season"]
         @reference_id = data["reference_id"]
         @coverage = OpenStruct.new data["coverage"] if data["coverage"]
-        set_teams
-
-      end
-
-      private
-
-      def set_teams
-        if response["team"]
-          if response["team"].is_a?(Array)
-            @teams = response["team"].map {|team| Sportradar::Api::Soccer::Team.new team }
-          elsif response["team"].is_a?(Hash)
-            @teams = [ Sportradar::Api::Soccer::Team.new(response["team"]) ]
-          end
-        end
+        @teams = parse_into_array(selector: response["teams"], klass: Sportradar::Api::Soccer::Team)  if response["teams"]
       end
 
     end

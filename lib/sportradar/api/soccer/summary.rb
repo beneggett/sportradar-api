@@ -5,19 +5,7 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        set_matches
-      end
-
-      private
-
-      def set_matches
-        if response["summary"]["matches"]["match"]
-          if response["summary"]["matches"]["match"].is_a?(Array)
-            @matches = response["summary"]["matches"]["match"].map {|x| Sportradar::Api::Soccer::Match.new x }
-          elsif response["summary"]["matches"]["match"].is_a?(Hash)
-            @matches = [ Sportradar::Api::Soccer::Match.new(response["summary"]["matches"]["match"]) ]
-          end
-        end
+        @matches = parse_into_array(selector: response["summary"]["matches"]["match"], klass: Sportradar::Api::Soccer::Match)  if response['summary'] && response['summary']['matches'] && response["summary"]["matches"]["match"]
       end
 
     end

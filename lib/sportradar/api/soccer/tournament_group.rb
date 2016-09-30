@@ -16,8 +16,7 @@ module Sportradar
         @top_assists = parse_players(data["top_assists"]["player"]) if data["top_assists"] && data["top_assists"]["player"]
         @top_cards = parse_players(data["top_cards"]["player"]) if data["top_cards"] && data["top_cards"]["player"]
         @top_points = parse_players(data["top_points"]["player"]) if data["top_points"] && data["top_points"]["player"]
-        set_tournaments
-
+        @tournaments = parse_into_array(selector: response["tournaments"], klass: Sportradar::Api::Soccer::Tournament)  if response["tournaments"]
       end
 
       private
@@ -30,15 +29,6 @@ module Sportradar
         end
       end
 
-      def set_tournaments
-        if response["tournament"]
-          if response["tournament"].is_a?(Array)
-            @tournaments = response["tournament"].map {|x| Sportradar::Api::Soccer::Tournament.new x }
-          elsif response["tournament"].is_a?(Hash)
-            @tournaments = [ Sportradar::Api::Soccer::Tournament.new(response["tournament"]) ]
-          end
-        end
-      end
 
     end
   end

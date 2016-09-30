@@ -5,7 +5,7 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        set_matches
+        @matches = parse_into_array(selector: response["schedule"]["matches"]["match"], klass: Sportradar::Api::Soccer::Match)  if response['schedule'] && response['schedule']['matches'] && response["schedule"]["matches"]["match"]
       end
 
       def league(league_name)
@@ -14,17 +14,6 @@ module Sportradar
 
       def available_leagues
         matches.map {|match| match.tournament_group.name}.uniq
-      end
-
-      private
-      def set_matches
-        if response["schedule"]["matches"]["match"]
-          if response["schedule"]["matches"]["match"].is_a?(Array)
-            @matches = response["schedule"]["matches"]["match"].map {|x| Sportradar::Api::Soccer::Match.new x }
-          elsif response["schedule"]["matches"]["match"].is_a?(Hash)
-            @matches = [ Sportradar::Api::Soccer::Match.new(response["schedule"]["matches"]["match"]) ]
-          end
-        end
       end
 
     end

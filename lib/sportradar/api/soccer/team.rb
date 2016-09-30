@@ -32,6 +32,8 @@ module Sportradar
         @position = data["position"]
         @is_player = data["is_player"]
         @is_manager = data["is_manager"]
+
+        # Standings generate these
         @home = OpenStruct.new data["home"] if data["home"]
         @away = OpenStruct.new data["away"] if data["away"]
 
@@ -39,9 +41,8 @@ module Sportradar
         parse_scoring if scoring
 
         @statistics =  OpenStruct.new data["statistics"] if data["statistics"]
-        @players = data["players"]["player"].map {|player| Sportradar::Api::Soccer::Player.new player } if data["players"]
-
-        @players = data["roster"]["player"].map {|player| Sportradar::Api::Soccer::Player.new player } if data["roster"]
+        @players = parse_into_array(selector: data["players"]["player"], klass: Sportradar::Api::Soccer::Player)  if response['players'] && response['players']['player']
+        @players = parse_into_array(selector: data["roster"]["player"], klass: Sportradar::Api::Soccer::Player)  if response['roster'] && response['roster']['player']
         @manager =  Sportradar::Api::Soccer::Player.new data["manager"] if data["manager"]
       end
 
