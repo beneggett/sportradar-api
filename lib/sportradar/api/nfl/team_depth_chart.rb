@@ -13,15 +13,15 @@ module Sportradar
       end
 
       def offense
-        @offense ||= Sportradar::Api::Nfl::DepthChart.new(response['offense'])
+        @offense ||= Sportradar::Api::Nfl::DepthChart.new(response['offense']) if response['offense']
       end
 
       def defense
-        @defense ||= Sportradar::Api::Nfl::DepthChart.new(response['defense'])
+        @defense ||= Sportradar::Api::Nfl::DepthChart.new(response['defense']) if response['defense']
       end
 
       def special_teams
-        @special_teams ||= Sportradar::Api::Nfl::DepthChart.new(response['special_teams'])
+        @special_teams ||= Sportradar::Api::Nfl::DepthChart.new(response['special_teams']) if response['special_teams']
       end
 
       def team

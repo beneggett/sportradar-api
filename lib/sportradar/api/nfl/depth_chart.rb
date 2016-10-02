@@ -11,6 +11,7 @@ module Sportradar
       def team(number)
         teams[number]
       end
+
       def each
         populate_teams
         teams.each { |team| yield team }

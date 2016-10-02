@@ -209,9 +209,9 @@ class Sportradar::Api::NflTest < Minitest::Test
     end
   end
 
-  def test_it_makes_a_good_daily_change_log_request
-    VCR.use_cassette("nfl good daily_change_log request") do
-      request = Sportradar::Api::Nfl.new.daily_change_log
+  def test_it_makes_a_good_daily_changelog_request
+    VCR.use_cassette("nfl good daily_changelog request") do
+      request = Sportradar::Api::Nfl.new.daily_changelog
       assert_kind_of Sportradar::Api::Nfl::Changelog, request
     end
   end

@@ -39,7 +39,11 @@ module Sportradar
 
       def weekly_injuries(week = 1, year = Date.today.year, season = "reg")
         response = get request_url("seasontd/#{ week_path(year, season, week) }/injuries")
-        Sportradar::Api::Nfl::Season.new response["season"]  if response.success? && response["season"]
+        if response.success? && response["season"]
+          Sportradar::Api::Nfl::Season.new response["season"]
+        else
+          response
+        end
       end
 
       # past_game_id = "0141a0a5-13e5-4b28-b19f-0c3923aaef6e"
@@ -136,7 +140,7 @@ module Sportradar
         # TODO Needs implement rankings/records/stats on team
       end
 
-      def daily_change_log(date = Date.today)
+      def daily_changelog(date = Date.today)
         response = get request_url("league/#{date_path(date)}/changes")
        if response.success? && response["league"] && response["league"]["changelog"]
          Sportradar::Api::Nfl::Changelog.new response["league"]["changelog"]

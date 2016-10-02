@@ -27,49 +27,63 @@ module Sportradar
         @penalty_yards   = data["penalty_yards"]
         @return_yards    = data["return_yards"]
       end
+
       def rushing
-        @rushing       ||= Sportradar::Api::Football::StatPack::Rushing.new(response["rushing"])
+        @rushing       ||= Sportradar::Api::Football::StatPack::Rushing.new(response["rushing"]) if response["rushing"]
       end
+
       def receiving
-        @receiving     ||= Sportradar::Api::Football::StatPack::Receiving.new(response["receiving"])
+        @receiving     ||= Sportradar::Api::Football::StatPack::Receiving.new(response["receiving"]) if response["receiving"]
       end
+
       def punts
-        @punts         ||= Sportradar::Api::Football::StatPack::Punts.new(response["punts"])
+        @punts         ||= Sportradar::Api::Football::StatPack::Punts.new(response["punts"]) if response["punts"]
       end
+
       def punt_returns
-        @punt_returns  ||= Sportradar::Api::Football::StatPack::PuntReturns.new(response["punt_returns"])
+        @punt_returns  ||= Sportradar::Api::Football::StatPack::PuntReturns.new(response["punt_returns"]) if response["punt_returns"]
       end
+
       def penalties
-        @penalties     ||= Sportradar::Api::Football::StatPack::Penalties.new(response["penalties"])
+        @penalties     ||= Sportradar::Api::Football::StatPack::Penalties.new(response["penalties"]) if response["penalties"]
       end
+
       def passing
-        @passing       ||= Sportradar::Api::Football::StatPack::Passing.new(response["passing"])
+        @passing       ||= Sportradar::Api::Football::StatPack::Passing.new(response["passing"]) if response["passing"]
       end
+
       def misc_returns
-        @misc_returns  ||= Sportradar::Api::Football::StatPack::MiscReturns.new(response["misc_returns"])
+        @misc_returns  ||= Sportradar::Api::Football::StatPack::MiscReturns.new(response["misc_returns"]) if response["misc_returns"]
       end
+
       def kickoffs
-        @kickoffs      ||= Sportradar::Api::Football::StatPack::Kickoffs.new(response["kickoffs"])
+        @kickoffs      ||= Sportradar::Api::Football::StatPack::Kickoffs.new(response["kickoffs"]) if response["kickoffs"]
       end
+
       def kick_returns
-        @kick_returns  ||= Sportradar::Api::Football::StatPack::KickReturns.new(response["kick_returns"])
+        @kick_returns  ||= Sportradar::Api::Football::StatPack::KickReturns.new(response["kick_returns"]) if response["kick_returns"]
       end
+
       def int_returns
-        @int_returns   ||= Sportradar::Api::Football::StatPack::IntReturns.new(response["int_returns"])
+        @int_returns   ||= Sportradar::Api::Football::StatPack::IntReturns.new(response["int_returns"]) if response["int_returns"]
       end
+
       def fumbles
-        @fumbles       ||= Sportradar::Api::Football::StatPack::Fumbles.new(response["fumbles"])
+        @fumbles       ||= Sportradar::Api::Football::StatPack::Fumbles.new(response["fumbles"]) if response["fumbles"]
       end
+
       def field_goals
-        @field_goals   ||= Sportradar::Api::Football::StatPack::FieldGoals.new(response["field_goals"])
+        @field_goals   ||= Sportradar::Api::Football::StatPack::FieldGoals.new(response["field_goals"]) if response["field_goals"]
       end
+
       def extra_points
-        @extra_points  ||= Sportradar::Api::Football::StatPack::ExtraPoints.new(response["extra_points"])
+        @extra_points  ||= Sportradar::Api::Football::StatPack::ExtraPoints.new(response["extra_points"]) if response["extra_points"]
       end
+
       def defense
-        @defense       ||= Sportradar::Api::Football::StatPack::Defense.new(response["defense"])
+        @defense       ||= Sportradar::Api::Football::StatPack::Defense.new(response["defense"]) if response["defense"]
       end
-        
+
     end
   end
 end
