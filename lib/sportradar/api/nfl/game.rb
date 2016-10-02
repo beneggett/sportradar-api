@@ -49,6 +49,9 @@ module Sportradar
         end
 
       end
+      def sport_league
+        'NFL'.freeze
+      end
 
       def current_score
         "#{summary.home.points}-#{summary.away.points}" if summary
