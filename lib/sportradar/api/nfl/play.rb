@@ -20,12 +20,17 @@ module Sportradar
         @sequence = data["sequence"]
         @start_situation = Sportradar::Api::Nfl::Situation.new data["start_situation"] if data["start_situation"]
         @statistics = OpenStruct.new data["statistics"] if data["statistics"] # TODO Implement statistics?
-        if @statistics
-          play_stats = @statistics.penalty || @statistics.rush || @statistics.return || @statistics.receive
-          @player_id = play_stats.dig('player', 'id') if play_stats
-        end
+        parse_player if @statistics
         @type = data["type"]
         @wall_clock = data["wall_clock"]
+      end
+
+      def parse_player
+        play_stats = @statistics.penalty || @statistics.rush || @statistics.return || @statistics.receive
+        if play_stats.is_a?(Array)
+          play_stats = play_stats.first
+        end
+        @player_id = play_stats.dig('player', 'id') if play_stats
       end
 
     end

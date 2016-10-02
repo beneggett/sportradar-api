@@ -7,7 +7,7 @@ module Sportradar
         @attempts          = response["attempts"]
         @completions       = response["completions"]
         @cmp_pct           = response["cmp_pct"]
-        # @yards             = response["yards"]
+        # @yards             = response["yards"] # 'yards' is air yards, which does not include sack yardage. air_yards is for college, net_yards for NFL
         @avg_yards         = response["avg_yards"]
         @sacks             = response["sacks"]
         @sack_yards        = response["sack_yards"]
