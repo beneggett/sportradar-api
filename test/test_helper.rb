@@ -12,7 +12,9 @@ SimpleCov.formatters = [
   CodeClimate::TestReporter::Formatter
 ]
 
-SimpleCov.start
+SimpleCov.start do
+  skip_token 'skip_test_coverage'
+end
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'sportradar/api'
 require 'minitest/autorun'

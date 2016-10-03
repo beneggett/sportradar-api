@@ -43,12 +43,13 @@ module Sportradar
         @broadcast = Sportradar::Api::Nfl::Broadcast.new data["broadcast"] if data["broadcast"]
 
         if data["team"]
-          @stats = data["team"].map { |hash| [hash["id"], Sportradar::Api::Nfl::GameStatistic.new(hash)] }.to_h
+          @stats = data["team"].map { |team_stat| [team_stat["id"], Sportradar::Api::Nfl::GameStatistic.new(team_stat)] }.to_h
           @home.stats = @stats[@home.id]
           @away.stats = @stats[@away.id]
         end
 
       end
+
       def sport_league
         'NFL'.freeze
       end

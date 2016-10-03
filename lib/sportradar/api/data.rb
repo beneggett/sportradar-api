@@ -19,6 +19,14 @@ module Sportradar
         end
       end
 
+      def parse_out_hashes(data_element)
+        if data_element && data_element.is_a?(Array)
+          data_element.find {|elem| elem.is_a?(Hash) }
+        else
+          data_element
+        end
+      end
+
     end
 
   end

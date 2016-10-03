@@ -5,9 +5,9 @@ module Sportradar
 
       def set_stats
         kick_data = response['kicks'] || response
-        @attempts = kick_response["attempts"]
-        @made     = kick_response["made"]
-        @blocked  = kick_response["blocked"]
+        @attempts = kick_data["attempts"]
+        @made     = kick_data["made"]
+        @blocked  = kick_data["blocked"]
         if response['conversions']
           @pass_attempts      = response["pass_attempts"]
           @pass_successes     = response["pass_successes"]
@@ -24,7 +24,7 @@ module Sportradar
 end
 
 # # sample response
-# extra_points = 
+# extra_points =
 #   {"kicks"=>
 #     {"player"=>
 #       [
