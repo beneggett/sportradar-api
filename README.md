@@ -65,6 +65,8 @@ Or install it yourself as:
 
 ## Usage
 
+TODO: Add some usage instructions.
+
 ### Configuration
 
 Manage your ruby environment through `.ruby-version` and `.ruby-gemset` files.
