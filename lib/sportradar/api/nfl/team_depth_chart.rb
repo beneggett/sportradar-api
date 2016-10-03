@@ -32,11 +32,12 @@ module Sportradar
         [:offense, :defense, :special_teams].each { |type| yield type, send(type) }
       end
 
-      private
+      # These aren't ever used, but handy if you need to invoke for testing
+      # private
 
-      def set_charts
-        [offense, defense, special_teams]
-      end
+      # def set_charts
+      #   [offense, defense, special_teams]
+      # end
 
     end
   end
