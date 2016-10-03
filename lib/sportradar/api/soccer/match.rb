@@ -18,12 +18,12 @@ module Sportradar
         @tournament = Sportradar::Api::Soccer::Tournament.new data["tournament"] if data["tournament"]
         @tournament_group = Sportradar::Api::Soccer::TournamentGroup.new data["tournament_group"] if data["tournament_group"]
 
-        @away = Sportradar::Api::Soccer::Team.new data["away"]
-        @home = Sportradar::Api::Soccer::Team.new data["home"]
+        @away = Sportradar::Api::Soccer::Team.new data["away"] if data["away"]
+        @home = Sportradar::Api::Soccer::Team.new data["home"] if data["home"]
         @venue = Sportradar::Api::Soccer::Venue.new data["venue"] if data["venue"]
 
         @future_game = @scheduled > Time.now.utc
-        @winner = find_winner unless future_game
+        @winner = find_winner if @home && @away && !future_game
 
         # Actual stats from match summary
         @period = data["period"]

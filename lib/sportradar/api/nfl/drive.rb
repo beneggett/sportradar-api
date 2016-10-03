@@ -17,26 +17,8 @@ module Sportradar
         @scoring_drive = data["scoring_drive"]
         @quarter = Sportradar::Api::Nfl::Quarter.new data["quarter"] if data["quarter"]
         @team = Sportradar::Api::Nfl::Team.new data["team"] if data["team"]
-        set_plays
-
-      end
-
-      private
-
-      def set_plays
-        if response["plays"] && response["plays"]["play"]
-          if response["plays"]["play"].is_a?(Array)
-            @plays = response["plays"]["play"].map {|play| Sportradar::Api::Nfl::Play.new play }
-          elsif response["plays"]["play"].is_a?(Hash)
-            @plays = [ Sportradar::Api::Nfl::Play.new(response["plays"]["play"]) ]
-          end
-        elsif response["play"]
-          if response["play"].is_a?(Array)
-            @plays = response["play"].map {|play| Sportradar::Api::Nfl::Play.new play }
-          elsif response["play"].is_a?(Hash)
-            @plays = [ Sportradar::Api::Nfl::Play.new(response["play"]) ]
-          end
-        end
+        @plays = parse_into_array(selector: response["play"], klass: Sportradar::Api::Nfl::Play) if response["play"]
+        @plays ||= parse_into_array(selector: response["plays"]["play"], klass: Sportradar::Api::Nfl::Play) if response["plays"] && response["plays"]["play"]
       end
 
     end

@@ -10,6 +10,7 @@ module Sportradar
         @penalties = response.dig('penalties')
         @yards     = response.dig('yards')
       end
+
       def formatted
         "#{count}-#{yards}"
       end

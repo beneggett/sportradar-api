@@ -16,7 +16,7 @@ module Sportradar
         @credit = data["credit"]
         @content = data["content"]["long"] if data["content"] && data["content"]["long"]
         @provider = OpenStruct.new(data["provider"]) if data["provider"]
-        set_references
+        @references = parse_into_array(selector: response["refs"]["ref"], klass: Sportradar::Api::Content::Reference) if response["refs"] && response["refs"]["ref"]
       end
 
       def transaction?
@@ -25,17 +25,6 @@ module Sportradar
 
       def injury?
         injury == 'true'
-      end
-
-      private
-      def set_references
-        if response["refs"] && response["refs"]["ref"]
-          if response["refs"]["ref"].is_a?(Array)
-            @references = response["refs"]["ref"].map {|x| Sportradar::Api::Content::Reference.new x }
-          elsif response["refs"]["ref"].is_a?(Hash)
-            @references = [ Sportradar::Api::Content::Reference.new(response["refs"]["ref"]) ]
-          end
-        end
       end
 
     end

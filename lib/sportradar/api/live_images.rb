@@ -12,7 +12,11 @@ module Sportradar
 
       def daily_manifest(date = Date.today )
         response = get request_url("#{image_type }/#{date.to_s}/manifests/all_assets")
-        Sportradar::Api::Images::AssetList.new response["assetlist"]  if response.success? && response["assetlist"]
+        if response.success? && response["assetlist"]
+          Sportradar::Api::Images::AssetList.new response["assetlist"]
+        else
+          response
+        end
       end
       alias_method :all_images, :daily_manifest
 

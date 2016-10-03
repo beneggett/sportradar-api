@@ -3,7 +3,6 @@ module Sportradar
     class Nfl::Franchise < Data
       attr_accessor :response, :name, :alias
 
-
       def initialize(data)
         @response = data
         @name = data["name"]

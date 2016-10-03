@@ -14,7 +14,7 @@ module Sportradar
     end
 
     class Config
-      attr_accessor :api_key, :api_timeout, :use_ssl, :format
+      attr_accessor :api_timeout, :use_ssl, :format
 
       def initialize
         @api_key = ENV['API_KEY']
@@ -24,10 +24,9 @@ module Sportradar
       end
 
       def reset
-        self.api_key = ENV['API_KEY']
-        self.api_timeout = ENV.fetch('SPORTRADAR_API_TIMEOUT', 15 )
-        self.use_ssl = ENV.fetch('SPORTRADAR_API_USE_SSL', true)
-        self.format = ENV.fetch("SPORTRADAR_API_FORMAT", :xml).to_s
+        @api_timeout = ENV.fetch('SPORTRADAR_API_TIMEOUT', 15 )
+        @use_ssl = ENV.fetch('SPORTRADAR_API_USE_SSL', true)
+        @format = ENV.fetch("SPORTRADAR_API_FORMAT", :xml).to_s
       end
     end
   end

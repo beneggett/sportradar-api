@@ -19,13 +19,14 @@ module Sportradar
         @scoring_play = data["scoring_play"]
         @sequence = data["sequence"]
         @start_situation = Sportradar::Api::Nfl::Situation.new data["start_situation"] if data["start_situation"]
-        @statistics = OpenStruct.new data["statistics"] if data["statistics"] # TODO Implement statistics?
+        @statistics = OpenStruct.new data["statistics"] if data["statistics"] # TODO Implement statistics!
         parse_player if @statistics
         @type = data["type"]
         @wall_clock = data["wall_clock"]
       end
 
       def parse_player
+        # TODO: Currently there is an issue where we are only mapping one player_id to a play, but there are plays with multiple players involved.
         play_stats = @statistics.penalty || @statistics.rush || @statistics.return || @statistics.receive
         if play_stats.is_a?(Array)
           play_stats = play_stats.first

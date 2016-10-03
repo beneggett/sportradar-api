@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-sim2/wc/matches/22653ed5-0b2c-4e30-b10c-c6d51619b52b/boxscore.xml?api_key=<SOCCER_NA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, max-age=2
+      Content-Type:
+      - application/xml
+      Date:
+      - Thu, 29 Sep 2016 05:51:16 GMT
+      Etag:
+      - '"53c2f9fd-a57"'
+      Last-Modified:
+      - Sun, 13 Jul 2014 21:28:29 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-121.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '15000'
+      X-Plan-Quota-Current:
+      - '69'
+      Content-Length:
+      - '2647'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <boxscore generated="2014-07-13T21:28:28Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-boxscore.xsd">
+          <matches>
+            <match id="22653ed5-0b2c-4e30-b10c-c6d51619b52b" status="inprogress" scratched="false" period="X2" scheduled="2014-07-13T19:00:00Z">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="ccb3c550-8bdb-435f-9f4e-8c125f7298b9" name="International" country_code="XZ" country="International"/>
+              <tournament_group id="ea97fe54-4712-4bd7-b643-8409887f9f61" name="World Championship"/>
+              <tournament id="9fb7b7d4-ecc4-462f-8a21-881644527030" name="World Cup, Knockout stage"/>
+              <round week="28" number="1" type="cup" name="F" scheduled_legs="1">
+                <leg match_id="22653ed5-0b2c-4e30-b10c-c6d51619b52b" status="inprogress" number="1" home_id="686950a8-4f89-4ed2-a32b-f0a564660859" away_id="909737d8-0424-435d-917a-3a05484322b4" home_score="1" away_score="0"/>
+              </round>
+              <home id="686950a8-4f89-4ed2-a32b-f0a564660859" name="Germany" alias="GER" country_code="DEU" country="Germany" type="team" formation="4-2-3-1" score="1" regular_score="1" penalty_score="">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="136" ball_safe="107" corner_kicks="5" dangerous_attacks="74" fouls="16" free_kicks="17" goal_attempts="10" goal_kicks="7" offsides="3" red_card="0" saves="0" shots_total="10" substitutions="2" throw_ins="32" yellow_card="2" yellow_red_card="0" shots_on_target="7" shots_off_target="3" possessions="61"/>
+              </home>
+              <away id="909737d8-0424-435d-917a-3a05484322b4" name="Argentina" alias="ARG" country_code="ARG" country="Argentina" type="team" formation="4-4-2" score="0" regular_score="0" penalty_score="">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="0" number="2"/>
+                </scoring>
+                <statistics attacks="98" ball_safe="109" corner_kicks="3" dangerous_attacks="44" fouls="15" free_kicks="19" goal_attempts="6" goal_kicks="10" offsides="2" red_card="0" saves="5" shots_total="6" substitutions="3" throw_ins="37" yellow_card="2" yellow_red_card="0" shots_on_target="0" shots_off_target="6" possessions="39"/>
+              </away>
+              <venue id="58ce7d9a-05e0-49a2-b1ac-bfa8131db618" name="Estadio do Maracana" country_code="BRA" city="Rio de Janeiro" capacity="74738" country="Brazil" coordinates="-22.912172,-43.230210"/>
+              <!-- 4768178/4711/4819 -->
+            </match>
+          </matches>
+        </boxscore>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 05:51:18 GMT
+recorded_with: VCR 3.0.3

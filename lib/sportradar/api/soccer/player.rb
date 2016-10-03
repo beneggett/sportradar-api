@@ -6,7 +6,8 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        set_teams
+        @teams = parse_into_array(selector: response["team"], klass: Sportradar::Api::Soccer::Team)  if response["team"]
+        @teams = parse_into_array(selector: response["teams"]["team"], klass: Sportradar::Api::Soccer::Team)  if response["teams"] && response["teams"]["team"]
         @id = data["id"]
         @first_name = data["first_name"]
         @last_name = data["last_name"]
@@ -31,8 +32,8 @@ module Sportradar
         @weight_kg = data["weight_kg"]
         @rank = data["rank"]
         @total = OpenStruct.new data["total"] if data["total"]
+        @statistics = parse_into_array(selector:response["statistics"]["season"], klass: Sportradar::Api::Soccer::Season)  if response["statistics"] &&  response["statistics"]["season"]
 
-        set_statistics
       end
 
       def name
@@ -63,7 +64,7 @@ module Sportradar
 
 
       def tactical_position_name
-        tactical_positions = { "0" => "Unknown", "1" => "Goalkeeper", "2" => "Right back", "3" => "Central defender", "4" => "Left back", "5" => "Right winger", "6" => "Central midfielder", "7" => "Left winger", "8" => "Forward" }
+        tactical_positions = { "0" => "Unknown", "1" => "Goalkeeper", "2" => "Right Back", "3" => "Central Defender", "4" => "Left Back", "5" => "Right winger", "6" => "Central Midfielder", "7" => "Left Winger", "8" => "Forward" }
         tactical_positions[tactical_position] if tactical_position
       end
 
@@ -79,34 +80,6 @@ module Sportradar
         if height_in.present?
           feet, inches = height_in.to_i.divmod(12)
           "#{feet}' #{inches}\""
-        end
-      end
-
-      private
-
-      def set_teams
-        if response["team"]
-          if response["team"].is_a?(Array)
-            @teams = response["team"].map {|team| Sportradar::Api::Soccer::Team.new team }
-          elsif response["team"].is_a?(Hash)
-            @teams = [ Sportradar::Api::Soccer::Team.new(response["team"]) ]
-          end
-        elsif response["teams"] && response["teams"]["team"]
-          if response["teams"]["team"].is_a?(Array)
-            @teams = response["teams"]["team"].map {|team| Sportradar::Api::Soccer::Team.new team }
-          elsif response["teams"]["team"].is_a?(Hash)
-            @teams = [ Sportradar::Api::Soccer::Team.new(response["teams"]["team"]) ]
-          end
-        end
-      end
-
-      def set_statistics
-        if response["statistics"] && response["statistics"]["season"]
-          if response["statistics"]["season"].is_a?(Array)
-            @statistics = response["statistics"]["season"].map {|statistic| Sportradar::Api::Soccer::Season.new statistic }
-          elsif response["statistics"]["season"].is_a?(Hash)
-            @statistics = [ Sportradar::Api::Soccer::Season.new(response["statistics"]["season"]) ]
-          end
         end
       end
 

@@ -5,21 +5,8 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        set_categories
+        @categories = parse_into_array(selector: response["category"], klass: Sportradar::Api::Soccer::Category)  if response["category"]
       end
-
-      private
-
-      def set_categories
-        if response["category"]
-          if response["category"].is_a?(Array)
-            @categories = response["category"].map {|x| Sportradar::Api::Soccer::Category.new x }
-          elsif response["category"].is_a?(Hash)
-            @categories = [ Sportradar::Api::Soccer::Category.new(response["category"]) ]
-          end
-        end
-      end
-
 
     end
   end

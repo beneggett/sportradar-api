@@ -6,19 +6,7 @@ module Sportradar
       def initialize(data)
         @response = data
         @name = data["name"]
-        set_players
-      end
-
-      private
-
-      def set_players
-        if response["player"]
-          if response["player"].is_a?(Array)
-            @players = response["player"].map {|player| Sportradar::Api::Nfl::Player.new player }
-          elsif response["player"].is_a?(Hash)
-            @players = [ Sportradar::Api::Nfl::Player.new(response["player"]) ]
-          end
-        end
+        @players = parse_into_array(selector: response["player"], klass: Sportradar::Api::Nfl::Player) if response["player"]
       end
 
     end

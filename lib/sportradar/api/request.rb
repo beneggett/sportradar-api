@@ -6,30 +6,27 @@ module Sportradar
 
       attr_reader :url, :headers, :timeout, :api_key
 
+      def get(path, options={})
+        base_setup(path, options)
+        begin
+          response = self.class.get(url, headers: headers, query: options.merge(api_key), timeout: timeout)
+          rescue Net::ReadTimeout, Net::OpenTimeout
+            raise Sportradar::Api::Error::Timeout
+          rescue EOFError
+            raise Sportradar::Api::Error::NoData
+        end
+        return Sportradar::Api::Error.new(response.code, response.message, response) unless response.success?
+        response
+      end
+
+      private
+
       def base_setup(path, options={})
         @url = set_base(path)
         @url += format unless options[:format] == 'none'
         @headers = set_headers unless options[:format] == 'none'
-        @api_key = options[:api_key]
         @timeout = options.delete(:api_timeout) || Sportradar::Api.config.api_timeout
       end
-
-      def get(path, options={})
-        base_setup(path, options)
-        puts url
-        response = self.class.get(url, headers: headers, query: options.merge(api_key), timeout: timeout)
-        rescue Net::ReadTimeout, Net::OpenTimeout
-          raise Sportradar::Api::Error::Timeout
-        rescue EOFError
-          raise Sportradar::Api::Error::NoData
-        if response.success?
-          response
-        else
-          Sportradar::Api::Error.new(response.code, response.message, response)
-        end
-      end
-
-      private
 
       def set_base(path)
         protocol = !!Sportradar::Api.config.use_ssl ? "https://" : "http://"

@@ -29,15 +29,16 @@ module Sportradar
         @win_pct = data["win_pct"].to_f if data["win_pct"]
         @rank = data["rank"]
 
-        @defense = data["defense"]["position"].map {|position| Sportradar::Api::Nfl::Position.new position } if data["defense"] && data["defense"]["position"]
-        @offense = data["offense"]["position"].map {|position| Sportradar::Api::Nfl::Position.new position } if data["offense"] && data["offense"]["position"]
-        @special_teams = data["special_teams"]["position"].map {|position| Sportradar::Api::Nfl::Position.new position } if data["special_teams"] && data["special_teams"]["position"]
         @statistics = OpenStruct.new data["statistics"] if data["statistics"] # TODO Implement better?
         @team_records = OpenStruct.new data["team_records"] if data["team_records"] # TODO Implement better?
         @player_records = OpenStruct.new data["player_records"] if data["player_records"] # TODO Implement better?
 
-        set_players
-        set_coaches
+        @defense = parse_into_array(selector: data["defense"]["position"], klass: Sportradar::Api::Nfl::Position)  if data["defense"] && data["defense"]["position"]
+        @offense = parse_into_array(selector: data["offense"]["position"], klass: Sportradar::Api::Nfl::Position)  if data["offense"] && data["offense"]["position"]
+        @special_teams = parse_into_array(selector: data["special_teams"]["position"], klass: Sportradar::Api::Nfl::Position)  if data["special_teams"] && data["special_teams"]["position"]
+        @coaches = parse_into_array(selector: response["coaches"]["coach"], klass: Sportradar::Api::Nfl::Coach)  if response["coaches"] && response["coaches"]["coach"]
+        @players = parse_into_array(selector: response["player"], klass: Sportradar::Api::Nfl::Player)  if response["player"]
+        @players ||= parse_into_array(selector: response["players"]["player"], klass: Sportradar::Api::Nfl::Player)  if response["players"] && response["players"]["player"]
       end
 
       def full_name
@@ -47,36 +48,6 @@ module Sportradar
       def record
         if wins && losses && ties
           "#{wins}-#{losses}" << (ties == '0' ? '' : "-#{ties}")
-        end
-      end
-
-      private
-
-      def set_players
-        if response["player"]
-          if response["player"].is_a?(Array)
-            @players = response["player"].map {|player| Sportradar::Api::Nfl::Player.new player }
-          elsif response["player"].is_a?(Hash)
-            @players = [ Sportradar::Api::Nfl::Player.new(response["player"]) ]
-          end
-        elsif response["players"] && response["players"]["player"]
-          if response["players"]["player"].is_a?(Array)
-            @players = response["players"]["player"].map {|player| Sportradar::Api::Nfl::Player.new player }
-          elsif response["players"]["player"].is_a?(Hash)
-            @players = [ Sportradar::Api::Nfl::Player.new(response["players"]["player"]) ]
-          end
-        else
-          @players = []
-        end
-      end
-
-      def set_coaches
-        if response["coaches"] && response["coaches"]["coach"]
-          if response["coaches"]["coach"].is_a?(Array)
-            @coaches = response["coaches"]["coach"].map {|coach| Sportradar::Api::Nfl::Coach.new coach }
-          elsif response["coaches"]["coach"].is_a?(Hash)
-            @coaches = [ Sportradar::Api::Nfl::Coach.new(response["coaches"]["coach"]) ]
-          end
         end
       end
 

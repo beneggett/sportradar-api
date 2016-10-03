@@ -1,0 +1,938 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nfl-ot1/games/0141a0a5-13e5-4b28-b19f-0c3923aaef6e/roster.xml?api_key=<NFL_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 05:39:39 GMT
+      Expires:
+      - Thu, 29 Sep 2016 05:39:41 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-117.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '7870'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '72984'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml-stylesheet type="text/xsl" charset="UTF-8" href="/xslt/nfl/premium/roster-v2.0.xsl"?>
+        <!-- Generation started @ 2016-08-26 15:56:16 +0000 -->
+        <game xmlns="http://feed.elasticstats.com/schema/nfl/premium/roster-v2.0.xsd" id="0141a0a5-13e5-4b28-b19f-0c3923aaef6e" status="closed" reference="56510" number="8" scheduled="2015-09-13T17:02:41+00:00" attendance="76512" utc_offset="-5" entry_mode="INGEST" weather="Partly Cloudy Temp: 69 F, Humidity: 58%, Wind: NW 10 mph" clock="00:00" quarter="4">
+          <summary>
+            <season id="46aa2ca3-c2fc-455d-8256-1f7893a87113" year="2015" type="REG" name="REG"/>
+            <week id="581edacd-e641-43d6-9e69-76b29a306643" sequence="1" title="1"/>
+            <venue id="7c11bb2d-4a53-4842-b842-0f1c63ed78e9" name="FedExField" city="Landover" state="MD" country="USA" zip="20785" address="1600 FedEx Way" capacity="83000" surface="turf" roof_type="outdoor"/>
+            <home name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+            <away name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+          </summary>
+          <home name="Redskins" market="Washington" alias="WAS" reference="4971" id="22052ff7-c065-42ee-bc8f-c4691c50e624">
+            <player name="Chris Baker" jersey="92" last_name="Baker" first_name="Chris" abbr_name="C.Baker" preferred_name="Chris" birth_date="1987-10-08" weight="325.0" height="74" status="played" id="5659e779-d0af-4107-aa75-d24dc3db90e3" position="DL" age="27" birth_place="Windsor, CT, USA" high_school="Windsor (CT)" college="Hampton" college_conf="Mid-Eastern Athletic Conference" rookie_year="2009">
+              <references>
+                <reference id="00-0026512" origin="gsis"/>
+                <reference id="34719" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Will Compton" jersey="51" last_name="Compton" first_name="Will" abbr_name="W.Compton" preferred_name="Will" birth_date="1989-09-19" weight="230.0" height="73" status="played" id="401c4b1f-8302-433e-a84d-9d3101a30f4b" position="LB" age="25" high_school="North County (MD)" college="Nebraska" college_conf="Big Ten Conference" rookie_year="2013">
+              <references>
+                <reference id="40326" origin="nflx"/>
+                <reference id="00-0029869" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Trenton Robinson" jersey="34" last_name="Robinson" first_name="Trenton" abbr_name="T.Robinson" preferred_name="Trenton" birth_date="1990-02-16" weight="195.0" height="69" status="played" id="215fd07e-7e6a-4060-a545-3fe5fb7add4f" position="S" age="25" birth_place="Bay City, MI, USA" high_school="Bay City Central (MI)" college="Michigan State" college_conf="Big Ten Conference" rookie_year="2012">
+              <draft year="2012" round="6" number="180">
+                <team name="49ers" market="San Francisco" alias="SF" id="f0e724b0-4cbf-495a-be47-013907608da9"/>
+              </draft>
+              <references>
+                <reference id="00-0029297" origin="gsis"/>
+                <reference id="38710" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jordan Reed" jersey="86" last_name="Reed" first_name="Jordan" abbr_name="J.Reed" preferred_name="Jordan" birth_date="1990-07-03" weight="237.0" height="75" status="played" id="c3bf8d3e-3b2e-4f9e-ad74-c0a684035f17" position="TE" age="25" birth_place="New London, CT, USA" high_school="New London (CT)" college="Florida" college_conf="Southeastern Conference" rookie_year="2013">
+              <draft year="2013" round="3" number="85">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0030472" origin="gsis"/>
+                <reference id="40033" origin="nflx"/>
+              </references>
+            </player>
+            <player name="DeSean Jackson" jersey="11" last_name="Jackson" first_name="DeSean" abbr_name="D.Jackson" preferred_name="DeSean" birth_date="1986-12-01" weight="178.0" height="70" status="started" id="3e618eb6-41f2-4f20-ad70-2460f9366f43" position="WR" age="28" birth_place="Los Angeles, CA, USA" high_school="Poly (CA)" college="California" college_conf="Pacific Ten Conference" rookie_year="2008">
+              <draft year="2008" round="2" number="49">
+                <team name="Eagles" market="Philadelphia" alias="PHI" id="386bdbf9-9eea-4869-bb9a-274b0bc66e80"/>
+              </draft>
+              <references>
+                <reference id="00-0026189" origin="gsis"/>
+                <reference id="33130" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Rashad Ross" jersey="19" last_name="Ross" first_name="Rashad" abbr_name="R.Ross" preferred_name="Rashad" birth_date="1990-02-02" weight="181.0" height="72" status="deactivated" id="a55c773c-1ce6-4d0f-a800-768575d74121" position="WR" age="25" college="Arizona State" college_conf="Pacific Twelve Conference" rookie_year="2013">
+              <references>
+                <reference id="00-0030187" origin="gsis"/>
+                <reference id="40647" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Alfred Morris" jersey="46" last_name="Morris" first_name="Alfred" abbr_name="A.Morris" preferred_name="Alfred" birth_date="1988-12-12" weight="224.0" height="70" status="started" id="bd10efdf-d8e7-4e23-ab1a-1e42fb65131b" position="RB" age="26" birth_place="Pensacola, FL, USA" high_school="Pine Forest(FL)" college="Florida Atlantic" college_conf="Sun Belt Conference" rookie_year="2012">
+              <draft year="2012" round="6" number="173">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0029141" origin="gsis"/>
+                <reference id="38703" origin="nflx"/>
+              </references>
+            </player>
+            <player name="David Amerson" jersey="39" last_name="Amerson" first_name="David" abbr_name="D.Amerson" preferred_name="David" birth_date="1991-12-08" weight="205.0" height="73" status="played" id="2ba5bdad-0b7c-4637-89a3-5b7b34d215b0" position="CB" age="23" birth_place="Honolulu, HI, USA" high_school="Dudley (NC)" college="North Carolina State" college_conf="Atlantic Coast Conference" rookie_year="2013">
+              <draft year="2013" round="2" number="51">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0030420" origin="gsis"/>
+                <reference id="39999" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Ty Nsekhe" jersey="79" last_name="Nsekhe" first_name="Ty" abbr_name="T.Nsekhe" preferred_name="Ty" birth_date="1985-10-27" weight="325.0" height="80" status="played" id="d723ebff-0e9d-42f8-93d2-fe0c02252de8" position="T" age="29" birth_place="Arlington, TX, USA" high_school="James Bowie (TX)" college="Texas State" college_conf="Sun Belt Conference" rookie_year="2012">
+              <references>
+                <reference id="36785" origin="nflx"/>
+                <reference id="00-0029709" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jeron Johnson" jersey="20" last_name="Johnson" first_name="Jeron" abbr_name="J.Johnson" preferred_name="Jeron" birth_date="1988-06-12" weight="212.0" height="70" status="played" id="d58339ad-6ec1-41cd-98d7-964ac47d7225" position="S" age="27" birth_place="Compton, CA, USA" high_school="Dominguez (CA)" college="Boise State" college_conf="Mountain West Conference" rookie_year="2011">
+              <references>
+                <reference id="37921" origin="nflx"/>
+                <reference id="00-0028441" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Preston Smith" jersey="94" last_name="Smith" first_name="Preston" abbr_name="P.Smith" preferred_name="Preston" birth_date="1992-11-17" weight="271.0" height="77" status="played" id="ede260be-5ae6-4a06-887b-e4a130932705" position="LB" age="22" birth_place="Stone Mountain, GA, USA" high_school="Stephenson" college="Mississippi State" college_conf="Southeastern Conference" rookie_year="2015">
+              <draft year="2015" round="2" number="38">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0031935" origin="gsis"/>
+                <reference id="42381" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Matt Jones" jersey="31" last_name="Jones" first_name="Matt" abbr_name="M.Jones" preferred_name="Matt" birth_date="1993-03-07" weight="231.0" height="74" status="played" id="2641d36d-7c61-445f-980f-313671f2e8ce" position="RB" age="22" birth_place="Seffner, FL, USA" high_school="Armwood" college="Florida" college_conf="Southeastern Conference" rookie_year="2015">
+              <draft year="2015" round="3" number="95">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0031939" origin="gsis"/>
+                <reference id="42438" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Trent Williams" jersey="71" last_name="Williams" first_name="Trent" abbr_name="Trent.Williams" preferred_name="Trent" birth_date="1988-07-19" weight="337.0" height="77" status="started" id="b070601c-7985-4a1c-b71a-9f72bb5dbc59" position="T" age="27" birth_place="Longview, TX, USA" high_school="Longview (TX)" college="Oklahoma" college_conf="Big Twelve Conference" rookie_year="2010">
+              <draft year="2010" round="1" number="4">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0027857" origin="gsis"/>
+                <reference id="35443" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Morgan Moses" jersey="76" last_name="Moses" first_name="Morgan" abbr_name="M.Moses" preferred_name="Morgan" birth_date="1991-03-03" weight="318.0" height="78" status="started" id="e15a26bb-db24-4e5a-b3a5-cc4d4eb4f0b6" position="T" age="24" birth_place="Richmond, VA, USA" high_school="Meadowbrook (VA)" college="Virginia" college_conf="Atlantic Coast Conference" rookie_year="2014">
+              <draft year="2014" round="3" number="66">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="41295" origin="nflx"/>
+                <reference id="00-0031330" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Kory Lichtensteiger" jersey="78" last_name="Lichtensteiger" first_name="Kory" abbr_name="K.Lichtensteiger" preferred_name="Kory" birth_date="1985-03-22" weight="296.0" height="74" status="started" id="7f7b2a5a-be4e-40d1-9cd0-9a7dd225a8c0" position="C" age="30" birth_place="Van Wert, OH, USA" high_school="Crestview (OH)" college="Bowling Green" college_conf="Mid-American Conference" rookie_year="2008">
+              <draft year="2008" round="4" number="108">
+                <team name="Broncos" market="Denver" alias="DEN" id="ce92bd47-93d5-4fe9-ada4-0fc681e6caa0"/>
+              </draft>
+              <references>
+                <reference id="33189" origin="nflx"/>
+                <reference id="00-0026248" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Kyshoen Jarrett" jersey="30" last_name="Jarrett" first_name="Kyshoen" abbr_name="K.Jarrett" preferred_name="Kyshoen" birth_date="1993-05-04" weight="200.0" height="70" status="played" id="27779031-2c71-4c9a-80ee-28b9cd06814c" position="S" age="22" birth_place="Tannersville, PA, USA" high_school="East Stroudsburg South" college="Virginia Tech" college_conf="Atlantic Coast Conference" rookie_year="2015">
+              <draft year="2015" round="6" number="181">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="42524" origin="nflx"/>
+                <reference id="00-0031952" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Houston Bates" jersey="96" last_name="Bates" first_name="Houston" abbr_name="H.Bates" preferred_name="Houston" birth_date="1990-12-20" weight="250.0" height="75" status="played" id="db7af251-5251-4944-90cd-836cac9e2e40" position="LB" age="24" birth_place="Covington, LA, USA" high_school="St. Paul's" college="Louisiana Tech" college_conf="Conference USA" rookie_year="2015">
+              <references>
+                <reference id="43104" origin="nflx"/>
+                <reference id="00-0032181" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Kai Forbath" jersey="02" last_name="Forbath" first_name="Kai" abbr_name="K.Forbath" preferred_name="Kai" birth_date="1987-09-02" weight="197.0" height="71" status="played" id="5514afb6-bd43-49a8-9bf7-b8baaaecdabe" position="K" age="28" birth_place="Santa Monica, CA, USA" high_school="Notre Dame (CA)" college="UCLA" college_conf="Pacific Twelve Conference" rookie_year="2011">
+              <references>
+                <reference id="00-0028787" origin="gsis"/>
+                <reference id="38220" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Terrance Knighton" jersey="98" last_name="Knighton" first_name="Terrance" abbr_name="T.Knighton" preferred_name="Terrance" birth_date="1986-07-04" weight="354.0" height="75" status="started" id="e84b685e-6b52-4214-b264-123ce0672021" position="NT" age="29" birth_place="Hartford, CT, USA" high_school="Windsor (CT)" college="Temple" college_conf="Mid-American Conference" rookie_year="2009">
+              <draft year="2009" round="3" number="72">
+                <team name="Jaguars" market="Jacksonville" alias="JAC" id="f7ddd7fa-0bae-4f90-bc8e-669e4d6cf2de"/>
+              </draft>
+              <references>
+                <reference id="34523" origin="nflx"/>
+                <reference id="00-0027046" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Keenan Robinson" jersey="52" last_name="Robinson" first_name="Keenan" abbr_name="K.Robinson" preferred_name="Keenan" birth_date="1989-07-07" weight="238.0" height="75" status="started" id="af1648a4-2df1-40ef-b9fe-081d6961a416" position="LB" age="26" birth_place="Omaha, NE, USA" high_school="Plano East Senior (TX)" college="Texas" college_conf="Big Twelve Conference" rookie_year="2012">
+              <draft year="2012" round="4" number="119">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0029545" origin="gsis"/>
+                <reference id="38649" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Ryan Kerrigan" jersey="91" last_name="Kerrigan" first_name="Ryan" abbr_name="R.Kerrigan" preferred_name="Ryan" birth_date="1988-08-16" weight="260.0" height="76" status="started" id="a25f92e6-6e67-4463-a32f-77976807b3d8" position="LB" age="27" birth_place="Muncie, IN, USA" high_school="Muncie Central (IN)" college="Purdue" college_conf="Big Ten Conference" rookie_year="2011">
+              <draft year="2011" round="1" number="16">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0027954" origin="gsis"/>
+                <reference id="37089" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jamison Crowder" jersey="80" last_name="Crowder" first_name="Jamison" abbr_name="J.Crowder" preferred_name="Jamison" birth_date="1993-06-17" weight="185.0" height="68" status="played" id="8002dd5e-a75a-4d72-9a8c-0f4dbc80d459" position="WR" age="22" birth_place="Monroe, NC, USA" high_school="Monroe" college="Duke" college_conf="Atlantic Coast Conference" rookie_year="2015">
+              <draft year="2015" round="4" number="105">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0031941" origin="gsis"/>
+                <reference id="42448" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Shawn Lauvao" jersey="77" last_name="Lauvao" first_name="Shawn" abbr_name="S.Lauvao" preferred_name="Shawn" birth_date="1987-10-26" weight="315.0" height="75" status="started" id="6a1b2504-153c-441d-ba17-f78457d58b9c" position="G" age="27" birth_place="Honolulu, HI, USA" high_school="Farrington (HI)" college="Arizona State" college_conf="Pacific Ten Conference" rookie_year="2010">
+              <draft year="2010" round="3" number="92">
+                <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e"/>
+              </draft>
+              <references>
+                <reference id="35531" origin="nflx"/>
+                <reference id="00-0027694" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Justin Rogers" jersey="35" last_name="Rogers" first_name="Justin" abbr_name="J.Rogers" preferred_name="Justin" birth_date="1988-01-16" weight="181.0" height="71" status="started" id="cd027e2e-1b7e-48cc-908e-fec67cf2c05d" position="CB" age="27" birth_place="Baton Rouge, LA, USA" high_school="Redemptorist (LA)" college="Richmond" college_conf="Colonial Athletic Association" rookie_year="2011">
+              <draft year="2011" round="7" number="206">
+                <team name="Bills" market="Buffalo" alias="BUF" id="768c92aa-75ff-4a43-bcc0-f2798c2e1724"/>
+              </draft>
+              <references>
+                <reference id="00-0028144" origin="gsis"/>
+                <reference id="37281" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Josh LeRibeus" jersey="67" last_name="LeRibeus" first_name="Josh" abbr_name="J.LeRibeus" preferred_name="Josh" birth_date="1989-07-02" weight="315.0" height="74" status="played" id="e461d721-5ca5-4896-8fe5-12e452a003b3" position="C/G" age="26" birth_place="Richardson, TX, USA" high_school="Berkner (TX)" college="Southern Methodist" college_conf="Conference USA" rookie_year="2012">
+              <draft year="2012" round="3" number="71">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="38601" origin="nflx"/>
+                <reference id="00-0029666" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Andre Roberts" jersey="12" last_name="Roberts" first_name="Andre" abbr_name="A.Roberts" preferred_name="Andre" birth_date="1988-01-09" weight="187.0" height="71" status="played" id="9691f874-be36-4529-a7eb-dde22ee4a848" position="WR" age="27" birth_place="Columbia, SC, USA" high_school="Spring Valley (SC)" college="Citadel" college_conf="Southern Conference" rookie_year="2010">
+              <draft year="2010" round="3" number="88">
+                <team name="Cardinals" market="Arizona" alias="ARI" id="de760528-1dc0-416a-a978-b510d20692ff"/>
+              </draft>
+              <references>
+                <reference id="35527" origin="nflx"/>
+                <reference id="00-0027691" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Colt McCoy" jersey="16" last_name="McCoy" first_name="Colt" abbr_name="C.McCoy" preferred_name="Colt" birth_date="1986-09-05" weight="215.0" height="73" status="dnp" id="3699dfd9-d437-43f7-b674-adbb31e7e64b" position="QB" age="29" birth_place="Hobbs, NM, USA" high_school="Jim Ned (TX)" college="Texas" college_conf="Big Twelve Conference" rookie_year="2010">
+              <draft year="2010" round="3" number="85">
+                <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e"/>
+              </draft>
+              <references>
+                <reference id="00-0027688" origin="gsis"/>
+                <reference id="35524" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Trent Murphy" jersey="93" last_name="Murphy" first_name="Trent" abbr_name="T.Murphy" preferred_name="Trent" birth_date="1990-12-22" weight="258.0" height="77" status="started" id="5d98bad5-1730-4095-825d-3ff8d10d1116" position="LB" age="24" birth_place="Mesa, AZ, USA" high_school="Brophy (AZ)" college="Stanford" college_conf="Pacific Twelve Conference" rookie_year="2014">
+              <draft year="2014" round="2" number="47">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0031300" origin="gsis"/>
+                <reference id="41276" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Kirk Cousins" jersey="08" last_name="Cousins" first_name="Kirk" abbr_name="K.Cousins" preferred_name="Kirk" birth_date="1988-08-19" weight="202.0" height="75" status="started" id="bbd0942c-6f77-4f83-a6d0-66ec6548019e" position="QB" age="27" birth_place="Holland, MI, USA" high_school="Holland Christian (MI)" college="Michigan State" college_conf="Big Ten Conference" rookie_year="2012">
+              <draft year="2012" round="4" number="102">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="38632" origin="nflx"/>
+                <reference id="00-0029604" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Tom Compton" jersey="68" last_name="Compton" first_name="Tom" abbr_name="T.Compton" preferred_name="Tom" birth_date="1989-05-10" weight="308.0" height="77" status="deactivated" id="1c1f0577-f9c7-4406-b2ab-b9e42ddb1af3" position="T" age="26" birth_place="Rosemount, MN, USA" high_school="Rosemount (MN)" college="South Dakota" college_conf="Great West Football Conference" rookie_year="2012">
+              <draft year="2012" round="6" number="193">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0029144" origin="gsis"/>
+                <reference id="38723" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Darrel Young" jersey="36" last_name="Young" first_name="Darrel" abbr_name="D.Young" preferred_name="Darrel" birth_date="1987-04-08" weight="251.0" height="71" status="started" id="e174b76d-323a-41c5-be68-e766aa060d5c" position="FB" age="28" birth_place="Amityville, NY, USA" high_school="Memorial (NY)" college="Villanova" college_conf="Colonial Athletic Association" rookie_year="2009">
+              <references>
+                <reference id="35089" origin="nflx"/>
+                <reference id="00-0026852" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Robert Griffin" jersey="10" last_name="Griffin" first_name="Robert" abbr_name="R.Griffin" preferred_name="Robert" birth_date="1990-02-12" weight="222.0" height="74" status="deactivated" id="8dfb370d-460c-4bfc-9d62-888687248783" position="QB" age="25" birth_place="Okinawa Prefecture,, JPN" high_school="Copperas Cove (TX)" college="Baylor" college_conf="Big Twelve Conference" rookie_year="2012">
+              <draft year="2012" round="1" number="2">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0029665" origin="gsis"/>
+                <reference id="38532" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Chris Culliver" jersey="29" last_name="Culliver" first_name="Chris" abbr_name="C.Culliver" preferred_name="Chris" birth_date="1988-08-17" weight="199.0" height="72" status="started" id="0c68f083-c3a0-433f-931e-d8216dc3fcd4" position="CB" age="27" birth_place="Philadelphia, PA, USA" high_school="Garner (NC)" college="South Carolina" college_conf="Southeastern Conference" rookie_year="2011">
+              <draft year="2011" round="3" number="80">
+                <team name="49ers" market="San Francisco" alias="SF" id="f0e724b0-4cbf-495a-be47-013907608da9"/>
+              </draft>
+              <references>
+                <reference id="37155" origin="nflx"/>
+                <reference id="00-0028018" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Brandon Scherff" jersey="75" last_name="Scherff" first_name="Brandon" abbr_name="B.Scherff" preferred_name="Brandon" birth_date="1991-12-26" weight="319.0" height="77" status="started" id="9aac7466-6718-4c40-9431-e51a3bfa0ab0" position="G/T" age="23" birth_place="Denison, IA, USA" high_school="Denison" college="Iowa" college_conf="Big Ten Conference" rookie_year="2015">
+              <draft year="2015" round="1" number="5">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="42348" origin="nflx"/>
+                <reference id="00-0032053" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Duke Ihenacho" jersey="24" last_name="Ihenacho" first_name="Duke" abbr_name="D.Ihenacho" preferred_name="Duke" birth_date="1989-06-16" weight="207.0" height="73" status="started" id="81fed5e8-2a1a-4f77-904e-78912a4a91bb" position="S" age="26" birth_place="Torrance, CA, USA" high_school="Serra (CA)" college="San Jose State" college_conf="Western Athletic Conference" rookie_year="2012">
+              <references>
+                <reference id="38893" origin="nflx"/>
+                <reference id="00-0028942" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Nick Sundberg" jersey="57" last_name="Sundberg" first_name="Nick" abbr_name="N.Sundberg" preferred_name="Nick" birth_date="1987-07-29" weight="264.0" height="72" status="played" id="155b36fd-7287-4cf5-a065-6adc74fa866a" position="LS" age="28" birth_place="Phoenix, AZ, USA" high_school="North Canyon (AZ)" college="California" college_conf="Pacific Ten Conference" rookie_year="2009">
+              <references>
+                <reference id="34933" origin="nflx"/>
+                <reference id="00-0026714" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Tress Way" jersey="05" last_name="Way" first_name="Tress" abbr_name="T.Way" preferred_name="Tress" birth_date="1990-04-18" weight="215.0" height="73" status="played" id="55e1ecbd-96c5-456e-833b-9cd3f046f3fc" position="P" age="25" birth_place="Tulsa, OK, USA" high_school="Union (OK)" college="Oklahoma" college_conf="Big Twelve Conference" rookie_year="2013">
+              <references>
+                <reference id="40600" origin="nflx"/>
+                <reference id="00-0030140" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Kedric Golston" jersey="64" last_name="Golston" first_name="Kedric" abbr_name="K.Golston" preferred_name="Kedric" birth_date="1983-05-30" weight="318.0" height="76" status="played" id="8d079fe0-46d4-41d8-878b-98141320bcfc" position="DE" age="32" birth_place="Tyrone, GA, USA" high_school="Sandy Creek (GA)" college="Georgia" college_conf="Southeastern Conference" rookie_year="2006">
+              <draft year="2006" round="6" number="196">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0024410" origin="gsis"/>
+                <reference id="31011" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Derek Carrier" jersey="89" last_name="Carrier" first_name="Derek" abbr_name="D.Carrier" preferred_name="Derek" birth_date="1990-07-25" weight="241.0" height="76" status="started" id="d3fab07b-f02a-433d-9612-cb0a751f324d" position="TE" age="25" birth_place="Edgerton, WI, USA" high_school="Edgerton (WI)" college="Beloit" college_conf="Midwest Conference" rookie_year="2012">
+              <references>
+                <reference id="39109" origin="nflx"/>
+                <reference id="00-0029119" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Ryan Grant" jersey="14" last_name="Grant" first_name="Ryan" abbr_name="R.Grant" preferred_name="Ryan" birth_date="1990-12-19" weight="193.0" height="72" status="played" id="cc9df25a-bb22-4737-83df-ff01d3fd7695" position="WR" age="24" birth_place="Beaumont, TX, USA" high_school="West Brook (TX)" college="Tulane" college_conf="Conference USA" rookie_year="2014">
+              <draft year="2014" round="5" number="142">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="41371" origin="nflx"/>
+                <reference id="00-0031068" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Spencer Long" jersey="61" last_name="Long" first_name="Spencer" abbr_name="S.Long" preferred_name="Spencer" birth_date="1990-11-08" weight="311.0" height="77" status="deactivated" id="5d03f256-0569-4908-a0bf-5f95325c8be3" position="G" age="24" birth_place="Elkhorn, NE, USA" high_school="Elkhorn (NE)" college="Nebraska" college_conf="Big Ten Conference" rookie_year="2014">
+              <draft year="2014" round="3" number="78">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0031047" origin="gsis"/>
+                <reference id="41307" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jason Hatcher" jersey="97" last_name="Hatcher" first_name="Jason" abbr_name="J.Hatcher" preferred_name="Jason" birth_date="1982-07-13" weight="299.0" height="78" status="started" id="75f4e314-a25d-4833-b39e-02014853d7bb" position="DE" age="33" birth_place="Alexandria, LA, USA" high_school="Jena (LA)" college="Grambling" college_conf="Southwestern Athletic Conference" rookie_year="2006">
+              <draft year="2006" round="3" number="92">
+                <team name="Cowboys" market="Dallas" alias="DAL" id="e627eec7-bbae-4fa4-8e73-8e1d6bc5c060"/>
+              </draft>
+              <references>
+                <reference id="00-0024307" origin="gsis"/>
+                <reference id="30906" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Pierre Garcon" jersey="88" last_name="Garcon" first_name="Pierre" abbr_name="P.Garcon" preferred_name="Pierre" birth_date="1986-08-08" weight="216.0" height="72" status="started" id="a824d9ff-12a4-4ed2-812d-404b0b4e52f9" position="WR" age="29" birth_place="Carmel, NY, USA" high_school="Leonard (FL)" college="Mount Union" college_conf="Ohio Athletic Conference" rookie_year="2008">
+              <draft year="2008" round="6" number="205">
+                <team name="Colts" market="Indianapolis" alias="IND" id="82cf9565-6eb9-4f01-bdbd-5aa0d472fcd9"/>
+              </draft>
+              <references>
+                <reference id="33286" origin="nflx"/>
+                <reference id="00-0026345" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Chris Thompson" jersey="25" last_name="Thompson" first_name="Chris" abbr_name="C.Thompson" preferred_name="Chris" birth_date="1990-10-20" weight="193.0" height="68" status="played" id="0366fd06-19a3-4b69-8448-6bfbfad1250b" position="RB" age="24" birth_place="Greenville, FL, USA" high_school="Madison County (FL)" college="Florida State" college_conf="Atlantic Coast Conference" rookie_year="2013">
+              <draft year="2013" round="5" number="154">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0030404" origin="gsis"/>
+                <reference id="40102" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Ricky Jean Francois" jersey="99" last_name="Jean Francois" first_name="Ricky" abbr_name="R.Jean Francois" preferred_name="Ricky" birth_date="1986-11-23" weight="297.0" height="75" status="played" id="c0e4ed02-82ec-4bde-a1b1-c035dde46402" position="DE" age="28" birth_place="Miami, FL, USA" high_school="Miami Carol City (FL)" college="Louisiana State" college_conf="Southeastern Conference" rookie_year="2009">
+              <draft year="2009" round="7" number="244">
+                <team name="49ers" market="San Francisco" alias="SF" id="f0e724b0-4cbf-495a-be47-013907608da9"/>
+              </draft>
+              <references>
+                <reference id="00-0026502" origin="gsis"/>
+                <reference id="34695" origin="nflx"/>
+              </references>
+            </player>
+            <player name="DeAngelo Hall" jersey="23" last_name="Hall" first_name="DeAngelo" abbr_name="D.Hall" preferred_name="DeAngelo" birth_date="1983-11-19" weight="198.0" height="70" status="started" id="5f7dbabc-4a86-45f5-9983-eea57e7ccb38" position="CB" age="31" birth_place="Rockville, MD, USA" high_school="Deep Creek (VA)" college="Virginia Tech" college_conf="Atlantic Coast Conference" rookie_year="2004">
+              <draft year="2004" round="1" number="8">
+                <team name="Falcons" market="Atlanta" alias="ATL" id="e6aa13a4-0055-48a9-bc41-be28dc106929"/>
+              </draft>
+              <references>
+                <reference id="28960" origin="nflx"/>
+                <reference id="00-0022923" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Martrell Spaight" jersey="50" last_name="Spaight" first_name="Martrell" abbr_name="M.Spaight" preferred_name="Martrell" birth_date="1993-08-05" weight="236.0" height="72" status="played" id="5e576254-2f7e-4456-8bbb-26964d1e67b6" position="LB" age="22" birth_place="North Little Rock, AR, USA" high_school="North Little Rock" college="Arkansas" college_conf="Southeastern Conference" rookie_year="2015">
+              <draft year="2015" round="5" number="141">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="00-0031945" origin="gsis"/>
+                <reference id="42484" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Perry Riley" jersey="56" last_name="Riley" first_name="Perry" abbr_name="P.Riley" preferred_name="Perry" birth_date="1988-05-03" weight="238.0" height="72" status="started" id="5726ab42-606e-4139-9f2a-d677a858dbdb" position="LB" age="27" birth_place="Atlanta, GA, USA" high_school="Stephenson (GA)" college="Louisiana State" college_conf="Southeastern Conference" rookie_year="2010">
+              <draft year="2010" round="4" number="103">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="35542" origin="nflx"/>
+                <reference id="00-0027704" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jackson Jeffcoat" jersey="53" last_name="Jeffcoat" first_name="Jackson" abbr_name="J.Jeffcoat" preferred_name="Jackson" birth_date="1990-12-26" weight="253.0" height="75" status="deactivated" id="dae22eb4-d7f3-4e46-9f33-b3169076f076" position="LB" age="24" birth_place="Dallas, TX, USA" high_school="Plano West (TX)" college="Texas" college_conf="Big Twelve Conference" rookie_year="2014">
+              <references>
+                <reference id="00-0030771" origin="gsis"/>
+                <reference id="41609" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Arie Kouandjio" jersey="74" last_name="Kouandjio" first_name="Arie" abbr_name="A.Kouandjio" preferred_name="Arie" birth_date="1992-04-23" weight="310.0" height="77" status="deactivated" id="3887491b-d2f3-43e2-bd27-01ba860a65f7" position="G" age="23" birth_place="Hyattsville, MD, USA" high_school="DeMatha Catholic" college="Alabama" college_conf="Southeastern Conference" rookie_year="2015">
+              <draft year="2015" round="4" number="112">
+                <team name="Redskins" market="Washington" alias="WAS" id="22052ff7-c065-42ee-bc8f-c4691c50e624"/>
+              </draft>
+              <references>
+                <reference id="42455" origin="nflx"/>
+                <reference id="00-0031942" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Stephen Paea" jersey="90" last_name="Paea" first_name="Stephen" abbr_name="S.Paea" preferred_name="Stephen" birth_date="1988-05-11" weight="300.0" height="73" status="played" id="92608d14-9444-4ee0-bf1a-a8905e5d4475" position="DE" age="27" birth_place="Auckland,, NZL" high_school="Timpview (UT)" college="Oregon State" college_conf="Pacific Twelve Conference" rookie_year="2011">
+              <draft year="2011" round="2" number="53">
+                <team name="Bears" market="Chicago" alias="CHI" id="7b112545-38e6-483c-a55c-96cf6ee49cb8"/>
+              </draft>
+              <references>
+                <reference id="37128" origin="nflx"/>
+                <reference id="00-0027991" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Anthony McCoy" jersey="85" last_name="McCoy" first_name="Anthony" abbr_name="A.McCoy" preferred_name="Anthony" birth_date="1987-12-28" weight="259.0" height="77" status="deactivated" id="ab0c4c63-df42-4825-8921-3fd1a842c3df" position="TE" age="27" birth_place="Fresno, CA, USA" high_school="Bullard (CA)" college="Southern California" college_conf="Pacific Ten Conference" rookie_year="2010">
+              <draft year="2010" round="6" number="185">
+                <team name="Seahawks" market="Seattle" alias="SEA" id="3d08af9e-c767-4f88-a7dc-b920c6d2b4a8"/>
+              </draft>
+              <references>
+                <reference id="35624" origin="nflx"/>
+                <reference id="00-0027783" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Dashon Goldson" jersey="38" last_name="Goldson" first_name="Dashon" abbr_name="D.Goldson" preferred_name="Dashon" birth_date="1984-09-18" weight="200.0" height="74" status="started" id="8fd45946-17e7-4e01-91df-bb866f268309" position="S" age="30" birth_place="Carson, CA, USA" high_school="Narbonne (CA)" college="Washington" college_conf="Pacific Ten Conference" rookie_year="2007">
+              <draft year="2007" round="4" number="126">
+                <team name="49ers" market="San Francisco" alias="SF" id="f0e724b0-4cbf-495a-be47-013907608da9"/>
+              </draft>
+              <references>
+                <reference id="00-0025513" origin="gsis"/>
+                <reference id="32319" origin="nflx"/>
+              </references>
+            </player>
+          </home>
+          <away name="Dolphins" market="Miami" alias="MIA" reference="4958" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06">
+            <player name="Billy Turner" jersey="77" last_name="Turner" first_name="Billy" abbr_name="B.Turner" preferred_name="Billy" birth_date="1991-10-17" weight="315.0" height="77" status="played" id="7788ca8f-88c8-447f-9110-3cfd3ca5efd8" position="T" age="23" birth_place="Shoreview, MN, USA" high_school="Mounds View (MN)" college="North Dakota State" college_conf="Missouri Valley Football Conference" rookie_year="2014">
+              <draft year="2014" round="3" number="67">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="00-0031433" origin="gsis"/>
+                <reference id="41296" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Neville Hewitt" jersey="46" last_name="Hewitt" first_name="Neville" abbr_name="N.Hewitt" preferred_name="Neville" birth_date="1993-04-06" weight="219.0" height="74" status="played" id="fa4ae025-fd66-4752-94fa-63e22ae8abd4" position="LB" age="22" birth_place="Conyers, GA, USA" high_school="Rockdale County" college="Marshall" college_conf="Conference USA" rookie_year="2015">
+              <references>
+                <reference id="00-0031740" origin="gsis"/>
+                <reference id="42771" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Michael Thomas" jersey="31" last_name="Thomas" first_name="Michael" abbr_name="M.Thomas" preferred_name="Michael" birth_date="1990-03-17" weight="201.0" height="71" status="played" id="16e13f52-32b1-416f-83ae-1cbf2f92cffc" position="S" age="25" birth_place="Houston, TX, USA" high_school="Nimitz (TX)" college="Stanford" college_conf="Pacific Twelve Conference" rookie_year="2012">
+              <references>
+                <reference id="38852" origin="nflx"/>
+                <reference id="00-0028908" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Walt Aikens" jersey="35" last_name="Aikens" first_name="Walt" abbr_name="W.Aikens" preferred_name="Walt" birth_date="1991-06-19" weight="210.0" height="73" status="started" id="19403487-1d34-434b-8fc2-a8852167af76" position="S" age="24" birth_place="Charlotte, NC, USA" high_school="Harding University (IL)" college="Liberty" college_conf="Big South Conference" rookie_year="2014">
+              <draft year="2014" round="4" number="125">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="41354" origin="nflx"/>
+                <reference id="00-0031307" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Mike Pouncey" jersey="51" last_name="Pouncey" first_name="Mike" abbr_name="M.Pouncey" preferred_name="Mike" birth_date="1989-07-24" weight="305.0" height="77" status="started" id="041c36ad-0d7d-4ed1-8157-95092b3027a4" position="C" age="26" birth_place="Ardmore, OK, USA" high_school="Lakeland (FL)" college="Florida" college_conf="Southeastern Conference" rookie_year="2011">
+              <draft year="2011" round="1" number="15">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="37088" origin="nflx"/>
+                <reference id="00-0027953" origin="gsis"/>
+              </references>
+            </player>
+            <player name="DeVante Parker" jersey="11" last_name="Parker" first_name="DeVante" abbr_name="D.Parker" preferred_name="DeVante" birth_date="1993-01-20" weight="209.0" height="75" status="played" id="e9ee9209-dd8f-4e4a-be3c-407756a2749c" position="WR" age="22" birth_place="Louisville, KY, USA" high_school="Ballard (KY)" college="Louisville" college_conf="Atlantic Coast Conference" rookie_year="2015">
+              <draft year="2015" round="1" number="14">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="42357" origin="nflx"/>
+                <reference id="00-0031547" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Koa Misi" jersey="55" last_name="Misi" first_name="Koa" abbr_name="K.Misi" preferred_name="Koa" birth_date="1987-01-17" weight="252.0" height="75" status="started" id="0cac1d16-8e3b-4c96-b674-9700a36cf772" position="OLB" age="28" birth_place="Santa Rosa, CA, USA" high_school="Montgomery (CA)" college="Utah" college_conf="Mountain West Conference" rookie_year="2010">
+              <draft year="2010" round="2" number="40">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="35479" origin="nflx"/>
+                <reference id="00-0027883" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Bobby McCain" jersey="28" last_name="McCain" first_name="Bobby" abbr_name="Bo.McCain" preferred_name="Bobby" birth_date="1993-08-18" weight="195.0" height="69" status="played" id="7f32c3e6-113f-4922-b51d-a1a5a1d43bcf" position="CB" age="22" birth_place="Ocford, AL, USA" high_school="Oxford" college="Memphis" college_conf="American Athletic Conference" rookie_year="2015">
+              <draft year="2015" round="5" number="145">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="42488" origin="nflx"/>
+                <reference id="00-0031587" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Tony Lippett" jersey="36" last_name="Lippett" first_name="Tony" abbr_name="T.Lippett" preferred_name="Tony" birth_date="1992-07-02" weight="192.0" height="74" status="deactivated" id="c0cfe76c-0633-4b6b-b282-02ca9911cabd" position="DB" age="23" birth_place="Detroit, MI, USA" high_school="Crockett" college="Michigan State" college_conf="Big Ten Conference" rookie_year="2015">
+              <draft year="2015" round="5" number="156">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="42499" origin="nflx"/>
+                <reference id="00-0031594" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jason Fox" jersey="74" last_name="Fox" first_name="Jason" abbr_name="J.Fox" preferred_name="Jason" birth_date="1988-05-02" weight="310.0" height="78" status="deactivated" id="8d9cf581-fb97-448a-a0de-b4dd41927bc8" position="T" age="27" birth_place="Fort Worth, TX, USA" high_school="North Crowley (TX)" college="Miami" college_conf="Atlantic Coast Conference" rookie_year="2010">
+              <draft year="2010" round="4" number="128">
+                <team name="Lions" market="Detroit" alias="DET" id="c5a59daa-53a7-4de0-851f-fb12be893e9e"/>
+              </draft>
+              <references>
+                <reference id="35567" origin="nflx"/>
+                <reference id="00-0027728" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Kenny Stills" jersey="10" last_name="Stills" first_name="Kenny" abbr_name="K.Stills" preferred_name="Kenny" birth_date="1992-04-22" weight="194.0" height="72" status="played" id="4734f8dc-2ca4-4437-88f2-c8b8974abefc" position="WR" age="23" birth_place="Oceanside, CA, USA" high_school="La Costa Canyon (CA)" college="Oklahoma" college_conf="Big Twelve Conference" rookie_year="2013">
+              <draft year="2013" round="5" number="144">
+                <team name="Saints" market="New Orleans" alias="NO" id="0d855753-ea21-4953-89f9-0e20aff9eb73"/>
+              </draft>
+              <references>
+                <reference id="40092" origin="nflx"/>
+                <reference id="00-0030085" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Lamar Miller" jersey="26" last_name="Miller" first_name="Lamar" abbr_name="L.Miller" preferred_name="Lamar" birth_date="1991-04-25" weight="224.0" height="70" status="started" id="a212c5d8-67f8-48b9-99be-2c121ee56366" position="RB" age="24" birth_place="Miami, FL, USA" high_school="Killian (FL)" college="Miami" college_conf="Atlantic Coast Conference" rookie_year="2012">
+              <draft year="2012" round="4" number="97">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="38627" origin="nflx"/>
+                <reference id="00-0029615" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Brice McCain" jersey="24" last_name="McCain" first_name="Brice" abbr_name="Br.McCain" preferred_name="Brice" birth_date="1986-12-10" weight="187.0" height="69" status="started" id="33a653a5-d73b-4502-85d2-42c087278a74" position="CB" age="28" birth_place="Dallas, TX, USA" high_school="Terrell (TX)" college="Utah" college_conf="Mountain West Conference" rookie_year="2009">
+              <draft year="2009" round="6" number="188">
+                <team name="Texans" market="Houston" alias="HOU" id="82d2d380-3834-4938-835f-aec541e5ece7"/>
+              </draft>
+              <references>
+                <reference id="00-0026935" origin="gsis"/>
+                <reference id="34639" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Andrew Franks" jersey="03" last_name="Franks" first_name="Andrew" abbr_name="A.Franks" preferred_name="Andrew" birth_date="1993-01-11" weight="205.0" height="73" status="played" id="59da7aea-f21a-43c5-b0bf-2d1e8b19da80" position="K" age="22" birth_place="Carmel, CA, USA" high_school="Carmel High School " college="Rensselaer Polytech" college_conf="Liberty League" rookie_year="2015">
+              <references>
+                <reference id="42749" origin="nflx"/>
+                <reference id="00-0031718" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Olivier Vernon" jersey="50" last_name="Vernon" first_name="Olivier" abbr_name="O.Vernon" preferred_name="Olivier" birth_date="1990-10-07" weight="268.0" height="74" status="started" id="3be41614-5c70-4b0a-89c7-c7ae061d9223" position="DE" age="24" birth_place="Miami, FL, USA" high_school="American (FL)" college="Miami" college_conf="Atlantic Coast Conference" rookie_year="2012">
+              <draft year="2012" round="3" number="72">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="38602" origin="nflx"/>
+                <reference id="00-0029693" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Greg Jennings" jersey="85" last_name="Jennings" first_name="Greg" abbr_name="G.Jennings" preferred_name="Greg" birth_date="1983-09-21" weight="195.0" height="72" status="started" id="ff937065-a20f-4968-a138-8ecd3a8b7cdb" position="WR" age="31" birth_place="Kalamazoo, MI, USA" high_school="Kalamazoo Central (MI)" college="Western Michigan" college_conf="Mid-American Conference" rookie_year="2006">
+              <draft year="2006" round="2" number="52">
+                <team name="Packers" market="Green Bay" alias="GB" id="a20471b4-a8d9-40c7-95ad-90cc30e46932"/>
+              </draft>
+              <references>
+                <reference id="00-0024267" origin="gsis"/>
+                <reference id="30866" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jamil Douglas" jersey="75" last_name="Douglas" first_name="Jamil" abbr_name="J.Douglas" preferred_name="Jamil" birth_date="1992-02-28" weight="304.0" height="76" status="started" id="9be53b35-e7fe-4f28-97bc-09d87f782ced" position="G" age="23" birth_place="Cypress, CA, USA" high_school="Cypress" college="Arizona State" college_conf="Pacific Twelve Conference" rookie_year="2015">
+              <draft year="2015" round="4" number="114">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="42457" origin="nflx"/>
+                <reference id="00-0031575" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Chris McCain" jersey="58" last_name="McCain" first_name="Chris" abbr_name="C.McCain" preferred_name="Chris" birth_date="1991-11-21" weight="250.0" height="77" status="deactivated" id="ec0183f6-bd9b-4a21-b8f5-ea4d8f3741b2" position="LB" age="23" high_school="Northern Guilford (NC)" college="California" college_conf="Pacific Twelve Conference" rookie_year="2014">
+              <references>
+                <reference id="00-0031208" origin="gsis"/>
+                <reference id="41996" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Matt Moore" jersey="08" last_name="Moore" first_name="Matt" abbr_name="M.Moore" preferred_name="Matt" birth_date="1984-08-09" weight="220.0" height="75" status="dnp" id="76d7615e-8eb5-4761-b6a6-1e895d01baf3" position="QB" age="31" birth_place="Van Nuys, CA, USA" high_school="Hart (CA)" college="Oregon State" college_conf="Pacific Ten Conference" rookie_year="2007">
+              <references>
+                <reference id="00-0025708" origin="gsis"/>
+                <reference id="32853" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jamar Taylor" jersey="22" last_name="Taylor" first_name="Jamar" abbr_name="J.Taylor" preferred_name="Jamar" birth_date="1990-09-29" weight="200.0" height="70" status="played" id="226723b9-fddf-45ca-8245-d8cc5442c400" position="CB" age="24" birth_place="San Diego, CA, USA" high_school="Helix (CA)" college="Boise State" college_conf="Mountain West Conference" rookie_year="2013">
+              <draft year="2013" round="2" number="54">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="00-0030484" origin="gsis"/>
+                <reference id="40002" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Derrick Shelby" jersey="79" last_name="Shelby" first_name="Derrick" abbr_name="D.Shelby" preferred_name="Derrick" birth_date="1989-03-04" weight="282.0" height="74" status="played" id="86a412bb-7db6-4c6a-86b0-499afd326fd9" position="DE" age="26" birth_place="Houston, TX, USA" high_school="Hightower (TX)" college="Utah" college_conf="Pacific Twelve Conference" rookie_year="2012">
+              <references>
+                <reference id="39078" origin="nflx"/>
+                <reference id="00-0029111" origin="gsis"/>
+              </references>
+            </player>
+            <player name="LaMichael James" jersey="27" last_name="James" first_name="LaMichael" abbr_name="L.James" preferred_name="LaMichael" birth_date="1989-10-22" weight="195.0" height="69" status="played" id="c9c6ff4b-952e-41d5-863a-5d5313afcfa6" position="RB" age="25" birth_place="Texarkana, TX, USA" high_school="Liberty-Eylau (TX)" college="Oregon" college_conf="Pacific Twelve Conference" rookie_year="2012">
+              <draft year="2012" round="2" number="61">
+                <team name="49ers" market="San Francisco" alias="SF" id="f0e724b0-4cbf-495a-be47-013907608da9"/>
+              </draft>
+              <references>
+                <reference id="00-0029260" origin="gsis"/>
+                <reference id="38591" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Rishard Matthews" jersey="18" last_name="Matthews" first_name="Rishard" abbr_name="R.Matthews" preferred_name="Rishard" birth_date="1989-10-12" weight="215.0" height="72" status="started" id="969a4d68-1d76-4e64-bfff-e898a9ac6bd4" position="WR" age="25" birth_place="San Diego, CA, USA" high_school="Saddleback (CA)" college="Nevada" college_conf="Western Athletic Conference" rookie_year="2012">
+              <draft year="2012" round="7" number="227">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="00-0029580" origin="gsis"/>
+                <reference id="38757" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jonas Gray" jersey="38" last_name="Gray" first_name="Jonas" abbr_name="J.Gray" preferred_name="Jonas" birth_date="1990-06-27" weight="225.0" height="70" status="deactivated" id="c52dd837-4eef-43ba-8a4f-5c876b2a48f5" position="RB" age="25" birth_place="Pontiac, MI, USA" high_school="Detroit Country Day (MI)" college="Notre Dame" college_conf="Independent" rookie_year="2012">
+              <references>
+                <reference id="00-0029104" origin="gsis"/>
+                <reference id="39071" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Earl Mitchell" jersey="90" last_name="Mitchell" first_name="Earl" abbr_name="E.Mitchell" preferred_name="Earl" birth_date="1987-09-25" weight="310.0" height="75" status="started" id="c9fe00a2-7620-49f3-a744-7d04c5b30560" position="DT" age="27" birth_place="Houston, TX, USA" high_school="North Shore" college="Arizona" college_conf="Pacific Ten Conference" rookie_year="2010">
+              <draft year="2010" round="3" number="81">
+                <team name="Texans" market="Houston" alias="HOU" id="82d2d380-3834-4938-835f-aec541e5ece7"/>
+              </draft>
+              <references>
+                <reference id="35520" origin="nflx"/>
+                <reference id="00-0027684" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Cameron Wake" jersey="91" last_name="Wake" first_name="Cameron" abbr_name="C.Wake" preferred_name="Cameron" birth_date="1982-01-30" weight="262.0" height="75" status="started" id="2d23b5d1-fbee-41df-bd6f-dd984d03a4d1" position="DE" age="33" birth_place="Beltsville, MD, USA" high_school="Dematha (MD)" college="Penn State" college_conf="Big Ten Conference" rookie_year="2005">
+              <references>
+                <reference id="00-0023368" origin="gsis"/>
+                <reference id="30153" origin="nflx"/>
+              </references>
+            </player>
+            <player name="C.J. Mosley" jersey="94" last_name="Mosley" first_name="C.J." abbr_name="C.Mosley" preferred_name="C.J." birth_date="1983-08-06" weight="312.0" height="74" status="played" id="45466510-c943-4541-812f-9cbd126a6cb2" position="DT" age="32" birth_place="Fort Knox, KY, USA" high_school="Waynesville (MO)" college="Missouri" college_conf="Big Twelve Conference" rookie_year="2005">
+              <draft year="2005" round="6" number="191">
+                <team name="Vikings" market="Minnesota" alias="MIN" id="33405046-04ee-4058-a950-d606f8c30852"/>
+              </draft>
+              <references>
+                <reference id="30018" origin="nflx"/>
+                <reference id="00-0023624" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jarvis Landry" jersey="14" last_name="Landry" first_name="Jarvis" abbr_name="J.Landry" preferred_name="Jarvis" birth_date="1992-11-28" weight="202.0" height="71" status="started" id="06e41dc1-d5dc-4bdc-8fc3-e0d7c3a99ac4" position="WR" age="22" birth_place="Metairie, LA, USA" high_school="Lutcher (LA)" college="Louisiana State" college_conf="Southeastern Conference" rookie_year="2014">
+              <draft year="2014" round="2" number="63">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="00-0031382" origin="gsis"/>
+                <reference id="41292" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Terrence Fede" jersey="78" last_name="Fede" first_name="Terrence" abbr_name="T.Fede" preferred_name="Terrence" birth_date="1991-11-19" weight="282.0" height="76" status="played" id="5064d069-aa24-4828-81c9-c78e0e56fb78" position="DE" age="23" birth_place="Nyack, NY, USA" high_school="Nyack (NY)" college="Marist" college_conf="Pioneer Football League" rookie_year="2014">
+              <draft year="2014" round="7" number="234">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="41463" origin="nflx"/>
+                <reference id="00-0031317" origin="gsis"/>
+              </references>
+            </player>
+            <player name="A.J. Francis" jersey="96" last_name="Francis" first_name="A.J." abbr_name="A.Francis" preferred_name="A.J." birth_date="1990-05-07" weight="330.0" height="77" status="deactivated" id="38717cb0-9a15-4a89-b86a-c57ff0cef0cc" position="DT" age="25" birth_place="Wasington, DC, USA" high_school="Gonzaga College (DC)" college="Maryland" college_conf="Atlantic Coast Conference" rookie_year="2013">
+              <references>
+                <reference id="00-0029972" origin="gsis"/>
+                <reference id="40425" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Brent Grimes" jersey="21" last_name="Grimes" first_name="Brent" abbr_name="B.Grimes" preferred_name="Brent" birth_date="1983-07-19" weight="190.0" height="70" status="started" id="7979b613-6dbf-4534-8166-6430433c1ec3" position="CB" age="32" birth_place="Philadelphia, PA, USA" high_school="Northeast (PA)" college="Shippensburg" college_conf="Pennsylvania State Athletic Conference" rookie_year="2006">
+              <references>
+                <reference id="31569" origin="nflx"/>
+                <reference id="00-0024183" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Will Davis" jersey="29" last_name="Davis" first_name="Will" abbr_name="W.Davis" preferred_name="Will" birth_date="1990-05-08" weight="190.0" height="71" status="deactivated" id="470ede20-c190-40e5-b66d-5b917ad8d5f3" position="DB" age="25" birth_place="Spokane, WA, USA" high_school="Central Valley (WA)" college="Utah State" college_conf="Western Athletic Conference" rookie_year="2013">
+              <draft year="2013" round="3" number="93">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="40041" origin="nflx"/>
+                <reference id="00-0030519" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jeff Linkenbach" jersey="72" last_name="Linkenbach" first_name="Jeff" abbr_name="J.Linkenbach" preferred_name="Jeff" birth_date="1987-06-09" weight="325.0" height="78" status="played" id="901a3f95-ae8a-4f1f-8321-11ec42b8b198" position="T" age="28" birth_place="Sandusky, OH, USA" high_school="Margaretta (OH)" college="Cincinnati" college_conf="Big East" rookie_year="2010">
+              <references>
+                <reference id="00-0027469" origin="gsis"/>
+                <reference id="35987" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Branden Albert" jersey="76" last_name="Albert" first_name="Branden" abbr_name="B.Albert" preferred_name="Branden" birth_date="1984-11-04" weight="310.0" height="77" status="started" id="868a2028-46f6-4263-91ca-e7907cbdf5e7" position="T" age="30" birth_place="Rochester, NY, USA" high_school="Glen Burnie (MD)" college="Virginia" college_conf="Atlantic Coast Conference" rookie_year="2008">
+              <draft year="2008" round="1" number="15">
+                <team name="Chiefs" market="Kansas City" alias="KC" id="6680d28d-d4d2-49f6-aace-5292d3ec02c2"/>
+              </draft>
+              <references>
+                <reference id="00-0026155" origin="gsis"/>
+                <reference id="33096" origin="nflx"/>
+              </references>
+            </player>
+            <player name="John Denney" jersey="92" last_name="Denney" first_name="John" abbr_name="J.Denney" preferred_name="John" birth_date="1978-12-13" weight="252.0" height="77" status="played" id="ca1aab05-e07b-437e-84c6-2bdb47433782" position="LS" age="36" birth_place="Denver, CO, USA" high_school="Horizon (CO)" college="Brigham Young" college_conf="Mountain West Conference" rookie_year="2005">
+              <references>
+                <reference id="30311" origin="nflx"/>
+                <reference id="00-0023173" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Reshad Jones" jersey="20" last_name="Jones" first_name="Reshad" abbr_name="R.Jones" preferred_name="Reshad" birth_date="1988-02-25" weight="215.0" height="73" status="started" id="76f95387-3bc1-4756-a714-a4b1a93f23ff" position="FS" age="27" birth_place="Atlanta, GA, USA" high_school="Washington (GA)" college="Georgia" college_conf="Southeastern Conference" rookie_year="2010">
+              <draft year="2010" round="5" number="163">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="00-0027762" origin="gsis"/>
+                <reference id="35602" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Sam Brenner" jersey="65" last_name="Brenner" first_name="Sam" abbr_name="S.Brenner" preferred_name="Sam" birth_date="1990-04-27" weight="310.0" height="74" status="played" id="4878ca76-b5f6-4d81-96c2-314556007b18" position="C" age="25" birth_place="San Diego, CA, USA" high_school="Oceanside (CA)" college="Utah" college_conf="Pacific Twelve Conference" rookie_year="2013">
+              <references>
+                <reference id="40420" origin="nflx"/>
+                <reference id="00-0029967" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Zach Vigil" jersey="49" last_name="Vigil" first_name="Zach" abbr_name="Z.Vigil" preferred_name="Zach" birth_date="1991-03-28" weight="240.0" height="74" status="played" id="775d6455-bc3c-4fd0-9adf-ae105f71fc95" position="LB" age="24" college="Utah State" college_conf="Mountain West Conference" rookie_year="2015">
+              <references>
+                <reference id="42759" origin="nflx"/>
+                <reference id="00-0031728" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Dion Sims" jersey="80" last_name="Sims" first_name="Dion" abbr_name="D.Sims" preferred_name="Dion" birth_date="1991-02-18" weight="265.0" height="76" status="played" id="9c04a540-cb7c-41dc-8e7c-50b7af29a3a2" position="TE" age="24" birth_place="Detroit, MI, USA" high_school="St. Mary's Prep (MI)" college="Michigan State" college_conf="Big Ten Conference" rookie_year="2013">
+              <draft year="2013" round="4" number="106">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="00-0030422" origin="gsis"/>
+                <reference id="40054" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jordan Phillips" jersey="97" last_name="Phillips" first_name="Jordan" abbr_name="J.Phillips" preferred_name="Jordan" birth_date="1992-09-21" weight="329.0" height="77" status="played" id="023af11a-3aa1-4266-b163-31cf6369ef3b" position="DT" age="22" birth_place="Towanda, KS, USA" high_school="Circle" college="Oklahoma" college_conf="Big Twelve Conference" rookie_year="2015">
+              <draft year="2015" round="2" number="52">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="00-0031557" origin="gsis"/>
+                <reference id="42395" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jelani Jenkins" jersey="53" last_name="Jenkins" first_name="Jelani" abbr_name="J.Jenkins" preferred_name="Jelani" birth_date="1992-03-13" weight="245.0" height="72" status="started" id="9f1a0910-090f-4f28-bb5e-0593e6f0a3bc" position="LB" age="23" birth_place="Olney, MD, USA" high_school="Our Lady of Good Counsel (MD)" college="Florida" college_conf="Southeastern Conference" rookie_year="2013">
+              <draft year="2013" round="4" number="104">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="40052" origin="nflx"/>
+                <reference id="00-0030384" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Zackary Bowman" jersey="30" last_name="Bowman" first_name="Zackary" abbr_name="Z.Bowman" preferred_name="Zackary" birth_date="1984-11-18" weight="196.0" height="73" status="played" id="73513c4e-03b6-4ad6-922d-11943e406479" position="CB" age="30" birth_place="Columbia, SC, USA" high_school="Batesburg-Leesville (SC)" college="Nebraska" college_conf="Big Twelve Conference" rookie_year="2008">
+              <draft year="2008" round="5" number="142">
+                <team name="Bears" market="Chicago" alias="CHI" id="7b112545-38e6-483c-a55c-96cf6ee49cb8"/>
+              </draft>
+              <references>
+                <reference id="33223" origin="nflx"/>
+                <reference id="00-0026282" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Ja'Wuan James" jersey="70" last_name="James" first_name="Ja'Wuan" abbr_name="J.James" preferred_name="Ja'Wuan" birth_date="1992-06-03" weight="318.0" height="78" status="started" id="ec2895a1-4907-4a18-a526-f2db4b663c3e" position="T" age="23" birth_place="Atlanta, GA, USA" high_school="North Gwinnett (GA)" college="Tennessee" college_conf="Southeastern Conference" rookie_year="2014">
+              <draft year="2014" round="1" number="19">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="41245" origin="nflx"/>
+                <reference id="00-0031417" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Ndamukong Suh" jersey="93" last_name="Suh" first_name="Ndamukong" abbr_name="N.Suh" preferred_name="Ndamukong" birth_date="1987-01-06" weight="305.0" height="76" status="started" id="f0f60621-a075-41f6-a07d-74fd9e1348f2" position="DT" age="28" birth_place="Portland, OR, USA" high_school="Grant (OR)" college="Nebraska" college_conf="Big Twelve Conference" rookie_year="2010">
+              <draft year="2010" round="1" number="2">
+                <team name="Lions" market="Detroit" alias="DET" id="c5a59daa-53a7-4de0-851f-fb12be893e9e"/>
+              </draft>
+              <references>
+                <reference id="00-0027855" origin="gsis"/>
+                <reference id="35441" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Matt Hazel" jersey="83" last_name="Hazel" first_name="Matt" abbr_name="M.Hazel" preferred_name="Matt" birth_date="1992-01-23" weight="202.0" height="73" status="deactivated" id="eeb75eda-de43-401e-979b-2fbcc060c33c" position="WR" age="23" birth_place="North Augusta, SC, USA" high_school="North Augusta (SC)" college="Coastal Carolina" college_conf="Big South Conference" rookie_year="2014">
+              <draft year="2014" round="6" number="190">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="41419" origin="nflx"/>
+                <reference id="00-0031315" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Spencer Paysinger" jersey="42" last_name="Paysinger" first_name="Spencer" abbr_name="S.Paysinger" preferred_name="Spencer" birth_date="1988-06-28" weight="236.0" height="74" status="played" id="284f5b6f-cb48-42b6-97be-d1957e4d0bdb" position="LB" age="27" birth_place="Los Angeles, CA, USA" high_school="Beverly Hills (CA)" college="Oregon" college_conf="Pacific Twelve Conference" rookie_year="2011">
+              <references>
+                <reference id="00-0028368" origin="gsis"/>
+                <reference id="37635" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Ryan Tannehill" jersey="17" last_name="Tannehill" first_name="Ryan" abbr_name="R.Tannehill" preferred_name="Ryan" birth_date="1988-07-27" weight="220.0" height="76" status="started" id="5812204c-6dae-4450-8011-99e0f72864ac" position="QB" age="27" birth_place="Lubbock, TX, USA" high_school="Big Spring (TX)" college="Texas A&amp;M" college_conf="Big Twelve Conference" rookie_year="2012">
+              <draft year="2012" round="1" number="8">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="38538" origin="nflx"/>
+                <reference id="00-0029701" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Jordan Kovacs" jersey="32" last_name="Kovacs" first_name="Jordan" abbr_name="J.Kovacs" preferred_name="Jordan" birth_date="1990-06-12" weight="210.0" height="70" status="played" id="d6f89ef1-41a2-4066-91e0-7ed9882a81fd" position="S" age="25" birth_place="Curtice, OH, USA" high_school="Clay (OH)" college="Michigan" college_conf="Big Ten Conference" rookie_year="2013">
+              <references>
+                <reference id="40428" origin="nflx"/>
+                <reference id="00-0029975" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Kelvin Sheppard" jersey="52" last_name="Sheppard" first_name="Kelvin" abbr_name="K.Sheppard" preferred_name="Kelvin" birth_date="1988-01-02" weight="252.0" height="74" status="started" id="7190fb71-0916-4f9d-88a0-8c1a8c1c9d0d" position="LB" age="27" birth_place="Atlanta, GA, USA" high_school="Stephenson (GA)" college="Louisiana State" college_conf="Southeastern Conference" rookie_year="2011">
+              <draft year="2011" round="3" number="68">
+                <team name="Bills" market="Buffalo" alias="BUF" id="768c92aa-75ff-4a43-bcc0-f2798c2e1724"/>
+              </draft>
+              <references>
+                <reference id="00-0028006" origin="gsis"/>
+                <reference id="37143" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Jordan Cameron" jersey="84" last_name="Cameron" first_name="Jordan" abbr_name="J.Cameron" preferred_name="Jordan" birth_date="1988-08-07" weight="249.0" height="77" status="started" id="44257544-0a90-4bca-b759-e589a70cf168" position="TE" age="27" birth_place="Los Angeles, CA, USA" high_school="Newbury Park (CA)" college="Southern California" college_conf="Pacific Twelve Conference" rookie_year="2011">
+              <draft year="2011" round="4" number="102">
+                <team name="Browns" market="Cleveland" alias="CLE" id="d5a2eb42-8065-4174-ab79-0a6fa820e35e"/>
+              </draft>
+              <references>
+                <reference id="00-0028040" origin="gsis"/>
+                <reference id="37177" origin="nflx"/>
+              </references>
+            </player>
+            <player name="Matt Darr" jersey="04" last_name="Darr" first_name="Matt" abbr_name="M.Darr" preferred_name="Matt" birth_date="1992-07-02" weight="220.0" height="73" status="played" id="325735c1-9fa1-48ee-bb8d-2ae45781f28d" position="P" age="23" birth_place="Bakersfield, CA, USA" high_school="Frontier" college="Tennessee" college_conf="Southeastern Conference" rookie_year="2015">
+              <references>
+                <reference id="42747" origin="nflx"/>
+                <reference id="00-0031716" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Damien Williams" jersey="34" last_name="Williams" first_name="Damien" abbr_name="D.Williams" preferred_name="Damien" birth_date="1992-04-03" weight="221.0" height="71" status="played" id="90908a56-901b-466d-8689-943075da96fe" position="RB" age="23" birth_place="San Diego, CA, USA" high_school="Mira Mesa (CA)" college="Oklahoma" college_conf="Big Twelve Conference" rookie_year="2014">
+              <references>
+                <reference id="41712" origin="nflx"/>
+                <reference id="00-0030874" origin="gsis"/>
+              </references>
+            </player>
+            <player name="Dallas Thomas" jersey="63" last_name="Thomas" first_name="Dallas" abbr_name="D.Thomas" preferred_name="Dallas" birth_date="1989-10-30" weight="315.0" height="77" status="started" id="a8a0f86e-84c0-4a26-9991-f3d83d6bba98" position="G" age="25" birth_place="Baton Rouge, LA, USA" high_school="Scotlandville (LA)" college="Tennessee" college_conf="Southeastern Conference" rookie_year="2013">
+              <draft year="2013" round="3" number="77">
+                <team name="Dolphins" market="Miami" alias="MIA" id="4809ecb0-abd3-451d-9c4a-92a90b83ca06"/>
+              </draft>
+              <references>
+                <reference id="40025" origin="nflx"/>
+                <reference id="00-0030531" origin="gsis"/>
+              </references>
+            </player>
+          </away>
+          <officials>
+            <official full_name="Bergman, Jerry" number="91" assignment="headlinesman"/>
+            <official full_name="Codey, Kevin" number="16" assignment="linejudge"/>
+            <official full_name="Lucivansky, Jon" number="89" assignment="sidejudge"/>
+            <official full_name="Nazzaro, Louis" assignment="replayofficial"/>
+            <official full_name="Coleman, Walt" number="65" assignment="referee"/>
+            <official full_name="Martinez, Rich" number="39" assignment="backjudge"/>
+            <official full_name="Schuster, Bill" number="129" assignment="umpire"/>
+            <official full_name="Cheek, Boris" number="41" assignment="fieldjudge"/>
+          </officials>
+        </game>
+        <!-- Generation ended @ 2016-08-26 15:56:17 +0000 -->
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 05:39:38 GMT
+recorded_with: VCR 3.0.3

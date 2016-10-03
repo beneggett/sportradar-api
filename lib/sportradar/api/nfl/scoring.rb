@@ -5,8 +5,8 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        # @quarters = data['quarter'].map { |quarter| Sportradar::Api::Nfl::Quarter.new quarter} if data['quarter']
-        # this is causing a problem in some scenarios, receiving ['1', 'id-hash']
+        response['quarter'] = response['quarter'].select {|x| x.is_a? Hash } if response['quarter'].is_a?(Array) && response['quarter'].map(&:class).uniq.count > 1
+        @quarters = parse_into_array(selector: response["quarter"], klass: Sportradar::Api::Nfl::Quarter) if response["quarter"]
       end
 
       def final
@@ -14,11 +14,11 @@ module Sportradar
       end
 
       def home
-        quarters.map {|quarter| quarter['home_points'].to_i }.reduce(:+)
+        quarters.map {|quarter| quarter.home_points.to_i }.reduce(:+)
       end
 
       def away
-        quarters.map {|quarter| quarter['away_points'].to_i }.reduce(:+)
+        quarters.map {|quarter| quarter.away_points.to_i }.reduce(:+)
       end
     end
   end

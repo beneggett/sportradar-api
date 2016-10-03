@@ -1,0 +1,541 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-t2/na/matches/357607e9-87cd-4848-b53e-0485d9c1a3bc/summary.xml?api_key=<SOCCER_NA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=1
+      Content-Type:
+      - text/xml;charset=utf-8
+      Date:
+      - Thu, 29 Sep 2016 05:49:29 GMT
+      Expires:
+      - Thu, 29 Sep 2016 05:49:30 -0000
+      Server:
+      - nginx
+      X-Content-Type-Options:
+      - nosniff
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-117.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '15000'
+      X-Plan-Quota-Current:
+      - '58'
+      Content-Length:
+      - '66719'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <summary generated="2016-09-29T05:49:28Z" xmlns="http://feed.elasticstats.com/schema/soccer/sr/v2/matches-summary.xsd">
+          <matches>
+            <match id="357607e9-87cd-4848-b53e-0485d9c1a3bc" status="closed" period="P2" scheduled="2016-07-13T23:00:00Z" clock="" scratched="false" season_id="34913769-58a6-487d-aa7a-1883c8f87909" reference_id="sr:match:8697652">
+              <coverage lineups="2" tactical_lineups="true" corner_facts="true" extended_facts="true" deep_facts="true" statistics="true"/>
+              <category id="dfc18161-31f9-4fca-8d6b-8d6df641c6fc" name="USA" country_code="USA" country="United States" reference_id="sr:category:26"/>
+              <tournament_group id="b4360831-aaa9-46a4-8319-62006d308eb6" name="Major League Soccer" reference_id="sr:tournamentgroup:242"/>
+              <tournament id="cdc8c40c-684a-4dfa-980d-a54e18231574" name="Major League Soccer" season_id="34913769-58a6-487d-aa7a-1883c8f87909" type="group" reference_id="sr:tournament:18"/>
+              <referee id="19114721-c4ca-470d-9ded-d0ed103baefd" first_name="Robert" last_name="Sibiga" country_code="USA" country="United States" reference_id="sr:referee:592586"/>
+              <round type="table" number="19" week="28"/>
+              <home id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" name="Columbus Crew" full_name="Columbus Crew" alias="COC" country_code="USA" country="United States" type="team" reference_id="sr:team:2504" formation="4-2-3-1" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="97" ball_safe="86" corner_kicks="7" dangerous_attacks="77" fouls="7" free_kicks="10" goal_attempts="10" goal_kicks="6" offsides="4" saves="1" substitutions="3" throw_ins="20" yellow_card="0" shots_on_target="4" shots_off_target="6" shots_total="10" possessions="60"/>
+                <manager id="d1881ea2-9efb-447a-9863-17536d2979a4" first_name="Gregg" last_name="Berhalter" country_code="USA" country="United States" reference_id="sr:manager:1537"/>
+                <players>
+                  <player id="01a674ea-8a1b-4581-aab9-ee947a6c901b" first_name="Michael" last_name="Parkhurst" country_code="USA" country="United States" reference_id="sr:player:38608" full_first_name="Michael Finlay" full_last_name="Parkhurst" position="D" started="true" jersey_number="4" tactical_position="3" tactical_order="3">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="2d1a7d25-0ac9-40da-9098-b75aa06e2a86" first_name="Ola" last_name="Kamara" country_code="NOR" country="Norway" reference_id="sr:player:18009" full_first_name="Ola Williams" full_last_name="Kamara" position="F" started="true" jersey_number="17" tactical_position="8" tactical_order="11">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="2eab4365-8719-4e03-a4d2-15d98fd37e90" first_name="Chad" last_name="Barson" country_code="USA" country="United States" reference_id="sr:player:314106" position="D" started="false" jersey_number="21">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="3804546d-57ac-4d98-94c3-be61f0166ab8" first_name="Tyson" last_name="Wahl" country_code="USA" country="United States" reference_id="sr:player:48778" position="D" started="true" jersey_number="2" tactical_position="3" tactical_order="4">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="401caa75-e069-4d4d-9a99-864abdda70ba" first_name="Brad" last_name="Stuver" country_code="USA" country="United States" reference_id="sr:player:314190" position="G" started="false" jersey_number="41">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="530bd144-8ddf-4724-a8bd-e4b000222565" first_name="Hector" last_name="Jimenez" country_code="USA" country="United States" reference_id="sr:player:149012" position="M" started="false" jersey_number="16">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="1"/>
+                  </player>
+                  <player id="5a836d28-591d-4bc6-9966-65cd5ebc1bfc" first_name="Waylon" last_name="Francis" country_code="CRI" country="Costa Rica" reference_id="sr:player:247617" full_first_name="Waylon Dwayne" full_last_name="Francis" position="D" started="false" jersey_number="14">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="1"/>
+                  </player>
+                  <player id="67ccd456-d553-4e25-a3e3-1f9b0a6a3622" first_name="Rodrigo" last_name="Saravia" country_code="GTM" country="Guatemala" reference_id="sr:player:951358" position="M" started="false" jersey_number="19">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="8afba29f-c191-4b5a-a1cb-328733334180" first_name="Steve" last_name="Clark" country_code="USA" country="United States" reference_id="sr:player:109561" full_first_name="Steven Thomas" full_last_name="Clark" position="G" started="true" jersey_number="1" tactical_position="1" tactical_order="1">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="8d89e37d-374a-4351-bc9b-30f64ef13da9" first_name="Harrison" last_name="Afful" country_code="GHA" country="Ghana" reference_id="sr:player:32741" position="D" started="true" jersey_number="25" tactical_position="2" tactical_order="2">
+                    <statistics goal="1" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="8e3736a0-09b0-4aa3-b721-db9429ffa9bd" first_name="Tony" last_name="Tchani" country_code="CMR" country="Cameroon" reference_id="sr:player:117245" position="M" started="true" jersey_number="6" tactical_position="6" tactical_order="7">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="b3626ca8-6fc5-4a13-a08d-f6f76bae017d" first_name="Wil" last_name="Trapp" country_code="USA" country="United States" reference_id="sr:player:314104" full_first_name="William" full_last_name="Trapp" position="M" started="true" jersey_number="20" tactical_position="6" tactical_order="6">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="b7e41a35-f2a4-4cc2-9353-f73708eb2bc2" first_name="Ethan" last_name="Finlay" country_code="USA" country="United States" reference_id="sr:player:224494" position="M" started="true" jersey_number="13" tactical_position="5" tactical_order="8">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="1" substitution_in="0"/>
+                  </player>
+                  <player id="c88adda3-c3cc-46f6-9ea8-c15a36c30beb" first_name="Dilly" last_name="Duka" country_code="USA" country="United States" reference_id="sr:player:111151" position="M" started="true" jersey_number="5" tactical_position="6" tactical_order="9">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="1" substitution_in="0"/>
+                  </player>
+                  <player id="c8c91622-f251-481e-b536-be13e31026b9" first_name="Cedric Mabwati" last_name="" country_code="COD" country="Democratic Republic of the Congo" reference_id="sr:player:104789" full_first_name="Cedrick Mabwati" full_last_name="Gerard" position="M" started="false" jersey_number="11">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="1"/>
+                  </player>
+                  <player id="c8f83c93-3f46-4b67-ba30-3d00f5849138" first_name="Justin" last_name="Meram" country_code="IRQ" country="Iraq" reference_id="sr:player:149138" full_first_name="Justin Joseph" full_last_name="Meram" position="M" started="true" jersey_number="9" tactical_position="7" tactical_order="10">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="cfe85088-f33a-4b55-bc90-f883298da22e" first_name="Mohammed" last_name="Saeid" country_code="SWE" country="Sweden" reference_id="sr:player:228720" full_first_name="Mohammed Khalid" full_last_name="Saeid" position="M" started="false" jersey_number="8">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="eb3383da-993e-421d-9245-9961818ea5ec" first_name="Corey" last_name="Ashe" country_code="USA" country="United States" reference_id="sr:player:48989" full_first_name="Corey Alan" full_last_name="Ashe" position="D" started="true" jersey_number="3" tactical_position="4" tactical_order="5">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="1" substitution_in="0"/>
+                  </player>
+                </players>
+              </home>
+              <away id="71e60dd4-b0b1-4771-821b-09200d5c8874" name="Toronto" full_name="Toronto FC" alias="TOR" country_code="USA" country="United States" type="team" reference_id="sr:team:7080" formation="4-4-2" score="1" regular_score="1" penalty_score="" winner="draw">
+                <scoring>
+                  <half points="0" number="1"/>
+                  <half points="1" number="2"/>
+                </scoring>
+                <statistics attacks="71" ball_safe="94" corner_kicks="5" dangerous_attacks="28" fouls="9" free_kicks="11" goal_attempts="7" goal_kicks="12" offsides="1" saves="3" substitutions="3" throw_ins="16" yellow_card="1" shots_on_target="2" shots_off_target="5" shots_total="7" possessions="40"/>
+                <manager id="6a32dc03-db21-4da6-8a1a-2c9775caaeb4" first_name="Greg" last_name="Vanney" country_code="USA" country="United States" reference_id="sr:manager:11298"/>
+                <players>
+                  <player id="061fb59f-4b5c-4415-aaab-cdcd7874852c" first_name="Benoit" last_name="Cheyrou" country_code="FRA" country="France" reference_id="sr:player:999" position="M" started="true" jersey_number="8" tactical_position="6" tactical_order="7">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="15744b68-765b-43ae-85bf-ed9cfc0fc02b" first_name="Jordan" last_name="Hamilton" country_code="CAN" country="Canada" reference_id="sr:player:358836" full_first_name="Jordan Patrick" full_last_name="Dear Hamilton" position="F" started="true" jersey_number="22" tactical_position="8" tactical_order="10">
+                    <statistics goal="1" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="3349b005-11d5-432f-98f0-75e884d4164d" first_name="Mark" last_name="Bloom" country_code="USA" country="United States" reference_id="sr:player:335833" position="D" started="true" jersey_number="28" tactical_position="7" tactical_order="9">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="1" yellow_red_card="0" red_card="0" substitution_out="1" substitution_in="0"/>
+                  </player>
+                  <player id="3fa9e78c-4253-47f1-b9f3-c2d1c7a05ffd" first_name="Alex" last_name="Bono" country_code="USA" country="United States" reference_id="sr:player:812108" full_first_name="Alexander Nicholas" full_last_name="Bono" position="G" started="true" jersey_number="25" tactical_position="1" tactical_order="1">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="5533271a-0e0f-48cf-8b3c-fb84e93ef00f" first_name="Nick" last_name="Hagglund" country_code="USA" country="United States" reference_id="sr:player:540004" position="D" started="false" jersey_number="6">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="1"/>
+                  </player>
+                  <player id="5597de96-5e7b-4f42-99b3-f4d50ed25ac2" first_name="Tsubasa" last_name="Endoh" country_code="JPN" country="Japan" reference_id="sr:player:950396" position="M" started="false" jersey_number="9">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="1"/>
+                  </player>
+                  <player id="5866225c-9d36-4d08-a608-0b7ffee7b9d3" first_name="Marco" last_name="Delgado" country_code="USA" country="United States" reference_id="sr:player:234890" full_first_name="Marco Antonio" full_last_name="Delgado" position="M" started="true" jersey_number="18" tactical_position="6" tactical_order="8">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="1" substitution_in="0"/>
+                  </player>
+                  <player id="5e17a17c-e4a8-4890-bd51-98e68270ef33" first_name="Jonathan" last_name="Osorio" country_code="CAN" country="Canada" reference_id="sr:player:273031" position="M" started="true" jersey_number="21" tactical_position="5" tactical_order="6">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="781794d5-4f0b-424b-81bc-d3d148294d9b" first_name="Justin" last_name="Morrow" country_code="USA" country="United States" reference_id="sr:player:149306" position="D" started="true" jersey_number="2" tactical_position="2" tactical_order="2">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="1" substitution_in="0"/>
+                  </player>
+                  <player id="8b42e079-b89a-4d85-aff1-92ebf5b31cd7" first_name="Quillan" last_name="Roberts" country_code="CAN" country="Canada" reference_id="sr:player:155866" position="G" started="false" jersey_number="40">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="b383ba17-363e-4ca0-bfda-8b40023b0218" first_name="Drew" last_name="Moor" country_code="USA" country="United States" reference_id="sr:player:26193" position="D" started="true" jersey_number="3" tactical_position="3" tactical_order="4">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="b8f9325c-ad0c-4944-b468-1538d90b2107" first_name="Steven" last_name="Beitashour" country_code="IRN" country="Iran" reference_id="sr:player:114920" position="D" started="false" jersey_number="33">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="cb26a19c-ccd0-47f3-8dbf-141d7dc07fd0" first_name="Eriq" last_name="Zavaleta" country_code="USA" country="United States" reference_id="sr:player:314048" position="D" started="true" jersey_number="15" tactical_position="3" tactical_order="3">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="da342276-540f-41cb-b867-738478578dfe" first_name="Josh" last_name="Williams" country_code="USA" country="United States" reference_id="sr:player:149123" position="D" started="true" jersey_number="23" tactical_position="4" tactical_order="5">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                  <player id="f7778f40-e36d-4f36-bd67-2c137a5cfecb" first_name="Jay" last_name="Chapman" country_code="CAN" country="Canada" reference_id="sr:player:155864" position="M" started="false" jersey_number="14">
+                    <statistics goal="0" goal_assist="1" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="1"/>
+                  </player>
+                  <player id="fc15e447-49af-4ab6-9a1a-4c767dac0cdf" first_name="Mo" last_name="Babouli" country_code="CAN" country="Canada" reference_id="sr:player:917336" position="F" started="true" jersey_number="11" tactical_position="8" tactical_order="11">
+                    <statistics goal="0" goal_assist="0" own_goal="0" yellow_card="0" yellow_red_card="0" red_card="0" substitution_out="0" substitution_in="0"/>
+                  </player>
+                </players>
+              </away>
+              <venue id="cba2bb6d-da38-4c80-9f28-8d9538791b9b" name="Mapfre Stadium" country_code="USA" country="United States" city="Columbus" capacity="20145" coordinates="40.009541,-82.991158" reference_id="sr:venue:2296"/>
+              <facts>
+                <fact id="cee2b731-a116-43a8-b9cf-bd7564c4e3ae" type="about_to_start" time="2016-07-13T23:06:18Z" updated_time="2016-07-13T23:06:18Z" scratch="false" reference_id="sr:fact:234960201" clock="0"/>
+                <fact id="5815b572-79f7-4b5f-bbb4-b9a74dd6842b" type="match_started" time="2016-07-13T23:08:30Z" updated_time="2016-07-13T23:08:30Z" scratch="false" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234960333" clock="1">
+                  <description>The first-half is now underway.</description>
+                </fact>
+                <fact id="9f08b080-471d-4d33-9f33-9638d75a7cea" type="period_started" time="2016-07-13T23:08:30Z" updated_time="2016-07-13T23:08:30Z" scratch="false" reference_id="sr:fact:234960335" period="P1" clock="1"/>
+                <fact id="761453e6-aeca-46c9-bdfa-53b51be45206" type="throwin" time="2016-07-13T23:09:27Z" updated_time="2016-07-13T23:09:27Z" scratch="false" x="81" y="4" clock="1" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234960387" period="P1">
+                  <description>Columbus Crew have a dangerous throw-in.</description>
+                </fact>
+                <fact id="b088fc54-3949-4d36-b058-82449ff74bc2" type="goal_kick" time="2016-07-13T23:09:50Z" updated_time="2016-07-13T23:09:50Z" scratch="false" x="95" y="50" clock="2" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960411" period="P1">
+                  <description>Toronto have a goal kick.</description>
+                </fact>
+                <fact id="af8cd9d1-53a2-4623-a95d-d46de12fae47" type="free_kick" time="2016-07-13T23:10:28Z" updated_time="2016-07-13T23:10:28Z" scratch="false" x="36" y="79" clock="2" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960445" period="P1">
+                  <description>Free kick for Toronto in the half of Columbus Crew.</description>
+                </fact>
+                <fact id="a10e80a2-8adb-46a1-bd49-db17be3f5b6d" type="shot_off_target" time="2016-07-13T23:13:42Z" updated_time="2016-07-13T23:13:42Z" scratch="false" x="12" y="44" clock="6" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960561" period="P1"/>
+                <fact id="b1a92dbb-8bd4-462a-b867-31c3f2165169" type="goal_kick" time="2016-07-13T23:13:42Z" updated_time="2016-07-13T23:13:42Z" scratch="false" x="5" y="50" clock="6" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234960565" period="P1">
+                  <description>Ball goes out of play for a Columbus Crew goal kick.</description>
+                </fact>
+                <fact id="95fa925a-b93b-4075-b144-9dd9b5d3babe" type="shot_off_target" time="2016-07-13T23:14:33Z" updated_time="2016-07-13T23:14:33Z" scratch="false" x="86" y="61" clock="7" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234960595" period="P1"/>
+                <fact id="2c06446a-ab4f-4542-a3f3-53c6578ec7d4" type="goal_kick" time="2016-07-13T23:14:33Z" updated_time="2016-07-13T23:14:33Z" scratch="false" x="95" y="50" clock="7" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960599" period="P1">
+                  <description>Robert Sibiga awards Toronto a goal kick.</description>
+                </fact>
+                <fact id="93829bbf-e2a0-4699-96f1-5de855484a70" type="throwin" time="2016-07-13T23:15:02Z" updated_time="2016-07-13T23:15:02Z" scratch="false" x="20" y="98" clock="7" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960619" period="P1">
+                  <description>Columbus Crew needs to be cautious. Toronto have an attacking throw-in.</description>
+                </fact>
+                <fact id="89649790-6f96-4c34-9024-6286b3e0d513" type="shot_off_target" time="2016-07-13T23:15:35Z" updated_time="2016-07-13T23:15:35Z" scratch="false" x="19" y="46" clock="8" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960653" period="P1"/>
+                <fact id="c15b25ad-cccb-4e76-a631-0600b3b49b65" type="corner_kick" time="2016-07-13T23:15:54Z" updated_time="2016-07-13T23:15:54Z" scratch="false" x="5" y="5" clock="8" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960663" period="P1">
+                  <description>Corner awarded to Toronto.</description>
+                </fact>
+                <fact id="ccab90d0-00ff-4793-8682-ec0c9873b5a2" type="throwin" time="2016-07-13T23:16:06Z" updated_time="2016-07-13T23:16:06Z" scratch="false" x="17" y="96" clock="8" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960673" period="P1">
+                  <description>Robert Sibiga signals a throw-in for Toronto, close to Columbus Crew's area.</description>
+                </fact>
+                <fact id="343ccb91-f846-4595-bdeb-1880a30a3082" type="shot_off_target" time="2016-07-13T23:16:59Z" updated_time="2016-07-13T23:17:16Z" scratch="false" x="87" y="79" clock="9" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_id="b7e41a35-f2a4-4cc2-9353-f73708eb2bc2" reference_id="sr:fact:234960699" period="P1">
+                  <description>Columbus Crew's Ethan Finlay gets his shot away but it misses the target.</description>
+                </fact>
+                <fact id="b4505cf4-330b-4682-ae86-4974ae93dc29" type="goal_kick" time="2016-07-13T23:16:59Z" updated_time="2016-07-13T23:16:59Z" scratch="false" x="95" y="50" clock="9" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960703" period="P1">
+                  <description>Goal kick for Toronto at Mapfre Stadium.</description>
+                </fact>
+                <fact id="fee1d484-888c-4150-85ea-59c919233eb9" type="throwin" time="2016-07-13T23:17:46Z" updated_time="2016-07-13T23:17:46Z" scratch="false" x="31" y="96" clock="10" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234960741" period="P1">
+                  <description>Ball safe as Columbus Crew is awarded a throw-in in their half.</description>
+                </fact>
+                <fact id="ad939eff-38fd-4a92-a8c7-83794c7aab62" type="free_kick" time="2016-07-13T23:20:03Z" updated_time="2016-07-13T23:20:03Z" scratch="false" x="13" y="40" clock="12" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234960799" period="P1">
+                  <description>Robert Sibiga signals a free kick to Columbus Crew in their own half.</description>
+                </fact>
+                <fact id="c246ea53-158e-4b81-9226-04b7a7c968ef" type="throwin" time="2016-07-13T23:21:33Z" updated_time="2016-07-13T23:21:33Z" scratch="false" x="27" y="2" clock="14" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960849" period="P1">
+                  <description>Toronto to take a throw-in in Columbus Crew territory.</description>
+                </fact>
+                <fact id="907799b7-22ba-42a0-bd8b-87eb5e1a67d1" type="throwin" time="2016-07-13T23:22:24Z" updated_time="2016-07-13T23:22:24Z" scratch="false" x="28" y="3" clock="14" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234960883" period="P1">
+                  <description>Robert Sibiga signals a Toronto throw-in in Columbus Crew's half.</description>
+                </fact>
+                <fact id="b4c6693a-4cf8-4950-b58b-69b4b261beca" type="throwin" time="2016-07-13T23:23:08Z" updated_time="2016-07-13T23:23:08Z" scratch="false" x="52" y="97" clock="15" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234960913" period="P1">
+                  <description>A throw-in for the home team on the opposite half.</description>
+                </fact>
+                <fact id="696587c9-40da-4b99-9522-54232b1f3159" type="offside" time="2016-07-13T23:24:15Z" updated_time="2016-07-13T23:24:18Z" scratch="false" x="23" y="51" clock="16" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_id="15744b68-765b-43ae-85bf-ed9cfc0fc02b" reference_id="sr:fact:234960981" period="P1">
+                  <description>Toronto push upfield but Robert Sibiga quickly pulls them for offside.</description>
+                </fact>
+                <fact id="c523eb1f-a4eb-49dc-a0c3-2edc3f3b2752" type="corner_kick" time="2016-07-13T23:25:23Z" updated_time="2016-07-13T23:25:23Z" scratch="false" x="95" y="90" clock="17" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961023" period="P1">
+                  <description>Columbus Crew have been awarded a corner by Robert Sibiga.</description>
+                </fact>
+                <fact id="5d95fdce-a349-4953-aec2-463d557fa8e4" type="shot_on_target" time="2016-07-13T23:26:22Z" updated_time="2016-07-13T23:26:27Z" scratch="false" x="84" y="63" clock="18" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_id="2d1a7d25-0ac9-40da-9098-b75aa06e2a86" reference_id="sr:fact:234961071" period="P1">
+                  <description>Ola Kamara of Columbus Crew smashes in a shot on target. The keeper saves, though.</description>
+                </fact>
+                <fact id="9e7cac2b-1730-45e5-b53b-b05aa33ff8c2" type="keeper_save" time="2016-07-13T23:26:22Z" updated_time="2016-07-13T23:26:22Z" scratch="false" clock="18" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234961075" period="P1"/>
+                <fact id="d66e7ad2-6314-4491-badd-023e4cb2488e" type="free_kick" time="2016-07-13T23:27:33Z" updated_time="2016-07-13T23:27:33Z" scratch="false" x="53" y="45" clock="20" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961139" period="P1">
+                  <description>Free kick Columbus Crew.</description>
+                </fact>
+                <fact id="c657c390-13b1-41c0-bdaa-6d84fd9c1a64" type="throwin" time="2016-07-13T23:28:04Z" updated_time="2016-07-13T23:28:04Z" scratch="false" x="77" y="5" clock="20" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234961159" period="P1">
+                  <description>Throw-in for Toronto in their own half.</description>
+                </fact>
+                <fact id="eefc6be3-1f54-45b9-98e1-0a9862d35de8" type="shot_off_target" time="2016-07-13T23:29:08Z" updated_time="2016-07-13T23:29:31Z" scratch="false" x="84" y="55" clock="21" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_id="c88adda3-c3cc-46f6-9ea8-c15a36c30beb" reference_id="sr:fact:234961195" period="P1">
+                  <description>Columbus Crew's Dilly Duka gets his shot away but it misses the target.</description>
+                </fact>
+                <fact id="67b337f3-473c-41bf-8011-7327a3d4b35c" type="goal_kick" time="2016-07-13T23:29:08Z" updated_time="2016-07-13T23:29:08Z" scratch="false" x="95" y="50" clock="21" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234961197" period="P1">
+                  <description>It's a goal kick for the away team in Columbus.</description>
+                </fact>
+                <fact id="b31b3812-66e6-40a1-8f6b-5a013ef6561c" type="offside" time="2016-07-13T23:30:12Z" updated_time="2016-07-13T23:30:12Z" scratch="false" x="75" y="64" clock="22" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961257" period="P1">
+                  <description>Columbus Crew drive forward at breakneck speed but are pulled up for offside.</description>
+                </fact>
+                <fact id="b2ffdc0c-f4f1-4483-ad00-7e9be68f5a65" type="free_kick" time="2016-07-13T23:31:35Z" updated_time="2016-07-13T23:31:35Z" scratch="false" x="34" y="79" clock="24" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961311" period="P1">
+                  <description>Columbus Crew awarded a free kick in their own half.</description>
+                </fact>
+                <fact id="8419ee34-c66e-4e29-be3e-18b55e6c6cd2" type="throwin" time="2016-07-13T23:32:29Z" updated_time="2016-07-13T23:32:29Z" scratch="false" x="91" y="3" clock="24" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961377" period="P1">
+                  <description>Can Columbus Crew capitalize from this throw-in deep inside Toronto's half?</description>
+                </fact>
+                <fact id="5e882d8f-67fe-45a6-b04f-09de6d5b6ff4" type="corner_kick" time="2016-07-13T23:33:05Z" updated_time="2016-07-13T23:33:05Z" scratch="false" x="95" y="5" clock="25" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961411" period="P1">
+                  <description>Columbus Crew have been awarded a corner by Robert Sibiga.</description>
+                </fact>
+                <fact id="d2c7dce6-f101-47f2-80b0-10e0daf65897" type="corner_kick" time="2016-07-13T23:34:50Z" updated_time="2016-07-13T23:34:50Z" scratch="false" x="95" y="5" clock="27" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961515" period="P1">
+                  <description>Corner awarded to Columbus Crew.</description>
+                </fact>
+                <fact id="15d96a03-3282-437c-b204-5841f7b6f65d" type="throwin" time="2016-07-13T23:35:23Z" updated_time="2016-07-13T23:35:23Z" scratch="false" x="16" y="1" clock="27" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234961535" period="P1">
+                  <description>Throw-in for Toronto close to the penalty box.</description>
+                </fact>
+                <fact id="cefdbbc8-b87d-4f2b-a934-639da8f62abd" type="throwin" time="2016-07-13T23:36:31Z" updated_time="2016-07-13T23:36:31Z" scratch="false" x="85" y="1" clock="29" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961581" period="P1">
+                  <description>Throw-in high up the field for Columbus Crew in Columbus.</description>
+                </fact>
+                <fact id="15168cda-e810-443f-b8d0-4a6c9ae582be" type="free_kick" time="2016-07-13T23:36:42Z" updated_time="2016-07-13T23:36:42Z" scratch="false" x="82" y="44" clock="29" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234961599" period="P1">
+                  <description>Free kick for Toronto in their own half.</description>
+                </fact>
+                <fact id="895a277a-1834-4959-9ffb-2c690fc92452" type="goal_kick" time="2016-07-13T23:38:01Z" updated_time="2016-07-13T23:38:01Z" scratch="false" x="5" y="50" clock="30" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961683" period="P1">
+                  <description>Goal kick for Columbus Crew at Mapfre Stadium.</description>
+                </fact>
+                <fact id="741c3f75-acd4-46b2-96e3-5ffdb1faf372" type="free_kick" time="2016-07-13T23:39:49Z" updated_time="2016-07-13T23:39:49Z" scratch="false" x="63" y="23" clock="32" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234961807" period="P1">
+                  <description>Robert Sibiga signals a free kick to Columbus Crew.</description>
+                </fact>
+                <fact id="43a07fef-bb85-4be4-8d6c-521118eb5d5d" type="card" time="2016-07-13T23:40:01Z" updated_time="2016-07-13T23:40:05Z" scratch="false" clock="32" card="Y" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_id="3349b005-11d5-432f-98f0-75e884d4164d" reference_id="sr:fact:234961813" period="P1">
+                  <description>Mark Bloom (Toronto) has received a yellow card from Robert Sibiga.</description>
+                </fact>
+                <fact id="77b50bc3-3b4a-4c89-b73f-2bf852ca03ed" type="goal_kick" time="2016-07-13T23:42:21Z" updated_time="2016-07-13T23:42:21Z" scratch="false" x="95" y="50" clock="34" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234961963" period="P1">
+                  <description>Toronto have a goal kick.</description>
+                </fact>
+                <fact id="39ee16d8-d3ab-4a8a-b2b4-429345cc8fd9" type="throwin" time="2016-07-13T23:43:14Z" updated_time="2016-07-13T23:43:14Z" scratch="false" x="64" y="4" clock="35" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962023" period="P1">
+                  <description>Can Columbus Crew get the ball into an attacking position from this throw-in in Toronto's half?</description>
+                </fact>
+                <fact id="24969615-a246-4c27-ba3c-f47c68ec6417" type="goal_kick" time="2016-07-13T23:43:55Z" updated_time="2016-07-13T23:43:55Z" scratch="false" x="95" y="50" clock="36" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962061" period="P1">
+                  <description>Ball goes out of play for a Toronto goal kick.</description>
+                </fact>
+                <fact id="75621f33-8776-44d3-a8ff-534ad47b6d2c" type="goal_kick" time="2016-07-13T23:45:05Z" updated_time="2016-07-13T23:45:05Z" scratch="false" x="95" y="50" clock="37" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962149" period="P1">
+                  <description>It's a goal kick for the away team in Columbus.</description>
+                </fact>
+                <fact id="f67c5f33-91a8-485b-8efd-517b49cf7166" type="throwin" time="2016-07-13T23:45:35Z" updated_time="2016-07-13T23:45:35Z" scratch="false" x="41" y="98" clock="38" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962199" period="P1">
+                  <description>Columbus Crew awarded a throw-in in their own half.</description>
+                </fact>
+                <fact id="35114b46-7ada-4a1d-8b62-efb7820798c9" type="free_kick" time="2016-07-13T23:46:26Z" updated_time="2016-07-13T23:46:26Z" scratch="false" x="88" y="27" clock="38" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962247" period="P1">
+                  <description>Robert Sibiga signals a free kick to Toronto in their own half.</description>
+                </fact>
+                <fact id="af9e651a-bc12-4f9a-b43a-37d46a36c566" type="shot_off_target" time="2016-07-13T23:47:40Z" updated_time="2016-07-13T23:47:40Z" scratch="false" x="79" y="61" clock="40" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962327" period="P1"/>
+                <fact id="da8a1b70-0e5e-41c8-b5bb-24d92a4df140" type="goal_kick" time="2016-07-13T23:47:40Z" updated_time="2016-07-13T23:47:40Z" scratch="false" x="95" y="50" clock="40" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962329" period="P1">
+                  <description>Robert Sibiga awards Toronto a goal kick.</description>
+                </fact>
+                <fact id="56804373-4cbd-4bae-bce6-248d1ce70b58" type="free_kick" time="2016-07-13T23:48:43Z" updated_time="2016-07-13T23:48:43Z" scratch="false" x="33" y="52" clock="41" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962369" period="P1">
+                  <description>Free kick for Columbus Crew in their own half.</description>
+                </fact>
+                <fact id="db72ae44-d9f8-4703-9032-38b234dabeca" type="injury" time="2016-07-13T23:49:21Z" updated_time="2016-07-13T23:49:21Z" scratch="false" x="33" y="52" clock="41" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962397" period="P1"/>
+                <fact id="66359e91-0d5b-4095-b177-30e85532ad63" type="game_resumed" time="2016-07-13T23:50:19Z" updated_time="2016-07-13T23:50:19Z" scratch="false" clock="42" reference_id="sr:fact:234962441" period="P1">
+                  <description>The match in Columbus is underway once more.</description>
+                </fact>
+                <fact id="d3340e60-f6c5-46a3-a9dd-018d308bf382" type="shot_on_target" time="2016-07-13T23:50:49Z" updated_time="2016-07-13T23:51:10Z" scratch="false" x="83" y="51" clock="43" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_id="c8f83c93-3f46-4b67-ba30-3d00f5849138" reference_id="sr:fact:234962467" period="P1">
+                  <description>Columbus Crew drive forward and Justin Meram gets in a shot. Without netting, however.</description>
+                </fact>
+                <fact id="517cb26a-d84e-42f2-beab-b1cdf33435ee" type="keeper_save" time="2016-07-13T23:50:49Z" updated_time="2016-07-13T23:50:49Z" scratch="false" clock="43" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962471" period="P1"/>
+                <fact id="562de405-63af-4fa1-9ab1-23df34c964d5" type="corner_kick" time="2016-07-13T23:51:06Z" updated_time="2016-07-13T23:51:06Z" scratch="false" x="95" y="90" clock="43" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962487" period="P1">
+                  <description>Corner awarded to Columbus Crew.</description>
+                </fact>
+                <fact id="c1b018ca-51bd-4306-aafa-a42bc2eec809" type="shot_off_target" time="2016-07-13T23:51:14Z" updated_time="2016-07-13T23:51:26Z" scratch="false" x="89" y="45" clock="43" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962495" period="P1"/>
+                <fact id="6b4ad742-f3d3-4c85-9a68-6bfe45c43a4f" type="goal_kick" time="2016-07-13T23:51:14Z" updated_time="2016-07-13T23:51:14Z" scratch="false" x="95" y="50" clock="43" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962497" period="P1">
+                  <description>Toronto have a goal kick.</description>
+                </fact>
+                <fact id="d3b5df46-3f8d-43a0-b3a7-fc2538e7676f" type="throwin" time="2016-07-13T23:52:05Z" updated_time="2016-07-13T23:52:05Z" scratch="false" x="55" y="96" clock="44" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962519" period="P1">
+                  <description>Throw-in for Toronto at Mapfre Stadium.</description>
+                </fact>
+                <fact id="d186ab4a-4c24-4536-bd5b-25a1ba73983f" type="corner_kick" time="2016-07-13T23:52:52Z" updated_time="2016-07-13T23:52:52Z" scratch="false" x="5" y="90" clock="45" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962559" period="P1">
+                  <description>Toronto have been awarded a corner by Robert Sibiga.</description>
+                </fact>
+                <fact id="602774fd-0dd3-4653-89a5-1d7be33c4e38" type="free_kick" time="2016-07-13T23:52:57Z" updated_time="2016-07-13T23:52:57Z" scratch="false" x="9" y="52" clock="45" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962561" period="P1">
+                  <description>Columbus Crew awarded a free kick in their own half.</description>
+                </fact>
+                <fact id="4dd1c13e-7bd9-48c6-8e56-2761027d5da3" type="throwin" time="2016-07-13T23:53:55Z" updated_time="2016-07-13T23:53:55Z" scratch="false" x="89" y="3" clock="45" injury_time="1" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962605" period="P1">
+                  <description>Toronto needs to be cautious. Columbus Crew have an attacking throw-in.</description>
+                </fact>
+                <fact id="241c3fbf-04cb-4497-9f8d-877630359676" type="injury_time" time="2016-07-13T23:54:00Z" updated_time="2016-07-13T23:54:00Z" scratch="false" clock="45" injury_time="1" reference_id="sr:fact:234962611" period="">
+                  <description>At Mapfre Stadium the fourth official shows that 1 minutes will be added to the 1st half.</description>
+                </fact>
+                <fact id="6503e4cc-e5f0-4b21-b241-438b8f379ffa" type="free_kick" time="2016-07-13T23:54:25Z" updated_time="2016-07-13T23:54:25Z" scratch="false" x="42" y="18" clock="45" injury_time="1" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234962627" period="P1">
+                  <description>Robert Sibiga signals a free kick to Columbus Crew in their own half.</description>
+                </fact>
+                <fact id="ef66b875-20c6-4ec7-99d9-d1e92f8810cc" type="injury_return" time="2016-07-13T23:54:34Z" updated_time="2016-07-13T23:54:34Z" scratch="false" clock="45" injury_time="2" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234962643" period="P1"/>
+                <fact id="d110437e-6575-447f-8913-b684dcde2ae8" type="period_over" time="2016-07-13T23:54:42Z" updated_time="2016-07-13T23:54:42Z" scratch="false" home_score="0" away_score="0" reference_id="sr:fact:234962655" period="P1" clock="45">
+                  <description>The first half has been concluded at Mapfre Stadium.</description>
+                </fact>
+                <fact id="95e412a9-b0e6-49e4-8a69-8185c204041f" type="period_started" time="2016-07-13T23:54:42Z" updated_time="2016-07-13T23:54:42Z" scratch="false" reference_id="sr:fact:234962657" period="H" clock="46"/>
+                <fact id="21da24e5-69b0-4248-9a2a-c172b774cdd7" type="period_started" time="2016-07-14T00:23:50Z" updated_time="2016-07-14T00:23:50Z" scratch="false" reference_id="sr:fact:234964561" period="" clock="46"/>
+                <fact id="8aa5c240-ea78-4601-a708-514f3bf03461" type="period_started" time="2016-07-14T00:34:19Z" updated_time="2016-07-14T00:34:19Z" scratch="false" reference_id="sr:fact:234965159" period="P2" clock="46"/>
+                <fact id="b8f774cb-0aea-4385-a394-3d78516d865c" type="substitution" time="2016-07-14T00:37:01Z" updated_time="2016-07-16T08:30:44Z" scratch="false" clock="46" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_out_id="b7e41a35-f2a4-4cc2-9353-f73708eb2bc2" reference_id="sr:fact:234965277" player_in_id="c8c91622-f251-481e-b536-be13e31026b9" period="P2">
+                  <description>Cedric Mabwati is replacing Ethan Finlay for Columbus Crew at Mapfre Stadium.</description>
+                </fact>
+                <fact id="253b7f6a-f592-4e93-9d52-81ee57917d05" type="substitution" time="2016-07-14T00:37:16Z" updated_time="2016-07-16T08:30:44Z" scratch="false" clock="46" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_out_id="5866225c-9d36-4d08-a608-0b7ffee7b9d3" reference_id="sr:fact:234965297" player_in_id="5597de96-5e7b-4f42-99b3-f4d50ed25ac2" period="P2">
+                  <description>Toronto make their first substitution with Tsubasa Endoh replacing Marco Delgado.</description>
+                </fact>
+                <fact id="49358902-1ca5-4ab3-8a12-0b822916499c" type="throwin" time="2016-07-14T00:35:11Z" updated_time="2016-07-14T00:35:11Z" scratch="false" x="74" y="5" clock="47" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965199" period="P2">
+                  <description>Throw-in for Columbus Crew in the half of Toronto.</description>
+                </fact>
+                <fact id="149309c3-ef9b-4dff-a808-306d018d290e" type="throwin" time="2016-07-14T00:35:58Z" updated_time="2016-07-14T00:35:58Z" scratch="false" x="37" y="96" clock="48" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965233" period="P2">
+                  <description>Robert Sibiga awards the home team a throw-in.</description>
+                </fact>
+                <fact id="f7473355-45b5-4e8a-be3a-2415ae4c47f7" type="shot_off_target" time="2016-07-14T00:36:29Z" updated_time="2016-07-14T00:36:29Z" scratch="false" x="14" y="40" clock="48" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234965255" period="P2"/>
+                <fact id="b26ddd48-2d7f-48b7-be55-8e721983f082" type="goal_kick" time="2016-07-14T00:36:29Z" updated_time="2016-07-14T00:36:29Z" scratch="false" x="5" y="50" clock="48" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965257" period="P2">
+                  <description>Robert Sibiga awards Columbus Crew a goal kick.</description>
+                </fact>
+                <fact id="1400defd-6cce-45fa-8342-953ef3c586ce" type="goal_kick" time="2016-07-14T00:38:16Z" updated_time="2016-07-14T00:38:16Z" scratch="false" x="95" y="50" clock="50" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234965341" period="P2">
+                  <description>Ball goes out of play for a Toronto goal kick.</description>
+                </fact>
+                <fact id="d7fcd145-b3ef-4e76-9c2e-9729e1813ee3" type="throwin" time="2016-07-14T00:39:57Z" updated_time="2016-07-14T00:39:57Z" scratch="false" x="68" y="3" clock="52" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965411" period="P2">
+                  <description>Throw-in for Columbus Crew in the half of Toronto.</description>
+                </fact>
+                <fact id="f1b7398f-050e-459c-bc31-9ad26799f3d8" type="corner_kick" time="2016-07-14T00:41:19Z" updated_time="2016-07-14T00:41:19Z" scratch="false" x="95" y="90" clock="53" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965453" period="P2">
+                  <description>Columbus Crew have been awarded a corner by Robert Sibiga.</description>
+                </fact>
+                <fact id="f9f3ba4d-ad39-4655-b5d0-6f6d3bfec72d" type="corner_kick" time="2016-07-14T00:42:27Z" updated_time="2016-07-14T00:42:27Z" scratch="false" x="95" y="5" clock="54" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965511" period="P2">
+                  <description>Corner awarded to Columbus Crew.</description>
+                </fact>
+                <fact id="4d4d881a-3a00-48b4-bd00-2053b8060d05" type="goal" time="2016-07-14T00:42:55Z" updated_time="2016-07-14T00:43:35Z" scratch="false" x="80" y="47" clock="54" home_score="1" away_score="0" penalty="false" owngoal="false" header="false" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_id="8d89e37d-374a-4351-bc9b-30f64ef13da9" reference_id="sr:fact:234965529" period="P2">
+                  <description>Columbus Crew take a 1-0 lead thanks to Harrison Afful.</description>
+                </fact>
+                <fact id="31b9bde1-3257-420a-b2e1-0f3b789ba83f" type="injury" time="2016-07-14T00:44:23Z" updated_time="2016-07-14T00:45:11Z" scratch="false" x="49" y="51" clock="55" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_id="3349b005-11d5-432f-98f0-75e884d4164d" reference_id="sr:fact:234965587" period="P2">
+                  <description>The match has been stopped briefly for attention to the injured Mark Bloom.</description>
+                </fact>
+                <fact id="ff364d00-7842-4c0e-8c31-a4fe9ebc72ee" type="substitution" time="2016-07-14T00:45:10Z" updated_time="2016-07-14T00:45:10Z" scratch="false" clock="57" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_out_id="3349b005-11d5-432f-98f0-75e884d4164d" reference_id="sr:fact:234965635" player_in_id="5533271a-0e0f-48cf-8b3c-fb84e93ef00f" period="P2">
+                  <description>Mark Bloom, who was grimacing earlier, has been substituted. Nick Hagglund is the substitute for Toronto.</description>
+                </fact>
+                <fact id="b91b088a-768e-4b3b-959d-cd3b99c6f617" type="game_resumed" time="2016-07-14T00:45:11Z" updated_time="2016-07-14T00:45:11Z" scratch="false" clock="57" reference_id="sr:fact:234965637" period="P2">
+                  <description>The match is underway again.</description>
+                </fact>
+                <fact id="c56c4eae-bbda-4f85-942c-cc97727da8b6" type="throwin" time="2016-07-14T00:46:40Z" updated_time="2016-07-14T00:46:40Z" scratch="false" x="82" y="98" clock="58" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965731" period="P2">
+                  <description>Throw-in for Columbus Crew close to the penalty box.</description>
+                </fact>
+                <fact id="3685a352-8508-4cdd-998b-97901fda3e3e" type="substitution" time="2016-07-14T00:46:58Z" updated_time="2016-07-14T00:46:58Z" scratch="false" clock="59" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_out_id="781794d5-4f0b-424b-81bc-d3d148294d9b" reference_id="sr:fact:234965743" player_in_id="f7778f40-e36d-4f36-bd67-2c137a5cfecb" period="P2">
+                  <description>Jay Chapman is replacing Justin Morrow for the away team.</description>
+                </fact>
+                <fact id="8d2915e7-6c73-4710-ae7e-367a7c8c4629" type="throwin" time="2016-07-14T00:47:25Z" updated_time="2016-07-14T00:47:25Z" scratch="false" x="78" y="96" clock="59" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234965759" period="P2">
+                  <description>Throw-in Toronto.</description>
+                </fact>
+                <fact id="0b8423fe-0a44-4430-b31f-8d480b90e617" type="throwin" time="2016-07-14T00:48:35Z" updated_time="2016-07-14T00:48:35Z" scratch="false" x="53" y="98" clock="60" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965833" period="P2">
+                  <description>Can Columbus Crew get the ball into an attacking position from this throw-in in Toronto's half?</description>
+                </fact>
+                <fact id="f1ba2c79-3199-4d05-945e-887ebe91fcd9" type="throwin" time="2016-07-14T00:50:08Z" updated_time="2016-07-14T00:50:08Z" scratch="false" x="40" y="2" clock="62" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234965907" period="P2">
+                  <description>Throw-in Columbus Crew.</description>
+                </fact>
+                <fact id="33dd9ec2-1bb8-4e61-b3ea-4b5d0d4984c5" type="goal" time="2016-07-14T00:52:28Z" updated_time="2016-07-14T00:52:39Z" scratch="false" x="9" y="47" clock="64" home_score="1" away_score="1" penalty="false" owngoal="false" header="false" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_id="15744b68-765b-43ae-85bf-ed9cfc0fc02b" reference_id="sr:fact:234966015" assist1_id="f7778f40-e36d-4f36-bd67-2c137a5cfecb" period="P2">
+                  <description>Goal! The away team draw level at 1-1 through Jordan Hamilton.</description>
+                </fact>
+                <fact id="7a6cf410-af0f-4809-b5b1-08ba198efba4" type="throwin" time="2016-07-14T00:53:26Z" updated_time="2016-07-14T00:53:26Z" scratch="false" x="79" y="96" clock="65" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966067" period="P2">
+                  <description>Throw-in for Toronto at Mapfre Stadium.</description>
+                </fact>
+                <fact id="092e92a0-e0dc-4828-b741-bacc486a9640" type="throwin" time="2016-07-14T00:53:53Z" updated_time="2016-07-14T00:53:53Z" scratch="false" x="13" y="3" clock="66" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966085" period="P2">
+                  <description>Robert Sibiga signals a throw-in for Toronto, close to Columbus Crew's area.</description>
+                </fact>
+                <fact id="f847e4fb-d287-43c4-acd8-662774b3b985" type="corner_kick" time="2016-07-14T00:54:40Z" updated_time="2016-07-14T00:54:40Z" scratch="false" x="5" y="5" clock="66" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966123" period="P2">
+                  <description>Toronto have been awarded a corner by Robert Sibiga.</description>
+                </fact>
+                <fact id="969ae9f5-a68b-4398-a256-313cd95af85e" type="offside" time="2016-07-14T00:55:27Z" updated_time="2016-07-14T00:55:27Z" scratch="false" x="90" y="53" clock="67" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966155" period="P2">
+                  <description>Columbus Crew are whistled for offside.</description>
+                </fact>
+                <fact id="fde1fd61-f52c-4dff-b554-02d96dbf3bc9" type="substitution" time="2016-07-14T00:55:48Z" updated_time="2016-07-14T00:55:48Z" scratch="false" clock="67" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_out_id="c88adda3-c3cc-46f6-9ea8-c15a36c30beb" reference_id="sr:fact:234966183" player_in_id="530bd144-8ddf-4724-a8bd-e4b000222565" period="P2">
+                  <description>Hector Jimenez is on a sub for Dilly Duka for Columbus Crew.</description>
+                </fact>
+                <fact id="30b66b7c-88bf-46c5-9e66-174e4870ca6a" type="throwin" time="2016-07-14T00:56:09Z" updated_time="2016-07-14T00:56:09Z" scratch="false" x="40" y="2" clock="68" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966215" period="P2">
+                  <description>Robert Sibiga awards the home team a throw-in.</description>
+                </fact>
+                <fact id="a4c26d70-1864-416f-810f-1702a5ec6ded" type="free_kick" time="2016-07-14T00:56:32Z" updated_time="2016-07-14T00:56:32Z" scratch="false" x="40" y="34" clock="68" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966229" period="P2">
+                  <description>Columbus Crew awarded a free kick in their own half.</description>
+                </fact>
+                <fact id="84585815-525d-4b5d-b202-9d44c142869e" type="offside" time="2016-07-14T00:56:56Z" updated_time="2016-07-14T00:56:56Z" scratch="false" x="86" y="48" clock="69" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966241" period="P2">
+                  <description>At Mapfre Stadium, Columbus Crew are penalized for being offside.</description>
+                </fact>
+                <fact id="59a6fe73-9944-40f2-b5dc-d97e497259e4" type="free_kick" time="2016-07-14T00:57:28Z" updated_time="2016-07-14T00:57:28Z" scratch="false" x="46" y="40" clock="69" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966263" period="P2">
+                  <description>In Columbus a free kick has been awarded the away team.</description>
+                </fact>
+                <fact id="cf2c5bc2-bfd2-41d5-8f62-7bb91776c5bd" type="corner_kick" time="2016-07-14T00:58:25Z" updated_time="2016-07-14T00:58:25Z" scratch="false" x="5" y="90" clock="70" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966329" period="P2">
+                  <description>Corner awarded to Toronto.</description>
+                </fact>
+                <fact id="090eead0-c07b-47c3-ba2d-6ea6eb3b6fc2" type="goal_kick" time="2016-07-14T00:58:58Z" updated_time="2016-07-14T00:58:58Z" scratch="false" x="5" y="50" clock="71" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966355" period="P2">
+                  <description>Goal kick for Columbus Crew at Mapfre Stadium.</description>
+                </fact>
+                <fact id="45b28214-d689-4e82-aa51-cbb9e7a7fbee" type="goal_kick" time="2016-07-14T00:59:22Z" updated_time="2016-07-14T00:59:22Z" scratch="false" x="95" y="50" clock="71" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966375" period="P2">
+                  <description>It's a goal kick for the away team in Columbus.</description>
+                </fact>
+                <fact id="8c572cb4-117e-4d52-a86e-60a75b4cec3d" type="offside" time="2016-07-14T01:00:22Z" updated_time="2016-07-14T01:00:26Z" scratch="false" x="83" y="42" clock="72" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_id="2d1a7d25-0ac9-40da-9098-b75aa06e2a86" reference_id="sr:fact:234966433" period="P2">
+                  <description>In Columbus, Columbus Crew push forward quickly but are pulled up for offside.</description>
+                </fact>
+                <fact id="296e670c-c462-4a3b-b2cc-44e8c9c5d756" type="throwin" time="2016-07-14T01:00:50Z" updated_time="2016-07-14T01:00:50Z" scratch="false" x="43" y="96" clock="73" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966455" period="P2">
+                  <description>Robert Sibiga signals a Toronto throw-in in Columbus Crew's half.</description>
+                </fact>
+                <fact id="7393b016-f4b7-45a6-9c4a-1791c028ac26" type="throwin" time="2016-07-14T01:01:38Z" updated_time="2016-07-14T01:01:38Z" scratch="false" x="71" y="4" clock="73" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966491" period="P2">
+                  <description>A throw-in for the home team on the opposite half.</description>
+                </fact>
+                <fact id="cbbb98b6-b0d7-4a12-b4d7-0e18249d771f" type="shot_off_target" time="2016-07-14T01:02:35Z" updated_time="2016-07-14T01:02:35Z" scratch="false" x="24" y="38" clock="74" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966543" period="P2"/>
+                <fact id="c6a31ddb-9ab0-464f-94b1-d82216955321" type="goal_kick" time="2016-07-14T01:02:35Z" updated_time="2016-07-14T01:02:35Z" scratch="false" x="5" y="50" clock="74" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966545" period="P2">
+                  <description>Ball goes out of play for a Columbus Crew goal kick.</description>
+                </fact>
+                <fact id="517184d0-6627-4887-b1c7-823a03114327" type="free_kick" time="2016-07-14T01:03:20Z" updated_time="2016-07-14T01:03:20Z" scratch="false" x="83" y="51" clock="75" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966613" period="P2">
+                  <description>Free kick in a good position for Columbus Crew!</description>
+                </fact>
+                <fact id="ce704e7d-c4fb-48dd-8c7d-d8861cea0409" type="shot_off_target" time="2016-07-14T01:04:39Z" updated_time="2016-07-14T01:04:44Z" scratch="false" x="83" y="51" clock="76" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_id="2d1a7d25-0ac9-40da-9098-b75aa06e2a86" reference_id="sr:fact:234966685" period="P2">
+                  <description>Ola Kamara of Columbus Crew gets in a strike, but is off target.</description>
+                </fact>
+                <fact id="683fa5e1-2ff9-4da0-9fa4-1b18db68c13a" type="goal_kick" time="2016-07-14T01:04:39Z" updated_time="2016-07-14T01:04:39Z" scratch="false" x="95" y="50" clock="76" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966689" period="P2">
+                  <description>Toronto have a goal kick.</description>
+                </fact>
+                <fact id="3b0774f5-8d2f-4c9e-9bed-3d95c473d0ad" type="shot_off_target" time="2016-07-14T01:05:22Z" updated_time="2016-07-14T01:05:29Z" scratch="false" x="18" y="36" clock="77" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" player_id="5533271a-0e0f-48cf-8b3c-fb84e93ef00f" reference_id="sr:fact:234966725" period="P2">
+                  <description>Toronto are pushing forward but Nick Hagglund's finish is wide of the goal.</description>
+                </fact>
+                <fact id="4b1252da-cfe8-4ade-a5df-f7666ee708e6" type="goal_kick" time="2016-07-14T01:05:22Z" updated_time="2016-07-14T01:05:22Z" scratch="false" x="5" y="50" clock="77" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966727" period="P2">
+                  <description>Robert Sibiga awards Columbus Crew a goal kick.</description>
+                </fact>
+                <fact id="54ca7c5d-3888-40dc-8c13-835e1b9cfdd7" type="throwin" time="2016-07-14T01:06:08Z" updated_time="2016-07-14T01:06:08Z" scratch="false" x="66" y="97" clock="78" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966777" period="P2">
+                  <description>Columbus Crew to take a throw-in in Toronto territory.</description>
+                </fact>
+                <fact id="172e97d9-2fc1-49a5-a9a3-c5c883f59a1e" type="throwin" time="2016-07-14T01:06:27Z" updated_time="2016-07-14T01:06:27Z" scratch="false" x="80" y="100" clock="78" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966857" period="P2">
+                  <description>Throw-in for Toronto in their own half.</description>
+                </fact>
+                <fact id="98e67d73-d2f5-4196-96f6-eafaf51b3577" type="free_kick" time="2016-07-14T01:07:10Z" updated_time="2016-07-14T01:07:10Z" scratch="false" x="66" y="47" clock="79" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966889" period="P2">
+                  <description>Free kick for Toronto in their own half.</description>
+                </fact>
+                <fact id="b92d09c6-ab58-4846-887e-1041424a716a" type="throwin" time="2016-07-14T01:07:51Z" updated_time="2016-07-14T01:07:51Z" scratch="false" x="55" y="2" clock="80" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234966927" period="P2">
+                  <description>Toronto awarded a throw-in in their own half.</description>
+                </fact>
+                <fact id="5b19d40b-9297-4db6-bad4-6e8f6571e0ce" type="throwin" time="2016-07-14T01:07:57Z" updated_time="2016-07-14T01:07:57Z" scratch="false" x="47" y="3" clock="80" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234966935" period="P2">
+                  <description>Ball safe as Columbus Crew is awarded a throw-in in their half.</description>
+                </fact>
+                <fact id="ca83556c-93ab-4d3e-b104-27c64a04809a" type="shot_blocked" time="2016-07-14T01:10:39Z" updated_time="2016-07-14T01:10:39Z" scratch="false" x="10" y="32" clock="82" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967065" period="P2"/>
+                <fact id="e90f5fc3-dece-420a-a02d-0162a373764b" type="corner_kick" time="2016-07-14T01:11:02Z" updated_time="2016-07-14T01:11:02Z" scratch="false" x="5" y="5" clock="83" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967095" period="P2">
+                  <description>Toronto have been awarded a corner by Robert Sibiga.</description>
+                </fact>
+                <fact id="cdd76577-b142-4819-a2dc-2a400d1bbb70" type="throwin" time="2016-07-14T01:11:13Z" updated_time="2016-07-14T01:11:13Z" scratch="false" x="36" y="1" clock="83" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234967113" period="P2">
+                  <description>Ball safe as Columbus Crew is awarded a throw-in in their half.</description>
+                </fact>
+                <fact id="3f8c4e44-3e81-4b2d-953b-47a4efb242e1" type="free_kick" time="2016-07-14T01:12:02Z" updated_time="2016-07-14T01:12:02Z" scratch="false" x="90" y="76" clock="84" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967289" period="P2">
+                  <description>Free kick for Toronto in their own half.</description>
+                </fact>
+                <fact id="7d6a4b94-0f08-44fa-8478-d8185ab7b9a0" type="free_kick" time="2016-07-14T01:14:47Z" updated_time="2016-07-14T01:14:47Z" scratch="false" x="82" y="45" clock="86" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967519" period="P2">
+                  <description>Robert Sibiga signals a free kick to Toronto in their own half.</description>
+                </fact>
+                <fact id="69f541da-1efc-40c6-a7d0-7c5cc770e759" type="shot_on_target" time="2016-07-14T01:16:05Z" updated_time="2016-07-14T01:16:05Z" scratch="false" x="18" y="50" clock="88" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967601" period="P2"/>
+                <fact id="be2ded7f-1af4-4f9c-8dd6-04c0bcdc56cc" type="keeper_save" time="2016-07-14T01:16:05Z" updated_time="2016-07-14T01:16:05Z" scratch="false" clock="88" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234967603" period="P2"/>
+                <fact id="9ebb97c4-49e4-4517-ad33-a5b082300df5" type="throwin" time="2016-07-14T01:16:27Z" updated_time="2016-07-14T01:16:27Z" scratch="false" x="72" y="96" clock="88" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967639" period="P2">
+                  <description>Throw-in for Toronto in their own half.</description>
+                </fact>
+                <fact id="1ac81b40-983f-4cff-a809-20d3640a22ee" type="shot_on_target" time="2016-07-14T01:17:18Z" updated_time="2016-07-14T01:17:18Z" scratch="false" x="78" y="51" clock="89" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234967685" period="P2"/>
+                <fact id="3702175e-a844-4ec0-9ac7-06b9a956f8f3" type="keeper_save" time="2016-07-14T01:17:18Z" updated_time="2016-07-14T01:17:18Z" scratch="false" clock="89" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967687" period="P2"/>
+                <fact id="97bfc77a-3742-4a51-9968-f339ef1c4b8f" type="throwin" time="2016-07-14T01:17:35Z" updated_time="2016-07-14T01:17:35Z" scratch="false" x="24" y="96" clock="89" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234967707" period="P2">
+                  <description>Throw-in for Columbus Crew at Mapfre Stadium.</description>
+                </fact>
+                <fact id="587ffccd-5563-4a5e-99c2-455b246a60c9" type="substitution" time="2016-07-14T01:17:50Z" updated_time="2016-07-16T08:30:44Z" scratch="false" clock="89" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" player_out_id="eb3383da-993e-421d-9245-9961818ea5ec" reference_id="sr:fact:234967725" player_in_id="5a836d28-591d-4bc6-9966-65cd5ebc1bfc" period="P2">
+                  <description>The home team have replaced Corey Ashe with Waylon Francis. This is the third substitution made today by Gregg Berhalter.</description>
+                </fact>
+                <fact id="42a7952c-0413-4db5-824a-ec556733875d" type="injury_time" time="2016-07-14T01:19:05Z" updated_time="2016-07-14T01:19:05Z" scratch="false" clock="90" injury_time="3" reference_id="sr:fact:234967805" period="">
+                  <description>Robert Sibiga will wait an extra 3 minutes before blowing the whistle to end the 2nd half.</description>
+                </fact>
+                <fact id="54a16f69-fa61-4e72-97fe-2d5fd2fd2d73" type="throwin" time="2016-07-14T01:20:04Z" updated_time="2016-07-14T01:20:04Z" scratch="false" x="81" y="96" clock="90" injury_time="2" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234967871" period="P2">
+                  <description>Toronto awarded a throw-in in their own half.</description>
+                </fact>
+                <fact id="897ebed2-4461-45e8-8388-6ff9b9571585" type="corner_kick" time="2016-07-14T01:21:03Z" updated_time="2016-07-14T01:21:03Z" scratch="false" x="95" y="5" clock="90" injury_time="3" team_id="80c3d4fd-a3e8-4c97-a559-bf95e92a24e7" reference_id="sr:fact:234967939" period="P2">
+                  <description>Corner awarded to Columbus Crew.</description>
+                </fact>
+                <fact id="3c41c8fb-be13-4d57-a16d-1389b1888bef" type="throwin" time="2016-07-14T01:21:47Z" updated_time="2016-07-14T01:21:47Z" scratch="false" x="30" y="3" clock="90" injury_time="3" team_id="71e60dd4-b0b1-4771-821b-09200d5c8874" reference_id="sr:fact:234968001" period="P2">
+                  <description>A throw-in for the away team on the opposite half.</description>
+                </fact>
+                <fact id="e76eb3fa-ba19-4c9f-af8f-698d88fa2f19" type="period_over" time="2016-07-14T01:22:04Z" updated_time="2016-07-14T01:22:04Z" scratch="false" home_score="1" away_score="1" reference_id="sr:fact:234968021" period="P2" clock="90">
+                  <description>The whistle has gone to end the second half. The match finishes 1-1.</description>
+                </fact>
+                <fact id="5742773c-d039-47d8-b15a-84455ea20e09" type="match_ended" time="2016-07-14T01:22:04Z" updated_time="2016-07-14T01:22:04Z" scratch="false" home_score="1" away_score="1" winner_id="" draw="true" reference_id="sr:fact:234968023" clock="90"/>
+              </facts>
+              <!-- 8697652/2504/7080 -->
+            </match>
+          </matches>
+        </summary>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 05:49:30 GMT
+recorded_with: VCR 3.0.3

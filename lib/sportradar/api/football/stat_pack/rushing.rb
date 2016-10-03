@@ -15,6 +15,6 @@ module Sportradar
         @redzone_attempts  = response["redzone_attempts"]
       end
     end
-    
+
   end
 end

@@ -33,18 +33,14 @@ module Sportradar
         @team = Sportradar::Api::Nfl::Team.new data["team"] if data["team"]
         @injury = Sportradar::Api::Nfl::Injury.new data["injury"] if data["injury"]
         @draft = Sportradar::Api::Nfl::Draft.new data["draft"] if data["draft"]
-        set_seasons
+        @seasons = parse_into_array(selector: response["season"], klass: Sportradar::Api::Nfl::Season)  if response["season"]
       end
 
-      private
-
-      def set_seasons
-        if response["season"]
-          if response["season"].is_a?(Array)
-            @seasons = response["season"].map {|season| Sportradar::Api::Nfl::Season.new season }
-          elsif response["season"].is_a?(Hash)
-            @seasons = [ Sportradar::Api::Nfl::Season.new(response["season"]) ]
-          end
+      def age
+        if birth_date.present?
+          now = Time.now.utc.to_date
+          dob = birth_date.to_date
+          now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
         end
       end
 
