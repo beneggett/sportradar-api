@@ -50,6 +50,14 @@ module Sportradar
 
       end
 
+      def full_name
+        "#{away.full_name} vs #{home.full_name}"
+      end
+
+      def name
+        "#{away.name} vs #{home.name}"
+      end
+
       def sport_league
         'NFL'.freeze
       end

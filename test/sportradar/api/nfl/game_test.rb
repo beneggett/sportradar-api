@@ -26,4 +26,12 @@ class Sportradar::Api::Nfl::GameTest < Minitest::Test
   end
 
 
+  def test_nfl_game_full_name
+    assert_equal "#{@data_object.away.full_name} vs #{@data_object.home.full_name}", @data_object.full_name
+  end
+
+  def test_nfl_game_name
+    assert_equal "#{@data_object.away.name} vs #{@data_object.home.name}", @data_object.name
+  end
+
 end
