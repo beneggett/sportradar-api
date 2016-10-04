@@ -16,7 +16,7 @@ module Sportradar
         @top_assists = parse_players(data["top_assists"]["player"]) if data["top_assists"] && data["top_assists"]["player"]
         @top_cards = parse_players(data["top_cards"]["player"]) if data["top_cards"] && data["top_cards"]["player"]
         @top_points = parse_players(data["top_points"]["player"]) if data["top_points"] && data["top_points"]["player"]
-        @tournaments = parse_into_array(selector: response["tournaments"], klass: Sportradar::Api::Soccer::Tournament)  if response["tournaments"]
+        @tournaments = parse_into_array(selector: response["tournament"], klass: Sportradar::Api::Soccer::Tournament)  if response["tournament"]
       end
 
       private
