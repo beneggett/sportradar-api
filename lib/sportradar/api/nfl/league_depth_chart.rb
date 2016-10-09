@@ -6,8 +6,8 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        depth_chart_data = data["season"]['depth_charts']
-        @season = Sportradar::Api::Nfl::Season.new data["season"] if data["season"]
+        depth_chart_data = data['depth_charts']
+        @season = Sportradar::Api::Nfl::Season.new data
         # @teams = depth_chart_data["team"].map {|team| Sportradar::Api::Nfl::Team.new team } if depth_chart_data["team"]
         @charts = depth_chart_data["team"].map {|team| Sportradar::Api::Nfl::TeamDepthChart.new(team, season) } if depth_chart_data["team"]
       end

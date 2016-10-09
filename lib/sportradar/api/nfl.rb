@@ -31,7 +31,7 @@ module Sportradar
       def weekly_depth_charts(week = 1, year = Date.today.year, season = "reg" )
         response = get request_url("seasontd/#{ week_path(year, season, week) }/depth_charts")
         if response.success?
-          Sportradar::Api::Nfl::LeagueDepthChart.new response
+          Sportradar::Api::Nfl::LeagueDepthChart.new response['season']
         else
           response
         end

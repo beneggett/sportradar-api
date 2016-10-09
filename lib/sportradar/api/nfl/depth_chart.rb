@@ -20,11 +20,13 @@ module Sportradar
       private
 
       def teams
-        @teams ||= Hash.new { |hash, number| hash[number] = generate_team(number) }
+        @teams ||= populate_teams
       end
 
       def populate_teams
-        (1..3).each(&method(:team)) if teams.empty?
+        (1..3).each_with_object({}) do |i, hash|
+          hash[i] = generate_team(i)
+        end
       end
 
       def generate_team(number)
