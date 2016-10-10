@@ -67,11 +67,11 @@ module Sportradar
       end
 
       def drives
-        quarters&.flat_map(&:drives).compact
+        Array(quarters&.flat_map(&:drives)).compact
       end
 
       def plays
-        drives&.flat_map(&:plays).compact
+        Array(drives&.flat_map(&:plays)).compact
       end
 
     end
