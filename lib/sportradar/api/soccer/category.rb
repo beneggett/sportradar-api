@@ -9,7 +9,7 @@ module Sportradar
         @name = data["name"]
         @country_code = data["country_code"]
         @country = data["country"]
-        @tournament_groups = parse_into_array(selector: response["tournament_group"], klass: Sportradar::Api::Soccer::TournamentGroup)  if response["tournament_group"]
+        @tournament_groups = parse_into_array(selector: response["tournament_group"], klass: Sportradar::Api::Soccer::TournamentGroup)
       end
 
     end

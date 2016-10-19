@@ -33,12 +33,12 @@ module Sportradar
         @team_records = OpenStruct.new data["team_records"] if data["team_records"] # TODO Implement better?
         @player_records = OpenStruct.new data["player_records"] if data["player_records"] # TODO Implement better?
 
-        @defense = parse_into_array(selector: data["defense"]["position"], klass: Sportradar::Api::Nfl::Position)  if data["defense"] && data["defense"]["position"]
-        @offense = parse_into_array(selector: data["offense"]["position"], klass: Sportradar::Api::Nfl::Position)  if data["offense"] && data["offense"]["position"]
-        @special_teams = parse_into_array(selector: data["special_teams"]["position"], klass: Sportradar::Api::Nfl::Position)  if data["special_teams"] && data["special_teams"]["position"]
-        @coaches = parse_into_array(selector: response["coaches"]["coach"], klass: Sportradar::Api::Nfl::Coach)  if response["coaches"] && response["coaches"]["coach"]
-        @players = parse_into_array(selector: response["player"], klass: Sportradar::Api::Nfl::Player)  if response["player"]
-        @players ||= parse_into_array(selector: response["players"]["player"], klass: Sportradar::Api::Nfl::Player)  if response["players"] && response["players"]["player"]
+        @defense = parse_into_array(selector: data.dig("defense","position"), klass: Sportradar::Api::Nfl::Position)
+        @offense = parse_into_array(selector: data.dig("offense","position"), klass: Sportradar::Api::Nfl::Position)
+        @special_teams = parse_into_array(selector: data.dig("special_teams","position"), klass: Sportradar::Api::Nfl::Position)
+        @coaches = parse_into_array(selector: response.dig("coaches","coach"), klass: Sportradar::Api::Nfl::Coach)
+        @players = parse_into_array(selector: response["player"], klass: Sportradar::Api::Nfl::Player)
+        @players ||= parse_into_array(selector: response.dig("players","player"), klass: Sportradar::Api::Nfl::Player)
       end
 
       def full_name

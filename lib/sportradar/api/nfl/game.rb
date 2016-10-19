@@ -33,7 +33,7 @@ module Sportradar
         @last_event = Sportradar::Api::Nfl::Event.new data["last_event"]["event"] if data["last_event"] && data["last_event"]["event"]
         @scoring = Sportradar::Api::Nfl::Scoring.new data["scoring"] if data["scoring"]
 
-        @scoring_drives = parse_into_array(selector: response["scoring_drives"]["drive"], klass: Sportradar::Api::Nfl::Drive)  if response["scoring_drives"] && response["scoring_drives"]["drive"]
+        @scoring_drives = parse_into_array(selector: response.dig("scoring_drives","drive"), klass: Sportradar::Api::Nfl::Drive)
 
         location = data["summary"] || data
         @venue = Sportradar::Api::Nfl::Venue.new data["venue"] || location["venue"] if data["venue"] || location["venue"]

@@ -16,6 +16,8 @@ module Sportradar
           selector.map {|x| klass.new x }
         elsif selector.is_a?(Hash)
           [ klass.new(selector) ]
+        else
+          []
         end
       end
 

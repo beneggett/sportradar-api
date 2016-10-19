@@ -21,5 +21,12 @@ class Sportradar::Api::Content::ArticleTest < Minitest::Test
     assert article.injury?
   end
 
+  def test_references_wont_break_if_null
+    article = Sportradar::Api::Content::Article.new(@attrs.merge("refs" => nil))
+    assert_equal article.references, []
+    article = Sportradar::Api::Content::Article.new(@attrs.merge("refs" => {"ref" => nil}))
+    assert_equal article.references, []
+  end
+
 
 end

@@ -8,7 +8,7 @@ module Sportradar
         @id = data["id"]
         @name = data["name"]
         @alias = data["alias"]
-        @divisions = parse_into_array(selector: response["division"], klass: Sportradar::Api::Nfl::Division) if response["division"]
+        @divisions = parse_into_array(selector: response["division"], klass: Sportradar::Api::Nfl::Division)
       end
 
     end

@@ -6,7 +6,7 @@ module Sportradar
       def initialize(data)
         @response = data
         @name = data["name"]
-        @players = parse_into_array(selector: response["player"], klass: Sportradar::Api::Nfl::Player) if response["player"]
+        @players = parse_into_array(selector: response["player"], klass: Sportradar::Api::Nfl::Player)
       end
 
     end

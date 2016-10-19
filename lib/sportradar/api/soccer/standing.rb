@@ -5,7 +5,7 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        @categories = parse_into_array(selector: response["categories"]["category"], klass: Sportradar::Api::Soccer::Category)  if response["categories"] && response["categories"]["category"]
+        @categories = parse_into_array(selector: response.dig("categories","category"), klass: Sportradar::Api::Soccer::Category)
       end
 
     end

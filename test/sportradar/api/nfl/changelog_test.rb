@@ -11,4 +11,9 @@ class Sportradar::Api::Nfl::ChangelogTest < Minitest::Test
     assert [:players].all? { |e| data_object.attributes.include?(e) }
   end
 
+  def test_it_sets_players_as_an_empty_array_when_profiles_is_null
+    data_object = Sportradar::Api::Nfl::Changelog.new(@attrs.merge("profiles" => {"players" => nil}))
+    assert_equal [], data_object.players
+  end
+
 end

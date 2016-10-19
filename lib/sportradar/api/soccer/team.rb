@@ -41,8 +41,8 @@ module Sportradar
         parse_scoring if scoring
 
         @statistics =  OpenStruct.new data["statistics"] if data["statistics"]
-        @players = parse_into_array(selector: data["players"]["player"], klass: Sportradar::Api::Soccer::Player)  if response['players'] && response['players']['player']
-        @players = parse_into_array(selector: data["roster"]["player"], klass: Sportradar::Api::Soccer::Player)  if response['roster'] && response['roster']['player']
+        @players = parse_into_array(selector: data.dig("players","player"), klass: Sportradar::Api::Soccer::Player)
+        @players = parse_into_array(selector: data.dig("roster","player"), klass: Sportradar::Api::Soccer::Player)
         @manager =  Sportradar::Api::Soccer::Player.new data["manager"] if data["manager"]
       end
 

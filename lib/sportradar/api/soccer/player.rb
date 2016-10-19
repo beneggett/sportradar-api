@@ -6,8 +6,8 @@ module Sportradar
 
       def initialize(data)
         @response = data
-        @teams = parse_into_array(selector: response["team"], klass: Sportradar::Api::Soccer::Team)  if response["team"]
-        @teams = parse_into_array(selector: response["teams"]["team"], klass: Sportradar::Api::Soccer::Team)  if response["teams"] && response["teams"]["team"]
+        @teams = parse_into_array(selector: response["team"], klass: Sportradar::Api::Soccer::Team)
+        @teams = parse_into_array(selector: response.dig("teams","team"), klass: Sportradar::Api::Soccer::Team)
         @id = data["id"]
         @first_name = data["first_name"]
         @last_name = data["last_name"]
@@ -32,7 +32,7 @@ module Sportradar
         @weight_kg = data["weight_kg"]
         @rank = data["rank"]
         @total = OpenStruct.new data["total"] if data["total"]
-        @statistics = parse_into_array(selector:response["statistics"]["season"], klass: Sportradar::Api::Soccer::Season)  if response["statistics"] &&  response["statistics"]["season"]
+        @statistics = parse_into_array(selector:response.dig("statistics","season"), klass: Sportradar::Api::Soccer::Season)
 
       end
 

@@ -6,7 +6,7 @@ module Sportradar
       def initialize(data)
         @response = data
         response['quarter'] = response['quarter'].select {|x| x.is_a? Hash } if response['quarter'].is_a?(Array) && response['quarter'].map(&:class).uniq.count > 1
-        @quarters = parse_into_array(selector: response["quarter"], klass: Sportradar::Api::Nfl::Quarter) if response["quarter"]
+        @quarters = parse_into_array(selector: response["quarter"], klass: Sportradar::Api::Nfl::Quarter)
       end
 
       def final
