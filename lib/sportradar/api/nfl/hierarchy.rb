@@ -8,9 +8,9 @@ module Sportradar
         @id = data["id"]
         @name = data["name"]
         @alias = data["alias"]
-        @conferences = parse_into_array(selector: data["conference"], klass: Sportradar::Api::Nfl::Conference)  if data["conference"]
+        @conferences = parse_into_array(selector: data["conference"], klass: Sportradar::Api::Nfl::Conference)
         @divisions = conferences.flat_map(&:divisions) if conferences&.all? { |conference| conference.divisions }
-        @divisions ||= parse_into_array(selector: data["division"], klass: Sportradar::Api::Nfl::Division)  if data["division"]
+        @divisions ||= parse_into_array(selector: data["division"], klass: Sportradar::Api::Nfl::Division)
         @teams = @divisions.flat_map(&:teams) if divisions&.all? {|division| division.teams }
       end
 

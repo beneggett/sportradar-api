@@ -33,7 +33,7 @@ module Sportradar
         @team = Sportradar::Api::Nfl::Team.new data["team"] if data["team"]
         @injury = Sportradar::Api::Nfl::Injury.new data["injury"] if data["injury"]
         @draft = Sportradar::Api::Nfl::Draft.new data["draft"] if data["draft"]
-        @seasons = parse_into_array(selector: response["season"], klass: Sportradar::Api::Nfl::Season)  if response["season"]
+        @seasons = parse_into_array(selector: response["season"], klass: Sportradar::Api::Nfl::Season)
       end
 
       def age

@@ -12,7 +12,7 @@ module Sportradar
         # @home_points = response['scoring']['home']['points'] # from play_by_play
         @away_points = data["away_points"]
         # @away_points = response['scoring']['away']['points'] # from play_by_play
-        @drives = parse_into_array(selector: response["play_by_play"]["drive"], klass: Sportradar::Api::Nfl::Drive) if response["play_by_play"] && response["play_by_play"]["drive"]
+        @drives = parse_into_array(selector: response.dig("play_by_play","drive"), klass: Sportradar::Api::Nfl::Drive)
       end
 
     end

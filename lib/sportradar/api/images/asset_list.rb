@@ -7,7 +7,7 @@ module Sportradar
         @response = data
         @type = data["type"]
         @sport = data["sport"]
-        @assets = parse_into_array(selector: response["asset"], klass: Sportradar::Api::Images::Asset)  if response["asset"]
+        @assets = parse_into_array(selector: response["asset"], klass: Sportradar::Api::Images::Asset)
       end
 
     end

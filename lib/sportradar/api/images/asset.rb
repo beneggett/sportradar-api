@@ -12,8 +12,8 @@ module Sportradar
         @title = data["title"]
         @description = data["description"]
         @copyright = data["copyright"]
-        @links = parse_into_array(selector: response["links"]["link"], klass: Sportradar::Api::Images::Link)  if response["links"] && response["links"]["link"]
-        @tags = parse_into_array(selector: response["tags"]["tag"], klass: Sportradar::Api::Images::Tag)  if response["tags"] && response["tags"]["tag"]
+        @links = parse_into_array(selector: response.dig("links", "link"), klass: Sportradar::Api::Images::Link)
+        @tags = parse_into_array(selector: response.dig("tags", "tag"), klass: Sportradar::Api::Images::Tag)
       end
 
     end

@@ -12,7 +12,7 @@ module Sportradar
         @season = data["season"]
         @reference_id = data["reference_id"]
         @coverage = OpenStruct.new data["coverage"] if data["coverage"]
-        @teams = parse_into_array(selector: response["team"], klass: Sportradar::Api::Soccer::Team)  if response["team"]
+        @teams = parse_into_array(selector: response["team"], klass: Sportradar::Api::Soccer::Team)
       end
 
     end

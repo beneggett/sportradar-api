@@ -11,4 +11,14 @@ class Sportradar::Api::Images::AssetTest < Minitest::Test
     assert [:player_id, :title, :links].all? { |e| data_object.attributes.include?(e) }
   end
 
+  def test_it_doesnt_fail_on_empty_links
+    data_object = Sportradar::Api::Images::Asset.new(@attrs.merge("links" => nil))
+    assert_equal [], data_object.links
+  end
+
+  def test_it_doesnt_fail_on_empty_tags
+    data_object = Sportradar::Api::Images::Asset.new(@attrs.merge("tags" => nil))
+    assert_equal [], data_object.tags
+  end
+
 end
