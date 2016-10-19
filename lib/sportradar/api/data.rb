@@ -4,7 +4,7 @@ module Sportradar
 
       # Attributes that have a value
       def attributes
-        all_attributes.select {|x| !self.send(x).nil? }
+        all_attributes.select {|x| !self.send(x).blank? }
       end
 
       def all_attributes
