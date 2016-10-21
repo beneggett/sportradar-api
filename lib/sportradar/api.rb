@@ -28,6 +28,10 @@ require "sportradar/api/soccer/tournament_group"
 require "sportradar/api/soccer/venue"
 
 require "sportradar/api/football"
+require "sportradar/api/ncaafb"
+require "sportradar/api/ncaafb/game"
+require "sportradar/api/ncaafb/season"
+require "sportradar/api/ncaafb/week"
 
 require "sportradar/api/nfl"
 require "sportradar/api/nfl/broadcast"
