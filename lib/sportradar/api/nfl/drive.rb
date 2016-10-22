@@ -22,6 +22,52 @@ module Sportradar
         @events = parse_into_array(selector: response["event"], klass: Sportradar::Api::Nfl::Event) if response["event"]
       end
 
+      def end_reason_possibilities
+        [
+          'UNKNOWN',
+          'Touchdown',
+          'Safety',
+          'Field Goal',
+          'Missed FG',
+          'Blocked FG',
+          'Blocked FG, Downs',
+          'Blocked FG, Safety',
+          'Punt',
+          'Blocked Punt',
+          'Blocked Punt, Downs',
+          'Blocked Punt, Safety',
+          'Downs',
+          'Interception',
+          'Fumble',
+          'Fumble, Safety',
+          'Muffed FG',
+          'Muffed Punt',
+          'Muffed Kickoff',
+          'Kickoff',
+          'Own Kickoff',
+          'Onside Kick',
+          'Kickoff, No Play',
+          'End of Half',
+          'End of Game',
+        ]
+      end
+      def normalized_end_reason
+        case end_reason
+        when 'Touchdown'
+          'Touchdown'
+        when 'Field Goal'
+          'Field Goal'
+        when 'Downs'
+          'Downs'
+        when 'Interception', 'Fumble'
+          'Turnover'
+        when 'Punt'
+          'Punt'
+        else
+          'Other'
+        end
+      end
+
     end
   end
 end

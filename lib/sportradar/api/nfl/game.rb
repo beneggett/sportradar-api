@@ -24,7 +24,7 @@ module Sportradar
 
         if data["quarter"]
           @quarter = data["quarter"][0]
-          quarter_data = data["quarter"][1].is_a?(Hash) ? [ data["quarter"][1] ] : data["quarter"][1]
+          quarter_data = data["quarter"][1].is_a?(Hash) ? data["quarter"][1..-1] : data["quarter"][1]
           @quarters = quarter_data&.map { |hash| Sportradar::Api::Nfl::Quarter.new(hash) }
         end
 
