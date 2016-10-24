@@ -66,6 +66,12 @@ module Sportradar
       def name
         "#{away.name} vs #{home.name}"
       end
+      def started?
+        ['inprogress', 'halftime', 'delayed'].include?(status)
+      end
+      def finished?
+        status == "closed"
+      end
 
       def sport_league
         'NFL'.freeze
