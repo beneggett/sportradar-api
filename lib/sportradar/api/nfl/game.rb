@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Game < Data
-      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters, :stats, :week, :season
+      attr_accessor :response, :id, :status, :reference, :number, :scheduled, :entry_mode, :venue, :home, :away, :broadcast, :number, :attendance, :utc_offset, :weather, :clock, :quarter, :summary, :situation, :last_event, :scoring, :scoring_drives, :quarters, :stats, :week, :season, :overtime
 
       def initialize(data)
         @response = data
@@ -28,6 +28,11 @@ module Sportradar
           @quarters = quarter_data&.map { |hash| Sportradar::Api::Nfl::Quarter.new(hash) }
         end
 
+        if data["overtime"]
+          @overtime = parse_into_array(selector: data['overtime'], klass: Sportradar::Api::Nfl::Quarter)
+          @quarters.concat(@overtime)
+        end
+
         @summary = Sportradar::Api::Nfl::Summary.new data["summary"] if data["summary"]
         @situation = Sportradar::Api::Nfl::Situation.new data["situation"] if data["situation"]
         @last_event = Sportradar::Api::Nfl::Event.new data["last_event"]["event"] if data["last_event"] && data["last_event"]["event"]
@@ -48,6 +53,10 @@ module Sportradar
           @away.stats = @stats[@away.id]
         end
 
+      end
+
+      def overtime?
+        !overtime.nil?
       end
 
       def full_name
