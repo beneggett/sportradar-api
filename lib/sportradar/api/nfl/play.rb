@@ -19,7 +19,7 @@ module Sportradar
         @scoring_play = data["scoring_play"]
         @sequence = data["sequence"]
         @start_situation = Sportradar::Api::Nfl::Situation.new data["start_situation"] if data["start_situation"]
-        @statistics = OpenStruct.new data["statistics"] if data["statistics"] # TODO Implement statistics!
+        @statistics = Sportradar::Api::Nfl::PlayStatistics.new data["statistics"] if data["statistics"]
         parse_player if @statistics
         @type = data["type"]
         @wall_clock = data["wall_clock"]
@@ -31,7 +31,7 @@ module Sportradar
         if play_stats.is_a?(Array)
           play_stats = play_stats.first
         end
-        @player_id = play_stats.dig('player', 'id') if play_stats
+        @player_id = play_stats&.player&.id if play_stats
       end
 
     end

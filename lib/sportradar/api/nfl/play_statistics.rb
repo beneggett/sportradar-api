@@ -4,15 +4,15 @@ module Sportradar
       attr_accessor :response, :kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :first_down, :field_goal, :extra_point, :defense, :down_conversion
       def initialize(data)
         @response = data
-        @kick            = Nfl::PlayKickStatsitics.new(data['kick']) if data['kick']
+        @kick            = Nfl::PlayKickStatistics.new(data['kick']) if data['kick']
         @return          = Nfl::PlayReturnStatistics.new(data['return']) if data['return']
-        @rush            = Nfl::PlayRushStatistics.new(data['rush']) if data['rush']
+        @rush            = parse_into_array(selector: data['rush'], klass: Nfl::PlayRushStatistics) if data['rush']
         @defense         = parse_into_array(selector: data['defense'], klass: Nfl::PlayDefenseStatistics) if data['defense']
         @receive         = Nfl::PlayReceiveStatistics.new(data['receive']) if data['receive']
         @punt            = Nfl::PlayPuntStatsitics.new(data['punt']) if data['punt']
         @penalty         = Nfl::PlayPenaltyStatistics.new(data['penalty']) if data['penalty']
         @pass		         = Nfl::PlayPassingStatistics.new(data['pass']) if data['pass']
-        @first_down      = Nfl::PlayFirstDownStatistics.new(data['first_down']) if data['first_down']
+        @first_down      = parse_into_array(selector: data['first_down'], klass: Nfl::PlayFirstDownStatistics) if data['first_down']
         @field_goal      = Nfl::PlayFieldGoalStatistics.new(data['field_goal']) if data['field_goal']
         @extra_point     = Nfl::PlayExtraPointStatistics.new(data['extra_point']) if data['extra_point']
         @down_conversion = Nfl::PlayDownConversionStatistics.new(data['down_conversion']) if data['down_conversion']
@@ -182,7 +182,7 @@ module Sportradar
     end
 
     class Nfl::PlayRushStatistics < Data
-      attr_accessor :attempt, :firstdown, :tlost, :tlost_yards, :yards, :inside_20, :goal_to_go, :team, :player, :nullified
+      attr_accessor :attempt, :firstdown, :tlost, :tlost_yards, :yards, :inside_20, :goal_to_go, :team, :player, :nullified, :touchdown
       def initialize(data)
         @attempt     = data['attempt']
         @firstdown   = data['firstdown']
@@ -204,7 +204,7 @@ module Sportradar
     end
     
 
-    class Nfl::PlayKickStatsitics < Data
+    class Nfl::PlayKickStatistics < Data
       attr_accessor :attempt, :yards, :gross_yards, :touchback, :team, :player, :endzone, :inside_20, :nullified
       def initialize(data)
         @endzone      = data['endzone']
@@ -224,7 +224,7 @@ module Sportradar
     end
 
     class Nfl::PlayReturnStatistics < Data
-      attr_accessor :category, :downed, :faircatch, :out_of_bounds, :return, :touchback, :yards, :team, :nullified
+      attr_accessor :category, :downed, :faircatch, :out_of_bounds, :return, :touchback, :yards, :team, :nullified, :player
       def initialize(data)
         @category      = data['category']
         @downed        = data['downed']
