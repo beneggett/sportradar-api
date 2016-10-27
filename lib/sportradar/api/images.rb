@@ -1,13 +1,15 @@
+# https://api.sportradar.us/nfl-images-o3/ap_premium/headshots/players/2016/manifest.xml?api_key=thhxe6sj2j7dnvybpu5f3xjx
+
 module Sportradar
   module Api
     class Images < Request
-      attr_accessor :sport, :league, :access_level
-      def initialize( sport, access_level = 't', league = nil)
+      attr_accessor :sport, :league, :access_level, :nfl_premium
+      def initialize( sport, access_level: 't', league: nil, nfl_premium: false)
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
         raise Sportradar::Api::Error::InvalidLeague unless soccer_leagues.include?(league) || league.nil?
         @league = league
-
+        @nfl_premium = nfl_premium
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         @access_level = access_level
       end
@@ -15,6 +17,8 @@ module Sportradar
       def player_manifests(year = Date.today.year)
         if league
           response = get request_url("#{league}/#{image_type}/players/#{year}/manifest")
+        elsif nfl_premium
+          response = get request_url("#{image_type}/players/#{year}/manifest")
         else
           response = get request_url("players/#{image_type}/manifests/all_assets")
         end
@@ -67,13 +71,18 @@ module Sportradar
 
       def api_key
         if league
+
           if access_level == 'p'
             Sportradar::Api.api_key_params("images_#{league}", "production")
           else
             Sportradar::Api.api_key_params("images_#{league}")
           end
         else
-          if access_level == 'p'
+          if nfl_premium && access_level == 'p'
+            Sportradar::Api.api_key_params("images_nfl_official_premium", "production")
+          elsif nfl_premium
+            Sportradar::Api.api_key_params("images_nfl_official_premium")
+          elsif access_level == 'p'
             Sportradar::Api.api_key_params("images_#{sport}", "production")
           else
             Sportradar::Api.api_key_params("images_#{sport}")
@@ -86,7 +95,9 @@ module Sportradar
       end
 
       def provider
-        if uses_v2_api?
+        if nfl_premium
+          'ap_premium'
+        elsif uses_v2_api?
           'usat'
         elsif uses_v3_api?
           'reuters'
@@ -94,10 +105,10 @@ module Sportradar
       end
 
       def version
-        if uses_v2_api?
-          Sportradar::Api.version('images')
-        elsif uses_v3_api?
+        if uses_v3_api? || nfl_premium
           3
+        elsif uses_v2_api?
+          Sportradar::Api.version('images')
         end
       end
 
