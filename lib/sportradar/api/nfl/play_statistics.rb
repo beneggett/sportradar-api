@@ -4,12 +4,12 @@ module Sportradar
       attr_accessor :response, :kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :first_down, :field_goal, :extra_point, :defense, :down_conversion
       def initialize(data)
         @response = data
-        @kick            = Nfl::PlayKickStatitics.new(data['kick']) if data['kick']
+        @kick            = Nfl::PlayKickStatistics.new(data['kick']) if data['kick']
         @return          = parse_into_array(selector: data['return'], klass: Nfl::PlayReturnStatistics) if data['return']
         @rush            = parse_into_array(selector: data['rush'], klass: Nfl::PlayRushStatistics) if data['rush']
         @defense         = parse_into_array(selector: data['defense'], klass: Nfl::PlayDefenseStatistics) if data['defense']
         @receive         = parse_into_array(selector: data['receive'], klass: Nfl::PlayReceiveStatistics) if data['receive']
-        @punt            = Nfl::PlayPuntStatitics.new(data['punt']) if data['punt']
+        @punt            = Nfl::PlayPuntStatistics.new(data['punt']) if data['punt']
         @penalty         = parse_into_array(selector: data['penalty'], klass: Nfl::PlayPenaltyStatistics) if data['penalty']
         @pass		         = Nfl::PlayPassingStatistics.new(data['pass']) if data['pass']
         @first_down      = parse_into_array(selector: data['first_down'], klass: Nfl::PlayFirstDownStatistics) if data['first_down']
@@ -142,7 +142,7 @@ module Sportradar
       end
     end
 
-    class Nfl::PlayPuntStatitics < Data
+    class Nfl::PlayPuntStatistics < Data
       attr_accessor :attempt, :downed, :faircatch, :inside_20, :out_of_bounds, :touchback, :yards, :nullified, :team, :player
       def initialize(data)
         @attempt        = data['attempt']
@@ -205,7 +205,7 @@ module Sportradar
     end
     
 
-    class Nfl::PlayKickStatitics < Data
+    class Nfl::PlayKickStatistics < Data
       attr_accessor :attempt, :yards, :gross_yards, :touchback, :team, :player, :endzone, :inside_20, :nullified
       def initialize(data)
         @endzone      = data['endzone']

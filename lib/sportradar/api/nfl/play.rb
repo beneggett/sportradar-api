@@ -31,7 +31,7 @@ module Sportradar
         if play_stats.is_a?(Array)
           play_stats = play_stats.first
         end
-        @player_id = play_stats&.player&.id if play_stats
+        @player_id = play_stats&.player&.id
       end
 
     end
