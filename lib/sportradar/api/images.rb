@@ -1,5 +1,3 @@
-# https://api.sportradar.us/nfl-images-o3/ap_premium/headshots/players/2016/manifest.xml?api_key=thhxe6sj2j7dnvybpu5f3xjx
-
 module Sportradar
   module Api
     class Images < Request
