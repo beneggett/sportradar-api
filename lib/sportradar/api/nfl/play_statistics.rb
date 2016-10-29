@@ -4,18 +4,18 @@ module Sportradar
       attr_accessor :response, :kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :first_down, :field_goal, :extra_point, :defense, :down_conversion
       def initialize(data)
         @response = data
-        @kick            = Nfl::PlayKickStatistics.new(data['kick']) if data['kick']
+        @kick            = parse_into_array(selector: data['kick'], klass: Nfl::PlayKickStatistics) if data['kick']
         @return          = parse_into_array(selector: data['return'], klass: Nfl::PlayReturnStatistics) if data['return']
         @rush            = parse_into_array(selector: data['rush'], klass: Nfl::PlayRushStatistics) if data['rush']
         @defense         = parse_into_array(selector: data['defense'], klass: Nfl::PlayDefenseStatistics) if data['defense']
         @receive         = parse_into_array(selector: data['receive'], klass: Nfl::PlayReceiveStatistics) if data['receive']
-        @punt            = Nfl::PlayPuntStatistics.new(data['punt']) if data['punt']
+        @punt            = parse_into_array(selector: data['punt'], klass: Nfl::PlayPuntStatistics) if data['punt']
         @penalty         = parse_into_array(selector: data['penalty'], klass: Nfl::PlayPenaltyStatistics) if data['penalty']
-        @pass		         = Nfl::PlayPassingStatistics.new(data['pass']) if data['pass']
+        @pass		         = parse_into_array(selector: data['pass'], klass: Nfl::PlayPassingStatistics) if data['pass']
         @first_down      = parse_into_array(selector: data['first_down'], klass: Nfl::PlayFirstDownStatistics) if data['first_down']
-        @field_goal      = Nfl::PlayFieldGoalStatistics.new(data['field_goal']) if data['field_goal']
-        @extra_point     = Nfl::PlayExtraPointStatistics.new(data['extra_point']) if data['extra_point']
-        @down_conversion = Nfl::PlayDownConversionStatistics.new(data['down_conversion']) if data['down_conversion']
+        @field_goal      = parse_into_array(selector: data['field_goal'], klass: Nfl::PlayFieldGoalStatistics) if data['field_goal']
+        @extra_point     = parse_into_array(selector: data['extra_point'], klass: Nfl::PlayExtraPointStatistics) if data['extra_point']
+        @down_conversion = parse_into_array(selector: data['down_conversion'], klass: Nfl::PlayDownConversionStatistics) if data['down_conversion']
       end
     end
 
