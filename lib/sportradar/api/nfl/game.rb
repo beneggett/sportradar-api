@@ -82,7 +82,20 @@ module Sportradar
       end
 
       def drives
-        Array(quarters&.flat_map(&:drives)).compact
+        @drives ||= begin
+          drives = Array(quarters&.flat_map(&:drives)).compact
+          # Scan for duplicates
+          drives.each_cons(2) do |a,b|
+            # Merge plays and events into the first if duplicate and flag dup for removal
+            if a.id == b.id
+              a.plays.concat(b.plays)
+              Array(a.events).concat(Array(b.events)).uniq!
+              b.id = nil
+            end
+          end
+          # Remove the dup
+          drives.delete_if{ |d| d.id.nil? }
+        end
       end
 
       def plays
