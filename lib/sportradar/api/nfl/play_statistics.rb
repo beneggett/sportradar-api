@@ -145,6 +145,7 @@ module Sportradar
     class Nfl::PlayPuntStatistics < Data
       attr_accessor :attempt, :downed, :faircatch, :inside_20, :out_of_bounds, :touchback, :yards, :nullified, :team, :player
       def initialize(data)
+        data = data.first if data.is_a?(Array)
         @attempt        = data['attempt']
         @downed         = data['downed']
         @inside_20      = data['inside_20']
