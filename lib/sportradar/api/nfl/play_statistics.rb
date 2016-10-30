@@ -225,7 +225,7 @@ module Sportradar
     end
 
     class Nfl::PlayReturnStatistics < Data
-      attr_accessor :category, :downed, :faircatch, :out_of_bounds, :return, :touchback, :yards, :team, :nullified, :player
+      attr_accessor :category, :downed, :faircatch, :out_of_bounds, :return, :touchback, :yards, :team, :nullified, :player, :touchdown
       def initialize(data)
         @category      = data['category']
         @downed        = data['downed']
@@ -233,6 +233,7 @@ module Sportradar
         @out_of_bounds = data['out_of_bounds']
         @return        = data['return']
         @touchback     = data['touchback']
+        @touchdown     = data['touchdown']
         @yards         = data['yards']
         @team          = Sportradar::Api::Nfl::Team.new(data['team']) if data['team']
         @player        = Nfl::Player.new(data['player']) if data['player']
