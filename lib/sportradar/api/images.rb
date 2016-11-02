@@ -14,7 +14,11 @@ module Sportradar
 
       def player_manifests(year = Date.today.year)
         if league
-          response = get request_url("#{league}/#{image_type}/players/#{year}/manifest")
+          if year != Date.today.year
+            response = get request_url("#{league}/#{image_type}/players/#{year}/manifest")
+          else
+            response = get request_url("#{league}/#{image_type}/players/manifest")
+          end
         elsif nfl_premium
           response = get request_url("#{image_type}/players/#{year}/manifest")
         else
