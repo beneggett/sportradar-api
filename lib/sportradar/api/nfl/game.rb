@@ -103,7 +103,7 @@ module Sportradar
       end
 
       def status_description
-        {
+        status_description = {
            "scheduled" => "The game is currently scheduled to occur.",
            "inprogress" => "The game is currently in progress.",
            "halftime" => "The game is currently at the half.",
@@ -115,6 +115,7 @@ module Sportradar
            "flex-schedule" => "The game is currently scheduled to occur on a specific date and time, however, it will more than likely be moved to a different time for broadcast purposes.",
            "time-tbd" => "The game is scheduled to occur, the date is known, but the start time has not been determined.",
          }
+         status_descriptions[status] if status
       end
 
     end
