@@ -102,6 +102,21 @@ module Sportradar
         Array(drives&.flat_map(&:plays)).compact
       end
 
+      def status_description
+        {
+           "scheduled" => "The game is currently scheduled to occur.",
+           "inprogress" => "The game is currently in progress.",
+           "halftime" => "The game is currently at the half.",
+           "complete" => "The game is over, but the statistics validation process has not been completed.",
+           "closed" => "The game is over and the game statistics have been validated.",
+           "cancelled" => "The game has been cancelled.",
+           "postponed" => "The scheduled game has been postponed for some reason.",
+           "delayed" => "The scheduled game, or a game that was in progress, is now delayed for some reason.",
+           "flex-schedule" => "The game is currently scheduled to occur on a specific date and time, however, it will more than likely be moved to a different time for broadcast purposes.",
+           "time-tbd" => "The game is scheduled to occur, the date is known, but the start time has not been determined.",
+         }
+      end
+
     end
   end
 end
