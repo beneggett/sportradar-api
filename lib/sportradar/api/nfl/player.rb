@@ -36,7 +36,7 @@ module Sportradar
         @seasons = parse_into_array(selector: response["season"], klass: Sportradar::Api::Nfl::Season)  if response["season"]
       end
       def name
-        @name ||= [(preferred_name || first_name), last_name].join(' ')
+        preferred_name ? [(preferred_name || first_name), last_name].join(' ') : full_name
       end
 
       def age
