@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Nfl::Player < Data
-      attr_accessor :response, :id, :sequence, :title, :game, :name, :jersey, :reference, :position, :depth, :injury, :age, :birth_date, :birth_place, :college, :college_conf, :draft, :first_name, :height, :high_school, :last_name, :preferred_name, :references, :rookie_year, :status, :weight, :abbr_name, :seasons, :team
+      attr_accessor :response, :id, :sequence, :title, :game, :full_name, :jersey, :reference, :position, :depth, :injury, :age, :birth_date, :birth_place, :college, :college_conf, :draft, :first_name, :height, :high_school, :last_name, :preferred_name, :references, :rookie_year, :status, :weight, :abbr_name, :seasons, :team
 
       def initialize(data)
         data = [data].to_h if data.is_a? Array # for kickers in depth charts
@@ -10,7 +10,7 @@ module Sportradar
         @game = data["game"] # Games
         @id = data["id"]
         @jersey = data["jersey"]
-        @name = data["name"]
+        @full_name = data["name"]
         @position = data["position"]
         @reference = data["reference"]
         @sequence = data["sequence"]
@@ -34,6 +34,9 @@ module Sportradar
         @injury = Sportradar::Api::Nfl::Injury.new data["injury"] if data["injury"]
         @draft = Sportradar::Api::Nfl::Draft.new data["draft"] if data["draft"]
         @seasons = parse_into_array(selector: response["season"], klass: Sportradar::Api::Nfl::Season)  if response["season"]
+      end
+      def name
+        @name ||= [(preferred_name || first_name), last_name].join(' ')
       end
 
       def age
