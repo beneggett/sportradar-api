@@ -1,38 +1,59 @@
 module Sportradar
   module Api
-    class Ncaafb < Request
+    class Mma < Request
       attr_accessor :league, :access_level, :simulation, :error
 
       def initialize(access_level = 't')
-        @league = 'ncaafb'
+        @league = 'mma'
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         @access_level = access_level
       end
 
-      def schedule(year = Date.today.year, season = 'reg')
-        raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? season
-        response = get request_url("#{ year }/#{ season }/schedule")
-        # response = self.class.get 'http://developer.sportradar.us/files/ncaafb_v1_season_schedule_example.xml'
-        if response.success? && response['season']
-          Sportradar::Api::Ncaafb::Season.new(response['season'], api: self)
+      def schedule
+        response = get request_url("schedule")
+        if response.success? && response['schedule']
+          Sportradar::Api::Mma::Schedule.new(response['schedule'], api: self)
         else
           @error = response
         end
       end
 
-      def weekly_schedule(week = 1, year = Date.today.year, season = "reg")
-        response = get request_url("#{ week_path(year, season, week) }/schedule")
-        # response = self.class.get 'http://developer.sportradar.us/files/NFL_Official_Weekly_Schedule_Sample.xml'
-        if response.success? && response['games']
-          Sportradar::Api::Ncaafb::Week.new(response['games'], api: self)
+      def participants
+        response = get request_url("profiles")
+        if response.success? && response['profile']
+          Sportradar::Api::Mma::Roster.new(response['profile'], api: self)
         else
           @error = response
         end
       end
 
-      def roster(team_id, year = Date.today.year, season = "reg")
-        Team.new(team_id).tap { |team| team.roster }
+      def statistics(event_id = "8f85ecc5-0d4d-470b-b357-075cc7e7bedd")
+        event_hash = {"id" => event_id } # => UFC 205 - McGregor/Alvarez
+        event = Event.new({ 'id' => event_id })
+        event.get_stats
       end
+      def generate_simulation_event(event_id = "8f85ecc5-0d4d-470b-b357-075cc7e7bedd")
+        event = Event.new({ 'id' => event_id })
+        i = 0
+        base_path = "simulations/mma/#{event_id}"
+        FileUtils.mkdir_p(base_path)
+        loop do
+          t = Time.now
+          print "#{t}: Data pull #{i+=1}\r"
+          res = event.get_stats.body
+          File.write("#{base_path}/#{t.to_i}.xml", res)
+          wait = (t.to_i + 60 - Time.now.to_i)
+          wait.times do |j|
+            print "#{t}: Data pull #{i} complete, #{wait - j} seconds until next.\r"
+            sleep 1
+          end
+          puts
+        end
+      end
+
+      # def roster(team_id, year = Date.today.year, season = "reg")
+      #   Team.new(team_id).tap { |team| team.roster }
+      # end
 
 
       # def weekly_depth_charts(week = 1, year = Date.today.year, season = "reg" )
@@ -60,13 +81,13 @@ module Sportradar
       #   Sportradar::Api::Nfl::Game.new response["game"]  if response.success? && response["game"]
       # end
 
-      def game_statistics(game_data)
-        # check_simulation(game_id)
-        base = "#{ year }/#{ ncaafb_season }/#{ ncaafb_season_week }/#{ away_team}/#{ home_team }/statistics"
-        response = get_data(base)
-        Sportradar::Api::Nfl::Game.new response["game"]  if response.success? && response["game"]
-        ## Need to properly implement statistics
-      end
+      # def game_statistics(game_data)
+      #   # check_simulation(game_id)
+      #   base = "#{ year }/#{ mma_season }/#{ mma_season_week }/#{ away_team}/#{ home_team }/statistics"
+      #   response = get_data(base)
+      #   Sportradar::Api::Nfl::Game.new response["game"]  if response.success? && response["game"]
+      #   ## Need to properly implement statistics
+      # end
 
       # def play_by_play(game_id)
       #   check_simulation(game_id)
@@ -132,52 +153,41 @@ module Sportradar
         get request_url(url)
       end
 
-      def get_pbp(*args)
-        'pbp'
-      end
-
       private
 
-      def check_simulation(game_id)
-        @simulation = true if simulation_games.include?(game_id)
-      end
+      # def check_simulation(game_id)
+      #   @simulation = true if simulation_games.include?(game_id)
+      # end
 
       def request_url(path)
-        if simulation
-          # "/nfl-sim1/#{path}"
-        else
-          "/ncaafb-#{access_level}#{version}/#{path}"
-        end
+        "/mma-#{access_level}#{version}/#{path}"
       end
 
       def api_key
         if access_level != 't'
-          Sportradar::Api.api_key_params('ncaafb', 'production')
+          Sportradar::Api.api_key_params('mma', 'production')
         else
-          Sportradar::Api.api_key_params('ncaafb')
+          Sportradar::Api.api_key_params('mma')
         end
       end
 
       def version
-        Sportradar::Api.version('ncaafb')
+        Sportradar::Api.version('mma')
       end
 
       def allowed_access_levels
-        %w[rt p s b t]
+        %w[p t]
       end
 
-      def allowed_seasons
-        ["pre", "reg", "pst"]
-      end
     end
   end
 end
 
 __END__
 
-sr = Sportradar::Api::Ncaafb.new
-sw = sr.weekly_schedule;
+sr = Sportradar::Api::Mma.new
 ss = sr.schedule;
+sp = sr.participants;
 
 ss.games.count
 ss.weeks.count

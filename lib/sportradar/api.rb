@@ -29,9 +29,14 @@ require "sportradar/api/soccer/venue"
 
 require "sportradar/api/football"
 require "sportradar/api/ncaafb"
-require "sportradar/api/ncaafb/game"
 require "sportradar/api/ncaafb/season"
 require "sportradar/api/ncaafb/week"
+require "sportradar/api/ncaafb/game"
+require "sportradar/api/ncaafb/team"
+require "sportradar/api/ncaafb/player"
+require "sportradar/api/ncaafb/quarter"
+require "sportradar/api/ncaafb/drive"
+require "sportradar/api/ncaafb/play"
 
 require "sportradar/api/nfl"
 require "sportradar/api/nfl/broadcast"
@@ -64,6 +69,8 @@ require "sportradar/api/nfl/team_depth_chart"
 require "sportradar/api/nfl/venue"
 require "sportradar/api/nfl/week"
 
+require "sportradar/api/basketball"
+
 
 require "sportradar/api/live_images"
 require "sportradar/api/images"
@@ -72,7 +79,18 @@ require "sportradar/api/images/asset"
 require "sportradar/api/images/link"
 require "sportradar/api/images/tag"
 
-
+require "sportradar/api/mma"
+require "sportradar/api/mma/schedule"
+require "sportradar/api/mma/roster"
+require "sportradar/api/mma/fighter"
+require "sportradar/api/mma/event"
+require "sportradar/api/mma/fight"
+require "sportradar/api/mma/judge"
+require "sportradar/api/mma/referee"
+require "sportradar/api/mma/result"
+require "sportradar/api/mma/score"
+require "sportradar/api/mma/venue"
+require "sportradar/api/mma/league"
 
 
 require "sportradar/api/content"

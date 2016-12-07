@@ -1,29 +1,33 @@
 module Sportradar
   module Api
-    class Ncaafb::Week < Data
-      attr_accessor :response, :id, :sequence, :title
+    class Ncaafb
+      class Week < Data
+        attr_accessor :response, :id, :sequence, :title, :season
 
-      def initialize(data)
-        @response = data
-        @id       = response['id']
-        @year     = response['year']
-        @type     = response['type']
-        @name     = response['name']
-        @sequence = response['sequence']
-      end
+        def initialize(data, **opts)
+          @response = data
+          @api      = opts[:api]
+          @season   = opts[:season]
+          # @id       = response['id']
+          # @year     = response['year']
+          # @type     = response['type']
+          @sequence = response['week']
 
-      # private
-
-      def games
-        @game ||= if response["game"]
-          if response["game"].is_a?(Array)
-            @games = response["game"].map {|game| Sportradar::Api::Ncaafb::Game.new game }
-          elsif response["game"].is_a?(Hash)
-            @games = [ Sportradar::Api::Ncaafb::Game.new(response["game"]) ]
-          end
+        rescue => e
+          binding.pry
         end
-      end
 
+        def number
+          sequence
+        end
+
+        # private
+
+        def games
+          @games ||= parse_into_array_with_options(selector: response["game"], klass: Sportradar::Api::Ncaafb::Game, api: @api, week: self)
+        end
+
+      end
     end
   end
 end

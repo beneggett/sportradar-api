@@ -3,8 +3,9 @@ module Sportradar
     class Nfl::Conference < Data
       attr_accessor :response, :id, :name, :alias, :divisions
 
-      def initialize(data)
+      def initialize(data, **opts)
         @response = data
+        @api      = opts[:api]
         @id = data["id"]
         @name = data["name"]
         @alias = data["alias"]
