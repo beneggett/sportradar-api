@@ -39,6 +39,10 @@ module Sportradar
         preferred_name ? [(preferred_name || first_name), last_name].join(' ') : full_name
       end
 
+      def display_name
+        preferred_name ? [preferred_name, last_name].join(' ') : name
+      end
+
       def age
         if birth_date.present?
           now = Time.now.utc.to_date
