@@ -55,7 +55,7 @@ module Sportradar
         case end_reason
         when 'Touchdown'
           'Touchdown'
-        when 'Field Goal'
+        when 'Field Goal', 'Missed FG'
           'Field Goal'
         when 'Downs'
           'Downs'
