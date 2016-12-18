@@ -88,7 +88,7 @@ module Sportradar
           drives.each_cons(2) do |a,b|
             # Merge plays and events into the first if duplicate and flag dup for removal
             if a.id == b.id
-              a.plays.concat(b.plays)
+              Array(a.plays).concat(b.plays)
               Array(a.events).concat(Array(b.events)).uniq!
               b.id = nil
             end
