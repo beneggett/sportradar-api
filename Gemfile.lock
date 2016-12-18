@@ -57,7 +57,7 @@ GEM
     minitest (5.9.1)
     minitest-focus (1.1.2)
       minitest (>= 4, < 6)
-    multi_xml (0.5.5)
+    multi_xml (0.6.0)
     nenv (0.3.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
