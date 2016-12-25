@@ -1,8 +1,10 @@
 module Sportradar
   module Api
     module Basketball
-      class ThreePointMade < Play::Base
-        #
+      class ThreePointMade < ShotMade
+        def base_key
+          # "freethrow"
+        end
       end
     end
   end

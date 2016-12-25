@@ -10,6 +10,7 @@ module Sportradar
             @response = data
             @api      = opts[:api]
 
+            @quarter  = opts[:quarter].number.to_i
             @id       = data['id']
 
             update(data)
@@ -21,9 +22,26 @@ module Sportradar
           def scoring_play?
             points.nonzero?
           end
+          def timeout?
+            false
+          end
+          def quarter_break?
+            false
+          end
+          def halftime?
+            false
+          end
 
           def ==(other)
             id == other.id && description == other.description
+          end
+
+          def clock_seconds
+            m,s = @clock.split(':')
+            m.to_i * 60 + s.to_i
+          end
+          def game_seconds
+            ([quarter, 4].min * 720) + ([quarter - 4, 0].max * 300) - clock_seconds # seconds elapsed in game, will be wrong in overtime
           end
 
           def points

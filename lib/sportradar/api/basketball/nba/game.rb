@@ -163,13 +163,16 @@ module Sportradar
 
           # status helpers
           def future?
-            ['scheduled', 'delayed'].include? status
+            ['scheduled', 'delayed', 'created'].include? status
           end
           def started?
             ['inprogress', 'halftime', 'delayed'].include? status
           end
           def finished?
             ['completed', 'closed'].include? status
+          end
+          def completed?
+            'complete' == status
           end
           def closed?
             'closed' == status

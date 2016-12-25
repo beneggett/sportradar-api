@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     module Basketball
-      class TeamTimeout < Play::Base
+      class TeamTimeout < Timeout
         #
       end
     end

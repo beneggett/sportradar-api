@@ -1,7 +1,10 @@
 require_relative 'play'
 
 require_relative 'plays/base'
+require_relative 'plays/timeout'
 require_relative 'plays/end_period'
+require_relative 'plays/shot_made'
+require_relative 'plays/shot_miss'
 require_relative 'plays/free_throw_made'
 require_relative 'plays/free_throw_miss'
 require_relative 'plays/jumpball'

@@ -1,8 +1,10 @@
 module Sportradar
   module Api
     module Basketball
-      class TvTimeout < Timeout
-        #
+      class Timeout < Play::Base
+        def timeout?
+          true
+        end
       end
     end
   end

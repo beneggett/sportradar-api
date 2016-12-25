@@ -1,8 +1,10 @@
 module Sportradar
   module Api
     module Basketball
-      class ThreePointMiss < Play::Base
-        #
+      class ThreePointMiss < ShotMiss
+        def base_key
+          # "freethrow"
+        end
       end
     end
   end
