@@ -3,13 +3,7 @@ module Sportradar
     module Basketball
       class Nba
         class Game < Data
-          TIMEOUTS = {
-            1 => [360, 180],
-            2 => [540, 360, 180],
-            3 => [360, 180],
-            4 => [540, 360, 180],
-          }
-          attr_accessor :response, :id, :home, :away, :home_id, :away_id, :score, :scoring, :status, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :quarter, :team_stats, :player_stats, :changes
+          attr_accessor :response, :id, :home, :away, :home_id, :away_id, :score, :scoring, :status, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :quarter, :team_stats, :player_stats, :changes, :media_timeouts
           @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]

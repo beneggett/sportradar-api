@@ -65,8 +65,6 @@ module Sportradar
           'pbp'
         end
 
-        private
-
 
         def default_year
           2016
@@ -77,6 +75,8 @@ module Sportradar
         def default_season
           'reg'
         end
+
+        private
 
         def check_simulation(game_id)
           @simulation = true if simulation_games.include?(game_id)

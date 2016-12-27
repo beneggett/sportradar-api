@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     module Basketball
-      class OffensiveFoul < Play::Base
+      class OffensiveFoul < Foul
         #
       end
     end

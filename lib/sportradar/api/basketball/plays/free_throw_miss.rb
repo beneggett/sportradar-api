@@ -11,11 +11,8 @@ module Sportradar
         def made?
           false
         end
-        def points
-          0
-        end
         def player_id
-          @player_id ||= @statistics.dig(base_key, "player", "id")
+          @player_id ||= @statistics&.dig(base_key, "player", "id") # safe operator is specifically for lane violations, which have no player_id and should not be assigned a player
         end
       end
     end

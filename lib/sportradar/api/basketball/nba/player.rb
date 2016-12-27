@@ -3,8 +3,8 @@ module Sportradar
     module Basketball
       class Nba
         class Player < Data
-          attr_accessor :response, :id, :number
-          @all_hash = {}
+          attr_accessor :response, :id, :number, :full_name, :position, :birth_date, :birth_place, :college
+          # @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]
           #   if existing
@@ -33,6 +33,14 @@ module Sportradar
             Bio.new(self)
           end
 
+          def name # to match api for NFL::Player
+            full_name
+          end
+
+          def birth_date # to match api for NFL::Player
+            @birthdate
+          end
+
           def update(data, **opts)
             @status           = data['status']            if data['status']            # "ACT",
             @full_name        = data['full_name']         if data['full_name']         # "Festus Ezeli",
@@ -52,44 +60,54 @@ module Sportradar
             update_injuries(data)
             update_draft(data)
 
-            @team.update_player_stats(self, data['statistics'], opts[:game]) if data['statistics'] #&& opts[:game]
+            @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
+            @team.update_player_stats(self, data.dig('overall', 'average'))   if data.dig('overall', 'average')
             
             self
           end
-          def stats
-            {
-             "played"=>"true",
-             "active"=>"true",
-             "starter"=>"true",
-             "statistics"=>
-              {"minutes"=>"33:23",
-               "field_goals_made"=>"5",
-               "field_goals_att"=>"11",
-               "field_goals_pct"=>"45.5",
-               "three_points_made"=>"1",
-               "three_points_att"=>"5",
-               "three_points_pct"=>"20.0",
-               "two_points_made"=>"4",
-               "two_points_att"=>"6",
-               "two_points_pct"=>"66.667",
-               "blocked_att"=>"0",
-               "free_throws_made"=>"2",
-               "free_throws_att"=>"2",
-               "free_throws_pct"=>"100.0",
-               "offensive_rebounds"=>"1",
-               "defensive_rebounds"=>"3",
-               "rebounds"=>"4",
-               "assists"=>"6",
-               "turnovers"=>"2",
-               "steals"=>"0",
-               "blocks"=>"0",
-               "assists_turnover_ratio"=>"3.0",
-               "personal_fouls"=>"1",
-               "tech_fouls"=>"0",
-               "flagrant_fouls"=>"0",
-               "pls_min"=>"4",
-               "points"=>"13"}}
+
+          def age
+            if birth_date.present?
+              now = Time.now.utc.to_date
+              dob = birth_date.to_date
+              now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+            end
           end
+
+          # def stats
+          #   {
+          #    "played"=>"true",
+          #    "active"=>"true",
+          #    "starter"=>"true",
+          #    "statistics"=>
+          #     {"minutes"=>"33:23",
+          #      "field_goals_made"=>"5",
+          #      "field_goals_att"=>"11",
+          #      "field_goals_pct"=>"45.5",
+          #      "three_points_made"=>"1",
+          #      "three_points_att"=>"5",
+          #      "three_points_pct"=>"20.0",
+          #      "two_points_made"=>"4",
+          #      "two_points_att"=>"6",
+          #      "two_points_pct"=>"66.667",
+          #      "blocked_att"=>"0",
+          #      "free_throws_made"=>"2",
+          #      "free_throws_att"=>"2",
+          #      "free_throws_pct"=>"100.0",
+          #      "offensive_rebounds"=>"1",
+          #      "defensive_rebounds"=>"3",
+          #      "rebounds"=>"4",
+          #      "assists"=>"6",
+          #      "turnovers"=>"2",
+          #      "steals"=>"0",
+          #      "blocks"=>"0",
+          #      "assists_turnover_ratio"=>"3.0",
+          #      "personal_fouls"=>"1",
+          #      "tech_fouls"=>"0",
+          #      "flagrant_fouls"=>"0",
+          #      "pls_min"=>"4",
+          #      "points"=>"13"}}
+          # end
           def update_draft(data)
             @draft = data['draft']             # {"team_id"=>"583ec825-fb46-11e1-82cb-f4ce4684ea4c", "year"=>"2012", "round"=>"1", "pick"=>"30"},
           end

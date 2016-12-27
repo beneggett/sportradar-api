@@ -10,19 +10,23 @@ module Sportradar
             @response = data
             @api      = opts[:api]
 
-            @quarter  = opts[:quarter].number.to_i
+            @quarter  = opts[:quarter].number.to_i rescue opts[:quarter].to_i
             @id       = data['id']
 
             update(data)
           end
 
-          def game
-            quarter.game
-          end
+          # def game
+          #   quarter.game
+          # end
+
           def scoring_play?
             points.nonzero?
           end
           def timeout?
+            false
+          end
+          def media_timeout?
             false
           end
           def quarter_break?
@@ -30,6 +34,13 @@ module Sportradar
           end
           def halftime?
             false
+          end
+          def base_key
+            nil
+          end
+
+          def points
+            0
           end
 
           def ==(other)
@@ -44,14 +55,6 @@ module Sportradar
             ([quarter, 4].min * 720) + ([quarter - 4, 0].max * 300) - clock_seconds # seconds elapsed in game, will be wrong in overtime
           end
 
-          def points
-            0
-          end
-
-          def timeout?
-            ["teamtimeout", "officialtimeout", "tvtimeout"].include? event_type
-          end
-
           def update(data, **opts)
             @event_type  = data['event_type']  # "lineupchange",
             @clock       = data['clock']       # "12:00",
@@ -61,8 +64,21 @@ module Sportradar
             @team_id     = data.dig('attribution', "id")
             @location    = data['location']    # {"coord_x"=>"0", "coord_y"=>"0"},
             @possession  = data['possession']  # {"name"=>"Knicks", "market"=>"New York", "id"=>"583ec70e-fb46-11e1-82cb-f4ce4684ea4c"},
-            @on_court    = data['on_court']    # hash
-            @statistics  = data['statistics']
+            # @on_court    = data['on_court']    # hash
+            parse_statistics(data) if data['statistics']
+          end
+
+          def parse_statistics(data)
+            return unless data['statistics']
+            @statistics = data['statistics']
+            stat = data.dig('statistics', base_key)
+            stat = stat[0] if stat.is_a?(Array) # sometimes SR has an array of identical assist hashes
+            @team = stat['team']
+            @team_id = @team['id'] if @team
+            @player = data['player']
+            @player_id = @player['id'] if @player
+          rescue => e
+            binding.pry
           end
 
         end

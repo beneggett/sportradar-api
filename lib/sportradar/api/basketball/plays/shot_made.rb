@@ -2,11 +2,18 @@ module Sportradar
   module Api
     module Basketball
       class ShotMade < Play::Base
+        attr_reader :shot_type, :shot_type_desc, :assist
+        def base_key
+          "fieldgoal"
+        end
+        def parse_statistics(data)
+          super
+          @shot_type = @statistics.dig(base_key, 'shot_type')
+          @shot_type_desc = @statistics.dig(base_key, 'shot_type_desc')
+          @assist = Assist.new(data, quarter: @quarter) if @statistics['assist']
+        end
         def made?
           true
-        end
-        def player_id
-          @player_id ||= @statistics.dig(base_key, "player", "id")
         end
       end
     end

@@ -4,6 +4,9 @@ module Sportradar
       class Nba
         class Hierarchy < Data
           attr_accessor :response, :id, :name, :alias
+          def all_attributes
+            [:name, :alias, :conferences, :divisions, :teams]
+          end
 
           def initialize(data, **opts)
             @response = data

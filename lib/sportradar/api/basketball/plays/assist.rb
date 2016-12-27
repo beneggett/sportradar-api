@@ -1,9 +1,9 @@
 module Sportradar
   module Api
     module Basketball
-      class ThreePointMade < ShotMade
-        def points
-          3
+      class Assist < Play::Base
+        def base_key
+          'assist'
         end
       end
     end

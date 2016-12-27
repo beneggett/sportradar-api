@@ -2,8 +2,8 @@ module Sportradar
   module Api
     module Basketball
       class TwoPointMade < ShotMade
-        def base_key
-          # "freethrow"
+        def points
+          2
         end
       end
     end

@@ -53,10 +53,14 @@ module Sportradar
 
           def parse_from_box(data)
             id = data.dig('team', 0, 'id')
-            a = Array(data.dig('team', 0, 'scoring', 'quarter')).each { |h| h[id] = h.delete('points').to_i }
+            da = data.dig('team', 0, 'scoring', 'quarter')
+            a = [da].compact.flatten(1).each { |h| h[id] = h.delete('points').to_i }
             id = data.dig('team', 1, 'id')
-            b = Array(data.dig('team', 1, 'scoring', 'quarter')).each { |h| h[id] = h.delete('points').to_i }
+            da = data.dig('team', 1, 'scoring', 'quarter')
+            b = [da].compact.flatten(1).each { |h| h[id] = h.delete('points').to_i }
             a.zip(b).map{ |a, b| [a['number'].to_i, a.merge(b)] }.sort{ |(a,_), (b,_)| a <=> b }.to_h
+          rescue => e
+            binding.pry
           end
 
           def parse_from_pbp(data)

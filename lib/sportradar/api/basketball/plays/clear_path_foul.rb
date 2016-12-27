@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     module Basketball
-      class ClearPathFoul < Play::Base
+      class ClearPathFoul < Foul
         #
       end
     end

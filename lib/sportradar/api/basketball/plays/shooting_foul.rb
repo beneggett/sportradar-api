@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     module Basketball
-      class ShootingFoul < Play::Base
+      class ShootingFoul < Foul
         #
       end
     end
