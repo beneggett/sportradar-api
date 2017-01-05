@@ -9,6 +9,7 @@ module Sportradar
       def get(path, options={})
         base_setup(path, options)
         begin
+          # puts url + "?api_key=#{api_key[:api_key]}" # uncomment for debugging
           response = self.class.get(url, headers: headers, query: options.merge(api_key), timeout: timeout)
           rescue Net::ReadTimeout, Net::OpenTimeout
             raise Sportradar::Api::Error::Timeout

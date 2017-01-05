@@ -203,3 +203,9 @@ module Sportradar
     end
   end
 end
+
+__END__
+
+http://api.sportradar.us/nfl-ot1/games/f45b4a31-b009-4039-8394-42efbc6d5532/pbp.xml?api_key=fzve3ze2xnvs8pbtpddx4t58
+http://api.sportradar.us/nfl-ot1/games/5a7042cb-fe7a-4838-b93f-6b8c167ec384/pbp.xml?api_key=fzve3ze2xnvs8pbtpddx4t58
+http://api.sportradar.us/nfl-ot1/games/7f761bb5-7963-43ea-a01b-baf4f5d50fe3/pbp.xml?api_key=fzve3ze2xnvs8pbtpddx4t58

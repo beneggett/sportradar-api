@@ -18,6 +18,48 @@ module Sportradar
           [ klass.new(selector) ]
         end
       end
+      def parse_into_array_with_options(selector: , klass: , **opts)
+        if selector.is_a?(Array)
+          selector.map {|x| klass.new(x, **opts) }
+        elsif selector.is_a?(Hash)
+          [ klass.new(selector, **opts) ]
+        else
+          []
+        end
+      end
+
+      def structure_links(links_arr)
+        links_arr.map { |hash| [hash['rel'], hash['href'].gsub('.xml', '')] }.to_h
+      end
+
+      # @param existing [Hash{String=>Data}] Existing data hash, ID => entity
+      # @param data [Hash, Array] new data to update with
+      def update_data(existing, data)
+        case data
+        when Array
+          data.each { |hash| existing[hash['id']].update(hash) }
+        when Hash
+          existing[data['id']].update(data)
+        else
+          # raise
+        end
+        existing
+      end
+
+      # @param existing [Hash{String=>Data}] Existing data hasb, ID => entity
+      # @param data [Hash, Array] new data to update with
+      def create_data(existing = {}, data, klass: nil, **opts)
+        existing ||= {} # handles nil case, typically during object instantiation
+        case data
+        when Array
+          data.each { |hash| existing[hash['id']] = klass.new(hash, **opts) }
+        when Hash
+          existing[data['id']] = klass.new(data, **opts)
+        else
+          # raise
+        end
+        existing
+      end
 
       def parse_out_hashes(data_element)
         if data_element && data_element.is_a?(Array)
