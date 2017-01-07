@@ -200,6 +200,10 @@ module Sportradar
               @quarter = nil
               []
             end
+            if data['overtime']
+              extra_quarters = data['overtime'].is_a?(Hash) ? [data['overtime']] : data['overtime']
+              quarter_data.concat(extra_quarters)
+            end
             set_pbp(quarter_data)
             @pbp = @quarters_hash.values
             check_newness(:pbp, plays.last)
