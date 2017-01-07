@@ -36,6 +36,9 @@ module Sportradar
           def name # to match api for NFL::Player
             full_name
           end
+          def display_name
+            full_name
+          end
 
           def birth_date # to match api for NFL::Player
             @birthdate

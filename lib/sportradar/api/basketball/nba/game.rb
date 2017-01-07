@@ -163,7 +163,7 @@ module Sportradar
             ['inprogress', 'halftime', 'delayed'].include? status
           end
           def finished?
-            ['completed', 'closed'].include? status
+            ['complete', 'closed'].include? status
           end
           def completed?
             'complete' == status

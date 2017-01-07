@@ -17,7 +17,7 @@ module Sportradar
         # end
         def self.new(data, **opts)
           klass = subclass(data['event_type'])
-          klass.new(data, **opts) rescue (puts data['event_type']; binding.pry)
+          klass.new(data, **opts) rescue nil
         end
         # def self.all
         #   @all_hash.values
