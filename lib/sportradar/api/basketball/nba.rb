@@ -4,7 +4,7 @@ module Sportradar
       class Nba < Request
         attr_accessor :league, :access_level, :simulation, :error
 
-        def initialize(access_level = 't')
+        def initialize(access_level = 'p')
           @league = 'nba'
           raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
           @access_level = access_level
