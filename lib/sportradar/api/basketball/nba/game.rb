@@ -156,6 +156,9 @@ module Sportradar
           end
 
           # status helpers
+          def postponed?
+            'postponed' == status
+          end
           def future?
             ['scheduled', 'delayed', 'created'].include? status
           end
