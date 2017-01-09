@@ -75,10 +75,11 @@ module Sportradar
             stat = stat[0] if stat.is_a?(Array) # sometimes SR has an array of identical assist hashes
             @team = stat['team']
             @team_id = @team['id'] if @team
-            @player = data['player']
+            @player = stat['player']
             @player_id = @player['id'] if @player
           rescue => e
-            binding.pry
+            puts e
+            # binding.pry
           end
 
         end
