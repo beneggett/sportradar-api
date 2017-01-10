@@ -6,6 +6,10 @@ module Sportradar
           end_of_ot? ? 'End OT' : 'End Quarter'
         end
 
+        def end_of_period?
+          true
+        end
+
         def quarter_break?
           ["End of 1st Quarter.", "End of 3rd Quarter."].include? description
         end

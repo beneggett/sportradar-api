@@ -38,6 +38,15 @@ module Sportradar
           def halftime?
             false
           end
+          def end_of_period?
+            false
+          end
+          def end_of_regulation?
+            false
+          end
+          def end_of_ot?
+            false
+          end
           def base_key
             nil
           end
