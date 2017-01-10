@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Nba
         class Player < Data
-          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_date, :birth_place, :college, :height, :weight, :birth_place, :college
+          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_date, :birth_place, :college, :height, :weight, :birth_place, :college, :averages, :draft
           # @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]
@@ -67,8 +67,11 @@ module Sportradar
             update_draft(data)
 
             @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
-            @team.update_player_stats(self, data.dig('overall', 'average'))   if data.dig('overall', 'average')
-            
+            if avgs = data.dig('overall', 'average')
+              @averages = avgs
+              @team.update_player_stats(self, @averages)
+            end
+
             self
           end
 
@@ -115,10 +118,10 @@ module Sportradar
           #      "points"=>"13"}}
           # end
           def update_draft(data)
-            @draft = data['draft']             # {"team_id"=>"583ec825-fb46-11e1-82cb-f4ce4684ea4c", "year"=>"2012", "round"=>"1", "pick"=>"30"},
+            @draft = data['draft'] if data['draft']   # {"team_id"=>"583ec825-fb46-11e1-82cb-f4ce4684ea4c", "year"=>"2012", "round"=>"1", "pick"=>"30"},
           end
           def update_injuries(data)
-            @injuries = data['injuries']          # 
+            @injuries = data['injuries'] if data['injuries'] # 
                  # {"injury"=>
                  #   {"id"=>"06423591-3fc1-4d2b-8c60-a3f30d735345",
                  #    "comment"=>"Ezeli suffered a setback in his recovery from a procedure on his knee and there is no timetable for his return, according to Jason Quick of csnnw.com.",

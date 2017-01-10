@@ -125,7 +125,8 @@ module Sportradar
           def parse_season_stats(data)
             @team_stats = data.dig('team_records')
             update(data)
-            create_data(@players_hash, data.dig('player_records', 'player'), klass: Player, api: api, team: self)
+            player_data = data.dig('player_records', 'player')
+            create_data(@players_hash, player_data, klass: Player, api: api, team: self)
             data
           end
 

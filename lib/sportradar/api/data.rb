@@ -52,7 +52,11 @@ module Sportradar
         existing ||= {} # handles nil case, typically during object instantiation
         case data
         when Array
-          data.each { |hash| existing[hash['id']] = klass.new(hash, **opts) }
+          data.each do |hash|
+            current = existing[hash['id']]
+            current ? current.update(hash) : existing[hash['id']] = klass.new(hash, **opts)
+            existing[hash['id']]
+          end
         when Hash
           existing[data['id']] = klass.new(data, **opts)
         else
