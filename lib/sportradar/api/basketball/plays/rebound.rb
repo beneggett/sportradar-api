@@ -5,6 +5,9 @@ module Sportradar
         def base_key
           'rebound'
         end
+        def display_type
+          'Rebound'
+        end
         def parse_statistics(data)
           super
           @rebound_type = @statistics.dig(base_key, 'rebound_type')

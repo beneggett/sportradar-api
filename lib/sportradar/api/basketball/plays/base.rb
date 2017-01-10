@@ -19,6 +19,9 @@ module Sportradar
           # def game
           #   quarter.game
           # end
+          def display_type
+            ''
+          end
 
           def scoring_play?
             points.nonzero?

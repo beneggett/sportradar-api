@@ -5,6 +5,9 @@ module Sportradar
         def base_key
           'personalfoul'
         end
+        def display_type
+          'Foul'
+        end
         def foul_type(data)
           @event_type
         end

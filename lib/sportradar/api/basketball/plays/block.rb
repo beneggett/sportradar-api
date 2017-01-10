@@ -5,6 +5,9 @@ module Sportradar
         def base_key
           'block'
         end
+        def display_type
+          'Block'
+        end
       end
     end
   end

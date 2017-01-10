@@ -3,6 +3,9 @@ module Sportradar
     module Basketball
       class Timeout < Play::Base
         attr_writer :media_timeout
+        def display_type
+          'Timeout'
+        end
         def timeout?
           true
         end

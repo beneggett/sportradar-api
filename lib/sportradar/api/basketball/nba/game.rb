@@ -43,6 +43,9 @@ module Sportradar
           def overview
             Overview.new(self)
           end
+          def tied?
+            @score[away_id].to_i == @score[home_id].to_i
+          end
           def points(team_id)
             team_id.is_a?(Symbol) ? @score[@team_ids[team_id]].to_i : @score[team_id].to_i
           end

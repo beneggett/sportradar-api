@@ -5,6 +5,9 @@ module Sportradar
         def base_key
           'assist'
         end
+        def display_type
+          'Assist'
+        end
       end
     end
   end

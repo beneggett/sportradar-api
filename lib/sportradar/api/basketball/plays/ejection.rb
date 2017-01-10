@@ -5,6 +5,9 @@ module Sportradar
         def base_key
           'ejection'
         end
+        def display_type
+          'Ejection'
+        end
       end
     end
   end

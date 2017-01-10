@@ -5,6 +5,9 @@ module Sportradar
         def base_key
           'technicalfoul'
         end
+        def display_type
+          'Technical'
+        end
       end
     end
   end
