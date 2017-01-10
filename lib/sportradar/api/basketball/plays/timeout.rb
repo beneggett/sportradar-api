@@ -6,7 +6,13 @@ module Sportradar
         def display_type
           'Timeout'
         end
+        def identifier
+          "#{quarter}_#{clock_seconds}".to_i
+        end
         def timeout?
+          true
+        end
+        def full?
           true
         end
         def media_timeout?
