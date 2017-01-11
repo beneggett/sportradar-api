@@ -6,7 +6,7 @@ module Sportradar
           "freethrow"
         end
         def display_type
-          'FT Make'
+          'FT Miss'
         end
         def free_throw_type
           @free_throw_type ||= @statistics.dig(base_key, "free_throw_type")
