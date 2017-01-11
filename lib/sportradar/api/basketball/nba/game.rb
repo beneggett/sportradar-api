@@ -88,8 +88,8 @@ module Sportradar
             @scheduled    = Time.parse(data["scheduled"]) if data["scheduled"]
             @venue        = Venue.new(data['venue']) if data['venue']
             @broadcast    = Broadcast.new(data['broadcast']) if data['broadcast']
-            @home         = Team.new(data['home'], api: api, game: self) if data['home']
-            @away         = Team.new(data['away'], api: api, game: self) if data['away']
+            # @home         = Team.new(data['home'], api: api, game: self) if data['home']
+            # @away         = Team.new(data['away'], api: api, game: self) if data['away']
 
             @duration     = data['duration']              if data['duration']
             @clock        = data['clock']                 if data['clock']
@@ -105,6 +105,12 @@ module Sportradar
             @scoring_raw.update(data, source: source)
 
             create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
+          end
+          def home
+            @teams_hash[@home_id]
+          end
+          def away
+            @teams_hash[@away_id]
           end
 
           def box
