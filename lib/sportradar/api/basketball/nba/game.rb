@@ -107,6 +107,14 @@ module Sportradar
             create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
           end
 
+          def home
+            @teams_hash[@home_id] || @home
+          end
+
+          def away
+            @teams_hash[@away_id] || @away
+          end
+
           def box
             @box ||= get_box
           end
