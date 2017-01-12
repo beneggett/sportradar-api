@@ -54,7 +54,7 @@ module Sportradar
         when Array
           data.each do |hash|
             current = existing[hash['id']]
-            current ? current.update(hash) : existing[hash['id']] = klass.new(hash, **opts)
+            current ? current.update(hash, **opts) : existing[hash['id']] = klass.new(hash, **opts)
             existing[hash['id']]
           end
         when Hash
