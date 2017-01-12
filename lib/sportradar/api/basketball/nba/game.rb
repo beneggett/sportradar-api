@@ -5,18 +5,18 @@ module Sportradar
         class Game < Data
           attr_accessor :response, :id, :home, :away, :home_id, :away_id, :score, :scoring, :status, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :quarter, :team_stats, :player_stats, :changes, :media_timeouts
           @all_hash = {}
-          # def self.new(data, **opts)
-          #   existing = @all_hash[data['id']]
-          #   if existing
-          #     existing.update(data, **opts)
-          #     existing
-          #   else
-          #     @all_hash[data['id']] = super
-          #   end
-          # end
-          # def self.all
-          #   @all_hash.values
-          # end
+          def self.new(data, **opts)
+            existing = @all_hash[data['id']]
+            if existing
+              existing.update(data, **opts)
+              existing
+            else
+              @all_hash[data['id']] = super
+            end
+          end
+          def self.all
+            @all_hash.values
+          end
 
           def initialize(data, **opts)
             @response = data
@@ -88,8 +88,8 @@ module Sportradar
             @scheduled    = Time.parse(data["scheduled"]) if data["scheduled"]
             @venue        = Venue.new(data['venue']) if data['venue']
             @broadcast    = Broadcast.new(data['broadcast']) if data['broadcast']
-            # @home         = Team.new(data['home'], api: api, game: self) if data['home']
-            # @away         = Team.new(data['away'], api: api, game: self) if data['away']
+            @home         = Team.new(data['home'], api: api, game: self) if data['home']
+            @away         = Team.new(data['away'], api: api, game: self) if data['away']
 
             @duration     = data['duration']              if data['duration']
             @clock        = data['clock']                 if data['clock']
@@ -105,12 +105,6 @@ module Sportradar
             @scoring_raw.update(data, source: source)
 
             create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
-          end
-          def home
-            @teams_hash[@home_id]
-          end
-          def away
-            @teams_hash[@away_id]
           end
 
           def box
