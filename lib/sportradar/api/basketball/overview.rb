@@ -27,7 +27,7 @@ module Sportradar
           @home = OpenStruct.new(id: game.home.id, alias: game.home.alias, name: game.home.name, full_name: game.home.full_name)
           @away = OpenStruct.new(id: game.away.id, alias: game.away.alias, name: game.away.name, full_name: game.away.full_name)
         rescue => e
-          binding.pry
+          puts e
         end
 
         def points(team_id)
