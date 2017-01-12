@@ -63,7 +63,7 @@ module Sportradar
             m,s = @clock.split(':')
             m.to_i * 60 + s.to_i
           end
-          def game_seconds
+          def nba_game_seconds
             ([quarter, 4].min * 720) + ([quarter - 4, 0].max * 300) - clock_seconds # seconds elapsed in game, only works for NBA
           end
 
