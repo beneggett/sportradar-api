@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sportradar-api (0.9.47)
+    sportradar-api (0.9.48)
       activesupport
       httparty (>= 0.14.0)
 
@@ -17,7 +17,7 @@ GEM
     codeclimate-test-reporter (0.6.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.1)
-    concurrent-ruby (1.0.2)
+    concurrent-ruby (1.0.4)
     coveralls (0.8.15)
       json (>= 1.8, < 3)
       simplecov (~> 0.12.0)
