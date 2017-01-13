@@ -110,6 +110,7 @@ module Sportradar
           def get_roster
             data = api.get_data(path_roster)['team']
             update(data)
+            data
           end
 
           def get_season_stats
