@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     module Basketball
-      class FreeThrowMade < Play::Base
+      class FreeThrowMade < ShotMade
         def base_key
           "freethrow"
         end
