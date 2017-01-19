@@ -4,6 +4,7 @@ require_relative 'basketball/venue'
 require_relative 'basketball/broadcast'
 require_relative 'basketball/profile'
 require_relative 'basketball/bio'
+require_relative 'basketball/injury'
 require_relative 'basketball/plays'
 
 require_relative 'basketball/nba'

@@ -75,6 +75,10 @@ module Sportradar
             self
           end
 
+          def injured?
+            !!(@injury && @injury.out?)
+          end
+
           def age
             if birth_date.present?
               now = Time.now.utc.to_date
@@ -121,7 +125,7 @@ module Sportradar
             @draft = data['draft'] if data['draft']   # {"team_id"=>"583ec825-fb46-11e1-82cb-f4ce4684ea4c", "year"=>"2012", "round"=>"1", "pick"=>"30"},
           end
           def update_injuries(data)
-            @injuries = data['injuries'] if data['injuries'] # 
+            @injury = Injury.new(data['injuries']) if data['injuries']
                  # {"injury"=>
                  #   {"id"=>"06423591-3fc1-4d2b-8c60-a3f30d735345",
                  #    "comment"=>"Ezeli suffered a setback in his recovery from a procedure on his knee and there is no timetable for his return, according to Jason Quick of csnnw.com.",
