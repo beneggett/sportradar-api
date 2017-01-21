@@ -196,6 +196,10 @@ module Sportradar
           def get_box
             api_res = api.get_data(path_box)
             data = api_res['game']
+            ingest_box(data)
+          end
+
+          def ingest_box(data)
             update(data, source: :box)
             @quarter = data.delete('quarter').to_i
             check_newness(:box, @clock)
@@ -205,6 +209,10 @@ module Sportradar
           def get_pbp
             api_res = api.get_data(path_pbp)
             data = api_res['game']
+            ingest_pbp(data)
+          end
+
+          def ingest_pbp(data)
             update(data, source: :pbp)
             quarter_data = if data['quarter']
               @quarter = data['quarter'].first.to_i
@@ -227,6 +235,10 @@ module Sportradar
           def get_summary
             api_res = api.get_data(path_summary)
             data = api_res['game']
+            ingest_summary(data)
+          end
+
+          def ingest_summary(data)
             update(data, source: :summary)
             @quarter = data.delete('quarter').to_i
             check_newness(:box, @clock)
