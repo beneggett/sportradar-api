@@ -269,10 +269,11 @@ end
 __END__
 
 ss = sr.schedule;
-sr = Sportradar::Api::Basketball::Nba.new
 sd = sr.daily_schedule;
+sr = Sportradar::Api::Basketball::Nba.new
 sd = sr.daily_schedule(Date.yesterday)
-g = sd.games.last;
+sd = sr.daily_schedule(Date.new(2017, 1, 20))
+g = sd.games.first;
 box = g.get_box;
 pbp = g.get_pbp;
 g.quarters.size

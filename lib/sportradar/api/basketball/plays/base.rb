@@ -66,6 +66,7 @@ module Sportradar
           def nba_game_seconds
             ([quarter, 4].min * 720) + ([quarter - 4, 0].max * 300) - clock_seconds # seconds elapsed in game, only works for NBA
           end
+          alias :game_seconds :nba_game_seconds
 
           def update(data, **opts)
             @event_type  = data['event_type']  # "lineupchange",
