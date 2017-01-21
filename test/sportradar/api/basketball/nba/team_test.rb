@@ -12,11 +12,11 @@ class Sportradar::Api::Basketball::Nba::TeamTest < Minitest::Test
     @data_object = Sportradar::Api::Basketball::Nba::Team.new(@attrs)
   end
 
-  def test_nfl_team_initializes
+  def test_nba_team_initializes
     assert [:id, :name, :alias, :market, :venue].all? { |e| @data_object.send(e) }
   end
 
-  def test_nfl_team_has_full_name
+  def test_nba_team_has_full_name
     assert_equal [@data_object.market, @data_object.name].join(' '), @data_object.full_name
   end
 
