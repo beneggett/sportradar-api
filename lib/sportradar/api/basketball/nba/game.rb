@@ -209,7 +209,7 @@ module Sportradar
             quarter_data = if data['quarter']
               @quarter = data['quarter'].first.to_i
               quarts = data['quarter'][1..-1]
-              quarts.is_a?(Array) ? quarts[0] : quarts
+              quarts.is_a?(Array) && (quarts.size == 1) ? quarts[0] : quarts
             else
               @quarter = nil
               []
