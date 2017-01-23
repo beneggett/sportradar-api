@@ -29,7 +29,7 @@ class Sportradar::Api::Basketball::Nba::GameTest < Minitest::Test
   end
 
   def test_nba_game_has_scoring_placeholder
-    assert_equal ({ 1 => {}, 2 => {}, 3 => {}, 4 => {} }), @game.scoring
+    assert_equal ({}), @game.scoring
   end
 
   def test_nba_game_status_helpers

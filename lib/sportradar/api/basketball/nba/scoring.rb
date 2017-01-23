@@ -9,12 +9,7 @@ module Sportradar
             @api      = opts[:api]
             @game     = opts[:game]
             
-            @scores = {
-              1 => {},
-              2 => {},
-              3 => {},
-              4 => {},
-            }
+            @scores = {}
             @id = data['id']
             
             update(data, **opts)
