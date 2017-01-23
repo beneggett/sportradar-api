@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Nba
         class Player < Data
-          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_date, :birth_place, :college, :height, :weight, :birth_place, :college, :averages, :draft
+          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :draft
           # @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]

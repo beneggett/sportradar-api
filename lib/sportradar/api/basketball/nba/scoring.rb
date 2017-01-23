@@ -66,19 +66,15 @@ module Sportradar
             b = arr + [da_ot].compact.flatten(1)
             b.each { |h| h[id] = h.delete('points').to_i }
             a.zip(b).map{ |a, b| [a['sequence'].to_i, a.merge(b)] }.sort{ |(a,_), (b,_)| a <=> b }.to_h
-          rescue => e
-            binding.pry
           end
 
           def parse_from_pbp(data)
             quarters = data['quarter'][1..-1]
             overtimes = data['overtime']
-            overtimes = [overtimes] if overtimes.is_a?(Hash)
-            quarters = quarters[0] if quarters.is_a?(Array)
-            data = (quarters + overtimes).map{|q| q['scoring'] }
+            overtimes = [overtimes] if !overtimes.is_a?(Array)
+            quarters = quarters[0] if (quarters.is_a?(Array) && (quarters.size == 1) && quarters.first.is_a?(Array))
+            data = (quarters + overtimes).compact.map{|q| q['scoring'] }
             data.map.with_index(1) { |h, i| [i, { h.dig('home', 'id') => h.dig('home', 'points').to_i, h.dig('away', 'id') => h.dig('away', 'points').to_i }] }.to_h
-          rescue => e
-            {}
           end
 
           def parse_from_summary(data)
