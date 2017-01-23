@@ -28,6 +28,10 @@ class Sportradar::Api::Basketball::Nba::GameTest < Minitest::Test
     assert_equal ({ "583ec97e-fb46-11e1-82cb-f4ce4684ea4c" => 113, "583ecda6-fb46-11e1-82cb-f4ce4684ea4c" => 78 }), @game.score
   end
 
+  def test_nba_game_has_scoring_placeholder
+    assert_equal ({ 1 => {}, 2 => {}, 3 => {}, 4 => {} }), @game.scoring
+  end
+
   def test_nba_game_status_helpers
     assert @game.finished?
     assert @game.closed?
