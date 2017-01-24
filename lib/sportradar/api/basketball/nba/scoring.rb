@@ -49,7 +49,7 @@ module Sportradar
 
           def parse_from_box(data)
             id = data.dig('team', 0, 'id')
-            return {} if data.dig('team', 0, 'scoring').strip.empty? # game hasn't started yet
+            return {} if data.dig('team', 0, 'scoring').is_a?(String) # game hasn't started yet
             da = data.dig('team', 0, 'scoring', 'quarter')
             da_ot = data.dig('team', 0, 'scoring', 'overtime')
             arr = [da].compact.flatten(1)

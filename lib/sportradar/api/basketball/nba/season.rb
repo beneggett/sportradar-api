@@ -38,5 +38,5 @@ end
 __END__
 
 sd = sr.daily_schedule;
-sr = Sportradar::Api::Nba.new
+sr = Sportradar::Api::Basketball::Nba.new
 ss = sr.schedule;
