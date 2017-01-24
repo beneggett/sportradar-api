@@ -9,15 +9,36 @@ class Sportradar::Api::Basketball::Nba::TeamTest < Minitest::Test
               "alias"=>"WAS",
               "venue"=>{"id"=>"f62d5b49-d646-56e9-ba60-a875a00830f8", "name"=>"Verizon Center", "capacity"=>"20356", "address"=>"601 F St. N.W.", "city"=>"Washington", "state"=>"DC", "zip"=>"20004", "country"=>"USA"}}
 
-    @data_object = Sportradar::Api::Basketball::Nba::Team.new(@attrs)
+    @team = Sportradar::Api::Basketball::Nba::Team.new(@attrs)
   end
 
   def test_nba_team_initializes
-    assert [:id, :name, :alias, :market, :venue].all? { |e| @data_object.send(e) }
+    assert [:id, :name, :alias, :market, :venue].all? { |e| @team.send(e) }
   end
 
   def test_nba_team_has_full_name
-    assert_equal [@data_object.market, @data_object.name].join(' '), @data_object.full_name
+    assert_equal [@team.market, @team.name].join(' '), @team.full_name
+  end
+
+  def test_nba_team_roster
+    VCR.use_cassette("nba/team/roster") do
+      assert_equal 15, @team.players.size
+    end
+  end
+
+  def test_nba_team_season_stats
+    VCR.use_cassette("nba/team/season_stats") do
+      @team.get_season_stats
+      refute_empty @team.team_stats
+      refute_empty @team.player_stats
+      assert_equal 15, @team.player_stats.size
+
+      player = @team.players.first
+      refute_empty player.totals
+      refute_empty player.averages
+      assert_equal 30, player.totals.size
+      assert_equal 20, player.averages.size
+    end
   end
 
 end

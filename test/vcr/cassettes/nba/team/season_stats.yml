@@ -1,0 +1,163 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-p3/seasontd/2016/reg/teams/583ec8d4-fb46-11e1-82cb-f4ce4684ea4c/statistics.xml?api_key=nexfrwh853qqh45grhfcs2fe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Tue, 24 Jan 2017 18:29:44 GMT
+      Etag:
+      - '"0613b530f952b8328ac02e4c8e17838c"'
+      Last-Modified:
+      - Tue, 24 Jan 2017 03:13:41 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-125.mashery.com
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '910000'
+      X-Plan-Quota-Current:
+      - '281455'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '21391'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!-- Generation started @ 2017-01-24 03:13:37 +0000 -->
+        <season xmlns="http://feed.elasticstats.com/schema/basketball/statistics-v2.0.xsd" id="03241c9e-731b-40d0-a36f-bcc9932d055b" year="2016" type="REG">
+          <team id="583ec8d4-fb46-11e1-82cb-f4ce4684ea4c" name="Wizards" market="Washington">
+            <team_records>
+              <overall>
+                <total games_played="44" minutes="10635.0" field_goals_made="1788" field_goals_att="3788" three_points_made="375" three_points_att="1026" blocked_att="186" free_throws_made="721" free_throws_att="919" offensive_rebounds="447" defensive_rebounds="1426" assists="1022" turnovers="633" steals="377" blocks="172" personal_fouls="939" tech_fouls="39" points="4672" fast_break_pts="658" paint_pts="1952" flagrant_fouls="3" points_off_turnovers="738" second_chance_pts="584" ejections="1" foulouts="4" free_throws_pct="0.785" two_points_pct="0.512" three_points_pct="0.365" field_goals_pct="0.472" rebounds="1873" assists_turnover_ratio="1.61" two_points_made="1413" two_points_att="2762"/>
+                <average second_chance_pts="13.27" points_off_turnovers="16.77" paint_pts="44.36" fast_break_pts="14.95" points="106.2" blocked_att="4.23" turnovers="14.39" free_throws_att="20.89" field_goals_att="86.09" off_rebounds="10.16" two_points_att="62.77" assists="23.2" blocks="3.91" personal_fouls="21.34" two_points_made="32.11" flagrant_fouls="0.07" rebounds="42.57" three_points_made="8.52" minutes="241.7" def_rebounds="32.41" free_throws_made="16.39" field_goals_made="40.64" steals="8.57" three_points_att="23.32"/>
+              </overall>
+              <opponents>
+                <total games_played="44" minutes="10635.0" field_goals_made="1713" field_goals_att="3703" three_points_made="438" three_points_att="1188" blocked_att="172" free_throws_made="785" free_throws_att="1049" offensive_rebounds="458" defensive_rebounds="1410" assists="1011" turnovers="683" steals="332" blocks="186" personal_fouls="863" tech_fouls="33" points="4649" fast_break_pts="526" paint_pts="1848" flagrant_fouls="3" points_off_turnovers="712" second_chance_pts="575" ejections="1" foulouts="7" free_throws_pct="0.748" two_points_pct="0.507" three_points_pct="0.369" field_goals_pct="0.463" rebounds="1868" assists_turnover_ratio="1.48" two_points_made="1275" two_points_att="2515"/>
+                <average second_chance_pts="13.07" points_off_turnovers="16.18" paint_pts="42.0" fast_break_pts="11.95" points="105.7" blocked_att="3.91" turnovers="15.52" free_throws_att="23.84" field_goals_att="84.16" off_rebounds="10.41" two_points_att="57.16" assists="23.0" blocks="4.23" personal_fouls="19.61" two_points_made="28.98" flagrant_fouls="0.07" rebounds="42.45" three_points_made="9.95" minutes="241.7" def_rebounds="32.05" free_throws_made="17.84" field_goals_made="38.93" steals="7.55" three_points_att="27.0"/>
+              </opponents>
+            </team_records>
+            <player_records>
+              <player id="7992dce6-a785-4b31-9655-abd5a6f028f0" full_name="Jason Smith" first_name="Jason" last_name="Smith" position="F-C" primary_position="PF" jersey_number="14">
+                <overall>
+                  <total games_played="42" games_started="0" minutes="530.0" field_goals_made="89" field_goals_att="170" three_points_made="7" three_points_att="14" blocked_att="6" free_throws_made="17" free_throws_att="22" offensive_rebounds="36" defensive_rebounds="84" assists="15" turnovers="35" steals="12" blocks="24" personal_fouls="99" tech_fouls="1" points="202" flagrant_fouls="0" ejections="0" foulouts="1" free_throws_pct="0.773" two_points_pct="0.526" three_points_pct="0.5" field_goals_pct="0.524" rebounds="120" assists_turnover_ratio="0.43" two_points_made="82" two_points_att="156"/>
+                  <average points="4.8" blocked_att="0.14" turnovers="0.83" free_throws_att="0.52" field_goals_att="4.05" off_rebounds="0.86" two_points_att="3.71" assists="0.4" blocks="0.57" personal_fouls="2.36" two_points_made="1.95" flagrant_fouls="0.0" rebounds="2.86" three_points_made="0.17" minutes="12.6" def_rebounds="2.0" free_throws_made="0.4" field_goals_made="2.12" steals="0.29" three_points_att="0.33"/>
+                </overall>
+              </player>
+              <player id="d5ef3cfe-2ab9-4b77-823a-62678c13058f" full_name="Marcus Thornton" first_name="Marcus" last_name="Thornton" position="G" primary_position="SG" jersey_number="15">
+                <overall>
+                  <total games_played="33" games_started="1" minutes="575.0" field_goals_made="84" field_goals_att="210" three_points_made="28" three_points_att="80" blocked_att="10" free_throws_made="23" free_throws_att="27" offensive_rebounds="22" defensive_rebounds="54" assists="40" turnovers="25" steals="19" blocks="3" personal_fouls="48" tech_fouls="0" points="219" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.852" two_points_pct="0.431" three_points_pct="0.35" field_goals_pct="0.4" rebounds="76" assists_turnover_ratio="1.6" two_points_made="56" two_points_att="130"/>
+                  <average points="6.6" blocked_att="0.3" turnovers="0.76" free_throws_att="0.82" field_goals_att="6.36" off_rebounds="0.67" two_points_att="3.94" assists="1.2" blocks="0.09" personal_fouls="1.45" two_points_made="1.7" flagrant_fouls="0.0" rebounds="2.3" three_points_made="0.85" minutes="17.4" def_rebounds="1.64" free_throws_made="0.7" field_goals_made="2.55" steals="0.58" three_points_att="2.42"/>
+                </overall>
+              </player>
+              <player id="14dee36c-97c6-4668-8f4e-2833967e6ada" full_name="Danuel House" first_name="Danuel" last_name="House" position="F" primary_position="SF" jersey_number="4">
+                <overall>
+                  <total games_played="1" games_started="0" minutes="1.0" field_goals_made="0" field_goals_att="0" three_points_made="0" three_points_att="0" blocked_att="0" free_throws_made="0" free_throws_att="0" offensive_rebounds="0" defensive_rebounds="1" assists="0" turnovers="0" steals="0" blocks="0" personal_fouls="0" tech_fouls="0" points="0" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0" two_points_pct="0" three_points_pct="0" field_goals_pct="0" rebounds="1" assists_turnover_ratio="0" two_points_made="0" two_points_att="0"/>
+                  <average points="0.0" blocked_att="0.0" turnovers="0.0" free_throws_att="0.0" field_goals_att="0.0" off_rebounds="0.0" two_points_att="0.0" assists="0.0" blocks="0.0" personal_fouls="0.0" two_points_made="0.0" flagrant_fouls="0.0" rebounds="1.0" three_points_made="0.0" minutes="1.0" def_rebounds="1.0" free_throws_made="0.0" field_goals_made="0.0" steals="0.0" three_points_att="0.0"/>
+                </overall>
+              </player>
+              <player id="a190e528-a18c-4682-beeb-e0f7360c3e06" full_name="Tomas Satoransky" first_name="Tomas" last_name="Satoransky " position="G-F" primary_position="SG" jersey_number="31">
+                <overall>
+                  <total games_played="28" games_started="2" minutes="414.0" field_goals_made="35" field_goals_att="86" three_points_made="4" three_points_att="23" blocked_att="5" free_throws_made="16" free_throws_att="22" offensive_rebounds="16" defensive_rebounds="37" assists="59" turnovers="26" steals="16" blocks="0" personal_fouls="36" tech_fouls="0" points="90" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.727" two_points_pct="0.492" three_points_pct="0.174" field_goals_pct="0.407" rebounds="53" assists_turnover_ratio="2.27" two_points_made="31" two_points_att="63"/>
+                  <average points="3.2" blocked_att="0.18" turnovers="0.93" free_throws_att="0.79" field_goals_att="3.07" off_rebounds="0.57" two_points_att="2.25" assists="2.1" blocks="0.0" personal_fouls="1.29" two_points_made="1.11" flagrant_fouls="0.0" rebounds="1.89" three_points_made="0.14" minutes="14.8" def_rebounds="1.32" free_throws_made="0.57" field_goals_made="1.25" steals="0.57" three_points_att="0.82"/>
+                </overall>
+              </player>
+              <player id="792fdc1e-e833-4777-a372-11e93e457480" full_name="Otto Porter" first_name="Otto" last_name="Porter" position="F" primary_position="SF" jersey_number="22">
+                <overall>
+                  <total games_played="44" games_started="44" minutes="1484.0" field_goals_made="249" field_goals_att="467" three_points_made="86" three_points_att="191" blocked_att="7" free_throws_made="51" free_throws_att="65" offensive_rebounds="62" defensive_rebounds="227" assists="70" turnovers="33" steals="66" blocks="28" personal_fouls="111" tech_fouls="0" points="635" flagrant_fouls="0" ejections="0" foulouts="1" free_throws_pct="0.785" two_points_pct="0.591" three_points_pct="0.45" field_goals_pct="0.533" rebounds="289" assists_turnover_ratio="2.12" two_points_made="163" two_points_att="276"/>
+                  <average points="14.4" blocked_att="0.16" turnovers="0.75" free_throws_att="1.48" field_goals_att="10.61" off_rebounds="1.41" two_points_att="6.27" assists="1.6" blocks="0.64" personal_fouls="2.52" two_points_made="3.7" flagrant_fouls="0.0" rebounds="6.57" three_points_made="1.95" minutes="33.7" def_rebounds="5.16" free_throws_made="1.16" field_goals_made="5.66" steals="1.5" three_points_att="4.34"/>
+                </overall>
+              </player>
+              <player id="7dfa0971-96be-4705-9811-f9f54758145f" full_name="Kelly Oubre Jr." first_name="Kelly" last_name="Oubre" position="F" primary_position="SF" jersey_number="12">
+                <overall>
+                  <total games_played="42" games_started="1" minutes="827.0" field_goals_made="97" field_goals_att="223" three_points_made="32" three_points_att="101" blocked_att="15" free_throws_made="40" free_throws_att="52" offensive_rebounds="31" defensive_rebounds="116" assists="30" turnovers="28" steals="31" blocks="7" personal_fouls="97" tech_fouls="3" points="266" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.769" two_points_pct="0.533" three_points_pct="0.317" field_goals_pct="0.435" rebounds="147" assists_turnover_ratio="1.07" two_points_made="65" two_points_att="122"/>
+                  <average points="6.3" blocked_att="0.36" turnovers="0.67" free_throws_att="1.24" field_goals_att="5.31" off_rebounds="0.74" two_points_att="2.9" assists="0.7" blocks="0.17" personal_fouls="2.31" two_points_made="1.55" flagrant_fouls="0.0" rebounds="3.5" three_points_made="0.76" minutes="19.7" def_rebounds="2.76" free_throws_made="0.95" field_goals_made="2.31" steals="0.74" three_points_att="2.4"/>
+                </overall>
+              </player>
+              <player id="ff461754-ad20-4eeb-af02-2b46cc980b24" full_name="Bradley Beal" first_name="Bradley" last_name="Beal" position="G" primary_position="SG" jersey_number="3">
+                <overall>
+                  <total games_played="40" games_started="40" minutes="1374.0" field_goals_made="298" field_goals_att="663" three_points_made="110" three_points_att="285" blocked_att="37" free_throws_made="159" free_throws_att="196" offensive_rebounds="26" defensive_rebounds="89" assists="144" turnovers="76" steals="40" blocks="11" personal_fouls="86" tech_fouls="3" points="865" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.811" two_points_pct="0.497" three_points_pct="0.386" field_goals_pct="0.449" rebounds="115" assists_turnover_ratio="1.89" two_points_made="188" two_points_att="378"/>
+                  <average points="21.6" blocked_att="0.93" turnovers="1.9" free_throws_att="4.9" field_goals_att="16.58" off_rebounds="0.65" two_points_att="9.45" assists="3.6" blocks="0.28" personal_fouls="2.15" two_points_made="4.7" flagrant_fouls="0.0" rebounds="2.88" three_points_made="2.75" minutes="34.4" def_rebounds="2.23" free_throws_made="3.98" field_goals_made="7.45" steals="1.0" three_points_att="7.13"/>
+                </overall>
+              </player>
+              <player id="6769d1ca-0581-48b0-b487-b5c87b8f696e" full_name="John Wall" first_name="John" last_name="Wall" position="G" primary_position="PG" jersey_number="2">
+                <overall>
+                  <total games_played="42" games_started="42" minutes="1527.0" field_goals_made="355" field_goals_att="768" three_points_made="45" three_points_att="143" blocked_att="37" free_throws_made="212" free_throws_att="257" offensive_rebounds="37" defensive_rebounds="152" assists="427" turnovers="179" steals="93" blocks="21" personal_fouls="86" tech_fouls="9" points="967" flagrant_fouls="2" ejections="1" foulouts="0" free_throws_pct="0.825" two_points_pct="0.496" three_points_pct="0.315" field_goals_pct="0.462" rebounds="189" assists_turnover_ratio="2.39" two_points_made="310" two_points_att="625"/>
+                  <average points="23.0" blocked_att="0.88" turnovers="4.26" free_throws_att="6.12" field_goals_att="18.29" off_rebounds="0.88" two_points_att="14.88" assists="10.2" blocks="0.5" personal_fouls="2.05" two_points_made="7.38" flagrant_fouls="0.05" rebounds="4.5" three_points_made="1.07" minutes="36.4" def_rebounds="3.62" free_throws_made="5.05" field_goals_made="8.45" steals="2.21" three_points_att="3.4"/>
+                </overall>
+              </player>
+              <player id="9070aef9-bd5a-4a13-8662-802637780234" full_name="Daniel Ochefu" first_name="Daniel" last_name="Ochefu" position="F" primary_position="PF" jersey_number="32">
+                <overall>
+                  <total games_played="10" games_started="0" minutes="42.0" field_goals_made="6" field_goals_att="13" three_points_made="0" three_points_att="0" blocked_att="2" free_throws_made="0" free_throws_att="2" offensive_rebounds="1" defensive_rebounds="12" assists="1" turnovers="3" steals="1" blocks="0" personal_fouls="10" tech_fouls="0" points="12" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.0" two_points_pct="0.462" three_points_pct="0" field_goals_pct="0.462" rebounds="13" assists_turnover_ratio="0.33" two_points_made="6" two_points_att="13"/>
+                  <average points="1.2" blocked_att="0.2" turnovers="0.3" free_throws_att="0.2" field_goals_att="1.3" off_rebounds="0.1" two_points_att="1.3" assists="0.1" blocks="0.0" personal_fouls="1.0" two_points_made="0.6" flagrant_fouls="0.0" rebounds="1.3" three_points_made="0.0" minutes="4.2" def_rebounds="1.2" free_throws_made="0.0" field_goals_made="0.6" steals="0.1" three_points_att="0.0"/>
+                </overall>
+              </player>
+              <player id="572261e2-8ad9-4198-969d-16cad41fdef3" full_name="Trey Burke" first_name="Trey" last_name="Burke" position="G" primary_position="PG" jersey_number="33">
+                <overall>
+                  <total games_played="40" games_started="0" minutes="488.0" field_goals_made="79" field_goals_att="171" three_points_made="20" three_points_att="43" blocked_att="5" free_throws_made="14" free_throws_att="20" offensive_rebounds="6" defensive_rebounds="22" assists="64" turnovers="30" steals="8" blocks="3" personal_fouls="39" tech_fouls="0" points="192" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.7" two_points_pct="0.461" three_points_pct="0.465" field_goals_pct="0.462" rebounds="28" assists_turnover_ratio="2.13" two_points_made="59" two_points_att="128"/>
+                  <average points="4.8" blocked_att="0.13" turnovers="0.75" free_throws_att="0.5" field_goals_att="4.28" off_rebounds="0.15" two_points_att="3.2" assists="1.6" blocks="0.08" personal_fouls="0.98" two_points_made="1.48" flagrant_fouls="0.0" rebounds="0.7" three_points_made="0.5" minutes="12.2" def_rebounds="0.55" free_throws_made="0.35" field_goals_made="1.98" steals="0.2" three_points_att="1.08"/>
+                </overall>
+              </player>
+              <player id="f0deff5f-c269-4389-9713-b8a7e70207cb" full_name="Marcin Gortat" first_name="Marcin" last_name="Gortat" position="C" primary_position="C" jersey_number="13">
+                <overall>
+                  <total games_played="44" games_started="44" minutes="1535.0" field_goals_made="218" field_goals_att="377" three_points_made="0" three_points_att="1" blocked_att="32" free_throws_made="57" free_throws_att="91" offensive_rebounds="137" defensive_rebounds="366" assists="72" turnovers="73" steals="22" blocks="43" personal_fouls="133" tech_fouls="3" points="493" flagrant_fouls="0" ejections="0" foulouts="1" free_throws_pct="0.626" two_points_pct="0.58" three_points_pct="0.0" field_goals_pct="0.578" rebounds="503" assists_turnover_ratio="0.99" two_points_made="218" two_points_att="376"/>
+                  <average points="11.2" blocked_att="0.73" turnovers="1.66" free_throws_att="2.07" field_goals_att="8.57" off_rebounds="3.11" two_points_att="8.55" assists="1.6" blocks="0.98" personal_fouls="3.02" two_points_made="4.95" flagrant_fouls="0.0" rebounds="11.43" three_points_made="0.0" minutes="34.9" def_rebounds="8.32" free_throws_made="1.3" field_goals_made="4.95" steals="0.5" three_points_att="0.02"/>
+                </overall>
+              </player>
+              <player id="b4dbe3f9-3bc5-45df-b720-10571da8e0db" full_name="Sheldon McClellan" first_name="Sheldon" last_name="McClellan" position="G-F" primary_position="SG" jersey_number="9">
+                <overall>
+                  <total games_played="20" games_started="3" minutes="232.0" field_goals_made="22" field_goals_att="60" three_points_made="5" three_points_att="24" blocked_att="4" free_throws_made="18" free_throws_att="21" offensive_rebounds="4" defensive_rebounds="22" assists="15" turnovers="2" steals="8" blocks="1" personal_fouls="14" tech_fouls="0" points="67" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.857" two_points_pct="0.472" three_points_pct="0.208" field_goals_pct="0.367" rebounds="26" assists_turnover_ratio="7.5" two_points_made="17" two_points_att="36"/>
+                  <average points="3.4" blocked_att="0.2" turnovers="0.1" free_throws_att="1.05" field_goals_att="3.0" off_rebounds="0.2" two_points_att="1.8" assists="0.8" blocks="0.05" personal_fouls="0.7" two_points_made="0.85" flagrant_fouls="0.0" rebounds="1.3" three_points_made="0.25" minutes="11.6" def_rebounds="1.1" free_throws_made="0.9" field_goals_made="1.1" steals="0.4" three_points_att="1.2"/>
+                </overall>
+              </player>
+              <player id="8f4b695b-36d0-4801-bebd-c94c1315a590" full_name="Andrew Nicholson" first_name="Andrew" last_name="Nicholson" position="F" primary_position="PF" jersey_number="44">
+                <overall>
+                  <total games_played="25" games_started="0" minutes="221.0" field_goals_made="30" field_goals_att="74" three_points_made="3" three_points_att="16" blocked_att="2" free_throws_made="6" free_throws_att="10" offensive_rebounds="10" defensive_rebounds="22" assists="7" turnovers="10" steals="10" blocks="5" personal_fouls="36" tech_fouls="0" points="69" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.6" two_points_pct="0.466" three_points_pct="0.188" field_goals_pct="0.405" rebounds="32" assists_turnover_ratio="0.7" two_points_made="27" two_points_att="58"/>
+                  <average points="2.8" blocked_att="0.08" turnovers="0.4" free_throws_att="0.4" field_goals_att="2.96" off_rebounds="0.4" two_points_att="2.32" assists="0.3" blocks="0.2" personal_fouls="1.44" two_points_made="1.08" flagrant_fouls="0.0" rebounds="1.28" three_points_made="0.12" minutes="8.8" def_rebounds="0.88" free_throws_made="0.24" field_goals_made="1.2" steals="0.4" three_points_att="0.64"/>
+                </overall>
+              </player>
+              <player id="25c4a949-c310-4bd3-af3f-10441215b323" full_name="Markieff Morris" first_name="Markieff" last_name="Morris" position="F" primary_position="PF" jersey_number="5">
+                <overall>
+                  <total games_played="43" games_started="43" minutes="1371.0" field_goals_made="226" field_goals_att="505" three_points_made="35" three_points_att="105" blocked_att="23" free_throws_made="107" free_throws_att="132" offensive_rebounds="59" defensive_rebounds="221" assists="78" turnovers="80" steals="50" blocks="25" personal_fouls="141" tech_fouls="6" points="594" flagrant_fouls="1" ejections="0" foulouts="1" free_throws_pct="0.811" two_points_pct="0.478" three_points_pct="0.333" field_goals_pct="0.448" rebounds="280" assists_turnover_ratio="0.98" two_points_made="191" two_points_att="400"/>
+                  <average points="13.8" blocked_att="0.53" turnovers="1.86" free_throws_att="3.07" field_goals_att="11.74" off_rebounds="1.37" two_points_att="9.3" assists="1.8" blocks="0.58" personal_fouls="3.28" two_points_made="4.44" flagrant_fouls="0.02" rebounds="6.51" three_points_made="0.81" minutes="31.9" def_rebounds="5.14" free_throws_made="2.49" field_goals_made="5.26" steals="1.16" three_points_att="2.44"/>
+                </overall>
+              </player>
+              <player id="d2abbbb8-0d36-49d4-9785-d8664021eb78" full_name="Ian Mahinmi" first_name="Ian" last_name="Mahinmi" position="C" primary_position="C" jersey_number="28">
+                <overall>
+                  <total games_played="1" games_started="0" minutes="14.0" field_goals_made="0" field_goals_att="1" three_points_made="0" three_points_att="0" blocked_att="1" free_throws_made="1" free_throws_att="2" offensive_rebounds="0" defensive_rebounds="1" assists="0" turnovers="2" steals="1" blocks="1" personal_fouls="3" tech_fouls="0" points="1" flagrant_fouls="0" ejections="0" foulouts="0" free_throws_pct="0.5" two_points_pct="0.0" three_points_pct="0" field_goals_pct="0.0" rebounds="1" assists_turnover_ratio="0.0" two_points_made="0" two_points_att="1"/>
+                  <average points="1.0" blocked_att="1.0" turnovers="2.0" free_throws_att="2.0" field_goals_att="1.0" off_rebounds="0.0" two_points_att="1.0" assists="0.0" blocks="1.0" personal_fouls="3.0" two_points_made="0.0" flagrant_fouls="0.0" rebounds="1.0" three_points_made="0.0" minutes="14.0" def_rebounds="1.0" free_throws_made="1.0" field_goals_made="0.0" steals="1.0" three_points_att="0.0"/>
+                </overall>
+              </player>
+            </player_records>
+          </team>
+        </season>
+        <!-- Generation ended @ 2017-01-24 03:13:39 +0000 -->
+    http_version: 
+  recorded_at: Tue, 24 Jan 2017 18:29:43 GMT
+recorded_with: VCR 3.0.3
