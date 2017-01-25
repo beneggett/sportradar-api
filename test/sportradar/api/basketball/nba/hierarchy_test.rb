@@ -10,7 +10,8 @@ class Sportradar::Api::Basketball::Nba::HierarchyTest < Minitest::Test
   end
 
   def test_it_initializes_an_nba_hierarchy
-    assert [:name, :alias].all? { |e| @hierarchy.attributes.include?(e) }
+    assert [:name, :alias].all? { |att| @hierarchy.send(att) }
+    assert_instance_of Sportradar::Api::Basketball::Nba::Hierarchy, @hierarchy
   end
 
   def test_it_has_conferences

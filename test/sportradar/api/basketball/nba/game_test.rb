@@ -21,7 +21,7 @@ class Sportradar::Api::Basketball::Nba::GameTest < Minitest::Test
   end
 
   def test_nba_game_initializes
-    assert [:id, :scheduled, :venue, :broadcast].all? { |e| @game.send(e) }
+    assert [:id, :scheduled, :venue, :broadcast, :coverage].all? { |e| @game.send(e) }
     assert_instance_of Sportradar::Api::Basketball::Venue, @game.venue
     assert_instance_of Sportradar::Api::Basketball::Broadcast, @game.broadcast
   end
