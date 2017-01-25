@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Nba
         class Season < Basketball::Season
-          attr_accessor :response
+          attr_accessor :response, :id, :name, :alias
 
           def initialize(data, **opts)
             @response = data

@@ -25,6 +25,8 @@ module Sportradar
             @players_hash = {}
             @player_stats = {}
             @records      = {}
+            @stats        = nil
+            @points       = nil
 
             case response
             when String

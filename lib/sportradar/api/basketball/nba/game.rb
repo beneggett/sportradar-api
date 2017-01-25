@@ -31,6 +31,10 @@ module Sportradar
             @scoring_raw    = Scoring.new(data, game: self)
             @teams_hash     = {}
             @quarters_hash  = {}
+            @home_points    = nil
+            @away_points    = nil
+            @home_id        = nil
+            @away_id        = nil
             
             @id = data['id']
             
