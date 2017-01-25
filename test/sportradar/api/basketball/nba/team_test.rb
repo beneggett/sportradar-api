@@ -14,6 +14,7 @@ class Sportradar::Api::Basketball::Nba::TeamTest < Minitest::Test
 
   def test_nba_team_initializes
     assert [:id, :name, :alias, :market, :venue].all? { |e| @team.send(e) }
+    assert_instance_of Sportradar::Api::Basketball::Venue, @team.venue
   end
 
   def test_nba_team_has_full_name

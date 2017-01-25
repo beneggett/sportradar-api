@@ -22,10 +22,18 @@ class Sportradar::Api::Basketball::Nba::GameTest < Minitest::Test
 
   def test_nba_game_initializes
     assert [:id, :scheduled, :venue, :broadcast].all? { |e| @game.send(e) }
+    assert_instance_of Sportradar::Api::Basketball::Venue, @game.venue
+    assert_instance_of Sportradar::Api::Basketball::Broadcast, @game.broadcast
   end
 
   def test_nba_game_has_score
     assert_equal ({ "583ec97e-fb46-11e1-82cb-f4ce4684ea4c" => 113, "583ecda6-fb46-11e1-82cb-f4ce4684ea4c" => 78 }), @game.score
+  end
+  def test_nba_game_points
+    assert_equal 78, @game.points("583ecda6-fb46-11e1-82cb-f4ce4684ea4c")
+    assert_equal 78, @game.points(:away)
+    assert_equal 113, @game.points("583ec97e-fb46-11e1-82cb-f4ce4684ea4c")
+    assert_equal 113, @game.points(:home)
   end
 
   def test_nba_game_has_scoring_placeholder

@@ -12,6 +12,7 @@ module Sportradar
             @id = data["id"]
             @name = data["name"]
             @alias = data["alias"]
+            @assigned_teams = nil
             @teams_hash = create_data({}, response["team"], klass: Team, division: self, api: @api) # if response["team"]
           end
 

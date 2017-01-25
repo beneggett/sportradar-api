@@ -38,16 +38,6 @@ module Sportradar
           end
         end
 
-        def team_stats(season_year = default_year, nba_season = default_season, team_id)
-          response = get request_url("seasontd/#{season_year}/#{nba_season}/teams/#{team_id}/statistics")
-          if response.success? && response["season"]
-            # Sportradar::Api::Basketball::Nba::Team.new response["season"]
-            response
-          else
-            response
-          end
-        end
-
         def standings(season_year = default_year, nba_season = default_season)
           response = get request_url("seasontd/#{season_year}/#{nba_season}/standings")
           if response.success? && response["league"]
