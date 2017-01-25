@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     module Basketball
-      class Nba
+      class Ncaamb
         class Team < Sportradar::Api::Basketball::Team
           @all_hash = {}
 
@@ -10,7 +10,7 @@ module Sportradar
           end
 
           def api
-            @api || Sportradar::Api::Basketball::Nba.new
+            @api || Sportradar::Api::Basketball::Ncaamb.new
           end
 
         end

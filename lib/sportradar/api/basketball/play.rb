@@ -17,7 +17,9 @@ module Sportradar
         # end
         def self.new(data, **opts)
           klass = subclass(data['event_type'])
-          klass.new(data, **opts) rescue nil
+          klass.new(data, **opts)
+        rescue => e
+          binding.pry
         end
         # def self.all
         #   @all_hash.values
@@ -34,6 +36,7 @@ module Sportradar
             "turnover"              => Turnover,
             "personalfoul"          => PersonalFoul,
             "jumpball"              => Jumpball,
+            "deadball"              => Deadball,
             "teamtimeout"           => TeamTimeout,
             "shootingfoul"          => ShootingFoul,
             "freethrowmade"         => FreeThrowMade,

@@ -1,13 +1,13 @@
 # module Sportradar
 #   module Api
 #     module Basketball
-#       class Nba
-#         class Scoring < Sportradar::Api::Basketball::Game
+#       class Ncaamb
+#         class Scoring < Sportradar::Api::Basketball::Scoring
 
 #           private def period_name
-#             'quarter'
+#             'half'
 #           end
-
+          
 #         end
 #       end
 #     end

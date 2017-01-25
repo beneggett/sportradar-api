@@ -1,26 +1,26 @@
 module Sportradar
   module Api
     module Basketball
-      class Nba
+      class Ncaamb
         class Game < Sportradar::Api::Basketball::Game
 
-          # NBA specific
+          # NCAA MB specific
 
           def team_class
             Team
           end
           def period_class
-            Quarter
+            Half
           end
 
           def period_name
-            'quarter'
+            'half'
           end
-          alias :quarter :period
-          alias :quarters :periods
+          alias :half :period
+          alias :halfs :periods
 
           def api
-            @api || Sportradar::Api::Basketball::Nba.new
+            @api || Sportradar::Api::Basketball::Ncaamb.new
           end
 
         end
@@ -32,14 +32,16 @@ end
 __END__
 
 ss = sr.schedule;
+sr = Sportradar::Api::Basketball::Ncaamb.new
+gid = "29111b80-992d-4e32-a88d-220fb4bd3121"
+g = Sportradar::Api::Basketball::Ncaamb::Game.new({'id' => gid}, api: sr)
 sd = sr.daily_schedule;
-sr = Sportradar::Api::Basketball::Nba.new
-sd = sr.daily_schedule(Date.yesterday);
-sd = sr.daily_schedule(Date.new(2017, 1, 20));
-g = sd.games.first;
+sd = sr.daily_schedule(Date.new(2017,1,21))
+g = sd.games.detect{ |g| g.id == gid }
+g = sd.games.last;
 box = g.get_box;
 pbp = g.get_pbp;
-g.quarters.size
+g.periods.size
 g.plays.size
 
 Sportradar::Api::Basketball::Nba::Team.all.size # => 32 - includes all star teams

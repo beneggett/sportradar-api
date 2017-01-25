@@ -1,9 +1,9 @@
 module Sportradar
   module Api
     module Basketball
-      class Nba
+      class Ncaamb
         class Schedule < Data
-          attr_accessor :response, :id, :name, :alias, :date
+          attr_accessor :response, :matches
 
           def initialize(data, **opts)
             @response = data
@@ -34,8 +34,8 @@ end
 
 __END__
 
-sr = Sportradar::Api::Basketball::Nba.new
-sd = sr.daily_schedule(Date.new(2017, 1, 21));
+sr = Sportradar::Api::Basketball::Ncaamb.new
+sd = sr.daily_schedule;
 g = sd.games.sample
 
 ss = sr.schedule;

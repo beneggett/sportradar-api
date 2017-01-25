@@ -1,9 +1,9 @@
 module Sportradar
   module Api
     module Basketball
-      class Nba
+      class Ncaamb
         class Player < Data
-          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft
+          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :draft
           # @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]
@@ -20,13 +20,17 @@ module Sportradar
 
 
           def initialize(data, **opts)
-            @response = data
+            # @response = data
             @api      = opts[:api]
             @team     = opts[:team]
 
             @id = data["id"]
 
             update(data, **opts)
+          end
+
+          def bio
+            Bio.new(self)
           end
 
           def name # to match api for NFL::Player
@@ -58,17 +62,14 @@ module Sportradar
             @birth_place      = data['birth_place'].gsub(',,', ', ')       if data['birth_place']       # "Benin City,, NGA",
             @updated          = data['updated']           if data['updated']           # "2016-07-08T12:11:59+00:00",
 
-# NBA specific below
 
-            @college          = data['college']           if data['college']           # "Vanderbilt",
-            @birthdate        = data['birthdate']         if data['birthdate']         # "1989-10-21",
+# NCAA specific below
 
-            update_injuries(data)
-            update_draft(data)
+            # update_injuries(data)
+            # update_draft(data)
 
             @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
             if avgs = data.dig('overall', 'average')
-              @totals = data.dig('overall', 'total')
               @averages = avgs.except(:player)
               @team.update_player_stats(self, avgs)
             end
@@ -77,15 +78,15 @@ module Sportradar
           end
 
           def injured?
-            !!(@injury && @injury.out?)
+            # !!(@injury && @injury.out?)
           end
 
           def age
-            if birth_date.present?
-              now = Time.now.utc.to_date
-              dob = birth_date.to_date
-              now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
-            end
+            # if birth_date.present?
+            #   now = Time.now.utc.to_date
+            #   dob = birth_date.to_date
+            #   now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+            # end
           end
 
           # def stats
@@ -123,10 +124,10 @@ module Sportradar
           #      "points"=>"13"}}
           # end
           def update_draft(data)
-            @draft = data['draft'] if data['draft']   # {"team_id"=>"583ec825-fb46-11e1-82cb-f4ce4684ea4c", "year"=>"2012", "round"=>"1", "pick"=>"30"},
+            # @draft = data['draft'] if data['draft']   # {"team_id"=>"583ec825-fb46-11e1-82cb-f4ce4684ea4c", "year"=>"2012", "round"=>"1", "pick"=>"30"},
           end
           def update_injuries(data)
-            @injury = Injury.new(data['injuries']) if data['injuries']
+            # @injury = Injury.new(data['injuries']) if data['injuries']
                  # {"injury"=>
                  #   {"id"=>"06423591-3fc1-4d2b-8c60-a3f30d735345",
                  #    "comment"=>"Ezeli suffered a setback in his recovery from a procedure on his knee and there is no timetable for his return, according to Jason Quick of csnnw.com.",
