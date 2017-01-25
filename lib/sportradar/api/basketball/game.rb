@@ -45,9 +45,6 @@ module Sportradar
           {}
         end
 
-        def overview
-          Overview.new(self)
-        end
         def tied?
           @score[away_id].to_i == @score[home_id].to_i
         end
@@ -137,7 +134,7 @@ module Sportradar
             plays.grep(Play.subclass(play_type.delete('_')))
           else
             play_classes = [play_type, *types].map { |type| Play.subclass(type.delete('_')) }
-            plays.select { |play| play_classes.include?(play.class) }
+            plays.select { |play| play_classes.any? { |klass| play.kind_of?(klass) } }
           end
         end
         def summary

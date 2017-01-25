@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Ncaamb
         class Season < Basketball::Season
-          attr_accessor :response
+          attr_accessor :response, :id, :name, :alias
 
           def initialize(data, **opts)
             @response = data
@@ -26,7 +26,7 @@ module Sportradar
           end
 
           def update_games(data)
-            # create_data(@games_hash, data, klass: Game, api: @api, season: self)
+            create_data(@games_hash, data, klass: Game, api: @api, season: self)
           end
 
         end

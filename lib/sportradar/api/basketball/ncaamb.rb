@@ -38,21 +38,9 @@ module Sportradar
           end
         end
 
-        def team_stats(season_year = default_year, ncaa_season = default_season, team_id)
-          response = get request_url("seasontd/#{season_year}/#{ncaa_season}/teams/#{team_id}/statistics")
-          if response.success? && response["season"]
-            # Sportradar::Api::Basketball::Ncaamb::Team.new response["season"]
-            response
-          else
-            response
-          end
-        end
-
         def standings(season_year = default_year, ncaa_season = default_season)
           response = get request_url("seasontd/#{season_year}/#{ncaa_season}/standings")
           if response.success? && response["league"]
-            # binding.pry
-            # Sportradar::Api::Basketball::Ncaamb::Hierarchy.new(response['league'], api: self)
             Sportradar::Api::Basketball::Ncaamb::Division.new(response['league']['season'], api: self)
           else
             response
@@ -85,7 +73,7 @@ module Sportradar
         end
 
         def request_url(path)
-          puts "/ncaamb-#{access_level}#{version}/#{path}"
+          # puts "/ncaamb-#{access_level}#{version}/#{path}"
           if simulation
             # "/nfl-sim1/#{path}"
           else

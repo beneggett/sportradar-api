@@ -40,6 +40,7 @@ sd = sr.daily_schedule(Date.new(2017,1,21))
 g = sd.games.detect{ |g| g.id == gid }
 g = sd.games.last;
 box = g.get_box;
+sum = g.get_summary;
 pbp = g.get_pbp;
 g.periods.size
 g.plays.size

@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Ncaamb
         class Player < Data
-          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :draft
+          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft
           # @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]
@@ -20,7 +20,7 @@ module Sportradar
 
 
           def initialize(data, **opts)
-            # @response = data
+            @response = data
             @api      = opts[:api]
             @team     = opts[:team]
 
@@ -70,6 +70,7 @@ module Sportradar
 
             @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
             if avgs = data.dig('overall', 'average')
+              @totals = data.dig('overall', 'total')
               @averages = avgs.except(:player)
               @team.update_player_stats(self, avgs)
             end
