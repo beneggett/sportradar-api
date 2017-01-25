@@ -62,9 +62,10 @@ VCR.configure do |c|
   c.filter_sensitive_data('<SOCCER_WC_API_KEY>')  { api_key(:soccer_wc ) }
   c.filter_sensitive_data('<TENNIS_API_KEY>')  { api_key(:tennis ) }
   c.filter_sensitive_data('<WNBA_API_KEY>')  { api_key(:wnba ) }
-  c.filter_sensitive_data('<IMAGES_NFL_API_KEY>')  { api_key(:images_nfl ) }
-  c.filter_sensitive_data('<IMAGES_NBA_API_KEY>')  { api_key(:images_nba ) }
-  c.filter_sensitive_data('<IMAGES_MLS_API_KEY>')  { api_key(:images_mls ) }
+  c.filter_sensitive_data('<IMAGES_NFL_API_KEY>')  { api_key(:images_nfl) }
+  c.filter_sensitive_data('<IMAGES_NBA_API_KEY>')  { api_key(:images_nba) }
+  c.filter_sensitive_data('<IMAGES_MLS_API_KEY>')  { api_key(:images_mls) }
+  c.filter_sensitive_data('<IMAGES_EPL_API_KEY>')  { api_key(:images_epl) }
   c.filter_sensitive_data('<LIVE_IMAGES_NFL_API_KEY>')  { api_key(:live_images_nfl ) }
   c.filter_sensitive_data('<LIVE_IMAGES_NBA_API_KEY>')  { api_key(:live_images_nba ) }
   c.filter_sensitive_data('<LIVE_IMAGES_MLS_API_KEY>')  { api_key(:live_images_mls ) }
@@ -73,6 +74,7 @@ VCR.configure do |c|
   c.filter_sensitive_data('<CONTENT_NBA_API_KEY>')  { api_key(:content_nba ) }
   c.filter_sensitive_data('<CONTENT_NFL_API_KEY>')  { api_key(:content_nfl ) }
   c.filter_sensitive_data('<ODDS_API_KEY>')  { api_key(:odds ) }
+  c.filter_sensitive_data('<NBA_PRODUCTION>') {api_key(:nba_production) }
   c.filter_sensitive_data('<SOCCER_NA_PRODUCTION') {api_key(:soccer_na_production) }
   c.filter_sensitive_data('<NFL_PRODUCTION') {api_key(:nfl_production) }
   c.filter_sensitive_data('<IMAGES_NFL_PRODUCTION') {api_key(:images_nfl_production) }

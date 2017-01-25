@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sportradar.us/nba-p3/games/3700bb52-50f0-4929-b6b0-ae0b3cbad019/pbp.xml?api_key=nexfrwh853qqh45grhfcs2fe
+    uri: https://api.sportradar.us/nba-p3/games/3700bb52-50f0-4929-b6b0-ae0b3cbad019/pbp.xml?api_key=<NBA_PRODUCTION>
     body:
       encoding: US-ASCII
       string: ''
@@ -11610,6 +11610,6 @@ http_interactions:
           </quarter>
         </game>
         <!-- Generation ended @ 2017-01-21 02:33:45 +0000 -->
-    http_version: 
+    http_version:
   recorded_at: Mon, 23 Jan 2017 18:18:13 GMT
 recorded_with: VCR 3.0.3

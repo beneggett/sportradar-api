@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sportradar.us/soccer-images-t3/reuters/epl/headshots/players/2016/manifest.xml?api_key=u8m8ajeqjxpu2ph5355hmb44
+    uri: https://api.sportradar.us/soccer-images-t3/reuters/epl/headshots/players/2016/manifest.xml?api_key=<IMAGES_EPL_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -35,6 +35,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "<h1>Developer Inactive</h1>"
-    http_version: 
+    http_version:
   recorded_at: Thu, 29 Sep 2016 05:39:34 GMT
 recorded_with: VCR 3.0.3
