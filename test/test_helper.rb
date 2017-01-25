@@ -65,6 +65,7 @@ VCR.configure do |c|
   c.filter_sensitive_data('<IMAGES_NFL_API_KEY>')  { api_key(:images_nfl ) }
   c.filter_sensitive_data('<IMAGES_NBA_API_KEY>')  { api_key(:images_nba ) }
   c.filter_sensitive_data('<IMAGES_MLS_API_KEY>')  { api_key(:images_mls ) }
+  c.filter_sensitive_data('<IMAGES_EPL_API_KEY>')  { api_key(:images_epl ) }
   c.filter_sensitive_data('<LIVE_IMAGES_NFL_API_KEY>')  { api_key(:live_images_nfl ) }
   c.filter_sensitive_data('<LIVE_IMAGES_NBA_API_KEY>')  { api_key(:live_images_nba ) }
   c.filter_sensitive_data('<LIVE_IMAGES_MLS_API_KEY>')  { api_key(:live_images_mls ) }
