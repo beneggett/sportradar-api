@@ -26,7 +26,7 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 | MLB | 5 | [📚](http://developer.sportradar.us/docs/MLB_API) | - | - |
 | NHL | 3 | [📚](http://developer.sportradar.us/docs/NHL_API) | - | - |
 | NBA | 3 | [📚](http://developer.sportradar.us/docs/NBA_API) | ✅ | - |
-| NCAAMB  | 3 | [📚](http://developer.sportradar.us/docs/NCAA_Mens_Basketball) | - | - |
+| NCAAMB  | 3 | [📚](http://developer.sportradar.us/docs/NCAA_Mens_Basketball) | ✅ | - |
 | NCAAFB  | 1 | [📚](http://developer.sportradar.us/docs/NCAA_Football_API) | - | - |
 | Golf  | 2 | [📚](http://developer.sportradar.us/docs/Golf_API) | - | - |
 | NASCAR  | 3 | [📚](http://developer.sportradar.us/page/NASCAR_Official) | - | - |
