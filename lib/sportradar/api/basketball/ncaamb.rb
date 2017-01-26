@@ -4,7 +4,7 @@ module Sportradar
       class Ncaamb < Request
         attr_accessor :league, :access_level, :simulation, :error
 
-        def initialize(access_level = 't')
+        def initialize(access_level = default_access_level)
           @league = 'ncaamb'
           raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
           @access_level = access_level
@@ -64,6 +64,13 @@ module Sportradar
         end
         def default_season
           'reg'
+        end
+        def default_access_level
+          if (ENV['SPORTRADAR_ENV'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
+            'p'
+          else
+            't'
+          end
         end
 
         private
