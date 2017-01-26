@@ -53,6 +53,10 @@ module Sportradar
             "flagranttwo"           => FlagrantTwo,
             "delay"                 => Delay,
             "ejection"              => Ejection,
+            # abstract types, used for lookup purposes
+            "foul"                  => Foul,
+            "shotmade"              => ShotMade,
+            "shotmiss"              => ShotMiss,
           }[event_type]
         end
 

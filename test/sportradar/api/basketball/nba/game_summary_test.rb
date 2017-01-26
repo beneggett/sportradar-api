@@ -3,6 +3,7 @@ require 'test_helper'
 class Sportradar::Api::Basketball::Nba::GameSummaryTest < Minitest::Test
 
   def setup
+    # ESPN boxscore: http://www.espn.com/nba/boxscore?gameId=400900063
     @attrs = { "id" => "3700bb52-50f0-4929-b6b0-ae0b3cbad019" }
     @game = Sportradar::Api::Basketball::Nba::Game.new(@attrs)
     VCR.use_cassette("nba/game/summary_regulation") do

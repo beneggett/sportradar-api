@@ -30,3 +30,11 @@ module Sportradar
     end
   end
 end
+
+__END__
+
+sr = Sportradar::Api::Basketball::Nba.new
+sd = sr.daily_schedule(Date.new(2017, 1, 21));
+g = sd.games.sample
+
+ss = sr.schedule;

@@ -131,6 +131,14 @@ module Sportradar
           def plays
             quarters.flat_map(&:plays)
           end
+          def plays_by_type(play_type, *types)
+            if types.empty?
+              plays.grep(Play.subclass(play_type.delete('_')))
+            else
+              play_classes = [play_type, *types].map { |type| Play.subclass(type.delete('_')) }
+              plays.select { |play| play_classes.include?(play.class) }
+            end
+          end
           def summary
             @summary ||= get_summary
           end

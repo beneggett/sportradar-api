@@ -3,6 +3,7 @@ require 'test_helper'
 class Sportradar::Api::Basketball::Nba::GamePbpTest < Minitest::Test
 
   def setup
+    # ESPN boxscore: http://www.espn.com/nba/boxscore?gameId=400900063
     @attrs = { "id" => "3700bb52-50f0-4929-b6b0-ae0b3cbad019" }
     @game = Sportradar::Api::Basketball::Nba::Game.new(@attrs)
     VCR.use_cassette("nba/game/pbp_regulation") do
@@ -45,6 +46,19 @@ class Sportradar::Api::Basketball::Nba::GamePbpTest < Minitest::Test
     assert_equal 15, @game.scoring.dig(3, "583ecda6-fb46-11e1-82cb-f4ce4684ea4c")
     assert_equal 25, @game.scoring.dig(4, "583ec97e-fb46-11e1-82cb-f4ce4684ea4c")
     assert_equal 15, @game.scoring.dig(4, "583ecda6-fb46-11e1-82cb-f4ce4684ea4c")
+  end
+
+  def test_nba_game_play_type_lookup
+    assert_equal 103, @game.plays_by_type('shot_made').size
+    assert_equal 34, @game.plays_by_type('free_throw_made').size
+    assert_equal 19, @game.plays_by_type('three_point_made').size
+    assert_equal 69, @game.plays_by_type('three_point_made', 'two_point_made').size
+    assert_equal 97, @game.plays_by_type('three_point_miss', 'two_point_miss').size
+    assert_equal 33, @game.plays_by_type('foul').size
+    assert_equal 10, @game.plays_by_type('shot_miss').select(&:block).size
+    assert_equal 34, @game.plays_by_type('shot_made').select(&:assist).size
+    assert_equal 84, @game.plays_by_type('rebound').select(&:player_id).size
+    assert_equal 16, @game.plays_by_type('turnover').select(&:steal).size
   end
 
 end
