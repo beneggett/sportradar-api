@@ -25,7 +25,7 @@ class Sportradar::Api::Basketball::Nba::PlayerTest < Minitest::Test
   end
 
   def test_basketball_nba_player_initializes
-    assert [:full_name, :position, :birth_date, :birth_place, :college].all? { |e| @data_object.send(e) }
+    assert [:jersey, :full_name, :position, :birth_date, :birth_place, :college].all? { |e| @data_object.send(e) }
   end
 
   def test_basketball_nba_player_has_name

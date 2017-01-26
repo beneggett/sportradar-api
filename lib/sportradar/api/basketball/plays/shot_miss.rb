@@ -10,7 +10,7 @@ module Sportradar
           super
           @shot_type = @statistics.dig(base_key, 'shot_type')
           @shot_type_desc = @statistics.dig(base_key, 'shot_type_desc')
-          @block = Block.new(data, quarter: @quarter) if @statistics['block']
+          @block = Block.new(data, quarter: @quarter, half: @half) if @statistics['block']
         end
         def made?
           false

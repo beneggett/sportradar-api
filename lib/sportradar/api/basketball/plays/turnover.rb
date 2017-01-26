@@ -11,7 +11,7 @@ module Sportradar
         end
         def parse_statistics(data)
           super
-          @steal = Steal.new(data, quarter: @quarter) if @statistics['steal']
+          @steal = Steal.new(data, quarter: @quarter, half: @half) if @statistics['steal']
         end
       end
     end

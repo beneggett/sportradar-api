@@ -10,7 +10,7 @@ module Sportradar
           super
           @shot_type = @statistics.dig(base_key, 'shot_type')
           @shot_type_desc = @statistics.dig(base_key, 'shot_type_desc')
-          @assist = Assist.new(data, quarter: @quarter) if @statistics['assist']
+          @assist = Assist.new(data, quarter: @quarter, half: @half) if @statistics['assist']
         end
         def made?
           true

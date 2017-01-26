@@ -10,10 +10,11 @@ module Sportradar
             @response = data
             @api      = opts[:api]
 
-            @quarter  = opts[:quarter].sequence.to_i rescue opts[:quarter].to_i
             @id       = data['id']
 
-            update(data)
+            @quarter  = opts[:quarter].sequence.to_i  rescue opts[:quarter].to_i
+
+            update(data, **opts)
           end
 
           # def game

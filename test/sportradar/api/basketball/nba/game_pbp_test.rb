@@ -32,6 +32,10 @@ class Sportradar::Api::Basketball::Nba::GamePbpTest < Minitest::Test
     assert_equal 3,    play.quarter
   end
 
+  def test_nba_game_play_quarter
+    assert @game.plays.all? { |play| play.quarter.nonzero? }
+  end
+
   def test_nba_game_pbp_quarter_scoring
     assert_equal 26, @game.scoring.dig(1, "583ec97e-fb46-11e1-82cb-f4ce4684ea4c")
     assert_equal 18, @game.scoring.dig(1, "583ecda6-fb46-11e1-82cb-f4ce4684ea4c")
