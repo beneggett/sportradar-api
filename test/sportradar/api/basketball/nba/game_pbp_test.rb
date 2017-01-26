@@ -66,4 +66,11 @@ class Sportradar::Api::Basketball::Nba::GamePbpTest < Minitest::Test
     assert @game.plays.all?(&:description)
   end
 
+  def test_nba_game_plays_have_additional_attributes
+    assert @game.plays_by_type('shot_made').all?(&:made?)
+    assert @game.plays_by_type('shot_miss').none?(&:made?)
+    assert_equal 0, @game.plays_by_type('shot_miss').map(&:points).inject(:+)
+    assert_equal 191, @game.plays_by_type('shot_made').map(&:points).inject(:+)
+  end
+
 end
