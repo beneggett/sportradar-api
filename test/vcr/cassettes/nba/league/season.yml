@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sportradar.us/nba-p3/games/2016/reg/schedule.xml?api_key=nexfrwh853qqh45grhfcs2fe
+    uri: https://api.sportradar.us/nba-t3/games/2016/reg/schedule.xml?api_key=<NBA_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -23,23 +23,23 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Date:
-      - Wed, 25 Jan 2017 04:41:59 GMT
+      - Wed, 25 Jan 2017 23:47:35 GMT
       Etag:
-      - '"19720b2c9f2aac6d329e3666ae6d9575"'
+      - '"49572fb84b60793df0566943963ce47a"'
       Last-Modified:
-      - Wed, 25 Jan 2017 04:41:41 GMT
+      - Wed, 25 Jan 2017 23:47:32 GMT
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-127.mashery.com
+      - prod-j-worker-us-east-1d-119.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '22276'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
       - '1'
-      X-Plan-Quota-Allotted:
-      - '910000'
-      X-Plan-Quota-Current:
-      - '293623'
       X-Via:
       - Nginx-S3-Proxy
       Content-Length:
@@ -51,7 +51,7 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
         <?xml-stylesheet type="text/xsl" charset="UTF-8" href="/xslt/basketball/schedule-v2.0.xsl"?>
-        <!-- Generation started @ 2017-01-25 04:41:41 +0000 -->
+        <!-- Generation started @ 2017-01-25 23:47:28 +0000 -->
         <league xmlns="http://feed.elasticstats.com/schema/basketball/schedule-v2.0.xsd" id="4353138d-4c22-4396-95d8-5f587d2df25c" name="NBA" alias="NBA">
           <season-schedule id="03241c9e-731b-40d0-a36f-bcc9932d055b" year="2016" type="REG">
             <games>
@@ -5855,6 +5855,14 @@ http_interactions:
                 </away>
                 <broadcast network="TNT" satellite="245"/>
               </game>
+              <game id="09b9c1e0-21e6-4ba2-81bf-99369978b413" status="scheduled" coverage="full" home_team="583ecda6-fb46-11e1-82cb-f4ce4684ea4c" away_team="583ecc9a-fb46-11e1-82cb-f4ce4684ea4c" scheduled="2017-02-01T00:00:00+00:00">
+                <venue id="62cc9661-7b13-56e7-bf4a-bba7ad7be8da" name="Air Canada Centre" capacity="19800" address="40 Bay St." city="Toronto" state="ON" zip="M5J 2X2" country="CAN"/>
+                <home name="Toronto Raptors" alias="TOR" id="583ecda6-fb46-11e1-82cb-f4ce4684ea4c">
+                </home>
+                <away name="New Orleans Pelicans" alias="NOP" id="583ecc9a-fb46-11e1-82cb-f4ce4684ea4c">
+                </away>
+                <broadcast network="FS-NO" satellite="676-4"/>
+              </game>
               <game id="321f569d-db8a-4729-bf5e-10f946abe387" status="scheduled" coverage="full" home_team="583ec8d4-fb46-11e1-82cb-f4ce4684ea4c" away_team="583ec70e-fb46-11e1-82cb-f4ce4684ea4c" scheduled="2017-02-01T00:00:00+00:00">
                 <venue id="f62d5b49-d646-56e9-ba60-a875a00830f8" name="Verizon Center" capacity="20356" address="601 F St. N.W." city="Washington" state="DC" zip="20004" country="USA"/>
                 <home name="Washington Wizards" alias="WAS" id="583ec8d4-fb46-11e1-82cb-f4ce4684ea4c">
@@ -5862,14 +5870,6 @@ http_interactions:
                 <away name="New York Knicks" alias="NYK" id="583ec70e-fb46-11e1-82cb-f4ce4684ea4c">
                 </away>
                 <broadcast network="CSN-DC" satellite="642"/>
-              </game>
-              <game id="09b9c1e0-21e6-4ba2-81bf-99369978b413" status="scheduled" coverage="full" home_team="583ecda6-fb46-11e1-82cb-f4ce4684ea4c" away_team="583ecc9a-fb46-11e1-82cb-f4ce4684ea4c" scheduled="2017-02-01T00:30:00+00:00">
-                <venue id="62cc9661-7b13-56e7-bf4a-bba7ad7be8da" name="Air Canada Centre" capacity="19800" address="40 Bay St." city="Toronto" state="ON" zip="M5J 2X2" country="CAN"/>
-                <home name="Toronto Raptors" alias="TOR" id="583ecda6-fb46-11e1-82cb-f4ce4684ea4c">
-                </home>
-                <away name="New Orleans Pelicans" alias="NOP" id="583ecc9a-fb46-11e1-82cb-f4ce4684ea4c">
-                </away>
-                <broadcast network="FS-NO" satellite="676-4"/>
               </game>
               <game id="16f389b4-ef39-4f8e-9ae6-482883692ac2" status="scheduled" coverage="full" home_team="583ecb3a-fb46-11e1-82cb-f4ce4684ea4c" away_team="583ed0ac-fb46-11e1-82cb-f4ce4684ea4c" scheduled="2017-02-01T01:00:00+00:00">
                 <venue id="5b239206-57ce-50aa-baaa-627f3349dfdc" name="Toyota Center" capacity="18055" address="1510 Polk St." city="Houston" state="TX" zip="77002" country="USA"/>
@@ -9922,7 +9922,7 @@ http_interactions:
             </games>
           </season-schedule>
         </league>
-        <!-- Generation ended @ 2017-01-25 04:41:43 +0000 -->
+        <!-- Generation ended @ 2017-01-25 23:47:30 +0000 -->
     http_version: 
-  recorded_at: Wed, 25 Jan 2017 05:13:33 GMT
+  recorded_at: Thu, 26 Jan 2017 00:01:31 GMT
 recorded_with: VCR 3.0.3

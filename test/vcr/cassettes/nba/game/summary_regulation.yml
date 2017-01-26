@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sportradar.us/nba-p3/games/3700bb52-50f0-4929-b6b0-ae0b3cbad019/summary.xml?api_key=nexfrwh853qqh45grhfcs2fe
+    uri: https://api.sportradar.us/nba-t3/games/3700bb52-50f0-4929-b6b0-ae0b3cbad019/summary.xml?api_key=<NBA_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Date:
-      - Mon, 23 Jan 2017 18:02:33 GMT
+      - Thu, 26 Jan 2017 00:01:34 GMT
       Etag:
       - '"a76dae784652a6f1c66417f8f78a5aac"'
       Last-Modified:
@@ -31,15 +31,15 @@ http_interactions:
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1e-126.mashery.com
+      - prod-j-worker-us-east-1b-109.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '22278'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
       - '1'
-      X-Plan-Quota-Allotted:
-      - '910000'
-      X-Plan-Quota-Current:
-      - '269092'
       X-Via:
       - Nginx-S3-Proxy
       Content-Length:
@@ -186,5 +186,5 @@ http_interactions:
         </game>
         <!-- Generation ended @ 2017-01-21 02:33:42 +0000 -->
     http_version: 
-  recorded_at: Mon, 23 Jan 2017 18:02:32 GMT
+  recorded_at: Thu, 26 Jan 2017 00:01:34 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sportradar.us/nba-p3/league/hierarchy.xml?api_key=nexfrwh853qqh45grhfcs2fe
+    uri: https://api.sportradar.us/nba-t3/league/hierarchy.xml?api_key=<NBA_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Date:
-      - Wed, 25 Jan 2017 02:41:53 GMT
+      - Thu, 26 Jan 2017 00:01:36 GMT
       Etag:
       - '"ecfc007ae0ae35766d65014569896a57"'
       Last-Modified:
@@ -31,15 +31,15 @@ http_interactions:
       Server:
       - nginx
       X-Mashery-Responder:
-      - prod-j-worker-us-east-1d-119.mashery.com
+      - prod-j-worker-us-east-1b-112.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '22280'
       X-Plan-Qps-Allotted:
       - '25'
       X-Plan-Qps-Current:
       - '1'
-      X-Plan-Quota-Allotted:
-      - '910000'
-      X-Plan-Quota-Current:
-      - '290468'
       X-Via:
       - Nginx-S3-Proxy
       Content-Length:
@@ -161,5 +161,5 @@ http_interactions:
         </league>
         <!-- Generation ended @ 2017-01-24 19:10:18 +0000 -->
     http_version: 
-  recorded_at: Wed, 25 Jan 2017 02:41:54 GMT
+  recorded_at: Thu, 26 Jan 2017 00:01:36 GMT
 recorded_with: VCR 3.0.3
