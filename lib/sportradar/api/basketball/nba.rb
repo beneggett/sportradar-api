@@ -80,7 +80,7 @@ module Sportradar
         end
 
         def request_url(path)
-          puts "/nba-#{access_level}#{version}/#{path}"
+          # puts "/nba-#{access_level}#{version}/#{path}"
           if simulation
             # "/nfl-sim1/#{path}"
           else
