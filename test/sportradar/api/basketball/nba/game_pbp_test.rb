@@ -61,4 +61,9 @@ class Sportradar::Api::Basketball::Nba::GamePbpTest < Minitest::Test
     assert_equal 16, @game.plays_by_type('turnover').select(&:steal).size
   end
 
+  def test_nba_game_plays_have_required_attributes
+    assert @game.plays.all?(&:display_type)
+    assert @game.plays.all?(&:description)
+  end
+
 end
