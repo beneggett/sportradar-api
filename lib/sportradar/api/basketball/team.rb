@@ -65,16 +65,6 @@ module Sportradar
           @name = data['name'] if data['name']
           if data['name'] && !data.key?('market')
             @full_name = data['name']
-            # if @full_name.split.size > 1
-            #   if @full_name.include? 'Blazers'
-            #     @market = 'Portland'
-            #     @name = 'Trail Blazers'
-            #     @full_name = 'Portland Trail Blazers'
-            #   else
-            #     @market = @full_name.split[0..-2].join(' ')
-            #     @name = @full_name.split.last
-            #   end
-            # end
           elsif data['name'] && data['market']
             @market = data['market']
             @full_name = [@market, data['name']].join(' ')

@@ -47,7 +47,7 @@ module Sportradar
         private
 
         def parse_from_box(data)
-          return {} if data.dig('team', 0, 'scoring').is_a?(String) # game hasn't started yet
+          return {} if data.dig('team', 0, 'scoring').is_a?(String) || data.dig('team', 0, 'scoring').nil? # game hasn't started yet
           period_name = data.dig('team', 0, 'scoring').keys.first
           id = data.dig('team', 0, 'id')
           da = data.dig('team', 0, 'scoring', period_name)
