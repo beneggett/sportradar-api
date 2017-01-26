@@ -20,7 +20,7 @@ class Sportradar::Api::Basketball::Nba::SeasonTest < Minitest::Test
   end
 
   def test_games_have_required_attributes
-    attributes = %i[id status scheduled home away]
+    attributes = %i[id status coverage scheduled home away]
     assert @season.games.reject(&:postponed?).all? { |game| attributes.all? { |att| game.send(att) } }
   end
 
