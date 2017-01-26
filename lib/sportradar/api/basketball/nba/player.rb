@@ -29,10 +29,6 @@ module Sportradar
             update(data, **opts)
           end
 
-          def bio
-            Bio.new(self)
-          end
-
           def name # to match api for NFL::Player
             full_name
           end

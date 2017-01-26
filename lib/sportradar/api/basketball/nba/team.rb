@@ -37,10 +37,6 @@ module Sportradar
             end
           end
 
-          def profile
-            Profile.new(self)
-          end
-
           def update(data, **opts)
             handle_names(data)
 
