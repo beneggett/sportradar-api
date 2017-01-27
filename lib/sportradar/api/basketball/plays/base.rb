@@ -18,6 +18,10 @@ module Sportradar
             update(data, **opts)
           end
 
+          def period
+            @quarter.nonzero? || @half.nonzero?
+          end
+
           # def game
           #   quarter.game
           # end

@@ -13,6 +13,10 @@ module Sportradar
             @api || Sportradar::Api::Basketball::Ncaamb.new
           end
 
+          def good_guys?
+            id == "9b166a3f-e64b-4825-bb6b-92c6f0418263"
+          end
+
         end
       end
     end
