@@ -204,12 +204,12 @@ module Sportradar
         end
 
         def get_box
-          api_res = api.get_data(path_box)
-          data = api_res['game']
-          ingest_box(data)
+          api_resp = api.get_data(path_box)
+          ingest_box(api_resp)
         end
 
-        def ingest_box(data)
+        def ingest_box(api_resp)
+          data = api_resp['game']
           update(data, source: :box)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)
@@ -217,12 +217,12 @@ module Sportradar
         end
 
         def get_pbp
-          api_res = api.get_data(path_pbp)
-          data = api_res['game']
-          ingest_pbp(data)
+          api_resp = api.get_data(path_pbp)
+          ingest_pbp(api_resp)
         end
 
-        def ingest_pbp(data)
+        def ingest_pbp(api_resp)
+          data = api_resp['game']
           update(data, source: :pbp)
           period_data = if data[period_name]
             @period = data[period_name].first.to_i
@@ -243,12 +243,12 @@ module Sportradar
         end
 
         def get_summary
-          api_res = api.get_data(path_summary)
-          data = api_res['game']
-          ingest_summary(data)
+          api_resp = api.get_data(path_summary)
+          ingest_summary(api_resp)
         end
 
-        def ingest_summary(data)
+        def ingest_summary(api_resp)
+          data = api_resp['game']
           update(data, source: :summary)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)
