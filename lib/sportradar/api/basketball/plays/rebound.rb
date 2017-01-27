@@ -16,7 +16,11 @@ module Sportradar
         end
         def parse_statistics(data)
           super
-          @rebound_type = @statistics.dig(base_key, 'rebound_type')
+          stat = @statistics.dig(base_key)
+          stat = stat[0] if stat.is_a?(Array)
+          @rebound_type = stat['rebound_type']
+        rescue => e
+          # noop => bad data from SR
         end
       end
     end
