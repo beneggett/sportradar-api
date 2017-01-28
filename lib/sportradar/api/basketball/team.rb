@@ -19,8 +19,8 @@ module Sportradar
 
         def initialize(data, **opts)
           @response = data
-          binding.pry if data.empty?
           @api      = opts[:api]
+
           @games_hash   = {}
           @players_hash = {}
           @player_stats = {}
