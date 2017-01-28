@@ -12,8 +12,6 @@ module Sportradar
           @shot_type =      stat['shot_type']
           @shot_type_desc = stat['shot_type_desc']
           @block = Block.new(data, quarter: @quarter, half: @half) if @statistics.detect { |hash|  hash['type'] == 'block' }
-        rescue => e
-          binding.pry
         end
         def made?
           false
