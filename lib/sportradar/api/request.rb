@@ -68,35 +68,3 @@ module Sportradar
     end
   end
 end
-
-__END__
-
-require 'typhoeus'
-require 'nokogiri'
-sr = Sportradar::Api::Basketball::Nba.new
-# sd = sr.daily_schedule(Date.new(2017, 1, 23));
-sd = sr.daily_schedule(Date.new(2017, 1, 21));
-# typhs = sd.games.map(&:typh_pbp)
-games = sd.games
-hydra = Typhoeus::Hydra.new
-requests = games.map do |game|
-  data = game.queue_pbp
-  request = Typhoeus::Request.new(data[:url], headers: data[:headers], params: data[:params], method: :get)
-  request.on_complete do |response|
-    xml = Nokogiri::XML(response.body)
-    resp = Hash.from_xml(xml.to_s)
-    game.send(data[:callback], resp)
-  end
-  hydra.queue request
-  request
-end
-t = Time.now; rr = hydra.run; Time.now - t
-t = Time.now; games.each(&:get_pbp); Time.now - t
-# typhs.each {|r| hydra.queue r };
-t = Time.now; hydra.run; Time.now - t
-
-
-sr = Sportradar::Api::Basketball::Nba.new;
-sd = sr.daily_schedule(Date.new(2017, 1, 21));
-games = sd.games;
-t = Time.now; games.each(&:get_pbp); Time.now - t
