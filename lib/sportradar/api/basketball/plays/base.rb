@@ -105,8 +105,9 @@ module Sportradar
           def parse_statistics(data)
             return unless data['statistics']
             @statistics = data['statistics']
-            stat = data.dig('statistics', base_key)
-            stat = stat[0] if stat.is_a?(Array) # sometimes SR has an array of identical assist hashes
+            stat = @statistics.detect { |hash| hash['type'] == base_key }
+            # stat = data.dig('statistics', base_key) rescue data.dig('statistics', 0, base_key)
+            # stat = stat[0] if stat.is_a?(Array) # sometimes SR has an array of identical assist hashes
             @team = stat['team']
             @team_id = @team['id'] if @team
             @player = stat['player']

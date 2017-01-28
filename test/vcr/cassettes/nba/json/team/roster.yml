@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-t3/teams/583ec8d4-fb46-11e1-82cb-f4ce4684ea4c/profile.json?api_key=<NBA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 28 Jan 2017 00:49:00 GMT
+      Etag:
+      - '"6f2c48c111662069d8b505fa03b482ef"'
+      Last-Modified:
+      - Sun, 15 Jan 2017 16:32:34 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-109.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '20596'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '8002'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","name":"Wizards","alias":"WAS","market":"Washington","founded":1961,"venue":{"id":"f62d5b49-d646-56e9-ba60-a875a00830f8","name":"Verizon
+        Center","capacity":20356,"address":"601 F St. N.W.","city":"Washington","state":"DC","zip":"20004","country":"USA"},"league":{"id":"4353138d-4c22-4396-95d8-5f587d2df25c","name":"NBA","alias":"NBA"},"conference":{"id":"3960cfac-7361-4b30-bc25-8d393de6f62f","name":"EASTERN
+        CONFERENCE","alias":"EASTERN"},"division":{"id":"54dc7348-c1d2-40d8-88b3-c4c0138e085d","name":"Southeast","alias":"SOUTHEAST"},"coaches":[{"id":"4a31f2c1-6387-4bb0-8698-cadb83ea6e74","full_name":"Scott
+        Brooks","first_name":"Scott","last_name":"Brooks","position":"Head Coach","experience":"6"}],"players":[{"id":"14dee36c-97c6-4668-8f4e-2833967e6ada","status":"ACT","full_name":"Danuel
+        House","first_name":"Danuel","last_name":"House","abbr_name":"D.House","height":79,"weight":215,"position":"F","primary_position":"SF","jersey_number":"4","experience":"0","college":"Texas
+        A&M","birth_place":"Fresno, TX, USA","birthdate":"1993-06-07","updated":"2016-10-21T14:39:43+00:00","injuries":[{"id":"ffac8276-1664-4525-9367-c826d9420bdf","comment":"House
+        will be re-evaluated in 10 days, according to CSN Mid-Atlantic.","desc":"Wrist","status":"Out","start_date":"2017-01-09","update_date":"2017-01-09"}]},{"id":"25c4a949-c310-4bd3-af3f-10441215b323","status":"ACT","full_name":"Markieff
+        Morris","first_name":"Markieff","last_name":"Morris","abbr_name":"M.Morris","height":82,"weight":245,"position":"F","primary_position":"PF","jersey_number":"5","experience":"5","college":"Kansas","birth_place":"Philadelphia,
+        PA, USA","birthdate":"1989-09-02","updated":"2016-10-21T14:41:50+00:00","draft":{"team_id":"583ecfa8-fb46-11e1-82cb-f4ce4684ea4c","year":2011,"round":"1","pick":"13"}},{"id":"572261e2-8ad9-4198-969d-16cad41fdef3","status":"ACT","full_name":"Trey
+        Burke","first_name":"Trey","last_name":"Burke","abbr_name":"T.Burke","height":73,"weight":191,"position":"G","primary_position":"PG","jersey_number":"33","experience":"3","college":"Michigan","birth_place":"Columbus,
+        OH, USA","birthdate":"1992-11-12","updated":"2016-10-21T14:37:33+00:00","draft":{"team_id":"583eca2f-fb46-11e1-82cb-f4ce4684ea4c","year":2013,"round":"1","pick":"9"}},{"id":"6769d1ca-0581-48b0-b487-b5c87b8f696e","status":"ACT","full_name":"John
+        Wall","first_name":"John","last_name":"Wall","abbr_name":"J.Wall","height":76,"weight":210,"position":"G","primary_position":"PG","jersey_number":"2","experience":"6","college":"Kentucky","birth_place":"Raleigh,
+        NC, USA","birthdate":"1990-09-06","updated":"2016-10-21T14:48:08+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2010,"round":"1","pick":"1"}},{"id":"792fdc1e-e833-4777-a372-11e93e457480","status":"ACT","full_name":"Otto
+        Porter","first_name":"Otto","last_name":"Porter","abbr_name":"O.Porter","height":80,"weight":198,"position":"F","primary_position":"SF","jersey_number":"22","experience":"3","college":"Georgetown","birth_place":"St.
+        Louis, MO, USA","birthdate":"1993-06-03","updated":"2016-10-21T14:45:21+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2013,"round":"1","pick":"3"}},{"id":"7992dce6-a785-4b31-9655-abd5a6f028f0","status":"ACT","full_name":"Jason
+        Smith","first_name":"Jason","last_name":"Smith","abbr_name":"J.Smith","height":84,"weight":240,"position":"F-C","primary_position":"PF","jersey_number":"14","experience":"8","college":"Colorado
+        State","birth_place":"Greeley, CO, USA","birthdate":"1986-03-02","updated":"2016-10-25T18:51:02+00:00","draft":{"team_id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c","year":2007,"round":"1","pick":"20"}},{"id":"7dfa0971-96be-4705-9811-f9f54758145f","status":"ACT","full_name":"Kelly
+        Oubre Jr.","first_name":"Kelly","last_name":"Oubre","abbr_name":"K.Oubre","height":79,"weight":205,"position":"F","primary_position":"SF","jersey_number":"12","experience":"1","college":"Kansas","birth_place":"New
+        Orleans, LA, USA","birthdate":"1995-12-09","updated":"2016-10-25T18:50:38+00:00","draft":{"team_id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c","year":2015,"round":"1","pick":"15"}},{"id":"8f4b695b-36d0-4801-bebd-c94c1315a590","status":"ACT","full_name":"Andrew
+        Nicholson","first_name":"Andrew","last_name":"Nicholson","abbr_name":"A.Nicholson","height":81,"weight":250,"position":"F","primary_position":"PF","jersey_number":"44","experience":"4","college":"St.
+        Bonaventure","birth_place":"Mississauga, ON, CAN","birthdate":"1989-12-08","updated":"2016-10-21T14:42:27+00:00","draft":{"team_id":"583ed157-fb46-11e1-82cb-f4ce4684ea4c","year":2012,"round":"1","pick":"19"}},{"id":"9070aef9-bd5a-4a13-8662-802637780234","status":"ACT","full_name":"Daniel
+        Ochefu","first_name":"Daniel","last_name":"Ochefu","abbr_name":"D.Ochefu","height":83,"weight":245,"position":"F","primary_position":"PF","jersey_number":"32","experience":"0","college":"Villanova","birth_place":"Baltimore,
+        MD, USA","birthdate":"1993-12-15","updated":"2016-11-13T19:51:42+00:00"},{"id":"a190e528-a18c-4682-beeb-e0f7360c3e06","status":"ACT","full_name":"Tomas
+        Satoransky","first_name":"Tomas","last_name":"Satoransky ","abbr_name":"T.Satoransky","height":79,"weight":210,"position":"G-F","primary_position":"SG","jersey_number":"31","experience":"0","birth_place":"Prague,,
+        CZE","birthdate":"1991-10-30","updated":"2016-10-25T18:50:51+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2012,"round":"2","pick":"32"}},{"id":"b4dbe3f9-3bc5-45df-b720-10571da8e0db","status":"ACT","full_name":"Sheldon
+        McClellan","first_name":"Sheldon","last_name":"McClellan","abbr_name":"S.McClellan","height":78,"weight":200,"position":"G-F","primary_position":"SG","jersey_number":"9","experience":"0","college":"Miami
+        (FL)","birth_place":"Bellaire, TX, USA","birthdate":"1992-12-21","updated":"2016-10-25T18:50:25+00:00"},{"id":"d2abbbb8-0d36-49d4-9785-d8664021eb78","status":"ACT","full_name":"Ian
+        Mahinmi","first_name":"Ian","last_name":"Mahinmi","abbr_name":"I.Mahinmi","height":83,"weight":262,"position":"C","primary_position":"C","jersey_number":"28","experience":"8","birth_place":"Rouen,,
+        FRA","birthdate":"1986-11-05","updated":"2016-10-21T14:40:29+00:00","draft":{"team_id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c","year":2005,"round":"1","pick":"28"},"injuries":[{"id":"f52d8f4e-a307-43ad-bf5a-1cfcceccfa45","comment":"Mahinmi
+        will be evaluated in late January before a return date is set, according to
+        J. Michael CSNMidAtlantic.com.","desc":"Knee","status":"Out","start_date":"2016-11-28","update_date":"2017-01-07"}]},{"id":"d5ef3cfe-2ab9-4b77-823a-62678c13058f","status":"ACT","full_name":"Marcus
+        Thornton","first_name":"Marcus","last_name":"Thornton","abbr_name":"M.Thornton","height":76,"weight":205,"position":"G","primary_position":"SG","jersey_number":"15","experience":"7","college":"Louisiana
+        State","birth_place":"Baton Rouge, LA, USA","birthdate":"1987-06-05","updated":"2016-10-21T14:47:19+00:00","draft":{"team_id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c","year":2009,"round":"2","pick":"43"}},{"id":"f0deff5f-c269-4389-9713-b8a7e70207cb","status":"ACT","full_name":"Marcin
+        Gortat","first_name":"Marcin","last_name":"Gortat","abbr_name":"M.Gortat","height":83,"weight":240,"position":"C","primary_position":"C","jersey_number":"13","experience":"9","college":"RheinEnergie
+        Cologne","birth_place":"Lodz,, POL","birthdate":"1984-02-17","updated":"2016-10-21T14:38:30+00:00","draft":{"team_id":"583ecfa8-fb46-11e1-82cb-f4ce4684ea4c","year":2005,"round":"2","pick":"57"}},{"id":"ff461754-ad20-4eeb-af02-2b46cc980b24","status":"ACT","full_name":"Bradley
+        Beal","first_name":"Bradley","last_name":"Beal","abbr_name":"B.Beal","height":77,"weight":207,"position":"G","primary_position":"SG","jersey_number":"3","experience":"4","college":"Florida","birth_place":"St.
+        Louis, MO, USA","birthdate":"1993-06-28","updated":"2016-10-21T14:37:07+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2012,"round":"1","pick":"3"}}]}'
+    http_version: 
+  recorded_at: Sat, 28 Jan 2017 00:49:00 GMT
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-p3/teams/583ec8d4-fb46-11e1-82cb-f4ce4684ea4c/profile.json?api_key=nexfrwh853qqh45grhfcs2fe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 28 Jan 2017 01:54:39 GMT
+      Etag:
+      - '"6f2c48c111662069d8b505fa03b482ef"'
+      Last-Modified:
+      - Sun, 15 Jan 2017 16:32:34 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-120.mashery.com
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '3'
+      X-Plan-Quota-Allotted:
+      - '910000'
+      X-Plan-Quota-Current:
+      - '324306'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '8002'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","name":"Wizards","alias":"WAS","market":"Washington","founded":1961,"venue":{"id":"f62d5b49-d646-56e9-ba60-a875a00830f8","name":"Verizon
+        Center","capacity":20356,"address":"601 F St. N.W.","city":"Washington","state":"DC","zip":"20004","country":"USA"},"league":{"id":"4353138d-4c22-4396-95d8-5f587d2df25c","name":"NBA","alias":"NBA"},"conference":{"id":"3960cfac-7361-4b30-bc25-8d393de6f62f","name":"EASTERN
+        CONFERENCE","alias":"EASTERN"},"division":{"id":"54dc7348-c1d2-40d8-88b3-c4c0138e085d","name":"Southeast","alias":"SOUTHEAST"},"coaches":[{"id":"4a31f2c1-6387-4bb0-8698-cadb83ea6e74","full_name":"Scott
+        Brooks","first_name":"Scott","last_name":"Brooks","position":"Head Coach","experience":"6"}],"players":[{"id":"14dee36c-97c6-4668-8f4e-2833967e6ada","status":"ACT","full_name":"Danuel
+        House","first_name":"Danuel","last_name":"House","abbr_name":"D.House","height":79,"weight":215,"position":"F","primary_position":"SF","jersey_number":"4","experience":"0","college":"Texas
+        A&M","birth_place":"Fresno, TX, USA","birthdate":"1993-06-07","updated":"2016-10-21T14:39:43+00:00","injuries":[{"id":"ffac8276-1664-4525-9367-c826d9420bdf","comment":"House
+        will be re-evaluated in 10 days, according to CSN Mid-Atlantic.","desc":"Wrist","status":"Out","start_date":"2017-01-09","update_date":"2017-01-09"}]},{"id":"25c4a949-c310-4bd3-af3f-10441215b323","status":"ACT","full_name":"Markieff
+        Morris","first_name":"Markieff","last_name":"Morris","abbr_name":"M.Morris","height":82,"weight":245,"position":"F","primary_position":"PF","jersey_number":"5","experience":"5","college":"Kansas","birth_place":"Philadelphia,
+        PA, USA","birthdate":"1989-09-02","updated":"2016-10-21T14:41:50+00:00","draft":{"team_id":"583ecfa8-fb46-11e1-82cb-f4ce4684ea4c","year":2011,"round":"1","pick":"13"}},{"id":"572261e2-8ad9-4198-969d-16cad41fdef3","status":"ACT","full_name":"Trey
+        Burke","first_name":"Trey","last_name":"Burke","abbr_name":"T.Burke","height":73,"weight":191,"position":"G","primary_position":"PG","jersey_number":"33","experience":"3","college":"Michigan","birth_place":"Columbus,
+        OH, USA","birthdate":"1992-11-12","updated":"2016-10-21T14:37:33+00:00","draft":{"team_id":"583eca2f-fb46-11e1-82cb-f4ce4684ea4c","year":2013,"round":"1","pick":"9"}},{"id":"6769d1ca-0581-48b0-b487-b5c87b8f696e","status":"ACT","full_name":"John
+        Wall","first_name":"John","last_name":"Wall","abbr_name":"J.Wall","height":76,"weight":210,"position":"G","primary_position":"PG","jersey_number":"2","experience":"6","college":"Kentucky","birth_place":"Raleigh,
+        NC, USA","birthdate":"1990-09-06","updated":"2016-10-21T14:48:08+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2010,"round":"1","pick":"1"}},{"id":"792fdc1e-e833-4777-a372-11e93e457480","status":"ACT","full_name":"Otto
+        Porter","first_name":"Otto","last_name":"Porter","abbr_name":"O.Porter","height":80,"weight":198,"position":"F","primary_position":"SF","jersey_number":"22","experience":"3","college":"Georgetown","birth_place":"St.
+        Louis, MO, USA","birthdate":"1993-06-03","updated":"2016-10-21T14:45:21+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2013,"round":"1","pick":"3"}},{"id":"7992dce6-a785-4b31-9655-abd5a6f028f0","status":"ACT","full_name":"Jason
+        Smith","first_name":"Jason","last_name":"Smith","abbr_name":"J.Smith","height":84,"weight":240,"position":"F-C","primary_position":"PF","jersey_number":"14","experience":"8","college":"Colorado
+        State","birth_place":"Greeley, CO, USA","birthdate":"1986-03-02","updated":"2016-10-25T18:51:02+00:00","draft":{"team_id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c","year":2007,"round":"1","pick":"20"}},{"id":"7dfa0971-96be-4705-9811-f9f54758145f","status":"ACT","full_name":"Kelly
+        Oubre Jr.","first_name":"Kelly","last_name":"Oubre","abbr_name":"K.Oubre","height":79,"weight":205,"position":"F","primary_position":"SF","jersey_number":"12","experience":"1","college":"Kansas","birth_place":"New
+        Orleans, LA, USA","birthdate":"1995-12-09","updated":"2016-10-25T18:50:38+00:00","draft":{"team_id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c","year":2015,"round":"1","pick":"15"}},{"id":"8f4b695b-36d0-4801-bebd-c94c1315a590","status":"ACT","full_name":"Andrew
+        Nicholson","first_name":"Andrew","last_name":"Nicholson","abbr_name":"A.Nicholson","height":81,"weight":250,"position":"F","primary_position":"PF","jersey_number":"44","experience":"4","college":"St.
+        Bonaventure","birth_place":"Mississauga, ON, CAN","birthdate":"1989-12-08","updated":"2016-10-21T14:42:27+00:00","draft":{"team_id":"583ed157-fb46-11e1-82cb-f4ce4684ea4c","year":2012,"round":"1","pick":"19"}},{"id":"9070aef9-bd5a-4a13-8662-802637780234","status":"ACT","full_name":"Daniel
+        Ochefu","first_name":"Daniel","last_name":"Ochefu","abbr_name":"D.Ochefu","height":83,"weight":245,"position":"F","primary_position":"PF","jersey_number":"32","experience":"0","college":"Villanova","birth_place":"Baltimore,
+        MD, USA","birthdate":"1993-12-15","updated":"2016-11-13T19:51:42+00:00"},{"id":"a190e528-a18c-4682-beeb-e0f7360c3e06","status":"ACT","full_name":"Tomas
+        Satoransky","first_name":"Tomas","last_name":"Satoransky ","abbr_name":"T.Satoransky","height":79,"weight":210,"position":"G-F","primary_position":"SG","jersey_number":"31","experience":"0","birth_place":"Prague,,
+        CZE","birthdate":"1991-10-30","updated":"2016-10-25T18:50:51+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2012,"round":"2","pick":"32"}},{"id":"b4dbe3f9-3bc5-45df-b720-10571da8e0db","status":"ACT","full_name":"Sheldon
+        McClellan","first_name":"Sheldon","last_name":"McClellan","abbr_name":"S.McClellan","height":78,"weight":200,"position":"G-F","primary_position":"SG","jersey_number":"9","experience":"0","college":"Miami
+        (FL)","birth_place":"Bellaire, TX, USA","birthdate":"1992-12-21","updated":"2016-10-25T18:50:25+00:00"},{"id":"d2abbbb8-0d36-49d4-9785-d8664021eb78","status":"ACT","full_name":"Ian
+        Mahinmi","first_name":"Ian","last_name":"Mahinmi","abbr_name":"I.Mahinmi","height":83,"weight":262,"position":"C","primary_position":"C","jersey_number":"28","experience":"8","birth_place":"Rouen,,
+        FRA","birthdate":"1986-11-05","updated":"2016-10-21T14:40:29+00:00","draft":{"team_id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c","year":2005,"round":"1","pick":"28"},"injuries":[{"id":"f52d8f4e-a307-43ad-bf5a-1cfcceccfa45","comment":"Mahinmi
+        will be evaluated in late January before a return date is set, according to
+        J. Michael CSNMidAtlantic.com.","desc":"Knee","status":"Out","start_date":"2016-11-28","update_date":"2017-01-07"}]},{"id":"d5ef3cfe-2ab9-4b77-823a-62678c13058f","status":"ACT","full_name":"Marcus
+        Thornton","first_name":"Marcus","last_name":"Thornton","abbr_name":"M.Thornton","height":76,"weight":205,"position":"G","primary_position":"SG","jersey_number":"15","experience":"7","college":"Louisiana
+        State","birth_place":"Baton Rouge, LA, USA","birthdate":"1987-06-05","updated":"2016-10-21T14:47:19+00:00","draft":{"team_id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c","year":2009,"round":"2","pick":"43"}},{"id":"f0deff5f-c269-4389-9713-b8a7e70207cb","status":"ACT","full_name":"Marcin
+        Gortat","first_name":"Marcin","last_name":"Gortat","abbr_name":"M.Gortat","height":83,"weight":240,"position":"C","primary_position":"C","jersey_number":"13","experience":"9","college":"RheinEnergie
+        Cologne","birth_place":"Lodz,, POL","birthdate":"1984-02-17","updated":"2016-10-21T14:38:30+00:00","draft":{"team_id":"583ecfa8-fb46-11e1-82cb-f4ce4684ea4c","year":2005,"round":"2","pick":"57"}},{"id":"ff461754-ad20-4eeb-af02-2b46cc980b24","status":"ACT","full_name":"Bradley
+        Beal","first_name":"Bradley","last_name":"Beal","abbr_name":"B.Beal","height":77,"weight":207,"position":"G","primary_position":"SG","jersey_number":"3","experience":"4","college":"Florida","birth_place":"St.
+        Louis, MO, USA","birthdate":"1993-06-28","updated":"2016-10-21T14:37:07+00:00","draft":{"team_id":"583ec8d4-fb46-11e1-82cb-f4ce4684ea4c","year":2012,"round":"1","pick":"3"}}]}'
+    http_version: 
+  recorded_at: Sat, 28 Jan 2017 01:54:37 GMT
+recorded_with: VCR 3.0.3

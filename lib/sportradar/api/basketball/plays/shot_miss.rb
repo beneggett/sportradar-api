@@ -8,9 +8,12 @@ module Sportradar
         end
         def parse_statistics(data)
           super
-          @shot_type = @statistics.dig(base_key, 'shot_type')
-          @shot_type_desc = @statistics.dig(base_key, 'shot_type_desc')
-          @block = Block.new(data, quarter: @quarter, half: @half) if @statistics['block']
+          stat = @statistics.detect { |hash| hash['type'] == base_key }
+          @shot_type =      stat['shot_type']
+          @shot_type_desc = stat['shot_type_desc']
+          @block = Block.new(data, quarter: @quarter, half: @half) if @statistics.detect { |hash|  hash['type'] == 'block' }
+        rescue => e
+          binding.pry
         end
         def made?
           false

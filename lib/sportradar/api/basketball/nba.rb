@@ -13,8 +13,8 @@ module Sportradar
         def schedule(season_year = default_year, nba_season = default_season)
           raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? nba_season
           response = get request_url("games/#{season_year}/#{nba_season}/schedule")
-          if response.success? && response['league']
-            Sportradar::Api::Basketball::Nba::Season.new(response['league'], api: self)
+          if response.success?
+            Sportradar::Api::Basketball::Nba::Season.new(response.to_h, api: self)
           else
             @error = response
           end
@@ -22,8 +22,8 @@ module Sportradar
 
         def daily_schedule(date = default_date, nba_season = default_season)
           response = get request_url("games/#{ date.year }/#{ date.month }/#{ date.day }/schedule")
-          if response.success? && response['league']
-            Sportradar::Api::Basketball::Nba::Schedule.new(response['league'], api: self)
+          if response.success?
+            Sportradar::Api::Basketball::Nba::Schedule.new(response.to_h, api: self)
           else
             @error = response
           end
@@ -31,8 +31,8 @@ module Sportradar
 
         def league_hierarchy
           response = get request_url("league/hierarchy")
-          if response.success? && response["league"]
-            Sportradar::Api::Basketball::Nba::Hierarchy.new(response["league"], api: self)
+          if response.success?
+            Sportradar::Api::Basketball::Nba::Hierarchy.new(response.to_h, api: self)
           else
             response
           end
@@ -40,8 +40,8 @@ module Sportradar
 
         def standings(season_year = default_year, nba_season = default_season)
           response = get request_url("seasontd/#{season_year}/#{nba_season}/standings")
-          if response.success? && response["league"]
-            Sportradar::Api::Basketball::Nba::Hierarchy.new(response['league']["season"], api: self)
+          if response.success?
+            Sportradar::Api::Basketball::Nba::Hierarchy.new(response.to_h, api: self)
           else
             response
           end
@@ -50,11 +50,6 @@ module Sportradar
         def get_data(url)
           get request_url(url)
         end
-
-        def get_pbp(*args)
-          'pbp'
-        end
-
 
         def default_year
           2016
@@ -71,6 +66,10 @@ module Sportradar
           else
             't'
           end
+        end
+
+        def content_format
+          'json'
         end
 
         private

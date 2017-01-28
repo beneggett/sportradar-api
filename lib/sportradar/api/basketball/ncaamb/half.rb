@@ -32,9 +32,7 @@ module Sportradar
             update(data)
           end
           def update(data, **opts)
-            create_data(@plays_hash, data.dig('events', 'event'), klass: Play, api: @api, half: self)
-          rescue => e
-            binding.pry
+            create_data(@plays_hash, data.dig('events'), klass: Play, api: @api, half: self)
           end
 
           def plays

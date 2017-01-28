@@ -4,7 +4,7 @@ class Sportradar::Api::Basketball::Nba::HierarchyTest < Minitest::Test
 
   def setup
     sr = Sportradar::Api::Basketball::Nba.new
-    VCR.use_cassette("nba/league/hierarchy") do
+    VCR.use_cassette("nba/#{sr.content_format}/league/hierarchy") do
       @hierarchy = sr.league_hierarchy
     end
   end

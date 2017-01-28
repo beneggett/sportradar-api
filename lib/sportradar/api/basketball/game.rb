@@ -82,8 +82,8 @@ module Sportradar
           # via pbp
           @status       = data['status']                if data['status']
           @coverage     = data['coverage']              if data['coverage']
-          @home_id      = data['home_team']             if data['home_team'] # GUID
-          @away_id      = data['away_team']             if data['away_team'] # GUID
+          @home_id      = data['home_team'] || data.dig('home', 'id')   if data['home_team'] || data.dig('home', 'id')
+          @away_id      = data['away_team'] || data.dig('away', 'id')   if data['away_team'] || data.dig('away', 'id')
           @home_points  = data['home_points'].to_i      if data['home_points']
           @away_points  = data['away_points'].to_i      if data['away_points']
 
@@ -209,11 +209,16 @@ module Sportradar
         end
 
         def ingest_box(api_resp)
-          data = api_resp['game']
+          data = api_resp
           update(data, source: :box)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)
           data
+        end
+
+        def queue_pbp
+          url, headers, options, timeout = api.get_request_info(path_pbp)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: :ingest_pbp}
         end
 
         def get_pbp
@@ -222,11 +227,12 @@ module Sportradar
         end
 
         def ingest_pbp(api_resp)
-          data = api_resp['game']
+          data = api_resp
+          period_name = 'periods'
           update(data, source: :pbp)
           period_data = if data[period_name]
-            @period = data[period_name].first.to_i
-            pers = data[period_name][1..-1]
+            @period = data[period_name].last['sequence'].to_i
+            pers = data[period_name]
             pers.is_a?(Array) && (pers.size == 1) ? pers[0] : pers
           else
             @period = nil
@@ -248,7 +254,7 @@ module Sportradar
         end
 
         def ingest_summary(api_resp)
-          data = api_resp['game']
+          data = api_resp
           update(data, source: :summary)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)

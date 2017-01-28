@@ -12,11 +12,11 @@ module Sportradar
             # @response = data
             @api      = opts[:api]
 
-            @id = data["id"]
-            @name = data["name"]
-            @alias = data["alias"]
+            @id    = data.dig('league', 'id')
+            @name  = data.dig('league', 'name')
+            @alias = data.dig('league', 'alias')
 
-            @divisions_hash = create_data({}, data['division'], klass: Division, hierarchy: self, api: @api)
+            @divisions_hash = create_data({}, data['divisions'], klass: Division, hierarchy: self, api: @api)
           end
           def divisions
             @divisions_hash.values
@@ -48,9 +48,9 @@ __END__
 
 st = sr.standings;
 
+st = sr.standings;
 sr = Sportradar::Api::Basketball::Ncaamb.new;
 lh = sr.hierarchy;
-st = sr.standings;
 div = lh.division('D1');
 div.teams.count
 div.conferences.count

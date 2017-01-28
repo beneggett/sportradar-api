@@ -1,0 +1,159 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-t3/games/2017/1/20/schedule.json?api_key=<NBA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 28 Jan 2017 00:44:13 GMT
+      Etag:
+      - '"62d22f7578b270dd0291dd9b598cea5b"'
+      Last-Modified:
+      - Sat, 28 Jan 2017 00:27:39 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-118.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '20593'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '5318'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"date":"2017-01-20","league":{"id":"4353138d-4c22-4396-95d8-5f587d2df25c","name":"NBA","alias":"NBA"},"games":[{"id":"3700bb52-50f0-4929-b6b0-ae0b3cbad019","status":"closed","coverage":"full","scheduled":"2017-01-21T00:00:00+00:00","home_points":113,"away_points":78,"venue":{"id":"a380f011-6e5d-5430-9f37-209e1e8a9b6f","name":"Spectrum
+        Center","capacity":19077,"address":"330 E. Trade St.","city":"Charlotte","state":"NC","zip":"28202","country":"USA"},"broadcast":{"network":"FS-SE","satellite":"649-1"},"home":{"name":"Charlotte
+        Hornets","alias":"CHA","id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"5dd51aab-9294-4750-b59b-6bb85192d58f","status":"closed","coverage":"full","scheduled":"2017-01-21T00:00:00+00:00","home_points":93,"away_points":92,"venue":{"id":"b3dca541-859e-5301-bf90-4ec677a514a9","name":"Wells
+        Fargo Center","capacity":20328,"address":"3601 S. Broad St.","city":"Philadelphia","state":"PA","zip":"19148","country":"USA"},"broadcast":{"network":"CSN-PH"},"home":{"name":"Philadelphia
+        76ers","alias":"PHI","id":"583ec87d-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"c98c5921-28e5-4c34-9c85-e2298815ca58","status":"closed","coverage":"full","scheduled":"2017-01-21T00:00:00+00:00","home_points":112,"away_points":96,"venue":{"id":"aecd8da6-0404-599c-a792-4b33fb084a2a","name":"Amway
+        Center","capacity":18846,"address":"400 W. Church St.","city":"Orlando","state":"FL","zip":"32801","country":"USA"},"broadcast":{"network":"FS-FL","satellite":"654"},"home":{"name":"Orlando
+        Magic","alias":"ORL","id":"583ed157-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Milwaukee
+        Bucks","alias":"MIL","id":"583ecefd-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"000e7d9f-7fa0-4273-a419-e02a95cd6101","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":107,"away_points":91,"venue":{"id":"7657c204-a20b-527a-99cb-dc29218462aa","name":"FedExForum","capacity":18119,"address":"191
+        Beale St","city":"Memphis","state":"TN","zip":"38103","country":"USA"},"broadcast":{"network":"FS-SE","satellite":"649-2"},"home":{"name":"Memphis
+        Grizzlies","alias":"MEM","id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Sacramento
+        Kings","alias":"SAC","id":"583ed0ac-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"0fbfdfc6-663c-4821-a420-bb0a5b603f91","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":108,"away_points":125,"venue":{"id":"5b239206-57ce-50aa-baaa-627f3349dfdc","name":"Toyota
+        Center","capacity":18055,"address":"1510 Polk St.","city":"Houston","state":"TX","zip":"77002","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206"},"home":{"name":"Houston
+        Rockets","alias":"HOU","id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"80c434e9-b078-4a43-a80a-32b799cc3068","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":102,"away_points":93,"venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"FS-SE","satellite":"649"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Chicago
+        Bulls","alias":"CHI","id":"583ec5fd-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"b080c1a9-6fd1-4bac-a9a5-134c27d43b59","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":114,"away_points":143,"venue":{"id":"6ec47e31-f778-5319-b6c4-3254e076ba0e","name":"Smoothie
+        King Center","capacity":16867,"address":"1501 Girod St.","city":"New Orleans","state":"LA","zip":"70113","country":"USA"},"broadcast":{"network":"FS-NO","satellite":"676-4"},"home":{"name":"New
+        Orleans Pelicans","alias":"NOP","id":"583ecc9a-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Brooklyn
+        Nets","alias":"BKN","id":"583ec9d6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"dadea943-ccfb-4d50-944b-423ae67089d8","status":"closed","coverage":"full","scheduled":"2017-01-21T01:30:00+00:00","home_points":107,"away_points":112,"venue":{"id":"401ba62f-19b5-5bfc-84d6-021772943311","name":"American
+        Airlines Center","capacity":19200,"address":"2500 Victory Ave.","city":"Dallas","state":"TX","zip":"75219","country":"USA"},"broadcast":{"network":"FS-SW","satellite":"676"},"home":{"name":"Dallas
+        Mavericks","alias":"DAL","id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Utah
+        Jazz","alias":"UTA","id":"583ece50-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"7f54d2b6-00e4-4209-bd07-77e07f1d1eb8","status":"closed","coverage":"full","scheduled":"2017-01-21T03:30:00+00:00","home_points":108,"away_points":95,"venue":{"id":"792ec100-691e-5e16-8ef8-79b2b6ee38ba","name":"Staples
+        Center","capacity":19060,"address":"1111 S. Figueroa St.","city":"Los Angeles","state":"CA","zip":"90015","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206"},"home":{"name":"Los
+        Angeles Lakers","alias":"LAL","id":"583ecae2-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Indiana
+        Pacers","alias":"IND","id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"}}]}'
+    http_version: 
+  recorded_at: Sat, 28 Jan 2017 00:44:12 GMT
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-p3/games/2017/1/20/schedule.json?api_key=nexfrwh853qqh45grhfcs2fe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 28 Jan 2017 01:54:37 GMT
+      Etag:
+      - '"62d22f7578b270dd0291dd9b598cea5b"'
+      Last-Modified:
+      - Sat, 28 Jan 2017 01:11:39 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-127.mashery.com
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '910000'
+      X-Plan-Quota-Current:
+      - '324304'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '5318'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"date":"2017-01-20","league":{"id":"4353138d-4c22-4396-95d8-5f587d2df25c","name":"NBA","alias":"NBA"},"games":[{"id":"3700bb52-50f0-4929-b6b0-ae0b3cbad019","status":"closed","coverage":"full","scheduled":"2017-01-21T00:00:00+00:00","home_points":113,"away_points":78,"venue":{"id":"a380f011-6e5d-5430-9f37-209e1e8a9b6f","name":"Spectrum
+        Center","capacity":19077,"address":"330 E. Trade St.","city":"Charlotte","state":"NC","zip":"28202","country":"USA"},"broadcast":{"network":"FS-SE","satellite":"649-1"},"home":{"name":"Charlotte
+        Hornets","alias":"CHA","id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"5dd51aab-9294-4750-b59b-6bb85192d58f","status":"closed","coverage":"full","scheduled":"2017-01-21T00:00:00+00:00","home_points":93,"away_points":92,"venue":{"id":"b3dca541-859e-5301-bf90-4ec677a514a9","name":"Wells
+        Fargo Center","capacity":20328,"address":"3601 S. Broad St.","city":"Philadelphia","state":"PA","zip":"19148","country":"USA"},"broadcast":{"network":"CSN-PH"},"home":{"name":"Philadelphia
+        76ers","alias":"PHI","id":"583ec87d-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"c98c5921-28e5-4c34-9c85-e2298815ca58","status":"closed","coverage":"full","scheduled":"2017-01-21T00:00:00+00:00","home_points":112,"away_points":96,"venue":{"id":"aecd8da6-0404-599c-a792-4b33fb084a2a","name":"Amway
+        Center","capacity":18846,"address":"400 W. Church St.","city":"Orlando","state":"FL","zip":"32801","country":"USA"},"broadcast":{"network":"FS-FL","satellite":"654"},"home":{"name":"Orlando
+        Magic","alias":"ORL","id":"583ed157-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Milwaukee
+        Bucks","alias":"MIL","id":"583ecefd-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"000e7d9f-7fa0-4273-a419-e02a95cd6101","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":107,"away_points":91,"venue":{"id":"7657c204-a20b-527a-99cb-dc29218462aa","name":"FedExForum","capacity":18119,"address":"191
+        Beale St","city":"Memphis","state":"TN","zip":"38103","country":"USA"},"broadcast":{"network":"FS-SE","satellite":"649-2"},"home":{"name":"Memphis
+        Grizzlies","alias":"MEM","id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Sacramento
+        Kings","alias":"SAC","id":"583ed0ac-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"0fbfdfc6-663c-4821-a420-bb0a5b603f91","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":108,"away_points":125,"venue":{"id":"5b239206-57ce-50aa-baaa-627f3349dfdc","name":"Toyota
+        Center","capacity":18055,"address":"1510 Polk St.","city":"Houston","state":"TX","zip":"77002","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206"},"home":{"name":"Houston
+        Rockets","alias":"HOU","id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"80c434e9-b078-4a43-a80a-32b799cc3068","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":102,"away_points":93,"venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"FS-SE","satellite":"649"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Chicago
+        Bulls","alias":"CHI","id":"583ec5fd-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"b080c1a9-6fd1-4bac-a9a5-134c27d43b59","status":"closed","coverage":"full","scheduled":"2017-01-21T01:00:00+00:00","home_points":114,"away_points":143,"venue":{"id":"6ec47e31-f778-5319-b6c4-3254e076ba0e","name":"Smoothie
+        King Center","capacity":16867,"address":"1501 Girod St.","city":"New Orleans","state":"LA","zip":"70113","country":"USA"},"broadcast":{"network":"FS-NO","satellite":"676-4"},"home":{"name":"New
+        Orleans Pelicans","alias":"NOP","id":"583ecc9a-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Brooklyn
+        Nets","alias":"BKN","id":"583ec9d6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"dadea943-ccfb-4d50-944b-423ae67089d8","status":"closed","coverage":"full","scheduled":"2017-01-21T01:30:00+00:00","home_points":107,"away_points":112,"venue":{"id":"401ba62f-19b5-5bfc-84d6-021772943311","name":"American
+        Airlines Center","capacity":19200,"address":"2500 Victory Ave.","city":"Dallas","state":"TX","zip":"75219","country":"USA"},"broadcast":{"network":"FS-SW","satellite":"676"},"home":{"name":"Dallas
+        Mavericks","alias":"DAL","id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Utah
+        Jazz","alias":"UTA","id":"583ece50-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"7f54d2b6-00e4-4209-bd07-77e07f1d1eb8","status":"closed","coverage":"full","scheduled":"2017-01-21T03:30:00+00:00","home_points":108,"away_points":95,"venue":{"id":"792ec100-691e-5e16-8ef8-79b2b6ee38ba","name":"Staples
+        Center","capacity":19060,"address":"1111 S. Figueroa St.","city":"Los Angeles","state":"CA","zip":"90015","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206"},"home":{"name":"Los
+        Angeles Lakers","alias":"LAL","id":"583ecae2-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Indiana
+        Pacers","alias":"IND","id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"}}]}'
+    http_version: 
+  recorded_at: Sat, 28 Jan 2017 01:54:36 GMT
+recorded_with: VCR 3.0.3
