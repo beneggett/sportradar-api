@@ -218,7 +218,7 @@ module Sportradar
 
         def queue_pbp
           url, headers, options, timeout = api.get_request_info(path_pbp)
-          {url: url, headers: headers, params: options, timeout: timeout, callback: :ingest_pbp}
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_pbp)}
         end
 
         def get_pbp
