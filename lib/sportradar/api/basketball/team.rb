@@ -101,12 +101,18 @@ module Sportradar
 
         def get_roster
           data = api.get_data(path_roster)
+          ingest_roster(data)
+        end
+        def ingest_roster(data)
           update(data)
           data
         end
 
         def get_season_stats
           data = api.get_data(path_season_stats)
+          ingest_season_stats(data)
+        end
+        def ingest_season_stats(data)
           parse_season_stats(data)
         end
 

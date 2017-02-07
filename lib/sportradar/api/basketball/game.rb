@@ -149,7 +149,7 @@ module Sportradar
 
         # tracking updates
         def remember(key, object)
-          @updates[key] = object
+          @updates[key] = object&.dup
         end
         def not_updated?(key, object)
           @updates[key] == object
@@ -204,28 +204,31 @@ module Sportradar
         end
 
         def get_box
-          api_resp = api.get_data(path_box)
-          ingest_box(api_resp)
+          data = api.get_data(path_box)
+          ingest_box(data)
         end
 
-        def ingest_box(api_resp)
-          data = api_resp
+        def ingest_box(data)
           update(data, source: :box)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)
           data
         end
 
-        def get_pbp
-          api_resp = api.get_data(path_pbp)
-          ingest_pbp(api_resp)
+        def queue_pbp
+          url, headers, options, timeout = api.get_request_info(path_pbp)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_pbp)}
         end
 
-        def ingest_pbp(api_resp)
-          data = api_resp
+        def get_pbp
+          data = api.get_data(path_pbp)
+          ingest_pbp(data)
+        end
+
+        def ingest_pbp(data)
           period_name = 'periods'
           update(data, source: :pbp)
-          period_data = if data[period_name]
+          period_data = if data[period_name] && !data[period_name].empty?
             @period = data[period_name].last['sequence'].to_i
             pers = data[period_name]
             pers.is_a?(Array) && (pers.size == 1) ? pers[0] : pers
@@ -240,19 +243,25 @@ module Sportradar
           set_pbp(period_data)
           @pbp = @periods_hash.values
           check_newness(:pbp, plays.last)
+          check_newness(:score, @score)
           data
         end
 
         def get_summary
-          api_resp = api.get_data(path_summary)
-          ingest_summary(api_resp)
+          data = api.get_data(path_summary)
+          ingest_summary(data)
         end
 
-        def ingest_summary(api_resp)
-          data = api_resp
+        def queue_summary
+          url, headers, options, timeout = api.get_request_info(path_summary)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_summary)}
+        end
+
+        def ingest_summary(data)
           update(data, source: :summary)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)
+          check_newness(:score, @score)
           data
         end
 

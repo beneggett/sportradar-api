@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Play
         class Base < Data
-          attr_accessor :response, :id, :clock, :event_type, :description, :statistics, :score, :team_id, :player_id, :quarter, :half, :updated, :location, :possession, :on_court, :game_seconds
+          attr_accessor :response, :id, :clock, :event_type, :description, :statistics, :score, :team_id, :player_id, :quarter, :half, :updated, :location, :possession, :on_court, :game_seconds, :identifier
           alias :type :event_type
 
           def initialize(data, **opts)
@@ -95,9 +95,11 @@ module Sportradar
           def handle_time(data, **opts)
             @game_seconds = if opts[:quarter]
               @quarter  = opts[:quarter].sequence.to_i rescue opts[:quarter].to_i
+              @identifier = "#{quarter}_#{(720 - clock_seconds).to_s.rjust(3, '0')}".to_i
               nba_game_seconds
             elsif opts[:half]
               @half  = opts[:half].sequence.to_i rescue opts[:half].to_i
+              @identifier = "#{quarter}_#{(1200 - clock_seconds).to_s.rjust(3, '0')}".to_i
               ncaa_game_seconds
             end
           end

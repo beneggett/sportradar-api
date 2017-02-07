@@ -68,9 +68,11 @@ module Sportradar
           id = data.dig('home', 'id')
           # binding.pry if id
           da = data.dig('home', 'scoring')
+          return {} unless da
           da.each { |h| h[id] = h.delete('points').to_i }
           id = data.dig('away', 'id')
           db = data.dig('away', 'scoring')
+          return {} unless db
           db.each { |h| h[id] = h.delete('points').to_i }
           da.zip(db).map{ |a, b| [a['sequence'].to_i, a.merge(b)] }.sort{ |(a,_), (b,_)| a <=> b }.to_h
         end
