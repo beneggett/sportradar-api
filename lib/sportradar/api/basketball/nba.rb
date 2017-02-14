@@ -37,6 +37,7 @@ module Sportradar
             response
           end
         end
+        alias :hierarchy :league_hierarchy
 
         def standings(season_year = default_year, nba_season = default_season)
           response = get request_url("seasontd/#{season_year}/#{nba_season}/standings")

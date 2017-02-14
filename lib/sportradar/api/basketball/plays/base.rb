@@ -99,7 +99,7 @@ module Sportradar
               nba_game_seconds
             elsif opts[:half]
               @half  = opts[:half].sequence.to_i rescue opts[:half].to_i
-              @identifier = "#{quarter}_#{(1200 - clock_seconds).to_s.rjust(3, '0')}".to_i
+              @identifier = "#{half}_#{(1200 - clock_seconds).to_s.rjust(4, '0')}".to_i
               ncaa_game_seconds
             end
           end
