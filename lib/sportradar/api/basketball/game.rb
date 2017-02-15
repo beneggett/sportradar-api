@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Basketball
       class Game < Data
-        attr_accessor :response, :id, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :team_stats, :player_stats, :changes, :media_timeouts
+        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :team_stats, :player_stats, :changes, :media_timeouts
 
         attr_accessor :period
         @all_hash = {}
@@ -80,6 +80,7 @@ module Sportradar
 
         def update(data, source: nil, **opts)
           # via pbp
+          @title        = data['title']                 if data['title']
           @status       = data['status']                if data['status']
           @coverage     = data['coverage']              if data['coverage']
           @home_id      = data['home_team'] || data.dig('home', 'id')   if data['home_team'] || data.dig('home', 'id')
@@ -197,11 +198,6 @@ module Sportradar
         end
 
         # data retrieval
-        def sync
-          g.get_pbp
-          g.get_box
-          g.get_summary if finished?
-        end
 
         def get_box
           data = api.get_data(path_box)

@@ -10,9 +10,9 @@ module Sportradar
           @access_level = access_level
         end
 
-        def schedule(season_year = default_year, ncaa_season = default_season)
-          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? ncaa_season
-          response = get request_url("games/#{season_year}/#{ncaa_season}/schedule")
+        def schedule(season_year = default_year, ncaamb_season = default_season)
+          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? ncaamb_season
+          response = get request_url("games/#{season_year}/#{ncaamb_season}/schedule")
           if response.success?
             Sportradar::Api::Basketball::Ncaamb::Season.new(response.to_h, api: self)
           else
@@ -29,6 +29,16 @@ module Sportradar
           end
         end
 
+        def rankings(poll_name, ncaamb_week = nil, season_year = default_year)
+          # response = get request_url("polls/#{poll_name}/#{season_year}/rankings")
+          response = get request_url("polls/#{poll_name}/#{season_year}/#{ncaamb_week}/rankings")
+          if response.success?
+            Sportradar::Api::Poll.new(response.to_h)
+          else
+            @error = response
+          end
+        end
+
         def hierarchy
           response = get request_url("league/hierarchy")
           if response.success?
@@ -38,8 +48,8 @@ module Sportradar
           end
         end
 
-        def standings(season_year = default_year, ncaa_season = default_season)
-          response = get request_url("seasontd/#{season_year}/#{ncaa_season}/standings")
+        def standings(season_year = default_year, ncaamb_season = default_season)
+          response = get request_url("seasontd/#{season_year}/#{ncaamb_season}/standings")
           if response.success?
             Sportradar::Api::Basketball::Ncaamb::Division.new(response.to_h, api: self)
           else
@@ -104,7 +114,7 @@ module Sportradar
         end
 
         def allowed_seasons
-          ["pre", "reg", "pst"]
+          ["pre", "reg", 'ct', "pst"]
         end
 
       end

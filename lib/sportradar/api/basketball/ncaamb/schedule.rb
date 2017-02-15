@@ -15,7 +15,7 @@ module Sportradar
             @date     = data['date']
 
             @games_hash = {}
-            update_games(data['games'])
+            update_games(data['games']) if data['games']
           end
 
           def games
