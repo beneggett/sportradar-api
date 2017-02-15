@@ -8,6 +8,7 @@ require "sportradar/api/config"
 require "sportradar/api/data"
 require "sportradar/api/error"
 require "sportradar/api/request"
+require "sportradar/api/poll"
 
 require "sportradar/api/soccer"
 require "sportradar/api/soccer/boxscore"

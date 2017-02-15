@@ -6,8 +6,8 @@ class Sportradar::Api::Basketball::Nba::GameSummaryTest < Minitest::Test
     # ESPN boxscore: http://www.espn.com/nba/boxscore?gameId=400900063
     @attrs = { "id" => "3700bb52-50f0-4929-b6b0-ae0b3cbad019" }
     @game = Sportradar::Api::Basketball::Nba::Game.new(@attrs)
-    VCR.use_cassette("nba/game/summary_regulation") do
-      @game.get_summary
+    VCR.use_cassette("nba/#{@game.api.content_format}/game/summary_regulation") do
+      data = @game.get_summary
       @home_id = @game.home_id
       @away_id = @game.away_id
     end
@@ -61,7 +61,7 @@ class Sportradar::Api::Basketball::Nba::GameSummaryTest < Minitest::Test
     assert_equal 24, @game.team_stats.dig(@home_id, 'assists').to_i
     assert_equal 7, @game.team_stats.dig(@away_id, 'steals').to_i
     assert_equal 9, @game.team_stats.dig(@home_id, 'steals').to_i
-    assert_equal 6, @game.team_stats.dig(@away_id, 'blocks').to_i
+    assert_equal 5, @game.team_stats.dig(@away_id, 'blocks').to_i
     assert_equal 4, @game.team_stats.dig(@home_id, 'blocks').to_i
     assert_equal 12, @game.team_stats.dig(@away_id, 'turnovers').to_i
     assert_equal 14, @game.team_stats.dig(@home_id, 'turnovers').to_i

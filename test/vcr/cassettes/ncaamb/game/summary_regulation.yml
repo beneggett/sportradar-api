@@ -1,0 +1,172 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/ncaamb-t3/games/29111b80-992d-4e32-a88d-220fb4bd3121/summary.xml?api_key=<NCAAMB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 26 Jan 2017 05:27:15 GMT
+      Etag:
+      - '"d259453cd437da4d97f32aff38482cb2"'
+      Last-Modified:
+      - Sun, 22 Jan 2017 00:37:06 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-115.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '106'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '25803'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml-stylesheet type="text/xsl" charset="UTF-8" href="/xslt/basketball/summary-v2.0.xsl"?>
+        <!-- Generation started @ 2017-01-22 00:37:03 +0000 -->
+        <game xmlns="http://feed.elasticstats.com/schema/basketball/game-v2.0.xsd" id="29111b80-992d-4e32-a88d-220fb4bd3121" status="closed" coverage="full" neutral_site="false" home_team="ec0d6b67-4b16-4b50-92b2-1a651dae6b0f" away_team="9b166a3f-e64b-4825-bb6b-92c6f0418263" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" attendance="13659" lead_changes="6" times_tied="5" possession_arrow="9b166a3f-e64b-4825-bb6b-92c6f0418263" clock="00:00" half="2">
+          <venue id="e7547c99-c087-4245-b039-19dc1f8df1b0" name="Pauley Pavilion" capacity="13800" address="301 Westwood Plaza" city="Los Angeles" state="CA" zip="90095" country="USA"/>
+          <team name="Bruins" market="UCLA" id="ec0d6b67-4b16-4b50-92b2-1a651dae6b0f" points="85" rank="3" bonus="true" remaining_timeouts="1" home="true">
+            <scoring>
+              <half number="1" sequence="1" points="37"/>
+              <half number="2" sequence="2" points="48"/>
+            </scoring>
+            <statistics minutes="3:20:00" field_goals_made="32" field_goals_att="71" field_goals_pct="45.1" three_points_made="10" three_points_att="31" three_points_pct="32.3" two_points_made="22" two_points_att="40" two_points_pct="55.0" blocked_att="1" free_throws_made="11" free_throws_att="14" free_throws_pct="78.6" offensive_rebounds="9" defensive_rebounds="22" rebounds="31" assists="18" turnovers="6" steals="4" blocks="6" assists_turnover_ratio="3.0" personal_fouls="19" ejections="0" foulouts="0" points="85" fast_break_pts="8" paint_pts="32" second_chance_pts="24" team_turnovers="0" points_off_turnovers="13" team_rebounds="2" flagrant_fouls="0" player_tech_fouls="0" team_tech_fouls="0" coach_tech_fouls="0"/>
+            <players>
+              <player full_name="Alex Olesinski" first_name="Alex" last_name="Olesinski" position="F" primary_position="NA" jersey_number="0" id="12772d83-c1c7-4deb-9536-90fa3f381229" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Ike Anigbogu" first_name="Ike" last_name="Anigbogu" position="F-C" primary_position="NA" jersey_number="13" id="a06d5925-b0be-40f8-bd93-218e736c6528" played="true" active="true">
+                <statistics minutes="12:00" field_goals_made="1" field_goals_att="2" field_goals_pct="50.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="1" two_points_att="2" two_points_pct="50.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="2" rebounds="2" assists="0" turnovers="0" steals="0" blocks="1" assists_turnover_ratio="0" personal_fouls="2" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="2"/>
+              </player>
+              <player full_name="TJ Leaf" first_name="TJ" last_name="Leaf" position="F" primary_position="NA" jersey_number="22" id="0af749be-c626-49f5-a558-aec6141a3421" played="true" active="true" starter="true">
+                <statistics minutes="31:00" field_goals_made="5" field_goals_att="10" field_goals_pct="50.0" three_points_made="0" three_points_att="2" three_points_pct="0.0" two_points_made="5" two_points_att="8" two_points_pct="62.5" blocked_att="0" free_throws_made="2" free_throws_att="2" free_throws_pct="100.0" offensive_rebounds="1" defensive_rebounds="2" rebounds="3" assists="0" turnovers="1" steals="0" blocks="2" assists_turnover_ratio="0.0" personal_fouls="4" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="12"/>
+              </player>
+              <player full_name="Isaac Hamilton" first_name="Isaac" last_name="Hamilton" position="G" primary_position="NA" jersey_number="10" id="72e82efb-6957-4635-86c5-3186d11b631d" played="true" active="true" starter="true">
+                <statistics minutes="32:00" field_goals_made="5" field_goals_att="15" field_goals_pct="33.3" three_points_made="1" three_points_att="5" three_points_pct="20.0" two_points_made="4" two_points_att="10" two_points_pct="40.0" blocked_att="0" free_throws_made="3" free_throws_att="3" free_throws_pct="100.0" offensive_rebounds="2" defensive_rebounds="2" rebounds="4" assists="4" turnovers="2" steals="0" blocks="0" assists_turnover_ratio="2.0" personal_fouls="4" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="14"/>
+              </player>
+              <player full_name="Lonzo Ball" first_name="Lonzo" last_name="Ball" position="G" primary_position="NA" jersey_number="2" id="77364461-f596-4b6f-ab3e-f1acd3d0174c" played="true" active="true" starter="true">
+                <statistics minutes="37:00" field_goals_made="10" field_goals_att="15" field_goals_pct="66.7" three_points_made="4" three_points_att="8" three_points_pct="50.0" two_points_made="6" two_points_att="7" two_points_pct="85.714" blocked_att="0" free_throws_made="0" free_throws_att="1" free_throws_pct="0.0" offensive_rebounds="1" defensive_rebounds="5" rebounds="6" assists="8" turnovers="1" steals="2" blocks="1" assists_turnover_ratio="8.0" personal_fouls="3" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="24"/>
+              </player>
+              <player full_name="Thomas Welsh" first_name="Thomas" last_name="Welsh" position="C" primary_position="NA" jersey_number="40" id="8fa22eed-c8eb-477b-93ff-b9afb78b7267" played="true" active="true" starter="true">
+                <statistics minutes="25:00" field_goals_made="2" field_goals_att="7" field_goals_pct="28.6" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="2" two_points_att="7" two_points_pct="28.571" blocked_att="0" free_throws_made="2" free_throws_att="2" free_throws_pct="100.0" offensive_rebounds="4" defensive_rebounds="5" rebounds="9" assists="3" turnovers="0" steals="2" blocks="2" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="6"/>
+              </player>
+              <player full_name="Bryce Alford" first_name="Bryce" last_name="Alford" position="G" primary_position="NA" jersey_number="20" id="f25ddbd6-daea-4127-8665-2aba9a85323c" played="true" active="true" starter="true">
+                <statistics minutes="33:00" field_goals_made="5" field_goals_att="12" field_goals_pct="41.7" three_points_made="4" three_points_att="10" three_points_pct="40.0" two_points_made="1" two_points_att="2" two_points_pct="50.0" blocked_att="1" free_throws_made="1" free_throws_att="2" free_throws_pct="50.0" offensive_rebounds="1" defensive_rebounds="2" rebounds="3" assists="1" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="3" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="15"/>
+              </player>
+              <player full_name="Aaron Holiday" first_name="Aaron" last_name="Holiday" position="G" primary_position="NA" jersey_number="3" id="fce62d36-256c-4bb5-8952-edef8c9a925e" played="true" active="true">
+                <statistics minutes="23:00" field_goals_made="3" field_goals_att="7" field_goals_pct="42.9" three_points_made="1" three_points_att="4" three_points_pct="25.0" two_points_made="2" two_points_att="3" two_points_pct="66.667" blocked_att="0" free_throws_made="3" free_throws_att="4" free_throws_pct="75.0" offensive_rebounds="0" defensive_rebounds="4" rebounds="4" assists="2" turnovers="2" steals="0" blocks="0" assists_turnover_ratio="1.0" personal_fouls="3" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="10"/>
+              </player>
+              <player full_name="Alec Wulff" first_name="Alec" last_name="Wulff" position="G" primary_position="NA" jersey_number="21" id="8cf14d2b-b7af-4268-88d1-eb335fa56106" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Prince Ali" first_name="Prince" last_name="Ali" position="G" primary_position="NA" jersey_number="23" id="99dcd079-b933-44f3-9bdf-1325692a29a5" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Gyorgy Goloman" first_name="Gyorgy" last_name="Goloman" position="F" primary_position="NA" jersey_number="14" id="9b6b49e6-241f-4a42-acef-22f617bc056b" played="true" active="true">
+                <statistics minutes="7:00" field_goals_made="1" field_goals_att="3" field_goals_pct="33.3" three_points_made="0" three_points_att="2" three_points_pct="0.0" two_points_made="1" two_points_att="1" two_points_pct="100.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="2"/>
+              </player>
+              <player full_name="Ikenna Okwarabizie" first_name="Ikenna" last_name="Okwarabizie" position="C" primary_position="NA" jersey_number="34" id="991ed990-c92b-4a1e-bfee-535d0e9dc756" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Isaac Wulff" first_name="Isaac" last_name="Wulff" position="G" primary_position="NA" jersey_number="4" id="f9ca3c20-c3fe-4cb8-98df-ac4234b3980f" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Jerrold Smith" first_name="Jerrold" last_name="Smith" position="G" primary_position="NA" jersey_number="15" id="ee6bd90c-aecd-4f95-a6b9-21ad4eafefce" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Armani Dodson" first_name="Armani" last_name="Dodson" position="G" primary_position="NA" jersey_number="5" id="b461f326-a12e-4ed8-9c51-291dc5991f80" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+            </players>
+          </team>
+          <team name="Wildcats" market="Arizona" id="9b166a3f-e64b-4825-bb6b-92c6f0418263" points="96" rank="14" double_bonus="true" remaining_timeouts="1">
+            <scoring>
+              <half number="1" sequence="1" points="48"/>
+              <half number="2" sequence="2" points="48"/>
+            </scoring>
+            <statistics minutes="3:20:00" field_goals_made="34" field_goals_att="68" field_goals_pct="50.0" three_points_made="9" three_points_att="20" three_points_pct="45.0" two_points_made="25" two_points_att="48" two_points_pct="52.083" blocked_att="6" free_throws_made="19" free_throws_att="21" free_throws_pct="90.5" offensive_rebounds="9" defensive_rebounds="28" rebounds="37" assists="15" turnovers="7" steals="4" blocks="1" assists_turnover_ratio="2.14" personal_fouls="16" ejections="0" foulouts="0" points="96" fast_break_pts="8" paint_pts="34" second_chance_pts="24" team_turnovers="0" points_off_turnovers="12" team_rebounds="5" flagrant_fouls="0" player_tech_fouls="1" team_tech_fouls="0" coach_tech_fouls="0"/>
+            <players>
+              <player full_name="Lauri Markkanen" first_name="Lauri" last_name="Markkanen" position="F" primary_position="NA" jersey_number="10" id="2cd9b23a-c7ed-4f10-864c-d7e9a32283c3" played="true" active="true" starter="true">
+                <statistics minutes="32:00" field_goals_made="6" field_goals_att="10" field_goals_pct="60.0" three_points_made="3" three_points_att="4" three_points_pct="75.0" two_points_made="3" two_points_att="6" two_points_pct="50.0" blocked_att="1" free_throws_made="3" free_throws_att="3" free_throws_pct="100.0" offensive_rebounds="4" defensive_rebounds="3" rebounds="7" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="1" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="18"/>
+              </player>
+              <player full_name="Allonzo Trier" first_name="Allonzo" last_name="Trier" position="G" primary_position="NA" jersey_number="35" id="41f66d58-0602-4e11-b0e6-75814aeaa38e" played="true" active="true">
+                <statistics minutes="27:00" field_goals_made="4" field_goals_att="10" field_goals_pct="40.0" three_points_made="1" three_points_att="4" three_points_pct="25.0" two_points_made="3" two_points_att="6" two_points_pct="50.0" blocked_att="2" free_throws_made="3" free_throws_att="4" free_throws_pct="75.0" offensive_rebounds="0" defensive_rebounds="7" rebounds="7" assists="4" turnovers="1" steals="1" blocks="0" assists_turnover_ratio="4.0" personal_fouls="1" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="12"/>
+              </player>
+              <player full_name="Parker Jackson-Cartwright" first_name="Parker" last_name="Jackson-Cartwright" position="G" primary_position="NA" jersey_number="0" id="e95987e1-95a0-41d0-965f-53508dc0bdfe" played="true" active="true">
+                <statistics minutes="18:00" field_goals_made="2" field_goals_att="4" field_goals_pct="50.0" three_points_made="2" three_points_att="3" three_points_pct="66.7" two_points_made="0" two_points_att="1" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="2" rebounds="2" assists="4" turnovers="1" steals="1" blocks="0" assists_turnover_ratio="4.0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="6"/>
+              </player>
+              <player full_name="Rawle Alkins" first_name="Rawle" last_name="Alkins" position="G" primary_position="NA" jersey_number="1" id="a09120e4-f7c9-4d07-b5e1-acc66425648c" played="true" active="true" starter="true">
+                <statistics minutes="17:00" field_goals_made="3" field_goals_att="5" field_goals_pct="60.0" three_points_made="1" three_points_att="2" three_points_pct="50.0" two_points_made="2" two_points_att="3" two_points_pct="66.667" blocked_att="0" free_throws_made="3" free_throws_att="4" free_throws_pct="75.0" offensive_rebounds="1" defensive_rebounds="4" rebounds="5" assists="1" turnovers="2" steals="0" blocks="0" assists_turnover_ratio="0.5" personal_fouls="3" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="10"/>
+              </player>
+              <player full_name="Keanu Pinder" first_name="Keanu" last_name="Pinder" position="F" primary_position="NA" jersey_number="25" id="eb33611d-c517-4111-bb23-48dfeafcd21c" played="true" active="true">
+                <statistics minutes="4:00" field_goals_made="0" field_goals_att="1" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="1" two_points_pct="0.0" blocked_att="1" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="2" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Jake Desjardins" first_name="Jake" last_name="Desjardins" position="F" primary_position="NA" jersey_number="55" id="e5d78196-6b67-472e-b78c-bc5e5fb4d5f8" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Paulo Cruz" first_name="Paulo" last_name="Cruz" position="G" primary_position="PG" jersey_number="51" id="00452894-e61a-44fb-aa2a-9345301d29e8" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Talbott Denny" first_name="Talbott" last_name="Denny" position="F" primary_position="NA" jersey_number="20" id="732e48c8-29e5-4e7f-91e0-53021f9f700d" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Kobi Simmons" first_name="Kobi" last_name="Simmons" position="G" primary_position="NA" jersey_number="2" id="0cfead49-485d-44f2-8991-04260ee896ad" played="true" active="true" starter="true">
+                <statistics minutes="33:00" field_goals_made="6" field_goals_att="14" field_goals_pct="42.9" three_points_made="2" three_points_att="5" three_points_pct="40.0" two_points_made="4" two_points_att="9" two_points_pct="44.444" blocked_att="1" free_throws_made="6" free_throws_att="6" free_throws_pct="100.0" offensive_rebounds="1" defensive_rebounds="5" rebounds="6" assists="5" turnovers="1" steals="2" blocks="0" assists_turnover_ratio="5.0" personal_fouls="2" tech_fouls="1" flagrant_fouls="0" pls_min="0" points="20"/>
+              </player>
+              <player full_name="Ray Smith" first_name="Ray" last_name="Smith" position="F" primary_position="NA" jersey_number="24" id="bfcff85e-0f4e-47cb-95cc-1676718076cf" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Kadeem Allen" first_name="Kadeem" last_name="Allen" position="G" primary_position="NA" jersey_number="5" id="f7cbc993-f98b-4ac3-8584-5bd54f8e3cc3" played="true" active="true" starter="true">
+                <statistics minutes="30:00" field_goals_made="4" field_goals_att="10" field_goals_pct="40.0" three_points_made="0" three_points_att="2" three_points_pct="0.0" two_points_made="4" two_points_att="8" two_points_pct="50.0" blocked_att="0" free_throws_made="1" free_throws_att="1" free_throws_pct="100.0" offensive_rebounds="0" defensive_rebounds="2" rebounds="2" assists="1" turnovers="1" steals="0" blocks="1" assists_turnover_ratio="1.0" personal_fouls="2" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="9"/>
+              </player>
+              <player full_name="Dylan Smith" first_name="Dylan" last_name="Smith" position="G" primary_position="NA" jersey_number="3" id="04a08754-75e3-4f6c-9909-4c79c3ff5b4c" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Chance Comanche" first_name="Chance" last_name="Comanche" position="C" primary_position="NA" jersey_number="21" id="74dde036-a80a-45c0-9871-b9329cb27983" played="true" active="true">
+                <statistics minutes="17:00" field_goals_made="5" field_goals_att="6" field_goals_pct="83.3" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="5" two_points_att="6" two_points_pct="83.333" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="1" rebounds="1" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="4" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="10"/>
+              </player>
+              <player full_name="Kory Jones" first_name="Kory" last_name="Jones" position="G" primary_position="NA" jersey_number="52" id="18bdc0fd-009d-4b53-b804-9012aa21f626" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+              <player full_name="Dusan Ristic" first_name="Dusan" last_name="Ristic" position="C" primary_position="NA" jersey_number="14" id="7c6fb6b7-e0e7-4a5b-b694-887f9082c3d5" played="true" active="true" starter="true">
+                <statistics minutes="22:00" field_goals_made="4" field_goals_att="8" field_goals_pct="50.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="4" two_points_att="8" two_points_pct="50.0" blocked_att="1" free_throws_made="3" free_throws_att="3" free_throws_pct="100.0" offensive_rebounds="3" defensive_rebounds="4" rebounds="7" assists="0" turnovers="1" steals="0" blocks="0" assists_turnover_ratio="0.0" personal_fouls="1" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="11"/>
+              </player>
+              <player full_name="Tyler Trillo" first_name="Tyler" last_name="Trillo" position="G" primary_position="NA" jersey_number="50" id="4162314b-c723-424f-bd44-5d2d9101e3f7" active="true">
+                <statistics minutes="00:00" field_goals_made="0" field_goals_att="0" field_goals_pct="0.0" three_points_made="0" three_points_att="0" three_points_pct="0.0" two_points_made="0" two_points_att="0" two_points_pct="0.0" blocked_att="0" free_throws_made="0" free_throws_att="0" free_throws_pct="0.0" offensive_rebounds="0" defensive_rebounds="0" rebounds="0" assists="0" turnovers="0" steals="0" blocks="0" assists_turnover_ratio="0" personal_fouls="0" tech_fouls="0" flagrant_fouls="0" pls_min="0" points="0"/>
+              </player>
+            </players>
+          </team>
+        </game>
+        <!-- Generation ended @ 2017-01-22 00:37:04 +0000 -->
+    http_version: 
+  recorded_at: Thu, 26 Jan 2017 05:27:14 GMT
+recorded_with: VCR 3.0.3

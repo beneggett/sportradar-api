@@ -17,14 +17,19 @@ module Sportradar
         # end
         def self.new(data, **opts)
           klass = subclass(data['event_type'])
-          klass.new(data, **opts) rescue nil
+          klass.new(data, **opts)
+        # rescue => e
+        #   binding.pry
         end
         # def self.all
         #   @all_hash.values
         # end
 
         def self.subclass(event_type)
-          {
+          subclasses[event_type]
+        end
+        def self.subclasses
+          @subclasses ||= {
             "opentip"               => OpenTip,
             "twopointmiss"          => TwoPointMiss,
             "rebound"               => Rebound,
@@ -34,6 +39,7 @@ module Sportradar
             "turnover"              => Turnover,
             "personalfoul"          => PersonalFoul,
             "jumpball"              => Jumpball,
+            "deadball"              => Deadball,
             "teamtimeout"           => TeamTimeout,
             "shootingfoul"          => ShootingFoul,
             "freethrowmade"         => FreeThrowMade,
@@ -57,12 +63,12 @@ module Sportradar
             "foul"                  => Foul,
             "shotmade"              => ShotMade,
             "shotmiss"              => ShotMiss,
-          }[event_type]
+          }.freeze
         end
 
-        SHOT_TYPES = %w[driving pullup step back fadeaway putback floating finger roll turnaround reverse alley-oop]
+        # SHOT_TYPES = %w[driving pullup step back fadeaway putback floating finger roll turnaround reverse alley-oop]
 
-        PLAY_TYPES = %w[clearpathfoul defensivethreeseconds delay ejection endperiod flagrantone flagranttwo freethrowmade freethrowmiss jumpball kickball offensivefoul officialtimeout openinbound opentip personalfoul possession rebound review shootingfoul teamtimeout technicalfoul threepointmade threepointmiss turnover tvtimeout twopointmade twopointmiss warning]
+        # PLAY_TYPES = %w[clearpathfoul defensivethreeseconds delay ejection endperiod flagrantone flagranttwo freethrowmade freethrowmiss jumpball kickball offensivefoul officialtimeout openinbound opentip personalfoul possession rebound review shootingfoul teamtimeout technicalfoul threepointmade threepointmiss turnover tvtimeout twopointmade twopointmiss warning]
       end
     end
   end

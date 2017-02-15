@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-t3/games/fdebfa54-dbdb-4992-baa0-729394bd9610/pbp.json?api_key=<NBA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 28 Jan 2017 00:44:02 GMT
+      Etag:
+      - '"015d44b56b2107574bf0a2954ff50f46"'
+      Last-Modified:
+      - Thu, 06 Oct 2016 17:04:20 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-114.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '20590'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '304'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"fdebfa54-dbdb-4992-baa0-729394bd9610","status":"scheduled","coverage":"full","scheduled":"2017-04-13T02:30:00+00:00","home":{"name":"Utah
+        Jazz","alias":"UTA","id":"583ece50-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}}'
+    http_version: 
+  recorded_at: Sat, 28 Jan 2017 00:44:03 GMT
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-p3/games/fdebfa54-dbdb-4992-baa0-729394bd9610/pbp.json?api_key=nexfrwh853qqh45grhfcs2fe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 28 Jan 2017 01:54:47 GMT
+      Etag:
+      - '"015d44b56b2107574bf0a2954ff50f46"'
+      Last-Modified:
+      - Thu, 06 Oct 2016 17:04:20 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-122.mashery.com
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '910000'
+      X-Plan-Quota-Current:
+      - '324318'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '304'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"fdebfa54-dbdb-4992-baa0-729394bd9610","status":"scheduled","coverage":"full","scheduled":"2017-04-13T02:30:00+00:00","home":{"name":"Utah
+        Jazz","alias":"UTA","id":"583ece50-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}}'
+    http_version: 
+  recorded_at: Sat, 28 Jan 2017 01:54:46 GMT
+recorded_with: VCR 3.0.3

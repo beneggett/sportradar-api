@@ -6,9 +6,6 @@ module Sportradar
         def display_type
           'Timeout'
         end
-        def identifier
-          "#{quarter}_#{(720 - clock_seconds).to_s.rjust(3, '0')}".to_i
-        end
         def timeout?
           true
         end

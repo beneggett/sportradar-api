@@ -12,10 +12,11 @@ module Sportradar
             @response = data
             @api      = opts[:api]
 
-            @id = data["id"]
-            @name = data["name"]
-            @alias = data["alias"]
-            @conferences_hash = create_data({}, data['conference'], klass: Conference, hierarchy: self, api: @api)
+            @id = data.dig('league', "id")
+            @name = data.dig('league', "name")
+            @alias = data.dig('league', "alias")
+            @season = Season.new(data['season']) if data['season']
+            @conferences_hash = create_data({}, data['conferences'], klass: Conference, hierarchy: self, api: @api)
           end
           def conferences
             @conferences_hash.values

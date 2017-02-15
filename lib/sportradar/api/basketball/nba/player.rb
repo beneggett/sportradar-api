@@ -55,16 +55,20 @@ module Sportradar
             @primary_position = data['primary_position']  if data['primary_position']  # "C",
             @jersey_number    = data['jersey_number']     if data['jersey_number']     # "31",
             @experience       = data['experience']        if data['experience']        # "3",
-            @college          = data['college']           if data['college']           # "Vanderbilt",
             @birth_place      = data['birth_place'].gsub(',,', ', ')       if data['birth_place']       # "Benin City,, NGA",
-            @birthdate        = data['birthdate']         if data['birthdate']         # "1989-10-21",
             @updated          = data['updated']           if data['updated']           # "2016-07-08T12:11:59+00:00",
+
+# NBA specific below
+
+            @college          = data['college']           if data['college']           # "Vanderbilt",
+            @birthdate        = data['birthdate']         if data['birthdate']         # "1989-10-21",
+
             update_injuries(data)
             update_draft(data)
 
             @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
-            if avgs = data.dig('overall', 'average')
-              @totals = data.dig('overall', 'total')
+            if avgs = data['average']
+              @totals = data['total']
               @averages = avgs.except(:player)
               @team.update_player_stats(self, avgs)
             end

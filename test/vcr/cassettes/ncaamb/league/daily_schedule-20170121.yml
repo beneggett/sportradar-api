@@ -1,0 +1,1131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/ncaamb-t3/games/2017/1/21/schedule.xml?api_key=<NCAAMB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 26 Jan 2017 17:57:15 GMT
+      Etag:
+      - '"423f5afaf3f4c9414b370413fac27d28"'
+      Last-Modified:
+      - Mon, 23 Jan 2017 02:20:04 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-115.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '121'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '105628'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml-stylesheet type="text/xsl" charset="UTF-8" href="/xslt/basketball/schedule-v2.0.xsl"?>
+        <!-- Generation started @ 2017-01-23 02:20:01 +0000 -->
+        <league xmlns="http://feed.elasticstats.com/schema/basketball/schedule-v2.0.xsd" id="cd4268ee-07aa-4c4d-a435-ec44ad2c76cb" name="NCAA MEN" alias="NCAAM">
+          <daily-schedule date="2017-01-21">
+            <games>
+              <game id="bd82a49f-48fd-4138-bc56-ef1f942b9070" status="closed" coverage="full" home_team="b03bb029-4499-4a2c-9074-5071ed360b21" away_team="f8b1bf00-5b73-4ac4-98c0-ec554027ae32" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="65" away_points="64">
+                <venue id="dd352ce9-3282-4d7b-862f-f406eb61aca6" name="Louis Brown Athletic Center" capacity="8000" address="83 Rockafeller Road" city="Piscataway" state="NJ" zip="8854" country="USA"/>
+                <home name="Rutgers Scarlet Knights" alias="RUTG" id="b03bb029-4499-4a2c-9074-5071ed360b21">
+                </home>
+                <away name="Nebraska Cornhuskers" alias="NEB" id="f8b1bf00-5b73-4ac4-98c0-ec554027ae32">
+                </away>
+                <broadcast network="ESPNU" satellite="208" internet="WatchESPN"/>
+              </game>
+              <game id="fb087fa4-6bf3-49ff-b82a-5e1addc91c7c" status="closed" coverage="extended_boxscore" home_team="a0a22502-0d84-440c-84af-1fbb070ad54c" away_team="fe037cba-25d9-42f5-a461-61d7102c17de" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="82" away_points="70">
+                <venue id="8af089c8-7dc5-44a5-917c-fc0bb9040e0c" name="Curb Event Center" capacity="5085" address="2002 Belmont Blvd" city="Nashville" state="TN" zip="37212" country="USA"/>
+                <home name="Belmont Bruins" alias="BEL" id="a0a22502-0d84-440c-84af-1fbb070ad54c">
+                </home>
+                <away name="Tennessee Tech Golden Eagles" alias="TNTC" id="fe037cba-25d9-42f5-a461-61d7102c17de">
+                </away>
+                <broadcast network="ASN"/>
+              </game>
+              <game id="bf14ad4f-2dfb-4771-b6f3-30cf0eacb07f" status="closed" coverage="full" home_team="ef184799-d79b-49d9-a662-991eaf4044cd" away_team="4f4b0771-994c-4126-822d-7525aaa00f65" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="63" away_points="62">
+                <venue id="fb318815-e6ad-4a68-bac1-1e3f64c39f3b" name="Reed Arena" capacity="12989" address="730 Olson Blvd" city="College Station" state="TX" zip="77843" country="USA"/>
+                <home name="Texas A&amp;M Aggies" alias="TXAM" id="ef184799-d79b-49d9-a662-991eaf4044cd">
+                </home>
+                <away name="Georgia Bulldogs" alias="UGA" id="4f4b0771-994c-4126-822d-7525aaa00f65">
+                </away>
+                <broadcast network="ESPN2" satellite="209" internet="WatchESPN"/>
+              </game>
+              <game id="335edf23-5570-4b65-8ed7-bc3c32830515" status="closed" coverage="full" home_team="4b3ff02c-e0ba-435b-a565-6075bc491684" away_team="e9ca48b2-00ba-41c0-a02b-6885a2da1ff1" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="82" away_points="90">
+                <venue id="0ebba23f-cab2-443c-834f-2f47083803ad" name="Silvio O. Conte Forum" capacity="8606" address="2601 Beacon St" city="Chestnut Hill" state="MA" zip="2467" country="USA"/>
+                <home name="Boston College Eagles" alias="BC" id="4b3ff02c-e0ba-435b-a565-6075bc491684">
+                </home>
+                <away name="North Carolina Tar Heels" alias="UNC" id="e9ca48b2-00ba-41c0-a02b-6885a2da1ff1">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="764e651e-a8b8-43ed-ae0c-04a4997eb74c" status="closed" coverage="full" home_team="4383eb6a-7fd8-4ff2-94c5-43c933121e88" away_team="7d3b9c72-cbdd-4b64-9aa3-a5bde9b75fdc" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="78" away_points="68">
+                <venue id="b3dca541-859e-5301-bf90-4ec677a514a9" name="Wells Fargo Center" capacity="20328" address="3601 S. Broad St." city="Philadelphia" state="PA" zip="19148" country="USA"/>
+                <home name="Villanova Wildcats" alias="VILL" id="4383eb6a-7fd8-4ff2-94c5-43c933121e88">
+                </home>
+                <away name="Providence Friars" alias="PROV" id="7d3b9c72-cbdd-4b64-9aa3-a5bde9b75fdc">
+                </away>
+                <broadcast network="FOX"/>
+              </game>
+              <game id="8662bff8-7e57-4403-9790-e0658ee7b156" status="closed" coverage="full" home_team="80962f09-8821-48b6-8cf0-0cf0eea56aa8" away_team="8cd24de1-2be8-4b77-bcfa-47be0495a5f4" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="84" away_points="66">
+                <venue id="9ae1ec22-21b6-4eea-b16a-c8deb0cf612a" name="Purcell Pavilion" capacity="9149" address="113 Joyce Center" city="South Bend" state="IN" zip="46556" country="USA"/>
+                <home name="Notre Dame Fighting Irish" alias="ND" id="80962f09-8821-48b6-8cf0-0cf0eea56aa8">
+                </home>
+                <away name="Syracuse Orange" alias="SYR" id="8cd24de1-2be8-4b77-bcfa-47be0495a5f4">
+                </away>
+                <broadcast network="ESPN" satellite="206" internet="WatchESPN"/>
+              </game>
+              <game id="9a37375c-2cb5-4c66-9d38-fc7d2e38c05b" status="closed" coverage="extended_boxscore" home_team="f2cf9ba2-ac8c-4d92-8e7a-48dd88e8f40b" away_team="a311188e-1259-4fda-b0ea-c47cb52694b1" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="58" away_points="61">
+                <venue id="8f4f3674-e96e-4425-a4eb-a0bb38077f2b" name="Dedmon Center" capacity="3205" address="101 University Drive" city="Radford" state="VA" zip="24141" country="USA"/>
+                <home name="Radford Highlanders" alias="RAD" id="f2cf9ba2-ac8c-4d92-8e7a-48dd88e8f40b">
+                </home>
+                <away name="High Point Panthers" alias="HP" id="a311188e-1259-4fda-b0ea-c47cb52694b1">
+                </away>
+                <broadcast network="ASN"/>
+              </game>
+              <game id="8a01792b-2b23-4b1f-8099-1c216b338621" status="closed" coverage="full" home_team="12d7f888-675b-459f-9099-a38f771d8a95" away_team="4aebd148-8119-4875-954c-66779867989b" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="77" away_points="52">
+                <venue id="9cfb4bc5-e327-4e7a-bc26-ef57336d45b3" name="Mackey Arena" capacity="14846" address="900 John R Wooden Dr" city="West Lafayette" state="IN" zip="47907" country="USA"/>
+                <home name="Purdue Boilermakers" alias="PUR" id="12d7f888-675b-459f-9099-a38f771d8a95">
+                </home>
+                <away name="Penn State Nittany Lions" alias="PSU" id="4aebd148-8119-4875-954c-66779867989b">
+                </away>
+                <broadcast network="BTN" satellite="610"/>
+              </game>
+              <game id="6d94e8e1-f18a-4ae8-a3ab-853aed5f5c13" status="closed" coverage="full" home_team="912f8837-1d81-4ef9-a576-a21f271d4c64" away_team="72971b77-1d35-40b3-bb63-4c5b29f3d22b" scheduled="2017-01-21T17:00:00+00:00" conference_game="true" home_points="66" away_points="68">
+                <venue id="2a1b8d6e-c275-4f77-a5dd-5d0154667a5d" name="Stephen C. O'Connell Center" capacity="11548" address="250 Gale Lemerand Drive" city="Gainesville" state="FL" zip="32611" country="USA"/>
+                <home name="Florida Gators" alias="FLA" id="912f8837-1d81-4ef9-a576-a21f271d4c64">
+                </home>
+                <away name="Vanderbilt Commodores" alias="VAN" id="72971b77-1d35-40b3-bb63-4c5b29f3d22b">
+                </away>
+                <broadcast network="CBS"/>
+              </game>
+              <game id="93fbae9c-f23f-4b28-9c52-51076b08ddab" status="closed" coverage="full" home_team="88104678-e53b-43b3-82f7-efb3a11cedb9" away_team="7888d144-563d-4f84-b99b-d120aecf1fef" scheduled="2017-01-21T17:30:00+00:00" conference_game="true" home_points="68" away_points="71">
+                <venue id="e1276102-db24-4188-9558-f249d69526f5" name="William D. Mullins Center" capacity="9493" address="200 Commonwealth Ave" city="Amherst" state="MA" zip="1003" country="USA"/>
+                <home name="Massachusetts Minutemen" alias="MASS" id="88104678-e53b-43b3-82f7-efb3a11cedb9">
+                </home>
+                <away name="Fordham Rams" alias="FOR" id="7888d144-563d-4f84-b99b-d120aecf1fef">
+                </away>
+                <broadcast network="NBCSN" satellite="220"/>
+              </game>
+              <game id="b01edd11-f17d-493c-9781-2dea2b0ba613" status="closed" coverage="extended_boxscore" home_team="90ec10eb-38a4-4a69-b072-ef71d294933b" away_team="6f676cba-c1f9-45a4-9016-fb408fd525b1" scheduled="2017-01-21T18:00:00+00:00" conference_game="true" home_points="74" away_points="78">
+                <venue id="dbd763f5-27b5-428b-a655-276929ec571f" name="Indiana Farmers Coliseum" capacity="6500" address="1202 E 38th St." city="Indianapolis" state="IN" zip="46205" country="USA"/>
+                <home name="IUPUI Jaguars" alias="IUPU" id="90ec10eb-38a4-4a69-b072-ef71d294933b">
+                </home>
+                <away name="Denver Pioneers" alias="DEN" id="6f676cba-c1f9-45a4-9016-fb408fd525b1">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="5119d904-161e-4f55-9943-9ac24360452b" status="closed" coverage="full" home_team="55af9c69-3675-4b9b-a882-96640b782fff" away_team="2959bd24-7007-41ae-a3a3-abdf26888cfc" scheduled="2017-01-21T18:00:00+00:00" conference_game="true" home_points="67" away_points="79">
+                <venue id="c73ec71f-c7d7-44e2-8742-33dca785ab2f" name="USF Sun Dome" capacity="10411" address="Bull Run Drive" city="Tampa" state="FL" zip="33620" country="USA"/>
+                <home name="South Florida Bulls" alias="USF" id="55af9c69-3675-4b9b-a882-96640b782fff">
+                </home>
+                <away name="Tulsa Golden Hurricane" alias="TLSA" id="2959bd24-7007-41ae-a3a3-abdf26888cfc">
+                </away>
+                <broadcast network="ESPNews" satellite="207"/>
+              </game>
+              <game id="1db7cbfc-c56a-4467-bf1d-20fabb4bd079" status="closed" coverage="extended_boxscore" home_team="6dfaf0ba-47c4-4e05-b0a7-72734747d48f" away_team="3b088563-ca8a-49a6-9e19-5e4cb186ae1d" scheduled="2017-01-21T18:30:00+00:00" conference_game="true" home_points="80" away_points="96">
+                <venue id="ded3a083-3b90-4ba9-9b2f-412b32dd5739" name="Christl Arena" capacity="5043" address="600 Thayer Road" city="West Point" state="NY" zip="10996" country="USA"/>
+                <home name="Army Black Knights" alias="ARMY" id="6dfaf0ba-47c4-4e05-b0a7-72734747d48f">
+                </home>
+                <away name="Navy Midshipmen" alias="NAVY" id="3b088563-ca8a-49a6-9e19-5e4cb186ae1d">
+                </away>
+                <broadcast network="CBS Sports Network" satellite="221"/>
+              </game>
+              <game id="943ece8c-08d3-4dd6-b0dc-e86e8647d778" status="closed" coverage="extended_boxscore" home_team="472c22e0-843d-472c-a871-f1593fb0725d" away_team="1165ca31-f181-4206-b727-c4e897e4b5cd" scheduled="2017-01-21T18:30:00+00:00" conference_game="true" home_points="101" away_points="92">
+                <venue id="6ad08551-2048-4083-8d25-a1fd2a7e6c30" name="McGuirk Arena" capacity="5300" address="360 W Broomfield St" city="Mount Pleasant" state="MI" zip="48858" country="USA"/>
+                <home name="Central Michigan Chippewas" alias="CMU" id="472c22e0-843d-472c-a871-f1593fb0725d">
+                </home>
+                <away name="Miami (OH) RedHawks" alias="M-OH" id="1165ca31-f181-4206-b727-c4e897e4b5cd">
+                </away>
+              </game>
+              <game id="02139000-b4cb-4a12-8c0d-c4a242247d32" status="closed" coverage="full" home_team="ee09e6ad-3872-4745-bbb9-ebbd5c6f8318" away_team="bdb7d7a4-45f8-4bf3-ab85-15488c451494" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="69" away_points="70">
+                <venue id="df69eb85-bb1a-4aaf-a951-18451b794a73" name="Allstate Arena" capacity="17500" address="6920 N Mannheim Road" city="Rosemont" state="IL" zip="60018" country="USA"/>
+                <home name="DePaul Blue Demons" alias="DEP" id="ee09e6ad-3872-4745-bbb9-ebbd5c6f8318">
+                </home>
+                <away name="Butler Bulldogs" alias="BUT" id="bdb7d7a4-45f8-4bf3-ab85-15488c451494">
+                </away>
+                <broadcast network="Fox Sports 1" satellite="219"/>
+              </game>
+              <game id="d4f54ac4-8ff6-49f9-890a-57e410f26d09" status="closed" coverage="extended_boxscore" home_team="6bff595c-32cb-4028-837c-c7de2a2107e6" away_team="a14b0057-8eb5-43d2-a33b-666196da933e" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="50" away_points="70">
+                <venue id="16debea1-2198-4fa9-a1f0-48aa281b86d4" name="Ramsey Center" capacity="7826" address="92 Catamount Rd" city="Cullowhee" state="NC" zip="28723" country="USA"/>
+                <home name="Western Carolina Catamounts" alias="WCU" id="6bff595c-32cb-4028-837c-c7de2a2107e6">
+                </home>
+                <away name="Mercer Bears" alias="MER" id="a14b0057-8eb5-43d2-a33b-666196da933e">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="03430c9c-1348-44ea-b6a4-215a1e8bf08b" status="closed" coverage="full" home_team="52df1e19-b142-4a76-a439-ad68455d0581" away_team="4fbebf0a-e117-4a0c-8f15-c247535a2a1b" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="88" away_points="93">
+                <venue id="5f1a51e1-bdd9-43a2-8743-c37f20265346" name="PNC Arena" capacity="19722" address="1400 Edward Mill Rd" city="Raleigh" state="NC" zip="27607" country="USA"/>
+                <home name="North Carolina State Wolfpack" alias="NCST" id="52df1e19-b142-4a76-a439-ad68455d0581">
+                </home>
+                <away name="Wake Forest Demon Deacons" alias="WAKE" id="4fbebf0a-e117-4a0c-8f15-c247535a2a1b">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="33bb1538-8c71-4d4a-a564-9b29f0f254ad" status="closed" coverage="full" home_team="f8c705b7-87d3-411a-9c8b-5124daab0469" away_team="8ab00d43-840a-4c96-bdee-bf88fa6e3f11" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="64" away_points="83">
+                <venue id="23ab86a8-52a4-46ce-82df-cfc201520643" name="United Supermarkets Arena" capacity="15098" address="1701 Indiana Ave" city="Lubbock" state="TX" zip="79409" country="USA"/>
+                <home name="Texas Tech Red Raiders" alias="TTU" id="f8c705b7-87d3-411a-9c8b-5124daab0469">
+                </home>
+                <away name="Oklahoma State Cowboys" alias="OKST" id="8ab00d43-840a-4c96-bdee-bf88fa6e3f11">
+                </away>
+                <broadcast network="ESPNU" satellite="208" internet="WatchESPN"/>
+              </game>
+              <game id="99de209a-d153-4a16-bbab-da8f4a30a4fe" status="closed" coverage="extended_boxscore" home_team="e66d7ed2-9b4c-48c8-adaa-a276793b057d" away_team="f7575278-12ec-494a-b544-427c1759d43d" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="55" away_points="57">
+                <venue id="4321dd88-cd20-4c62-b0fe-1c4e9a228243" name="Yanitelli Center" capacity="3200" address="2641 Kennedy Blvd" city="Jersey City" state="NJ" zip="07306" country="USA"/>
+                <home name="St. Peter's Peacocks" alias="SPC" id="e66d7ed2-9b4c-48c8-adaa-a276793b057d">
+                </home>
+                <away name="Niagara Purple Eagles" alias="NIAG" id="f7575278-12ec-494a-b544-427c1759d43d">
+                </away>
+              </game>
+              <game id="7719723a-383e-49f6-8afd-85dfdff0ef6d" status="closed" coverage="extended_boxscore" home_team="98d2123a-c7b9-4b5f-8a81-43f76d8537dc" away_team="de9a0e19-b83c-4b98-a6da-81c110cb364b" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="70" away_points="59">
+                <venue id="a1615d9e-c1dd-4ffc-abf1-3357f3111014" name="Sojka Pavilion" capacity="4000" address="701 Moore Ave" city="Lewisburg" state="PA" zip="17837" country="USA"/>
+                <home name="Bucknell Bison" alias="BUCK" id="98d2123a-c7b9-4b5f-8a81-43f76d8537dc">
+                </home>
+                <away name="Boston University Terriers" alias="BU" id="de9a0e19-b83c-4b98-a6da-81c110cb364b">
+                </away>
+                <broadcast network="ASN"/>
+              </game>
+              <game id="9c688b59-ecb2-4142-8cb9-fe5167fceb0a" status="closed" coverage="extended_boxscore" home_team="80a19b57-d6ab-4bee-934f-33a72c2e958a" away_team="175d34a7-3823-4e4f-9f11-2464f55360b8" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="52" away_points="49">
+                <venue id="413f618d-17f0-405a-a531-65034a88ab6d" name="Cotterell Court" capacity="1750" address="13 Oak Drive" city="Hamilton" state="NY" zip="13346" country="USA"/>
+                <home name="Colgate Raiders" alias="COLG" id="80a19b57-d6ab-4bee-934f-33a72c2e958a">
+                </home>
+                <away name="Loyola (MD) Greyhounds" alias="L-MD" id="175d34a7-3823-4e4f-9f11-2464f55360b8">
+                </away>
+                <broadcast network="Patriot League Network"/>
+              </game>
+              <game id="53884d1c-1e18-4d06-ac59-7afe050d7e6b" status="closed" coverage="extended_boxscore" home_team="0affc15f-641d-4211-970d-fb9fb8d36842" away_team="6f3eec09-2918-4739-a0e8-5d79e14a8332" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="58" away_points="75">
+                <venue id="10fa4797-0899-435d-a5c2-ab5f5e13ac75" name="Bob Carpenter Center" capacity="5000" address="631 S College Ave" city="Newark" state="DE" zip="19716" country="USA"/>
+                <home name="Delaware Fightin Blue Hens" alias="DEL" id="0affc15f-641d-4211-970d-fb9fb8d36842">
+                </home>
+                <away name="Towson Tigers" alias="TOWS" id="6f3eec09-2918-4739-a0e8-5d79e14a8332">
+                </away>
+              </game>
+              <game id="3c227d6b-eeb6-4ed2-91be-95224b20d289" status="closed" coverage="full" home_team="56913910-87f7-4ad7-ae3b-5cd9fb218fd9" away_team="0f63a6f5-bda7-4fd9-9271-8d33f555ca19" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="62" away_points="49">
+                <venue id="c43702e3-e8c2-4375-855e-4bbb62177738" name="John Paul Jones Arena" capacity="14593" address="295 Massie Rd" city="Charlottesville" state="VA" zip="22903" country="USA"/>
+                <home name="Virginia Cavaliers" alias="UVA" id="56913910-87f7-4ad7-ae3b-5cd9fb218fd9">
+                </home>
+                <away name="Georgia Tech Yellow Jackets" alias="GT" id="0f63a6f5-bda7-4fd9-9271-8d33f555ca19">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="6e99312e-be00-48ec-bec9-4d02ce126b9e" status="closed" coverage="full" home_team="d3c8a767-b6fc-45d4-a5f2-18406f2993f1" away_team="b795ddbc-baab-4499-8803-52e8608520ab" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="73" away_points="68">
+                <venue id="5d43d8e4-91c4-4a21-8e95-710762220402" name="Donald L. Tucker Center" capacity="12508" address="505 W Pensacola St" city="Tallahassee" state="FL" zip="32301" country="USA"/>
+                <home name="Florida State Seminoles" alias="FSU" id="d3c8a767-b6fc-45d4-a5f2-18406f2993f1">
+                </home>
+                <away name="Louisville Cardinals" alias="LOU" id="b795ddbc-baab-4499-8803-52e8608520ab">
+                </away>
+                <broadcast network="ESPN" satellite="206" internet="WatchESPN"/>
+              </game>
+              <game id="b992b1ef-681d-479a-add5-728ace0253db" status="closed" coverage="extended_boxscore" home_team="5c7bf63f-bc39-43c5-9907-73b50b7a6b34" away_team="d60357bd-1205-42e9-9092-d986a2843a34" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="82" away_points="68">
+                <venue id="94de06b6-4ae7-4fd1-bbd0-67b03a720215" name="Lavietes Pavilion" capacity="2195" address="Soldiers Field Road" city="Allston" state="MA" zip="2163" country="USA"/>
+                <home name="Harvard Crimson" alias="HARV" id="5c7bf63f-bc39-43c5-9907-73b50b7a6b34">
+                </home>
+                <away name="Dartmouth Big Green" alias="DART" id="d60357bd-1205-42e9-9092-d986a2843a34">
+                </away>
+                <broadcast network="ESPN3" internet="Watch ESPN"/>
+              </game>
+              <game id="934ae618-ad7f-447d-ac77-958afdb31515" status="closed" coverage="full" home_team="fae4855b-1b64-4b40-a632-9ed345e1e952" away_team="6ed15092-2670-450a-99c2-61d861e87644" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="79" away_points="67">
+                <venue id="198a412e-f8cd-4a32-bf09-c45831f6c1d2" name="Allen Fieldhouse" capacity="16300" address="1651 Naismith Drive" city="Lawrence" state="KS" zip="66045" country="USA"/>
+                <home name="Kansas Jayhawks" alias="KU" id="fae4855b-1b64-4b40-a632-9ed345e1e952">
+                </home>
+                <away name="Texas Longhorns" alias="TEX" id="6ed15092-2670-450a-99c2-61d861e87644">
+                </away>
+                <broadcast network="CBS"/>
+              </game>
+              <game id="cc09d6ba-f131-48a7-93da-60a5f1a07131" status="closed" coverage="full" home_team="b2fda957-e15c-4fb2-8a13-6e58496f561e" away_team="0e4258fa-3154-4c16-b693-adecab184c6c" scheduled="2017-01-21T19:00:00+00:00" conference_game="true" home_points="87" away_points="92">
+                <venue id="225c0c88-bcd8-471e-a7a4-7cc06685add4" name="Lloyd Noble Center" capacity="11562" address="2900 S Jenkins Ave" city="Norman" state="OK" zip="73072" country="USA"/>
+                <home name="Oklahoma Sooners" alias="OKLA" id="b2fda957-e15c-4fb2-8a13-6e58496f561e">
+                </home>
+                <away name="Iowa State Cyclones" alias="ISU" id="0e4258fa-3154-4c16-b693-adecab184c6c">
+                </away>
+                <broadcast network="ESPN2" satellite="209" internet="WatchESPN"/>
+              </game>
+              <game id="104edaa8-1fb4-41ac-b8ff-1398e33c238a" status="closed" coverage="extended_boxscore" home_team="94ea835b-8ce9-4de2-a5b1-971548fea974" away_team="4af63ebd-d3c8-4772-bbde-938a078bd057" scheduled="2017-01-21T19:15:00+00:00" conference_game="true" home_points="76" away_points="56">
+                <venue id="c1b8f2a0-57a8-4926-b771-ec50ed06ace2" name="GSU Sports Arena" capacity="3854" address="10 Peachtree Center Ave NE" city="Atlanta" state="GA" zip="30303" country="USA"/>
+                <home name="Georgia State Panthers" alias="GAST" id="94ea835b-8ce9-4de2-a5b1-971548fea974">
+                </home>
+                <away name="Coastal Carolina Chanticleers" alias="CCAR" id="4af63ebd-d3c8-4772-bbde-938a078bd057">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="130b53cf-7f0c-4ee5-9525-da21a33e3874" status="closed" coverage="full" home_team="bdc2561d-f603-4fab-a262-f1d2af462277" away_team="150148c2-ca8f-414f-8f41-d94a55d4a122" scheduled="2017-01-21T19:15:00+00:00" conference_game="true" home_points="66" away_points="57">
+                <venue id="64995011-8f2a-4ad8-8be8-8e60e901676b" name="Crisler Center" capacity="12707" address="333 E Stadium Blvd" city="Ann Arbor" state="MI" zip="48104" country="USA"/>
+                <home name="Michigan Wolverines" alias="MICH" id="bdc2561d-f603-4fab-a262-f1d2af462277">
+                </home>
+                <away name="Illinois Fighting Illini" alias="ILL" id="150148c2-ca8f-414f-8f41-d94a55d4a122">
+                </away>
+                <broadcast network="BTN" satellite="610"/>
+              </game>
+              <game id="1101cb7a-217a-4f6d-b071-af4d79c0c395" status="closed" coverage="extended_boxscore" home_team="a9e4d292-d074-40e7-a81a-f9342929b979" away_team="315c4deb-3c9d-413d-a369-7168f2545d21" scheduled="2017-01-21T19:30:00+00:00" conference_game="true" home_points="79" away_points="74">
+                <venue id="46c56f9d-873c-44db-a004-4ffa5e2a6e8f" name="Stroh Center" capacity="4387" address="1535 E Wooster Street" city="Bowling Green" state="OH" zip="43403" country="USA"/>
+                <home name="Bowling Green Falcons" alias="BGSU" id="a9e4d292-d074-40e7-a81a-f9342929b979">
+                </home>
+                <away name="Ball State Cardinals" alias="BALL" id="315c4deb-3c9d-413d-a369-7168f2545d21">
+                </away>
+                <broadcast network="ESPN3" internet="Watch ESPN"/>
+              </game>
+              <game id="b2ed2e29-caf5-48b8-926e-85a982732813" status="closed" coverage="full" home_team="7d797407-623e-476d-b299-46de4275414d" away_team="06f7c904-0ac7-4125-b0f4-f4871bb69057" scheduled="2017-01-21T19:30:00+00:00" conference_game="true" home_points="94" away_points="102">
+                <venue id="41b29fbb-906a-4aca-b261-6a816ca96428" name="CenturyLink Center" capacity="18320" address="455 North 10th Street" city="Omaha" state="NE" zip="68102" country="USA"/>
+                <home name="Creighton Bluejays" alias="CREI" id="7d797407-623e-476d-b299-46de4275414d">
+                </home>
+                <away name="Marquette Golden Eagles" alias="MARQ" id="06f7c904-0ac7-4125-b0f4-f4871bb69057">
+                </away>
+                <broadcast network="FOX"/>
+              </game>
+              <game id="8861c9e8-b114-45b5-9ef7-89586adf9a2d" status="closed" coverage="extended_boxscore" home_team="a9f5c9a2-342c-4881-9996-5d5c05ec9bd9" away_team="f2164f01-2cbc-4967-bb1c-93656d790921" scheduled="2017-01-21T19:30:00+00:00" conference_game="true" home_points="66" away_points="54">
+                <venue id="8ae2e412-05c5-4501-9d57-f44a552f15a7" name="Alumni Arena" capacity="6100" address="175 Webster Road" city="Buffalo" state="NY" zip="14221" country="USA"/>
+                <home name="Buffalo Bulls" alias="BUFF" id="a9f5c9a2-342c-4881-9996-5d5c05ec9bd9">
+                </home>
+                <away name="Western Michigan Broncos" alias="WMU" id="f2164f01-2cbc-4967-bb1c-93656d790921">
+                </away>
+                <broadcast network="ESPN3" internet="Watch ESPN"/>
+              </game>
+              <game id="55671f2f-3312-4c0d-85cf-e0677e375b90" status="closed" coverage="full" home_team="fea46ac5-6dad-43cd-a770-75554dbcc118" away_team="7e42bca2-3cd7-4aca-aa46-f190fe5d8eb4" scheduled="2017-01-21T19:30:00+00:00" conference_game="true" home_points="69" away_points="90">
+                <venue id="d819616b-1825-4192-af0b-32560ff26899" name="A.J. Palumbo Center" capacity="4406" address="600 Forbes Avenue" city="Pittsburgh" state="PA" zip="15282" country="USA"/>
+                <home name="Duquesne Dukes" alias="DUQ" id="fea46ac5-6dad-43cd-a770-75554dbcc118">
+                </home>
+                <away name="Rhode Island Rams" alias="URI" id="7e42bca2-3cd7-4aca-aa46-f190fe5d8eb4">
+                </away>
+                <broadcast network="NBCSN" satellite="220"/>
+              </game>
+              <game id="01bfa3cf-96a0-45bb-8d0c-6143daccc3a9" status="closed" coverage="extended_boxscore" home_team="de8fc8a7-253f-4597-8a48-a0104ef226ae" away_team="6a67ba19-56a8-4dd8-a5ae-9e9f2523c274" scheduled="2017-01-21T20:00:00+00:00" conference_game="true" home_points="89" away_points="64">
+                <venue id="a6bf0915-b261-444f-887f-e5fa7cc8599a" name="Betty Engelstad Sioux Center" capacity="3300" address="One Ralph Engelstad Arena Drive" city="Grand Forks" state="ND" zip="58203" country="USA"/>
+                <home name="North Dakota Fighting Hawks" alias="UND" id="de8fc8a7-253f-4597-8a48-a0104ef226ae">
+                </home>
+                <away name="Idaho State Bengals" alias="IDST" id="6a67ba19-56a8-4dd8-a5ae-9e9f2523c274">
+                </away>
+              </game>
+              <game id="4bc9b516-a99d-4b83-96bd-85cb69431ea8" status="closed" coverage="extended_boxscore" home_team="6637ac5f-59c2-4888-af34-a86d138ccfb3" away_team="a93bf4f2-3724-4539-8c8a-9ac8ee3741a6" scheduled="2017-01-21T20:00:00+00:00" conference_game="true" home_points="83" away_points="84">
+                <venue id="25f66eab-a70c-446e-ae4c-6c3707f1f521" name="DeGol Arena" capacity="3500" address="140 Lakeview Dr" city="Loretto" state="PA" zip="15940" country="USA"/>
+                <home name="St. Francis (PA) Red Flash" alias="SFPA" id="6637ac5f-59c2-4888-af34-a86d138ccfb3">
+                </home>
+                <away name="Central Connecticut State Blue Devils" alias="CCSU" id="a93bf4f2-3724-4539-8c8a-9ac8ee3741a6">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="73f9ff87-03f9-454f-855f-b886204d3702" status="closed" coverage="extended_boxscore" home_team="cc9e5424-ab3b-41ec-b2aa-7e8a73d759c6" away_team="984e7518-e418-45d5-9797-979b8c2085c1" scheduled="2017-01-21T20:00:00+00:00" conference_game="true" home_points="57" away_points="89">
+                <venue id="839a82a3-9aec-4cb8-9f26-d4c19b61e7a3" name="Western Hall" capacity="5139" address="1 University Circle" city="Macomb" state="IL" zip="61455" country="USA"/>
+                <home name="Western Illinois Leathernecks" alias="WIU" id="cc9e5424-ab3b-41ec-b2aa-7e8a73d759c6">
+                </home>
+                <away name="North Dakota State Bison" alias="NDSU" id="984e7518-e418-45d5-9797-979b8c2085c1">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="22a59224-8ee7-4503-8eb6-4d64abc71ec4" status="closed" coverage="full" home_team="b83de2df-328f-4303-9895-cdff048fb1ed" away_team="b47d10b8-a2a5-47df-a2f9-7bd0b9d51beb" scheduled="2017-01-21T20:00:00+00:00" conference_game="true" home_points="76" away_points="62">
+                <venue id="a77c0fda-7b57-4b36-80f0-6a8d96b7645f" name="JQH Arena" capacity="11000" address="685 South John Q. Hammonds Pkwy" city="Springfield" state="MO" zip="65897" country="USA"/>
+                <home name="Missouri State Bears" alias="MOSU" id="b83de2df-328f-4303-9895-cdff048fb1ed">
+                </home>
+                <away name="Bradley Braves" alias="BRAD" id="b47d10b8-a2a5-47df-a2f9-7bd0b9d51beb">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="13f48c27-ebfa-4ad4-a74f-a7d4c9303cd7" status="closed" coverage="extended_boxscore" home_team="79871449-f5a1-4650-b3cf-85b78fd6943e" away_team="b06b63b0-20e6-4c78-bdcf-5feac3d7995e" scheduled="2017-01-21T20:00:00+00:00" conference_game="true" home_points="78" away_points="61">
+                <venue id="55d31d41-1514-4e38-9d15-7bc557a18630" name="Paul Porter Arena" capacity="3500" address="110 S Main St" city="Boiling Springs" state="NC" zip="28017" country="USA"/>
+                <home name="Gardner-Webb Runnin' Bulldogs" alias="WEBB" id="79871449-f5a1-4650-b3cf-85b78fd6943e">
+                </home>
+                <away name="Presbyterian Blue Hose" alias="PRE" id="b06b63b0-20e6-4c78-bdcf-5feac3d7995e">
+                </away>
+              </game>
+              <game id="7e1bda5e-5b17-454d-8f11-314c89545975" status="closed" coverage="full" home_team="f38b58de-3273-4723-a78b-2f918e9aa2d5" away_team="2a997096-a381-469d-a7e9-9e031c8b071c" scheduled="2017-01-21T20:00:00+00:00" conference_game="true" home_points="84" away_points="58">
+                <venue id="0ec88fc4-f268-44b2-9ed7-1c74ebbe15af" name="Charles Koch Arena" capacity="10506" address="1845 Fairmount St" city="Wichita" state="KS" zip="67260" country="USA"/>
+                <home name="Wichita State Shockers" alias="WICH" id="f38b58de-3273-4723-a78b-2f918e9aa2d5">
+                </home>
+                <away name="Indiana State Sycamores" alias="INST" id="2a997096-a381-469d-a7e9-9e031c8b071c">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="4c6e8625-2e1e-4403-8d25-40739ee4c597" status="closed" coverage="full" home_team="77ca152a-cb2f-48a5-97b2-492351250d94" away_team="d7d668ec-edaa-4d6b-be25-2ebba4128643" scheduled="2017-01-21T20:30:00+00:00" conference_game="true" home_points="71" away_points="75">
+                <venue id="1c6cc638-96cd-49fd-9668-64325c39d39b" name="Mizzou Arena" capacity="15061" address="One Champions Drive" city="Columbia" state="MO" zip="65211" country="USA"/>
+                <home name="Missouri Tigers" alias="MIZZ" id="77ca152a-cb2f-48a5-97b2-492351250d94">
+                </home>
+                <away name="Ole Miss Rebels" alias="MISS" id="d7d668ec-edaa-4d6b-be25-2ebba4128643">
+                </away>
+                <broadcast network="SEC Network" satellite="611" internet="WatchESPN"/>
+              </game>
+              <game id="c163de03-122a-433b-9dcc-dddb0196a355" status="closed" coverage="extended_boxscore" home_team="3556d445-b3f1-467e-b150-952b32dfb150" away_team="3b644902-cd06-4930-9a3e-6c78cfb1f464" scheduled="2017-01-21T20:30:00+00:00" conference_game="true" home_points="62" away_points="67">
+                <venue id="4df99c2a-1592-44f0-927f-026bbff30904" name="William H. Pitt Center" capacity="2062" address="5151 Park Ave" city="Fairfield" state="CT" zip="6825" country="USA"/>
+                <home name="Sacred Heart Pioneers" alias="SHU" id="3556d445-b3f1-467e-b150-952b32dfb150">
+                </home>
+                <away name="Wagner Seahawks" alias="WAG" id="3b644902-cd06-4930-9a3e-6c78cfb1f464">
+                </away>
+              </game>
+              <game id="a9f6371c-8785-4d2f-9882-c377a8a00477" status="closed" coverage="extended_boxscore" home_team="c54279f9-3028-4663-893a-7d22482f8098" away_team="f2d01b77-0f5d-4574-9e49-2a3eaf822e44" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="87" away_points="74">
+                <venue id="d5eb4678-13a8-40c7-901e-ca1cdf416d6e" name="Raiford G. Trask Coliseum" capacity="6100" address="601 S College Rd" city="Wilmington" state="NC" zip="28412" country="USA"/>
+                <home name="North Carolina-Wilmington Seahawks" alias="UNCW" id="c54279f9-3028-4663-893a-7d22482f8098">
+                </home>
+                <away name="Drexel Dragons" alias="DREX" id="f2d01b77-0f5d-4574-9e49-2a3eaf822e44">
+                </away>
+                <broadcast network="ASN"/>
+              </game>
+              <game id="7faab60d-ad81-4594-94ba-93ba1d58ea42" status="closed" coverage="extended_boxscore" home_team="0796c3b6-5308-4aa0-8fdc-c65d39b043c6" away_team="d20216d8-161c-46e3-b8d2-92208ddf5acf" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="79" away_points="82">
+                <venue id="87898338-017b-4225-a034-43835fd7f6b5" name="Moore Gymnasium" capacity="3000" address="640 Doctor Mary McLeod Bethune Blvd" city="Daytona Beach" state="FL" zip="32114" country="USA"/>
+                <home name="Bethune-Cookman Wildcats" alias="COOK" id="0796c3b6-5308-4aa0-8fdc-c65d39b043c6">
+                </home>
+                <away name="Maryland-Eastern Shore Hawks" alias="UMES" id="d20216d8-161c-46e3-b8d2-92208ddf5acf">
+                </away>
+              </game>
+              <game id="dbd504c6-9ea6-4996-8bbb-32921b10840b" status="closed" coverage="full" home_team="2d4f0015-adb4-4877-8c15-4a6eed7eed03" away_team="9fccbf28-2858-4263-821c-fdefb3c7efa3" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="91" away_points="89">
+                <venue id="cccd8a1b-21ba-40a5-b197-7561bc74cacb" name="Friel Court" capacity="11671" address="225 North Grand Ave" city="Pullman" state="WA" zip="99163" country="USA"/>
+                <home name="Washington State Cougars" alias="WSU" id="2d4f0015-adb4-4877-8c15-4a6eed7eed03">
+                </home>
+                <away name="Colorado Buffaloes" alias="COLO" id="9fccbf28-2858-4263-821c-fdefb3c7efa3">
+                </away>
+                <broadcast network="Pac-12 Network"/>
+              </game>
+              <game id="3107c806-30f9-4f22-a6e6-33e315d980be" status="closed" coverage="extended_boxscore" home_team="36ca2008-cd2e-4549-8b3b-c745167e07f3" away_team="93df9b18-e9fc-42a7-bb45-a736c203b4dc" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="78" away_points="73">
+                <venue id="0d149b57-2a9a-41a6-a334-a44b32f3e94b" name="Mack Sports Complex - Hofstra Arena" capacity="5023" address="245 N Hofstra Ave" city="Hempstead" state="NY" zip="11549" country="USA"/>
+                <home name="Hofstra Pride" alias="HOF" id="36ca2008-cd2e-4549-8b3b-c745167e07f3">
+                </home>
+                <away name="Northeastern Huskies" alias="NE" id="93df9b18-e9fc-42a7-bb45-a736c203b4dc">
+                </away>
+              </game>
+              <game id="80c2bad2-12ce-4222-b9ee-d8cd0a029426" status="closed" coverage="extended_boxscore" home_team="394d1b2b-7a19-4d43-b04a-5f366c24e5bf" away_team="2e78bd1b-9422-491e-9c73-37cf83b0e34e" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="86" away_points="97">
+                <venue id="58d556b7-b20e-4125-90bb-d45c343671ae" name="Edmunds Center" capacity="5000" address="143 E. Pennsylvania Ave" city="DeLand" state="FL" zip="32723" country="USA"/>
+                <home name="Stetson Hatters" alias="STET" id="394d1b2b-7a19-4d43-b04a-5f366c24e5bf">
+                </home>
+                <away name="USC Upstate Spartans" alias="SCUS" id="2e78bd1b-9422-491e-9c73-37cf83b0e34e">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="ac4c22c8-e1d6-4174-89a0-7f9c749569dd" status="closed" coverage="extended_boxscore" home_team="8548dacb-3636-48a8-8c46-611ab0c15fc0" away_team="524e3eec-7dde-45c7-b3cc-6308cec73350" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="73" away_points="60">
+                <venue id="365700aa-9e46-4b94-8060-52648d29cfca" name="TD Arena" capacity="5100" address="66 George Street" city="Charleston" state="SC" zip="29424" country="USA"/>
+                <home name="Charleston Cougars" alias="COFC" id="8548dacb-3636-48a8-8c46-611ab0c15fc0">
+                </home>
+                <away name="James Madison Dukes" alias="JMU" id="524e3eec-7dde-45c7-b3cc-6308cec73350">
+                </away>
+              </game>
+              <game id="02640327-2adb-4f52-89b6-255fd011ea5c" status="closed" coverage="extended_boxscore" home_team="a44f8c85-7ab6-4a4e-b6f1-c69a4cabe1ed" away_team="ffa04cde-aa2d-4e91-b2cd-bde2bfed44de" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="74" away_points="64">
+                <venue id="b8227a4f-ecda-4339-8772-d9da08236254" name="Smith-Hammond-Middleton Memorial Center" capacity="3200" address="300 College Street" city="Orangeburg" state="SC" zip="29117" country="USA"/>
+                <home name="South Carolina State Bulldogs" alias="SCST" id="a44f8c85-7ab6-4a4e-b6f1-c69a4cabe1ed">
+                </home>
+                <away name="Delaware State Hornets" alias="DSU" id="ffa04cde-aa2d-4e91-b2cd-bde2bfed44de">
+                </away>
+              </game>
+              <game id="333a7877-5b84-4fda-9fa5-e4f9dfa15f09" status="closed" coverage="full" home_team="28023973-1d9d-4d01-b939-dc8f9b44fb1c" away_team="441a11b4-b506-45b3-8030-fe72a4381c40" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="64" away_points="63">
+                <venue id="8b5809f9-829a-4747-aa15-389ac66c4ec8" name="Leavey Center" capacity="4500" address="500 El Camino Real" city="Santa Clara" state="CA" zip="95053" country="USA"/>
+                <home name="Santa Clara Broncos" alias="SCU" id="28023973-1d9d-4d01-b939-dc8f9b44fb1c">
+                </home>
+                <away name="Loyola Marymount Lions" alias="LMU" id="441a11b4-b506-45b3-8030-fe72a4381c40">
+                </away>
+                <broadcast network="TheW.tv"/>
+              </game>
+              <game id="742217f5-26ba-4d9f-90cf-d4a52c2ec7ed" status="closed" coverage="full" home_team="399ad7fb-de60-45a6-a71f-d26e00f1a4ec" away_team="a17dfc54-415f-49c3-a2e6-d6fa9db18b0a" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="61" away_points="78">
+                <venue id="6653af89-47ba-4421-8dbb-154f04c3b25e" name="Devlin Fieldhouse" capacity="4100" address="McAlister Place at Freret St" city="New Orleans" state="LA" zip="70118" country="USA"/>
+                <home name="Tulane Green Wave" alias="TULN" id="399ad7fb-de60-45a6-a71f-d26e00f1a4ec">
+                </home>
+                <away name="Cincinnati Bearcats" alias="CIN" id="a17dfc54-415f-49c3-a2e6-d6fa9db18b0a">
+                </away>
+                <broadcast network="CBS Sports Network" satellite="221"/>
+              </game>
+              <game id="244ebfb6-6b7a-42e8-9759-4424963b49ee" status="closed" coverage="extended_boxscore" home_team="ca5318f2-48eb-4f6b-896a-966b900aa42f" away_team="227d3567-d57b-417e-afc4-735e4cb308a1" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="89" away_points="72">
+                <venue id="d8e571a8-3eac-41a7-bbc3-bdf08c40d156" name="Timmons Arena" capacity="4000" address="3300 Poinsett Highway" city="Greenville" state="SC" zip="29613" country="USA"/>
+                <home name="Furman Paladins" alias="FUR" id="ca5318f2-48eb-4f6b-896a-966b900aa42f">
+                </home>
+                <away name="Virginia Military Keydets" alias="VMI" id="227d3567-d57b-417e-afc4-735e4cb308a1">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="4f9abab8-49fb-4232-af33-a7f7035e8a7d" status="closed" coverage="extended_boxscore" home_team="d2ef641c-70e4-48bb-b40d-ac654d179205" away_team="71874e7e-8260-43f9-bb7c-65f267dbe8ce" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="65" away_points="78">
+                <venue id="52b23cc3-b543-4a47-b656-65aeae5ba685" name="Burton Coliseum" capacity="8500" address="7001 Gulf Highway" city="Lake Charles" state="LA" zip="70607" country="USA"/>
+                <home name="McNeese State Cowboys" alias="MCNS" id="d2ef641c-70e4-48bb-b40d-ac654d179205">
+                </home>
+                <away name="Northwestern State Demons" alias="NWST" id="71874e7e-8260-43f9-bb7c-65f267dbe8ce">
+                </away>
+              </game>
+              <game id="d507b4be-dfdc-49e5-ac05-1a30602c3026" status="closed" coverage="extended_boxscore" home_team="b71d5a1b-2671-4e5a-b94b-06bfb22a27dd" away_team="82c12e8d-7c6c-47d8-b100-3cbc190d268e" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="83" away_points="66">
+                <venue id="571ad5eb-310b-4421-9740-c041fe46780f" name="Rothman Center" capacity="5000" address="1000 River Road" city="Teaneck" state="NJ" zip="7666" country="USA"/>
+                <home name="Fairleigh Dickinson Knights" alias="FDU" id="b71d5a1b-2671-4e5a-b94b-06bfb22a27dd">
+                </home>
+                <away name="LIU Brooklyn Blackbirds" alias="LIU" id="82c12e8d-7c6c-47d8-b100-3cbc190d268e">
+                </away>
+              </game>
+              <game id="27e51c03-85e0-4a3d-a91e-6560f0f8e63c" status="closed" coverage="extended_boxscore" home_team="095417ae-62b0-4109-afc4-d92918599dd4" away_team="68d2aa5b-714f-4652-96f3-b71e1752413f" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="103" away_points="86">
+                <venue id="505ec6d0-d2ec-4e8b-bbc1-fc0eec75117e" name="Mabee Center" capacity="11300" address="7777 South Lewis Ave" city="Tulsa" state="OK" zip="74171" country="USA"/>
+                <home name="Oral Roberts Golden Eagles" alias="ORU" id="095417ae-62b0-4109-afc4-d92918599dd4">
+                </home>
+                <away name="Nebraska-Omaha Mavericks" alias="NEOM" id="68d2aa5b-714f-4652-96f3-b71e1752413f">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="29111b80-992d-4e32-a88d-220fb4bd3121" status="closed" coverage="full" home_team="ec0d6b67-4b16-4b50-92b2-1a651dae6b0f" away_team="9b166a3f-e64b-4825-bb6b-92c6f0418263" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="85" away_points="96">
+                <venue id="e7547c99-c087-4245-b039-19dc1f8df1b0" name="Pauley Pavilion" capacity="13800" address="301 Westwood Plaza" city="Los Angeles" state="CA" zip="90095" country="USA"/>
+                <home name="UCLA Bruins" alias="UCLA" id="ec0d6b67-4b16-4b50-92b2-1a651dae6b0f">
+                </home>
+                <away name="Arizona Wildcats" alias="ARIZ" id="9b166a3f-e64b-4825-bb6b-92c6f0418263">
+                </away>
+                <broadcast network="CBS"/>
+              </game>
+              <game id="77871b83-6d05-4e35-8e4f-3846452b05d8" status="closed" coverage="full" home_team="61a3908a-7492-4b6f-809e-12c61976bb0a" away_team="d8217105-e9c2-4267-9538-3aaeea1ae167" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="67" away_points="61">
+                <venue id="f20553bf-ea9a-4b02-8bc3-0ecb16deaa02" name="Joseph J Gentile Center" capacity="4486" address="6526 N Winthrop" city="Chicago" state="IL" zip="60626" country="USA"/>
+                <home name="Loyola (IL) Ramblers" alias="L-IL" id="61a3908a-7492-4b6f-809e-12c61976bb0a">
+                </home>
+                <away name="Evansville Aces" alias="EVAN" id="d8217105-e9c2-4267-9538-3aaeea1ae167">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="b7754927-6c5f-4910-83ea-6a96b414055e" status="closed" coverage="extended_boxscore" home_team="c0d19efd-d40c-4e32-8e90-dbcb28178b5d" away_team="eda6c307-1e0f-4a28-82f4-ee9653b343fb" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="76" away_points="87">
+                <venue id="2575a06f-aca7-42b7-8c57-f6b9290f2506" name="Stopher Gym" capacity="3800" address="Acadia Dr" city="Thibodaux" state="LA" zip="70310" country="USA"/>
+                <home name="Nicholls State Colonels" alias="NICH" id="c0d19efd-d40c-4e32-8e90-dbcb28178b5d">
+                </home>
+                <away name="Lamar Cardinals" alias="LAM" id="eda6c307-1e0f-4a28-82f4-ee9653b343fb">
+                </away>
+              </game>
+              <game id="0b64411d-b3eb-4a96-9195-4731c107f138" status="closed" coverage="full" home_team="c3f0a8ce-af67-497f-a750-3b859376b20a" away_team="a41d5a05-4c11-4171-a57e-e7a1ea325a6d" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="82" away_points="75">
+                <venue id="eecdd0a2-3fc3-4761-a6da-813f5751aabf" name="Assembly Hall" capacity="17472" address="1001 East 17th Street" city="Bloomington" state="IN" zip="47408" country="USA"/>
+                <home name="Indiana Hoosiers" alias="IND" id="c3f0a8ce-af67-497f-a750-3b859376b20a">
+                </home>
+                <away name="Michigan State Spartans" alias="MSU" id="a41d5a05-4c11-4171-a57e-e7a1ea325a6d">
+                </away>
+                <broadcast network="ESPN" satellite="206" internet="WatchESPN"/>
+              </game>
+              <game id="193672a5-aa41-42c2-aead-1e47ead19606" status="closed" coverage="extended_boxscore" home_team="6906e22d-92fa-40cb-8c05-ec8391ac1979" away_team="61dadefa-76bf-4db4-8067-f88df540b9cd" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="56" away_points="59">
+                <venue id="5c30dce4-6110-4032-bda5-f7fdad11ced7" name="Charles L. Sewall Center" capacity="3056" address="6001 University Blvd" city="Moon Township" state="PA" zip="15108" country="USA"/>
+                <home name="Robert Morris Colonials" alias="RMU" id="6906e22d-92fa-40cb-8c05-ec8391ac1979">
+                </home>
+                <away name="Bryant University Bulldogs" alias="BRY" id="61dadefa-76bf-4db4-8067-f88df540b9cd">
+                </away>
+              </game>
+              <game id="4494ff50-d920-43c6-a16e-7fb0e4828662" status="closed" coverage="full" home_team="0c0608b3-f349-4f5e-9a10-7e6a744dd0d2" away_team="c2104cdc-c83d-40d2-a3cd-df986e29f5d3" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="84" away_points="64">
+                <venue id="0b181487-42ee-4324-9785-bf798c2b4c10" name="Auburn Arena" capacity="9121" address="250 Beard-Eaves Court" city="Auburn" state="AL" zip="36849" country="USA"/>
+                <home name="Auburn Tigers" alias="AUB" id="0c0608b3-f349-4f5e-9a10-7e6a744dd0d2">
+                </home>
+                <away name="Alabama Crimson Tide" alias="ALA" id="c2104cdc-c83d-40d2-a3cd-df986e29f5d3">
+                </away>
+                <broadcast network="ESPN2" satellite="209" internet="WatchESPN"/>
+              </game>
+              <game id="0fd8b14c-3c47-4084-a3c8-774578b2d73d" status="closed" coverage="extended_boxscore" home_team="53aaac6a-796e-41a6-a04e-6ce74c5717f8" away_team="22fbe5dc-c6db-4675-b3a3-2d8af7f5d313" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="63" away_points="78">
+                <venue id="8d6c6cbf-919b-4bd4-9ce1-0326f33c1d66" name="Corbett Sports Center" capacity="5700" address="1601 E Market Street" city="Greensboro" state="NC" zip="27411" country="USA"/>
+                <home name="North Carolina A&amp;T Aggies" alias="NCAT" id="53aaac6a-796e-41a6-a04e-6ce74c5717f8">
+                </home>
+                <away name="Howard Bison" alias="HOW" id="22fbe5dc-c6db-4675-b3a3-2d8af7f5d313">
+                </away>
+              </game>
+              <game id="478878bb-8aa7-485e-b796-cb4696af4814" status="closed" coverage="extended_boxscore" home_team="e19cfc47-f23f-4c64-ba29-2e6d12dc45b2" away_team="5fe4a398-1699-4442-a364-305b2f0ac01e" scheduled="2017-01-21T21:00:00+00:00" conference_game="true" home_points="47" away_points="55">
+                <venue id="2ce2b66d-51a1-48f7-8dd5-a0ba0c9c95a7" name="Peter Aquilone Court" capacity="1200" address="180 Remsen St" city="Brooklyn" state="NY" zip="11201" country="USA"/>
+                <home name="St. Francis (BKN) Terriers" alias="SFNY" id="e19cfc47-f23f-4c64-ba29-2e6d12dc45b2">
+                </home>
+                <away name="Mount St. Mary's Mountaineers" alias="MSM" id="5fe4a398-1699-4442-a364-305b2f0ac01e">
+                </away>
+              </game>
+              <game id="e593b296-a8c8-460f-bc38-6dea940bd600" status="closed" coverage="extended_boxscore" home_team="54df21af-8f65-42fc-bc01-8bf750856d70" away_team="c7116621-45ed-4ab1-9ad9-dee524120569" scheduled="2017-01-21T21:05:00+00:00" conference_game="true" home_points="83" away_points="68">
+                <venue id="cff3a947-02b5-44f0-b8fe-c8b5b22b9f73" name="Reese Court" capacity="6000" address="Washington Street" city="Cheney" state="WA" zip="99004" country="USA"/>
+                <home name="Eastern Washington Eagles" alias="EWU" id="54df21af-8f65-42fc-bc01-8bf750856d70">
+                </home>
+                <away name="Southern Utah Thunderbirds" alias="SUU" id="c7116621-45ed-4ab1-9ad9-dee524120569">
+                </away>
+              </game>
+              <game id="b414c731-2a74-41ad-a355-2e8b701d01af" status="closed" coverage="extended_boxscore" home_team="ad9fce12-6b1a-400c-bcbe-29d84d065fc0" away_team="6e5dfe2c-28cc-411f-b846-af8436093ab2" scheduled="2017-01-21T21:30:00+00:00" conference_game="true" home_points="72" away_points="56">
+                <venue id="d07a530c-ad54-4670-b19b-b45609234c8a" name="Kimmel Arena" capacity="3200" address="227 Campus Drive" city="Asheville" state="NC" zip="28804" country="USA"/>
+                <home name="UNC Asheville Bulldogs" alias="UNCA" id="ad9fce12-6b1a-400c-bcbe-29d84d065fc0">
+                </home>
+                <away name="Campbell Fighting Camels" alias="CAMP" id="6e5dfe2c-28cc-411f-b846-af8436093ab2">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="6d1db273-8128-447e-9345-b8e455cef4fd" status="closed" coverage="full" home_team="fa416692-7e09-4f0a-9bcf-0cf7d5149a14" away_team="c7569eae-5b93-4197-b204-6f3a62146b25" scheduled="2017-01-21T21:30:00+00:00" conference_game="true" home_points="76" away_points="78">
+                <venue id="f72da915-1ddd-41a0-9e19-0b0c7f6f30c5" name="Williams Arena" capacity="14625" address="1925 SE University Avenue" city="Minneapolis" state="MN" zip="55455" country="USA"/>
+                <home name="Minnesota Golden Gophers" alias="MINN" id="fa416692-7e09-4f0a-9bcf-0cf7d5149a14">
+                </home>
+                <away name="Wisconsin Badgers" alias="WIS" id="c7569eae-5b93-4197-b204-6f3a62146b25">
+                </away>
+                <broadcast network="BTN" satellite="610"/>
+              </game>
+              <game id="7f83f472-5e91-494d-a146-a61b36f3fed0" status="closed" coverage="extended_boxscore" home_team="3f0ac618-3742-471a-9d1f-03e08f3deca2" away_team="327f09e2-e75f-4014-8ef7-caf9202cd583" scheduled="2017-01-21T21:30:00+00:00" conference_game="true" home_points="69" away_points="78">
+                <venue id="1909c333-6288-4fdc-9786-8d9671f95500" name="NIU Convocation Center" capacity="10000" address="1525 W Lincoln Highway" city="DeKalb" state="IL" zip="60115" country="USA"/>
+                <home name="Northern Illinois Huskies" alias="NIU" id="3f0ac618-3742-471a-9d1f-03e08f3deca2">
+                </home>
+                <away name="Ohio Bobcats" alias="OHIO" id="327f09e2-e75f-4014-8ef7-caf9202cd583">
+                </away>
+              </game>
+              <game id="dbf5a663-a811-4f45-b9cc-9a4fdd010618" status="closed" coverage="full" home_team="29de4e5e-ee5b-48c8-bffc-1972e7da1e30" away_team="c1c54dbf-805c-47fc-a707-c803e94db2a4" scheduled="2017-01-21T22:00:00+00:00" conference_game="true" home_points="65" away_points="75">
+                <venue id="7ba1442a-fd2a-463f-82c0-c5ac49a7de0d" name="Event Center Arena" capacity="4600" address="290 South 7th Street" city="San Jose" state="CA" zip="95192" country="USA"/>
+                <home name="San Jose State Spartans" alias="SJSU" id="29de4e5e-ee5b-48c8-bffc-1972e7da1e30">
+                </home>
+                <away name="Boise State Broncos" alias="BSU" id="c1c54dbf-805c-47fc-a707-c803e94db2a4">
+                </away>
+                <broadcast network="MW Network"/>
+              </game>
+              <game id="4f594b73-c246-4ed2-b794-71c2277e2124" status="closed" coverage="extended_boxscore" home_team="4c9fb59b-6cec-4b0d-bb0f-628b391d138c" away_team="c13f96ba-c79c-452f-9f63-3b45fae4e543" scheduled="2017-01-21T22:00:00+00:00" conference_game="true" home_points="82" away_points="78">
+                <venue id="ec253396-69c1-484e-9eaa-29ab0a76beb7" name="McKenzie Arena" capacity="10928" address="720 East 4th Street" city="Chattanooga" state="TN" zip="37403" country="USA"/>
+                <home name="Chattanooga Mocs" alias="CHAT" id="4c9fb59b-6cec-4b0d-bb0f-628b391d138c">
+                </home>
+                <away name="Samford Bulldogs" alias="SAM" id="c13f96ba-c79c-452f-9f63-3b45fae4e543">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="9483267a-29dd-4c7d-8038-8439ee82bc0e" status="closed" coverage="extended_boxscore" home_team="5873529e-e5e3-4a06-8a03-fa4cbe509880" away_team="91ec9ba2-12e5-4a75-9410-a166c82163fd" scheduled="2017-01-21T22:00:00+00:00" conference_game="true" home_points="72" away_points="87">
+                <venue id="f191ce99-dffa-4623-a5fa-326a55bdb1e7" name="Harrison HPER Complex" capacity="5000" address="14000 Highway 82" city="Itta Bena" state="MS" zip="38941" country="USA"/>
+                <home name="Mississippi Valley State Delta Devils" alias="MVSU" id="5873529e-e5e3-4a06-8a03-fa4cbe509880">
+                </home>
+                <away name="Prairie View A&amp;M Panthers" alias="PV" id="91ec9ba2-12e5-4a75-9410-a166c82163fd">
+                </away>
+              </game>
+              <game id="6ad2e1eb-e19c-459e-a7bd-bf0119779c30" status="closed" coverage="extended_boxscore" home_team="6120ac5d-e0f2-4b28-9e6f-ee71596a7e88" away_team="bb384635-c3a0-459a-8f13-fcd7177313e5" scheduled="2017-01-21T22:00:00+00:00" conference_game="true" home_points="58" away_points="61">
+                <venue id="cbd9a89f-577a-46b7-99e0-b2cb310533e5" name="Reed Green Coliseum" capacity="8095" address="112 Coliseum Dr" city="Hattiesburg" state="MS" zip="39406" country="USA"/>
+                <home name="Southern Miss Golden Eagles" alias="USM" id="6120ac5d-e0f2-4b28-9e6f-ee71596a7e88">
+                </home>
+                <away name="Rice Owls" alias="RICE" id="bb384635-c3a0-459a-8f13-fcd7177313e5">
+                </away>
+              </game>
+              <game id="080f6ad7-95d1-4ada-9f4e-094526ce9a11" status="closed" coverage="extended_boxscore" home_team="612f7f66-1de1-4d42-b842-9a508daab911" away_team="412e7f0d-fb93-4e6e-be1f-9a4c7490d121" scheduled="2017-01-21T22:00:00+00:00" conference_game="true" home_points="81" away_points="72">
+                <venue id="695d3bc9-f1db-4a96-9050-5a90073bbca0" name="Greensboro Coliseum Complex" capacity="23500" address="1921 West Lee Street" city="Greensboro" state="NC" zip="27403" country="USA"/>
+                <home name="UNC Greensboro Spartans" alias="UNCG" id="612f7f66-1de1-4d42-b842-9a508daab911">
+                </home>
+                <away name="Citadel Bulldogs" alias="CIT" id="412e7f0d-fb93-4e6e-be1f-9a4c7490d121">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="3b44cc13-e92f-40fb-8b43-14e68b20a7a0" status="closed" coverage="extended_boxscore" home_team="dfc2dfb7-aa67-4c48-99c9-4fa6c6bc4355" away_team="e7ff6d5c-07e9-42af-955d-0a0b8c1e2288" scheduled="2017-01-21T22:00:00+00:00" conference_game="true" home_points="63" away_points="81">
+                <venue id="7fd64804-c10e-487d-b6de-3774bc91507e" name="Farris Center" capacity="5500" address="201 Donaghey Ave" city="Conway" state="AR" zip="72035" country="USA"/>
+                <home name="Central Arkansas Bears" alias="CARK" id="dfc2dfb7-aa67-4c48-99c9-4fa6c6bc4355">
+                </home>
+                <away name="New Orleans Privateers" alias="UNO" id="e7ff6d5c-07e9-42af-955d-0a0b8c1e2288">
+                </away>
+              </game>
+              <game id="1bd345c0-2355-440d-8302-3d08e376df16" status="closed" coverage="extended_boxscore" home_team="6b955b96-b736-475e-bffd-e4acf2054169" away_team="87d88c93-29bc-4306-b0a6-87c6f6e80da1" scheduled="2017-01-21T22:00:00+00:00" conference_game="true" home_points="92" away_points="88">
+                <venue id="2a2ec581-1903-41af-bccf-ffddea79e29f" name="W.S. Hanner Fieldhouse" capacity="4358" address="590 Herty Dr" city="Statesboro" state="GA" zip="30458" country="USA"/>
+                <home name="Georgia Southern Eagles" alias="GASO" id="6b955b96-b736-475e-bffd-e4acf2054169">
+                </home>
+                <away name="Appalachian State Mountaineers" alias="APP" id="87d88c93-29bc-4306-b0a6-87c6f6e80da1">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="158b3ce3-674b-4c70-8603-6b0253947b15" status="closed" coverage="extended_boxscore" home_team="6a7083ab-1832-48c0-9168-427b35adbcde" away_team="23fec4e7-108f-4569-85d1-bef2f794e925" scheduled="2017-01-21T22:15:00+00:00" conference_game="true" home_points="83" away_points="71">
+                <venue id="1d7f1e41-996f-421c-bee9-d98388be3e27" name="Show Me Center" capacity="6972" address="1333 North Sprigg Street" city="Cape Girardeau" state="MO" zip="63701" country="USA"/>
+                <home name="Southeast Missouri State Redhawks" alias="SEMO" id="6a7083ab-1832-48c0-9168-427b35adbcde">
+                </home>
+                <away name="Eastern Illinois Panthers" alias="EIU" id="23fec4e7-108f-4569-85d1-bef2f794e925">
+                </away>
+              </game>
+              <game id="be576a35-a6e8-4f04-8c60-7c714373d008" status="closed" coverage="extended_boxscore" home_team="a3fef707-e4fc-48a0-82f1-f4ef01b76f45" away_team="600aad0e-85e7-4db8-be0b-94ba02a08e55" scheduled="2017-01-21T22:30:00+00:00" conference_game="true" home_points="76" away_points="61">
+                <venue id="316598dd-e7cf-4d9f-8b82-b2f64f8a3555" name="CSU Field House" capacity="881" address="9200 University Blvd" city="North Charleston" state="SC" zip="29406" country="USA"/>
+                <home name="Charleston Southern Buccaneers" alias="CHSO" id="a3fef707-e4fc-48a0-82f1-f4ef01b76f45">
+                </home>
+                <away name="Longwood Lancers" alias="LONG" id="600aad0e-85e7-4db8-be0b-94ba02a08e55">
+                </away>
+              </game>
+              <game id="fe5b0602-8f58-4209-911a-f37560c28cc9" status="closed" coverage="extended_boxscore" home_team="7c2b372b-b5f0-466e-90cf-880beec57584" away_team="18585f21-1d63-4400-974c-433fd5073c34" scheduled="2017-01-21T22:30:00+00:00" conference_game="true" home_points="71" away_points="55">
+                <venue id="69391650-8df7-49f0-8128-217a57679085" name="College Park Center" capacity="7000" address="601 S Pecan St" city="Arlington" state="TX" zip="76019" country="USA"/>
+                <home name="Texas-Arlington Mavericks" alias="UTA" id="7c2b372b-b5f0-466e-90cf-880beec57584">
+                </home>
+                <away name="Louisiana-Monroe Warhawks" alias="ULM" id="18585f21-1d63-4400-974c-433fd5073c34">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="ef10420c-f534-49c9-812b-7e5bc5605334" status="closed" coverage="extended_boxscore" home_team="6ef40534-5fad-4755-84de-7dcbd645d1f0" away_team="22984593-0701-4648-b8a8-f6d695238620" scheduled="2017-01-21T22:30:00+00:00" conference_game="true" home_points="77" away_points="67">
+                <venue id="982c554c-7900-48f0-b75d-a4888280ac16" name="Frost Arena" capacity="6500" address="11th St &amp; 16th Ave" city="Brookings" state="SD" zip="57006" country="USA"/>
+                <home name="South Dakota State Jackrabbits" alias="SDST" id="6ef40534-5fad-4755-84de-7dcbd645d1f0">
+                </home>
+                <away name="IPFW Mastodons" alias="IPFW" id="22984593-0701-4648-b8a8-f6d695238620">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="b7966b1c-d49c-4bcc-96c9-de4983b5765c" status="closed" coverage="extended_boxscore" home_team="1e5dc9e4-c60d-487b-8279-dfbec9229faa" away_team="63cad858-8654-4956-8438-8fe79cd1208a" scheduled="2017-01-21T22:30:00+00:00" conference_game="true" home_points="73" away_points="79">
+                <venue id="31cccc6f-84fb-4f1c-ab2d-f6db7f5fc955" name="Strahan Coliseum" capacity="7200" address="601 University Drive" city="San Marcos" state="TX" zip="78666" country="USA"/>
+                <home name="Texas State Bobcats" alias="TXST" id="1e5dc9e4-c60d-487b-8279-dfbec9229faa">
+                </home>
+                <away name="Louisiana-Lafayette Ragin' Cajuns" alias="ULL" id="63cad858-8654-4956-8438-8fe79cd1208a">
+                </away>
+              </game>
+              <game id="4b1254b6-4334-4a51-86fa-529edac234e9" status="closed" coverage="extended_boxscore" home_team="3eacc387-0ad8-4c5e-a666-c8ab447d224f" away_team="576b816b-5b9a-4768-a62b-f8435a8272c2" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="74" away_points="61">
+                <venue id="01f94951-45ef-4a15-bb87-ad020b4717a6" name="Tiger Arena" capacity="6000" address="3219 College St" city="Savannah" state="GA" zip="31404" country="USA"/>
+                <home name="Savannah State Tigers" alias="SAV" id="3eacc387-0ad8-4c5e-a666-c8ab447d224f">
+                </home>
+                <away name="Morgan State Bears" alias="MORG" id="576b816b-5b9a-4768-a62b-f8435a8272c2">
+                </away>
+              </game>
+              <game id="93a3a48c-534d-4602-a08c-c91d1fbf3c24" status="closed" coverage="full" home_team="c9570e17-c4fd-41e6-908a-1a083941319d" away_team="c31455b2-8a45-4248-aa8f-ce7eab1c6b02" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="47" away_points="62">
+                <venue id="ee6551cc-e4b5-4e08-906e-6184b5f6ab71" name="Alex G. Spanos Center" capacity="6150" address="1178 Larry Heller Dr" city="Stockton" state="CA" zip="95211" country="USA"/>
+                <home name="Pacific Tigers" alias="PAC" id="c9570e17-c4fd-41e6-908a-1a083941319d">
+                </home>
+                <away name="BYU Cougars" alias="BYU" id="c31455b2-8a45-4248-aa8f-ce7eab1c6b02">
+                </away>
+                <broadcast network="CSN-Bay Area" satellite="696"/>
+              </game>
+              <game id="640b8db7-488c-482f-bece-783e3af0095d" status="closed" coverage="full" home_team="b827dbdf-230f-4916-9703-3bb9004e26eb" away_team="a1ba4b89-d97c-44e2-835f-79ad3ccaa5ae" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="91" away_points="74">
+                <venue id="33c07c5e-4ebe-4bec-a43d-78a679840ba7" name="Thompson-Boling Arena" capacity="21678" address="1600 Phillip Fulmer Way" city="Knoxville" state="TN" zip="37916" country="USA"/>
+                <home name="Tennessee Volunteers" alias="TENN" id="b827dbdf-230f-4916-9703-3bb9004e26eb">
+                </home>
+                <away name="Mississippi State Bulldogs" alias="MSST" id="a1ba4b89-d97c-44e2-835f-79ad3ccaa5ae">
+                </away>
+                <broadcast network="SEC Network" satellite="611" internet="WatchESPN"/>
+              </game>
+              <game id="70f6b0c9-905c-4355-b527-534cf078b893" status="closed" coverage="full" home_team="d203f38a-a166-4258-bca2-e161b591ecfb" away_team="f770d3a2-221c-49ce-9c7a-680f7417fe9e" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="79" away_points="75">
+                <venue id="f49d36b8-5c9d-4dd1-a30c-2cea1899f7bd" name="Bramlage Coliseum" capacity="12528" address="1800 College Avenue" city="Manhattan" state="KS" zip="66502" country="USA"/>
+                <home name="Kansas State Wildcats" alias="KSU" id="d203f38a-a166-4258-bca2-e161b591ecfb">
+                </home>
+                <away name="West Virginia Mountaineers" alias="WVU" id="f770d3a2-221c-49ce-9c7a-680f7417fe9e">
+                </away>
+                <broadcast network="ESPN2" satellite="209" internet="WatchESPN"/>
+              </game>
+              <game id="820930fb-c1d9-4300-9872-40bf6e216319" status="closed" coverage="full" home_team="68a3227f-677f-43b0-9a3a-cad79d0df9e2" away_team="aa7af640-5762-4686-9181-39f7b8a8186e" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="87" away_points="85">
+                <venue id="1c5db5ab-5da3-4707-b198-4588508686f2" name="Thomas &amp; Mack Center" capacity="18776" address="4505 S Maryland Parkway" city="Paradise" state="NV" zip="89119" country="USA"/>
+                <home name="UNLV Rebels" alias="UNLV" id="68a3227f-677f-43b0-9a3a-cad79d0df9e2">
+                </home>
+                <away name="Air Force Falcons" alias="AFA" id="aa7af640-5762-4686-9181-39f7b8a8186e">
+                </away>
+                <broadcast network="ROOT Sports" satellite="683"/>
+              </game>
+              <game id="cd806a40-9140-4e89-94cd-35bf1d2b7436" status="closed" coverage="extended_boxscore" home_team="267d417a-8f85-4c87-a15a-068c089a74c6" away_team="1bddc811-44cf-4e53-b4ab-11c8dc82c9de" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="71" away_points="78">
+                <venue id="70869d17-505b-40dd-b7da-392fa823e9fe" name="Dunn-Oliver Acadome" capacity="7400" address="1595 Robert C. Hatch Dr" city="Montgomery" state="AL" zip="36104" country="USA"/>
+                <home name="Alabama State Hornets" alias="ALST" id="267d417a-8f85-4c87-a15a-068c089a74c6">
+                </home>
+                <away name="Alcorn State Braves" alias="ALCN" id="1bddc811-44cf-4e53-b4ab-11c8dc82c9de">
+                </away>
+              </game>
+              <game id="689df60f-e235-4ba6-9582-1127867bcd2f" status="closed" coverage="full" home_team="62a73b4a-e281-4483-a1f8-f1160a18e456" away_team="dd8db4d8-d984-4cab-b7f6-22c6b8c2c45f" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="76" away_points="81">
+                <venue id="d06f9894-d231-44f1-8788-33b28e1dfd3e" name="Lawlor Events Center" capacity="11536" address="1500 N Virginia St" city="Reno" state="NV" zip="89557" country="USA"/>
+                <home name="Nevada Wolf Pack" alias="NEV" id="62a73b4a-e281-4483-a1f8-f1160a18e456">
+                </home>
+                <away name="Fresno State Bulldogs" alias="FRES" id="dd8db4d8-d984-4cab-b7f6-22c6b8c2c45f">
+                </away>
+                <broadcast network="CBS Sports Network" satellite="221"/>
+              </game>
+              <game id="c0b55719-02a4-455e-a7f7-35e3a1e23457" status="closed" coverage="full" home_team="3f4515ea-4472-46b9-ac9e-16d7d8f22a38" away_team="1f99a164-d593-4d81-85d5-0d7889d6f486" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="85" away_points="64">
+                <venue id="99e88586-1675-4898-b385-3b4e2ded569e" name="Moody Coliseum" capacity="7000" address="6024 Airline Road" city="Dallas" state="TX" zip="75205" country="USA"/>
+                <home name="SMU Mustangs" alias="SMU" id="3f4515ea-4472-46b9-ac9e-16d7d8f22a38">
+                </home>
+                <away name="Houston Cougars" alias="HOU" id="1f99a164-d593-4d81-85d5-0d7889d6f486">
+                </away>
+                <broadcast network="ESPNU" satellite="208" internet="WatchESPN"/>
+              </game>
+              <game id="34e49132-b1b0-43d3-8728-b9066c0d8716" status="closed" coverage="full" home_team="2267a1f4-68f6-418b-aaf6-2aa0c4b291f1" away_team="1c7ec608-3b36-4cee-adac-9265e3792597" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="85" away_points="69">
+                <venue id="fc615ca5-dff2-4477-b494-8acd27938c97" name="Rupp Arena" capacity="23500" address="432 West Vine Street" city="Lexington" state="KY" zip="40506" country="USA"/>
+                <home name="Kentucky Wildcats" alias="UK" id="2267a1f4-68f6-418b-aaf6-2aa0c4b291f1">
+                </home>
+                <away name="South Carolina Gamecocks" alias="SCAR" id="1c7ec608-3b36-4cee-adac-9265e3792597">
+                </away>
+                <broadcast network="ESPN" satellite="206" internet="WatchESPN"/>
+              </game>
+              <game id="52d86f28-089c-49bf-8833-3f3121f17ced" status="closed" coverage="extended_boxscore" home_team="58d8baa3-7624-4b21-a47f-a23df2bf8859" away_team="881380da-861c-4ab6-a7d2-20699d8ea883" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="94" away_points="80">
+                <venue id="a9ed84bc-3680-4247-b4ca-01cd01cd847c" name="Cam Henderson Center" capacity="9048" address="1 John Marshall Dr" city="Huntington" state="WV" zip="25755" country="USA"/>
+                <home name="Marshall Thundering Herd" alias="MRSH" id="58d8baa3-7624-4b21-a47f-a23df2bf8859">
+                </home>
+                <away name="Western Kentucky Hilltoppers" alias="WKU" id="881380da-861c-4ab6-a7d2-20699d8ea883">
+                </away>
+                <broadcast network="ASN"/>
+              </game>
+              <game id="ef672973-3568-4802-b3b7-c36c2f63d824" status="closed" coverage="full" home_team="1da70895-f77f-44ef-b216-d63c02e696eb" away_team="683ab61f-546f-44da-b085-c3a5740554aa" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="69" away_points="52">
+                <venue id="591ff737-8ad6-4a23-9de1-3721d5c4d8a1" name="Matthew Knight Arena" capacity="12364" address="1776 East 13th Street" city="Eugene" state="OR" zip="97401" country="USA"/>
+                <home name="Oregon Ducks" alias="ORE" id="1da70895-f77f-44ef-b216-d63c02e696eb">
+                </home>
+                <away name="Stanford Cardinal" alias="STAN" id="683ab61f-546f-44da-b085-c3a5740554aa">
+                </away>
+                <broadcast network="Pac-12 Network"/>
+              </game>
+              <game id="2ca6e508-2915-4beb-9396-52b2fce79bd1" status="closed" coverage="extended_boxscore" home_team="55cd5bb4-b030-4a7a-9652-6cebaf81c574" away_team="95a27dc5-16d5-4745-9adb-34c41e1444e8" scheduled="2017-01-21T23:00:00+00:00" conference_game="true" home_points="83" away_points="71">
+                <venue id="9e24a4e1-2568-4934-9d17-b7ee6f29997c" name="University Center (LA)" capacity="7500" address="800 W University Ave" city="Hammond" state="LA" zip="70402" country="USA"/>
+                <home name="Southeastern Louisiana Lions" alias="SELA" id="55cd5bb4-b030-4a7a-9652-6cebaf81c574">
+                </home>
+                <away name="Houston Baptist Huskies" alias="HBU" id="95a27dc5-16d5-4745-9adb-34c41e1444e8">
+                </away>
+              </game>
+              <game id="e8e35e38-8df6-4616-9163-714b9c78adf1" status="closed" coverage="extended_boxscore" home_team="a8f75c12-c4db-401f-99e3-b48209d85274" away_team="161354af-1f3e-4d58-88f7-e016ec74b7b6" scheduled="2017-01-21T23:30:00+00:00" conference_game="true" home_points="79" away_points="62">
+                <venue id="c6d469de-cf8e-4b38-8213-15b28df665d6" name="Joseph G. Echols Memorial Hall" capacity="7000" address="700 Park Ave" city="Norfolk" state="VA" zip="23504" country="USA"/>
+                <home name="Norfolk State Spartans" alias="NORF" id="a8f75c12-c4db-401f-99e3-b48209d85274">
+                </home>
+                <away name="Hampton Pirates" alias="HAMP" id="161354af-1f3e-4d58-88f7-e016ec74b7b6">
+                </away>
+              </game>
+              <game id="59e401ff-069a-4be0-b203-01fa3dba2d52" status="closed" coverage="extended_boxscore" home_team="6776c7e6-f4c2-47bd-99e5-39fc179a3197" away_team="c444e03b-d16b-48b2-9b18-823c2647d41d" scheduled="2017-01-21T23:30:00+00:00" conference_game="true" home_points="72" away_points="57">
+                <venue id="de074131-0d69-4fff-b8cb-4b006c6c92ac" name="Fredrick C. Hobdy Assembly Center" capacity="7500" address="1234 Grambling Road" city="Grambling" state="LA" zip="71245" country="USA"/>
+                <home name="Grambling State Tigers" alias="GRAM" id="6776c7e6-f4c2-47bd-99e5-39fc179a3197">
+                </home>
+                <away name="Jackson State Tigers" alias="JKST" id="c444e03b-d16b-48b2-9b18-823c2647d41d">
+                </away>
+              </game>
+              <game id="6f42c335-ab72-427e-8d0c-e7fde4374e38" status="closed" coverage="extended_boxscore" home_team="09920a5f-1b25-466c-b5ae-6167214f5ba9" away_team="a2b8223d-40b3-4076-b5df-55655c2f8591" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="90" away_points="84">
+                <venue id="8ce53c13-866e-4485-a422-8efa5d8987e5" name="UNF Arena" capacity="5800" address="11852 University of North Fl Dr" city="Jacksonville" state="FL" zip="32224" country="USA"/>
+                <home name="North Florida Ospreys" alias="UNF" id="09920a5f-1b25-466c-b5ae-6167214f5ba9">
+                </home>
+                <away name="Lipscomb Bisons" alias="LIP" id="a2b8223d-40b3-4076-b5df-55655c2f8591">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="d9f743ba-b7ca-44fe-842e-aab9277630c0" status="closed" coverage="extended_boxscore" home_team="8ff733a9-9f93-46de-ba7e-cf6f7e429670" away_team="10f450ce-143b-4e46-8bfe-52c644b68b07" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="81" away_points="57">
+                <venue id="1ab1ee39-1e10-410b-b7fd-2f93c1d86216" name="Thomas Assembly Center" capacity="8000" address="1650 West Alabama Ave" city="Ruston" state="LA" zip="71272" country="USA"/>
+                <home name="Louisiana Tech Bulldogs" alias="LT" id="8ff733a9-9f93-46de-ba7e-cf6f7e429670">
+                </home>
+                <away name="North Texas Mean Green" alias="UNT" id="10f450ce-143b-4e46-8bfe-52c644b68b07">
+                </away>
+              </game>
+              <game id="822b7580-b28e-4414-81e4-d615d0a9d799" status="closed" coverage="extended_boxscore" home_team="0dadedb0-2bd3-45e7-91a3-93af6c4e87f2" away_team="10c614fa-9646-46cf-a1fb-5af96772bbb8" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="73" away_points="56">
+                <venue id="b30181e3-c980-4668-9c13-5f5ef88aa819" name="Jack Stephens Center" capacity="5600" address="2801 South University" city="Little Rock" state="AR" zip="72204" country="USA"/>
+                <home name="Arkansas-Little Rock Trojans" alias="UALR" id="0dadedb0-2bd3-45e7-91a3-93af6c4e87f2">
+                </home>
+                <away name="South Alabama Jaguars" alias="USA" id="10c614fa-9646-46cf-a1fb-5af96772bbb8">
+                </away>
+              </game>
+              <game id="14851415-c9a0-4f26-b3bc-50fa29bc6989" status="closed" coverage="extended_boxscore" home_team="ca74bd67-034c-4468-8487-6f983f5eb4f6" away_team="88ff8c00-958e-4ccf-a21d-77fab9e93692" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="62" away_points="67">
+                <venue id="e30178c1-fbfc-47e0-92f7-37855cb3a81b" name="Francis S. Levien Gymnasium" capacity="2500" address="3030 Broadway" city="New York City" state="NY" zip="10027" country="USA"/>
+                <home name="Columbia Lions" alias="CLMB" id="ca74bd67-034c-4468-8487-6f983f5eb4f6">
+                </home>
+                <away name="Cornell Big Red" alias="COR" id="88ff8c00-958e-4ccf-a21d-77fab9e93692">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="278f7369-7514-4766-a52e-29ac82dd0a82" status="closed" coverage="extended_boxscore" home_team="a8ac24ca-3b7a-4610-ad99-042661584c48" away_team="63a8fdcf-b51b-4de3-8a57-2a6e41d362ce" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="94" away_points="85">
+                <venue id="6db7f60d-da7a-46df-8da3-28c8836dffd4" name="FIU Arena" capacity="5000" address="11200 Southwest 8th St" city="Miami" state="FL" zip="33199" country="USA"/>
+                <home name="Florida International Golden Panthers" alias="FIU" id="a8ac24ca-3b7a-4610-ad99-042661584c48">
+                </home>
+                <away name="UAB Blazers" alias="UAB" id="63a8fdcf-b51b-4de3-8a57-2a6e41d362ce">
+                </away>
+              </game>
+              <game id="e7c53506-10a7-492b-a4b7-1d78336f79d2" status="closed" coverage="extended_boxscore" home_team="508f503f-dc57-4f4c-a01e-4f195e5c05c8" away_team="6af02334-9ac3-452f-bcf4-20abdb72bd07" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="75" away_points="68">
+                <venue id="7f83e6f9-fc09-437b-b4ec-a9b2121ac613" name="Stabler Arena" capacity="6000" address="124 Goodman Drive" city="Bethlehem" state="PA" zip="18015" country="USA"/>
+                <home name="Lehigh Mountain Hawks" alias="LEH" id="508f503f-dc57-4f4c-a01e-4f195e5c05c8">
+                </home>
+                <away name="Lafayette Leopards" alias="LAF" id="6af02334-9ac3-452f-bcf4-20abdb72bd07">
+                </away>
+                <broadcast network="Patriot League Network"/>
+              </game>
+              <game id="7731c6ea-a276-4ad6-9685-3ef6a583c96a" status="closed" coverage="extended_boxscore" home_team="fb28bd56-9e56-40c1-992d-71c1e27fe4fd" away_team="2e8442e9-bd09-4d46-9dd3-de79433287f3" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="71" away_points="81">
+                <venue id="07cdd9d3-9dd1-47fe-a7f3-35aeed44ee5f" name="Swisher Gym" capacity="1500" address="2800 University Blvd" city="Jacksonville" state="FL" zip="32211" country="USA"/>
+                <home name="Jacksonville Dolphins" alias="JAC" id="fb28bd56-9e56-40c1-992d-71c1e27fe4fd">
+                </home>
+                <away name="Kennesaw State Owls" alias="KENN" id="2e8442e9-bd09-4d46-9dd3-de79433287f3">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="15f10f39-9200-4f0a-9082-aad6b5fd3e98" status="closed" coverage="extended_boxscore" home_team="949c3398-85e4-4c63-ba71-9a82e06ddea4" away_team="a3b13d27-ec14-4a7d-88a2-0bc9f7b58984" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="52" away_points="53">
+                <venue id="2f12ffa0-432f-4147-810f-1baccff6d116" name="Elmore Gymnasium" capacity="6000" address="4900 Meridian Street" city="Normal" state="AL" zip="35762" country="USA"/>
+                <home name="Alabama A&amp;M Bulldogs" alias="AAMU" id="949c3398-85e4-4c63-ba71-9a82e06ddea4">
+                </home>
+                <away name="Southern University Jaguars" alias="SOU" id="a3b13d27-ec14-4a7d-88a2-0bc9f7b58984">
+                </away>
+              </game>
+              <game id="d67abb81-4c2b-4c11-9c71-23825cbffc7a" status="closed" coverage="extended_boxscore" home_team="c851131a-5ecd-4670-81bc-b40f4837dd65" away_team="3d2f0819-8f3b-4ff3-afd6-6227c469a751" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="57" away_points="86">
+                <venue id="e2ea8c75-958d-4559-8526-37cba6508073" name="FAU Arena" capacity="5000" address="777 Glades Road" city="Boca Raton" state="FL" zip="33431" country="USA"/>
+                <home name="Florida Atlantic Owls" alias="FAU" id="c851131a-5ecd-4670-81bc-b40f4837dd65">
+                </home>
+                <away name="Middle Tennessee Blue Raiders" alias="MTU" id="3d2f0819-8f3b-4ff3-afd6-6227c469a751">
+                </away>
+              </game>
+              <game id="2936c121-bdae-4b33-8b0b-b0d46585acbd" status="closed" coverage="extended_boxscore" neutral_site="true" home_team="f9e4261e-d11d-46c4-bd33-c7bbc94ef0e8" away_team="e6c94452-1adf-4fb9-90e5-10f165c57c5a" scheduled="2017-01-22T00:00:00+00:00" conference_game="false" home_points="78" away_points="71">
+                <venue id="bc28056a-d3aa-4b45-b19e-24608db3a675" name="Palestra" capacity="8722" address="215 S 33rd St" city="Philadelphia" state="PA" zip="19104" country="USA"/>
+                <home name="Saint Joseph's (PA) Hawks" alias="JOES" id="f9e4261e-d11d-46c4-bd33-c7bbc94ef0e8">
+                </home>
+                <away name="Pennsylvania Quakers" alias="PENN" id="e6c94452-1adf-4fb9-90e5-10f165c57c5a">
+                </away>
+              </game>
+              <game id="9d48b51b-e5ed-4213-b721-5dba15293c14" status="closed" coverage="extended_boxscore" home_team="6b170a32-8445-4cb1-8638-724996c3094b" away_team="3b6293f3-03db-46d2-8793-248963c2d83b" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="65" away_points="55">
+                <venue id="46b89cee-b775-4c80-81b8-5628effbe2b3" name="UC Riverside Student Recreation Center" capacity="3168" address="900 University Ave" city="Riverside" state="CA" zip="92507" country="USA"/>
+                <home name="UC Riverside Highlanders" alias="UCRV" id="6b170a32-8445-4cb1-8638-724996c3094b">
+                </home>
+                <away name="UC Santa Barbara Gauchos" alias="UCSB" id="3b6293f3-03db-46d2-8793-248963c2d83b">
+                </away>
+              </game>
+              <game id="d7317253-914c-4472-b17c-d07d1950dea0" status="closed" coverage="extended_boxscore" home_team="5326c079-3dc3-468f-a601-b776dd9c1e62" away_team="500d7223-ecff-494b-9539-28427156c783" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="84" away_points="71">
+                <venue id="f334df76-6386-4756-a894-d34b3d1ccb00" name="Alico Arena" capacity="4633" address="FGCU Parkway East" city="Fort Myers" state="FL" zip="33913" country="USA"/>
+                <home name="Florida Gulf Coast Eagles" alias="FGCU" id="5326c079-3dc3-468f-a601-b776dd9c1e62">
+                </home>
+                <away name="N.J.I.T. Highlanders" alias="NJIT" id="500d7223-ecff-494b-9539-28427156c783">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="0f412223-3efe-4a6f-adfd-70a4310eedb1" status="closed" coverage="extended_boxscore" home_team="0b73b9b9-1e29-4b14-b5d8-0405fe942e32" away_team="15d31915-fbd6-4ae3-8e4b-f3b563c56a18" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="84" away_points="66">
+                <venue id="9df96001-1c74-402a-9f2d-80e5831d6bb0" name="Alumni Gymnasium" capacity="1950" address="2083 Lawrenceville Rd" city="Lawrenceville" state="NJ" zip="8648" country="USA"/>
+                <home name="Rider Broncs" alias="RID" id="0b73b9b9-1e29-4b14-b5d8-0405fe942e32">
+                </home>
+                <away name="Marist Red Foxes" alias="MRST" id="15d31915-fbd6-4ae3-8e4b-f3b563c56a18">
+                </away>
+              </game>
+              <game id="a5c9d439-c063-40a5-a77e-8fd48250da5b" status="closed" coverage="extended_boxscore" home_team="9febd5fa-982f-4f40-ad1d-8e49be96cf4f" away_team="c206712f-2298-4279-b76c-834ac42809b9" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="75" away_points="67">
+                <venue id="e9969453-033e-4fdd-99dc-5212240c8c9b" name="Skyhawk Arena" capacity="4800" address="554 University Street" city="Martin" state="TN" zip="38238" country="USA"/>
+                <home name="Tennessee-Martin Skyhawks" alias="UTM" id="9febd5fa-982f-4f40-ad1d-8e49be96cf4f">
+                </home>
+                <away name="SIU-Edwardsville Cougars" alias="SIUE" id="c206712f-2298-4279-b76c-834ac42809b9">
+                </away>
+              </game>
+              <game id="f2ac1b5d-89bf-4a39-a5e1-71cec0ab36e4" status="closed" coverage="extended_boxscore" home_team="8accb91e-6086-41b3-a420-7a82fa442365" away_team="ad24b724-a11c-4dcd-a68c-67c53833ccb7" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="71" away_points="62">
+                <venue id="966b6f31-1a6e-41df-a295-054c20073fce" name="Alumni Gym" capacity="1585" address="Phoenix Dr" city="Elon" state="NC" zip="27244" country="USA"/>
+                <home name="Elon Phoenix" alias="ELON" id="8accb91e-6086-41b3-a420-7a82fa442365">
+                </home>
+                <away name="William &amp; Mary Tribe" alias="WM" id="ad24b724-a11c-4dcd-a68c-67c53833ccb7">
+                </away>
+              </game>
+              <game id="bb10d747-278f-4eb2-b139-fa4039db7b1b" status="closed" coverage="extended_boxscore" home_team="559db90c-741f-40d1-aa81-3fdd1d4889f3" away_team="ca441726-0c57-4456-b1e7-fff098484fb5" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="48" away_points="61">
+                <venue id="0ecd3719-8eea-4964-a7a3-085f06eae84e" name="Vines Center" capacity="8085" address="1971 University Blvd" city="Lynchburg" state="VA" zip="24502" country="USA"/>
+                <home name="Liberty Flames" alias="LIB" id="559db90c-741f-40d1-aa81-3fdd1d4889f3">
+                </home>
+                <away name="Winthrop Eagles" alias="WIN" id="ca441726-0c57-4456-b1e7-fff098484fb5">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="62f6f579-5243-4021-8101-22ada9d68497" status="closed" coverage="extended_boxscore" home_team="3da4798c-2d58-4dac-b66e-ad145a91b544" away_team="34dd83ac-64f2-4b73-8577-899b2a46f5cc" scheduled="2017-01-22T00:00:00+00:00" conference_game="true" home_points="85" away_points="61">
+                <venue id="ede23d56-aa67-42ab-88a9-b373c37480a4" name="Memorial Athletic and Convocation Center" capacity="6327" address="1025 Risman Drive" city="Kent" state="OH" zip="44242" country="USA"/>
+                <home name="Kent State Golden Flashes" alias="KENT" id="3da4798c-2d58-4dac-b66e-ad145a91b544">
+                </home>
+                <away name="Toledo Rockets" alias="TOL" id="34dd83ac-64f2-4b73-8577-899b2a46f5cc">
+                </away>
+                <broadcast network="ESPN3" internet="Watch ESPN"/>
+              </game>
+              <game id="cd7b6c7a-39a2-496d-8910-3d6d6e5a1064" status="closed" coverage="extended_boxscore" home_team="67322042-9c40-4dc2-b33a-4754c02ec82a" away_team="fe21a988-3e96-4f3c-8f9f-b449ccda43b0" scheduled="2017-01-22T00:15:00+00:00" conference_game="true" home_points="76" away_points="62">
+                <venue id="89aeec29-8563-40fa-8cb8-fa3960fa1ecf" name="Bernard Johnson Coliseum" capacity="6110" address="1964 Bobby K. Marks Dr" city="Huntsville" state="TX" zip="77340" country="USA"/>
+                <home name="Sam Houston State Bearkats" alias="SHSU" id="67322042-9c40-4dc2-b33a-4754c02ec82a">
+                </home>
+                <away name="Texas A&amp;M-CC Islanders" alias="AMCC" id="fe21a988-3e96-4f3c-8f9f-b449ccda43b0">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="d61ef531-b063-4e0d-85ba-42b5ff976b4d" status="closed" coverage="extended_boxscore" home_team="a0fdb660-a822-4337-b01d-31c4d2c99c8a" away_team="77a69fb0-1355-4342-ac09-b4cc7949d95e" scheduled="2017-01-22T00:30:00+00:00" conference_game="true" home_points="84" away_points="81">
+                <venue id="61d49f1f-05d1-4f0a-89d9-c2aaf51812ea" name="Dave Aaron Arena" capacity="7257" address="601 Drane Street" city="Clarksville" state="TN" zip="37040" country="USA"/>
+                <home name="Austin Peay Governors" alias="PEAY" id="a0fdb660-a822-4337-b01d-31c4d2c99c8a">
+                </home>
+                <away name="Murray State Racers" alias="MURR" id="77a69fb0-1355-4342-ac09-b4cc7949d95e">
+                </away>
+              </game>
+              <game id="0c7c9039-1b2c-46c9-ab24-915662c052ff" status="closed" coverage="extended_boxscore" home_team="b7747a03-c85b-4de6-94bf-1b5b68553248" away_team="e48e3dd5-721c-4d96-8ff4-790fe2597bfd" scheduled="2017-01-22T00:45:00+00:00" conference_game="true" home_points="80" away_points="54">
+                <venue id="4ff71c66-7ac0-4726-a1b5-9f4706933b72" name="Ellis Johnson Arena" capacity="6500" address="150 University Blvd" city="Morehead" state="KY" zip="40351" country="USA"/>
+                <home name="Morehead State Eagles" alias="MORE" id="b7747a03-c85b-4de6-94bf-1b5b68553248">
+                </home>
+                <away name="Eastern Kentucky Colonels" alias="EKY" id="e48e3dd5-721c-4d96-8ff4-790fe2597bfd">
+                </away>
+              </game>
+              <game id="30ae6c72-d0cf-4950-ab21-469e297343f3" status="closed" coverage="full" home_team="1b1977ec-b32f-4ce3-95a4-d07bab4816cd" away_team="a7127c0a-a466-47ae-91ad-9a71ee2c9427" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="78" away_points="71">
+                <venue id="7b2ab214-8e42-4736-b16c-1c91df7b509f" name="WisePies Arena" capacity="15411" address="Avenida Cesar Chavez &amp; University Blvd SE." city="Albuquerque" state="NM" zip="87131" country="USA"/>
+                <home name="New Mexico Lobos" alias="UNM" id="1b1977ec-b32f-4ce3-95a4-d07bab4816cd">
+                </home>
+                <away name="Wyoming Cowboys" alias="WYO" id="a7127c0a-a466-47ae-91ad-9a71ee2c9427">
+                </away>
+                <broadcast network="CBS Sports Network" satellite="221"/>
+              </game>
+              <game id="f9ec60a8-6c23-4c82-8d69-4ee7fc62bb0c" status="closed" coverage="extended_boxscore" home_team="7cdfcf92-7fe7-46f1-9b66-6912114182e6" away_team="2c93a75d-5449-4ec1-9ca2-1e6c812399a4" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="57" away_points="58">
+                <venue id="45bdb06a-4b54-4c49-bc72-853dc414591d" name="SIU Arena" capacity="8339" address="1400 Arena Dr" city="Carbondale" state="IL" zip="62903" country="USA"/>
+                <home name="Southern Illinois Salukis" alias="SIU" id="7cdfcf92-7fe7-46f1-9b66-6912114182e6">
+                </home>
+                <away name="Northern Iowa Panthers" alias="UNI" id="2c93a75d-5449-4ec1-9ca2-1e6c812399a4">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="07f937ad-91c0-421f-971f-a6ef0fcf6218" status="closed" coverage="extended_boxscore" home_team="8ddbfca9-a931-4908-aa31-9fcd17624b5f" away_team="ce967953-5c50-4220-87b2-99acb9606e84" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="74" away_points="72">
+                <venue id="70570fc0-9b6f-41e8-9ad1-2c6cb70af493" name="Dale F. Halton Arena" capacity="9105" address="9201 University City Boulevard" city="Charlotte" state="NC" zip="28223" country="USA"/>
+                <home name="Charlotte 49ers" alias="CHAR" id="8ddbfca9-a931-4908-aa31-9fcd17624b5f">
+                </home>
+                <away name="Old Dominion Monarchs" alias="ODU" id="ce967953-5c50-4220-87b2-99acb9606e84">
+                </away>
+                <broadcast network="ASN"/>
+              </game>
+              <game id="c1294883-af9c-4674-a3a8-497b9b3e831f" status="closed" coverage="full" home_team="f7fcbb6e-4a55-41ea-ba21-f763ed914467" away_team="db6e1cab-3fa3-4a93-a673-8b2a358ff4bf" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="53" away_points="62">
+                <venue id="1819e403-3649-4114-af21-f21d70cceb61" name="Schollmaier Arena" capacity="7201" address="2900 Stadium Drive" city="Fort Worth" state="TX" zip="76129" country="USA"/>
+                <home name="TCU Horned Frogs" alias="TCU" id="f7fcbb6e-4a55-41ea-ba21-f763ed914467">
+                </home>
+                <away name="Baylor Bears" alias="BAY" id="db6e1cab-3fa3-4a93-a673-8b2a358ff4bf">
+                </away>
+                <broadcast network="ESPNU" satellite="208" internet="WatchESPN"/>
+              </game>
+              <game id="6c6db5a7-a397-4b1c-ac06-f93d6f62ae78" status="closed" coverage="full" home_team="e52c9644-717a-46f4-bf16-aeca000b3b44" away_team="0d037a5d-827a-44dd-8b70-57603d671d5d" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="72" away_points="94">
+                <venue id="afe57543-ac2b-4b38-9f45-1b73ff001cc2" name="Alaska Airlines Arena at Hec Edmundson Pavilion" capacity="10000" address="3870 Mountlake Blvd NE" city="Seattle" state="WA" zip="98195" country="USA"/>
+                <home name="Washington Huskies" alias="WASH" id="e52c9644-717a-46f4-bf16-aeca000b3b44">
+                </home>
+                <away name="Utah Utes" alias="UTAH" id="0d037a5d-827a-44dd-8b70-57603d671d5d">
+                </away>
+                <broadcast network="Pac-12 Network"/>
+              </game>
+              <game id="c6a4507a-3855-4139-b1c1-f8efd932e0ba" status="closed" coverage="extended_boxscore" home_team="92456e1e-f48c-4385-96ab-14cb27d18726" away_team="2f8c85a7-54f4-4942-be16-2cbac77c82d7" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="85" away_points="77">
+                <venue id="f2b44afd-a410-4a87-800b-e53f9339b03d" name="UTRGV Field House" capacity="2500" address="N 5th Street and W Van Week Street" city="Edinburg" state="TX" zip="78539" country="USA"/>
+                <home name="Texas Rio Grande Valley Vaqueros" alias="UTRGV" id="92456e1e-f48c-4385-96ab-14cb27d18726">
+                </home>
+                <away name="Chicago State Cougars" alias="CHS" id="2f8c85a7-54f4-4942-be16-2cbac77c82d7">
+                </away>
+              </game>
+              <game id="7c4b4b09-e827-447a-a794-90df51b74dc4" status="closed" coverage="extended_boxscore" home_team="509aacc4-c121-46a2-800a-d5431ef181d2" away_team="aed211c3-23a4-4188-ad70-22c6eba7d765" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="72" away_points="58">
+                <venue id="130c58f1-bad3-4dcb-8d87-9d9dc44ca5ea" name="Redbird Arena" capacity="10200" address="232 West College Ave" city="Normal" state="IL" zip="61761" country="USA"/>
+                <home name="Illinois State Redbirds" alias="ILST" id="509aacc4-c121-46a2-800a-d5431ef181d2">
+                </home>
+                <away name="Drake Bulldogs" alias="DRKE" id="aed211c3-23a4-4188-ad70-22c6eba7d765">
+                </away>
+                <broadcast network="FS-MW" satellite="671"/>
+              </game>
+              <game id="c7f478e3-da20-47de-9cd2-f2828aba706f" status="closed" coverage="extended_boxscore" home_team="95826e36-ea33-4b51-83a8-7b4cc20999ee" away_team="6373b18c-62f6-49bc-bd4c-8959a2466516" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="82" away_points="80">
+                <venue id="9240589b-3f2a-45cb-b592-e6e02f5557a6" name="Convocation Center" capacity="10475" address="217 Olympic Drive" city="Jonesboro" state="AR" zip="72401" country="USA"/>
+                <home name="Arkansas State Red Wolves" alias="ARST" id="95826e36-ea33-4b51-83a8-7b4cc20999ee">
+                </home>
+                <away name="Troy Trojans" alias="TROY" id="6373b18c-62f6-49bc-bd4c-8959a2466516">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="8e333dc3-e8ca-438e-a038-dc7da34ead30" status="closed" coverage="full" home_team="2f4d21f8-6d5f-48a5-abca-52a30583871a" away_team="224e3b21-30e7-4a05-9e8c-62721d581db8" scheduled="2017-01-22T01:00:00+00:00" conference_game="true" home_points="73" away_points="52">
+                <venue id="88654386-5e00-4842-833c-28eaf88c63c2" name="McCarthey Athletic Center" capacity="6000" address="801 North Cincinnati St" city="Spokane" state="WA" zip="99258" country="USA"/>
+                <home name="Gonzaga Bulldogs" alias="GONZ" id="2f4d21f8-6d5f-48a5-abca-52a30583871a">
+                </home>
+                <away name="Portland Pilots" alias="PORT" id="224e3b21-30e7-4a05-9e8c-62721d581db8">
+                </away>
+                <broadcast network="ROOT Sports" satellite="683"/>
+              </game>
+              <game id="cb75685c-c1a0-462d-8a0c-4db52bcb6e32" status="closed" coverage="full" home_team="faeb1160-5d15-4f26-99fc-c441cf21fc7f" away_team="7aec5187-cb1b-45e5-8f7d-406d766cdc73" scheduled="2017-01-22T01:15:00+00:00" conference_game="true" home_points="70" away_points="58">
+                <venue id="c134cdf8-d1c8-4972-b4f2-8f167261eb50" name="Cameron Indoor Stadium" capacity="9314" address="301 Whitford Drive" city="Durham" state="NC" zip="27706" country="USA"/>
+                <home name="Duke Blue Devils" alias="DUKE" id="faeb1160-5d15-4f26-99fc-c441cf21fc7f">
+                </home>
+                <away name="Miami (FL) Hurricanes" alias="MIA" id="7aec5187-cb1b-45e5-8f7d-406d766cdc73">
+                </away>
+                <broadcast network="ESPN" satellite="206" internet="WatchESPN"/>
+              </game>
+              <game id="67fb7654-0847-4ca8-a13e-40afbca8c098" status="closed" coverage="full" home_team="c70c23c4-ab09-4797-a1af-792c848ab17f" away_team="70e2bedd-3a0a-479c-ac99-e3f58aa6824b" scheduled="2017-01-22T01:30:00+00:00" conference_game="true" home_points="99" away_points="86">
+                <venue id="a5718f89-a8e8-4fca-8015-4fcd7eb2353a" name="Bud Walton Arena" capacity="19368" address="1270 West Leroy Pond Dr" city="Fayetteville" state="AR" zip="72701" country="USA"/>
+                <home name="Arkansas Razorbacks" alias="ARK" id="c70c23c4-ab09-4797-a1af-792c848ab17f">
+                </home>
+                <away name="LSU Tigers" alias="LSU" id="70e2bedd-3a0a-479c-ac99-e3f58aa6824b">
+                </away>
+                <broadcast network="SEC Network" satellite="611" internet="WatchESPN"/>
+              </game>
+              <game id="bf24e930-c03e-4b31-a3c1-46383901d3c7" status="closed" coverage="extended_boxscore" home_team="1394dd8a-040e-4509-9ee3-761d60eaf6c9" away_team="eb157f98-0697-459c-9293-ddb162ceb28b" scheduled="2017-01-22T01:30:00+00:00" conference_game="true" home_points="63" away_points="70">
+                <venue id="c652d52c-d787-4a99-b50d-546c3a8b8b60" name="H.O. Clemmons Arena" capacity="4500" address="1500 L.A. Prexy Davis Dr" city="Pine Bluff" state="AR" zip="71611" country="USA"/>
+                <home name="Arkansas-Pine Bluff Golden Lions" alias="ARPB" id="1394dd8a-040e-4509-9ee3-761d60eaf6c9">
+                </home>
+                <away name="Texas Southern Tigers" alias="TXSO" id="eb157f98-0697-459c-9293-ddb162ceb28b">
+                </away>
+              </game>
+              <game id="847fb37a-d921-4e92-bc2c-dda5685caedb" status="closed" coverage="extended_boxscore" home_team="912671c7-19fd-451b-813e-885485427820" away_team="5ef64f01-86ae-4553-9834-c79cc0859eaf" scheduled="2017-01-22T01:30:00+00:00" conference_game="true" home_points="70" away_points="68">
+                <venue id="7f903d54-b6eb-48f1-9332-27f635991605" name="McDermott Center" capacity="2000" address="4301 Broadway" city="San Antonio" state="TX" zip="78209" country="USA"/>
+                <home name="Incarnate Word Cardinals" alias="IW" id="912671c7-19fd-451b-813e-885485427820">
+                </home>
+                <away name="Stephen F. Austin Lumberjacks" alias="SFA" id="5ef64f01-86ae-4553-9834-c79cc0859eaf">
+                </away>
+                <broadcast network="ESPN3" internet="WatchESPN"/>
+              </game>
+              <game id="8e1c4926-7f41-4758-bd6e-4c0850ae00e0" status="closed" coverage="extended_boxscore" home_team="87721c44-53a2-47aa-9b3a-0f1c99b0f328" away_team="13358462-e05b-4449-8688-90c4622cdde8" scheduled="2017-01-22T01:30:00+00:00" conference_game="true" home_points="79" away_points="86">
+                <venue id="41300711-0d9a-4501-bda0-f2841fbdec2e" name="Gentry Complex" capacity="10500" address="3500 John A Merritt Blvd" city="Nashville" state="TN" zip="37209" country="USA"/>
+                <home name="Tennessee State Tigers" alias="TNST" id="87721c44-53a2-47aa-9b3a-0f1c99b0f328">
+                </home>
+                <away name="Jacksonville State Gamecocks" alias="JVST" id="13358462-e05b-4449-8688-90c4622cdde8">
+                </away>
+              </game>
+              <game id="1dc89eb5-c3ed-49bf-9c7e-61f421de8536" status="closed" coverage="extended_boxscore" home_team="f7e6acc3-0778-4de5-940a-d88e20df1159" away_team="7e100f63-0b32-49f6-a954-f5b7c8cf48ad" scheduled="2017-01-22T02:00:00+00:00" conference_game="true" home_points="61" away_points="57">
+                <venue id="fc452f03-c8cb-4471-9566-753b54e70725" name="Grand Canyon University Arena" capacity="7000" address="3300 West Camelback Road" city="Phoenix" state="AZ" zip="85017" country="USA"/>
+                <home name="Grand Canyon Antelopes" alias="GC" id="f7e6acc3-0778-4de5-940a-d88e20df1159">
+                </home>
+                <away name="Seattle Redhawks" alias="SEA" id="7e100f63-0b32-49f6-a954-f5b7c8cf48ad">
+                </away>
+              </game>
+              <game id="6900265c-2dcc-461e-af15-f9426cdd7348" status="closed" coverage="extended_boxscore" home_team="620d5944-7156-47d3-aad5-5b3824557d03" away_team="d24efd99-8717-43b9-a086-9986a684ac04" scheduled="2017-01-22T02:00:00+00:00" conference_game="true" home_points="43" away_points="60">
+                <venue id="68e1c556-3a3d-4806-ba8f-c9407831cb71" name="Jenny Craig Pavilion" capacity="5100" address="5998 Alcala Park" city="San Diego" state="CA" zip="92110" country="USA"/>
+                <home name="San Diego Toreros" alias="USD" id="620d5944-7156-47d3-aad5-5b3824557d03">
+                </home>
+                <away name="San Francisco Dons" alias="SF" id="d24efd99-8717-43b9-a086-9986a684ac04">
+                </away>
+                <broadcast network="TheW.tv"/>
+              </game>
+              <game id="b3f9a122-6124-47f7-94bf-9b9962ea540e" status="closed" coverage="extended_boxscore" home_team="06d15d35-4955-4fdd-83d9-32d24dbd795b" away_team="953151f2-1e42-4cb0-a99e-202493a64dcf" scheduled="2017-01-22T02:00:00+00:00" conference_game="true" home_points="59" away_points="39">
+                <venue id="2b451e94-5eee-4fc7-959a-4ef7e5dac561" name="Don Haskins Center" capacity="12222" address="500 W University Ave" city="El Paso" state="TX" zip="79968" country="USA"/>
+                <home name="UTEP Miners" alias="UTEP" id="06d15d35-4955-4fdd-83d9-32d24dbd795b">
+                </home>
+                <away name="UTSA Roadrunners" alias="UTSA" id="953151f2-1e42-4cb0-a99e-202493a64dcf">
+                </away>
+              </game>
+              <game id="396f8abf-ebbf-4cdd-88c3-ee39d1375fdd" status="closed" coverage="extended_boxscore" home_team="7e42fa84-68cd-47a6-b49a-18b5414d8084" away_team="4743cb7c-784a-4b95-a380-5471f92f2217" scheduled="2017-01-22T02:00:00+00:00" conference_game="true" home_points="69" away_points="74">
+                <venue id="410dd52e-6fd0-4da9-89a6-c9e434a35fe7" name="Bank of Colorado Arena at Butler-Hancock Athletic Center" capacity="2992" address="1862 10th Ave" city="Greeley" state="CO" zip="80639" country="USA"/>
+                <home name="Northern Colorado Bears" alias="UNCO" id="7e42fa84-68cd-47a6-b49a-18b5414d8084">
+                </home>
+                <away name="Weber State Wildcats" alias="WEB" id="4743cb7c-784a-4b95-a380-5471f92f2217">
+                </away>
+              </game>
+              <game id="d68d34d1-ace7-4b92-9205-82a37456d581" status="closed" coverage="full" home_team="7672ff16-8436-47e6-8546-0fb5494ec7ee" away_team="1a470730-f328-4fb1-8bbf-36a069e4d6b2" scheduled="2017-01-22T02:00:00+00:00" conference_game="true" home_points="56" away_points="64">
+                <venue id="c38b45fa-9c9c-48c1-9856-1c8df393edfe" name="Smith Spectrum" capacity="10270" address="900 E 900 N" city="Logan" state="UT" zip="84322" country="USA"/>
+                <home name="Utah State Aggies" alias="USU" id="7672ff16-8436-47e6-8546-0fb5494ec7ee">
+                </home>
+                <away name="Colorado State Rams" alias="CSU" id="1a470730-f328-4fb1-8bbf-36a069e4d6b2">
+                </away>
+                <broadcast network="TheW.tv"/>
+              </game>
+              <game id="2e272ce8-17e0-400d-be7a-7a42b2b9ddd2" status="closed" coverage="extended_boxscore" home_team="5016fe1a-9571-4d10-bf5b-b9c1b496bd57" away_team="820c8f26-cf11-4997-b2e2-19f47bd2f72f" scheduled="2017-01-22T02:00:00+00:00" conference_game="true" home_points="94" away_points="71">
+                <venue id="737ae60d-b84c-4f0b-a310-1f2538258d55" name="Pan American Center" capacity="12482" address="S Triviz Dr &amp; Payne St" city="Las Cruces" state="NM" zip="88003" country="USA"/>
+                <home name="New Mexico State Aggies" alias="NMSU" id="5016fe1a-9571-4d10-bf5b-b9c1b496bd57">
+                </home>
+                <away name="UMKC Kangaroos" alias="UMKC" id="820c8f26-cf11-4997-b2e2-19f47bd2f72f">
+                </away>
+              </game>
+              <game id="cc56dad1-8c26-4560-9214-0857a9c6381e" status="closed" coverage="extended_boxscore" home_team="ec6185b7-4e0c-4eb8-99ef-f3a4dccf6b91" away_team="1753768d-e46e-40b1-8d69-a8ae5cccec03" scheduled="2017-01-22T03:00:00+00:00" conference_game="true" home_points="65" away_points="49">
+                <venue id="12be683d-3edb-4513-810a-2700ea0802bc" name="Cowan Spectrum at Kibbie Dome" capacity="7000" address="S. Rayburn Street" city="Moscow" state="ID" zip="83844" country="USA"/>
+                <home name="Idaho Vandals" alias="IDHO" id="ec6185b7-4e0c-4eb8-99ef-f3a4dccf6b91">
+                </home>
+                <away name="Northern Arizona Lumberjacks" alias="NAU" id="1753768d-e46e-40b1-8d69-a8ae5cccec03">
+                </away>
+              </game>
+              <game id="de820708-2206-4453-836f-c18743dbcb55" status="closed" coverage="extended_boxscore" home_team="cb732075-23a5-4e71-9037-50a7a002bdb2" away_team="39d00ef7-320d-47cf-a2fa-859bc24d16b4" scheduled="2017-01-22T03:00:00+00:00" conference_game="true" home_points="73" away_points="105">
+                <venue id="71d77907-2374-4969-9d8c-fc7100d47c28" name="Matadome" capacity="1600" address="18111 Nordhoff Street" city="Northridge" state="CA" zip="91330" country="USA"/>
+                <home name="Cal State Northridge Matadors" alias="CSN" id="cb732075-23a5-4e71-9037-50a7a002bdb2">
+                </home>
+                <away name="UC Irvine Anteaters" alias="UCI" id="39d00ef7-320d-47cf-a2fa-859bc24d16b4">
+                </away>
+              </game>
+              <game id="a00c2d87-8dd5-436e-9fdd-8fce17a4dc51" status="closed" coverage="extended_boxscore" home_team="2da57857-b038-4ad3-8199-e3fb339f57d2" away_team="4200f37c-86e0-413e-a5c4-e5edf1e272e7" scheduled="2017-01-22T03:00:00+00:00" conference_game="true" home_points="68" away_points="65">
+                <venue id="41c85b92-c4a6-4967-9d27-579d67cda2eb" name="Icardo Center" capacity="3800" address="9001 Stockdale Hwy" city="Bakersfield" state="CA" zip="93311" country="USA"/>
+                <home name="Cal State Bakersfield Roadrunners" alias="CSB" id="2da57857-b038-4ad3-8199-e3fb339f57d2">
+                </home>
+                <away name="Utah Valley Wolverines" alias="UVU" id="4200f37c-86e0-413e-a5c4-e5edf1e272e7">
+                </away>
+                <broadcast network="ASN"/>
+              </game>
+              <game id="1a65756b-c1f4-4741-9054-b65bd493a8bd" status="closed" coverage="extended_boxscore" home_team="45439cdb-af7a-4743-936c-dccc76b30877" away_team="11a617d5-af03-4cce-bc8a-51114d9e41fe" scheduled="2017-01-22T03:00:00+00:00" conference_game="true" home_points="92" away_points="98">
+                <venue id="2a3ef518-358e-492b-bd62-aefe6ffeeaec" name="Mott Gymnasium" capacity="3032" address="South Perimeter Road" city="San Luis Obispo" state="CA" zip="93407" country="USA"/>
+                <home name="Cal Poly Mustangs" alias="CP" id="45439cdb-af7a-4743-936c-dccc76b30877">
+                </home>
+                <away name="Long Beach State 49ers" alias="LBSU" id="11a617d5-af03-4cce-bc8a-51114d9e41fe">
+                </away>
+              </game>
+              <game id="02d6a33d-2c0b-461b-9a15-68ef83e0358e" status="closed" coverage="extended_boxscore" home_team="79965018-7f6f-4273-9eef-65c99b592b01" away_team="bec40585-b587-4548-93f5-b7c00b046aea" scheduled="2017-01-22T03:05:00+00:00" conference_game="true" home_points="65" away_points="71">
+                <venue id="e14bfb27-a6e5-4405-ad0f-9b742a61932c" name="Peter W Stott Center" capacity="2000" address="930 SW Hall" city="Portland" state="OR" zip="97201" country="USA"/>
+                <home name="Portland State Vikings" alias="PRST" id="79965018-7f6f-4273-9eef-65c99b592b01">
+                </home>
+                <away name="Montana State Bobcats" alias="MTST" id="bec40585-b587-4548-93f5-b7c00b046aea">
+                </away>
+              </game>
+              <game id="16a5af76-952d-4dea-b4be-aad3dd251633" status="closed" coverage="extended_boxscore" home_team="1dc13b18-f9b3-4bb9-b1cf-979fcd8c2b6f" away_team="e3848467-66c0-41e5-8283-02e3586d8601" scheduled="2017-01-22T03:05:00+00:00" conference_game="true" home_points="92" away_points="83">
+                <venue id="38a364ae-eb4c-4ace-a2e4-c28f3b1b11f5" name="The Nest" capacity="1012" address="6000 J Street" city="Sacramento" state="CA" zip="95819" country="USA"/>
+                <home name="Sacramento State Hornets" alias="SAC" id="1dc13b18-f9b3-4bb9-b1cf-979fcd8c2b6f">
+                </home>
+                <away name="Montana Grizzlies" alias="MONT" id="e3848467-66c0-41e5-8283-02e3586d8601">
+                </away>
+              </game>
+              <game id="ab5981ad-4c86-436a-9b40-6a78abf30f85" status="closed" coverage="full" home_team="532d3874-b4b3-4c5c-acc6-749a6db26c8f" away_team="aacdc78d-b7fa-48f6-9686-2fdb8a95030e" scheduled="2017-01-22T03:30:00+00:00" conference_game="true" home_points="58" away_points="69">
+                <venue id="02ccdcd1-9754-4816-9c68-2f7b9a27f844" name="Gill Coliseum" capacity="9604" address="660 Southwest 26th Street" city="Corvallis" state="OR" zip="97331" country="USA"/>
+                <home name="Oregon State Beavers" alias="ORST" id="532d3874-b4b3-4c5c-acc6-749a6db26c8f">
+                </home>
+                <away name="California Golden Bears" alias="CAL" id="aacdc78d-b7fa-48f6-9686-2fdb8a95030e">
+                </away>
+                <broadcast network="Pac-12 Network"/>
+              </game>
+              <game id="f003d9bd-bc28-4c24-acd6-f5dfc3bb14cb" status="closed" coverage="full" home_team="b18f34af-a7f1-4659-a2e5-fc11a31cd316" away_team="17479d6f-c8f1-458b-9412-8c76279a2bb4" scheduled="2017-01-22T04:00:00+00:00" conference_game="true" home_points="85" away_points="65">
+                <venue id="5545c11c-ef1e-464b-8465-af687cd6ac1e" name="McKeon Pavilion" capacity="3500" address="1928 Saint Marys Road" city="Moraga" state="CA" zip="94575" country="USA"/>
+                <home name="Saint Mary's Gaels" alias="SMC" id="b18f34af-a7f1-4659-a2e5-fc11a31cd316">
+                </home>
+                <away name="Pepperdine Waves" alias="PEPP" id="17479d6f-c8f1-458b-9412-8c76279a2bb4">
+                </away>
+                <broadcast network="ROOT Sports" satellite="683"/>
+              </game>
+            </games>
+          </daily-schedule>
+        </league>
+        <!-- Generation ended @ 2017-01-23 02:20:02 +0000 -->
+    http_version: 
+  recorded_at: Thu, 26 Jan 2017 17:57:15 GMT
+recorded_with: VCR 3.0.3

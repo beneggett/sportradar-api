@@ -4,7 +4,7 @@ class Sportradar::Api::Basketball::Nba::StandingsTest < Minitest::Test
 
   def setup
     sr = Sportradar::Api::Basketball::Nba.new
-    VCR.use_cassette("nba/league/standings") do
+    VCR.use_cassette("nba/#{sr.content_format}/league/standings") do
       @standings = sr.standings
     end
   end

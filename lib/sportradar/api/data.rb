@@ -51,6 +51,8 @@ module Sportradar
       def create_data(existing = {}, data, klass: nil, **opts)
         existing ||= {} # handles nil case, typically during object instantiation
         case data
+        when [], {}
+          existing
         when Array
           data.each do |hash|
             current = existing[hash['id']]

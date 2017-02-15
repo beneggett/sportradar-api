@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/ncaamb-t3/teams/9b166a3f-e64b-4825-bb6b-92c6f0418263/profile.json?api_key=<NCAAMB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 28 Jan 2017 02:56:24 GMT
+      Etag:
+      - '"613f285661a835d4519f9cb97f74154e"'
+      Last-Modified:
+      - Wed, 07 Dec 2016 02:38:51 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-127.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '1250'
+      X-Packagekey-Quota-Current:
+      - '13'
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '6043'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"9b166a3f-e64b-4825-bb6b-92c6f0418263","name":"Wildcats","alias":"ARIZ","market":"Arizona","venue":{"id":"60c78748-ee0e-4764-9c8c-141e876d2abf","name":"McKale
+        Center","capacity":14655,"address":"1 National Championship Drive","city":"Tuscon","state":"AZ","zip":"85721","country":"USA"},"league":{"id":"cd4268ee-07aa-4c4d-a435-ec44ad2c76cb","name":"NCAA
+        MEN","alias":"NCAAM"},"division":{"id":"c5a8d640-5093-4044-851d-2c562e929994","name":"NCAA
+        Division I","alias":"D1"},"conference":{"id":"04d5255d-b2dc-43df-9fa8-d296b0f8ccd7","name":"Pacific
+        12","alias":"PAC12"},"coaches":[{"id":"84cd600c-baca-4764-aef3-66c58d179a73","full_name":"Sean
+        Miller","first_name":"Sean","last_name":"Miller","position":"Head Coach","experience":"10
+        seasons"}],"players":[{"id":"00452894-e61a-44fb-aa2a-9345301d29e8","status":"ACT","full_name":"Paulo
+        Cruz","first_name":"Paulo","last_name":"Cruz","abbr_name":"P.Cruz","height":76,"weight":210,"position":"G","primary_position":"PG","jersey_number":"51","experience":"SO","birth_place":"San
+        Diego, CA, USA","updated":"2016-09-08T21:28:08+00:00"},{"id":"04a08754-75e3-4f6c-9909-4c79c3ff5b4c","status":"ACT","full_name":"Dylan
+        Smith","first_name":"Dylan","last_name":"Smith","abbr_name":"D.Smith","height":77,"weight":170,"position":"G","primary_position":"NA","jersey_number":"3","experience":"SO","birth_place":"Mobile,
+        AL, USA","updated":"2016-09-09T16:12:16+00:00"},{"id":"0cfead49-485d-44f2-8991-04260ee896ad","status":"ACT","full_name":"Kobi
+        Simmons","first_name":"Kobi","last_name":"Simmons","abbr_name":"K.Simmons","height":77,"weight":175,"position":"G","primary_position":"NA","jersey_number":"2","experience":"FR","birth_place":"Atlanta,
+        GA, USA","updated":"2016-09-09T17:33:49+00:00"},{"id":"18bdc0fd-009d-4b53-b804-9012aa21f626","status":"ACT","full_name":"Kory
+        Jones","first_name":"Kory","last_name":"Jones","abbr_name":"K.Jones","height":75,"weight":170,"position":"G","primary_position":"NA","jersey_number":"52","experience":"FR","birth_place":"Herndon,
+        VA, USA","updated":"2016-12-07T02:38:50+00:00"},{"id":"2cd9b23a-c7ed-4f10-864c-d7e9a32283c3","status":"ACT","full_name":"Lauri
+        Markkanen","first_name":"Lauri","last_name":"Markkanen","abbr_name":"L.Markkanen","height":84,"weight":230,"position":"F","primary_position":"NA","jersey_number":"10","experience":"FR","birth_place":"Jyvaskyla,,
+        FIN","updated":"2016-09-09T17:31:21+00:00"},{"id":"4162314b-c723-424f-bd44-5d2d9101e3f7","status":"ACT","full_name":"Tyler
+        Trillo","first_name":"Tyler","last_name":"Trillo","abbr_name":"T.Trillo","height":71,"weight":170,"position":"G","primary_position":"NA","jersey_number":"50","experience":"SO","birth_place":"Southbury,
+        CT, USA","updated":"2016-11-10T17:25:32+00:00"},{"id":"41f66d58-0602-4e11-b0e6-75814aeaa38e","status":"ACT","full_name":"Allonzo
+        Trier","first_name":"Allonzo","last_name":"Trier","abbr_name":"A.Trier","height":77,"weight":205,"position":"G","primary_position":"NA","jersey_number":"35","experience":"SO","birth_place":"Seattle,
+        WA, USA","updated":"2016-09-08T21:38:20+00:00"},{"id":"732e48c8-29e5-4e7f-91e0-53021f9f700d","status":"ACT","full_name":"Talbott
+        Denny","first_name":"Talbott","last_name":"Denny","abbr_name":"T.Denny","height":77,"weight":215,"position":"F","primary_position":"NA","jersey_number":"20","experience":"SR","birth_place":"Tucson,
+        AZ, USA","updated":"2016-09-09T16:10:31+00:00"},{"id":"74dde036-a80a-45c0-9871-b9329cb27983","status":"ACT","full_name":"Chance
+        Comanche","first_name":"Chance","last_name":"Comanche","abbr_name":"C.Comanche","height":83,"weight":215,"position":"C","primary_position":"NA","jersey_number":"21","experience":"SO","birth_place":"Beverly
+        Hills, CA, USA","updated":"2016-09-08T21:26:54+00:00"},{"id":"7c6fb6b7-e0e7-4a5b-b694-887f9082c3d5","status":"ACT","full_name":"Dusan
+        Ristic","first_name":"Dusan","last_name":"Ristic","abbr_name":"D.Ristic","height":84,"weight":245,"position":"C","primary_position":"NA","jersey_number":"14","experience":"JR","birth_place":"Novi
+        Sad,, SRB","updated":"2016-09-08T21:33:54+00:00"},{"id":"a09120e4-f7c9-4d07-b5e1-acc66425648c","status":"ACT","full_name":"Rawle
+        Alkins","first_name":"Rawle","last_name":"Alkins","abbr_name":"R.Alkins","height":77,"weight":220,"position":"G","primary_position":"NA","jersey_number":"1","experience":"FR","birth_place":"Brooklyn,
+        NY, USA","updated":"2016-09-09T17:27:52+00:00"},{"id":"bfcff85e-0f4e-47cb-95cc-1676718076cf","status":"ACT","full_name":"Ray
+        Smith","first_name":"Ray","last_name":"Smith","abbr_name":"R.Smith","height":80,"weight":220,"position":"F","primary_position":"NA","jersey_number":"24","experience":"FR","birth_place":"Las
+        Vegas, NV, USA","updated":"2016-09-08T21:35:57+00:00"},{"id":"e5d78196-6b67-472e-b78c-bc5e5fb4d5f8","status":"ACT","full_name":"Jake
+        Desjardins","first_name":"Jake","last_name":"Desjardins","abbr_name":"J.Desjardins","height":78,"weight":215,"position":"F","primary_position":"NA","jersey_number":"55","experience":"FR","birth_place":"Henderson,
+        NV, USA","updated":"2016-09-09T17:28:59+00:00"},{"id":"e95987e1-95a0-41d0-965f-53508dc0bdfe","status":"ACT","full_name":"Parker
+        Jackson-Cartwright","first_name":"Parker","last_name":"Jackson-Cartwright","abbr_name":"P.Jackson-Cartwright","height":71,"weight":170,"position":"G","primary_position":"NA","jersey_number":"0","experience":"JR","birth_place":"Los
+        Angeles, CA, USA","updated":"2016-09-08T21:29:59+00:00"},{"id":"eb33611d-c517-4111-bb23-48dfeafcd21c","status":"ACT","full_name":"Keanu
+        Pinder","first_name":"Keanu","last_name":"Pinder","abbr_name":"K.Pinder","height":81,"weight":220,"position":"F","primary_position":"NA","jersey_number":"25","experience":"JR","birth_place":"Perth,,
+        AUS","updated":"2016-09-09T17:32:58+00:00"},{"id":"f7cbc993-f98b-4ac3-8584-5bd54f8e3cc3","status":"ACT","full_name":"Kadeem
+        Allen","first_name":"Kadeem","last_name":"Allen","abbr_name":"K.Allen","height":75,"weight":205,"position":"G","primary_position":"NA","jersey_number":"5","experience":"SR","birth_place":"Wilmington,
+        NC, USA","updated":"2016-09-08T21:25:11+00:00"}]}'
+    http_version: 
+  recorded_at: Sat, 28 Jan 2017 02:56:26 GMT
+recorded_with: VCR 3.0.3
