@@ -69,8 +69,8 @@ module Sportradar
             # update_draft(data)
 
             @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
-            if avgs = data.dig('overall', 'average')
-              @totals = data.dig('overall', 'total')
+            if avgs = data['average']
+              @totals = data['total']
               @averages = avgs.except(:player)
               @team.update_player_stats(self, avgs)
             end

@@ -18,8 +18,9 @@ module Sportradar
         end
 
         def initialize(data, **opts)
-          # @response = data
+          @response = data
           @api      = opts[:api]
+
           @games_hash   = {}
           @players_hash = {}
           @player_stats = {}
@@ -42,7 +43,6 @@ module Sportradar
 
         def update(data, **opts)
           handle_names(data)
-
           @venue    = Venue.new(data['venue']) if data['venue']
 
           @alias    = data['alias']                 if data['alias']
@@ -52,7 +52,8 @@ module Sportradar
           # @scoring  = data.dig('scoring', 'quarter') if data.dig('scoring', 'quarter')
 
           parse_records(data)                                          if data['records']
-          parse_players(data.dig('players', 'player'), opts[:game])   if data.dig('players', 'player')
+          # binding.pry if data['players']
+          parse_players(data.dig('players'), opts[:game])   if data.dig('players')
           # parse_stats(data['statistics'])                             if data['statistics']
           if opts[:game]
             add_game(opts[:game])
@@ -99,25 +100,31 @@ module Sportradar
         end
 
         def get_roster
-          data = api.get_data(path_roster)['team']
+          data = api.get_data(path_roster)
+          ingest_roster(data)
+        end
+        def ingest_roster(data)
           update(data)
           data
         end
 
         def get_season_stats
-          data = api.get_data(path_season_stats).dig('season', 'team')
+          data = api.get_data(path_season_stats)
+          ingest_season_stats(data)
+        end
+        def ingest_season_stats(data)
           parse_season_stats(data)
         end
 
         def parse_records(data)
           @records['overall'] = Record.new(data, type: 'overall')
-          data['records'].each { |type, record| @records[type] = Record.new(record, type: type) }
+          data['records'].each { |record| @records[record['record_type']] = Record.new(record, type: record['record_type']) }
         end
 
         def parse_season_stats(data)
-          @team_stats = data.dig('team_records')
+          @team_stats = data.dig('own_record')
           update(data)
-          player_data = data.dig('player_records', 'player')
+          player_data = data.dig('players')
           create_data(@players_hash, player_data, klass: player_class, api: api, team: self)
           data
         end

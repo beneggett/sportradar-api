@@ -15,7 +15,9 @@ module Sportradar
           false
         end
         def player_id
-          @player_id ||= @statistics&.dig(base_key, "player", "id") # safe operator is specifically for lane violations, which have no player_id and should not be assigned a player
+          stats = @statistics
+          stats = stats[0] if stats.is_a?(Array)
+          @player_id ||= stats&.dig("player", "id") # safe operator is specifically for lane violations, which have no player_id and should not be assigned a player
         end
       end
     end

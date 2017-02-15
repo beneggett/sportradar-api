@@ -4,7 +4,7 @@ class Sportradar::Api::Basketball::Nba::ScheduleTest < Minitest::Test
 
   def setup
     sr = Sportradar::Api::Basketball::Nba.new
-    VCR.use_cassette("nba/league/daily_schedule-20170120") do
+    VCR.use_cassette("nba/#{sr.content_format}/league/daily_schedule-20170120") do
       @schedule = sr.daily_schedule(Date.new(2017, 1, 20))
     end
   end

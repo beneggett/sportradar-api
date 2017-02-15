@@ -9,14 +9,14 @@ module Sportradar
             # @response = data
             @api      = opts[:api]
 
-            @id = data["id"]
+            @id    = data["id"]
+            @name  = data["name"]
+            @alias = data["alias"]
             update(data, **opts)
           end
 
           def update(data, **opts)
-            @name = data["name"]
-            @alias = data["alias"]
-            @conferences_hash = create_data({}, data["conference"], klass: Conference, division: self, api: @api) if data["conference"]
+            @conferences_hash = create_data({}, data["conferences"], klass: Conference, division: self, api: @api) if data["conferences"]
           end
 
           def conferences

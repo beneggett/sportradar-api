@@ -4,12 +4,12 @@ class Sportradar::Api::Basketball::Ncaamb::ScheduleTest < Minitest::Test
 
   def setup
     sr = Sportradar::Api::Basketball::Ncaamb.new
-    VCR.use_cassette("ncaamb/league/daily_schedule-20170121") do
+    VCR.use_cassette("ncaamb/#{sr.content_format}/league/daily_schedule-20170121") do
       @schedule = sr.daily_schedule(Date.new(2017, 1, 21))
     end
   end
 
-  def test_it_initializes_an_nba_schedule
+  def test_it_initializes_an_ncaamb_schedule
     assert [:id, :name, :alias, :date].all? { |att| @schedule.send(att) }
     assert_instance_of Sportradar::Api::Basketball::Ncaamb::Schedule, @schedule
   end

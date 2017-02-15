@@ -4,7 +4,7 @@ class Sportradar::Api::Basketball::Ncaamb::SeasonTest < Minitest::Test
 
   def setup
     sr = Sportradar::Api::Basketball::Ncaamb.new
-    VCR.use_cassette("ncaamb/league/season") do
+    VCR.use_cassette("ncaamb/#{sr.content_format}/league/season") do
       @season = sr.schedule
     end
   end

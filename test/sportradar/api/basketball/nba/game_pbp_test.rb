@@ -6,7 +6,7 @@ class Sportradar::Api::Basketball::Nba::GamePbpTest < Minitest::Test
     # ESPN boxscore: http://www.espn.com/nba/boxscore?gameId=400900063
     @attrs = { "id" => "3700bb52-50f0-4929-b6b0-ae0b3cbad019" }
     @game = Sportradar::Api::Basketball::Nba::Game.new(@attrs)
-    VCR.use_cassette("nba/game/pbp_regulation") do
+    VCR.use_cassette("nba/#{@game.api.content_format}/game/pbp_regulation") do
       @game.get_pbp
     end
   end
@@ -55,7 +55,7 @@ class Sportradar::Api::Basketball::Nba::GamePbpTest < Minitest::Test
     assert_equal 69, @game.plays_by_type('three_point_made', 'two_point_made').size
     assert_equal 97, @game.plays_by_type('three_point_miss', 'two_point_miss').size
     assert_equal 33, @game.plays_by_type('foul').size
-    assert_equal 10, @game.plays_by_type('shot_miss').select(&:block).size
+    assert_equal 9, @game.plays_by_type('shot_miss').select(&:block).size
     assert_equal 34, @game.plays_by_type('shot_made').select(&:assist).size
     assert_equal 84, @game.plays_by_type('rebound').select(&:player_id).size
     assert_equal 16, @game.plays_by_type('turnover').select(&:steal).size

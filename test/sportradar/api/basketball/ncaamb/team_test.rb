@@ -22,13 +22,13 @@ class Sportradar::Api::Basketball::Ncaamb::TeamTest < Minitest::Test
   end
 
   def test_ncaamb_team_roster
-    VCR.use_cassette("ncaamb/team/roster") do
+    VCR.use_cassette("ncaamb/#{@team.api.content_format}/team/roster") do
       assert_equal 16, @team.players.size
     end
   end
 
   def test_ncaamb_team_season_stats
-    VCR.use_cassette("ncaamb/team/season_stats") do
+    VCR.use_cassette("ncaamb/#{@team.api.content_format}/team/season_stats") do
       @team.get_season_stats
       refute_empty @team.team_stats
       refute_empty @team.player_stats

@@ -9,13 +9,13 @@ module Sportradar
             @response = data
             @api      = opts[:api]
 
-            @id       = response['id']
-            @name     = response['name']
-            @alias    = response['alias']
-            @date     = response.dig('daily_schedule', 'date')
+            @id       = data.dig('league', 'id')
+            @name     = data.dig('league', 'name')
+            @alias    = data.dig('league', 'alias')
+            @date     = data['date']
 
             @games_hash = {}
-            update_games(data.dig('daily_schedule', 'games', 'game'))
+            update_games(data['games']) if data['games']
           end
 
           def games

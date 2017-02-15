@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Basketball
       class Game < Data
-        attr_accessor :response, :id, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :team_stats, :player_stats, :changes, :media_timeouts
+        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :team_stats, :player_stats, :changes, :media_timeouts
 
         attr_accessor :period
         @all_hash = {}
@@ -80,10 +80,11 @@ module Sportradar
 
         def update(data, source: nil, **opts)
           # via pbp
+          @title        = data['title']                 if data['title']
           @status       = data['status']                if data['status']
           @coverage     = data['coverage']              if data['coverage']
-          @home_id      = data['home_team']             if data['home_team'] # GUID
-          @away_id      = data['away_team']             if data['away_team'] # GUID
+          @home_id      = data['home_team'] || data.dig('home', 'id')   if data['home_team'] || data.dig('home', 'id')
+          @away_id      = data['away_team'] || data.dig('away', 'id')   if data['away_team'] || data.dig('away', 'id')
           @home_points  = data['home_points'].to_i      if data['home_points']
           @away_points  = data['away_points'].to_i      if data['away_points']
 
@@ -149,7 +150,7 @@ module Sportradar
 
         # tracking updates
         def remember(key, object)
-          @updates[key] = object
+          @updates[key] = object&.dup
         end
         def not_updated?(key, object)
           @updates[key] == object
@@ -181,7 +182,7 @@ module Sportradar
           'postponed' == status
         end
         def future?
-          ['scheduled', 'delayed', 'created'].include? status
+          ['scheduled', 'delayed', 'created', 'time-tbd'].include? status
         end
         def started?
           ['inprogress', 'halftime', 'delayed'].include? status
@@ -197,36 +198,35 @@ module Sportradar
         end
 
         # data retrieval
-        def sync
-          g.get_pbp
-          g.get_box
-          g.get_summary if finished?
-        end
 
         def get_box
-          api_resp = api.get_data(path_box)
-          ingest_box(api_resp)
+          data = api.get_data(path_box)
+          ingest_box(data)
         end
 
-        def ingest_box(api_resp)
-          data = api_resp['game']
+        def ingest_box(data)
           update(data, source: :box)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)
           data
         end
 
-        def get_pbp
-          api_resp = api.get_data(path_pbp)
-          ingest_pbp(api_resp)
+        def queue_pbp
+          url, headers, options, timeout = api.get_request_info(path_pbp)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_pbp)}
         end
 
-        def ingest_pbp(api_resp)
-          data = api_resp['game']
+        def get_pbp
+          data = api.get_data(path_pbp)
+          ingest_pbp(data)
+        end
+
+        def ingest_pbp(data)
+          period_name = 'periods'
           update(data, source: :pbp)
-          period_data = if data[period_name]
-            @period = data[period_name].first.to_i
-            pers = data[period_name][1..-1]
+          period_data = if data[period_name] && !data[period_name].empty?
+            @period = data[period_name].last['sequence'].to_i
+            pers = data[period_name]
             pers.is_a?(Array) && (pers.size == 1) ? pers[0] : pers
           else
             @period = nil
@@ -239,19 +239,25 @@ module Sportradar
           set_pbp(period_data)
           @pbp = @periods_hash.values
           check_newness(:pbp, plays.last)
+          check_newness(:score, @score)
           data
         end
 
         def get_summary
-          api_resp = api.get_data(path_summary)
-          ingest_summary(api_resp)
+          data = api.get_data(path_summary)
+          ingest_summary(data)
         end
 
-        def ingest_summary(api_resp)
-          data = api_resp['game']
+        def queue_summary
+          url, headers, options, timeout = api.get_request_info(path_summary)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_summary)}
+        end
+
+        def ingest_summary(data)
           update(data, source: :summary)
           @period = data.delete(period_name).to_i
           check_newness(:box, @clock)
+          check_newness(:score, @score)
           data
         end
 

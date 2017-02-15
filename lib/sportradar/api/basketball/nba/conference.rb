@@ -12,7 +12,7 @@ module Sportradar
             @id = data["id"]
             @name = data["name"]
             @alias = data["alias"]
-            @divisions_hash = create_data({}, response["division"], klass: Division, conference: self, api: @api) # if response["division"]
+            @divisions_hash = create_data({}, data["divisions"], klass: Division, conference: self, api: @api) # if response["division"]
           end
 
           def divisions

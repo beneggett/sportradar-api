@@ -22,13 +22,17 @@ class Sportradar::Api::Basketball::Nba::TeamTest < Minitest::Test
   end
 
   def test_nba_team_roster
-    VCR.use_cassette("nba/team/roster") do
+    VCR.use_cassette("nba/#{@team.api.content_format}/team/roster") do
+      @team.get_roster
       assert_equal 15, @team.players.size
+      player = @team.players.first
+      assert player.height
+      assert player.weight
     end
   end
 
   def test_nba_team_season_stats
-    VCR.use_cassette("nba/team/season_stats") do
+    VCR.use_cassette("nba/#{@team.api.content_format}/team/season_stats") do
       @team.get_season_stats
       refute_empty @team.team_stats
       refute_empty @team.player_stats

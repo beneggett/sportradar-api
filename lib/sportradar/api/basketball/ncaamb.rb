@@ -10,11 +10,11 @@ module Sportradar
           @access_level = access_level
         end
 
-        def schedule(season_year = default_year, ncaa_season = default_season)
-          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? ncaa_season
-          response = get request_url("games/#{season_year}/#{ncaa_season}/schedule")
-          if response.success? && response['league']
-            Sportradar::Api::Basketball::Ncaamb::Season.new(response['league'], api: self)
+        def schedule(season_year = default_year, ncaamb_season = default_season)
+          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? ncaamb_season
+          response = get request_url("games/#{season_year}/#{ncaamb_season}/schedule")
+          if response.success?
+            Sportradar::Api::Basketball::Ncaamb::Season.new(response.to_h, api: self)
           else
             @error = response
           end
@@ -22,8 +22,18 @@ module Sportradar
 
         def daily_schedule(date = default_date, ncaa_season = default_season)
           response = get request_url("games/#{ date.year }/#{ date.month }/#{ date.day }/schedule")
-          if response.success? && response['league']
-            Sportradar::Api::Basketball::Ncaamb::Schedule.new(response['league'], api: self)
+          if response.success?
+            Sportradar::Api::Basketball::Ncaamb::Schedule.new(response.to_h, api: self)
+          else
+            @error = response
+          end
+        end
+
+        def rankings(poll_name, ncaamb_week = nil, season_year = default_year)
+          # response = get request_url("polls/#{poll_name}/#{season_year}/rankings")
+          response = get request_url("polls/#{poll_name}/#{season_year}/#{ncaamb_week}/rankings")
+          if response.success?
+            Sportradar::Api::Poll.new(response.to_h)
           else
             @error = response
           end
@@ -31,17 +41,17 @@ module Sportradar
 
         def hierarchy
           response = get request_url("league/hierarchy")
-          if response.success? && response["league"]
-            Sportradar::Api::Basketball::Ncaamb::Hierarchy.new(response["league"], api: self)
+          if response.success?
+            Sportradar::Api::Basketball::Ncaamb::Hierarchy.new(response.to_h, api: self)
           else
             response
           end
         end
 
-        def standings(season_year = default_year, ncaa_season = default_season)
-          response = get request_url("seasontd/#{season_year}/#{ncaa_season}/standings")
-          if response.success? && response["league"]
-            Sportradar::Api::Basketball::Ncaamb::Division.new(response['league']['season'], api: self)
+        def standings(season_year = default_year, ncaamb_season = default_season)
+          response = get request_url("seasontd/#{season_year}/#{ncaamb_season}/standings")
+          if response.success?
+            Sportradar::Api::Basketball::Ncaamb::Division.new(response.to_h, api: self)
           else
             response
           end
@@ -50,11 +60,6 @@ module Sportradar
         def get_data(url)
           get request_url(url)
         end
-
-        def get_pbp(*args)
-          'pbp'
-        end
-
 
         def default_year
           2016
@@ -71,6 +76,10 @@ module Sportradar
           else
             't'
           end
+        end
+
+        def content_format
+          'json'
         end
 
         private
@@ -105,7 +114,7 @@ module Sportradar
         end
 
         def allowed_seasons
-          ["pre", "reg", "pst"]
+          ["pre", "reg", 'ct', "pst"]
         end
 
       end
