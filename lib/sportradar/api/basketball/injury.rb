@@ -10,12 +10,12 @@ module Sportradar
         end
 
         def update(data, **opts)
-          @id           = data.dig(0, 'id')
-          @comment      = data.dig(0, 'comment')
-          @descripton   = data.dig(0, 'desc')
-          @status       = data.dig(0, 'status')
-          @start_date   = data.dig(0, 'start_date')
-          @update_date  = data.dig(0, 'update_date')
+          @id           = data.last&.dig('id')
+          @comment      = data.last&.dig('comment')
+          @descripton   = data.last&.dig('desc')
+          @status       = data.last&.dig('status')
+          @start_date   = data.last&.dig('start_date')
+          @update_date  = data.last&.dig('update_date')
         end
 
         def out?

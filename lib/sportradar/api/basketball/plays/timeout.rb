@@ -6,6 +6,9 @@ module Sportradar
         def display_type
           'Timeout'
         end
+        def tv?
+          false
+        end
         def timeout?
           true
         end
