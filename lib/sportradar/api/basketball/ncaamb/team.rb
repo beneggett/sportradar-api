@@ -4,6 +4,19 @@ module Sportradar
       class Ncaamb
         class Team < Sportradar::Api::Basketball::Team
           @all_hash = {}
+          def self.new(data, **opts)
+            existing = @all_hash[data['id']]
+            binding.pry if data['id'] == "632616c5-2dbb-4017-a449-c9dfc303f026"
+            if existing
+              existing.update(data, **opts)
+              existing
+            else
+              @all_hash[data['id']] = super
+            end
+          end
+          def self.all
+            @all_hash.values
+          end
 
           def player_class
             Player

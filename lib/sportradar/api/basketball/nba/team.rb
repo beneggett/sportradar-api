@@ -4,6 +4,18 @@ module Sportradar
       class Nba
         class Team < Sportradar::Api::Basketball::Team
           @all_hash = {}
+          def self.new(data, **opts)
+            existing = @all_hash[data['id']]
+            if existing
+              existing.update(data, **opts)
+              existing
+            else
+              @all_hash[data['id']] = super
+            end
+          end
+          def self.all
+            @all_hash.values
+          end
 
           def player_class
             Player

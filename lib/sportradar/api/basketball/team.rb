@@ -3,19 +3,6 @@ module Sportradar
     module Basketball
       class Team < Data
         attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats
-        @all_hash = {}
-        def self.new(data, **opts)
-          existing = @all_hash[data['id']]
-          if existing
-            existing.update(data, **opts)
-            existing
-          else
-            @all_hash[data['id']] = super
-          end
-        end
-        def self.all
-          @all_hash.values
-        end
 
         def initialize(data, **opts)
           @response = data
