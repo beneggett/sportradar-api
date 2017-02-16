@@ -125,7 +125,9 @@ end
 __END__
 
 sr = Sportradar::Api::Basketball::Ncaamb.new
-ss = sr.schedule;
+ss = sr.schedule(2015, 'ct');
+ss = sr.schedule(2015, 'pst');
+rank = sr.rankings('US');
 ds = sr.daily_schedule;
 
 # not ready

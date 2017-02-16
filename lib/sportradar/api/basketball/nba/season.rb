@@ -41,3 +41,4 @@ sd = sr.daily_schedule;
 sr = Sportradar::Api::Basketball::Nba.new
 ss = sr.standings;
 ss = sr.schedule;
+ss = sr.schedule(2015, 'pst)');
