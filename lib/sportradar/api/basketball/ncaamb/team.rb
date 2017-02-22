@@ -10,7 +10,11 @@ module Sportradar
               existing.update(data, **opts)
               existing
             else
-              @all_hash[data['id']] = super
+              if data['id']
+                @all_hash[data['id']] = super
+              else # tournament placeholder
+                super
+              end
             end
           end
           def self.all
