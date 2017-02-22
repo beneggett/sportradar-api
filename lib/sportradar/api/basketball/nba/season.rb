@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Nba
         class Season < Basketball::Season
-          attr_accessor :response, :id, :name, :alias
+          attr_accessor :response, :id, :name, :alias, :year
 
           def initialize(data, **opts)
             @response = data
@@ -12,6 +12,10 @@ module Sportradar
             @id       = data.dig('league', 'id')
             @name     = data.dig('league', 'name')
             @alias    = data.dig('league', 'alias')
+
+            @year     = data.dig('season', 'year')
+            @type     = data.dig('season', 'type')
+
             @games_hash = {}
 
             update_games(data['games'])
@@ -19,10 +23,6 @@ module Sportradar
 
           def games
             @games_hash.values
-          end
-
-          def year
-            2016
           end
 
           def update_games(data)

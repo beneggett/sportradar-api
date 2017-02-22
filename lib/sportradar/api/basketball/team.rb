@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Basketball
       class Team < Data
-        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats
+        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats, :seed
 
         def initialize(data, **opts)
           @response = data
@@ -32,6 +32,7 @@ module Sportradar
           handle_names(data)
           @venue    = Venue.new(data['venue']) if data['venue']
 
+          @seed     = data['seed'].to_i             if data['seed']
           @alias    = data['alias']                 if data['alias']
           @points   = data['points'].to_i           if data['points']
           # @home     = data['home'] == 'true'        if data['home']

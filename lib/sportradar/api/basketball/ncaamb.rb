@@ -20,7 +20,21 @@ module Sportradar
           end
         end
 
-        def daily_schedule(date = default_date, ncaa_season = default_season)
+        def tournaments(season_year = default_year, ncaamb_season = 'pst')
+          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? ncaamb_season
+          response = get request_url("tournaments/#{season_year}/#{ncaamb_season}/schedule")
+          if response.success?
+            Sportradar::Api::Basketball::Ncaamb::Season.new(response.to_h, api: self)
+          else
+            @error = response
+          end
+        end
+
+        def conference_tournaments(season_year = default_year)
+          tournaments(season_year, 'ct')
+        end
+
+        def daily_schedule(date = default_date)
           response = get request_url("games/#{ date.year }/#{ date.month }/#{ date.day }/schedule")
           if response.success?
             Sportradar::Api::Basketball::Ncaamb::Schedule.new(response.to_h, api: self)
