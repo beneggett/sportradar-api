@@ -3,6 +3,8 @@ module Sportradar
     module Basketball
       class Ncaamb
         class Team < Sportradar::Api::Basketball::Team
+          attr_accessor :source, :source_id
+
           @all_hash = {}
           def self.new(data, **opts)
             existing = @all_hash[data['id']]
@@ -13,7 +15,10 @@ module Sportradar
               if data['id']
                 @all_hash[data['id']] = super
               else # tournament placeholder
-                super
+                super.tap do |team|
+                  team.source = data['source']
+                  team.source_id = data.dig('source', 'id')
+                end
               end
             end
           end

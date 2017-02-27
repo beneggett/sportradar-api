@@ -28,7 +28,6 @@ module Sportradar
             @start    = Date.parse(data['start_date'])  if data['start_date']
             @end      = Date.parse(data['end_date'])    if data['end_date']
             @type     = data.dig('season', 'type')      if data.dig('season', 'type')
-            @year     = @start&.year
 
             update_rounds(data['rounds'])     if data['rounds'] # switch to rounds
             update_brackets(data['brackets']) if data['brackets'] # switch to brackets
@@ -36,6 +35,10 @@ module Sportradar
 
           def games
             rounds.flat_map(&:games)
+          end
+
+          def game(id)
+            games.detect { |g| g.id == id }
           end
 
           def year
@@ -138,3 +141,15 @@ tt = Sportradar::Api::Basketball::Ncaamb::Tournament.new('id' => "608152a4-cccc-
 t = ss.tournament("1a4a1d3d-b734-4136-a7c2-711b4b3821a5") # => Pac12 tourney 2015
 t = Sportradar::Api::Basketball::Ncaamb::Tournament.new('id' => "1a4a1d3d-b734-4136-a7c2-711b4b3821a5") # => NCAA tourney 2015
 t = ts.first
+
+
+
+
+sr = Sportradar::Api::Basketball::Ncaamb.new
+ts = sr.conference_tournaments;
+asun = "40e97e30-980c-4146-bf69-1791852c5527"
+t = ts.tournament(asun);
+t.get_schedule;
+g = t.game("1fc9ea90-8145-47a6-86a7-9cd05513fb2c")
+
+

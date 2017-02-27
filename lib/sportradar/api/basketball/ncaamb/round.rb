@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Ncaamb
         class Round < Data
-          attr_accessor :response, :id, :name, :location, :start, :end
+          attr_accessor :response, :id, :name, :location, :start, :end, :sequence
 
           def initialize(data, **opts)
             @response   = data
