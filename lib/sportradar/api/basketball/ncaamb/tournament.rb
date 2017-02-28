@@ -6,7 +6,7 @@ module Sportradar
           attr_accessor :response, :id, :name, :status, :location, :start, :end
 
           def initialize(data, **opts)
-            @response = data
+            # @response = data
             @api      = opts[:api]
 
             @id       = data['id']
@@ -18,7 +18,6 @@ module Sportradar
           end
 
           def update(data, **opts)
-            @response = data
 
             @season = opts[:season] if opts[:season]
 
