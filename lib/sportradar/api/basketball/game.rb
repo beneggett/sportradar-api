@@ -118,6 +118,25 @@ module Sportradar
           @teams_hash[@away_id] || @away
         end
 
+        def leading_team_id
+          return nil if score.values.uniq.size == 1
+          score.max_by(&:last).first
+        end
+        def leading_team
+          @teams_hash[leading_team_id] || (@away_id == leading_team_id && away) || (@home_id == leading_team_id && home)
+        end
+        def team(team_id)
+          @teams_hash[team_id]
+        end
+        def assign_home(team)
+          @home_id = team.id
+          @teams_hash[team.id] = team
+        end
+        def assign_away(team)
+          @away_id = team.id
+          @teams_hash[team.id] = team
+        end
+
         def box
           @box ||= get_box
         end
