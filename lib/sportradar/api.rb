@@ -105,7 +105,7 @@ module Sportradar
 
     API_GALLERY = [
         {api: :nfl, version:  1},
-        {api: :mlb, version:  5},
+        {api: :mlb, version:  6},
         {api: :nhl, version:  3},
         {api: :nba, version:  3},
         {api: :ncaamb, version:   3},
