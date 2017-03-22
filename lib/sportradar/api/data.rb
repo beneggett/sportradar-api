@@ -46,7 +46,7 @@ module Sportradar
         existing
       end
 
-      # @param existing [Hash{String=>Data}] Existing data hasb, ID => entity
+      # @param existing [Hash{String=>Data}] Existing data hash, ID => entity
       # @param data [Hash, Array] new data to update with
       def create_data(existing = {}, data, klass: nil, **opts)
         existing ||= {} # handles nil case, typically during object instantiation

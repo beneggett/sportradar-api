@@ -10,6 +10,8 @@ require "sportradar/api/error"
 require "sportradar/api/request"
 require "sportradar/api/poll"
 
+require "sportradar/api/broadcast"
+
 require "sportradar/api/soccer"
 require "sportradar/api/soccer/boxscore"
 require "sportradar/api/soccer/category"
@@ -71,6 +73,7 @@ require "sportradar/api/nfl/venue"
 require "sportradar/api/nfl/week"
 
 require "sportradar/api/basketball"
+require "sportradar/api/baseball"
 
 
 require "sportradar/api/live_images"
