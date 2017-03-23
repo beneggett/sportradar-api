@@ -21,7 +21,7 @@ module Sportradar
           # create_data(@at_bats_hash, data.dig('at_bats'), klass: AtBat, api: @api, half_inning: self)
         end
 
-        def half_innings
+        def at_bats
           @at_bats_hash.values
         end
 
