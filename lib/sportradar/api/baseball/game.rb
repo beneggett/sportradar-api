@@ -266,9 +266,10 @@ end
 
 __END__
 
-mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
-res = mlb.get_schedule;
-g = mlb.games.first
+# mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
+# res = mlb.get_schedule;
+# g = mlb.games.first
+g = Sportradar::Api::Baseball::Game.new('id' => "000f209b-7132-4020-a2b6-dec9196a1802")
 g.get_summary
 g.get_pbp
 g.get_box # probably not as useful as summary
