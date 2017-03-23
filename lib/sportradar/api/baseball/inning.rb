@@ -19,7 +19,7 @@ module Sportradar
         end
         def update(data, **opts)
           # update scoring
-          create_data(@half_innings_hash, data.dig('inning_half'), klass: HalfInning, api: @api, inning: self)
+          create_data(@half_innings_hash, data.dig('halfs'), klass: HalfInning, api: @api, inning: self)
         end
 
         def half_innings

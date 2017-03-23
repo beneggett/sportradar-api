@@ -10,14 +10,15 @@ module Sportradar
           # @inning   = opts[:inning]
 
           @id       = data["id"]
-          @type     = data['type']
 
           @at_bats_hash = {}
 
           update(data)
         end
         def update(data, **opts)
-          create_data(@at_bats_hash, data.dig('at_bats'), klass: AtBat, api: @api, half_inning: self)
+          @half     = data['half']
+          @events   = data['events'] # contains at-bats, lineup changes, who knows what else
+          # create_data(@at_bats_hash, data.dig('at_bats'), klass: AtBat, api: @api, half_inning: self)
         end
 
         def half_innings

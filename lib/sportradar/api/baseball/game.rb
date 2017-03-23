@@ -202,8 +202,8 @@ module Sportradar
         end
 
         def ingest_box(data)
+          data = data['game']
           update(data, source: :box)
-          # @inning = data.delete(inning_name).to_i
           check_newness(:box, @clock)
           data
         end
@@ -214,16 +214,21 @@ module Sportradar
         end
 
         def get_pbp
-          data = api.get_data(path_pbp)
+          data = api.get_data(path_pbp);
           ingest_pbp(data)
         end
 
         def ingest_pbp(data)
+          data = data['game']
           update(data, source: :pbp)
-          @pbp = @innings_hash.values
+          # @pbp = @innings_hash.values
+          innings = data['innings'].each { |inning| inning['id'] = "#{data['id']}-#{inning['number']}" }
+          create_data(@innings_hash, innings, klass: Inning, api: api, game: self) if data['innings']
           check_newness(:pbp, pitches.last)
           check_newness(:score, @score)
           data
+        # rescue => e
+        #   binding.pry
         end
 
         def get_summary
@@ -237,6 +242,7 @@ module Sportradar
         end
 
         def ingest_summary(data)
+          data = data['game']
           update(data, source: :summary)
           @inning = data.delete('inning').to_i
           check_newness(:box, @clock)

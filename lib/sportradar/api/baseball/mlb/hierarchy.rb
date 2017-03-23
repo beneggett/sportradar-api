@@ -3,7 +3,7 @@ module Sportradar
     module Baseball
       class Mlb
         class Hierarchy < Data
-          attr_accessor :response, :id, :name, :alias
+          attr_accessor :response, :id, :name, :alias, :year, :type
           def all_attributes
             [:name, :alias, :leagues, :divisions, :teams]
           end
