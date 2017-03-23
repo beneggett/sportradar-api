@@ -94,7 +94,7 @@ module Sportradar
             "#{ path_base }/depth_charts"
           end
           def path_standings
-            "season_td/#{season_year}/#{mlb_season}/standings"
+            "seasontd/#{season_year}/#{mlb_season}/standings"
           end
           def path_daily_summary(date)
             "#{ path_base }/games/#{date.year}/#{date.month}/#{date.day}/summary"
@@ -160,7 +160,7 @@ module Sportradar
           end
 
           def ingest_standings(data)
-            update(data, source: :teams)
+            update(data.dig('league','season'), source: :teams)
             data
           end
 
