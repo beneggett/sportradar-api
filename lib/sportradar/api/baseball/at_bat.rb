@@ -18,8 +18,8 @@ module Sportradar
         end
         def update(data, **opts)
           @description = data['description'] if data['description']
-
-          create_data(@pitches_hash, data.dig('pitches'), klass: AtBat, api: @api, at_bat: self)
+          # this hasn't been checked yet
+          # create_data(@pitches_hash, data.dig('pitches'), klass: AtBat, api: @api, at_bat: self)
         end
 
         def pitches
