@@ -29,22 +29,24 @@ module Sportradar
         end
 
         def update(data, **opts)
-          @status           = data['status']            if data['status']            # "ACT",
-          @full_name        = data['full_name']         if data['full_name']         # "Festus Ezeli",
-          @first_name       = data['first_name']        if data['first_name']        # "Festus",
-          @last_name        = data['last_name']         if data['last_name']         # "Ezeli",
-          @abbr_name        = data['abbr_name']         if data['abbr_name']         # "F.Ezeli",
-          @height           = data['height']            if data['height']            # "83",
-          @weight           = data['weight']            if data['weight']            # "265",
-          @position         = data['position']          if data['position']          # "C",
-          @primary_position = data['primary_position']  if data['primary_position']  # "C",
-          @jersey_number    = data['jersey_number']     if data['jersey_number']     # "31",
-          @experience       = data['experience']        if data['experience']        # "3",
-          @birth_place      = data['birth_place'].gsub(',,', ', ')       if data['birth_place']       # "Benin City,, NGA",
-          @updated          = data['updated']           if data['updated']           # "2016-07-08T12:11:59+00:00",
+          @status           = data['status']            if data['status']
+          @full_name        = data['full_name']         if data['full_name']
+          @preferred        = data['preferred_name']    if data['preferred_name']
+          @first_name       = data['first_name']        if data['first_name']
+          @last_name        = data['last_name']         if data['last_name']
+          @abbr_name        = data['abbr_name']         if data['abbr_name']
+          @height           = data['height']            if data['height']
+          @weight           = data['weight']            if data['weight']
+          @position         = data['position']          if data['position']
+          @primary_position = data['primary_position']  if data['primary_position']
+          @jersey_number    = data['jersey_number']     if data['jersey_number']
+          @depth            = data['depth']             if data['depth']
+          @experience       = data['experience']        if data['experience']
+          @birth_place      = data['birth_place'].gsub(',,', ', ')       if data['birth_place']
+          @updated          = data['updated']           if data['updated']
 
-          @college          = data['college']           if data['college']           # "Vanderbilt",
-          @birthdate        = data['birthdate']         if data['birthdate']         # "1989-10-21",
+          @college          = data['college']           if data['college']
+          @birthdate        = data['birthdate']         if data['birthdate']
 
           update_injuries(data)
           update_draft(data)

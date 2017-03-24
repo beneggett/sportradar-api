@@ -15,6 +15,7 @@ module Sportradar
 
             @leagues_hash = {}
             @games_hash = {}
+            @teams_hash = {}
 
           end
 
@@ -28,6 +29,7 @@ module Sportradar
 
             @leagues_hash = create_data({}, data['leagues'], klass: League, hierarchy: self, api: api) if data['leagues']
             @games_hash   = create_data({}, data['games'],   klass: Game,   hierarchy: self, api: api) if data['games']
+            @teams_hash   = create_data({}, data['teams'],   klass: Team,   hierarchy: self, api: api) if data['teams']
           end
 
           def games
@@ -43,8 +45,12 @@ module Sportradar
           def teams
             teams = divisions.flat_map(&:teams)
             if teams.empty?
-              get_hierarchy
-              divisions.flat_map(&:teams)
+              if @teams_hash.empty?
+                get_hierarchy
+                divisions.flat_map(&:teams)
+              else
+                @teams_hash.values
+              end
             else
               teams
             end
@@ -169,6 +175,22 @@ module Sportradar
             {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_standings)}
           end
 
+          ## depth_charts
+          def get_depth_charts
+            data = api.get_data(path_depth_charts).to_h
+            ingest_depth_charts(data)
+          end
+
+          def ingest_depth_charts(data)
+            update(data, source: :teams)
+            data
+          end
+
+          def queue_depth_charts
+            url, headers, options, timeout = api.get_request_info(path_depth_charts)
+            {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_depth_charts)}
+          end
+
           ## daily summary
           def get_daily_summary(date = Date.today)
             data = api.get_data(path_daily_summary(date)).to_h
@@ -186,20 +208,20 @@ module Sportradar
           end
 
           ## venues
-          def get_venues
-            data = api.get_data(path_venues).to_h
-            ingest_venues(data)
-          end
+          # def get_venues
+          #   data = api.get_data(path_venues).to_h
+          #   ingest_venues(data)
+          # end
 
-          def ingest_venues(data)
-            update(data, source: :teams)
-            data
-          end
+          # def ingest_venues(data)
+          #   update(data, source: :teams)
+          #   data
+          # end
 
-          def queue_venues
-            url, headers, options, timeout = api.get_request_info(path_venues)
-            {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_venues)}
-          end
+          # def queue_venues
+          #   url, headers, options, timeout = api.get_request_info(path_venues)
+          #   {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_venues)}
+          # end
 
         end
       end
