@@ -16,16 +16,19 @@ module Sportradar
 
           update(data)
         end
+
         def update(data, **opts)
           @description = data['description'] if data['description']
+          @hitter_id = data['hitter_id'] if data['hitter_id']
           # this hasn't been checked yet
-          # create_data(@pitches_hash, data.dig('pitches'), klass: AtBat, api: @api, at_bat: self)
+          # pitch events
+          create_data(@pitches_hash, data.dig('events'), klass: Pitch, api: @api, at_bat: self)
+
         end
 
         def pitches
           @pitches_hash.values
         end
-
       end
     end
   end

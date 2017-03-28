@@ -12,7 +12,7 @@ module Sportradar
           # @season   = opts[:season]
           @updates  = {}
           @changes  = {}
-          
+
           @score          = {}
           @team_stats     = {}
           @player_stats   = {}
@@ -23,11 +23,12 @@ module Sportradar
           @away_runs      = nil
           @home_id        = nil
           @away_id        = nil
-          
+
           @id = data['id']
-          
+
           update(data, **opts)
         end
+
         def timeouts
           {}
         end
@@ -106,16 +107,20 @@ module Sportradar
           return nil if score.values.uniq.size == 1
           score.max_by(&:last).first
         end
+
         def leading_team
           @teams_hash[leading_team_id] || (@away_id == leading_team_id && away) || (@home_id == leading_team_id && home)
         end
+
         def team(team_id)
           @teams_hash[team_id]
         end
+
         def assign_home(team)
           @home_id = team.id
           @teams_hash[team.id] = team
         end
+
         def assign_away(team)
           @away_id = team.id
           @teams_hash[team.id] = team
@@ -124,18 +129,22 @@ module Sportradar
         def box
           @box ||= get_box
         end
+
         def pbp
           if !future? && innings.empty?
             get_pbp
           end
           @pbp ||= innings
         end
+
         def at_bats
           innings.flat_map(&:at_bats)
         end
+
         def pitches
           at_bats.flat_map(&:pitches)
         end
+
         def summary
           @summary ||= get_summary
         end
@@ -144,17 +153,19 @@ module Sportradar
           @innings_hash.values
         end
 
-
         # tracking updates
         def remember(key, object)
           @updates[key] = object&.dup
         end
+
         def not_updated?(key, object)
           @updates[key] == object
         end
+
         def changed?(key)
           @changes[key]
         end
+
         def check_newness(key, new_object)
           @changes[key] = !not_updated?(key, new_object)
           remember(key, new_object)
@@ -164,12 +175,15 @@ module Sportradar
         def path_base
           "games/#{ id }"
         end
+
         def path_box
           "#{ path_base }/boxscore"
         end
+
         def path_pbp
           "#{ path_base }/pbp"
         end
+
         def path_summary
           "#{ path_base }/summary"
         end
@@ -178,18 +192,23 @@ module Sportradar
         def postponed?
           'postponed' == status
         end
+
         def future?
           ['scheduled', 'delayed', 'created', 'time-tbd'].include? status
         end
+
         def started?
           ['inprogress', 'halftime', 'delayed'].include? status
         end
+
         def finished?
           ['complete', 'closed'].include? status
         end
+
         def completed?
           'complete' == status
         end
+
         def closed?
           'closed' == status
         end
@@ -258,7 +277,6 @@ module Sportradar
         def api
           @api || Sportradar::Api::Baseball::Mlb.new
         end
-
       end
     end
   end
@@ -269,7 +287,7 @@ __END__
 # mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
 # res = mlb.get_schedule;
 # g = mlb.games.first
-g = Sportradar::Api::Baseball::Game.new('id' => "000f209b-7132-4020-a2b6-dec9196a1802")
+g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
 g.get_summary
 g.get_pbp
 g.get_box # probably not as useful as summary

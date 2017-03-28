@@ -18,13 +18,12 @@ module Sportradar
         def update(data, **opts)
           @outcome_id   = data['outcome_id']  if data['outcome_id']
           @description  = data['description'] if data['description']
+          @type         = data['pitcher']['pitch_type']  if data['pitcher']['pitch_type']
+          @speed        = data['pitcher']['pitch_speed'] if data['pitcher']['pitch_speed']
 
-          @type         = data['pitch_type']  if data['pitch_type']
-          @speed        = data['pitch_speed'] if data['pitch_speed']
-
-          @runners  = parse_runners(data)   if data['runners']
-          @errors   = parse_errors(data)    if data['errors']
-          @fielders = parse_fielders(data)  if data['fielders']
+          # @runners  = parse_runners(data)   if data['runners']
+          # @errors   = parse_errors(data)    if data['errors']
+          # @fielders = parse_fielders(data['fielders'])  if data['fielders']
 
 
           create_data(@pitches_hash, data.dig('pitches'), klass: AtBat, api: @api, at_bat: self)
@@ -33,6 +32,9 @@ module Sportradar
         def pitches
           @pitches_hash.values
         end
+
+        # def parse_fielders(data)
+        # end
 
       end
     end
