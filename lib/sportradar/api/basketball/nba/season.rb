@@ -16,9 +16,11 @@ module Sportradar
             @year     = data.dig('season', 'year')
             @type     = data.dig('season', 'type')
 
-            @games_hash = {}
+            @games_hash   = {}
+            @series_hash  = {}
 
-            update_games(data['games'])
+            update_games(data['games']) if data['games']
+            update_series(data['series']) if data['series']
           end
 
           def games
@@ -27,6 +29,14 @@ module Sportradar
 
           def update_games(data)
             create_data(@games_hash, data, klass: Game, api: @api, season: self)
+          end
+
+          def series
+            @series_hash.values
+          end
+
+          def update_series(data)
+            create_data(@series_hash, data, klass: Series, api: @api, season: self)
           end
 
         end

@@ -29,6 +29,15 @@ module Sportradar
           end
         end
 
+        def series_schedule(season_year = default_year)
+          response = get request_url("series/#{season_year}/pst/schedule")
+          if response.success?
+            Sportradar::Api::Basketball::Nba::Season.new(response.to_h, api: self)
+          else
+            @error = response
+          end
+        end
+
         def league_hierarchy
           response = get request_url("league/hierarchy")
           if response.success?

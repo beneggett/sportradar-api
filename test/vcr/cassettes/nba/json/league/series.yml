@@ -1,0 +1,540 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/nba-t3/series/2015/pst/schedule.json?api_key=<NBA_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - public, must-revalidate, max-age=2
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 07 Apr 2017 22:15:11 GMT
+      Etag:
+      - '"7256abdabc39ee2e940c638b8e52d83f"'
+      Last-Modified:
+      - Wed, 30 Nov 2016 18:29:41 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-127.mashery.com
+      X-Packagekey-Quota-Allotted:
+      - '30000'
+      X-Packagekey-Quota-Current:
+      - '128'
+      X-Plan-Qps-Allotted:
+      - '25'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Via:
+      - Nginx-S3-Proxy
+      Content-Length:
+      - '76044'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"league":{"id":"4353138d-4c22-4396-95d8-5f587d2df25c","name":"NBA","alias":"NBA"},"season":{"id":"529bed34-5a8d-46d4-9eef-114bd1340867","year":2015,"type":"PST"},"series":[{"id":"1a6e97a8-1d5b-4aac-950c-de50227b21eb","title":"Western
+        Conference - First Round - POR vs LAC","status":"closed","round":1,"start_date":"2016-04-17","participants":[{"name":"Clippers","seed":4,"record":2,"team":{"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c","name":"Clippers","alias":"LAC","market":"Los
+        Angeles"}},{"name":"Trail Blazers","seed":5,"record":4,"team":{"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c","name":"Trail
+        Blazers","alias":"POR","market":"Portland"}}],"games":[{"id":"ad521859-9256-4b9e-8a92-e03b787cba24","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-18T02:30:00+00:00","home_points":115,"away_points":95,"venue":{"id":"792ec100-691e-5e16-8ef8-79b2b6ee38ba","name":"Staples
+        Center","capacity":19060,"address":"1111 S. Figueroa St.","city":"Los Angeles","state":"CA","zip":"90015","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Los
+        Angeles Clippers","alias":"LAC","seed":4,"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"25bc2e22-4e75-49d8-88b9-7509dd72f115","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-21T02:30:00+00:00","home_points":102,"away_points":81,"venue":{"id":"792ec100-691e-5e16-8ef8-79b2b6ee38ba","name":"Staples
+        Center","capacity":19060,"address":"1111 S. Figueroa St.","city":"Los Angeles","state":"CA","zip":"90015","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Los
+        Angeles Clippers","alias":"LAC","seed":4,"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"08aa7175-dd56-46ff-8419-cc4245349d26","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-24T02:30:00+00:00","home_points":96,"away_points":88,"venue":{"id":"1d1f74a2-7b35-56f0-8cbd-552c51cb2c14","name":"Moda
+        Center","capacity":19980,"address":"1 Center Court","city":"Portland","state":"OR","zip":"97227","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Los
+        Angeles Clippers","alias":"LAC","seed":4,"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"a1dd03fa-6134-4d2c-b5a5-acc1238cb488","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-26T02:30:00+00:00","home_points":98,"away_points":84,"venue":{"id":"1d1f74a2-7b35-56f0-8cbd-552c51cb2c14","name":"Moda
+        Center","capacity":19980,"address":"1 Center Court","city":"Portland","state":"OR","zip":"97227","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Los
+        Angeles Clippers","alias":"LAC","seed":4,"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"4324e696-7ae7-486e-a1ae-ac6b965b5950","title":"Game
+        5 ","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-28T02:00:00+00:00","home_points":98,"away_points":108,"venue":{"id":"792ec100-691e-5e16-8ef8-79b2b6ee38ba","name":"Staples
+        Center","capacity":19060,"address":"1111 S. Figueroa St.","city":"Los Angeles","state":"CA","zip":"90015","country":"USA"},"broadcast":{"network":"NBA
+        TV","satellite":"216"},"home":{"name":"Los Angeles Clippers","alias":"LAC","seed":4,"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"1ea356b0-b7b8-47c5-982b-7410b60b6f11","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-30T02:30:00+00:00","home_points":106,"away_points":103,"venue":{"id":"1d1f74a2-7b35-56f0-8cbd-552c51cb2c14","name":"Moda
+        Center","capacity":19980,"address":"1 Center Court","city":"Portland","state":"OR","zip":"97227","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Los
+        Angeles Clippers","alias":"LAC","seed":4,"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"cf7ee219-8828-4f79-ad55-7e3b9fdb5187","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-01T17:00:00+00:00","venue":{"id":"792ec100-691e-5e16-8ef8-79b2b6ee38ba","name":"Staples
+        Center","capacity":19060,"address":"1111 S. Figueroa St.","city":"Los Angeles","state":"CA","zip":"90015","country":"USA"},"home":{"name":"Los
+        Angeles Clippers","alias":"LAC","seed":4,"id":"583ecdfb-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"1e4970d5-a5e4-49e5-9524-ed2c1f44562f","title":"Eastern
+        Conference - First Round - DET vs CLE","status":"closed","round":1,"start_date":"2016-04-17","participants":[{"name":"Pistons","seed":8,"record":0,"team":{"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c","name":"Pistons","alias":"DET","market":"Detroit"}},{"name":"Cavaliers","seed":1,"record":4,"team":{"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c","name":"Cavaliers","alias":"CLE","market":"Cleveland"}}],"games":[{"id":"6b88b1fe-a6c8-46ea-86eb-5445c4e57532","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-17T19:00:00+00:00","home_points":106,"away_points":101,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Detroit
+        Pistons","alias":"DET","seed":8,"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"bb05152c-0f22-42d1-9080-244cf65d8c58","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-21T00:00:00+00:00","home_points":107,"away_points":90,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Detroit
+        Pistons","alias":"DET","seed":8,"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"f627d119-c13a-4bef-a240-9b8599f754d7","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-22T23:00:00+00:00","home_points":91,"away_points":101,"venue":{"id":"e83899a5-a6dd-58f8-bd42-34b4857ee714","name":"The
+        Palace of Auburn Hills","capacity":19971,"address":"Six Championship Drive","city":"Auburn
+        Hills","state":"MI","zip":"48326","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Detroit
+        Pistons","alias":"DET","seed":8,"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"f9507b88-5852-4187-b4b3-6ea6bafb810d","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-25T00:30:00+00:00","home_points":98,"away_points":100,"venue":{"id":"e83899a5-a6dd-58f8-bd42-34b4857ee714","name":"The
+        Palace of Auburn Hills","capacity":19971,"address":"Six Championship Drive","city":"Auburn
+        Hills","state":"MI","zip":"48326","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Detroit
+        Pistons","alias":"DET","seed":8,"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"9511638f-30d1-4a70-b61f-aab78c0b6bb7","title":"Game
+        5 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-26T17:00:00+00:00","venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Detroit
+        Pistons","alias":"DET","seed":8,"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"048fa1a4-788a-4dce-8b45-a97399017dbf","title":"Game
+        6 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-28T17:00:00+00:00","venue":{"id":"e83899a5-a6dd-58f8-bd42-34b4857ee714","name":"The
+        Palace of Auburn Hills","capacity":19971,"address":"Six Championship Drive","city":"Auburn
+        Hills","state":"MI","zip":"48326","country":"USA"},"home":{"name":"Detroit
+        Pistons","alias":"DET","seed":8,"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"3a7382ad-f477-472c-90e7-c81478191bd1","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-30T17:00:00+00:00","venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Detroit
+        Pistons","alias":"DET","seed":8,"id":"583ec928-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"1f3d39a9-30de-45df-91a2-5a5835f24632","title":"Western
+        Conference - Finals - OKC vs GSW","status":"closed","round":3,"start_date":"2016-05-16","participants":[{"name":"Warriors","seed":1,"record":4,"team":{"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c","name":"Warriors","alias":"GSW","market":"Golden
+        State"},"source":{"id":"c9fc244d-c214-4003-ba6b-bbc19437bd66","title":"Western
+        Conference - Semifinals - POR vs GSW","round":2,"outcome":"win"}},{"name":"Thunder","seed":3,"record":3,"team":{"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c","name":"Thunder","alias":"OKC","market":"Oklahoma
+        City"},"source":{"id":"343a128f-8bcb-4b58-8849-ff871a2326a1","title":"Western
+        Conference - Semifinals - OKC vs SAS","round":2,"outcome":"win"}}],"games":[{"id":"aa0e9b55-0d43-475f-82fc-2400595ea2e3","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-17T01:00:00+00:00","home_points":102,"away_points":108,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"19df48e6-951e-47a2-a853-42e15d56096f","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-19T01:00:00+00:00","home_points":118,"away_points":91,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"85fdc26f-8464-43a0-abb7-359b4e587d6c","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-23T00:00:00+00:00","home_points":133,"away_points":105,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"2f41a549-311b-41f0-a751-f4ea8160faf5","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-25T01:00:00+00:00","home_points":118,"away_points":94,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"03cbb06e-3d0c-4800-8c9c-93291f8adf19","title":"Game
+        5 ","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-27T01:00:00+00:00","home_points":120,"away_points":111,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"d9227bb1-33c8-43e0-98c1-4e88b7accfff","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-29T01:00:00+00:00","home_points":101,"away_points":108,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"29feac37-42af-4bd6-8a43-56fd58c15dc7","title":"Game
+        7","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-31T01:00:00+00:00","home_points":96,"away_points":88,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"285256d2-56d7-4f24-aa6b-f37a1c5f9abb","title":"Eastern
+        Conference - First Round - CHA vs MIA","status":"closed","round":1,"start_date":"2016-04-17","participants":[{"name":"Heat","seed":3,"record":4,"team":{"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c","name":"Heat","alias":"MIA","market":"Miami"}},{"name":"Hornets","seed":6,"record":3,"team":{"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c","name":"Hornets","alias":"CHA","market":"Charlotte"}}],"games":[{"id":"403e0ea5-e36d-42c8-96d3-7b2e741aba56","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-17T21:30:00+00:00","home_points":123,"away_points":91,"venue":{"id":"b67d5f09-28b2-5bc6-9097-af312007d2f4","name":"American
+        Airlines Arena","capacity":19600,"address":"601 Biscayne Blvd.","city":"Miami","state":"FL","zip":"33132","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Charlotte
+        Hornets","alias":"CHA","seed":6,"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"80250bcb-437d-436c-97ac-7ee642840050","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-20T23:00:00+00:00","home_points":115,"away_points":103,"venue":{"id":"b67d5f09-28b2-5bc6-9097-af312007d2f4","name":"American
+        Airlines Arena","capacity":19600,"address":"601 Biscayne Blvd.","city":"Miami","state":"FL","zip":"33132","country":"USA"},"broadcast":{"network":"NBA
+        TV","satellite":"216"},"home":{"name":"Miami Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Charlotte
+        Hornets","alias":"CHA","seed":6,"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"7dd6c1a5-2a9a-45f1-93fe-eefd282cb50f","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-23T21:30:00+00:00","home_points":96,"away_points":80,"venue":{"id":"a380f011-6e5d-5430-9f37-209e1e8a9b6f","name":"Spectrum
+        Center","capacity":19077,"address":"330 E. Trade St.","city":"Charlotte","state":"NC","zip":"28202","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Charlotte
+        Hornets","alias":"CHA","seed":6,"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"1ee986f0-5dda-4105-8d0a-62ba4df70688","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-25T23:00:00+00:00","home_points":89,"away_points":85,"venue":{"id":"a380f011-6e5d-5430-9f37-209e1e8a9b6f","name":"Spectrum
+        Center","capacity":19077,"address":"330 E. Trade St.","city":"Charlotte","state":"NC","zip":"28202","country":"USA"},"broadcast":{"network":"NBA
+        TV","satellite":"216"},"home":{"name":"Charlotte Hornets","alias":"CHA","seed":6,"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"cf726d11-af3f-4b7e-badf-75c9500d0875","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-28T00:00:00+00:00","home_points":88,"away_points":90,"venue":{"id":"b67d5f09-28b2-5bc6-9097-af312007d2f4","name":"American
+        Airlines Arena","capacity":19600,"address":"601 Biscayne Blvd.","city":"Miami","state":"FL","zip":"33132","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Charlotte
+        Hornets","alias":"CHA","seed":6,"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"44b437e4-1856-4846-a589-3a722ca1fd38","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-30T00:00:00+00:00","home_points":90,"away_points":97,"venue":{"id":"a380f011-6e5d-5430-9f37-209e1e8a9b6f","name":"Spectrum
+        Center","capacity":19077,"address":"330 E. Trade St.","city":"Charlotte","state":"NC","zip":"28202","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Charlotte
+        Hornets","alias":"CHA","seed":6,"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"c66c3b83-6b65-48cf-b08f-13d6f924c351","title":"Game
+        7","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-01T17:00:00+00:00","home_points":106,"away_points":73,"venue":{"id":"b67d5f09-28b2-5bc6-9097-af312007d2f4","name":"American
+        Airlines Arena","capacity":19600,"address":"601 Biscayne Blvd.","city":"Miami","state":"FL","zip":"33132","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Charlotte
+        Hornets","alias":"CHA","seed":6,"id":"583ec97e-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"343a128f-8bcb-4b58-8849-ff871a2326a1","title":"Western
+        Conference - Semifinals - OKC vs SAS","status":"closed","round":2,"start_date":"2016-04-30","participants":[{"name":"Spurs","seed":2,"record":2,"team":{"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c","name":"Spurs","alias":"SAS","market":"San
+        Antonio"},"source":{"id":"bb291866-809f-48a6-8f7a-af4144d95d46","title":"Western
+        Conference - First Round - MEM vs SAS","round":1,"outcome":"win"}},{"name":"Thunder","seed":3,"record":4,"team":{"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c","name":"Thunder","alias":"OKC","market":"Oklahoma
+        City"},"source":{"id":"baf674be-7965-41dc-bc76-913d8114dec4","title":"Western
+        Conference - First Round - DAL vs OKC","round":1,"outcome":"win"}}],"games":[{"id":"bad8471e-f827-4f52-99e5-8ce7762999da","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-01T00:30:00+00:00","home_points":124,"away_points":92,"venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"8619b7dd-880e-4746-9666-ae729f9e440d","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-03T01:30:00+00:00","home_points":97,"away_points":98,"venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"d3670ff4-77fc-489e-9724-5559c5a83ac4","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-07T01:30:00+00:00","home_points":96,"away_points":100,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"ee02f85c-9015-482e-9ba8-9644552699be","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-09T00:00:00+00:00","home_points":111,"away_points":97,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"fc08e029-164f-485f-8f64-8316eb518ca4","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-11T00:00:00+00:00","home_points":91,"away_points":95,"venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"ff5ee455-79c0-4f5c-9cf3-941d225b5699","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-13T00:30:00+00:00","home_points":113,"away_points":99,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"d8adb4f0-9d4e-4b98-b686-a0ead9bd7dbd","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-16T00:00:00+00:00","venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"5174b770-def2-423f-a49b-4fdb43571c5c","title":"Eastern
+        Conference - First Round - IND vs TOR","status":"closed","round":1,"start_date":"2016-04-16","participants":[{"name":"Raptors","seed":2,"record":4,"team":{"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c","name":"Raptors","alias":"TOR","market":"Toronto"}},{"name":"Pacers","seed":7,"record":3,"team":{"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c","name":"Pacers","alias":"IND","market":"Indiana"}}],"games":[{"id":"577d2949-d062-4e2f-b474-9fd1f1ff768b","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-16T16:30:00+00:00","home_points":90,"away_points":100,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Indiana
+        Pacers","alias":"IND","seed":7,"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"f1f31ab4-ebb7-4b37-bd7c-252394079f0d","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-18T23:00:00+00:00","home_points":98,"away_points":87,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"NBA TV","satellite":"216"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Indiana
+        Pacers","alias":"IND","seed":7,"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"d0ced9c7-046a-4bdd-a821-af607bb78949","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-21T23:30:00+00:00","home_points":85,"away_points":101,"venue":{"id":"24bb478e-eb31-5f8a-8c8d-07f513169ec1","name":"Bankers
+        Life Fieldhouse","capacity":18165,"address":"125 S. Pennsylvania St.","city":"Indianapolis","state":"IN","zip":"46204","country":"USA"},"broadcast":{"network":"NBA
+        TV","satellite":"216"},"home":{"name":"Indiana Pacers","alias":"IND","seed":7,"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"dec92282-c72e-46a2-ba08-09513c60b67b","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-23T19:00:00+00:00","home_points":100,"away_points":83,"venue":{"id":"24bb478e-eb31-5f8a-8c8d-07f513169ec1","name":"Bankers
+        Life Fieldhouse","capacity":18165,"address":"125 S. Pennsylvania St.","city":"Indianapolis","state":"IN","zip":"46204","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Indiana
+        Pacers","alias":"IND","seed":7,"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"78ca34da-6d07-4122-84f4-f2b455654bcd","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-26T22:00:00+00:00","home_points":102,"away_points":99,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Indiana
+        Pacers","alias":"IND","seed":7,"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"a5fef80e-fa39-4256-b1fb-8b5205048f7a","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-29T23:30:00+00:00","home_points":101,"away_points":83,"venue":{"id":"24bb478e-eb31-5f8a-8c8d-07f513169ec1","name":"Bankers
+        Life Fieldhouse","capacity":18165,"address":"125 S. Pennsylvania St.","city":"Indianapolis","state":"IN","zip":"46204","country":"USA"},"broadcast":{"network":"NBA
+        TV","satellite":"216"},"home":{"name":"Indiana Pacers","alias":"IND","seed":7,"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"583a5235-6ee1-43d7-8cc8-d9f182bcdd69","title":"Game
+        7 ","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-02T00:00:00+00:00","home_points":89,"away_points":84,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Indiana
+        Pacers","alias":"IND","seed":7,"id":"583ec7cd-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"65597eb9-8adc-427b-9213-ef30cc1c1e30","title":"Eastern
+        Conference - Finals - TOR vs CLE","status":"closed","round":3,"start_date":"2016-05-17","participants":[{"name":"Raptors","seed":2,"record":2,"team":{"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c","name":"Raptors","alias":"TOR","market":"Toronto"},"source":{"id":"d12a2c0e-d9b0-4e00-83f7-3f0503041c9e","title":"Eastern
+        Conference - Semifinals - MIA vs TOR","round":2,"outcome":"win"}},{"name":"Cavaliers","seed":1,"record":4,"team":{"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c","name":"Cavaliers","alias":"CLE","market":"Cleveland"},"source":{"id":"ed9e1114-dedc-4bf4-82f7-7ba496893b17","title":"Eastern
+        Conference - Semifinals - ATL vs CLE","round":2,"outcome":"win"}}],"games":[{"id":"4c873f6a-f71e-409a-9819-5d5b124deb56","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-18T00:30:00+00:00","home_points":115,"away_points":84,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"f979b284-43b4-4dc8-9c8e-d6be64387128","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-20T00:30:00+00:00","home_points":108,"away_points":89,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"feccc351-f7f1-4cfc-a44c-d8ba21981721","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-22T00:30:00+00:00","home_points":99,"away_points":84,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"78df1c07-4bed-4d13-b693-5bef0b33240c","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-24T00:30:00+00:00","home_points":105,"away_points":99,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"5f9d5be0-6295-4ae4-8f2a-8547f7815669","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-26T00:30:00+00:00","home_points":116,"away_points":78,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ESPN
+        ","satellite":"206","internet":"WatchESPN"},"home":{"name":"Cleveland Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"2a0bf0fc-4230-4edd-9cb8-872070a9cd9f","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-28T00:30:00+00:00","home_points":87,"away_points":113,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"64ff7b55-86cf-41e1-9185-1ca0e5e2b916","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-30T00:30:00+00:00","venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"8ae6c94b-c9ef-4d0c-aecb-924e03aa08ca","title":"NBA
+        Finals - CLE vs GSW","status":"closed","round":4,"start_date":"2016-06-02","participants":[{"name":"Warriors","seed":1,"record":3,"team":{"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c","name":"Warriors","alias":"GSW","market":"Golden
+        State"},"source":{"id":"1f3d39a9-30de-45df-91a2-5a5835f24632","title":"Western
+        Conference - Finals - OKC vs GSW","round":3,"outcome":"win"}},{"name":"Cavaliers","seed":1,"record":4,"team":{"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c","name":"Cavaliers","alias":"CLE","market":"Cleveland"},"source":{"id":"65597eb9-8adc-427b-9213-ef30cc1c1e30","title":"Eastern
+        Conference - Finals - TOR vs CLE","round":3,"outcome":"win"}}],"games":[{"id":"109dd66d-b64d-492d-aab7-ee8fee4d4ef5","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-06-03T01:00:00+00:00","home_points":104,"away_points":89,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"c503707f-579a-4a6a-bb77-8cdef63c5981","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-06-06T00:00:00+00:00","home_points":110,"away_points":77,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"38e49a39-d0d3-4380-8cfd-db208bf5ea2c","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-06-09T01:00:00+00:00","home_points":120,"away_points":90,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"66e51775-1ab7-44fd-87a4-dc14ec7df426","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-06-11T01:00:00+00:00","home_points":97,"away_points":108,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"f8cdca88-ff84-4dd1-9bf0-43868263a15b","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-06-14T01:00:00+00:00","home_points":97,"away_points":112,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"96c96151-ea05-4f33-8542-860ee52b4881","title":"Game
+        6 ","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-06-17T01:00:00+00:00","home_points":115,"away_points":101,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"e828dd97-64d7-4506-92f9-ff27748304c8","title":"Game
+        7","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-06-20T00:00:00+00:00","home_points":89,"away_points":93,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"baf674be-7965-41dc-bc76-913d8114dec4","title":"Western
+        Conference - First Round - DAL vs OKC","status":"closed","round":1,"start_date":"2016-04-16","participants":[{"name":"Thunder","seed":3,"record":4,"team":{"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c","name":"Thunder","alias":"OKC","market":"Oklahoma
+        City"}},{"name":"Mavericks","seed":6,"record":1,"team":{"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c","name":"Mavericks","alias":"DAL","market":"Dallas"}}],"games":[{"id":"99cace5e-0eb3-44fc-9938-028932d9a873","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-17T01:30:00+00:00","home_points":108,"away_points":70,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Dallas
+        Mavericks","alias":"DAL","seed":6,"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"3a95e0c5-950d-42e9-b7f7-b2897d446105","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-19T00:00:00+00:00","home_points":84,"away_points":85,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Dallas
+        Mavericks","alias":"DAL","seed":6,"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"bfc7f68e-8913-41a2-acc2-ccb477dcd85e","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-21T23:00:00+00:00","home_points":102,"away_points":131,"venue":{"id":"401ba62f-19b5-5bfc-84d6-021772943311","name":"American
+        Airlines Center","capacity":19200,"address":"2500 Victory Ave.","city":"Dallas","state":"TX","zip":"75219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Dallas
+        Mavericks","alias":"DAL","seed":6,"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"0af97f8d-5b90-4ec7-846f-cf1debfeb09a","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-24T00:00:00+00:00","home_points":108,"away_points":119,"venue":{"id":"401ba62f-19b5-5bfc-84d6-021772943311","name":"American
+        Airlines Center","capacity":19200,"address":"2500 Victory Ave.","city":"Dallas","state":"TX","zip":"75219","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Dallas
+        Mavericks","alias":"DAL","seed":6,"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"404fb43c-f397-438c-8935-ea8e2f4f7a37","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-26T00:00:00+00:00","home_points":118,"away_points":104,"venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Dallas
+        Mavericks","alias":"DAL","seed":6,"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"52ccc37f-b360-42a2-a37a-59092cec70a3","title":"Game
+        6 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-28T17:00:00+00:00","venue":{"id":"401ba62f-19b5-5bfc-84d6-021772943311","name":"American
+        Airlines Center","capacity":19200,"address":"2500 Victory Ave.","city":"Dallas","state":"TX","zip":"75219","country":"USA"},"home":{"name":"Dallas
+        Mavericks","alias":"DAL","seed":6,"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"8c639ca4-e2e4-42af-a692-9af57386c984","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-30T17:00:00+00:00","venue":{"id":"a13af216-4409-5021-8dd5-255cc71bffc3","name":"Chesapeake
+        Energy Arena","capacity":18203,"address":"100 W. Reno Ave.","city":"Oklahoma
+        City","state":"OK","zip":"73102","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Oklahoma
+        City Thunder","alias":"OKC","seed":3,"id":"583ecfff-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Dallas
+        Mavericks","alias":"DAL","seed":6,"id":"583ecf50-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"bb291866-809f-48a6-8f7a-af4144d95d46","title":"Western
+        Conference - First Round - MEM vs SAS","status":"closed","round":1,"start_date":"2016-04-17","participants":[{"name":"Grizzlies","seed":7,"record":0,"team":{"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c","name":"Grizzlies","alias":"MEM","market":"Memphis"}},{"name":"Spurs","seed":2,"record":4,"team":{"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c","name":"Spurs","alias":"SAS","market":"San
+        Antonio"}}],"games":[{"id":"6ae6fcc6-b07a-464d-93ba-3df2dc5c86ab","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-18T00:00:00+00:00","home_points":106,"away_points":74,"venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Memphis
+        Grizzlies","alias":"MEM","seed":7,"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"869e5039-62bc-41b8-b868-093d8eae7f04","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-20T01:30:00+00:00","home_points":94,"away_points":68,"venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Memphis
+        Grizzlies","alias":"MEM","seed":7,"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"b041e89a-9d86-47b8-ad51-623db0c772fc","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-23T01:30:00+00:00","home_points":87,"away_points":96,"venue":{"id":"7657c204-a20b-527a-99cb-dc29218462aa","name":"FedExForum","capacity":18119,"address":"191
+        Beale St","city":"Memphis","state":"TN","zip":"38103","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Memphis
+        Grizzlies","alias":"MEM","seed":7,"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"3bd3b4ce-ec7c-4104-adcf-3cbda24eae95","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-24T17:00:00+00:00","home_points":95,"away_points":116,"venue":{"id":"7657c204-a20b-527a-99cb-dc29218462aa","name":"FedExForum","capacity":18119,"address":"191
+        Beale St","city":"Memphis","state":"TN","zip":"38103","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Memphis
+        Grizzlies","alias":"MEM","seed":7,"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"4cb76a3d-5e51-4705-a448-1cffb8aff0b0","title":"Game
+        5 (if necessary) ","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-26T17:00:00+00:00","venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Memphis
+        Grizzlies","alias":"MEM","seed":7,"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"6849ea09-1636-46e8-85d1-5723777043a0","title":"Game
+        6 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-28T17:00:00+00:00","venue":{"id":"7657c204-a20b-527a-99cb-dc29218462aa","name":"FedExForum","capacity":18119,"address":"191
+        Beale St","city":"Memphis","state":"TN","zip":"38103","country":"USA"},"home":{"name":"Memphis
+        Grizzlies","alias":"MEM","seed":7,"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"a846b241-a8dc-488d-82ac-efe60b018741","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-30T17:00:00+00:00","venue":{"id":"8a7580c0-4052-54d5-85cd-85aab6200acf","name":"AT&T
+        Center","capacity":18418,"address":"1 AT&T Center Parkway","city":"San Antonio","state":"TX","zip":"78219","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"San
+        Antonio Spurs","alias":"SAS","seed":2,"id":"583ecd4f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Memphis
+        Grizzlies","alias":"MEM","seed":7,"id":"583eca88-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"bcfb6711-da22-4450-b6a6-1f1394f9275e","title":"Western
+        Conference - First Round - HOU vs GSW","status":"closed","round":1,"start_date":"2016-04-16","participants":[{"name":"Rockets","seed":8,"record":1,"team":{"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c","name":"Rockets","alias":"HOU","market":"Houston"}},{"name":"Warriors","seed":1,"record":4,"team":{"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c","name":"Warriors","alias":"GSW","market":"Golden
+        State"}}],"games":[{"id":"ed411f27-721c-41cb-b49f-4c320099b6cb","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-16T19:30:00+00:00","home_points":104,"away_points":78,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Houston
+        Rockets","alias":"HOU","seed":8,"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"eecc2247-af16-495b-91ed-960764881d4f","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-19T02:30:00+00:00","home_points":115,"away_points":106,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Houston
+        Rockets","alias":"HOU","seed":8,"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"12f3144c-743d-4a73-88b1-0e2e86aae4a0","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-22T01:30:00+00:00","home_points":97,"away_points":96,"venue":{"id":"5b239206-57ce-50aa-baaa-627f3349dfdc","name":"Toyota
+        Center","capacity":18055,"address":"1510 Polk St.","city":"Houston","state":"TX","zip":"77002","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Houston
+        Rockets","alias":"HOU","seed":8,"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"027b0451-2649-42ed-a31e-1a644211a95b","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-24T19:30:00+00:00","home_points":94,"away_points":121,"venue":{"id":"5b239206-57ce-50aa-baaa-627f3349dfdc","name":"Toyota
+        Center","capacity":18055,"address":"1510 Polk St.","city":"Houston","state":"TX","zip":"77002","country":"USA"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Houston
+        Rockets","alias":"HOU","seed":8,"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"a797384d-2556-46bf-8366-03fa8f1222a1","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-28T02:30:00+00:00","home_points":114,"away_points":81,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Houston
+        Rockets","alias":"HOU","seed":8,"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"9a56ef90-7fd7-428a-b0fe-0562df745655","title":"Game
+        6 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-29T17:00:00+00:00","venue":{"id":"5b239206-57ce-50aa-baaa-627f3349dfdc","name":"Toyota
+        Center","capacity":18055,"address":"1510 Polk St.","city":"Houston","state":"TX","zip":"77002","country":"USA"},"home":{"name":"Houston
+        Rockets","alias":"HOU","seed":8,"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"deee8806-11c7-4588-8c0e-c9c8b9ec1f51","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-01T17:00:00+00:00","venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Houston
+        Rockets","alias":"HOU","seed":8,"id":"583ecb3a-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"c9fc244d-c214-4003-ba6b-bbc19437bd66","title":"Western
+        Conference - Semifinals - POR vs GSW","status":"closed","round":2,"start_date":"2016-05-01","participants":[{"name":"Warriors","seed":1,"record":4,"team":{"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c","name":"Warriors","alias":"GSW","market":"Golden
+        State"},"source":{"id":"bcfb6711-da22-4450-b6a6-1f1394f9275e","title":"Western
+        Conference - First Round - HOU vs GSW","round":1,"outcome":"win"}},{"name":"Trail
+        Blazers","seed":5,"record":1,"team":{"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c","name":"Trail
+        Blazers","alias":"POR","market":"Portland"},"source":{"id":"1a6e97a8-1d5b-4aac-950c-de50227b21eb","title":"Western
+        Conference - First Round - POR vs LAC","round":1,"outcome":"win"}}],"games":[{"id":"ed82df0a-418f-4a89-b90c-350eacec6bc2","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-01T19:30:00+00:00","home_points":118,"away_points":106,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"ABC"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"6dddbc37-488b-43ef-8f42-def153ac8f36","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-04T02:30:00+00:00","home_points":110,"away_points":99,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"ed7adc7f-e8f1-4d6e-8844-5f45978fe82b","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-08T00:30:00+00:00","home_points":120,"away_points":108,"venue":{"id":"1d1f74a2-7b35-56f0-8cbd-552c51cb2c14","name":"Moda
+        Center","capacity":19980,"address":"1 Center Court","city":"Portland","state":"OR","zip":"97227","country":"USA"},"broadcast":{"network":"ABC"},"home":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"ce08d4d1-7d6d-447e-b967-32748dc03b91","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-10T02:30:00+00:00","home_points":125,"away_points":132,"venue":{"id":"1d1f74a2-7b35-56f0-8cbd-552c51cb2c14","name":"Moda
+        Center","capacity":19980,"address":"1 Center Court","city":"Portland","state":"OR","zip":"97227","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"b6f4a9fe-e512-406f-84cc-c144177e3048","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-12T02:30:00+00:00","home_points":125,"away_points":121,"venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"33ef6380-2758-491d-b2bb-d1b90b92efa3","title":"Game
+        6 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-14T02:30:00+00:00","venue":{"id":"1d1f74a2-7b35-56f0-8cbd-552c51cb2c14","name":"Moda
+        Center","capacity":19980,"address":"1 Center Court","city":"Portland","state":"OR","zip":"97227","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"81c66273-1504-4837-b5cb-72ac6b7c536b","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-17T01:00:00+00:00","venue":{"id":"e25e21f2-1d67-5f13-910b-81fc8629eea7","name":"Oracle
+        Arena","capacity":19596,"address":"7000 Coliseum Way","city":"Oakland","state":"CA","zip":"94621","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Golden
+        State Warriors","alias":"GSW","seed":1,"id":"583ec825-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Portland
+        Trail Blazers","alias":"POR","seed":5,"id":"583ed056-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"d12a2c0e-d9b0-4e00-83f7-3f0503041c9e","title":"Eastern
+        Conference - Semifinals - MIA vs TOR","status":"closed","round":2,"start_date":"2016-05-03","participants":[{"name":"Heat","seed":3,"record":3,"team":{"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c","name":"Heat","alias":"MIA","market":"Miami"},"source":{"id":"285256d2-56d7-4f24-aa6b-f37a1c5f9abb","title":"Eastern
+        Conference - First Round - CHA vs MIA","round":1,"outcome":"win"}},{"name":"Raptors","seed":2,"record":4,"team":{"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c","name":"Raptors","alias":"TOR","market":"Toronto"},"source":{"id":"5174b770-def2-423f-a49b-4fdb43571c5c","title":"Eastern
+        Conference - First Round - IND vs TOR","round":1,"outcome":"win"}}],"games":[{"id":"527c9f42-2cc4-459a-8024-d29f49b90c07","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-04T00:00:00+00:00","home_points":96,"away_points":102,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"6541e31f-79e2-4527-9223-5d524fcf8aef","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-06T00:00:00+00:00","home_points":96,"away_points":92,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"c2efacb4-37a0-49ec-a607-d395afe08adf","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-07T21:00:00+00:00","home_points":91,"away_points":95,"venue":{"id":"b67d5f09-28b2-5bc6-9097-af312007d2f4","name":"American
+        Airlines Arena","capacity":19600,"address":"601 Biscayne Blvd.","city":"Miami","state":"FL","zip":"33132","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"659a1543-7691-4287-a385-11063308b0f1","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-10T00:00:00+00:00","home_points":94,"away_points":87,"venue":{"id":"b67d5f09-28b2-5bc6-9097-af312007d2f4","name":"American
+        Airlines Arena","capacity":19600,"address":"601 Biscayne Blvd.","city":"Miami","state":"FL","zip":"33132","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"18945e8b-09a6-4598-b163-d7c675a2f831","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-12T00:00:00+00:00","home_points":99,"away_points":91,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"8967372d-cc2c-4838-a97b-529e1e2d4a0f","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-14T00:00:00+00:00","home_points":103,"away_points":91,"venue":{"id":"b67d5f09-28b2-5bc6-9097-af312007d2f4","name":"American
+        Airlines Arena","capacity":19600,"address":"601 Biscayne Blvd.","city":"Miami","state":"FL","zip":"33132","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"6ea1e81a-a8e6-4795-8777-599ab4fa02ca","title":"Game
+        7 ","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-15T19:30:00+00:00","home_points":116,"away_points":89,"venue":{"id":"62cc9661-7b13-56e7-bf4a-bba7ad7be8da","name":"Air
+        Canada Centre","capacity":19800,"address":"40 Bay St.","city":"Toronto","state":"ON","zip":"M5J
+        2X2","country":"CAN"},"broadcast":{"network":"ABC","internet":"WatchESPN"},"home":{"name":"Toronto
+        Raptors","alias":"TOR","seed":2,"id":"583ecda6-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Miami
+        Heat","alias":"MIA","seed":3,"id":"583ecea6-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"dc528f4c-c8c8-4067-9981-bb64ba1a3e2f","title":"Eastern
+        Conference - First Round - BOS vs ATL","status":"closed","round":1,"start_date":"2016-04-16","participants":[{"name":"Hawks","seed":4,"record":4,"team":{"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c","name":"Hawks","alias":"ATL","market":"Atlanta"}},{"name":"Celtics","seed":5,"record":2,"team":{"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c","name":"Celtics","alias":"BOS","market":"Boston"}}],"games":[{"id":"e687c1be-d155-4d8a-bf56-c5c4d440a0a4","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-16T23:00:00+00:00","home_points":102,"away_points":101,"venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Boston
+        Celtics","alias":"BOS","seed":5,"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"f4e2f970-81be-455c-969c-783f453af779","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-19T23:00:00+00:00","home_points":89,"away_points":72,"venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Boston
+        Celtics","alias":"BOS","seed":5,"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"dc533925-3e8d-4f6c-96a9-03a47921aa69","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-23T00:00:00+00:00","home_points":111,"away_points":103,"venue":{"id":"7d69b080-91ca-53c9-9302-45c1a72c5549","name":"TD
+        Garden","capacity":18624,"address":"100 Legends Way","city":"Boston","state":"MA","zip":"02114","country":"USA"},"broadcast":{"network":"ESPN2","satellite":"209","internet":"WatchESPN"},"home":{"name":"Boston
+        Celtics","alias":"BOS","seed":5,"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"625d026f-60ee-4eaf-bf46-90012804eabc","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-24T22:00:00+00:00","home_points":104,"away_points":95,"venue":{"id":"7d69b080-91ca-53c9-9302-45c1a72c5549","name":"TD
+        Garden","capacity":18624,"address":"100 Legends Way","city":"Boston","state":"MA","zip":"02114","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Boston
+        Celtics","alias":"BOS","seed":5,"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"344f9323-fa63-4701-b31d-b8fd48165ad4","title":"Game
+        5","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-27T00:30:00+00:00","home_points":110,"away_points":83,"venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Boston
+        Celtics","alias":"BOS","seed":5,"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"87f29d24-66a3-4ca9-9c7c-3cb927345b3a","title":"Game
+        6","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-04-29T00:00:00+00:00","home_points":92,"away_points":104,"venue":{"id":"7d69b080-91ca-53c9-9302-45c1a72c5549","name":"TD
+        Garden","capacity":18624,"address":"100 Legends Way","city":"Boston","state":"MA","zip":"02114","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Boston
+        Celtics","alias":"BOS","seed":5,"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"31e1c0d2-1ace-4ffd-b0e5-832d84daa291","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-04-30T17:00:00+00:00","venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Boston
+        Celtics","alias":"BOS","seed":5,"id":"583eccfa-fb46-11e1-82cb-f4ce4684ea4c"}}]},{"id":"ed9e1114-dedc-4bf4-82f7-7ba496893b17","title":"Eastern
+        Conference - Semifinals - ATL vs CLE","status":"closed","round":2,"start_date":"2016-05-02","participants":[{"name":"Cavaliers","seed":1,"record":4,"team":{"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c","name":"Cavaliers","alias":"CLE","market":"Cleveland"},"source":{"id":"1e4970d5-a5e4-49e5-9524-ed2c1f44562f","title":"Eastern
+        Conference - First Round - DET vs CLE","round":1,"outcome":"win"}},{"name":"Hawks","seed":4,"record":0,"team":{"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c","name":"Hawks","alias":"ATL","market":"Atlanta"},"source":{"id":"dc528f4c-c8c8-4067-9981-bb64ba1a3e2f","title":"Eastern
+        Conference - First Round - BOS vs ATL","round":1,"outcome":"win"}}],"games":[{"id":"ccc9b3fc-bda3-4908-b03a-ea41c3071919","title":"Game
+        1","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-02T23:00:00+00:00","home_points":104,"away_points":93,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"e17bc5e5-ef93-4a73-98fb-21ee1a9d2b2d","title":"Game
+        2","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-05T00:00:00+00:00","home_points":123,"away_points":98,"venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"3b95e66f-209b-4ec8-b184-364804048374","title":"Game
+        3","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-06T23:00:00+00:00","home_points":108,"away_points":121,"venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"eebc2cb7-2daa-4d8c-a30b-6bee182cc122","title":"Game
+        4","status":"closed","coverage":"full","neutral_site":false,"scheduled":"2016-05-08T19:30:00+00:00","home_points":99,"away_points":100,"venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"ABC"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"5c978b5d-4cc8-4492-84b4-06475542969b","title":"Game
+        5 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-10T23:00:00+00:00","venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"broadcast":{"network":"TNT","satellite":"245"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"d2f2205b-78c5-4440-91a7-2920b1fd7492","title":"Game
+        6 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-12T17:00:00+00:00","venue":{"id":"fd21f639-8a47-51ac-a5dd-590629d445cf","name":"Philips
+        Arena","capacity":18118,"address":"One Philips Drive","city":"Atlanta","state":"GA","zip":"30303","country":"USA"},"broadcast":{"network":"ESPN","satellite":"206","internet":"WatchESPN"},"home":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"}},{"id":"346a4896-8bd8-4bec-af89-066038cca870","title":"Game
+        7 (if necessary)","status":"unnecessary","coverage":"full","neutral_site":false,"scheduled":"2016-05-15T17:00:00+00:00","venue":{"id":"42cddf7a-0e1f-5f91-ae6f-c620582fdb01","name":"Quicken
+        Loans Arena","capacity":20562,"address":"One Center Court","city":"Cleveland","state":"OH","zip":"44115","country":"USA"},"home":{"name":"Cleveland
+        Cavaliers","alias":"CLE","seed":1,"id":"583ec773-fb46-11e1-82cb-f4ce4684ea4c"},"away":{"name":"Atlanta
+        Hawks","alias":"ATL","seed":4,"id":"583ecb8f-fb46-11e1-82cb-f4ce4684ea4c"}}]}]}'
+    http_version: 
+  recorded_at: Fri, 07 Apr 2017 22:15:10 GMT
+recorded_with: VCR 3.0.3
