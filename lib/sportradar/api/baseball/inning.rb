@@ -19,11 +19,16 @@ module Sportradar
         end
         def update(data, **opts)
           # update scoring
+          # innings = data['innings'].each { |inning| inning['id'] = "#{data['id']}-#{inning['number']}" }
           create_data(@half_innings_hash, data.dig('halfs'), klass: HalfInning, api: @api, inning: self)
         end
 
         def half_innings
           @half_innings_hash.values
+        end
+
+        def events
+          half_innings.flat_map(&:events)
         end
 
       end

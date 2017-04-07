@@ -65,7 +65,7 @@ module Sportradar
           end
 
           def default_year
-            Date.today.year - 1 # FIXME - DEVELOPMENT ONLY
+            Date.today.year
           end
           def default_date
             Date.today
@@ -234,10 +234,10 @@ __END__
 mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
 res = mlb.get_hierarchy;
 t = mlb.teams.first;
-t.get_season_stats(2016);
+t.get_season_stats;
 t.players.sample
 
 res = mlb.get_schedule;
-g = mlb.games.first
+g = mlb.games.sort_by(&:scheduled).first
 
 

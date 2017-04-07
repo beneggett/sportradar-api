@@ -137,8 +137,12 @@ module Sportradar
           @pbp ||= innings
         end
 
-        def at_bats
-          innings.flat_map(&:at_bats)
+        def atbats
+          innings.flat_map(&:atbats)
+        end
+
+        def events
+          innings.flat_map(&:events)
         end
 
         def pitches
@@ -243,8 +247,8 @@ module Sportradar
           # @pbp = @innings_hash.values
           innings = data['innings'].each { |inning| inning['id'] = "#{data['id']}-#{inning['number']}" }
           create_data(@innings_hash, innings, klass: Inning, api: api, game: self) if data['innings']
-          check_newness(:pbp, pitches.last)
-          check_newness(:score, @score)
+          # check_newness(:pbp, pitches.last)
+          # check_newness(:score, @score)
           data
         # rescue => e
         #   binding.pry
@@ -288,6 +292,6 @@ __END__
 # res = mlb.get_schedule;
 # g = mlb.games.first
 g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
-g.get_summary
-g.get_pbp
-g.get_box # probably not as useful as summary
+res = g.get_summary
+res = g.get_pbp
+res = g.get_box # probably not as useful as summary
