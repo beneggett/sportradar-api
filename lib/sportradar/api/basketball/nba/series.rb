@@ -24,8 +24,8 @@ module Sportradar
             @start_date = data['start_date']  if data['start_date']
 
 
-            update_games(data['games'])                 if data['games']
-            update_participantss(data['participantss']) if data['participantss']
+            update_games(data['games'])               if data['games']
+            update_participants(data['participants']) if data['participants']
           end
 
           def games
