@@ -44,6 +44,27 @@ module Sportradar
             create_data(@participants_hash, data, klass: Team, api: @api, series: self)
           end
 
+          def scheduled
+            games.first&.scheduled
+          end
+
+          # status helpers
+          def future?
+            ['scheduled', 'delayed', 'created', 'time-tbd'].include? status
+          end
+          def started?
+            ['inprogress', 'halftime', 'delayed'].include? status
+          end
+          def finished?
+            ['complete', 'closed'].include? status
+          end
+          def completed?
+            'complete' == status
+          end
+          def closed?
+            'closed' == status
+          end
+
         end
       end
     end
