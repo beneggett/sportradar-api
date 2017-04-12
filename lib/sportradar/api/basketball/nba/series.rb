@@ -41,6 +41,7 @@ module Sportradar
           end
 
           def update_participants(data)
+            data.map! { |hash| hash.merge!(hash.delete('team')) }
             create_data(@participants_hash, data, klass: Team, api: @api, series: self)
           end
 

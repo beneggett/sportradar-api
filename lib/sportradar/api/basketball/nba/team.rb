@@ -12,9 +12,9 @@ module Sportradar
               existing.update(data, **opts)
               existing
             else
-              unless data['id']
-                data.merge!(data.delete('team')) if data['team']
-              end
+              # unless data['id']
+              #   data.merge!(data.delete('team')) if data['team']
+              # end
               @all_hash[data['id']] = super
             end
           end
