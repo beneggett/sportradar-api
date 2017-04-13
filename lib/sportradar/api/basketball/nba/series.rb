@@ -41,7 +41,7 @@ module Sportradar
           end
 
           def update_participants(data)
-            data.map! { |hash| hash.merge!(hash.delete('team')) }
+            data.map! { |hash| hash.merge!(hash.delete('team') || {}) }
             create_data(@participants_hash, data, klass: Team, api: @api, series: self)
           end
 
@@ -76,6 +76,7 @@ __END__
 
 sd = sr.daily_schedule;
 sr = Sportradar::Api::Basketball::Nba.new
+sr.series_schedule
 ss = sr.standings;
 ss = sr.schedule;
 ss = sr.schedule(2015, 'pst)');

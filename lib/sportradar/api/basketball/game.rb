@@ -207,7 +207,7 @@ module Sportradar
           ['unnecessary', 'postponed'].include? status
         end
         def future?
-          ['scheduled', 'delayed', 'created', 'time-tbd'].include? status
+          ['scheduled', 'delayed', 'created', 'time-tbd', 'if-necessary'].include? status
         end
         def started?
           ['inprogress', 'halftime', 'delayed'].include? status
