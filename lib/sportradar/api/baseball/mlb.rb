@@ -38,6 +38,16 @@ module Sportradar
           end
         end
 
+        def league_hierarchy
+          response = get request_url("league/hierarchy")
+          if response.success?
+            Sportradar::Api::Baseball::Mlb::Hierarchy.new(response.to_h, api: self)
+          else
+            response
+          end
+        end
+        alias :hierarchy :league_hierarchy
+
         def content_format
           'json'
         end
