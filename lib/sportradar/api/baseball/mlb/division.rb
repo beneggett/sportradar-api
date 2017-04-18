@@ -15,6 +15,7 @@ module Sportradar
             @assigned_teams = nil
             @teams_hash = {}
             @teams_hash = create_data({}, data["teams"], klass: Team, division: self, api: @api) if response["teams"]
+
           end
 
           def teams
