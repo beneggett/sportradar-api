@@ -5,9 +5,9 @@ module Sportradar
         attr_accessor :response, :id, :inning, :type
 
         def initialize(data, **opts)
-          # @response = data
+          @response = data
           @api      = opts[:api]
-          # @inning   = opts[:inning]
+          @inning   = opts[:inning]
           @id       = data["id"]
 
           @events_hash = {}
@@ -18,25 +18,26 @@ module Sportradar
 
         def update(data, **opts)
           @half     = data['half']
-
-          create_data(@events_hash, data['events'], klass: Event, api: @api, half_inning: self)
+          @events   = data['events'].map{ |hash| Event.new(hash, half_inning: self) }
+          # create_data(@events_hash, data['events'], klass: Event, api: @api, half_inning: self)
         end
 
         def atbats
-          events_by_klass(AtBat)
+          # events_by_klass(AtBat)
         end
 
         def lineup_changes
-          events_by_klass(LineupChange)
+          # events_by_klass(LineupChange)
         end
 
         def events
-          @events_hash.values
+          # @events_hash.values
+          @events
         end
 
-        private def events_by_klass(klass)
-          @events_hash.each_value.grep(klass)
-        end
+        # private def events_by_klass(klass)
+        #   @events_hash.each_value.grep(klass)
+        # end
 
       end
     end

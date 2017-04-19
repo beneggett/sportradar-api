@@ -5,7 +5,7 @@ module Sportradar
         attr_accessor :response, :id, :game, :number, :sequence
 
         def initialize(data, **opts)
-          # @response = data
+          @response = data
           @api      = opts[:api]
           # @game     = opts[:game]
 
@@ -19,8 +19,8 @@ module Sportradar
         end
         def update(data, **opts)
           # update scoring
-          # innings = data['innings'].each { |inning| inning['id'] = "#{data['id']}-#{inning['number']}" }
-          create_data(@half_innings_hash, data.dig('halfs'), klass: HalfInning, api: @api, inning: self)
+          halfs = data['halfs'].each { |inning| inning['id'] = "#{data['id']}-#{inning['half']}" }
+          create_data(@half_innings_hash, halfs, klass: HalfInning, api: @api, inning: self)
         end
 
         def half_innings

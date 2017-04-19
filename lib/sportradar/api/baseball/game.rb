@@ -156,6 +156,9 @@ module Sportradar
         def innings
           @innings_hash.values
         end
+        def half_innings
+          innings.flat_map(&:half_innings)
+        end
 
         # tracking updates
         def remember(key, object)
@@ -291,7 +294,8 @@ __END__
 # mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
 # res = mlb.get_schedule;
 # g = mlb.games.first
-g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
-res = g.get_summary
+# g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
+g = Sportradar::Api::Baseball::Game.new('id' => "9d0fe41c-4e6b-4433-b376-2d09ed39d184")
 res = g.get_pbp
+res = g.get_summary
 res = g.get_box # probably not as useful as summary
