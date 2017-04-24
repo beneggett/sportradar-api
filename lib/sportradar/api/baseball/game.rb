@@ -200,6 +200,14 @@ module Sportradar
           'postponed' == status
         end
 
+        def unnecessary?
+          'unnecessary' == status
+        end
+
+        def cancelled?
+          ['unnecessary', 'postponed'].include? status
+        end
+
         def future?
           ['scheduled', 'delayed', 'created', 'time-tbd'].include? status
         end
