@@ -23,7 +23,7 @@ module Sportradar
           handle_names(data)
           @venue    = Venue.new(data['venue']) if data['venue']
 
-          @alias    = data['abbr']                 if data['abbr']
+          @alias    = data['abbr']                if data['abbr']
           @runs     = data['runs'].to_i           if data['runs']
           # # @home     = data['home'] == 'true'        if data['home']
           # # @away     = data['away'] == 'true'        if data['away']

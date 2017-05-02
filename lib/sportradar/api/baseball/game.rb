@@ -4,7 +4,7 @@ module Sportradar
       class Game < Data
         attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes
 
-        attr_accessor :inning
+        attr_accessor :inning, :half, :outs, :bases, :score_summary
 
         def initialize(data, **opts)
           @response = data
