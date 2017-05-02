@@ -38,7 +38,8 @@ module Sportradar
           end
 
           def standings
-            # TODO
+            get_standings if teams.first&.record.nil?
+            self
           end
 
           def daily_schedule

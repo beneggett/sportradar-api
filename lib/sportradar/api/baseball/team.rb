@@ -29,7 +29,7 @@ module Sportradar
           # # @away     = data['away'] == 'true'        if data['away']
           # # @scoring  = data.dig('scoring', 'quarter') if data.dig('scoring', 'quarter')
 
-          parse_records(data)                                          if data['records']
+          parse_records(data)                               if data['win']
           parse_players(data.dig('players'), opts[:game])   if data.dig('players')
 
           # if opts[:game]
@@ -76,8 +76,7 @@ module Sportradar
           game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge!(player: player))
         end
         def parse_records(data)
-          # @records['overall'] = Record.new(data, type: 'overall')
-          # data['records'].each { |record| @records[record['record_type']] = Record.new(record, type: record['record_type']) }
+          @records['overall'] = Record.new(data, type: 'overall')
         end
 
         def parse_season_stats(data)
