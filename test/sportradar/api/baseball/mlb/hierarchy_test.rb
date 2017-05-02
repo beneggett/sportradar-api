@@ -44,7 +44,7 @@ class Sportradar::Api::Baseball::Mlb::HierarchyTest < Minitest::Test
     end
   end
 
-  def test_teams_have_required_attributes
+  def test_teams_have_required_attributes_from_hierarchy
     attributes = %i[id name alias market full_name]
     VCR.use_cassette("mlb/#{@mlb.api.content_format}/hierarchy/hierarchy") do
       @mlb.get_hierarchy
