@@ -29,7 +29,7 @@ class Sportradar::Api::Soccer::PlayerTest < Minitest::Test
   end
 
   def test_soccer_player_has_age
-    assert_equal 34, @data_object.age
+    assert_equal 35, @data_object.age
   end
 
   def test_soccer_player_has_height_in_feet
