@@ -32,6 +32,19 @@ module Sportradar
             @teams_hash   = create_data({}, data['teams'],   klass: Team,   hierarchy: self, api: api) if data['teams']
           end
 
+          def schedule
+            get_schedule if games.empty?
+            self
+          end
+
+          def standings
+            # TODO
+          end
+
+          def daily_schedule
+            # TODO
+          end
+
           def games
             @games_hash.values
           end
@@ -59,6 +72,8 @@ module Sportradar
             teams.detect { |team| team.id == team_id }
           end
 
+
+
           # api stuff
           def api
             @api || Sportradar::Api::Baseball::Mlb.new
@@ -79,6 +94,7 @@ module Sportradar
           def mlb_season
             @type || default_season
           end
+
 
           # url paths
           def path_base
@@ -108,6 +124,7 @@ module Sportradar
           def path_daily_boxscore(date)
             "#{ path_base }/games/#{date.year}/#{date.month}/#{date.day}/boxscore"
           end
+
 
           # data retrieval
 

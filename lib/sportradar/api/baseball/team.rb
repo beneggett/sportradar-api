@@ -99,6 +99,10 @@ module Sportradar
           update(data)
           data
         end
+        def queue_roster
+          url, headers, options, timeout = api.get_request_info(path_roster)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_roster)}
+        end
 
         def get_season_stats(year = Date.today.year)
           data = api.get_data(path_season_stats(year))

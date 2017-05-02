@@ -84,3 +84,4 @@ module Sportradar
 end
 
 __END__
+# mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
