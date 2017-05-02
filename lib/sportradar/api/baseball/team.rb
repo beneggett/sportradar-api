@@ -65,12 +65,31 @@ module Sportradar
           @players_hash.values
         end
         alias :roster :players
+
+
+        # parsing response data
+
         def parse_players(data, game)
           # create_data(@players_hash, data, klass: Player, api: api, team: self, game: game)
         end
         def update_player_stats(player, stats, game = nil)
           game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge!(player: player))
         end
+        def parse_records(data)
+          # @records['overall'] = Record.new(data, type: 'overall')
+          # data['records'].each { |record| @records[record['record_type']] = Record.new(record, type: record['record_type']) }
+        end
+
+        def parse_season_stats(data)
+          @team_stats = data.dig('statistics')
+          update(data)
+          player_data = data.dig('players')
+          create_data(@players_hash, player_data, klass: Player, api: api, team: self)
+          data
+        end
+
+
+        # data retrieval
 
         def get_roster
           data = api.get_data(path_roster)
@@ -88,20 +107,12 @@ module Sportradar
         def ingest_season_stats(data)
           parse_season_stats(data)
         end
-
-        def parse_records(data)
-          # @records['overall'] = Record.new(data, type: 'overall')
-          # data['records'].each { |record| @records[record['record_type']] = Record.new(record, type: record['record_type']) }
+        def queue_season_stats
+          url, headers, options, timeout = api.get_request_info(path_season_stats)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_season_stats)}
         end
 
-        def parse_season_stats(data)
-          @team_stats = data.dig('statistics')
-          update(data)
-          player_data = data.dig('players')
-          create_data(@players_hash, player_data, klass: Player, api: api, team: self)
-          data
-        end
-
+        # url path helpers
         def path_base
           "teams/#{ id }"
         end

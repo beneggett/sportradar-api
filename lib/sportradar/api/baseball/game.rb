@@ -178,23 +178,6 @@ module Sportradar
           remember(key, new_object)
         end
 
-        # url paths
-        def path_base
-          "games/#{ id }"
-        end
-
-        def path_box
-          "#{ path_base }/boxscore"
-        end
-
-        def path_pbp
-          "#{ path_base }/pbp"
-        end
-
-        def path_summary
-          "#{ path_base }/summary"
-        end
-
         # status helpers
         def postponed?
           'postponed' == status
@@ -226,6 +209,23 @@ module Sportradar
 
         def closed?
           'closed' == status
+        end
+
+        # url path helpers
+        def path_base
+          "games/#{ id }"
+        end
+
+        def path_box
+          "#{ path_base }/boxscore"
+        end
+
+        def path_pbp
+          "#{ path_base }/pbp"
+        end
+
+        def path_summary
+          "#{ path_base }/summary"
         end
 
         # data retrieval
