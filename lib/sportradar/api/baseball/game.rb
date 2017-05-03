@@ -102,7 +102,7 @@ module Sportradar
           # update_score(@home_id => @home_runs.to_i) if @home_runs
           # update_score(@away_id => @away_runs.to_i) if @away_runs
           parse_score(data['scoring']) if data['scoring']
-          # @scoring_raw.update(data, source: source)
+          @scoring_raw.update(data, source: source)
 
           # create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
         end
@@ -321,5 +321,5 @@ __END__
 # g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
 g = Sportradar::Api::Baseball::Game.new('id' => "9d0fe41c-4e6b-4433-b376-2d09ed39d184")
 res = g.get_pbp
-res = g.get_summary
+res = g.get_summary;
 res = g.get_box # probably not as useful as summary
