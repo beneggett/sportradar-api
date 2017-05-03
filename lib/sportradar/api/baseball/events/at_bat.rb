@@ -2,22 +2,28 @@ module Sportradar
   module Api
     module Baseball
       class Event
-        class AtBat < Base
-          attr_accessor :response, :id, :hitter_id, :outcome
+        class AtBat < Data
+          attr_accessor :response, :id, :event, :hitter_id, :outcome
 
-          # def initialize(data, **opts)
-          #   @response     = data.first.last
-          #   @api          = opts[:api]
-          #   @half_inning  = opts[:half_inning]
+          def initialize(data, **opts)
+            # @response = data
+            @api      = opts[:api]
+            @event    = opts[:event]
 
-          #   @id       = data["id"]
-          #   @type     = data['type']
+            @id       = data["id"]
+            @type     = data['type']
 
-          #   update(data)
-          # end
+            @pitches_hash = {}
+
+            update(data)
+          end
 
           def update(data, **opts)
-            # parse pitches
+            @description  = data['description'] if data['description']
+            @hitter_id    = data['hitter_id']   if data['hitter_id']
+            # this hasn't been checked yet
+            # pitch events
+            create_data(@pitches_hash, data.dig('events'), klass: Pitch, api: @api, at_bat: self)
           end
 
           def data_key

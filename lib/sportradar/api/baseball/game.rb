@@ -145,6 +145,10 @@ module Sportradar
           innings.flat_map(&:events)
         end
 
+        def at_bats
+          events.map(&:at_bat).compact
+        end
+
         def pitches
           at_bats.flat_map(&:pitches)
         end

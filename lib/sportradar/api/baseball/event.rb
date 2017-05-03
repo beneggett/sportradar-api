@@ -6,9 +6,9 @@ module Sportradar
         # alias :type :event_type
 
         def initialize(hash, **opts)
-          @at_bat     = AtBat.new(hash['at_bat'])         if hash['at_bat']
-          @lineup     = Lineup.new(hash['lineup'])        if hash['lineup']
-          @warming_up = WarmingUp.new(hash['warming_up']) if hash['warming_up']
+          @at_bat     = AtBat.new(hash['at_bat'],         event: self) if hash['at_bat']
+          @lineup     = Lineup.new(hash['lineup'],        event: self) if hash['lineup']
+          @warming_up = WarmingUp.new(hash['warming_up'], event: self) if hash['warming_up']
         end
 
         # def self.new(data, **opts)
