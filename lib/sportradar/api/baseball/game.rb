@@ -37,7 +37,19 @@ module Sportradar
           @score[away_id].to_i == @score[home_id].to_i
         end
         def runs(team_id)
-          team_id.is_a?(Symbol) ? @score[@team_ids[team_id]].to_i : @score[team_id].to_i
+          summary_stat(team_id, 'runs')
+        end
+        def hits(team_id)
+          summary_stat(team_id, 'hits')
+        end
+        def errors(team_id)
+          summary_stat(team_id, 'errors')
+        end
+        def team_summary(team_id)
+          team_id.is_a?(Symbol) ? @score[@team_ids[team_id]] : @score[team_id]
+        end
+        def summary_stat(team_id, stat)
+          team_summary(team_id)[stat]
         end
         def stats(team_id)
           team_id.is_a?(Symbol) ? @team_stats[@team_ids[team_id]].to_i : @team_stats[team_id].to_i
@@ -57,8 +69,8 @@ module Sportradar
         end
 
         def parse_score(data)
-          update_score(data.dig('home', 'id') => data.dig('home', 'runs').to_i)
-          update_score(data.dig('away', 'id') => data.dig('away', 'runs').to_i)
+          update_score(data.dig('home', 'id') => data.dig('home'))
+          update_score(data.dig('away', 'id') => data.dig('away'))
         end
 
         def update(data, source: nil, **opts)
@@ -85,11 +97,11 @@ module Sportradar
           # @lead_changes = data['lead_changes']          if data['lead_changes']
           # @times_tied   = data['times_tied']            if data['times_tied']
 
-          # @team_ids     = { home: @home_id, away: @away_id}
+          @team_ids     = { home: @home_id, away: @away_id}
 
           # update_score(@home_id => @home_runs.to_i) if @home_runs
           # update_score(@away_id => @away_runs.to_i) if @away_runs
-          # parse_score(data['scoring']) if data['scoring']
+          parse_score(data['scoring']) if data['scoring']
           # @scoring_raw.update(data, source: source)
 
           # create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
