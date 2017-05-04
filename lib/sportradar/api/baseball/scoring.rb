@@ -8,7 +8,7 @@ module Sportradar
           @api      = opts[:api]
           @game     = opts[:game]
           
-          @scores = Hash.new { |hash, key| hash[key] = {} }
+          @scores = {}
           @id = data['id']
           
           update(data, **opts)
@@ -42,10 +42,11 @@ module Sportradar
           new_scores.each { |k, v| @scores.merge!(k => v) }
         end
 
-        def points(team_id)
+        def runs(team_id)
           @score[team_id].to_i
         end
 
+        alias :points :runs
 
         private
 

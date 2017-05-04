@@ -118,7 +118,7 @@ module Sportradar
           end
           @scoring_raw.update(data, source: source)
 
-          # create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
+          create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
         end
 
         def home
