@@ -8,7 +8,7 @@ module Sportradar
           @api      = opts[:api]
           @game     = opts[:game]
           
-          @scores = {}
+          @scores = Hash.new { |hash, key| hash[key] = {} }
           @id = data['id']
           
           update(data, **opts)
@@ -22,6 +22,8 @@ module Sportradar
             parse_from_pbp(data)
           when :summary
             parse_from_box(data)
+          when :rhe
+            data
           else
             # if data['quarter'] || data['half']
             #   parse_from_pbp(data)

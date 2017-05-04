@@ -69,10 +69,18 @@ module Sportradar
         end
 
         def parse_score(data)
-          home = { 'runs' => data.dig('home', 'runs'), 'hits' => data.dig('home', 'hits'), 'errors' => data.dig('home', 'errors') }
-          away = { 'runs' => data.dig('away', 'runs'), 'hits' => data.dig('away', 'hits'), 'errors' => data.dig('away', 'errors') }
-          update_score(data.dig('home', 'id') => home)
-          update_score(data.dig('away', 'id') => away)
+          # home = { 'runs' => data.dig('home', 'runs'), 'hits' => data.dig('home', 'hits'), 'errors' => data.dig('home', 'errors') }
+          # away = { 'runs' => data.dig('away', 'runs'), 'hits' => data.dig('away', 'hits'), 'errors' => data.dig('away', 'errors') }
+          home_id = data.dig('home', 'id')
+          away_id = data.dig('away', 'id')
+          rhe = {
+            'runs'    => { home_id => data.dig('home', 'runs'), away_id => data.dig('away', 'runs')},
+            'hits'    => { home_id => data.dig('home', 'hits'), away_id => data.dig('away', 'hits')},
+            'errors'  => { home_id => data.dig('home', 'errors'), away_id => data.dig('away', 'errors')},
+          }
+          @scoring_raw.update(rhe, source: :rhe)
+          update_score(home_id => data.dig('home', 'runs'))
+          update_score(away_id => data.dig('away', 'runs'))
         end
 
         def update(data, source: nil, **opts)
@@ -105,6 +113,8 @@ module Sportradar
           # update_score(@away_id => @away_runs.to_i) if @away_runs
           if data['scoring']
             parse_score(data['scoring'])
+          elsif data.dig('home', 'hits')
+            parse_score(data)
           end
           @scoring_raw.update(data, source: source)
 
