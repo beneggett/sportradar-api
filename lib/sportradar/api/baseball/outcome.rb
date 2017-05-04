@@ -1,0 +1,55 @@
+module Sportradar
+  module Api
+    module Baseball
+      class Outcome < Data
+        attr_accessor :response
+
+        def initialize(data, **opts)
+          @response = data
+          @api      = opts[:api]
+          @game     = opts[:game]
+          
+          @scores = {}
+          @id = data['id']
+          
+          update(data, **opts)
+        end
+
+        def update(data, source: nil, **opts)
+        end
+
+        def points(team_id)
+
+        end
+
+
+        private
+
+        def parse_from_pbp(data)
+          scoring = data['innings'].map {|i| i['scoring'] }.compact
+          return {} if scoring.empty?
+          scoring.each_with_object({}).with_index(1) do |(hash, memo), idx|
+            memo[idx] = {hash.dig('home', 'id') => hash.dig('home', 'runs'), hash.dig('away', 'id') => hash.dig('away', 'runs')}
+          end
+        end
+
+        def parse_from_box(data)
+          id = data.dig('home', 'id')
+          da = data.dig('home', 'scoring')
+          return {} unless da
+          da.each { |h| h[id] = h.delete('runs') }
+          id = data.dig('away', 'id')
+          db = data.dig('away', 'scoring')
+          return {} unless db
+          db.each { |h| h[id] = h.delete('runs') }
+          da.zip(db).map{ |a, b| [a['sequence'].to_i, a.merge(b)] }.sort{ |(a,_), (b,_)| a <=> b }.to_h
+        end
+
+        def parse_from_summary(data)
+          # 
+        end
+
+      end
+    end
+  end
+end

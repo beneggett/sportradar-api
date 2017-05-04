@@ -1,5 +1,6 @@
 # require_relative 'baseball/season'
 require_relative 'baseball/game'
+require_relative 'baseball/outcome'
 require_relative 'baseball/team'
 require_relative 'baseball/record'
 require_relative 'baseball/venue'
