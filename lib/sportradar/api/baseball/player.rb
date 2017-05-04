@@ -18,7 +18,7 @@ module Sportradar
           full_name
         end
         def display_name
-          full_name
+          full_name || "#{@first_name} #{@last_name}"
         end
         def jersey
           @jersey_number

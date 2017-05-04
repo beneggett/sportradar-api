@@ -4,7 +4,7 @@ module Sportradar
       class Game < Data
         attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes
 
-        attr_accessor :inning, :half, :outs, :bases, :score_summary
+        attr_accessor :inning, :half, :outs, :bases
 
         def initialize(data, **opts)
           @response = data
@@ -69,10 +69,6 @@ module Sportradar
         end
 
         def parse_score(data)
-          update_score(data.dig('home', 'id') => data.dig('home'))
-          update_score(data.dig('away', 'id') => data.dig('away'))
-        end
-        def extract_score(data)
           home = { 'runs' => data.dig('home', 'runs'), 'hits' => data.dig('home', 'hits'), 'errors' => data.dig('home', 'errors') }
           away = { 'runs' => data.dig('away', 'runs'), 'hits' => data.dig('away', 'hits'), 'errors' => data.dig('away', 'errors') }
           update_score(data.dig('home', 'id') => home)
@@ -109,8 +105,6 @@ module Sportradar
           # update_score(@away_id => @away_runs.to_i) if @away_runs
           if data['scoring']
             parse_score(data['scoring'])
-          elsif data.dig('home', 'hits')
-            extract_score(data)
           end
           @scoring_raw.update(data, source: source)
 
