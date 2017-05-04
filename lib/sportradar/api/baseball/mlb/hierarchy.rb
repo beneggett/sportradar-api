@@ -28,8 +28,13 @@ module Sportradar
             @type     = data.dig('season', 'type')  if data.dig('season', 'type')
 
             @leagues_hash = create_data({}, data['leagues'], klass: League, hierarchy: self, api: api) if data['leagues']
-            @games_hash   = create_data({}, data['games'],   klass: Game,   hierarchy: self, api: api) if data['games']
             @teams_hash   = create_data({}, data['teams'],   klass: Team,   hierarchy: self, api: api) if data['teams']
+            if data['games']
+              if data['games'].first.keys == ['game']
+                data['games'].map! { |hash| hash['game'] }
+              end
+              @games_hash = create_data({}, data['games'],   klass: Game,   hierarchy: self, api: api)
+            end
           end
 
           def schedule
@@ -250,6 +255,7 @@ end
 __END__
 
 mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
+res = mlb.get_daily_summary;
 res = mlb.get_hierarchy;
 t = mlb.teams.first;
 t.get_season_stats;
