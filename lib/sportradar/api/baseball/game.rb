@@ -72,6 +72,12 @@ module Sportradar
           update_score(data.dig('home', 'id') => data.dig('home'))
           update_score(data.dig('away', 'id') => data.dig('away'))
         end
+        def extract_score(data)
+          home = { 'runs' => data.dig('home', 'runs'), 'hits' => data.dig('home', 'hits'), 'errors' => data.dig('home', 'errors') }
+          away = { 'runs' => data.dig('away', 'runs'), 'hits' => data.dig('away', 'hits'), 'errors' => data.dig('away', 'errors') }
+          update_score(data.dig('home', 'id') => home)
+          update_score(data.dig('away', 'id') => away)
+        end
 
         def update(data, source: nil, **opts)
           # via pbp
@@ -101,7 +107,11 @@ module Sportradar
 
           # update_score(@home_id => @home_runs.to_i) if @home_runs
           # update_score(@away_id => @away_runs.to_i) if @away_runs
-          parse_score(data['scoring']) if data['scoring']
+          if data['scoring']
+            parse_score(data['scoring'])
+          elsif data.dig('home', 'hits')
+            extract_score(data)
+          end
           @scoring_raw.update(data, source: source)
 
           # create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
