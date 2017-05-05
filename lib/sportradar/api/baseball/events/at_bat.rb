@@ -3,7 +3,7 @@ module Sportradar
     module Baseball
       class Event
         class AtBat < Data
-          attr_accessor :response, :id, :event, :hitter_id, :outcome
+          attr_accessor :response, :id, :event, :hitter_id, :outcome, :description
 
           def initialize(data, **opts)
             # @response = data
@@ -28,6 +28,10 @@ module Sportradar
 
           def data_key
             'at_bat'
+          end
+
+          def over?
+            pitches.last.is_ab_over
           end
 
           def pitches
