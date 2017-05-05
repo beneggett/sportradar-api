@@ -43,10 +43,10 @@ module Sportradar
           summary_stat(team_id, 'runs')
         end
         def hits(team_id)
-          summary_stat(team_id, 'hits')
+          @scoring_raw.hits(team_id)
         end
         def errors(team_id)
-          summary_stat(team_id, 'errors')
+          @scoring_raw.errors(team_id)
         end
         def team_summary(team_id)
           team_id.is_a?(Symbol) ? @score[@team_ids[team_id]] : @score[team_id]
@@ -72,8 +72,6 @@ module Sportradar
         end
 
         def parse_score(data)
-          # home = { 'runs' => data.dig('home', 'runs'), 'hits' => data.dig('home', 'hits'), 'errors' => data.dig('home', 'errors') }
-          # away = { 'runs' => data.dig('away', 'runs'), 'hits' => data.dig('away', 'hits'), 'errors' => data.dig('away', 'errors') }
           home_id = data.dig('home', 'id')
           away_id = data.dig('away', 'id')
           rhe = {

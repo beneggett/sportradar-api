@@ -43,7 +43,13 @@ module Sportradar
         end
 
         def runs(team_id)
-          @score[team_id].to_i
+          @scores.dig(team_id, 'runs').to_i
+        end
+        def hits(team_id)
+          @scores.dig(team_id, 'hits').to_i
+        end
+        def errors(team_id)
+          @scores.dig(team_id, 'errors').to_i
         end
 
         alias :points :runs
