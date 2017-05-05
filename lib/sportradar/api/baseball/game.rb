@@ -129,7 +129,7 @@ module Sportradar
           @scoring_raw.update(data, source: source)
           if data['outcome']
             @outcome.update(data, source: nil)
-            @count.merge!(@outcome.count)
+            @count.merge!(@outcome.count || {})
           end
 
           create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
