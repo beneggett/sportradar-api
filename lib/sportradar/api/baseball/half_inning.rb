@@ -9,6 +9,7 @@ module Sportradar
           @api      = opts[:api]
           @inning   = opts[:inning]
           @id       = data["id"]
+          *@inning_id, @number, @half = data['id'].split('-')
 
           @events_hash = {}
 

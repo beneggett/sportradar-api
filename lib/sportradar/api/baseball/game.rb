@@ -132,7 +132,8 @@ module Sportradar
         # end
 
         def extract_count(data) # extract from pbp
-          last_pitch = pitches.last
+          recent_pitches = pitches.last(10)
+          last_pitch = recent_pitches.reverse_each.detect(&:count)
           return unless last_pitch
           @count.merge!(last_pitch.count)
           hi = last_pitch.at_bat.event.half_inning
@@ -352,8 +353,9 @@ __END__
 # res = mlb.get_schedule;
 # g = mlb.games.first
 # g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
-g = Sportradar::Api::Baseball::Game.new('id' => "9d0fe41c-4e6b-4433-b376-2d09ed39d184")
-res = g.get_pbp
+g = Sportradar::Api::Baseball::Game.new('id' => "9d0fe41c-4e6b-4433-b376-2d09ed39d184");
+g = Sportradar::Api::Baseball::Game.new('id' => "0ab634d3-ce6c-4a79-be8d-b62b0ee506d5");
+res = g.get_pbp;
 res = g.get_summary;
 res = g.get_box # probably not as useful as summary
 
