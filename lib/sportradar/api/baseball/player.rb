@@ -18,7 +18,7 @@ module Sportradar
           full_name
         end
         def display_name
-          full_name || "#{@preferred || @first_name} #{@last_name}"
+          full_name || "#{@preferred_name || @first_name} #{@last_name}"
         end
         def jersey
           @jersey_number
@@ -29,24 +29,34 @@ module Sportradar
         end
 
         def update(data, **opts)
-          @status           = data['status']            if data['status']
-          @full_name        = data['full_name']         if data['full_name']
-          @preferred        = data['preferred_name']    if data['preferred_name']
-          @first_name       = data['first_name']        if data['first_name']
-          @last_name        = data['last_name']         if data['last_name']
-          @abbr_name        = data['abbr_name']         if data['abbr_name']
-          @height           = data['height']            if data['height']
-          @weight           = data['weight']            if data['weight']
-          @position         = data['position']          if data['position']
-          @primary_position = data['primary_position']  if data['primary_position']
-          @jersey_number    = data['jersey_number']     if data['jersey_number']
           @depth            = data['depth']             if data['depth']
           @experience       = data['experience']        if data['experience']
           @birth_place      = data['birth_place'].gsub(',,', ', ')       if data['birth_place']
-          @updated          = data['updated']           if data['updated']
-
           @college          = data['college']           if data['college']
+
+          # from team roster
+          @status           = data['status']            if data['status']
+          @position         = data['position']          if data['position']
+          @primary_position = data['primary_position']  if data['primary_position']
+          @first_name       = data['first_name']        if data['first_name']
+          @last_name        = data['last_name']         if data['last_name']
+          @preferred_name   = data['preferred_name']    if data['preferred_name']
+          @jersey_number    = data['jersey_number']     if data['jersey_number']
+          @full_name        = data['full_name']         if data['full_name']
+          @mlbam_id         = data['mlbam_id']          if data['mlbam_id']
+          @height           = data['height']            if data['height']
+          @weight           = data['weight']            if data['weight']
+          @throw_hand       = data['throw_hand']        if data['throw_hand']
+          @bat_hand         = data['bat_hand']          if data['bat_hand']
+          @high_school      = data['high_school']       if data['high_school']
           @birthdate        = data['birthdate']         if data['birthdate']
+          @birthstate       = data['birthstate']        if data['birthstate']
+          @birthcountry     = data['birthcountry']      if data['birthcountry']
+          @birthcity        = data['birthcity']         if data['birthcity']
+          @pro_debut        = data['pro_debut']         if data['pro_debut']
+          @updated          = data['updated']           if data['updated']
+          @active           = data['active']            if data['active']
+
 
           update_injuries(data)
           update_draft(data)
@@ -80,7 +90,7 @@ module Sportradar
           @draft = data['draft'] if data['draft']   # {"team_id"=>"583ec825-fb46-11e1-82cb-f4ce4684ea4c", "year"=>"2012", "round"=>"1", "pick"=>"30"},
         end
         def update_injuries(data)
-          @injury = Injury.new(data['injuries']) if data['injuries']
+          # @injury = Injury.new(data['injuries']) if data['injuries']
                # {"injury"=>
                #   {"id"=>"06423591-3fc1-4d2b-8c60-a3f30d735345",
                #    "comment"=>"Ezeli suffered a setback in his recovery from a procedure on his knee and there is no timetable for his return, according to Jason Quick of csnnw.com.",

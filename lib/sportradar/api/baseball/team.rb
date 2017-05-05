@@ -78,7 +78,7 @@ module Sportradar
         # parsing response data
 
         def parse_players(data, game)
-          # create_data(@players_hash, data, klass: Player, api: api, team: self, game: game)
+          create_data(@players_hash, data, klass: Player, api: api, team: self, game: game)
         end
         def update_player_stats(player, stats, game = nil)
           game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge!(player: player))
