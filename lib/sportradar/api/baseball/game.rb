@@ -315,8 +315,8 @@ module Sportradar
           innings = data['innings'].each { |inning| inning['id'] = "#{data['id']}-#{inning['number']}" }
           create_data(@innings_hash, innings, klass: Inning, api: api, game: self) if data['innings']
           extract_count(data)
-          # check_newness(:pbp, pitches.last)
-          # check_newness(:score, @score)
+          check_newness(:pbp, pitches.last)
+          check_newness(:score, @score)
           data
         # rescue => e
         #   binding.pry

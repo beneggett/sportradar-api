@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome, :status, :count
+        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count
 
         def initialize(data, **opts)
           @response = data
@@ -13,6 +13,9 @@ module Sportradar
           @id       = data["id"]
 
           update(data)
+        end
+        def ==(other)
+          @id == other.id && @count == other.count && @outcome_id == other.outcome_id
         end
         def update(data, **opts)
 

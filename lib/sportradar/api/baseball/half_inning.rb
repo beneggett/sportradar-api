@@ -23,8 +23,16 @@ module Sportradar
           # create_data(@events_hash, data['events'], klass: Event, api: @api, half_inning: self)
         end
 
-        def atbats
-          # events_by_klass(AtBat)
+        def over?
+          pitches.last.count&.dig('outs') == 3
+        end
+
+        def pitches
+          at_bats.flat_map(&:pitches)
+        end
+
+        def at_bats
+          events.map(&:at_bat).compact
         end
 
         def lineup_changes
