@@ -4,7 +4,7 @@ module Sportradar
       class Game < Data
         attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes
 
-        attr_reader :inning, :half, :outs, :bases
+        attr_reader :inning, :half, :outs, :bases, :pitchers
         attr_reader :outcome, :count
 
         def initialize(data, **opts)
@@ -26,6 +26,7 @@ module Sportradar
           @away_id        = nil
           @outcome        = Outcome.new(data, game: self)
           @count          = {}
+          @pitchers       = {}
 
           @id = data['id']
 
@@ -84,6 +85,17 @@ module Sportradar
           update_score(away_id => data.dig('away', 'runs'))
         end
 
+        def parse_pitchers(data)
+          pitchers = {
+            'starting'  => { home_id => data.dig('home', 'starting_pitcher'), away_id => data.dig('away', 'starting_pitcher')},
+            'probable'  => { home_id => data.dig('home', 'probable_pitcher'), away_id => data.dig('away', 'probable_pitcher')},
+            'current'   => { home_id => data.dig('home', 'current_pitcher'),  away_id => data.dig('away', 'current_pitcher')},
+          }
+          @pitchers.merge!(pitchers) do |key, current_val, merge_val|
+            current_val.merge(merge_val) { |k, cur, mer| (mer || cur) }
+          end
+        end
+
         def update(data, source: nil, **opts)
           # via pbp
           @title        = data['title']                 if data['title']
@@ -105,13 +117,10 @@ module Sportradar
           @duration     = data['duration']              if data['duration']
           @attendance   = data['attendance']            if data['attendance']
 
-          # @lead_changes = data['lead_changes']          if data['lead_changes']
-          # @times_tied   = data['times_tied']            if data['times_tied']
-
           @team_ids     = { home: @home_id, away: @away_id}
 
-          # update_score(@home_id => @home_runs.to_i) if @home_runs
-          # update_score(@away_id => @away_runs.to_i) if @away_runs
+          parse_pitchers(data) if data['home'] && data['away']
+
           if data['scoring']
             parse_score(data['scoring'])
           elsif data.dig('home', 'hits')
@@ -364,4 +373,12 @@ g = mlb.games[8];
 g.count
 g.get_pbp;
 g.count
+
+# mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new;
+# res = mlb.get_daily_summary;
+# g = mlb.games.sort_by(&:scheduled).first;
+g = Sportradar::Api::Baseball::Game.new('id' => "8731b56d-9037-44d1-b890-fa496e94dc10");
+res = g.get_pbp;
+res = g.get_summary;
+g.pitchers
 
