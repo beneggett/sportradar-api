@@ -2,10 +2,11 @@ module Sportradar
   module Api
     module Baseball
       class Event < Data
-        attr_accessor :response, :id, :at_bat, :lineup, :warming_up
+        attr_accessor :response, :id, :at_bat, :lineup, :warming_up, :half_inning
         # alias :type :event_type
 
         def initialize(hash, **opts)
+          @half_inning = opts[:half_inning]
           @at_bat     = AtBat.new(hash['at_bat'],         event: self) if hash['at_bat']
           @lineup     = Lineup.new(hash['lineup'],        event: self) if hash['lineup']
           @warming_up = WarmingUp.new(hash['warming_up'], event: self) if hash['warming_up']

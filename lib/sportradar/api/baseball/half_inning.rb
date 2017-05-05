@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class HalfInning < Data
-        attr_accessor :response, :id, :inning, :type
+        attr_accessor :response, :id, :inning, :type, :half, :number
 
         def initialize(data, **opts)
           @response = data

@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome, :status
+        attr_accessor :response, :id, :at_bat, :outcome, :status, :count
 
         def initialize(data, **opts)
           @response = data
@@ -73,6 +73,7 @@ module Sportradar
         end
 
         def parse_count(data)
+          @count              = data
           @balls              = data['balls']        if data['balls']
           @strikes            = data['strikes']      if data['strikes']
           @outs               = data['outs']         if data['outs']
