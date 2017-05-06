@@ -23,6 +23,10 @@ module Sportradar
         # rescue => e
         #   binding.pry
         # end
+
+        # def ==(other)
+        #   @at_bat == other.at_bat && @warming_up == other.warming_up && @lineup == other.lineup
+        # end
         def self.subclass(event_type)
           subclasses[event_type]
         end

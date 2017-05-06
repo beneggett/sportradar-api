@@ -18,6 +18,11 @@ module Sportradar
             update(data)
           end
 
+          # def ==(other)
+          #   return false if other.nil?
+          #   @id == other.id && pitches == other.pitches
+          # end
+
           def update(data, **opts)
             @description  = data['description'] if data['description']
             @hitter_id    = data['hitter_id']   if data['hitter_id']
