@@ -6,7 +6,7 @@ module Sportradar
           attr_accessor :response, :id, :hitter_id, :outcome
 
           def initialize(data, **opts)
-            @response     = data.first.last
+            @response     = data
             # @api          = opts[:api]
             # @half_inning  = opts[:half_inning]
             @event    = opts[:event]

@@ -92,7 +92,18 @@ module Sportradar
           @warming_preferred_name = data['preferred_name']
           @warming_jersey_number  = data['jersey_number']
           @warming_up             = "#{data['preferred_name'] || data['first_name']} #{data['last_name']}"
+          puts data unless data['last_name']
         end
+
+        def parse_steal(data)
+          
+        end
+
+        {"type"=>"steal", "id"=>"76762fd9-683c-42f2-8c72-8d9fd4f5bc7b", "status"=>"official", "created_at"=>"2017-05-06T02:56:49+00:00", "pitcher"=>{"id"=>"9dd06397-4353-44e8-81bb-6e88a75e42b5"}, "runners"=>[{"id"=>"3e39fe20-6dca-4894-807b-1ce76ff93e29", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"", "out"=>false, "last_name"=>"Owings", "first_name"=>"Christopher", "preferred_name"=>"Chris", "jersey_number"=>"16"}]}
+
+        {"type"=>"steal", "id"=>"df01b116-afcd-467f-9b9c-99d3891629c6", "status"=>"official", "created_at"=>"2017-05-06T03:00:58+00:00", "pitcher"=>{"id"=>"90fb6719-5135-42f3-88c0-0ccde448368c"}, "runners"=>[{"id"=>"106e6fb6-6460-412e-abdb-9f73469a27b9", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"CK", "out"=>false, "last_name"=>"DeShields", "first_name"=>"Delino", "preferred_name"=>"Delino", "jersey_number"=>"3"}]}
+        {"type"=>"steal", "id"=>"37c9192d-cac9-4320-b721-f68955eecf24", "status"=>"official", "created_at"=>"2017-05-06T03:02:16+00:00", "pitcher"=>{"id"=>"90fb6719-5135-42f3-88c0-0ccde448368c"}, "runners"=>[{"id"=>"106e6fb6-6460-412e-abdb-9f73469a27b9", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"CK", "out"=>false, "last_name"=>"DeShields", "first_name"=>"Delino", "preferred_name"=>"Delino", "jersey_number"=>"3"}]}
+        {"type"=>"steal", "id"=>"b8dcebfa-e02c-470e-ba73-e9b6b553cc0d", "status"=>"official", "created_at"=>"2017-05-06T03:38:48+00:00", "pitcher"=>{"id"=>"1a2638a3-28df-46b3-9cca-0f8eb29b581f"}, "runners"=>[{"id"=>"2847c4e0-01be-46bd-992e-701ee447e3f5", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"CK", "out"=>false, "last_name"=>"Upton", "first_name"=>"Justin", "preferred_name"=>"Justin", "jersey_number"=>"8"}, {"id"=>"f27a7574-57db-4eeb-8f88-377048806de2", "starting_base"=>3, "ending_base"=>3, "outcome_id"=>"", "out"=>false, "last_name"=>"Martínez", "first_name"=>"Victor", "preferred_name"=>"Victor", "jersey_number"=>"41"}]}
 
       end
     end
