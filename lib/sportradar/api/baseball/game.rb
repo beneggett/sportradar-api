@@ -252,7 +252,7 @@ module Sportradar
         end
 
         def started?
-          ['inprogress', 'halftime', 'delayed'].include? status
+          ['inprogress', 'wdelay', 'delayed'].include? status
         end
 
         def finished?

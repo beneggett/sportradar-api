@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over
+        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up
 
         def initialize(data, **opts)
           @response = data
@@ -91,6 +91,7 @@ module Sportradar
           @warming_first_name     = data['first_name']
           @warming_preferred_name = data['preferred_name']
           @warming_jersey_number  = data['jersey_number']
+          @warming_up             = "#{data['preferred_name'] || data['first_name']} #{data['last_name']}"
         end
 
       end
