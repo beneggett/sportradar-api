@@ -23,7 +23,7 @@ Our goal is to incrementally integrate with them. **Contributions are welcome**
 | API | Version | Docs | Implemented? | Priority |
 | --- | --- | --- | --- | --- |
 | NFL | 1 | [📚](http://developer.sportradar.us/page/NFL_Official) | ✅ | 👍 |
-| MLB | 5 | [📚](http://developer.sportradar.us/docs/MLB_API) | - | - |
+| MLB | 6 | [📚](https://developer.sportradar.com/files/indexBaseball.html#major-league-baseball-api-v6) | ✅ | 👍 |
 | NHL | 3 | [📚](http://developer.sportradar.us/docs/NHL_API) | - | - |
 | NBA | 3 | [📚](http://developer.sportradar.us/docs/NBA_API) | ✅ | - |
 | NCAAMB  | 3 | [📚](http://developer.sportradar.us/docs/NCAA_Mens_Basketball) | ✅ | - |
