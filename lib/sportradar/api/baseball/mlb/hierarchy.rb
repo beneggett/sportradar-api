@@ -47,6 +47,11 @@ module Sportradar
             self
           end
 
+          def hierarchy
+            get_hierarchy if divisions.empty?
+            self
+          end
+
           def daily_schedule
             # TODO
           end
