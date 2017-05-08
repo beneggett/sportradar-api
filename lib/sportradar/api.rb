@@ -10,6 +10,8 @@ require "sportradar/api/error"
 require "sportradar/api/request"
 require "sportradar/api/poll"
 
+require "sportradar/api/broadcast"
+
 require "sportradar/api/soccer"
 require "sportradar/api/soccer/boxscore"
 require "sportradar/api/soccer/category"
@@ -71,6 +73,7 @@ require "sportradar/api/nfl/venue"
 require "sportradar/api/nfl/week"
 
 require "sportradar/api/basketball"
+require "sportradar/api/baseball"
 
 
 require "sportradar/api/live_images"
@@ -105,7 +108,7 @@ module Sportradar
 
     API_GALLERY = [
         {api: :nfl, version:  1},
-        {api: :mlb, version:  5},
+        {api: :mlb, version:  6},
         {api: :nhl, version:  3},
         {api: :nba, version:  3},
         {api: :ncaamb, version:   3},
