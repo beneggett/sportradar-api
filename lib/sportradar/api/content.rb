@@ -3,7 +3,7 @@ module Sportradar
     class Content < Request
       attr_accessor :sport, :access_level
 
-      def initialize( sport, access_level = 't')
+      def initialize( sport, access_level = default_access_level)
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
@@ -31,6 +31,14 @@ module Sportradar
       end
 
       private
+
+      def default_access_level
+        if (ENV['SPORTRADAR_ENV'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
+          'p'
+        else
+          't'
+        end
+      end
 
       def request_url(path)
         "/content-#{sport}-#{access_level}#{version}/#{path}"
