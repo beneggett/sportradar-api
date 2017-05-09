@@ -44,7 +44,6 @@ module Sportradar
             # add_game(opts[:game])
             # opts[:game].update_score(id => @runs)             if @runs
             opts[:game].update_stats(self, data['statistics'])  if data['statistics']
-            binding.pry
           end
         end
         def handle_names(data)
