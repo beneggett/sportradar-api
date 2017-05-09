@@ -7,7 +7,7 @@ module Sportradar
         def initialize(data, **opts)
           @response = data # comment this out when done developing
           @api      = opts[:api]
-          # @team     = opts[:team]
+          @team     = opts[:team]
 
           @id = data["id"]
 
@@ -61,7 +61,7 @@ module Sportradar
           update_injuries(data)
           update_draft(data)
 
-          # @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
+          @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
           if stats = data['statistics']
             @fielding = stats.dig('fielding', 'overall')
             @pitching = stats.dig('pitching', 'overall')

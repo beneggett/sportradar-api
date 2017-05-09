@@ -32,19 +32,20 @@ module Sportradar
           parse_records(data)                               if data['win']
           parse_players(data.dig('players'), opts[:game])   if data.dig('players')
 
-          # if opts[:game]
-          #   opts[:game].update_from_team(id, "runs"=>6)
-          #   opts[:game].update_from_team(id, "hits"=>11)
-          #   opts[:game].update_from_team(id, "errors"=>1)
-          #   opts[:game].update_from_team(id, "win"=>11)
-          #   opts[:game].update_from_team(id, "loss"=>16)
-          #   opts[:game].update_from_team(id, "probable_pitcher"=>{"jersey_number"=>"45", "id"=>"c1f19b5a-9dee-4053-9cad-ee4196f921e1", "win"=>2, "loss"=>3, "era"=>5.0})
-          #   opts[:game].update_from_team(id, "starting_pitcher"=>{"last_name"=>"Cotton", "first_name"=>"Jharel", "preferred_name"=>"Jharel", "jersey_number"=>"45"})
-          #   opts[:game].update_from_team(id, "current_pitcher"=>{"last_name"=>"Dull", "first_name"=>"Ryan", "preferred_name"=>"Ryan", "jersey_number"=>"66"})
-          # #   add_game(opts[:game])
-          # #   opts[:game].update_score(id => @runs)             if @runs
-          # #   opts[:game].update_stats(self, data['statistics'])  if data['statistics']
-          # end
+          if opts[:game]
+            # opts[:game].update_from_team(id, "runs"=>6)
+            # opts[:game].update_from_team(id, "hits"=>11)
+            # opts[:game].update_from_team(id, "errors"=>1)
+            # opts[:game].update_from_team(id, "win"=>11)
+            # opts[:game].update_from_team(id, "loss"=>16)
+            # opts[:game].update_from_team(id, "probable_pitcher"=>{"jersey_number"=>"45", "id"=>"c1f19b5a-9dee-4053-9cad-ee4196f921e1", "win"=>2, "loss"=>3, "era"=>5.0})
+            # opts[:game].update_from_team(id, "starting_pitcher"=>{"last_name"=>"Cotton", "first_name"=>"Jharel", "preferred_name"=>"Jharel", "jersey_number"=>"45"})
+            # opts[:game].update_from_team(id, "current_pitcher"=>{"last_name"=>"Dull", "first_name"=>"Ryan", "preferred_name"=>"Ryan", "jersey_number"=>"66"})
+            # add_game(opts[:game])
+            # opts[:game].update_score(id => @runs)             if @runs
+            opts[:game].update_stats(self, data['statistics'])  if data['statistics']
+            binding.pry
+          end
         end
         def handle_names(data)
           # need to do some more work here
