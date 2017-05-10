@@ -124,6 +124,7 @@ module Sportradar
           update_bases(data)
           parse_pitchers(data) if data['home'] && data['away']
 
+          parse_batting_order(data) if data.dig('home', 'lineup').present?
           if data['scoring']
             parse_score(data['scoring'])
           elsif data.dig('home', 'hits')

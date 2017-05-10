@@ -269,4 +269,4 @@ t.players.sample
 res = mlb.get_schedule;
 g = mlb.games.sort_by(&:scheduled).first
 
-
+portradar::Api::Baseball::Mlb::Hierarchy.new
