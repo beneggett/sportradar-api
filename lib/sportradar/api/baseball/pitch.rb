@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up, :runners
+        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up, :runners, :errors
 
         def initialize(data, **opts)
           @response = data
@@ -47,7 +47,7 @@ module Sportradar
         end
 
         def parse_errors(data)
-          @runners = data.map { |hash| Error.new(hash) }
+          @errors = data.map { |hash| Error.new(hash) }
         end
 
         def parse_fielders(data)
