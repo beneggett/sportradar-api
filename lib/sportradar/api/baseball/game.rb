@@ -143,7 +143,7 @@ module Sportradar
 
         def update_bases(data)
           @bases = if data.respond_to?(:runners)
-            hash = data.runners.map { |runner| [runner.ending_base.to_s, runner.id] if !runner.out }.to_h
+            hash = Array(data.runners).map { |runner| [runner.ending_base.to_s, runner.id] if !runner.out }.to_h
             DEFAULT_BASES.merge(hash)
           elsif (runners = data.dig('outcome', 'runners'))
             hash = runners.map { |runner| [runner['ending_base'].to_s, runner['id']] if !runner['out'] }.to_h
