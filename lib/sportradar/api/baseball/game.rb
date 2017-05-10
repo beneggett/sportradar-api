@@ -6,6 +6,7 @@ module Sportradar
 
         attr_reader :inning, :half, :outs, :bases, :pitchers
         attr_reader :outcome, :count
+        DEFAULT_BASES = { '1' => nil, '2' => nil, '3' => nil }
 
         def initialize(data, **opts)
           @response = data
@@ -27,6 +28,7 @@ module Sportradar
           @outcome        = Outcome.new(data, game: self)
           @count          = {}
           @pitchers       = {}
+          @bases          = { '1' => nil, '2' => nil, '3' => nil }
 
           @id = data['id']
 
@@ -119,6 +121,7 @@ module Sportradar
 
           @team_ids     = { home: @home_id, away: @away_id}
 
+          update_bases(data)
           parse_pitchers(data) if data['home'] && data['away']
 
           if data['scoring']
@@ -138,10 +141,23 @@ module Sportradar
         # def update_from_team(id, data)
         # end
 
+        def update_bases(data)
+          @bases = if data.respond_to?(:runners)
+            hash = data.runners.map { |runner| [runner.ending_base.to_s, runner.id] if !runner.out }.to_h
+            DEFAULT_BASES.merge(hash)
+          elsif (runners = data.dig('outcome', 'runners'))
+            hash = runners.map { |runner| [runner['ending_base'].to_s, runner['id']] if !runner['out'] }.to_h
+            DEFAULT_BASES.merge(hash)
+          else # probably new inning, no runners
+            DEFAULT_BASES.dup
+          end
+        end
+
         def extract_count(data) # extract from pbp
           recent_pitches = pitches.last(10)
           last_pitch = recent_pitches.reverse_each.detect(&:count)
           return unless last_pitch
+          update_bases(last_pitch)
           @count.merge!(last_pitch.count)
           hi = last_pitch.at_bat.event.half_inning
           @count.merge!('inning' => hi.number.to_i, 'inning_half' => hi.half)
