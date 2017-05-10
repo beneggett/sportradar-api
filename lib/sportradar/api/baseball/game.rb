@@ -134,7 +134,6 @@ module Sportradar
             @outcome.update(data, source: nil)
             @count.merge!(@outcome.count || {})
           end
-
           create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
         end
 
@@ -159,8 +158,23 @@ module Sportradar
           puts data.inspect
           raise e
         end
-        def reset_bases
+        def advance_inning
+          return unless count['outs'] == 3
           @bases = DEFAULT_BASES.dup
+          half, inn = if count['inning_half'] == 'B'
+            ['T', count['inning'] += 1]
+          elsif count['inning_half'] == 'T'
+            ['B', count['inning']]
+          else
+            [nil, 1]
+          end
+          @count = {
+            'balls'       => 0,
+            'strikes'     => 0,
+            'outs'        => 0,
+            'inning'      => inn,
+            'inning_half' => half,
+          }
         end
 
         def extract_count(data) # extract from pbp
@@ -171,6 +185,7 @@ module Sportradar
           @count.merge!(last_pitch.count)
           hi = last_pitch.at_bat.event.half_inning
           @count.merge!('inning' => hi.number.to_i, 'inning_half' => hi.half)
+          advance_inning
         end
 
         def home
