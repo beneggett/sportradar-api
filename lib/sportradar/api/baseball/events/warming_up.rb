@@ -3,7 +3,7 @@ module Sportradar
     module Baseball
       class Event
         class WarmingUp < Data
-          attr_accessor :response, :id, :hitter_id, :outcome
+          attr_accessor :response, :id, :hitter_id, :outcome, :description
 
           def initialize(data, **opts)
             @response     = data

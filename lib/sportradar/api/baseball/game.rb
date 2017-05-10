@@ -42,20 +42,20 @@ module Sportradar
         def tied?
           @score[away_id].to_i == @score[home_id].to_i
         end
-        def runs(team_id)
-          summary_stat(team_id, 'runs')
-        end
+        # def runs(team_id)
+        #   summary_stat(team_id, 'runs')
+        # end
         def hits(team_id)
           @scoring_raw.hits(team_id)
         end
         def errors(team_id)
           @scoring_raw.errors(team_id)
         end
-        def team_summary(team_id)
+        def runs(team_id)
           team_id.is_a?(Symbol) ? @score[@team_ids[team_id]] : @score[team_id]
         end
-        def summary_stat(team_id, stat)
-          team_summary(team_id)[stat]
+        def summary_stat(team_id, stat_name)
+          scoring.dig(team_id, stat_name)
         end
         def stats(team_id)
           team_id.is_a?(Symbol) ? @team_stats[@team_ids[team_id]].to_i : @team_stats[team_id].to_i
@@ -142,15 +142,25 @@ module Sportradar
         # end
 
         def update_bases(data)
+          if data.is_a?(Sportradar::Api::Baseball::Error)
+            puts data.inspect
+            return
+          end
           @bases = if data.respond_to?(:runners)
-            hash = Array(data.runners).map { |runner| [runner.ending_base.to_s, runner.id] if !runner.out }.to_h
+            hash = Array(data.runners).map { |runner| [runner.ending_base.to_s, runner.id] if !runner.out }.compact.to_h
             DEFAULT_BASES.merge(hash)
           elsif (runners = data.dig('outcome', 'runners'))
-            hash = runners.map { |runner| [runner['ending_base'].to_s, runner['id']] if !runner['out'] }.to_h
+            hash = runners.map { |runner| [runner['ending_base'].to_s, runner['id']] if !runner['out'] }.compact.to_h
             DEFAULT_BASES.merge(hash)
           else # probably new inning, no runners
             DEFAULT_BASES.dup
           end
+        rescue => e
+          puts data.inspect
+          raise e
+        end
+        def reset_bases
+          @bases = DEFAULT_BASES.dup
         end
 
         def extract_count(data) # extract from pbp
