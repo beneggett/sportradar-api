@@ -48,7 +48,11 @@ module Sportradar
 
       def venue_manifests
         raise Sportradar::Api::Error::InvalidLeague unless league.nil?
-        response = get request_url("venues/manifests/all_assets")
+        if version == 3
+          response = get request_url("venues/manifest")
+        else
+          response = get request_url("venues/manifests/all_assets")
+        end
         if response.success? && response["assetlist"]
           Sportradar::Api::Images::AssetList.new response["assetlist"]
         else
@@ -109,7 +113,7 @@ module Sportradar
         elsif uses_v2_api?
           'usat'
         elsif uses_v3_api?
-          'reuters'
+          sport == 'mlb' ? 'usat' : 'reuters'
         end
       end
 
@@ -142,11 +146,11 @@ module Sportradar
       end
 
       def v2_api_sports
-        ['golf', 'mlb', 'nascar', 'nba', 'nfl', 'nhl', 'ncaafb', 'ncaamb', 'mls']
+        ['golf',  'nascar', 'nba', 'nfl', 'nhl', 'ncaafb', 'ncaamb', 'mls']
       end
 
       def v3_api_sports
-        ['soccer', 'cricket', 'f1', 'rugby', 'tennis']
+        ['mlb', 'soccer', 'cricket', 'f1', 'rugby', 'tennis']
       end
 
       def soccer_leagues
