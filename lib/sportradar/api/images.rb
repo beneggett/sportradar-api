@@ -1,13 +1,14 @@
 module Sportradar
   module Api
     class Images < Request
-      attr_accessor :sport, :league, :access_level, :nfl_premium
-      def initialize( sport, access_level: 't', league: nil, nfl_premium: false)
+      attr_accessor :sport, :league, :access_level, :nfl_premium, :usat_premium
+      def initialize( sport, access_level: 't', league: nil, nfl_premium: false, usat_premium: false )
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
         raise Sportradar::Api::Error::InvalidLeague unless soccer_leagues.include?(league) || league.nil?
         @league = league
         @nfl_premium = nfl_premium
+        @usat_premium = usat_premium
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         @access_level = access_level
       end
@@ -19,7 +20,7 @@ module Sportradar
           else
             response = get request_url("#{league}/#{image_type}/players/manifest")
           end
-        elsif nfl_premium
+        elsif nfl_premium || usat_premium
           response = get request_url("#{image_type}/players/#{year}/manifest")
         else
           response = get request_url("players/#{image_type}/manifests/all_assets")
@@ -84,6 +85,10 @@ module Sportradar
             Sportradar::Api.api_key_params("images_nfl_official_premium", "production")
           elsif nfl_premium
             Sportradar::Api.api_key_params("images_nfl_official_premium")
+          elsif sport == 'mlb' && usat_premium && access_level == 'p'
+            Sportradar::Api.api_key_params("images_mlb_premium", "production")
+          elsif sport == 'mlb' && usat_premium
+            Sportradar::Api.api_key_params("images_mlb_premium")
           elsif access_level == 'p'
             Sportradar::Api.api_key_params("images_#{sport}", "production")
           else
@@ -99,6 +104,8 @@ module Sportradar
       def provider
         if nfl_premium
           'ap_premium'
+        elsif usat_premium
+          'usat_premium'
         elsif uses_v2_api?
           'usat'
         elsif uses_v3_api?
@@ -107,7 +114,7 @@ module Sportradar
       end
 
       def version
-        if uses_v3_api? || nfl_premium
+        if uses_v3_api? || nfl_premium || usat_premium
           3
         elsif uses_v2_api?
           Sportradar::Api.version('images')
