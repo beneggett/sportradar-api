@@ -80,6 +80,7 @@ module Sportradar
 
       end
       alias_method :all_events, :event_manifests
+      alias_method :live_images, :event_manifests
 
       # The Player Images, Coach Images, Venue Images APIs aren't really meant to be used directly, the manifests return an href path of an image we can pass it into the image_url method to get the entire image url
       def image_url(href)
