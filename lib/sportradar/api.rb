@@ -81,6 +81,7 @@ require "sportradar/api/images"
 require "sportradar/api/images/asset_list"
 require "sportradar/api/images/asset"
 require "sportradar/api/images/link"
+require "sportradar/api/images/ref"
 require "sportradar/api/images/tag"
 
 require "sportradar/api/mma"
