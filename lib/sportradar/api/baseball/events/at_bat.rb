@@ -26,8 +26,27 @@ module Sportradar
             pitches.last&.outcome_id
           end
 
+          def outcome
+            pitches.last&.outcome
+          end
+
           def hit?
-            !!pitches.last&.hit_type
+            single? || double? || triple? || homerun?
+          end
+          def single?
+            outcome.to_s.include?('Single')
+          end
+          def double?
+            outcome.to_s.include?('Double')
+          end
+          def triple?
+            outcome.to_s.include?('Triple')
+          end
+          def homerun?
+            outcome == 'Homerun'
+          end
+          def strikeout?
+            pitches.last&.count['strikes'] == 3
           end
 
           def update(data, **opts)
