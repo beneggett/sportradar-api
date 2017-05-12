@@ -3,16 +3,19 @@ module Sportradar
     module Baseball
       class Event
         class Lineup < Data
-          attr_accessor :response, :id, :hitter_id, :outcome, :description
+          attr_accessor :response, :id, :hitter_id, :outcome, :description, :player_id, :order, :position, :team_id, :last_name, :first_name, :preferred_name, :jersey_number
 
           def initialize(data, **opts)
-            @response     = data
-            # @api          = opts[:api]
-            # @half_inning  = opts[:half_inning]
-            @event    = opts[:event]
-
-            @id       = data["id"]
-            # @type     = data['type']
+            @response       =  data
+            @id             =  data["id"]
+            @player_id      =  data["player_id"]
+            @order          =  data["order"]
+            @position       =  data["position"]
+            @team_id        =  data["team_id"]
+            @last_name      =  data["last_name"]
+            @first_name     =  data["first_name"]
+            @preferred_name =  data["preferred_name"]
+            @jersey_number  =  data["jersey_number"            ]
 
             update(data)
           end
@@ -25,12 +28,11 @@ module Sportradar
             'lineup'
           end
 
-
-          {"lineup"=>{"description"=>"Brandon Kintzler (P) replaces Matt Belisle (P).", "id"=>"ad7357db-117e-4454-8d44-418ef64aa275", "player_id"=>"e0d89956-1427-4b2f-9025-10330561e464", "order"=>0, "position"=>1, "team_id"=>"aa34e0ed-f342-4ec6-b774-c79b47b60e2d", "last_name"=>"Kintzler", "first_name"=>"Brandon", "preferred_name"=>"Brandon", "jersey_number"=>"27"}}
-          {"lineup"=>{"description"=>"Domingo Santana pinch-hitting for Rob Scahill.", "id"=>"4d232302-defe-4ed9-a1fc-4ef44e871138", "player_id"=>"d80a8b1f-aee7-400c-b21f-75e0ac4a32a2", "order"=>9, "position"=>11, "team_id"=>"dcfd5266-00ce-442c-bc09-264cd20cf455", "last_name"=>"Santana", "first_name"=>"Domingo", "preferred_name"=>"Domingo", "jersey_number"=>"16"}}
-
         end
       end
     end
   end
 end
+
+
+
