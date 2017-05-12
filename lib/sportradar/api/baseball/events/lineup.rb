@@ -3,10 +3,11 @@ module Sportradar
     module Baseball
       class Event
         class Lineup < Data
-          attr_accessor :response, :id, :hitter_id, :outcome, :description, :player_id, :order, :position, :team_id, :last_name, :first_name, :preferred_name, :jersey_number
+          attr_accessor :response, :id, :hitter_id, :outcome, :description, :event, :player_id, :order, :position, :team_id, :last_name, :first_name, :preferred_name, :jersey_number
 
           def initialize(data, **opts)
-            @response       =  data
+            # @response       =  data
+            @event          =  opts[:event]
             @id             =  data["id"]
             @player_id      =  data["player_id"]
             @order          =  data["order"]
@@ -21,7 +22,8 @@ module Sportradar
           end
 
           def update(data, **opts)
-            @description = data['description'] if data['description']
+            lineup = event.half_inning.inning.game.lineup
+            lineup.update_from_lineup_event(data)
           end
 
           def data_key

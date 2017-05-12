@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Game < Data
-        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes
+        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup
 
         attr_reader :inning, :half, :outs, :bases, :pitchers
         attr_reader :outcome, :count
@@ -19,6 +19,7 @@ module Sportradar
           @team_stats     = {}
           @player_stats   = {}
           @scoring_raw    = Scoring.new(data, game: self)
+          @lineup         = Lineup.new(data, game: self)
           @teams_hash     = {}
           @innings_hash   = {}
           @home_runs      = nil
@@ -124,7 +125,7 @@ module Sportradar
           update_bases(data)
           parse_pitchers(data) if data['home'] && data['away']
 
-          parse_batting_order(data) if data.dig('home', 'lineup').present?
+          @lineup.update(data, source: source)
           if data['scoring']
             parse_score(data['scoring'])
           elsif data.dig('home', 'hits')
