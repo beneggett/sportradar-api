@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up, :runners, :errors
+        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up, :runners, :errors, :pitch_type_name, :speed, :outcome, :hit_type
 
         def initialize(data, **opts)
           @response = data
@@ -19,7 +19,10 @@ module Sportradar
         end
         def update(data, **opts)
 
-          @outcome_id   = data['outcome_id']    if data['outcome_id']
+          if data['outcome_id']
+            @outcome_id   = data['outcome_id']
+            @outcome      = self.class.pitch_outcome(@outcome_id)
+          end
           @description  = data['description']   if data['description']
           @status       = data['status']        if data['status']
 
@@ -61,6 +64,7 @@ module Sportradar
           @y            = data['pitch_y']      if data['pitch_y']
           @zone         = data['pitch_zone']   if data['pitch_zone']
 
+          @pitch_type_name = self.class.pitch_type(@type)
           @total_pitch_count = data['pitch_count'] if data['pitch_count']
         end
 
@@ -92,7 +96,6 @@ module Sportradar
           @warming_preferred_name = data['preferred_name']
           @warming_jersey_number  = data['jersey_number']
           @warming_up             = "#{data['preferred_name'] || data['first_name']} #{data['last_name']}"
-          puts data unless data['last_name']
         end
 
         def parse_steal(data)
@@ -104,6 +107,116 @@ module Sportradar
         {"type"=>"steal", "id"=>"df01b116-afcd-467f-9b9c-99d3891629c6", "status"=>"official", "created_at"=>"2017-05-06T03:00:58+00:00", "pitcher"=>{"id"=>"90fb6719-5135-42f3-88c0-0ccde448368c"}, "runners"=>[{"id"=>"106e6fb6-6460-412e-abdb-9f73469a27b9", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"CK", "out"=>false, "last_name"=>"DeShields", "first_name"=>"Delino", "preferred_name"=>"Delino", "jersey_number"=>"3"}]}
         {"type"=>"steal", "id"=>"37c9192d-cac9-4320-b721-f68955eecf24", "status"=>"official", "created_at"=>"2017-05-06T03:02:16+00:00", "pitcher"=>{"id"=>"90fb6719-5135-42f3-88c0-0ccde448368c"}, "runners"=>[{"id"=>"106e6fb6-6460-412e-abdb-9f73469a27b9", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"CK", "out"=>false, "last_name"=>"DeShields", "first_name"=>"Delino", "preferred_name"=>"Delino", "jersey_number"=>"3"}]}
         {"type"=>"steal", "id"=>"b8dcebfa-e02c-470e-ba73-e9b6b553cc0d", "status"=>"official", "created_at"=>"2017-05-06T03:38:48+00:00", "pitcher"=>{"id"=>"1a2638a3-28df-46b3-9cca-0f8eb29b581f"}, "runners"=>[{"id"=>"2847c4e0-01be-46bd-992e-701ee447e3f5", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"CK", "out"=>false, "last_name"=>"Upton", "first_name"=>"Justin", "preferred_name"=>"Justin", "jersey_number"=>"8"}, {"id"=>"f27a7574-57db-4eeb-8f88-377048806de2", "starting_base"=>3, "ending_base"=>3, "outcome_id"=>"", "out"=>false, "last_name"=>"Martínez", "first_name"=>"Victor", "preferred_name"=>"Victor", "jersey_number"=>"41"}]}
+
+
+        def self.pitch_type(code)
+          pitch_types[code]
+        end
+        def self.pitch_types
+          @pitch_types ||= {
+            'FA' => 'Fastball',
+            'SI' => 'Sinker',
+            'CT' => 'Cutter',
+            'CU' => 'Curveball',
+            'SL' => 'Slider',
+            'CH' => 'Changeup',
+            'KN' => 'Knuckleball',
+            'SP' => 'Splitter',
+            'SC' => 'Screwball',
+            'FO' => 'Forkball',
+            'IB' => 'Intentional Ball',
+            'PI' => 'Pitchout',
+          }
+        end
+        def self.pitch_outcome(code)
+          pitch_outcomes[code]
+        end
+        def self.pitch_outcomes
+          @pitch_outcomes ||= {
+            'aBK'     => 'Balk',
+            'aCI'     => 'Catcher Interference',
+            'aD'      => 'Double',
+            'aDAD3'   => 'Double - Adv 3rd',
+            'aDAD4'   => 'Double - Adv Home',
+            'aFCAD2'  => 'Fielders Choice - Adv 2nd',
+            'aFCAD3'  => 'Fielders Choice - Adv 3rd',
+            'aFCAD4'  => 'Fielders Choice - Adv Home',
+            'aHBP'    => 'Hit By Pitch',
+            'aHR'     => 'Homerun',
+            'aIBB'    => 'Intentional Walk',
+            'aKLAD1'  => 'Strike Looking - Adv 1st',
+            'aKLAD2'  => 'Strike Looking - Adv 2nd',
+            'aKLAD3'  => 'Strike Looking - Adv 3rd',
+            'aKLAD4'  => 'Strike Looking - Adv Home',
+            'aKSAD1'  => 'Strike Swinging - Adv 1st',
+            'aKSAD2'  => 'Strike Swinging - Adv 2nd',
+            'aKSAD3'  => 'Strike Swinging - Adv 3rd',
+            'aKSAD4'  => 'Strike Swinging - Adv Home',
+            'aROE'    => 'Reached On Error',
+            'aROEAD2' => 'Reached On Error - Adv 2nd',
+            'aROEAD3' => 'Reached On Error - Adv 3rd',
+            'aROEAD4' => 'Reached On Error - Adv Home',
+            'aS'      => 'Single',
+            'aSAD2'   => 'Single - Adv 2nd',
+            'aSAD3'   => 'Single - Adv 3rd',
+            'aSAD4'   => 'Single - Adv Home',
+            'aSBAD1'  => 'Sacrifice Bunt - Adv 1st',
+            'aSBAD2'  => 'Sacrifice Bunt - Adv 2nd',
+            'aSBAD3'  => 'Sacrifice Bunt - Adv 3rd',
+            'aSBAD4'  => 'Sacrifice Bunt - Adv Home',
+            'aSFAD1'  => 'Sacrifice Fly - Adv 1st',
+            'aSFAD2'  => 'Sacrifice Fly - Adv 2nd',
+            'aSFAD3'  => 'Sacrifice Fly - Adv 3rd',
+            'aSFAD4'  => 'Sacrifice Fly - Adv Home',
+            'aT'      => 'Triple',
+            'aTAD4'   => 'Triple - Adv Home',
+            'bAB'     => 'Enforced Ball',
+            'bB'      => 'Ball',
+            'bDB'     => 'Dirt Ball',
+            'bIB'     => 'Intentional Ball',
+            'bPO'     => 'Pitchout',
+            'kF'      => 'Foul Ball',
+            'kFT'     => 'Foul Tip',
+            'kKL'     => 'Strike Looking',
+            'kKS'     => 'Strike Swinging',
+            'oBI'     => 'Hitter Interference',
+            'oDT3'    => 'Double - Out at 3rd',
+            'oDT4'    => 'Double - Out at Home',
+            'oFC'     => 'Fielders Choice',
+            'oFCT2'   => 'Fielders Choice - Out at 2nd',
+            'oFCT3'   => 'Fielders Choice - Out at 3rd',
+            'oFCT4'   => 'Fielders Choice - Out at Home',
+            'oFO'     => 'Fly Out',
+            'oGO'     => 'Ground Out',
+            'oKLT1'   => 'Strike Looking - Out at 1st',
+            'oKLT2'   => 'Strike Looking - Out at 2nd',
+            'oKLT3'   => 'Strike Looking - Out at 3rd',
+            'oKLT4'   => 'Strike Looking - Out at Home',
+            'oKST1'   => 'Strike Swinging - Out at 1st',
+            'oKST2'   => 'Strike Swinging - Out at 2nd',
+            'oKST3'   => 'Strike Swinging - Out at 3rd',
+            'oKST4'   => 'Strike Swinging - Out at Home',
+            'oLO'     => 'Line Out',
+            'oOBB'    => 'Out of Batters Box',
+            'oOP'     => 'Out on Appeal',
+            'oPO'     => 'Pop Out',
+            'oROET2'  => 'Reached On Error - Out at 2nd',
+            'oROET3'  => 'Reached On Error - Out at 3rd',
+            'oROET4'  => 'Reached On Error - Out at Home',
+            'oSB'     => 'Sacrifice Bunt',
+            'oSBT2'   => 'Sacrifice Bunt - Out at 2nd',
+            'oSBT3'   => 'Sacrifice Bunt - Out at 3rd',
+            'oSBT4'   => 'Sacrifice Bunt - Out at Home',
+            'oSF'     => 'Sacrifice Fly',
+            'oSFT2'   => 'Sacrifice Fly - Out at 2nd',
+            'oSFT3'   => 'Sacrifice Fly - Out at 3rd',
+            'oSFT4'   => 'Sacrifice Fly - Out at Home',
+            'oST2'    => 'Single - Out at 2nd',
+            'oST3'    => 'Single - Out at 3rd',
+            'oST4'    => 'Single - Out at Home',
+            'oTT4'    => 'Triple - Out at Home',
+          }
+        end
 
       end
     end

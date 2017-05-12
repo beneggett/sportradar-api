@@ -6,7 +6,7 @@ module Sportradar
           attr_accessor :response, :id, :event, :hitter_id, :outcome, :description
 
           def initialize(data, **opts)
-            # @response = data
+            @response = data
             @api      = opts[:api]
             @event    = opts[:event]
 
@@ -22,6 +22,13 @@ module Sportradar
           #   return false if other.nil?
           #   @id == other.id && pitches == other.pitches
           # end
+          def outcome_id
+            pitches.last&.outcome_id
+          end
+
+          def hit?
+            !!pitches.last&.hit_type
+          end
 
           def update(data, **opts)
             @description  = data['description'] if data['description']
@@ -43,6 +50,7 @@ module Sportradar
             @pitches_hash.values
           end
         end
+
       end
     end
   end
