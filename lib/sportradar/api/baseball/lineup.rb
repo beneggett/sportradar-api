@@ -24,13 +24,11 @@ module Sportradar
             update_home(find_player(data.dig('lineup', 'player_id')), data.dig('lineup', 'order'))
           elsif data.dig('lineup', 'team_id') == game.away_id
             update_away(find_player(data.dig('lineup', 'player_id')), data.dig('lineup', 'order'))
-          else
-            puts "#{data.dig('lineup', 'player_id')} not found"
-            # raise "player not found for lineup change"
           end
         end
 
         def update_home(player, order)
+          return if order == 0
           idx = home.index do |h|
             h['order'] == order
           end
@@ -39,6 +37,7 @@ module Sportradar
         end
 
         def update_away(player, order)
+          return if order == 0
           idx = away.index do |h|
             h['order'] == order
           end
@@ -54,7 +53,6 @@ module Sportradar
 
         def initial_lineup
           [
-            { 'order' => 0 },
             { 'order' => 1 },
             { 'order' => 2 },
             { 'order' => 3 },
