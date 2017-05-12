@@ -1,14 +1,16 @@
 module Sportradar
   module Api
     class Images < Request
-      attr_accessor :sport, :league, :access_level, :nfl_premium, :usat_premium
-      def initialize( sport, access_level: 't', league: nil, nfl_premium: false, usat_premium: false )
+      attr_accessor :sport, :league, :access_level, :nfl_premium, :usat_premium, :event_id, :date
+      def initialize( sport, access_level: 't', league: nil, nfl_premium: false, usat_premium: false, event_id: nil, date: nil )
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
         raise Sportradar::Api::Error::InvalidLeague unless soccer_leagues.include?(league) || league.nil?
         @league = league
         @nfl_premium = nfl_premium
         @usat_premium = usat_premium
+        @event_id = event_id
+        @date = date.strftime("%Y/%m/%d") if date.present?
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         @access_level = access_level
       end
@@ -60,6 +62,24 @@ module Sportradar
         end
       end
       alias_method :all_venues, :venue_manifests
+
+      # Event manifests will respont to either date or event_id
+      def event_manifests
+        # /[league]/[image_type]/events/[year]/[month]/[day]/manifest.[format]?api_key={your_api_key}
+        raise Sportradar::Api::Error::InvalidType unless date.present? || event_id.present?
+        if event_id.present?
+          response = get request_url("actionshots/events/game/#{event_id}/manifest")
+        elsif date.present?
+          response = get request_url("actionshots/events/#{date}/manifest")
+        end
+        if response.success? && response["assetlist"]
+          Sportradar::Api::Images::AssetList.new response["assetlist"]
+        else
+          response
+        end
+
+      end
+      alias_method :all_events, :event_manifests
 
       # The Player Images, Coach Images, Venue Images APIs aren't really meant to be used directly, the manifests return an href path of an image we can pass it into the image_url method to get the entire image url
       def image_url(href)
