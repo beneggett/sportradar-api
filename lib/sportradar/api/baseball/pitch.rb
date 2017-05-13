@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up, :runners, :errors, :pitch_type_name, :speed, :outcome, :hit_type
+        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up, :runners, :errors, :pitch_type_name, :x, :y, :total_pitch_count, :speed, :outcome, :hit_type,
 
         def initialize(data, **opts)
           @response = data
@@ -99,7 +99,7 @@ module Sportradar
         end
 
         def parse_steal(data)
-          
+
         end
 
         {"type"=>"steal", "id"=>"76762fd9-683c-42f2-8c72-8d9fd4f5bc7b", "status"=>"official", "created_at"=>"2017-05-06T02:56:49+00:00", "pitcher"=>{"id"=>"9dd06397-4353-44e8-81bb-6e88a75e42b5"}, "runners"=>[{"id"=>"3e39fe20-6dca-4894-807b-1ce76ff93e29", "starting_base"=>1, "ending_base"=>1, "outcome_id"=>"", "out"=>false, "last_name"=>"Owings", "first_name"=>"Christopher", "preferred_name"=>"Chris", "jersey_number"=>"16"}]}
