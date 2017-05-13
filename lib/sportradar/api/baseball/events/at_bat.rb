@@ -7,8 +7,8 @@ module Sportradar
 
           def initialize(data, **opts)
             @response = data
-            # @api      = opts[:api]
-            # @event    = opts[:event]
+            @api      = opts[:api]
+            @event    = opts[:event]
 
             @id       = data["id"]
             @type     = data['type']
