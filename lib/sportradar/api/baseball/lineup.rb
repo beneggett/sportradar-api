@@ -65,7 +65,7 @@ module Sportradar
           ]
         end
 
-        def next_batters(team, number_of_upcoming_batters)
+        def next_batters(team, number_of_upcoming_batters = 3)
           if team == 'home'
             last_at_bat = game.at_bats.select{|at_bat| at_bat.event.half_inning.half == 'B'}.last
             last_position = @home_team_lineup.detect{|htl| htl['id'] == last_at_bat.hitter_id}['order']
