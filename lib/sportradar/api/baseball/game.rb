@@ -403,7 +403,7 @@ __END__
 # g = mlb.games.first
 # g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
 g = Sportradar::Api::Baseball::Game.new('id' => "9d0fe41c-4e6b-4433-b376-2d09ed39d184");
-g = Sportradar::Api::Baseball::Game.new('id' => "0ab634d3-ce6c-4a79-be8d-b62b0ee506d5");
+g = Sportradar::Api::Baseball::Game.new('id' => "fe9f37fd-6848-4a32-a999-9655044b7319");
 res = g.get_pbp;
 res = g.get_summary;
 res = g.get_box # probably not as useful as summary
