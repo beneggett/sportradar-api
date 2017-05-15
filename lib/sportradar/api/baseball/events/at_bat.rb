@@ -63,7 +63,7 @@ module Sportradar
           end
 
           def over?
-            pitches.last.is_ab_over
+            pitches.last&.is_ab_over
           end
 
           def pitches
