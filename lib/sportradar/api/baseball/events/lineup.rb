@@ -16,7 +16,7 @@ module Sportradar
             @last_name      =  data["last_name"]
             @first_name     =  data["first_name"]
             @preferred_name =  data["preferred_name"]
-            @jersey_number  =  data["jersey_number"            ]
+            @jersey_number  =  data["jersey_number"]
 
             update(data)
           end
