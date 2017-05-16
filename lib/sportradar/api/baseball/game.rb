@@ -35,6 +35,9 @@ module Sportradar
 
           update(data, **opts)
         end
+        def lineup
+          @lineup ||= Lineup.new({}, game: self)
+        end
 
         def timeouts
           {}
@@ -125,7 +128,7 @@ module Sportradar
           update_bases(data)
           parse_pitchers(data) if data['home'] && data['away']
 
-          @lineup.update(data, source: source)
+          lineup.update(data, source: source)
           if data['scoring']
             parse_score(data['scoring'])
           elsif data.dig('home', 'hits')

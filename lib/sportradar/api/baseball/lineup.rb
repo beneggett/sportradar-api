@@ -68,14 +68,22 @@ module Sportradar
         def next_batters(team, number_of_upcoming_batters = 3)
           if team == 'home'
             last_at_bat = game.at_bats.select{|at_bat| at_bat.event.half_inning.half == 'B'}.last
-            last_position = @home_team_lineup.detect{|htl| htl['id'] == last_at_bat.hitter_id}['order']
-            upcoming = home.rotate(last_position)
+            if last_at_bat # first inning
+              last_position = @home_team_lineup.detect{|htl| htl['id'] == last_at_bat.hitter_id}&.dig('order')
+              upcoming = home.rotate(last_position || 0)
+            else
+              upcoming = home
+            end
           elsif team == 'away'
             last_at_bat = game.at_bats.select{|at_bat| at_bat.event.half_inning.half == 'T'}.last
-            last_position = @away_team_lineup.detect{|atl| atl['id'] == last_at_bat.hitter_id}['order']
-            upcoming = away.rotate(last_position)
+            if last_at_bat # first inning
+              last_position = @away_team_lineup.detect{|atl| atl['id'] == last_at_bat.hitter_id}&.dig('order')
+              upcoming = away.rotate(last_position || 0)
+            else
+              upcoming = away
+            end
           end
-          upcoming[1..number_of_upcoming_batters]
+          upcoming[0..(number_of_upcoming_batters - 1)]
         end
 
         private
