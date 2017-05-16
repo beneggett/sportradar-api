@@ -46,7 +46,7 @@ module Sportradar
             outcome == 'Homerun'
           end
           def strikeout?
-            pitches.last&.count['strikes'] == 3
+            pitches.last&.count.dig('strikes') == 3
           end
 
           def update(data, **opts)
