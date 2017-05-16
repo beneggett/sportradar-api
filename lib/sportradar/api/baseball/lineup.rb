@@ -12,6 +12,7 @@ module Sportradar
           when :pbp
           when :summary
             @roster = (data.dig('home', 'roster') || []) + (data.dig('away', 'roster') || [])
+            return unless data.dig('home', 'lineup') && data.dig('away', 'lineup')
             @home_team_lineup = data.dig('home', 'lineup')
             @away_team_lineup = data.dig('away', 'lineup')
             initialize_home
