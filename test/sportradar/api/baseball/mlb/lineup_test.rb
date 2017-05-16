@@ -23,7 +23,7 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         lineup.update(summary, source: :summary)
         assert_equal lineup.home.length, 9
         assert_equal lineup.away.length, 9
-        assert_equal lineup.home.first['preferred_name'], 'Dustin'
+        assert_equal 'Dustin', lineup.home.first['preferred_name']
       end
       
       it "creates a lineup from a pbp update" do
@@ -32,7 +32,7 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         lineup.update_from_lineup_event(lineup_update_hash)
         assert_equal lineup.home.length, 9
         assert_equal lineup.away.length, 9
-        assert_equal lineup.home.first['preferred_name'], 'Robbie'
+        assert_equal 'Robbie', lineup.home.first['preferred_name']
       end
 
       it "sets the next upcoming batters" do
@@ -41,9 +41,9 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         pbp
         next_batters = lineup.next_batters('home', 3)
         assert_equal next_batters.length, 3
-        assert_equal next_batters.first['preferred_name'], 'Dustin'
-        assert_equal next_batters.second['preferred_name'], 'Andrew'
-        assert_equal next_batters.third['preferred_name'], 'Mookie'
+        assert_equal 'Marco', next_batters.first['preferred_name']
+        assert_equal 'Dustin', next_batters.second['preferred_name']
+        assert_equal 'Andrew', next_batters.third['preferred_name']
       end
     end
     describe "National" do
@@ -85,9 +85,9 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         pbp
         next_batters = lineup.next_batters('home', 3)
         assert_equal next_batters.length, 3
-        assert_equal next_batters.first['preferred_name'], 'Rafael'
-        assert_equal next_batters.second['preferred_name'], 'José'
-        assert_equal next_batters.third['preferred_name'], 'T.J.'
+        assert_equal 'Juan', next_batters.first['preferred_name']
+        assert_equal 'Rafael', next_batters.second['preferred_name']
+        assert_equal 'José', next_batters.third['preferred_name']
       end
     end
   end
