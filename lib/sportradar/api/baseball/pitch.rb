@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :warming_up, :runners, :errors, :pitch_type_name, :x, :y, :total_pitch_count, :speed, :outcome, :hit_type, :balls, :strikes, :outs
+        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :is_hit, :warming_up, :runners, :errors, :pitch_type_name, :x, :y, :zone, :total_pitch_count, :speed, :outcome, :hit_type, :balls, :strikes, :outs
 
         def initialize(data, **opts)
           @response = data
@@ -217,7 +217,7 @@ module Sportradar
             'oTT4'    => 'Triple - Out at Home',
           }
         end
-
+        {"type"=>"steal", "id"=>"01ead210-1586-4d07-9713-6fd3d17b2b4c", "status"=>"official", "created_at"=>"2017-05-15T23:55:53+00:00", "pitcher"=>{"id"=>"9c12832b-c487-40d4-915b-e44097632d7c"}, "runners"=>[{"id"=>"65de4cd1-ca86-468c-9346-1e68d6279a8e", "starting_base"=>1, "ending_base"=>0, "outcome_id"=>"PO", "out"=>true, "last_name"=>"Gordon", "first_name"=>"Devaris", "preferred_name"=>"Dee", "jersey_number"=>"9", "description"=>"Dee Gordon picked off.", "fielders"=>[{"id"=>"bd519b9f-7539-4282-a741-3bd2bf532c40", "type"=>"putout", "sequence"=>1, "last_name"=>"Gurriel", "first_name"=>"Yulieski", "preferred_name"=>"Yulieski", "jersey_number"=>"10"}, {"id"=>"9c12832b-c487-40d4-915b-e44097632d7c", "type"=>"assist", "sequence"=>1, "last_name"=>"Musgrove", "first_name"=>"Joseph", "preferred_name"=>"Joe", "jersey_number"=>"59"}]}]}
       end
     end
   end

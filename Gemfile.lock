@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sportradar-api (0.10.33)
+    sportradar-api (0.10.36)
       activesupport
       httparty (>= 0.14.0)
 

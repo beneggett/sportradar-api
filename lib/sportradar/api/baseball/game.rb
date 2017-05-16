@@ -4,7 +4,7 @@ module Sportradar
       class Game < Data
         attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup
 
-        attr_reader :inning, :half, :outs, :bases, :pitchers
+        attr_reader :inning, :half, :outs, :bases, :pitchers, :final, :rescheduled, :inning_over
         attr_reader :outcome, :count
         DEFAULT_BASES = { '1' => nil, '2' => nil, '3' => nil }
 
@@ -123,6 +123,9 @@ module Sportradar
           @duration     = data['duration']              if data['duration']
           @attendance   = data['attendance']            if data['attendance']
 
+          @final        = data['final']                 if data['final']
+          @rescheduled  = data['rescheduled']           if data['rescheduled']
+
           @team_ids     = { home: @home_id, away: @away_id}
 
           update_bases(data)
@@ -164,7 +167,9 @@ module Sportradar
           raise e
         end
         def advance_inning
+          @inning_over = false
           return unless count['outs'] == 3
+          @inning_over = true
           @bases = DEFAULT_BASES.dup
           half, inn = if count['inning_half'] == 'B'
             ['T', count['inning'] += 1]
