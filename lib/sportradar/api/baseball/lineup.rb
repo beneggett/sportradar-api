@@ -85,6 +85,11 @@ module Sportradar
             end
           end
           upcoming[0..(number_of_upcoming_batters - 1)]
+        rescue => e
+          i ||= 0
+          game.get_summary
+          i += 1
+          retry unless i > 2
         end
 
         private
