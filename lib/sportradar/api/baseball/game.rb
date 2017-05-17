@@ -362,13 +362,13 @@ module Sportradar
         def ingest_pbp(data)
           data = data['game']
           update(data, source: :pbp)
-          # @pbp = @innings_hash.values
           innings = data['innings'].each { |inning| inning['id'] = "#{data['id']}-#{inning['number']}" }
           create_data(@innings_hash, innings, klass: Inning, api: api, game: self) if data['innings']
           extract_count(data)
           check_newness(:pitches, pitches.last&.id)
           check_newness(:events, events.last&.description)
           check_newness(:score, @score)
+          @pbp = @innings_hash.values
           data
         # rescue => e
         #   binding.pry

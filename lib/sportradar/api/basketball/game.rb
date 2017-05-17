@@ -25,7 +25,7 @@ module Sportradar
           # @season   = opts[:season]
           @updates  = {}
           @changes  = {}
-          
+
           @score          = {}
           @team_stats     = {}
           @player_stats   = {}
@@ -36,9 +36,9 @@ module Sportradar
           @away_points    = nil
           @home_id        = nil
           @away_id        = nil
-          
+
           @id = data['id']
-          
+
           update(data, **opts)
         end
         def timeouts
