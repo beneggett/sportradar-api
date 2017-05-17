@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Player < Data
-        attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :draft, :hitting, :pitching, :fielding
+        attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :primary_position, :birth_place, :college, :height, :weight, :draft, :hitting, :pitching, :fielding
 
         def initialize(data, **opts)
           @response = data # comment this out when done developing
