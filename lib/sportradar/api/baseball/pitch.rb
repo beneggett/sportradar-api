@@ -44,6 +44,14 @@ module Sportradar
           ['kF','kFT'].include? @outcome_id
         end
 
+        def ball?
+          ['bAB', 'bB', 'bDB', 'bIB', 'bPO'].include? @outcome_id
+        end
+
+        def strike?
+          ['aKLAD1', 'aKLAD2', 'aKLAD3', 'aKLAD4', 'aKSAD1', 'aKSAD2', 'aKSAD3', 'aKSAD4', 'kF', 'kFT', 'kKL', 'kKS', 'oKLT1', 'oKLT2', 'oKLT3', 'oKLT4', 'oKST1', 'oKST2', 'oKST3', 'oKST4'].include? @outcome_id
+        end
+
         def hit_ends_ab?
           @hit_location.present? && !foul?
         end
