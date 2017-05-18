@@ -40,6 +40,14 @@ module Sportradar
           @pitches_hash.values
         end
 
+        def foul?
+          ['kF','kFT'].include? @outcome_id
+        end
+
+        def hit_ends_ab?
+          @hit_location.present? && !foul?
+        end
+
         def parse_hit(data)
           @hit_type     = data['hit_type']      if data['hit_type']
           @hit_location = data['hit_location']  if data['hit_location']
