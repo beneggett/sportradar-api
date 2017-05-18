@@ -3,7 +3,7 @@ module Sportradar
     module Baseball
       class Event
         class WarmingUp < Data
-          attr_accessor :response, :id, :first_name, :last_name, :player_id
+          attr_accessor :response, :id, :first_name, :last_name, :player_id, :team_id
 
           def initialize(data, **opts)
             @response       = data
@@ -15,6 +15,7 @@ module Sportradar
             @first_name     = data['first_name'] if data['first_name']
             @last_name      = data['last_name'] if data['last_name']
             @player_id      = data['player_id'] if data['player_id']
+            @team_id        = data['team_id'] if data['team_id']
             @preferred_name = data['preferred_name'] if data['preferred_name']
             update(data)
           end
