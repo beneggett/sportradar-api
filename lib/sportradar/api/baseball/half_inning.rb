@@ -24,7 +24,7 @@ module Sportradar
         end
 
         def over?
-          pitches.last.count&.dig('outs') == 3
+          pitches.last&.count&.dig('outs') == 3
         end
 
         def pitches
