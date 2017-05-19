@@ -8,6 +8,7 @@ module Sportradar
           def initialize(data, **opts)
             # @response       =  data
             @event          =  opts[:event]
+            @description    =  data["description"]
             @id             =  data["id"]
             @player_id      =  data["player_id"]
             @order          =  data["order"]
