@@ -240,10 +240,6 @@ module Sportradar
           @pbp ||= innings
         end
 
-        def atbats
-          innings.flat_map(&:atbats)
-        end
-
         def events
           innings.flat_map(&:events)
         end
