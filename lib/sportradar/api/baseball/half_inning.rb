@@ -44,6 +44,21 @@ module Sportradar
           @events
         end
 
+        def hits
+          at_bats.flat_map(&:pitches).select {|pitch| pitch.is_hit }
+        end
+
+        def hit_count
+          hits.count
+        end
+
+        def errors
+          at_bats.flat_map(&:pitches).flat_map(&:errors).compact
+        end
+
+        def error_count
+          errors.count
+        end
         # private def events_by_klass(klass)
         #   @events_hash.each_value.grep(klass)
         # end

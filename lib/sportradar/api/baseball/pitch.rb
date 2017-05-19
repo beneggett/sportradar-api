@@ -40,6 +40,10 @@ module Sportradar
           @pitches_hash.values
         end
 
+        def homerun?
+          @outcome_id == 'aHR'
+        end
+
         def foul?
           ['kF','kFT'].include? @outcome_id
         end
@@ -128,6 +132,7 @@ module Sportradar
         def self.pitch_type(code)
           pitch_types[code]
         end
+
         def self.pitch_types
           @pitch_types ||= {
             'FA' => 'Fastball',

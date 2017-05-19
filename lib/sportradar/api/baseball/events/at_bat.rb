@@ -33,18 +33,23 @@ module Sportradar
           def hit?
             single? || double? || triple? || homerun?
           end
+
           def single?
             outcome.to_s.include?('Single')
           end
+
           def double?
             outcome.to_s.include?('Double')
           end
+
           def triple?
             outcome.to_s.include?('Triple')
           end
+
           def homerun?
-            outcome == 'Homerun'
+            pitchest.last&.homerun?
           end
+
           def strikeout?
             pitches.last&.count.dig('strikes') == 3
           end
@@ -65,6 +70,7 @@ module Sportradar
           def over?
             pitches.last&.is_ab_over
           end
+
 
           def pitches
             @pitches_hash.values
