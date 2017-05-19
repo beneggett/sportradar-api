@@ -60,7 +60,8 @@ module Sportradar
             @pitcher_id   = data['pitcher_id']  if data['pitcher_id']
             # this hasn't been checked yet
             # pitch events
-            create_data(@pitches_hash, data.dig('events'), klass: Pitch, api: @api, at_bat: self)
+            pitches = data.dig('events').select {|pitch| pitch["type"] == 'pitch' }
+            create_data(@pitches_hash, pitches, klass: Pitch, api: @api, at_bat: self)
           end
 
           def data_key
