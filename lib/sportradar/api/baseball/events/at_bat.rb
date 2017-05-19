@@ -47,7 +47,7 @@ module Sportradar
           end
 
           def homerun?
-            pitchest.last&.homerun?
+            pitches.last&.homerun?
           end
 
           def strikeout?
