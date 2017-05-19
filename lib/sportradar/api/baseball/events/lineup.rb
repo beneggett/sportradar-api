@@ -6,7 +6,7 @@ module Sportradar
           attr_accessor :response, :id, :hitter_id, :outcome, :description, :event, :player_id, :order, :position, :team_id, :last_name, :first_name, :preferred_name, :jersey_number
 
           def initialize(data, **opts)
-            # @response       =  data
+            @response       =  data
             @event          =  opts[:event]
             @description    =  data["description"]
             @id             =  data["id"]
