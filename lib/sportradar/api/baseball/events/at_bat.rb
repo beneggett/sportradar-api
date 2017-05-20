@@ -3,7 +3,7 @@ module Sportradar
     module Baseball
       class Event
         class AtBat < Data
-          attr_accessor :response, :id, :event, :hitter_id, :outcome, :description
+          attr_accessor :response, :id, :event, :hitter_id, :hitter_hand, :pitcher_id, :pitcher_hand, :outcome, :description
 
           def initialize(data, **opts)
             @response = data
@@ -58,6 +58,8 @@ module Sportradar
             @description  = data['description'] if data['description']
             @hitter_id    = data['hitter_id']   if data['hitter_id']
             @pitcher_id   = data['pitcher_id']  if data['pitcher_id']
+            @hitter_hand    = data['hitter_hand']   if data['hitter_hand']
+            @pitcher_hand   = data['pitcher_hand']  if data['pitcher_hand']
             # this hasn't been checked yet
             # pitch events
             pitches = data.dig('events').select {|pitch| pitch["type"] == 'pitch' }
