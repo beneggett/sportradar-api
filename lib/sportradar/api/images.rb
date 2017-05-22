@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     class Images < Request
-      attr_accessor :sport, :league, :access_level, :nfl_premium, :usat_premium, :event_id, :date
+      attr_accessor :sport, :league, :access_level, :nfl_premium, :usat_premium, :event_id, :date, :live_image_request
       def initialize( sport, access_level: 't', league: nil, nfl_premium: false, usat_premium: false, event_id: nil, date: nil )
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
@@ -67,6 +67,7 @@ module Sportradar
       def event_manifests
         # /[league]/[image_type]/events/[year]/[month]/[day]/manifest.[format]?api_key={your_api_key}
         raise Sportradar::Api::Error::InvalidType unless date.present? || event_id.present?
+        @live_image_request = true
         if event_id.present?
           response = get request_url("actionshots/events/game/#{event_id}/manifest")
         elsif date.present?
@@ -114,6 +115,10 @@ module Sportradar
             Sportradar::Api.api_key_params("images_mlb_premium", "production")
           elsif sport == 'mlb' && usat_premium
             Sportradar::Api.api_key_params("images_mlb_premium")
+          elsif live_image_request && access_level == 'p'
+            Sportradar::Api.api_key_params("live_images_#{sport}", "production")
+          elsif live_image_request
+            Sportradar::Api.api_key_params("live_images_#{sport}")
           elsif access_level == 'p'
             Sportradar::Api.api_key_params("images_#{sport}", "production")
           else
