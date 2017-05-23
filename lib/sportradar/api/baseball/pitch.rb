@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Pitch < Data
-        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :is_hit, :warming_up, :runners, :errors, :pitch_type_name, :x, :y, :zone, :total_pitch_count, :atbat_pitch_count, :speed, :outcome, :hit_type, :balls, :strikes, :outs
+        attr_accessor :response, :id, :at_bat, :outcome_id, :status, :count, :is_ab_over, :is_hit, :warming_up, :runners, :errors, :pitch_type_name, :x, :y, :zone, :total_pitch_count, :atbat_pitch_count, :speed, :outcome, :hit_type, :balls, :strikes, :outs, :fielders
 
         def initialize(data, **opts)
           @response = data
