@@ -207,7 +207,7 @@ module Sportradar
         end
 
         def leading_team_id
-          return nil if score.values.uniq.size == 1
+          return nil if tied?
           score.max_by(&:last).first
         end
 
