@@ -34,6 +34,8 @@ module Sportradar
             single? || double? || triple? || homerun?
           end
 
+
+
           def single?
             outcome.to_s.include?('Single')
           end
@@ -50,8 +52,16 @@ module Sportradar
             pitches.last&.homerun?
           end
 
+          def runs?
+            runs.any?
+          end
+
           def strikeout?
             pitches.last&.count.dig('strikes') == 3
+          end
+
+          def runs
+            pitches.flat_map {|pitch| pitch.runners&.select  {|x| x.ending_base == 4 } }.compact
           end
 
           def update(data, **opts)
