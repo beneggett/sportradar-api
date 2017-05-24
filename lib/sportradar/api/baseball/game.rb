@@ -169,6 +169,13 @@ module Sportradar
         def advance_inning
           @inning_over = false
           return unless count['outs'] == 3
+          if count['inning'] >= 9
+            if count['inning_half'] == 'T' && leading_team_id == home.id
+              return
+            elsif count['inning_half'] == 'B' && !tied?
+              return
+            end
+          end
           @inning_over = true
           @bases = DEFAULT_BASES.dup
           half, inn = if count['inning_half'] == 'B'
