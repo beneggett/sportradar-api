@@ -85,6 +85,7 @@ module Sportradar
 
       # The Player Images, Coach Images, Venue Images APIs aren't really meant to be used directly, the manifests return an href path of an image we can pass it into the image_url method to get the entire image url
       def image_url(href)
+        @live_image_request = true if href.include?('actionshots')
         href.slice!(0) if href.chars.first == '/' # remove initial '/'
         set_base request_url(href) + api_key_query_string
       end
