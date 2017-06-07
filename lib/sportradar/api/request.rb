@@ -16,8 +16,14 @@ module Sportradar
           rescue EOFError
             raise Sportradar::Api::Error::NoData
         end
-        return Sportradar::Api::Error.new(response.code, response.message, response) unless response.success?
-        response
+        unless response.success?
+          puts url + "?api_key=#{api_key[:api_key]}" # uncomment for debugging
+          puts
+          puts response.inspect
+          Sportradar::Api::Error.new(response.code, response.message, response)
+        else
+          response
+        end
       end
 
       def get_request_info(url)

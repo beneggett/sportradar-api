@@ -2,23 +2,24 @@ module Sportradar
   module Api
     module Football
       class Game < Data
-        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup
+        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup, :week
 
-        attr_reader :inning, :half, :outs, :bases, :pitchers, :final, :rescheduled, :inning_over
-        attr_reader :outcome, :count
-        DEFAULT_BASES = { '1' => nil, '2' => nil, '3' => nil }
+        attr_reader :week_number, :year, :type
 
         def initialize(data, **opts)
           @response = data
           @api      = opts[:api]
           @week     = opts[:week]
 
+          @updates  = {}
+          @changes  = {}
+
+          @teams_hash = {}
+
           @quarters_hash = {}
+          @score = {}
 
           update(data, **opts)
-        end
-        def lineup
-          @lineup ||= Lineup.new({}, game: self)
         end
 
         def timeouts
@@ -53,26 +54,36 @@ module Sportradar
         end
 
         def update(data, source: nil, **opts)
-          @year          = response['year'] || @week&.season.year
-          @type          = response['type'] || @week&.season.type
-          @week_number   = response['week'] || @week&.sequence
-          @coverage      = response['coverage']
-          @scheduled     = Time.parse(response["scheduled"]) if response["scheduled"]
-          @home          = Team.new(response['home'], api: api, game: self)
-          @away          = Team.new(response['away'], api: api, game: self)
-          @status        = response['status']
-          @home_rotation = response['home_rotation']
-          @away_rotation = response['away_rotation']
-          @neutral_site  = response['neutral_site'] == 'true'
-          @home_points   = response['home_points']
-          @away_points   = response['away_points']
-          @venue         = response['venue']
-          # @venue         = Sportradar::Api::Football::Venue.new(response["venue"]) if response["venue"]
-          @weather       = response['weather']
-          @broadcast     = response['broadcast']
-          @links         = structure_links response.dig('links', 'link')
+          @id           = data['id']
+          # @year          = data['year'] || @week&.season.year
+          # @type          = data['type'] || @week&.season.type
+          # @week_number   = data['week'] || @week&.sequence
 
-          @teams_hash    = { @home.id => @home, @away.id => @away }
+          @week_number = data['week_number'] || week&.number
+          @year        = data['year'] || week&.hierarchy&.year
+          @type        = data['type'] || week&.hierarchy&.type
+
+
+          @coverage      = data['coverage']
+          @scheduled     = Time.parse(data["scheduled"]) if data["scheduled"]
+          @home          = Team.new(data['home_team'], api: api, game: self) if data['home_team'].is_a?(Hash)
+          @home_alias    = data['home'] if data['home'].is_a?(String)
+          @away          = Team.new(data['away_team'], api: api, game: self) if data['away_team'].is_a?(Hash)
+          @away_alias    = data['away'] if data['away'].is_a?(String)
+          @status        = data['status']
+          @home_rotation = data['home_rotation']
+          @away_rotation = data['away_rotation']
+          @neutral_site  = data['neutral_site']
+          @home_points   = data['home_points']
+          @away_points   = data['away_points']
+          @venue         = data['venue']
+          # @venue         = Sportradar::Api::Football::Venue.new(data["venue"]) if data["venue"]
+          @weather       = data['weather']
+          @broadcast     = data['broadcast']
+          @attendance    = data['attendance']
+          # @links         = data['links'] ? structure_links(data['links']) : {}
+
+          @teams_hash    = { @home.id => @home, @away.id => @away } if @home && @away
 
           create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
         end
@@ -84,8 +95,16 @@ module Sportradar
           @teams_hash[@home_id] || @home
         end
 
+        def home_alias
+          @home_alias || @home&.alias
+        end
+
         def away
           @teams_hash[@away_id] || @away
+        end
+
+        def away_alias
+          @away_alias || @away&.alias
         end
 
         def tied?
@@ -203,18 +222,18 @@ module Sportradar
         end
 
         # url path helpers
-        def path_base
-          "games/#{ id }"
-        end
-
         def path_box
           "#{ path_base }/boxscore"
         end
-
+        def path_extended_box
+          "#{ path_base }/extended-boxscore"
+        end
         def path_pbp
           "#{ path_base }/pbp"
         end
-
+        def path_roster
+          "#{ path_base }/roster"
+        end
         def path_summary
           "#{ path_base }/summary"
         end
@@ -227,10 +246,12 @@ module Sportradar
         end
 
         def ingest_box(data)
-          data = data['game']
+          data = data
           update(data, source: :box)
           check_newness(:box, @clock)
           data
+        # rescue => e
+        #   binding.pry
         end
 
         def queue_pbp
@@ -244,9 +265,9 @@ module Sportradar
         end
 
         def ingest_pbp(data)
-          data = data['game']
+          data = data
           update(data, source: :pbp)
-          create_data(@quarters_hash, data['quarters'], klass: Quarter, api: api, game: self) if data['quarters']
+          create_data(@quarters_hash, data['quarters'], klass: Sportradar::Api::Football::Quarter, identifier: 'number', api: api, game: self) if data['quarters']
           check_newness(:pbp, plays.last&.description)
           check_newness(:score, @score)
           @pbp = @quarters_hash.values
@@ -266,12 +287,14 @@ module Sportradar
         end
 
         def ingest_summary(data)
-          data = data['game']
+          data = data
           update(data, source: :summary)
           @quarter = data.delete('quarter').to_i
           check_newness(:box, @clock)
           check_newness(:score, @score)
           data
+        rescue => e
+          binding.pry
         end
 
       end
@@ -281,29 +304,14 @@ end
 
 __END__
 
-# mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
-# res = mlb.get_schedule;
-# g = mlb.games.first
-# g = Sportradar::Api::Baseball::Game.new('id' => "8cd71519-429f-4461-88a2-8a0e134eb89b")
-g = Sportradar::Api::Baseball::Game.new('id' => "9d0fe41c-4e6b-4433-b376-2d09ed39d184");
-g = Sportradar::Api::Baseball::Game.new('id' => "fe9f37fd-6848-4a32-a999-9655044b7319");
+ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new(year: 2016)
+ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
+File.binwrite('ncaafb.bin', Marshal.dump(ncaafb))
+ncaafb = Marshal.load(File.binread('ncaafb.bin'));
+gg = ncaafb.games;
+g = gg.first;
+g.week_number
+g.year
+g.type
 res = g.get_pbp;
-res = g.get_summary;
-res = g.get_box # probably not as useful as summary
-
-
-mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
-res = mlb.get_daily_summary;
-g = mlb.games[8];
-g.count
-g.get_pbp;
-g.count
-
-# mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new;
-# res = mlb.get_daily_summary;
-# g = mlb.games.sort_by(&:scheduled).first;
-g = Sportradar::Api::Baseball::Game.new('id' => "8731b56d-9037-44d1-b890-fa496e94dc10");
-res = g.get_pbp;
-res = g.get_summary;
-g.pitchers
 

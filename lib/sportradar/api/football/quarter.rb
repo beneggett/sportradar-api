@@ -2,11 +2,12 @@ module Sportradar
   module Api
     module Football
       class Quarter < Data
-        attr_accessor :response, :id, :number, :sequence, :home_points, :away_points, :drives, :scoring
+        attr_accessor :response, :api, :id, :number, :sequence, :home_points, :away_points, :drives, :scoring
 
         def initialize(data, **opts)
           @response = data
-          @id = data["id"]
+          @id = data["number"]
+          @api = opts[:api]
 
           update(data, **opts)
         end
@@ -20,7 +21,7 @@ module Sportradar
           @home_info = data["home"]
           @away_info = data["away"]
 
-          create_data(@drives_hash, data['drives'], klass: Drive, api: api, game: self) if data['drives']
+          create_data(@drives_hash, data['pbp'], klass: Drive, api: api, game: self) if data['pbp']
 
           self
         end

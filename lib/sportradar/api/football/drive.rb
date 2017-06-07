@@ -13,6 +13,7 @@ module Sportradar
         end
 
         def update(data, **opts)
+          @type           = data['type']
           @sequence       = data["sequence"]
           @start_reason   = data["start_reason"]
           @end_reason     = data["end_reason"]

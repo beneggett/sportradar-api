@@ -3,7 +3,7 @@ module Sportradar
     module Football
       class Ncaafb
         class Hierarchy < Data
-          attr_accessor :response, :id, :name, :alias, :year, :type
+          attr_accessor :response, :id, :name, :alias, :type
           def all_attributes
             [:name, :alias, :leagues, :divisions, :teams]
           end
@@ -11,9 +11,12 @@ module Sportradar
           def initialize(data = {}, **opts)
             # @response = data
             @api  = opts[:api]
-            @id   = data.dig('league', 'id')
+            @id   = data['id']
+            @season = opts[:year]
+            @type   = opts[:type]
 
-            @leagues_hash = {}
+            @divisions_hash = {}
+            @weeks_hash = {}
             @games_hash = {}
             @teams_hash = {}
 
@@ -21,21 +24,31 @@ module Sportradar
 
           def update(data, source: nil, **opts)
             # update stuff
-            @name     = data.dig('league', 'name')  if data.dig('league', 'name')
-            @alias    = data.dig('league', 'alias') if data.dig('league', 'alias')
+            @id     = data['id'] if data['id']
+            @season = data['season']  if data['season']
+            @type   = data['type']    if data['type']
+            # @name     = data.dig('league', 'name')  if data.dig('league', 'name')
+            # @alias    = data.dig('league', 'alias') if data.dig('league', 'alias')
 
-            @year     = data.dig('season', 'year')  if data.dig('season', 'year')
-            @type     = data.dig('season', 'type')  if data.dig('season', 'type')
+            # @year     = data.dig('season', 'year')  if data.dig('season', 'year')
+            # @type     = data.dig('season', 'type')  if data.dig('season', 'type')
 
-            @divisions_hash = create_data({}, data['divisions'],  klass: Division,  hierarchy: self, api: @api) if data['divisions']
-            @teams_hash   = create_data({}, data['teams'],        klass: Team,      hierarchy: self, api: api)  if data['teams']
+            @divisions_hash = create_data(@divisions_hash, data['divisions'], klass: Division,  hierarchy: self, api: api) if data['divisions']
+            @teams_hash     = create_data(@teams_hash,     data['teams'],     klass: Team,      hierarchy: self, api: api) if data['teams']
+
+            if data['weeks']
+              create_data(@weeks_hash, data['weeks'], klass: Week, hierarchy: self, api: @api)
+            end
 
             if data['games']
               if data['games'].first.keys == ['game']
                 data['games'].map! { |hash| hash['game'] }
               end
-              @games_hash = create_data({}, data['games'],   klass: Game,   hierarchy: self, api: api)
+              @games_hash = create_data(@games_hash, data['games'],   klass: Game,   hierarchy: self, api: api)
             end
+          end
+          def weeks
+            @weeks_hash.values
           end
           def divisions
             @divisions_hash.values
@@ -69,7 +82,8 @@ module Sportradar
           end
 
           def games
-            @games_hash.values
+            get_schedule if @weeks_hash.empty?
+            weeks.flat_map(&:games)
           end
           def teams
             teams = conferences.flat_map(&:teams)
@@ -88,8 +102,6 @@ module Sportradar
             teams.detect { |team| team.id == team_id }
           end
 
-
-
           # api stuff
           def api
             @api || Sportradar::Api::Football::Ncaafb.new
@@ -105,8 +117,9 @@ module Sportradar
             'reg'
           end
           def season_year
-            @year || default_year
+            @season || default_year
           end
+          alias :year :season_year
           def ncaafb_season
             @type || default_season
           end
@@ -144,13 +157,30 @@ module Sportradar
           end
 
           def ingest_schedule(data)
-            update(data, source: :games)
+            update(data, source: :weeks)
             data
           end
 
           def queue_schedule
             url, headers, options, timeout = api.get_request_info(path_schedule)
             {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_schedule)}
+          end
+
+          ## weekly schedule
+          def get_weekly_schedule(ncaafb_season_week = 1)
+            data = api.get_data(path_weekly_schedule(ncaafb_season_week)).to_h
+            ingest_weekly_schedule(data)
+          end
+
+          def ingest_weekly_schedule(data)
+            # update(data, source: :weeks)
+            create_data(@weeks_hash, data, klass: Week, hierarchy: self, api: api)
+            data
+          end
+
+          def queue_weekly_schedule(ncaafb_season_week = 1)
+            url, headers, options, timeout = api.get_request_info(path_weekly_schedule(ncaafb_season_week))
+            {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_weekly_schedule)}
           end
 
           ## hierarchy
@@ -229,3 +259,5 @@ __END__
 
 
 ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
+res1 = ncaafb.get_schedule;
+res2 = ncaafb.get_weekly_schedule;

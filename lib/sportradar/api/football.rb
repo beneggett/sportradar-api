@@ -17,12 +17,21 @@ require "sportradar/api/football/stat_pack/rushing"
 
 require "sportradar/api/football/team"
 require "sportradar/api/football/record"
+require "sportradar/api/football/week"
+require "sportradar/api/football/game"
+require "sportradar/api/football/quarter"
+require "sportradar/api/football/drive"
+require "sportradar/api/football/play"
+require "sportradar/api/football/event"
 
 require "sportradar/api/football/ncaafb"
 require "sportradar/api/football/ncaafb/hierarchy"
+require "sportradar/api/football/ncaafb/week"
 require "sportradar/api/football/ncaafb/division"
 require "sportradar/api/football/ncaafb/conference"
 require "sportradar/api/football/ncaafb/team"
+require "sportradar/api/football/ncaafb/game"
+require "sportradar/api/football/ncaafb/player"
 
 
 
