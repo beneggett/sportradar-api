@@ -54,24 +54,21 @@ g = ncaafb.games.first;
 res = g.get_pbp;
 g.plays.count
 g.plays.map(&:type)
-g.plays.select {|p| p.type == 'event' }
+g.plays.select {|p| p.type == 'event' } # => find the commercial breaks
+
 sr = Sportradar::Api::Nfl.new
-sch = sr.schedule(2016)
-ls sc
-ls sch
+sch = sr.schedule(2016);
 sch.weeks.count
 sch.weeks.first.class
 sch.weeks.first.games.size
-sch.weeks.first.games.first
+sch.weeks.first.games.first;
 sg = sch.weeks.first.games.first;
 sg
-pbp = sr.play_play_play(sg.id);
 pbp = sr.play_by_play(sg.id);
-pbp.events
 pbp.drives.size
 pbp.drives.flat_map(&:plays)
 pbp.drives.flat_map(&:plays).first.response
-pbp.drives.flat_map(&:events)
+pbp.drives.flat_map(&:events).compact
 pbp.drives.flat_map(&:plays).map(&:type)
 g.drives.select {|d| d.type == 'event' }
 g.plays.select {|p| p.type == 'event' }.size

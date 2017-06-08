@@ -8,6 +8,22 @@ module Sportradar
             "#{ year }/#{ type }/#{ week_number.to_s.rjust(2, '0') }/#{ away_alias }/#{ home_alias }"
           end
 
+
+          def get_extended_box
+            data = api.get_data(path_extended_box)
+            ingest_extended_box(data)
+          end
+
+          def ingest_extended_box(data)
+            data = data
+            update(data, source: :extended_box)
+            check_newness(:extended_box, @clock)
+            data
+          # rescue => e
+          #   binding.pry
+          end
+
+
           def team_class
             Team
           end
