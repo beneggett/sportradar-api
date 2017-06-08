@@ -2,12 +2,22 @@ module Sportradar
   module Api
     module Football
       class Drive < Data
-        attr_accessor :response, :id, :sequence, :start_reason, :end_reason, :play_count, :duration, :first_downs, :gain, :penalty_yards, :scoring_drive, :quarter, :team, :plays, :events
+        attr_accessor :response, :api, :id, :sequence, :start_reason, :end_reason, :play_count, :duration, :first_downs, :gain, :penalty_yards, :scoring_drive, :quarter, :team
+
+        def self.new(data, **opts)
+          if data['type'] == 'event'
+            Event.new(data, **opts)
+          else
+            super
+          end
+        end
 
         def initialize(data, **opts)
           @response      = data
           @id            = data["id"]
+          @api           = opts[:api]
           @plays_hash    = {}
+          @events_hash   = {}
 
           update(data, **opts)
         end
@@ -31,6 +41,14 @@ module Sportradar
           create_data(@events_hash, data['events'], klass: Event, api: api, game: self) if data['events']
 
           self
+        end
+
+        def plays
+          @plays_hash.values
+        end
+
+        def events
+          @events_hash.values
         end
 
         def end_reason_possibilities

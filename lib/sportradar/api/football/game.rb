@@ -156,7 +156,7 @@ module Sportradar
         end
 
         def plays
-          drives.map(&:plays).compact
+          drives.flat_map(&:plays).compact
         end
 
         # def summary
@@ -267,7 +267,7 @@ module Sportradar
         def ingest_pbp(data)
           data = data
           update(data, source: :pbp)
-          create_data(@quarters_hash, data['quarters'], klass: Sportradar::Api::Football::Quarter, identifier: 'number', api: api, game: self) if data['quarters']
+          create_data(@quarters_hash, data['quarters'], klass: quarter_class, identifier: 'number', api: api, game: self) if data['quarters']
           check_newness(:pbp, plays.last&.description)
           check_newness(:score, @score)
           @pbp = @quarters_hash.values
@@ -295,6 +295,10 @@ module Sportradar
           data
         rescue => e
           binding.pry
+        end
+
+        def quarter_class
+          Sportradar::Api::Football::Quarter
         end
 
       end

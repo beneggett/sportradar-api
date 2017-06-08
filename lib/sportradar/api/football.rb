@@ -31,6 +31,9 @@ require "sportradar/api/football/ncaafb/division"
 require "sportradar/api/football/ncaafb/conference"
 require "sportradar/api/football/ncaafb/team"
 require "sportradar/api/football/ncaafb/game"
+require "sportradar/api/football/ncaafb/quarter"
+require "sportradar/api/football/ncaafb/drive"
+require "sportradar/api/football/ncaafb/play"
 require "sportradar/api/football/ncaafb/player"
 
 

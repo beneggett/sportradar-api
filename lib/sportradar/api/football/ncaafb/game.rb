@@ -19,6 +19,11 @@ module Sportradar
             'quarter'
           end
 
+          def quarter_class
+            Sportradar::Api::Football::Ncaafb::Quarter
+          end
+
+
           def api
             @api || Sportradar::Api::Football::Ncaafb.new
           end
@@ -32,15 +37,21 @@ end
 __END__
 
 File.binwrite('ncaafb.bin', Marshal.dump(ncaafb))
-ncaafb = Marshal.load(File.binread('ncaafb.bin'));
 
 ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new(year: 2016)
 ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
 gg = ncaafb.games;
+ncaafb = Marshal.load(File.binread('ncaafb.bin'));
+g = ncaafb.games.first;
 g = gg.first;
 g = gg.sample;
 g.week_number
 g.year
 g.type
 g.path_pbp
-g.get_pbp
+res = g.get_pbp;
+
+ncaafb = Marshal.load(File.binread('ncaafb.bin'));
+g = ncaafb.games.first;
+res = g.get_pbp;
+g.quarters.first.drives[1]

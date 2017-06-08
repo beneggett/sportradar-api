@@ -2,12 +2,14 @@ module Sportradar
   module Api
     module Football
       class Quarter < Data
-        attr_accessor :response, :api, :id, :number, :sequence, :home_points, :away_points, :drives, :scoring
+        attr_accessor :response, :api, :id, :number, :sequence, :home_points, :away_points, :scoring
 
         def initialize(data, **opts)
           @response = data
           @id = data["number"]
           @api = opts[:api]
+
+          @drives_hash = {}
 
           update(data, **opts)
         end
@@ -24,6 +26,10 @@ module Sportradar
           create_data(@drives_hash, data['pbp'], klass: Drive, api: api, game: self) if data['pbp']
 
           self
+        end
+
+        def drives
+          @drives_hash.values
         end
 
       end
