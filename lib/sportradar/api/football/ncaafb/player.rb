@@ -3,7 +3,7 @@ module Sportradar
     module Football
       class Ncaafb
         class Player < Data
-          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft
+          attr_accessor :response, :id, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft
 
 
           def initialize(data, **opts)
@@ -17,10 +17,10 @@ module Sportradar
           end
 
           def name # to match api for NFL::Player
-            full_name
+            name_full
           end
           def display_name
-            full_name
+            name_full
           end
           def jersey
             @jersey_number
@@ -32,10 +32,10 @@ module Sportradar
 
           def update(data, **opts)
             @status           = data['status']            if data['status']            # "ACT",
-            @full_name        = data['full_name']         if data['full_name']         # "Festus Ezeli",
-            @first_name       = data['first_name']        if data['first_name']        # "Festus",
-            @last_name        = data['last_name']         if data['last_name']         # "Ezeli",
-            @abbr_name        = data['abbr_name']         if data['abbr_name']         # "F.Ezeli",
+            @name_full        = data['name_full']         if data['name_full']         # "Festus Ezeli",
+            @name_first       = data['name_first']        if data['name_first']        # "Festus",
+            @name_last        = data['name_last']         if data['name_last']         # "Ezeli",
+            @name_abbr        = data['name_abbr']         if data['name_abbr']         # "F.Ezeli",
             @height           = data['height']            if data['height']            # "83",
             @weight           = data['weight']            if data['weight']            # "265",
             @position         = data['position']          if data['position']          # "C",
