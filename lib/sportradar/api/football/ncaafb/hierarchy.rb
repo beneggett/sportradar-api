@@ -33,8 +33,8 @@ module Sportradar
             # @year     = data.dig('season', 'year')  if data.dig('season', 'year')
             # @type     = data.dig('season', 'type')  if data.dig('season', 'type')
 
-            @divisions_hash = create_data(@divisions_hash, data['divisions'], klass: Division,  hierarchy: self, api: api) if data['divisions']
-            @teams_hash     = create_data(@teams_hash,     data['teams'],     klass: Team,      hierarchy: self, api: api) if data['teams']
+            create_data(@divisions_hash, data['divisions'], klass: Division,  hierarchy: self, api: api) if data['divisions']
+            create_data(@teams_hash,     data['teams'],     klass: Team,      hierarchy: self, api: api) if data['teams']
 
             if data['weeks']
               create_data(@weeks_hash, data['weeks'], klass: Week, hierarchy: self, api: @api)
@@ -142,7 +142,7 @@ module Sportradar
             "teams/#{division}/#{season_year}/#{ncaafb_season}/standings"
           end
           def path_hierarchy(division = 'FBS')
-            "teams/#{division}/#{season_year}/#{ncaafb_season}/standings"
+            "teams/#{division}/hierarchy"
           end
           def path_season_stats(division = 'FBS')
             "teams/#{division}/#{season_year}/#{ncaafb_season}/statistics"
@@ -190,7 +190,7 @@ module Sportradar
           end
 
           def ingest_hierarchy(data)
-            update(data, source: :teams)
+            create_data(@divisions_hash, data, klass: Division,  hierarchy: self, api: api)
             data
           end
 

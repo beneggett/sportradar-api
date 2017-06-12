@@ -31,9 +31,6 @@ module Sportradar
           @seed     = data['seed'].to_i             if data['seed']
           @alias    = data['alias']                 if data['alias']
           @points   = data['points'].to_i           if data['points']
-          # @home     = data['home'] == 'true'        if data['home']
-          # @away     = data['away'] == 'true'        if data['away']
-          # @scoring  = data.dig('scoring', 'quarter') if data.dig('scoring', 'quarter')
 
           parse_records(data)                                          if data['records']
           parse_players(data.dig('players'), opts[:game])   if data.dig('players')

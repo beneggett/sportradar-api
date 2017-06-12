@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Ncaafb
-        class Conference < Data
+        class Subdivision < Data
           attr_accessor :response, :id, :name, :alias
 
           def initialize(data, **opts)
@@ -11,26 +11,16 @@ module Sportradar
 
             @id    = data["id"]
             @name  = data["name"]
-            @alias = data["alias"]
+
             @teams_hash = {}
-            @subdivisions_hash = {}
             @assigned_teams = nil
             # binding.pry
 
             create_data(@teams_hash, data["teams"], klass: Team, conference: self, api: @api) if data["teams"]
-            create_data(@subdivisions_hash, data["subdivisions"], klass: Subdivision, conference: self, api: @api) if data["subdivisions"]
           end
 
           def teams
-            @assigned_teams || begin
-              if !@subdivisions_hash.empty?
-                @subdivisions_hash.each_value.flat_map(&:teams)
-              elsif !@teams_hash.empty?
-                @teams_hash.values
-              else
-                []
-              end
-            end
+            @assigned_teams || @teams_hash.values
           end
           def teams=(array)
             @assigned_teams = array

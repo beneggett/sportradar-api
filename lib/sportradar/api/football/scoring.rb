@@ -35,10 +35,6 @@ module Sportradar
               {}
             end
           end
-          # parse data structure
-          # handle data from team (all quarters)
-          # handle data from quarter (both teams)
-          # handle data from game?
           @scores.each { |k, v| v.merge!(new_scores.delete(k) || {} ) }
           new_scores.each { |k, v| @scores.merge!(k => v) }
         end
