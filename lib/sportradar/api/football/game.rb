@@ -9,12 +9,16 @@ module Sportradar
         def initialize(data, **opts)
           @response = data
           @api      = opts[:api]
-          @week     = opts[:week]
+          # @week     = opts[:week]
+
+          @scoring_raw = Scoring.new(data, game: self)
 
           @updates  = {}
           @changes  = {}
 
           @teams_hash = {}
+          @team_stats = {}
+          @player_stats = {}
 
           @quarters_hash = {}
           @score = {}
@@ -30,7 +34,7 @@ module Sportradar
           scoring.dig(team_id, stat_name)
         end
         def stats(team_id)
-          team_id.is_a?(Symbol) ? @team_stats[@team_ids[team_id]].to_i : @team_stats[team_id].to_i
+          team_id.is_a?(Symbol) ? @team_stats[@team_ids[team_id]] : @team_stats[team_id]
         end
 
         def update_stats(team, stats)
@@ -59,9 +63,9 @@ module Sportradar
           # @type          = data['type'] || @week&.season.type
           # @week_number   = data['week'] || @week&.sequence
 
-          @week_number = data['week_number'] || week&.number
-          @year        = data['year'] || week&.hierarchy&.year
-          @type        = data['type'] || week&.hierarchy&.type
+          @week_number = data['week_number']  || week&.number || opts[:week]&.number  || @week_number
+          @year        = data['year']         || week&.year   || opts[:week]&.year    || @year
+          @type        = data['type']         || week&.type   || opts[:week]&.type    || @type
 
 
           @coverage      = data['coverage']
@@ -84,6 +88,8 @@ module Sportradar
           # @links         = data['links'] ? structure_links(data['links']) : {}
 
           @teams_hash    = { @home.id => @home, @away.id => @away } if @home && @away
+
+          @scoring_raw.update(data, source: source)
 
           create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
         end
@@ -234,6 +240,9 @@ module Sportradar
         def path_roster
           "#{ path_base }/roster"
         end
+        def path_statistics
+          "#{ path_base }/statistics"
+        end
         def path_summary
           "#{ path_base }/summary"
         end
@@ -271,6 +280,25 @@ module Sportradar
           check_newness(:pbp, plays.last&.description)
           check_newness(:score, @score)
           @pbp = @quarters_hash.values
+          data
+        # rescue => e
+        #   binding.pry
+        end
+
+        def get_statistics
+          data = api.get_data(path_statistics)
+          ingest_statistics(data)
+        end
+
+        def queue_statistics
+          url, headers, options, timeout = api.get_request_info(path_statistics)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_statistics)}
+        end
+
+        def ingest_statistics(data)
+          data = data
+          update(data, source: :statistics)
+          check_newness(:statistics, @clock)
           data
         # rescue => e
         #   binding.pry
@@ -318,4 +346,6 @@ g.week_number
 g.year
 g.type
 res = g.get_pbp;
+
+g = gg.detect{|g| g.id == "b8001149-bb55-4014-a3e8-6ac0a261dfe1" } # college overtime game
 

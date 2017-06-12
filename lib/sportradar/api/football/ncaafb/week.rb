@@ -4,11 +4,8 @@ module Sportradar
       class Ncaafb
         class Week < Sportradar::Api::Football::Week
 
-          def update(data, source: nil, **opts)
-            # update stuff
-            @number = data['number']  if data['number']
-
-            create_data(@games_hash, data['games'],   klass: Game,   week: self, api: api)
+          def game_class
+            Game
           end
 
         end

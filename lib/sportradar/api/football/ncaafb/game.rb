@@ -23,7 +23,6 @@ module Sportradar
           #   binding.pry
           end
 
-
           def team_class
             Team
           end
@@ -71,3 +70,5 @@ ncaafb = Marshal.load(File.binread('ncaafb.bin'));
 g = ncaafb.games.first;
 res = g.get_pbp;
 g.quarters.first.drives[1]
+
+g = gg.detect{|g| g.id == "b8001149-bb55-4014-a3e8-6ac0a261dfe1" } # overtime game
