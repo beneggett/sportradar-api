@@ -129,6 +129,9 @@ module Sportradar
           def path_base
             "league"
           end
+          def path_hierarchy(division = 'FBS')
+            "teams/#{division}/hierarchy"
+          end
           def path_schedule
             "#{season_year}/#{ncaafb_season}/schedule"
           end
@@ -140,12 +143,6 @@ module Sportradar
           end
           def path_standings(division = 'FBS')
             "teams/#{division}/#{season_year}/#{ncaafb_season}/standings"
-          end
-          def path_hierarchy(division = 'FBS')
-            "teams/#{division}/hierarchy"
-          end
-          def path_season_stats(division = 'FBS')
-            "teams/#{division}/#{season_year}/#{ncaafb_season}/statistics"
           end
 
           # data retrieval
@@ -231,6 +228,7 @@ module Sportradar
             {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_standings)}
           end
 
+          ## statistics
 
           ## venues
           # def get_venues
@@ -261,3 +259,5 @@ __END__
 ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
 res1 = ncaafb.get_schedule;
 res2 = ncaafb.get_weekly_schedule;
+
+ncaafb = Marshal.load(File.binread('ncaafb.bin'));

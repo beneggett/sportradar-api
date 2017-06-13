@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Team < Data
-        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats, :seed
+        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats, :seed, :season, :type
 
         def initialize(data, **opts)
           @response = data
@@ -88,12 +88,22 @@ module Sportradar
           data
         end
 
-        def get_season_stats
-          data = api.get_data(path_season_stats)
+        def get_season_stats(year = default_year)
+          data = api.get_data(path_season_stats(year)).to_h
           ingest_season_stats(data)
         end
         def ingest_season_stats(data)
           parse_season_stats(data)
+        end
+
+        # def ingest_season_stats(data)
+        #   update(data, source: :teams)
+        #   data
+        # end
+
+        def queue_season_stats(year = default_year)
+          url, headers, options, timeout = api.get_request_info(path_season_stats(year))
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_season_stats)}
         end
 
         def parse_records(data)
@@ -102,7 +112,7 @@ module Sportradar
         end
 
         def parse_season_stats(data)
-          @team_stats = data.dig('own_record')
+          @team_stats = data.dig('statistics')
           update(data)
           player_data = data.dig('players')
           create_data(@players_hash, player_data, klass: player_class, api: api, team: self)
@@ -112,14 +122,31 @@ module Sportradar
         def path_base
           "teams/#{ id }"
         end
-        def path_base_stats(season_year = api.default_year, default_season = api.default_season)
-          "seasontd/#{season_year}/#{default_season}/teams/#{id}"
+        def path_base_stats(year = season_year, season = default_season)
+          "seasontd/#{year}/#{season}/teams/#{id}"
         end
         def path_roster
           "#{ path_base }/profile" # nfl is profile, ncaa is roster
         end
         def path_season_stats
           "#{ path_base_stats }/statistics"
+        end
+
+
+        def season_year
+          @season || default_year
+        end
+        alias :year :season_year
+
+        private
+        def default_year
+          (Date.today - 60).year
+        end
+        def default_date
+          Date.today
+        end
+        def default_season
+          'reg'
         end
 
       end

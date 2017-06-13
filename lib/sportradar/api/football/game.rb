@@ -338,6 +338,7 @@ __END__
 
 ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new(year: 2016)
 ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
+ncaafb.get_hierarchy;
 File.binwrite('ncaafb.bin', Marshal.dump(ncaafb))
 ncaafb = Marshal.load(File.binread('ncaafb.bin'));
 gg = ncaafb.games;
@@ -348,4 +349,6 @@ g.type
 res = g.get_pbp;
 
 g = gg.detect{|g| g.id == "b8001149-bb55-4014-a3e8-6ac0a261dfe1" } # college overtime game
+
+t = ncaafb.teams.first
 

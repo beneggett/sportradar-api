@@ -5,7 +5,6 @@ module Sportradar
         class Player < Data
           attr_accessor :response, :id, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft
 
-
           def initialize(data, **opts)
             @response = data
             @api      = opts[:api]
@@ -22,40 +21,41 @@ module Sportradar
           def display_name
             name_full
           end
-          def jersey
-            @jersey_number
-          end
 
           def birth_date # to match api for NFL::Player
             @birthdate
           end
 
+          def jersey
+            @jersey_number
+          end
+
           def update(data, **opts)
-            @status           = data['status']            if data['status']            # "ACT",
-            @name_full        = data['name_full']         if data['name_full']         # "Festus Ezeli",
-            @name_first       = data['name_first']        if data['name_first']        # "Festus",
-            @name_last        = data['name_last']         if data['name_last']         # "Ezeli",
-            @name_abbr        = data['name_abbr']         if data['name_abbr']         # "F.Ezeli",
-            @height           = data['height']            if data['height']            # "83",
-            @weight           = data['weight']            if data['weight']            # "265",
-            @position         = data['position']          if data['position']          # "C",
-            @primary_position = data['primary_position']  if data['primary_position']  # "C",
-            @jersey_number    = data['jersey_number']     if data['jersey_number']     # "31",
-            @experience       = data['experience']        if data['experience']        # "3",
+            @status           = data['status']            if data['status']
+            @name_full        = data['name_full'] || data['name'] || @name_full
+            @name_first       = data['name_first']        if data['name_first']
+            @name_last        = data['name_last']         if data['name_last']
+            @name_abbr        = data['name_abbr']         if data['name_abbr']
+            @height           = data['height']            if data['height']
+            @weight           = data['weight']            if data['weight']
+            @position         = data['position']          if data['position']
+            @primary_position = data['primary_position']  if data['primary_position']
+            @jersey_number    = data['jersey_number'] || data['jersey'] || @jersey_number
+            @experience       = data['experience']        if data['experience']
             @birth_place      = data['birth_place'].gsub(',,', ', ')       if data['birth_place']       # "Benin City,, NGA",
             @updated          = data['updated']           if data['updated']           # "2016-07-08T12:11:59+00:00",
 
 
+            @games_started    = data['games_started']     if data['games_started']
+            @games_played     = data['games_played']      if data['games_played']
 # NCAA specific below
 
             # update_injuries(data)
             # update_draft(data)
 
-            @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
-            if avgs = data['average']
-              @totals = data['total']
-              @averages = avgs.except(:player)
-              @team.update_player_stats(self, avgs)
+            if stats = data['statistics']
+              @totals = stats
+              @team.update_player_stats(self, stats, opts[:game])
             end
 
             self
@@ -100,8 +100,10 @@ end
 
 __END__
 
-ncaafb = Sportradar::Api::Ncaafb::Hierarchy.new;
+ncaafb = Marshal.load(File.binread('ncaafb.bin'));
+
 t = ncaafb.teams.first;
 t.get_roster;
 t.players.first
+t.players.first.totals
 
