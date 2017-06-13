@@ -55,7 +55,10 @@ module Sportradar
 
             if stats = data['statistics']
               @totals = stats
-              @team.update_player_stats(self, stats, opts[:game])
+              # binding.pry
+              @team.update_player_stats(self, stats.dup, opts[:game])
+            else
+              @totals = {}
             end
 
             self
@@ -107,3 +110,9 @@ t.get_roster;
 t.players.first
 t.players.first.totals
 
+ncaafb = Marshal.load(File.binread('ncaafb.bin'));
+t = ncaafb.teams.sample
+data = t.get_season_stats(2016);
+t.get_roster;
+t.players.sample
+t.players.sample.totals
