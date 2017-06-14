@@ -38,7 +38,7 @@ module Sportradar
         end
 
         def update_stats(team, stats)
-          @team_stats.merge!(team.id => stats.merge!(team: team))
+          @team_stats.merge!(team.id => stats)
         end
         def update_player_stats(player, stats)
           @player_stats.merge!(player.id => stats.merge!(player: player))
@@ -70,10 +70,10 @@ module Sportradar
 
           @coverage      = data['coverage']
           @scheduled     = Time.parse(data["scheduled"]) if data["scheduled"]
-          @home          = Team.new(data['home_team'], api: api, game: self) if data['home_team'].is_a?(Hash)
-          @home_alias    = data['home'] if data['home'].is_a?(String)
-          @away          = Team.new(data['away_team'], api: api, game: self) if data['away_team'].is_a?(Hash)
-          @away_alias    = data['away'] if data['away'].is_a?(String)
+          @home          = team_class.new(data['home_team'], api: api, game: self) if data['home_team'].is_a?(Hash)
+          @away          = team_class.new(data['away_team'], api: api, game: self) if data['away_team'].is_a?(Hash)
+          @home_alias    = data['home'] if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+          @away_alias    = data['away'] if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
           @status        = data['status']
           @home_rotation = data['home_rotation']
           @away_rotation = data['away_rotation']
@@ -88,10 +88,11 @@ module Sportradar
           # @links         = data['links'] ? structure_links(data['links']) : {}
 
           @teams_hash    = { @home.id => @home, @away.id => @away } if @home && @away
+          @team_ids      = { home: (@home&.id || home_alias), away: (@away&.id || away_alias) }
 
           @scoring_raw.update(data, source: source)
 
-          create_data(@teams_hash, data['team'], klass: Team, api: api, game: self) if data['team']
+          create_data(@teams_hash, data['team'], klass: team_class, api: api, game: self) if data['team']
         end
 
         # def update_from_team(id, data)
@@ -342,7 +343,7 @@ ncaafb.get_hierarchy;
 File.binwrite('ncaafb.bin', Marshal.dump(ncaafb))
 ncaafb = Marshal.load(File.binread('ncaafb.bin'));
 gg = ncaafb.games;
-g = gg.first;
+g = ncaafb.games.first;
 g.week_number
 g.year
 g.type
