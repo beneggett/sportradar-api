@@ -5,9 +5,13 @@ module Sportradar
         attr_accessor :response, :player, :name, :id, :position, :yards, :players
 
         def initialize(data)
-          @response = data || {}
-          @player = Sportradar::Api::Nfl::Player.new(response) if response['name'] # this isn't used yet, and we need to determine a better solution
-          @players = parse_into_array(selector: response["player"], klass: self.class) if response["player"]
+          if data['name']
+            @response = data
+            @player = Sportradar::Api::Nfl::Player.new(data) # need to handle ncaa/nfl, although it may not matter
+          else
+            @response = data['team']
+            @players = parse_into_array(selector: data["players"], klass: self.class) if data["players"]
+          end
           set_stats
         end
 
