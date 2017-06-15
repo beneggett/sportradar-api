@@ -8,7 +8,7 @@ module Sportradar
         @attempts = kick_data["attempts"] || kick_data["att"]
         @made     = kick_data["made"]
         @blocked  = kick_data["blocked"] || kick_data["blk"]
-        @pct      = kick_data["pct"] ||  || (@made.to_f / @attempts.to_i)
+        @pct      = kick_data["pct"] || (@made.to_f / @attempts.to_i)
         if response['conversions']
           @pass_attempts      = response["pass_attempts"]
           @pass_successes     = response["pass_successes"]
