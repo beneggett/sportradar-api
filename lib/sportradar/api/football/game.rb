@@ -70,10 +70,7 @@ module Sportradar
 
           @coverage      = data['coverage']
           @scheduled     = Time.parse(data["scheduled"]) if data["scheduled"]
-          @home          = team_class.new(data['home_team'], api: api, game: self) if data['home_team'].is_a?(Hash)
-          @away          = team_class.new(data['away_team'], api: api, game: self) if data['away_team'].is_a?(Hash)
-          @home_alias    = data['home'] if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
-          @away_alias    = data['away'] if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+          update_teams(data)
           @status        = data['status']
           @home_rotation = data['home_rotation']
           @away_rotation = data['away_rotation']
@@ -93,6 +90,13 @@ module Sportradar
           @scoring_raw.update(data, source: source)
 
           create_data(@teams_hash, data['team'], klass: team_class, api: api, game: self) if data['team']
+        end
+
+        def update_teams(data)
+          @home          = team_class.new(data['home_team'], api: api, game: self) if data['home_team'].is_a?(Hash)
+          @away          = team_class.new(data['away_team'], api: api, game: self) if data['away_team'].is_a?(Hash)
+          @home_alias    = data['home'] if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+          @away_alias    = data['away'] if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
         end
 
         # def update_from_team(id, data)
@@ -164,6 +168,10 @@ module Sportradar
 
         def plays
           drives.flat_map(&:plays).compact
+        end
+
+        def events
+          drives.flat_map(&:events).compact
         end
 
         # def summary
@@ -277,13 +285,17 @@ module Sportradar
         def ingest_pbp(data)
           data = data
           update(data, source: :pbp)
-          create_data(@quarters_hash, data['quarters'], klass: quarter_class, identifier: 'number', api: api, game: self) if data['quarters']
+          create_data(@quarters_hash, data[period_key], klass: quarter_class, identifier: 'number', api: api, game: self) if data[period_key]
           check_newness(:pbp, plays.last&.description)
           check_newness(:score, @score)
           @pbp = @quarters_hash.values
           data
         # rescue => e
         #   binding.pry
+        end
+
+        def period_key
+          'quarters'
         end
 
         def get_statistics
@@ -297,7 +309,6 @@ module Sportradar
         end
 
         def ingest_statistics(data)
-          data = data
           update(data, source: :statistics)
           check_newness(:statistics, @clock)
           data
@@ -334,22 +345,3 @@ module Sportradar
     end
   end
 end
-
-__END__
-
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new(year: 2016)
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
-ncaafb.get_hierarchy;
-File.binwrite('ncaafb.bin', Marshal.dump(ncaafb))
-ncaafb = Marshal.load(File.binread('ncaafb.bin'));
-gg = ncaafb.games;
-g = ncaafb.games.first;
-g.week_number
-g.year
-g.type
-res = g.get_pbp;
-
-g = gg.detect{|g| g.id == "b8001149-bb55-4014-a3e8-6ac0a261dfe1" } # college overtime game
-
-t = ncaafb.teams.first
-

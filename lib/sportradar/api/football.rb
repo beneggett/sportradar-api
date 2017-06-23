@@ -41,6 +41,18 @@ require "sportradar/api/football/ncaafb/play"
 require "sportradar/api/football/ncaafb/player"
 
 
+require "sportradar/api/football/nfl"
+require "sportradar/api/football/nfl/week"
+require "sportradar/api/football/nfl/hierarchy"
+require "sportradar/api/football/nfl/division"
+require "sportradar/api/football/nfl/conference"
+require "sportradar/api/football/nfl/team"
+require "sportradar/api/football/nfl/game"
+require "sportradar/api/football/nfl/quarter"
+require "sportradar/api/football/nfl/drive"
+require "sportradar/api/football/nfl/event"
+require "sportradar/api/football/nfl/play"
+require "sportradar/api/football/nfl/player"
 
 
 # to be deleted

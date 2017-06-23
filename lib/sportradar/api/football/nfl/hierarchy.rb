@@ -1,7 +1,7 @@
 module Sportradar
   module Api
     module Football
-      class Ncaafb
+      class Nfl
         class Hierarchy < Data
           attr_accessor :response, :id, :name, :alias, :type
           def all_attributes
@@ -15,7 +15,7 @@ module Sportradar
             @season = opts[:year]
             @type   = opts[:type]
 
-            @divisions_hash = {}
+            @conferences_hash = {}
             @weeks_hash = {}
             @games_hash = {}
             @teams_hash = {}
@@ -33,11 +33,16 @@ module Sportradar
             # @year     = data.dig('season', 'year')  if data.dig('season', 'year')
             # @type     = data.dig('season', 'type')  if data.dig('season', 'type')
 
-            create_data(@divisions_hash, data['divisions'], klass: Division,  hierarchy: self, api: api) if data['divisions']
-            create_data(@teams_hash,     data['teams'],     klass: Team,      hierarchy: self, api: api) if data['teams']
+            create_data(@conferences_hash,  data['conferences'],  klass: Conference,  hierarchy: self, api: api) if data['conferences']
+            create_data(@teams_hash,        data['teams'],        klass: Team,        hierarchy: self, api: api) if data['teams']
 
             if data['weeks']
               create_data(@weeks_hash, data['weeks'], klass: Week, hierarchy: self, api: @api)
+            end
+            if data['league']
+              @id    = data['id']
+              @name  = data['name']
+              @alias = data['alias']
             end
 
             if data['games']
@@ -50,20 +55,20 @@ module Sportradar
           def weeks
             @weeks_hash.values
           end
-          def divisions
-            @divisions_hash.values
-          end
-          def division(code_name)
-            divisions_by_name[code_name]
-          end
-          private def divisions_by_name
-            @divisions_by_name ||= divisions.map { |d| [d.alias, d] }.to_h
-          end
           def conferences
-            divisions.flat_map(&:conferences)
+            @conferences_hash.values
+          end
+          # def conference(code_name)
+          #   conferences_by_name[code_name]
+          # end
+          # private def conferences_by_name
+          #   @conferences_by_name ||= conferences.map { |d| [d.alias, d] }.to_h
+          # end
+          def divisions
+            conferences.flat_map(&:divisions)
           end
           def teams
-            conferences.flat_map(&:teams)
+            divisions.flat_map(&:teams)
           end
 
           def schedule
@@ -86,11 +91,11 @@ module Sportradar
             weeks.flat_map(&:games)
           end
           def teams
-            teams = conferences.flat_map(&:teams)
+            teams = divisions.flat_map(&:teams)
             if teams.empty?
               if @teams_hash.empty?
                 get_hierarchy
-                conferences.flat_map(&:teams)
+                divisions.flat_map(&:teams)
               else
                 @teams_hash.values
               end
@@ -104,7 +109,7 @@ module Sportradar
 
           # api stuff
           def api
-            @api || Sportradar::Api::Football::Ncaafb.new
+            @api || Sportradar::Api::Football::Nfl.new
           end
 
           def default_year
@@ -120,30 +125,30 @@ module Sportradar
             @season || default_year
           end
           alias :year :season_year
-          def ncaafb_season
+          def nfl_season
             @type || default_season
           end
-          alias :season :ncaafb_season
+          alias :season :nfl_season
 
 
           # url paths
           def path_base
             "league"
           end
-          def path_hierarchy(division = 'FBS')
-            "teams/#{division}/hierarchy"
+          def path_hierarchy
+            "league/hierarchy"
           end
           def path_schedule
-            "#{season_year}/#{ncaafb_season}/schedule"
+            "games/#{season_year}/#{nfl_season}/schedule"
           end
-          def path_weekly_schedule(ncaafb_season_week)
-            "#{season_year}/#{ncaafb_season}/#{ncaafb_season_week}/schedule"
+          def path_weekly_schedule(nfl_season_week)
+            "#{season_year}/#{nfl_season}/#{nfl_season_week}/schedule"
           end
-          def path_rankings(ncaafb_season_week, poll_name = 'AP25')
-            "polls/#{poll_name}/#{season_year}/#{ncaafb_season_week}/rankings"
-          end
-          def path_standings(division = 'FBS')
-            "teams/#{division}/#{season_year}/#{ncaafb_season}/standings"
+          # def path_rankings(nfl_season_week, poll_name = 'AP25')
+          #   "polls/#{poll_name}/#{season_year}/#{nfl_season_week}/rankings"
+          # end
+          def path_standings
+            "seasontd/#{season_year}/standings"
           end
 
           # data retrieval
@@ -165,8 +170,8 @@ module Sportradar
           end
 
           ## weekly schedule
-          def get_weekly_schedule(ncaafb_season_week = 1)
-            data = api.get_data(path_weekly_schedule(ncaafb_season_week)).to_h
+          def get_weekly_schedule(nfl_season_week = 1)
+            data = api.get_data(path_weekly_schedule(nfl_season_week)).to_h
             ingest_weekly_schedule(data)
           end
 
@@ -176,8 +181,8 @@ module Sportradar
             data
           end
 
-          def queue_weekly_schedule(ncaafb_season_week = 1)
-            url, headers, options, timeout = api.get_request_info(path_weekly_schedule(ncaafb_season_week))
+          def queue_weekly_schedule(nfl_season_week = 1)
+            url, headers, options, timeout = api.get_request_info(path_weekly_schedule(nfl_season_week))
             {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_weekly_schedule)}
           end
 
@@ -188,7 +193,8 @@ module Sportradar
           end
 
           def ingest_hierarchy(data)
-            create_data(@divisions_hash, data, klass: Division,  hierarchy: self, api: api)
+            # create_data(@divisions_hash, data, klass: Division,  hierarchy: self, api: api)
+            update(data, source: :teams)
             data
           end
 
@@ -257,8 +263,11 @@ __END__
 
 
 
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
-res1 = ncaafb.get_schedule;
-res2 = ncaafb.get_weekly_schedule;
+nfl = Sportradar::Api::Football::Nfl::Hierarchy.new
+nfl = Sportradar::Api::Football::Nfl::Hierarchy.new(year: 2016)
+res1 = nfl.get_schedule;
+res2 = nfl.get_weekly_schedule;
 
-ncaafb = Marshal.load(File.binread('ncaafb.bin'));
+nfl = Marshal.load(File.binread('nfl.bin'));
+File.binwrite('nfl.bin', Marshal.dump(nfl))
+

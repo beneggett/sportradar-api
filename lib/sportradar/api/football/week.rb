@@ -21,8 +21,8 @@ module Sportradar
 
         def update(data, source: nil, **opts)
           # update stuff
-          @year = opts[:hierarchy].season_year    if opts[:hierarchy]
-          @type = opts[:hierarchy].ncaafb_season  if opts[:hierarchy]
+          @year = opts[:hierarchy].season_year  if opts[:hierarchy]
+          @type = opts[:hierarchy].season       if opts[:hierarchy]
 
           @number = data['number']  if data['number']
 

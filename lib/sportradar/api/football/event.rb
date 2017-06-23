@@ -23,6 +23,9 @@ module Sportradar
         def plays
           []
         end
+        def events
+          [self]
+        end
       end
 
     end

@@ -2,9 +2,7 @@ module Sportradar
   module Api
     module Football
       class Ncaaf
-        class Play < Data
-          attr_reader :response, :api, :id, :clock, :type, :summary, :updated, :side, :yard_line, :down, :yfd, :formation, :direction, :distance, :participants, :details, :play_type, :sequence
-          alias :description :summary
+        class Play < Sportradar::Api::Football::Play
 
           def initialize(data, **opts)
             @response = data

@@ -37,8 +37,8 @@ module Sportradar
           @quarter_data = data['quarter']
           @team_data    = data['team']
 
-          create_data(@plays_hash,  data['plays'],  klass: Play,  api: api, game: self) if data['plays']
-          create_data(@events_hash, data['events'], klass: Event, api: api, game: self) if data['events']
+          create_data(@plays_hash,  data['actions'],  klass: Play,  api: api, game: self) if data['actions']
+          create_data(@events_hash, data['events'],   klass: Event, api: api, game: self) if data['events']
 
           self
         end
