@@ -46,6 +46,9 @@ require "sportradar/api/content/article"
 require "sportradar/api/content/reference"
 require "sportradar/api/odds"
 
+require "sportradar/api/hockey"
+
+
 module Sportradar
   module Api
 
