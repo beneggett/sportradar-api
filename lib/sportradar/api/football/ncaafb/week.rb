@@ -18,7 +18,7 @@ __END__
 
 
 
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
+ncaafb = Sportradar::Api::Football::Ncaafb.new
+ncaafb = Sportradar::Api::Football::Ncaafb.new
 res1 = ncaafb.get_schedule;
 res2 = ncaafb.get_weekly_schedule;

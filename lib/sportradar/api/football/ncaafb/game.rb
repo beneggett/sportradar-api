@@ -40,7 +40,7 @@ module Sportradar
 
 
           def api
-            @api || Sportradar::Api::Football::Ncaafb.new
+            @api || Sportradar::Api::Football::NcaafbApi.new
           end
 
         end
@@ -53,8 +53,8 @@ __END__
 
 File.binwrite('ncaafb.bin', Marshal.dump(ncaafb))
 
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new(year: 2016)
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
+ncaafb = Sportradar::Api::Football::Ncaafb.new(year: 2016)
+ncaafb = Sportradar::Api::Football::Ncaafb.new
 gg = ncaafb.games;
 ncaafb = Marshal.load(File.binread('ncaafb.bin'));
 g = ncaafb.games.first;

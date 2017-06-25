@@ -22,7 +22,7 @@ module Sportradar
           end
 
           def api
-            @api || Sportradar::Api::Football::Ncaafb.new
+            @api || Sportradar::Api::Football::NcaafbApi.new
           end
           def ncaafb_season
             @type || default_season
