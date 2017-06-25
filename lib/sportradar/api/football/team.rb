@@ -33,7 +33,7 @@ module Sportradar
           @points   = data['points'].to_i           if data['points']
 
           parse_records(data)                                          if data['records']
-          # parse_players(data.dig('players'), opts[:game])   if data.dig('players')
+          parse_players(data.dig('players'), opts[:game])   if data.dig('players')
           # parse_stats(data['statistics'])                             if data['statistics']
           if opts[:game]
             add_game(opts[:game])

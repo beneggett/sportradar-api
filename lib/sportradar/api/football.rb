@@ -41,9 +41,9 @@ require "sportradar/api/football/ncaafb/play"
 require "sportradar/api/football/ncaafb/player"
 
 
+require "sportradar/api/football/nfl_api"
 require "sportradar/api/football/nfl"
 require "sportradar/api/football/nfl/week"
-require "sportradar/api/football/nfl/hierarchy"
 require "sportradar/api/football/nfl/division"
 require "sportradar/api/football/nfl/conference"
 require "sportradar/api/football/nfl/team"

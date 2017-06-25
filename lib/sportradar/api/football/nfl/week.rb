@@ -18,7 +18,7 @@ __END__
 
 
 
-nfl = Sportradar::Api::Football::Nfl::Hierarchy.new
-nfl = Sportradar::Api::Football::Nfl::Hierarchy.new
+nfl = Sportradar::Api::Football::Nfl.new
+nfl = Sportradar::Api::Football::Nfl.new
 res1 = nfl.get_schedule;
 res2 = nfl.get_weekly_schedule;
