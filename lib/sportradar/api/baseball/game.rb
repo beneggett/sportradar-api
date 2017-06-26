@@ -116,7 +116,7 @@ module Sportradar
 
           @scheduled    = Time.parse(data["scheduled"]) if data["scheduled"]
           @venue        = Venue.new(data['venue']) if data['venue']
-          @broadcast    = Broadcast.new(data['broadcast']) if data['broadcast']
+          @broadcast    = Broadcast.new(data['broadcast']) if !data['broadcast'].to_h.empty?
           @home         = Team.new(data['home'], api: api, game: self) if data['home']
           @away         = Team.new(data['away'], api: api, game: self) if data['away']
 
