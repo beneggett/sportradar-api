@@ -83,7 +83,7 @@ module Sportradar
           @venue         = data['venue']
           @venue         = Venue.new(data["venue"]) if data["venue"]
           @weather       = data['weather']
-          @broadcast     = Broadcast.new(data['broadcast']) if data['broadcast']
+          @broadcast     = Broadcast.new(data['broadcast']) if !data['broadcast'].to_h.empty?
           @attendance    = data['attendance']
           # @links         = data['links'] ? structure_links(data['links']) : {}
 
