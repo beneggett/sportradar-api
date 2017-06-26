@@ -2,7 +2,7 @@ module Sportradar
   module Api
     class Mma
       class Venue < Data
-        attr_accessor :response, :id, :event, :name, :country_code, :country, :state, :city
+        attr_accessor :response, :id, :name, :address, :city, :state, :country, :zip, :capacity, :timezone
         @all_hash = {}
         def self.new(data, **opts)
           existing = @all_hash[data['name']]

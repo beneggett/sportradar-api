@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Venue < Data
-        attr_accessor :response, :id, :name, :address, :city, :state, :country, :zip, :capacity
+        attr_accessor :response, :id, :name, :address, :city, :state, :country, :zip, :capacity, :timezone
         @all_hash = {}
         def self.new(data, **opts)
           existing = @all_hash[data['id']]
@@ -31,6 +31,7 @@ module Sportradar
           @zip      = data['zip']
           @country  = data['country']
           @capacity = data['capacity']
+          @timezone = data['timezone']
 
           @surface  = data['surface']
 
