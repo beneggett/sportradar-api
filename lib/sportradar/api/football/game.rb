@@ -81,9 +81,9 @@ module Sportradar
           @home_points   = data['home_points']
           @away_points   = data['away_points']
           @venue         = data['venue']
-          # @venue         = Sportradar::Api::Football::Venue.new(data["venue"]) if data["venue"]
+          @venue         = Venue.new(data["venue"]) if data["venue"]
           @weather       = data['weather']
-          @broadcast     = data['broadcast']
+          @broadcast     = Broadcast.new(data['broadcast']) if data['broadcast']
           @attendance    = data['attendance']
           # @links         = data['links'] ? structure_links(data['links']) : {}
 
