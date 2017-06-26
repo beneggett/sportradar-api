@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Week < Data
-        attr_accessor :response, :id, :number, :api, :hierarchy, :year, :type
+        attr_accessor :response, :id, :number, :api, :hierarchy, :year, :type, :sequence
 
         def all_attributes
           [:number]
@@ -24,7 +24,8 @@ module Sportradar
           @year = opts[:hierarchy].season_year  if opts[:hierarchy]
           @type = opts[:hierarchy].season       if opts[:hierarchy]
 
-          @number = data['number']  if data['number']
+          @number   = data['number'] || data['title'] || @number
+          @sequence = data['sequence']  if data['sequence']
 
           create_data(@games_hash, data['games'],   klass: game_class,   week: self, api: api)
         end

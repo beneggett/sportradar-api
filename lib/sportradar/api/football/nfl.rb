@@ -141,7 +141,7 @@ module Sportradar
           "games/#{season_year}/#{nfl_season}/schedule"
         end
         def path_weekly_schedule(nfl_season_week)
-          "#{season_year}/#{nfl_season}/#{nfl_season_week}/schedule"
+          "games/#{season_year}/#{nfl_season}/#{nfl_season_week}/schedule"
         end
         # def path_rankings(nfl_season_week, poll_name = 'AP25')
         #   "polls/#{poll_name}/#{season_year}/#{nfl_season_week}/rankings"
@@ -176,7 +176,7 @@ module Sportradar
 
         def ingest_weekly_schedule(data)
           # update(data, source: :weeks)
-          create_data(@weeks_hash, data, klass: Week, hierarchy: self, api: api)
+          create_data(@weeks_hash, data['week'], klass: Week, hierarchy: self, api: api)
           data
         end
 
