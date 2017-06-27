@@ -289,6 +289,29 @@ module Sportradar
         end
 
         # status helpers
+
+        def realtime_state
+          if future?
+            'Scheduled'
+          elsif delayed?
+            'Delayed'
+          elsif finished?
+            'Final'
+          elsif postponed?
+            'Postponed'
+          else
+            inning_abbr
+          end
+        end
+
+        def inning_abbr
+          if !count.empty?
+            inning_half = self.count['inning_half']
+            inning = self.count['inning']
+            "#{(inning_half == 'B' ? 'Bottom' : 'Top')} #{(inning || 1).ordinalize}"
+          end
+        end
+
         def postponed?
           'postponed' == status
         end
@@ -299,6 +322,10 @@ module Sportradar
 
         def cancelled?
           ['unnecessary', 'postponed'].include? status
+        end
+
+        def delayed?
+          ['wdelay', 'delayed'].include? status
         end
 
         def future?

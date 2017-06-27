@@ -262,6 +262,7 @@ __END__
 mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
 res = mlb.get_daily_summary;
 res = mlb.get_hierarchy;
+res = mlb.get_schedule;
 t = mlb.teams.first;
 t.get_season_stats;
 t.players.sample
