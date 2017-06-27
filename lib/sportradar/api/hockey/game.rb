@@ -60,7 +60,6 @@ module Sportradar
 
         def update(data, source: nil, **opts)
           # via pbp
-          @title        = data['title']                 if data['title']
           @status       = data['status']                if data['status']
           @coverage     = data['coverage']              if data['coverage']
           @day_night    = data['day_night']             if data['day_night']
@@ -72,9 +71,10 @@ module Sportradar
 
           @scheduled    = Time.parse(data["scheduled"]) if data["scheduled"]
           @venue        = Venue.new(data['venue']) if data['venue']
-          @broadcast    = Broadcast.new(data['broadcast']) if data['broadcast']
+          @broadcast    = Broadcast.new(data['broadcast']) if !data['broadcast'].to_h.empty?
           @home         = Team.new(data['home'], api: api, game: self) if data['home']
           @away         = Team.new(data['away'], api: api, game: self) if data['away']
+          @title        = data['title'] || @title || (home && away && "#{home.full_name} vs #{away.full_name}")
 
           @duration     = data['duration']              if data['duration']
           @attendance   = data['attendance']            if data['attendance']
