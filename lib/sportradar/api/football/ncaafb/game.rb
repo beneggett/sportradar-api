@@ -8,6 +8,14 @@ module Sportradar
             "#{ year }/#{ type }/#{ week_number.to_s.rjust(2, '0') }/#{ away_alias }/#{ home_alias }"
           end
 
+          def generate_title
+            if home && away
+              "#{home.full_name} vs #{away.full_name}"
+            elsif home_alias && away_alias
+              "#{home_alias} vs #{away_alias}"
+            end
+          end
+
 
           def get_extended_box
             data = api.get_data(path_extended_box)

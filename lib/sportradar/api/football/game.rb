@@ -77,11 +77,12 @@ module Sportradar
           @neutral_site  = data['neutral_site']
           @home_points   = data['home_points']
           @away_points   = data['away_points']
-          @venue         = data['venue']
           @venue         = Venue.new(data["venue"]) if data["venue"]
           @weather       = data['weather']
           @broadcast     = Broadcast.new(data['broadcast']) if !data['broadcast'].to_h.empty?
           @attendance    = data['attendance']
+          @title        = data['title'] || @title || generate_title
+
           # @links         = data['links'] ? structure_links(data['links']) : {}
 
           @teams_hash    = { @home.id => @home, @away.id => @away } if @home && @away
@@ -94,6 +95,10 @@ module Sportradar
           end
 
           create_data(@teams_hash, data['team'], klass: team_class, api: api, game: self) if data['team']
+        end
+
+        def generate_title
+          (home && away && "#{home.full_name} vs #{away.full_name}")
         end
 
         def update_teams(data)
