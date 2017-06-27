@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Game < Data
-        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup, :week
+        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup, :week, :quarter, :clock
 
         attr_reader :week_number, :year, :type
 
@@ -88,6 +88,10 @@ module Sportradar
           @team_ids      = { home: (@home&.id || home_alias), away: (@away&.id || away_alias) }
 
           @scoring_raw.update(data, source: source)
+          if data['statistics']
+            @home.update({ 'statistics' => data.dig('statistics', 'home')}, game: self)
+            @away.update({ 'statistics' => data.dig('statistics', 'away')}, game: self)
+          end
 
           create_data(@teams_hash, data['team'], klass: team_class, api: api, game: self) if data['team']
         end
@@ -204,6 +208,37 @@ module Sportradar
         end
 
         # status helpers
+        def realtime_state
+          if future?
+            'Scheduled'
+          elsif delayed?
+            'Delayed'
+          elsif finished?
+            'Final'
+          elsif postponed?
+            'Postponed'
+          elsif halftime?
+            'Halftime'
+          else
+            clock_display
+          end
+        end
+
+        def clock_display
+          if clock && quarter
+            "#{clock} #{quarter_display}"
+          end
+        end
+        def quarter_display
+          if quarter > 5
+            "#{quarter - 4}OT"
+          elsif quarter == 5
+            'OT'
+          else
+            "#{quarter}Q"
+          end
+        end
+
         def postponed?
           'postponed' == status
         end
@@ -216,12 +251,20 @@ module Sportradar
           ['unnecessary', 'postponed'].include? status
         end
 
+        def delayed?
+          'delayed' == status
+        end
+
         def future?
-          ['scheduled', 'delayed', 'created', 'time-tbd'].include? status
+          ['scheduled', 'created', 'time-tbd'].include? status
         end
 
         def started?
-          ['inprogress', 'wdelay', 'delayed'].include? status
+          ['inprogress', 'halftime', 'wdelay', 'delayed'].include? status
+        end
+
+        def halftime?
+          'halftime' == status
         end
 
         def finished?

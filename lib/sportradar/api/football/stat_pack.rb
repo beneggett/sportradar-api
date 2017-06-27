@@ -9,7 +9,7 @@ module Sportradar
             @response = data
             @player = Sportradar::Api::Nfl::Player.new(data) # need to handle ncaa/nfl, although it may not matter
           else
-            @response = data['team']
+            @response = data['team'] || data['totals']
             @players = parse_into_array(selector: data["players"], klass: self.class) if data["players"]
           end
           set_stats

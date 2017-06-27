@@ -19,4 +19,8 @@ res = game.get_pbp              # => res is raw response data hash. the `game` o
 game.quarters.size              # => 4 (unless the game went to overtime)
 game.drives.size                # => (20-30) most NFL games have between 20 and 30 drives
 game.plays.size                 # => 150 most NFL games have about 150 total plays
+
+game.get_statistics             # => res is raw response data hash. the `game` object now has team stats to interact with
+game.home.stats.passing         # => Sportradar::Api::Football::StatPack::Passing => passing stats
+game.home.stats.passing.players.first
 ```

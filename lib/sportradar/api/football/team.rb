@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Team < Data
-        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats, :seed, :season, :type
+        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats, :seed, :season, :type, :stats
 
         def initialize(data, **opts)
           @response = data
