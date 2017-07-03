@@ -10,8 +10,6 @@ module Sportradar
             else
               super(data, **opts)
             end
-          rescue => e
-            binding.pry
           end
 
         end

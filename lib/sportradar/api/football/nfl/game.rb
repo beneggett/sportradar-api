@@ -45,7 +45,7 @@ module Sportradar
 
 
           def api
-            @api || Sportradar::Api::Football::NflApi.new
+            @api || Sportradar::Api::Football::Nfl::Api.new
           end
 
         end
@@ -56,11 +56,12 @@ end
 
 __END__
 
-File.binwrite('nfl.bin', Marshal.dump(nfl))
 
-nfl = Sportradar::Api::Football::Nfl.new(year: 2016)
 nfl = Sportradar::Api::Football::Nfl.new
+nfl = Sportradar::Api::Football::Nfl.new(year: 2016)
 gg = nfl.games;
+tt = nfl.teams;
+File.binwrite('nfl.bin', Marshal.dump(nfl))
 nfl = Marshal.load(File.binread('nfl.bin'));
 g = nfl.games.first;
 g = gg.first;
