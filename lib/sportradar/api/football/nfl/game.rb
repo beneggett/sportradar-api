@@ -78,3 +78,6 @@ res = g.get_pbp;
 g.quarters.first.drives[1]
 
 g = gg.detect{|g| g.id == "" } # overtime game
+
+stats = %i[defense extra_points field_goals fumbles int_returns kickoffs misc_returns passing penalties punt_returns punts receiving rushing]
+stats.all? { |st| g.stats(:home).send(st) }
