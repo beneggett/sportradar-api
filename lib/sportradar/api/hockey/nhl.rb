@@ -89,7 +89,7 @@ module Sportradar
 
         # api stuff
         def api
-          @api || Sportradar::Api::Hockey::NhlApi.new
+          @api || Sportradar::Api::Hockey::Nhl::Api.new
         end
 
         def default_year
