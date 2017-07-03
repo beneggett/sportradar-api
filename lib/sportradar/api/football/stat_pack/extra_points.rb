@@ -4,7 +4,7 @@ module Sportradar
       attr_accessor :attempts, :pct, :made, :blocked, :pass_attempts, :pass_successes, :rush_attempts, :rush_successes, :defense_attempts, :defense_successes, :turnover_successes
 
       def set_stats
-        kick_data = response['kicks'] || response
+        kick_data = response['kicks'] || response['totals'] || response
         @attempts = kick_data["attempts"] || kick_data["att"]
         @made     = kick_data["made"]
         @blocked  = kick_data["blocked"] || kick_data["blk"]

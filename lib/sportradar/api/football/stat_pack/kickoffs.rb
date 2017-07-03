@@ -1,10 +1,10 @@
 module Sportradar
   module Api
     class Football::StatPack::Kickoffs < Football::StatPack
-      attr_accessor :kickoffs, :endzone, :inside_20, :return_yards, :touchbacks, :yards, :out_of_bounds
+      attr_accessor :kickoffs, :endzone, :inside_20, :return_yards, :touchbacks, :yards, :out_of_bounds, :average
 
       def set_stats
-        @kickoffs      = response["kickoffs"] || response['kicks']
+        @kickoffs      = response["kickoffs"] || response['kicks'] || response['number']
         @endzone       = response["endzone"]
         @inside_20     = response["inside_20"] || response['in20']
         @return_yards  = response["return_yards"] || response['ret_yds']

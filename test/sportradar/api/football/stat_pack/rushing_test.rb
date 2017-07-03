@@ -3,7 +3,23 @@ require 'test_helper'
 class Sportradar::Api::Football::StatPack::RushingTest < Minitest::Test
 
   def setup
-    @attrs = {"avg_yards"=>"4.4", "attempts"=>"37", "touchdowns"=>"0", "tlost"=>"3", "tlost_yards"=>"-6", "yards"=>"161", "longest"=>"14", "longest_touchdown"=>"0", "redzone_attempts"=>"2", "player"=> [{"name"=>"Jamison Crowder", "jersey"=>"80", "reference"=>"00-0031941", "id"=>"8002dd5e-a75a-4d72-9a8c-0f4dbc80d459", "position"=>"WR", "avg_yards"=>"2.0", "attempts"=>"1", "touchdowns"=>"0", "yards"=>"2", "longest"=>"2", "longest_touchdown"=>"0", "redzone_attempts"=>"0", "tlost"=>"0", "tlost_yards"=>"0"} ] }
+    @attrs = {"totals"=>{"avg_yards"=>4.5, "attempts"=>23, "touchdowns"=>0, "tlost"=>0, "tlost_yards"=>0, "yards"=>103, "longest"=>30, "longest_touchdown"=>0, "redzone_attempts"=>3},
+       "players"=>
+        [{"name"=>"Ty Montgomery",
+          "jersey"=>"88",
+          "reference"=>"00-0032200",
+          "id"=>"0c39e276-7a5b-448f-a696-532506f1035a",
+          "position"=>"WR",
+          "avg_yards"=>6.7,
+          "attempts"=>9,
+          "touchdowns"=>0,
+          "yards"=>60,
+          "longest"=>30,
+          "longest_touchdown"=>0,
+          "redzone_attempts"=>1,
+          "tlost"=>0,
+          "tlost_yards"=>0}]
+      }
   end
 
   def test_stat_pack_rushing_initializes

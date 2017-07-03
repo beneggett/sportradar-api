@@ -4,7 +4,7 @@ module Sportradar
       attr_accessor :returns, :yards, :touchdowns, :blk_fg_touchdowns, :blk_punt_touchdowns, :fg_return_touchdowns, :ez_rec_touchdowns
 
       def set_stats
-        @returns              = response["returns"]
+        @returns              = response["returns"] || response['number']
         @yards                = response["yards"]
         @touchdowns           = response["touchdowns"]
         @blk_fg_touchdowns    = response["blk_fg_touchdowns"]
