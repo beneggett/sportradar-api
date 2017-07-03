@@ -103,7 +103,7 @@ module Sportradar
 
         # api stuff
         def api
-          @api || Sportradar::Api::Football::NcaafbApi.new
+          @api || Sportradar::Api::Football::Ncaafb::Api.new
         end
 
         def default_year
@@ -256,7 +256,8 @@ __END__
 
 
 ncaafb = Sportradar::Api::Football::Ncaafb.new
-res1 = ncaafb.get_schedule;
-res2 = ncaafb.get_weekly_schedule;
-
+ncaafb = Sportradar::Api::Football::Ncaafb.new(year: 2016)
+gg = ncaafb.games;
+tt = ncaafb.teams;
+File.binwrite('ncaafb.bin', Marshal.dump(ncaafb))
 ncaafb = Marshal.load(File.binread('ncaafb.bin'));
