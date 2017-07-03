@@ -4,7 +4,7 @@ module Sportradar
       attr_accessor :returns, :yards, :avg_yards, :touchdowns, :longest, :faircatches, :longest_touchdown
 
       def set_stats
-        @returns           = response["returns"]
+        @returns           = response["returns"] || response['number']
         @yards             = response["yards"] || response['yds']
         @avg_yards         = response["avg_yards"] || response['avg']
         @touchdowns        = response["touchdowns"] || response['td']

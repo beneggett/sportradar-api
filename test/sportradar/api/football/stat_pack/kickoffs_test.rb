@@ -3,7 +3,8 @@ require 'test_helper'
 class Sportradar::Api::Football::StatPack::KickoffsTest < Minitest::Test
 
   def setup
-    @attrs = {"kickoffs"=>"3", "endzone"=>"1", "inside_20"=>"0", "return_yards"=>"54", "touchbacks"=>"1", "yards"=>"201", "out_of_bounds"=>"0", "player"=> {"name"=>"Kai Forbath", "jersey"=>"02", "reference"=>"00-0028787", "id"=>"5514afb6-bd43-49a8-9bf7-b8baaaecdabe", "position"=>"K", "kickoffs"=>"3", "endzone"=>"1", "inside_20"=>"0", "return_yards"=>"54", "touchbacks"=>"1", "yards"=>"201", "out_of_bounds"=>"0"}}
+    @attrs = {"totals"=>{"endzone"=>0, "inside_20"=>1, "return_yards"=>28, "touchbacks"=>4, "yards"=>380, "out_of_bounds"=>0, "number"=>6},
+ "players"=>[{"name"=>"Mason Crosby", "jersey"=>"02", "reference"=>"00-0025580", "id"=>"e0856548-6fd5-4f83-9aa0-91f1bf4cbbd8", "position"=>"K", "endzone"=>0, "inside_20"=>1, "return_yards"=>28, "touchbacks"=>4, "yards"=>380, "out_of_bounds"=>0, "number"=>6}]}
   end
 
   def test_stat_pack_kickoffs_initializes

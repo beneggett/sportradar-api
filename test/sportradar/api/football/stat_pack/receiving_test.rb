@@ -3,7 +3,24 @@ require 'test_helper'
 class Sportradar::Api::Football::StatPack::ReceivingTest < Minitest::Test
 
   def setup
-    @attrs = {"targets"=>"31", "receptions"=>"21", "avg_yards"=>"9.333", "yards"=>"196", "touchdowns"=>"1", "yards_after_catch"=>"64", "longest"=>"25", "longest_touchdown"=>"4", "redzone_targets"=>"3", "air_yards"=>"132", "player"=> [{"name"=>"DeSean Jackson", "jersey"=>"11", "reference"=>"00-0026189", "id"=>"3e618eb6-41f2-4f20-ad70-2460f9366f43", "position"=>"WR", "receptions"=>"0", "targets"=>"1", "yards"=>"0", "avg_yards"=>"0.0", "longest"=>"0", "touchdowns"=>"0", "longest_touchdown"=>"0", "yards_after_catch"=>"0", "redzone_targets"=>"0", "air_yards"=>"0"} ] }
+    @attrs = {"totals"=>{"targets"=>56, "receptions"=>39, "avg_yards"=>8.359, "yards"=>326, "touchdowns"=>3, "yards_after_catch"=>157, "longest"=>25, "longest_touchdown"=>5, "redzone_targets"=>5, "air_yards"=>169},
+       "players"=>
+        [{"name"=>"Randall Cobb",
+          "jersey"=>"18",
+          "reference"=>"00-0028002",
+          "id"=>"3283f152-d373-43b3-b88f-f6f261c48e81",
+          "position"=>"WR",
+          "receptions"=>11,
+          "targets"=>15,
+          "yards"=>95,
+          "avg_yards"=>8.6,
+          "longest"=>25,
+          "touchdowns"=>1,
+          "longest_touchdown"=>2,
+          "yards_after_catch"=>59,
+          "redzone_targets"=>1,
+          "air_yards"=>36}]
+      }
   end
 
   def test_stat_pack_receiving_initializes
