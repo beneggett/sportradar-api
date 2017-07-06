@@ -26,6 +26,8 @@ module Sportradar
 
         def update(data, **opts)
           handle_names(data)
+          @id = data['id'] || @id
+
           @venue    = Venue.new(data['venue']) if data['venue']
 
           @seed     = data['seed'].to_i             if data['seed']

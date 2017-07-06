@@ -24,3 +24,35 @@ game.get_statistics             # => res is raw response data hash. the `game` o
 game.home.stats.passing         # => Sportradar::Api::Football::StatPack::Passing => passing stats
 game.home.stats.passing.players.first
 ```
+
+
+```ruby
+nfl = Marshal.load(File.binread('nfl.bin'));
+ncaafb = Marshal.load(File.binread('ncaafb.bin'));
+g1 = nfl.games.sample;
+g2 = ncaafb.games.sample
+g2.year
+g1.year
+games = [g1, g2]
+games.map(&:year)
+games.map(&:week)
+games.map(&:week_number)
+g1
+g1.year
+g1.week_number
+games.map(&:type)
+games.map(&:path_pbp)
+games.map(&:plays)
+games.map(&:drives).map(&:count)
+games.map(&:plays).map(&:count)
+games.map(&:quarter)
+games.map(&:score)
+games.each(&:get_statistics);
+games.map(&:score)
+games.each(&:get_pbp);
+games.map(&:plays).map(&:count)
+games.map(&:drives).map(&:count)
+
+
+
+```

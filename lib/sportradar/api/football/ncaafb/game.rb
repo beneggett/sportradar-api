@@ -16,9 +16,13 @@ module Sportradar
             end
           end
 
+          def type
+            'REG'
+          end
+
 
           def get_extended_box
-            data = api.get_data(path_extended_box)
+            data = api.get_data(path_extended_box).to_h
             ingest_extended_box(data)
           end
 
@@ -27,8 +31,25 @@ module Sportradar
             update(data, source: :extended_box)
             check_newness(:extended_box, @clock)
             data
-          # rescue => e
-          #   binding.pry
+          end
+
+          def get_summary
+            data = api.get_data(path_summary).to_h
+            ingest_summary(data)
+          end
+
+          def queue_summary
+            url, headers, options, timeout = api.get_request_info(path_summary)
+            {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_summary)}
+          end
+
+          def ingest_summary(data)
+            data = data
+            update(data, source: :summary)
+            @quarter = data.delete('quarter').to_i
+            check_newness(:box, @clock)
+            check_newness(:score, @score)
+            data
           end
 
           def team_class
@@ -65,7 +86,7 @@ ncaafb = Sportradar::Api::Football::Ncaafb.new(year: 2016)
 ncaafb = Sportradar::Api::Football::Ncaafb.new
 gg = ncaafb.games;
 ncaafb = Marshal.load(File.binread('ncaafb.bin'));
-g = ncaafb.games.first;
+g2 = ncaafb.games.sample
 g = gg.first;
 g = gg.sample;
 g.week_number

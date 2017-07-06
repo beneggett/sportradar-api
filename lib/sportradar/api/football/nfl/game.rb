@@ -4,9 +4,17 @@ module Sportradar
       class Nfl
         class Game < Sportradar::Api::Football::Game
 
+
           def update_teams(data)
-            @home          = team_class.new(data['home'], api: api, game: self) if data['home'].is_a?(Hash)
-            @away          = team_class.new(data['away'], api: api, game: self) if data['away'].is_a?(Hash)
+            if data['summary']
+              @home.update(data.dig('summary', 'home'), game: self)
+              @away.update(data.dig('summary', 'away'), game: self)
+            else
+              @home.update(data['home'], api: api, game: self) if data['home'].is_a?(Hash)
+              @away.update(data['away'], api: api, game: self) if data['away'].is_a?(Hash)
+              @home_alias    = data['home'] if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+              @away_alias    = data['away'] if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+            end
           end
 
 
@@ -63,7 +71,7 @@ gg = nfl.games;
 tt = nfl.teams;
 File.binwrite('nfl.bin', Marshal.dump(nfl))
 nfl = Marshal.load(File.binread('nfl.bin'));
-g = nfl.games.first;
+g1 = nfl.games.sample;
 g = gg.first;
 g = gg.sample;
 g.week_number

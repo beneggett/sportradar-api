@@ -12,6 +12,8 @@ module Sportradar
           # @week     = opts[:week]
 
           @scoring_raw = Scoring.new(data, game: self)
+          @home          = team_class.new({}, api: api, game: self)
+          @away          = team_class.new({}, api: api, game: self)
 
           @updates  = {}
           @changes  = {}
@@ -95,6 +97,8 @@ module Sportradar
           end
 
           create_data(@teams_hash, data['team'], klass: team_class, api: api, game: self) if data['team']
+
+          self
         end
 
         def generate_title
@@ -102,10 +106,15 @@ module Sportradar
         end
 
         def update_teams(data)
-          @home          = team_class.new(data['home_team'], api: api, game: self) if data['home_team'].is_a?(Hash)
-          @away          = team_class.new(data['away_team'], api: api, game: self) if data['away_team'].is_a?(Hash)
-          @home_alias    = data['home'] if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
-          @away_alias    = data['away'] if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+          if data['summary']
+            @home.update(data.dig('summary', 'home'), game: self)
+            @away.update(data.dig('summary', 'away'), game: self)
+          else
+            @home.update(data['home_team'], game: self) if data['home_team'].is_a?(Hash)
+            @away.update(data['away_team'], game: self) if data['away_team'].is_a?(Hash)
+            @home_alias    = data['home'] if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+            @away_alias    = data['away'] if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+          end
         end
 
         # def update_from_team(id, data)
@@ -307,7 +316,7 @@ module Sportradar
         # data retrieval
 
         def get_box
-          data = api.get_data(path_box)
+          data = api.get_data(path_box).to_h
           ingest_box(data)
         end
 
@@ -326,7 +335,7 @@ module Sportradar
         end
 
         def get_pbp
-          data = api.get_data(path_pbp);
+          data = api.get_data(path_pbp).to_h
           ingest_pbp(data)
         end
 
@@ -347,7 +356,7 @@ module Sportradar
         end
 
         def get_statistics
-          data = api.get_data(path_statistics)
+          data = api.get_data(path_statistics).to_h
           ingest_statistics(data)
         end
 
@@ -362,27 +371,6 @@ module Sportradar
           data
         # rescue => e
         #   binding.pry
-        end
-
-        def get_summary
-          data = api.get_data(path_summary)
-          ingest_summary(data)
-        end
-
-        def queue_summary
-          url, headers, options, timeout = api.get_request_info(path_summary)
-          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_summary)}
-        end
-
-        def ingest_summary(data)
-          data = data
-          update(data, source: :summary)
-          @quarter = data.delete('quarter').to_i
-          check_newness(:box, @clock)
-          check_newness(:score, @score)
-          data
-        rescue => e
-          binding.pry
         end
 
         def quarter_class
