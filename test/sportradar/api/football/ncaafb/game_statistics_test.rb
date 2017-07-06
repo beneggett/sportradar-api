@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Sportradar::Api::Football::Ncaafb::GamePbpTest < Minitest::Test
+class Sportradar::Api::Football::Ncaafb::GameStatisticsTest < Minitest::Test
 
   def setup
     data = {"id"=>"f8ac7454-980d-496a-99af-5824d5f3eea2",
@@ -15,29 +15,21 @@ class Sportradar::Api::Football::Ncaafb::GamePbpTest < Minitest::Test
       "week_number"=>13,
     }
     @game = Sportradar::Api::Football::Ncaafb::Game.new(data)
-    VCR.use_cassette("ncaafb/game/pbp_regulation") do
-      @game.get_pbp
+    VCR.use_cassette("ncaafb/game/statistics_regulation") do
+      @game.get_statistics
       @home_id = @game.home_alias
       @away_id = @game.away_alias
     end
   end
 
-  def test_ncaafb_game_pbp
-    assert_equal 4, @game.quarters.size
-    assert_equal 34, @game.drives.size
-    assert_equal 228, @game.plays.size
-  end
-
-  def test_ncaafb_game_play_timing
-    assert @game.plays.all?(&:clock)
-  end
-
-  def test_ncaafb_game_plays_have_required_attributes
-    assert @game.plays.all?(&:description)
-  end
 
   def test_ncaafb_game_has_score
     assert_equal ({"ARI"=>56, "ASU"=>35}), @game.score
+  end
+
+  def test_ncaafb_game_has_stats
+    assert_instance_of Sportradar::Api::Football::GameStats, @game.stats(:home)
+    assert_instance_of Sportradar::Api::Football::GameStats, @game.stats(:away)
   end
 
 end

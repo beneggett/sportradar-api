@@ -48,6 +48,7 @@ games.map(&:plays).map(&:count)
 games.map(&:quarter)
 games.map(&:score)
 games.each(&:get_statistics);
+games.each(&:get_box);
 games.map(&:score)
 games.each(&:get_pbp);
 games.map(&:plays).map(&:count)
@@ -56,3 +57,5 @@ games.map(&:drives).map(&:count)
 
 
 ```
+
+
