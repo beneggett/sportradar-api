@@ -32,4 +32,15 @@ class Sportradar::Api::Football::Ncaafb::GameStatisticsTest < Minitest::Test
     assert_instance_of Sportradar::Api::Football::GameStats, @game.stats(:away)
   end
 
+  def test_ncaafb_game_statistics
+    assert_equal 511, @game.stats(:home).rushing.yards
+    assert_equal 48, @game.stats(:home).rushing.attempts
+    
+    assert_equal 6.2, @game.stats(:away).passing.avg_yards
+    
+    assert_equal 62.444, @game.stats(:home).kickoffs.average
+    assert_equal 3, @game.stats(:home).receiving.receptions
+
+  end
+
 end
