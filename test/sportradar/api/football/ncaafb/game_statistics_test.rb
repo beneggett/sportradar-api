@@ -2,6 +2,8 @@ require 'test_helper'
 
 class Sportradar::Api::Football::Ncaafb::GameStatisticsTest < Minitest::Test
 
+  # ESPN box: http://www.espn.com/college-football/boxscore?gameId=400869167
+  # ESPN pbp: http://www.espn.com/college-football/playbyplay?gameId=400869167
   def setup
     data = {"id"=>"f8ac7454-980d-496a-99af-5824d5f3eea2",
       "scheduled"=>"2016-11-26T02:30:00+00:00",

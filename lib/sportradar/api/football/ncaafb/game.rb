@@ -16,7 +16,7 @@ module Sportradar
             end
           end
 
-          def type
+          def type # Bowl games don't seem to work when they use the bowl type instead of REG
             'REG'
           end
 

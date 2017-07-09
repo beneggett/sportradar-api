@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Game < Data
-        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup, :week, :quarter, :clock
+        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :duration, :attendance, :team_stats, :player_stats, :changes, :lineup, :week, :quarter, :clock, :api
 
         attr_reader :week_number, :year, :type
 
@@ -375,6 +375,10 @@ module Sportradar
 
         def quarter_class
           Sportradar::Api::Football::Quarter
+        end
+
+        def team_class
+          Team
         end
 
       end
