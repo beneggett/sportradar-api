@@ -10,9 +10,17 @@ module Sportradar
             @api      = opts[:api]
 
             @id = data["id"]
-            @name = data["name"]
-            @alias = data["alias"]
-            @divisions_hash = create_data({}, data["divisions"], klass: Division, conference: self, api: @api) # if response["division"]
+            @divisions_hash = {}
+
+            update(data, **opts)
+          end
+
+          def update(data, **opts)
+            @name   = data["name"]  if data["name"]
+            @alias  = data["alias"] if data["alias"]
+            create_data(@divisions_hash, data["divisions"], klass: Division, conference: self, api: @api)
+
+            self
           end
 
           def divisions

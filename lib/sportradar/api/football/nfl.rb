@@ -24,8 +24,13 @@ module Sportradar
         def update(data, source: nil, **opts)
           # update stuff
           @id     = data['id'] if data['id']
-          @season = data['season']  if data['season']
-          @type   = data['type']    if data['type']
+          if data['season'].is_a?(Hash)
+            @season = data.dig('season', 'year')  if data.dig('season', 'year')
+            @type   = data.dig('season', 'type')  if data.dig('season', 'type')
+          else
+            @season = data['season']  if data['season']
+            @type   = data['type']    if data['type']
+          end
           # @name     = data.dig('league', 'name')  if data.dig('league', 'name')
           # @alias    = data.dig('league', 'alias') if data.dig('league', 'alias')
 
@@ -225,7 +230,7 @@ module Sportradar
         end
 
         def ingest_standings(data)
-          update(data.dig('league','season'), source: :teams)
+          update(data, source: :teams)
           data
         end
 
@@ -264,6 +269,8 @@ __END__
 nfl = Sportradar::Api::Football::Nfl.new
 nfl = Sportradar::Api::Football::Nfl.new(year: 2016)
 res1 = nfl.get_schedule;
+res1 = nfl.get_hierarchy;
+res1 = nfl.get_standings;
 res2 = nfl.get_weekly_schedule;
 
 nfl = Marshal.load(File.binread('nfl.bin'));

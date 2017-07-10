@@ -1,0 +1,198 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/ncaafb-t1/teams/ARI/roster.json?api_key=8nxbfm6k546m7mscnmaf9ejh
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=600
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 09 Jul 2017 23:43:16 GMT
+      Expires:
+      - Sun, 09 Jul 2017 23:53:16 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-130.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '145'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '19887'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"ARI","name":"Wildcats","market":"Arizona","players":[{"id":"1b80a045-d43e-4285-b1e5-0879d15f87ad","name_full":"Levi
+        Walton","name_first":"Levi","name_last":"Walton","name_abbr":"L.Walton","birth_place":"North
+        Fort Myers, FL, USA","height":75,"weight":290,"position":"OL","jersey_number":55,"status":"ACT","experience":"JR"},{"id":"4b28daa3-ace8-4ef8-8d33-ffec284970fe","name_full":"Michael
+        Eletise","name_first":"Michael","name_last":"Eletise","name_abbr":"M.Eletise","birth_place":"Honolulu,
+        HI, USA","height":75,"weight":318,"position":"OT","jersey_number":75,"status":"ACT","experience":"FR"},{"id":"e85a0497-0e8c-4805-b0b9-ec5d2bab045b","name_full":"Luca
+        Bruno","name_first":"Luca","name_last":"Bruno","name_abbr":"L.Bruno","birth_place":"Oak
+        Park, CA, USA","height":76,"weight":295,"position":"DL","jersey_number":60,"status":"ACT","experience":"SR"},{"id":"8939e3ba-c66a-40da-b920-275451833a3e","name_full":"Alex
+        Kosinski","name_first":"Alex","name_last":"Kosinski","name_abbr":"A.Kosinski","birth_place":"Larkspur,
+        CA, USA","height":76,"weight":291,"position":"OL","jersey_number":74,"status":"ACT","experience":"SO"},{"id":"58a1e603-096c-43b3-ad80-e361eb8d8a8a","name_full":"Jacob
+        Alsadek","name_first":"Jacob","name_last":"Alsadek","name_abbr":"J.Alsadek","birth_place":"San
+        Diego, CA, USA","height":79,"weight":315,"position":"OL","jersey_number":78,"status":"ACT","experience":"SR"},{"id":"3e749caf-44aa-4f09-b941-839cef1cfd14","name_full":"Trevor
+        Wood","name_first":"Trevor","name_last":"Wood","name_abbr":"T.Wood","birth_place":"Scottsdale,
+        AZ, USA","height":78,"weight":265,"position":"TE","jersey_number":8,"status":"ACT","experience":"JR"},{"id":"c8f5285a-3ca4-4f2e-9e86-1cba6aa5fc18","name_full":"Thomas
+        Reid III","name_first":"Thomas","name_last":"Reid","name_abbr":"T.Reid","birth_place":"Chesapeake,
+        VA, USA","height":74,"weight":189,"position":"WR","jersey_number":40,"status":"ACT","experience":"FR"},{"id":"bf04fd2f-4258-4122-87b8-fcb394a83264","name_full":"Matt
+        Thomas","name_first":"Matt","name_last":"Thomas","name_abbr":"M.Thomas","birth_place":"Tucson,
+        AZ, USA","height":73,"weight":281,"position":"DL","jersey_number":90,"status":"ACT","experience":"SO"},{"id":"14cd5f42-71ff-43bf-842e-4111731673e8","name_full":"DeAndre''
+        Miller","name_first":"DeAndre''","name_last":"Miller","name_abbr":"D.Miller","birth_place":"Buckeye,
+        AZ, USA","height":75,"weight":236,"position":"DE","jersey_number":32,"status":"ACT","experience":"SR"},{"id":"93ca34d0-b6cc-4a8d-8a6e-5d0c121fdf03","name_full":"Justin
+        Belknap","name_first":"Justin","name_last":"Belknap","name_abbr":"J.Belknap","birth_place":"Henderson,
+        NV, USA","height":74,"weight":247,"position":"DE","jersey_number":86,"status":"ACT","experience":"SO"},{"id":"58a5fb9b-0323-44a0-987f-1e5299eaa883","name_full":"Khalil
+        Tate","name_first":"Khalil","name_last":"Tate","name_abbr":"K.Tate","birth_place":"Inglewood,
+        CA, USA","height":74,"weight":212,"position":"QB","jersey_number":14,"status":"ACT","experience":"SO"},{"id":"dd1f467c-6b14-4519-a11a-a992f1b171c6","name_full":"Jarrius
+        Wallace","name_first":"Jarrius","name_last":"Wallace","name_abbr":"J.Wallace","birth_place":"Villa,
+        LA, USA","height":73,"weight":168,"position":"SAF","jersey_number":3,"status":"ACT","experience":"FR"},{"id":"3fec00d7-bd86-4950-8310-6e21721f4cc4","name_full":"Tristan
+        Cooper","name_first":"Tristan","name_last":"Cooper","name_abbr":"T.Cooper","birth_place":"El
+        Paso, TX, USA","height":73,"weight":180,"position":"SAF","jersey_number":31,"status":"ACT","experience":"SO"},{"id":"7b8fd5f9-dab7-437d-a5b0-a3277f682599","name_full":"Cedric
+        Peterson","name_first":"Cedric","name_last":"Peterson","name_abbr":"C.Peterson","birth_place":"Moreno
+        Valley, CA, USA","height":71,"weight":187,"position":"WR","jersey_number":18,"status":"ACT","experience":"SO"},{"id":"af8df714-919c-4887-9db5-61fa1df64146","name_full":"Nick
+        Wilson","name_first":"Nick","name_last":"Wilson","name_abbr":"N.Wilson","birth_place":"Fresno,
+        CA, USA","height":70,"weight":208,"position":"RB","jersey_number":28,"status":"ACT","experience":"SR"},{"id":"89df3bff-e303-443a-9b57-1416a6b91daf","name_full":"Demetrius
+        Flannigan-Fowles","name_first":"Demetrius","name_last":"Flannigan-Fowles","name_abbr":"D.Flannigan-Fowles","birth_place":"Tucson,
+        AZ, USA","height":74,"weight":199,"position":"FS","jersey_number":6,"status":"ACT","experience":"JR"},{"id":"2acfd5d3-e4b3-4b3e-b234-7248a6480150","name_full":"Dane
+        Cruikshank","name_first":"Dane","name_last":"Cruikshank","name_abbr":"D.Cruikshank","birth_place":"Chino
+        Hills, CA, USA","height":73,"weight":204,"position":"CB","jersey_number":9,"status":"ACT","experience":"SR"},{"id":"eb62627e-6223-403e-bf94-e111c736d080","name_full":"Richard
+        Merritt","name_first":"Richard","name_last":"Merritt","name_abbr":"R.Merritt","birth_place":"Clovis,
+        CA, USA","height":72,"weight":206,"position":"LB","jersey_number":53,"status":"ACT","experience":"FR"},{"id":"b13c0eab-5aef-4526-89fd-fb9c51c3e4aa","name_full":"Shun
+        Brown","name_first":"Shun","name_last":"Brown","name_abbr":"S.Brown","birth_place":"Shreveport,
+        LA, USA","height":68,"weight":175,"position":"WR","jersey_number":6,"status":"ACT","experience":"JR"},{"id":"3cabed40-d8f6-4261-bfa5-ad4b0004a383","name_full":"Zach
+        Green","name_first":"Zach","name_last":"Green","name_abbr":"Z.Green","birth_place":"Miami,
+        FL, USA","height":70,"weight":227,"position":"RB","jersey_number":34,"status":"ACT","experience":"SR"},{"id":"68a1d40f-3809-4ebd-889e-5b87594e414f","name_full":"Isaiah
+        Hayes","name_first":"Isaiah","name_last":"Hayes","name_abbr":"I.Hayes","birth_place":"Los
+        Angeles, CA, USA","height":72,"weight":180,"position":"SAF","jersey_number":21,"status":"ACT","experience":"SO"},{"id":"35bc6162-7216-4631-a44e-387238deb374","name_full":"Christian
+        Boettcher","name_first":"Christian","name_last":"Boettcher","name_abbr":"C.Boettcher","birth_place":"Scottsdale,
+        AZ, USA","height":74,"weight":285,"position":"OL","jersey_number":69,"status":"ACT","experience":"JR"},{"id":"c06f1b10-89bb-4cf7-8901-341fa6a0312c","name_full":"Gerhard
+        de Beer","name_first":"Gerhard","name_last":"de Beer","name_abbr":"G.deBeer","birth_place":"Pretoria,,
+        ZAF","height":79,"weight":314,"position":"OL","jersey_number":67,"status":"ACT","experience":"SR"},{"id":"1796461c-a350-4895-a121-e01ade8b48db","name_full":"Devon
+        Brewer","name_first":"Devon","name_last":"Brewer","name_abbr":"D.Brewer","birth_place":"Fresno,
+        CA, USA","height":70,"weight":171,"position":"SAF","jersey_number":23,"status":"ACT","experience":"SO"},{"id":"5aa76055-e597-4e4d-8eed-15be7eccfbae","name_full":"Isaiah
+        Strong","name_first":"Isaiah","name_last":"Strong","name_abbr":"I.Strong","birth_place":"Phoenix,
+        AZ, USA","height":72,"weight":172,"position":"CB","jersey_number":35,"status":"ACT","experience":"SR"},{"id":"59af2233-8b6b-4ab3-959d-f9bf22bee00f","name_full":"Cody
+        Creason","name_first":"Cody","name_last":"Creason","name_abbr":"C.Creason","birth_place":"Folsom,
+        CA, USA","height":76,"weight":294,"position":"OL","jersey_number":76,"status":"ACT","experience":"SO"},{"id":"1fa587d8-8fc3-463b-9932-034a05c805c7","name_full":"Lee
+        Pitts","name_first":"Lee","name_last":"Pitts","name_abbr":"L.Pitts","birth_place":"Agoura
+        Hills, CA, USA","height":71,"weight":182,"position":"CB","jersey_number":49,"status":"ACT","experience":"FR"},{"id":"6d5ccbc4-7037-419a-afb0-1cc17ebb396b","name_full":"Brandon
+        Dawkins","name_first":"Brandon","name_last":"Dawkins","name_abbr":"B.Dawkins","birth_place":"Oxnard,
+        CA, USA","height":75,"weight":210,"position":"QB","jersey_number":13,"status":"ACT","experience":"JR"},{"id":"d6df4727-8a30-4dcf-a258-1ffe15564f6f","name_full":"Jake
+        Laudenslager","name_first":"Jake","name_last":"Laudenslager","name_abbr":"J.Laudenslager","birth_place":"Novato,
+        CA, USA","height":70,"weight":195,"position":"RB","jersey_number":32,"status":"ACT","experience":"FR"},{"id":"3e089710-7795-4398-9f20-0a94ff71ae03","name_full":"Jalen
+        Cochran","name_first":"Jalen","name_last":"Cochran","name_abbr":"J.Cochran","birth_place":"Plymouth,
+        MI, USA","height":75,"weight":240,"position":"DL","jersey_number":81,"status":"ACT","experience":"FR"},{"id":"b0d30ec9-277c-4f4f-839b-53823ef6cedc","name_full":"Parker
+        Zellers","name_first":"Parker","name_last":"Zellers","name_abbr":"P.Zellers","birth_place":"Scottsdale,
+        AZ, USA","height":73,"weight":247,"position":"DL","jersey_number":93,"status":"ACT","experience":"SR"},{"id":"4e5831b9-7c10-42b5-8862-3df5ee157cd2","name_full":"Chacho
+        Ulloa","name_first":"Chacho","name_last":"Ulloa","name_abbr":"C.Ulloa","birth_place":"Corona,
+        CA, USA","height":71,"weight":201,"position":"SAF","jersey_number":13,"status":"ACT","experience":"SO"},{"id":"d2f3d569-3f53-4409-acb4-fa3f54e923c5","name_full":"Malcolm
+        Holland","name_first":"Malcolm","name_last":"Holland","name_abbr":"M.Holland","birth_place":"Chandler,
+        AZ, USA","height":71,"weight":182,"position":"CB","jersey_number":10,"status":"ACT","experience":"SO"},{"id":"05d7abab-c15a-43ac-91e3-595b4c2703b5","name_full":"J.J.
+        Taylor","name_first":"J.J.","name_last":"Taylor","name_abbr":"J.Taylor","birth_place":"Corona,
+        CA, USA","height":66,"weight":170,"position":"RB","jersey_number":23,"status":"ACT","experience":"FR"},{"id":"7148863d-ede4-4718-b1d8-d8e9a36c0a17","name_full":"Zach
+        Benjamin","name_first":"Zach","name_last":"Benjamin","name_abbr":"Z.Benjamin","birth_place":"Tampa,
+        FL, USA","height":76,"weight":211,"position":"WR","jersey_number":87,"status":"ACT","experience":"SR"},{"id":"425ccf7b-fd0e-40c5-ba7a-b2dad0566116","name_full":"Branden
+        Leon","name_first":"Branden","name_last":"Leon","name_abbr":"B.Leon","birth_place":"Goodyear,
+        AZ, USA","height":68,"weight":195,"position":"RB","jersey_number":38,"status":"ACT","experience":"SO"},{"id":"2aad8763-a237-4fca-9f0d-d53ecb94b715","name_full":"Larry
+        Tharpe Jr.","name_first":"Larry","name_last":"Tharpe","name_abbr":"L.Tharpe","birth_place":"Carrollton,
+        TX, USA","height":77,"weight":275,"position":"DL","jersey_number":98,"status":"ACT","experience":"JR"},{"id":"76f8df4b-60a9-4a14-a1b2-db68bb4c7e6e","name_full":"Jamie
+        Nunley","name_first":"Jamie","name_last":"Nunley","name_abbr":"J.Nunley","birth_place":"Murrieta,
+        CA, USA","height":77,"weight":228,"position":"TE","jersey_number":85,"status":"ACT","experience":"FR"},{"id":"2e9c1c30-417d-4dc1-9b3b-53ec5cece80b","name_full":"Finton
+        Connolly","name_first":"Finton","name_last":"Connolly","name_abbr":"F.Connolly","birth_place":"Gilbert,
+        AZ, USA","height":77,"weight":280,"position":"DL","jersey_number":91,"status":"ACT","experience":"SO"},{"id":"994b9f9e-06f7-4bb9-8160-dac690153da1","name_full":"Lee
+        Anderson III","name_first":"Lee","name_last":"Anderson","name_abbr":"L.Anderson","birth_place":"Moreno
+        Valley, CA, USA","height":73,"weight":235,"position":"DE","jersey_number":51,"status":"ACT","experience":"SO"},{"id":"50b13375-1040-457b-aec8-fa9390efe197","name_full":"Bryson
+        Cain","name_first":"Bryson","name_last":"Cain","name_abbr":"B.Cain","birth_place":"Temecula,
+        CA, USA","height":76,"weight":276,"position":"OT","jersey_number":54,"status":"ACT","experience":"FR"},{"id":"9be111b7-f39e-4a8b-a495-198b5e9301b9","name_full":"Nick
+        Reinhardt","name_first":"Nick","name_last":"Reinhardt","name_abbr":"N.Reinhardt","birth_place":"Scottsdale,
+        AZ, USA","height":73,"weight":240,"position":"LS","jersey_number":56,"status":"ACT","experience":"JR"},{"id":"55b0d84f-00fb-46b7-af15-f2cd16f468c6","name_full":"Marcus
+        Griffin","name_first":"Marcus","name_last":"Griffin","name_abbr":"M.Griffin","birth_place":"Bellevue,
+        WA, USA","height":75,"weight":292,"position":"DL","jersey_number":96,"status":"ACT","experience":"JR"},{"id":"e5faa286-7d3a-4c00-a63a-deca1157b07b","name_full":"Jacob
+        Colacion","name_first":"Jacob","name_last":"Colacion","name_abbr":"J.Colacion","birth_place":"La
+        Habra, CA, USA","height":73,"weight":210,"position":"LB","jersey_number":34,"status":"ACT","experience":"FR"},{"id":"18c6e982-ac6d-41d5-a516-22e3f3eea918","name_full":"Francisco
+        Nelson","name_first":"Francisco","name_last":"Nelson","name_abbr":"F.Nelson","birth_place":"Lakeland,
+        FL, USA","height":74,"weight":231,"position":"DE","jersey_number":39,"status":"ACT","experience":"FR"},{"id":"b0ceb2fd-8c63-420e-b257-9ab39a694518","name_full":"Darick
+        Holmes Jr.","name_first":"Darick","name_last":"Holmes","name_abbr":"D.Holmes","birth_place":"Pasadena,
+        CA, USA","height":65,"weight":174,"position":"WR","jersey_number":24,"status":"ACT","experience":"SO"},{"id":"a3982759-26cb-463f-ae0d-972fe7b651ae","name_full":"Tyrell
+        Johnson","name_first":"Tyrell","name_last":"Johnson","name_abbr":"T.Johnson","birth_place":"Fort
+        Myers, FL, USA","height":67,"weight":164,"position":"WR","jersey_number":2,"status":"ACT","experience":"SR"},{"id":"a7107ba1-5c46-4861-8bd5-6b9292be1a3c","name_full":"Antonio
+        Parks","name_first":"Antonio","name_last":"Parks","name_abbr":"A.Parks","birth_place":"New
+        Orleans, LA, USA","height":70,"weight":184,"position":"CB","jersey_number":8,"status":"ACT","experience":"FR"},{"id":"e9e093e5-1b70-4521-80cc-ac7ca17bacd6","name_full":"Kyeler
+        Burke","name_first":"Kyeler","name_last":"Burke","name_abbr":"K.Burke","birth_place":"Chandler,
+        AZ, USA","height":71,"weight":174,"position":"SAF","jersey_number":33,"status":"ACT","experience":"SO"},{"id":"f5baac56-767a-475b-adc5-3c5b4766531e","name_full":"Josh
+        Pollack","name_first":"Josh","name_last":"Pollack","name_abbr":"J.Pollack","birth_place":"Highland
+        Park, IL, USA","height":70,"weight":184,"position":"K/P","jersey_number":30,"status":"ACT","experience":"JR"},{"id":"51a6dd87-4a0a-4f43-999a-31f945c3bdf1","name_full":"Jon
+        Jacobs","name_first":"Jon","name_last":"Jacobs","name_abbr":"J.Jacobs","birth_place":"Gainesville,
+        VA, USA","height":76,"weight":298,"position":"OL","jersey_number":53,"status":"ACT","experience":"FR"},{"id":"d762bc89-cd23-40c5-b11a-585e0b0f9d07","name_full":"Sammy
+        Morrison","name_first":"Sammy","name_last":"Morrison","name_abbr":"S.Morrison","birth_place":"Leesburg,
+        VA, USA","height":69,"weight":174,"position":"CB","jersey_number":27,"status":"ACT","experience":"SO"},{"id":"beaead97-3a12-4aea-be92-89988c4bb327","name_full":"Lorenzo
+        Burns","name_first":"Lorenzo","name_last":"Burns","name_abbr":"L.Burns","birth_place":"Murrieta,
+        CA, USA","height":70,"weight":165,"position":"CB","jersey_number":2,"status":"ACT","experience":"FR"},{"id":"92f964a8-2bad-4694-876f-01956563ca7e","name_full":"Jace
+        Whittaker","name_first":"Jace","name_last":"Whittaker","name_abbr":"J.Whittaker","birth_place":"Oceanside,
+        CA, USA","height":71,"weight":180,"position":"CB","jersey_number":17,"status":"ACT","experience":"JR"},{"id":"02f76fda-e558-4815-b5b6-7463fc697c8b","name_full":"Gavin
+        Robertson Jr.","name_first":"Gavin","name_last":"Robertson","name_abbr":"G.Robertson","birth_place":"Auburn,
+        WA, USA","height":73,"weight":210,"position":"LB","jersey_number":5,"status":"ACT","experience":"FR"},{"id":"d12ffae9-1b6a-46ef-a4ea-fbf0be70eed3","name_full":"Nathan
+        Eldridge","name_first":"Nathan","name_last":"Eldridge","name_abbr":"N.Eldridge","birth_place":"Anthem,
+        AZ, USA","height":75,"weight":290,"position":"OL","jersey_number":64,"status":"ACT","experience":"SO"},{"id":"7bb3c13d-a858-4a4b-b37c-af7b1f6af4df","name_full":"Anthony
+        Mariscal","name_first":"Anthony","name_last":"Mariscal","name_abbr":"A.Mariscal","birth_place":"Bakersfield,
+        CA, USA","height":70,"weight":197,"position":"SAF","jersey_number":25,"status":"ACT","experience":"SO"},{"id":"6cb2ce77-3391-43df-94e0-0293e9e154bd","name_full":"Jack
+        Banda","name_first":"Jack","name_last":"Banda","name_abbr":"J.Banda","birth_place":"Grayson,
+        GA, USA","height":75,"weight":247,"position":"DE","jersey_number":92,"status":"ACT","experience":"SR"},{"id":"d92c2bea-edee-47d1-bdea-d8052d2bd27a","name_full":"Brandon
+        Rutt","name_first":"Brandon","name_last":"Rutt","name_abbr":"B.Rutt","birth_place":"Gilbert,
+        AZ, USA","height":73,"weight":220,"position":"LB","jersey_number":18,"status":"ACT","experience":"JR"},{"id":"4b427cfa-f8fe-41f8-a1c0-4a1a8fa7f8ca","name_full":"Layth
+        Friekh","name_first":"Layth","name_last":"Friekh","name_abbr":"L.Friekh","birth_place":"Glendale,
+        AZ, USA","height":77,"weight":282,"position":"OL","jersey_number":58,"status":"ACT","experience":"SR"},{"id":"84dafc0a-cce0-4b05-8847-a20300b48799","name_full":"Jarvis
+        McCall, Jr.","name_first":"Jarvis","name_last":"McCall","name_abbr":"J.McCall","birth_place":"Tampa,
+        FL, USA","height":74,"weight":203,"position":"SAF","jersey_number":29,"status":"ACT","experience":"SR"},{"id":"92dd97e5-2a36-41c3-8311-b62a1ecf0c09","name_full":"Zach
+        Werlinger","name_first":"Zach","name_last":"Werlinger","name_abbr":"Z.Werlinger","birth_place":"Chandler,
+        AZ, USA","height":73,"weight":188,"position":"QB","jersey_number":19,"status":"ACT","experience":"JR"},{"id":"67e0ddf5-20d6-457f-8034-3fc29bce873b","name_full":"Kwesi
+        Mashack","name_first":"Kwesi","name_last":"Mashack","name_abbr":"K.Mashack","birth_place":"Inglewood,
+        CA, USA","height":68,"weight":206,"position":"CB","jersey_number":15,"status":"ACT","experience":"SR"},{"id":"f94c0a00-598c-4e3a-8bf6-1b10c65aab44","name_full":"Carrington
+        Vaughn","name_first":"Carrington","name_last":"Vaughn","name_abbr":"C.Vaughn","birth_place":"Pittsburgh,
+        PA, USA","height":71,"weight":214,"position":"LB","jersey_number":28,"status":"ACT","experience":"SO"},{"id":"7410ed1f-31b9-4889-9dee-71887ae7e343","name_full":"Jamardre
+        Cobb","name_first":"Jamardre","name_last":"Cobb","name_abbr":"J.Cobb","birth_place":"Los
+        Angeles, CA, USA","height":72,"weight":262,"position":"FB","jersey_number":25,"status":"ACT","experience":"JR"},{"id":"0e85ab28-6899-4e79-8c23-ef34c4e453a1","name_full":"Cam
+        Denson","name_first":"Cam","name_last":"Denson","name_abbr":"C.Denson","birth_place":"Tucson,
+        AZ, USA","height":71,"weight":187,"position":"WR","jersey_number":3,"status":"ACT","experience":"SR"},{"id":"545a52cb-9da3-452b-b8b7-27c1d7101e3b","name_full":"Shawn
+        Poindexter","name_first":"Shawn","name_last":"Poindexter","name_abbr":"S.Poindexter","birth_place":"Peoria,
+        AZ, USA","height":77,"weight":210,"position":"WR","jersey_number":19,"status":"ACT","experience":"SR"},{"id":"e76bfdf8-2f7d-4e34-9c25-91f052c7c845","name_full":"Matt
+        Aragon","name_first":"Matt","name_last":"Aragon","name_abbr":"M.Aragon","birth_place":"Tucson,
+        AZ, USA","height":77,"weight":211,"position":"P","jersey_number":26,"status":"ACT","experience":"SO"},{"id":"cf26786b-ab5f-44e1-810f-e82915f5d10f","name_full":"Josh
+        McCauley","name_first":"Josh","name_last":"McCauley","name_abbr":"J.McCauley","birth_place":"Mesa,
+        AZ, USA","height":75,"weight":266,"position":"OL","jersey_number":50,"status":"ACT","experience":"FR"},{"id":"e51aed1c-4427-43c2-8ad3-0fde608f92d2","name_full":"Jake
+        Glatting","name_first":"Jake","name_last":"Glatting","name_abbr":"J.Glatting","birth_place":"Phoenix,
+        AZ, USA","height":75,"weight":206,"position":"P","jersey_number":16,"status":"ACT","experience":"JR"},{"id":"58354d56-6abc-4006-816e-a81afb69126e","name_full":"Tony
+        Ellison","name_first":"Tony","name_last":"Ellison","name_abbr":"T.Ellison","birth_place":"Granite
+        Bay, CA, USA","height":71,"weight":188,"position":"WR","jersey_number":9,"status":"ACT","experience":"JR"},{"id":"5a917815-073c-4995-a2c1-0562d99d564f","name_full":"Donald
+        Reiter","name_first":"Donald","name_last":"Reiter","name_abbr":"D.Reiter","birth_place":"Glendale,
+        AZ, USA","height":70,"weight":254,"position":"LS","jersey_number":51,"status":"ACT","experience":"FR"},{"id":"6604ea16-69cf-47dc-acfc-9bab41c706e7","name_full":"Devaughn
+        Cooper","name_first":"Devaughn","name_last":"Cooper","name_abbr":"D.Cooper","birth_place":"Los
+        Angeles, CA, USA","height":70,"weight":175,"position":"WR","jersey_number":7,"status":"ACT","experience":"FR"}],"coaches":[{"id":"8a6d082f-d376-41a7-a49d-371d45a74ccb","name_full":"Rich
+        Rodriguez","name_first":"Rich","name_last":"Rodriguez","name_abbr":"R.Rodriguez","position":"Head
+        Coach","status":"ACT","salary":0}]}'
+    http_version: 
+  recorded_at: Sun, 09 Jul 2017 23:43:55 GMT
+recorded_with: VCR 3.0.3
