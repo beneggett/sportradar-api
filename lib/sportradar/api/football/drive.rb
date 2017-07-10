@@ -24,6 +24,9 @@ module Sportradar
 
         def update(data, **opts)
           @type           = data['type']
+          @team           = data['team']
+          @clock          = data['clock']
+
           @sequence       = data["sequence"]
           @start_reason   = data["start_reason"]
           @end_reason     = data["end_reason"]
@@ -37,8 +40,7 @@ module Sportradar
           @quarter_data = data['quarter']
           @team_data    = data['team']
 
-          create_data(@plays_hash,  data['actions'],  klass: Play,  api: api, game: self) if data['actions']
-          create_data(@events_hash, data['events'],   klass: Event, api: api, game: self) if data['events']
+          handle_plays_and_events(data, **opts)
 
           self
         end

@@ -249,7 +249,7 @@ module Sportradar
           elsif quarter == 5
             'OT'
           else
-            "#{quarter}Q"
+            "Q#{quarter}"
           end
         end
 

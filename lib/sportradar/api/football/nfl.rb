@@ -55,6 +55,8 @@ module Sportradar
             end
             @games_hash = create_data(@games_hash, data['games'],   klass: Game,   hierarchy: self, api: api)
           end
+
+          self
         end
         def weeks
           @weeks_hash.values

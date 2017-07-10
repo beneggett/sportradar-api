@@ -12,7 +12,7 @@ class Sportradar::Api::Football::Ncaafb::TeamTest < Minitest::Test
       @team.get_roster
     end
     assert_equal 73, @team.players.size
-    assert_kind_of Sportradar::Api::Football::Ncaafb::Player, @team.players.first
+    assert_instance_of Sportradar::Api::Football::Ncaafb::Player, @team.players.first
   end
 
   def test_ncaafb_team_season_stats
