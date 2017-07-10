@@ -26,6 +26,7 @@ require "sportradar/api/football/game"
 require "sportradar/api/football/quarter"
 require "sportradar/api/football/drive"
 require "sportradar/api/football/play"
+require "sportradar/api/football/situation"
 require "sportradar/api/football/event"
 
 require "sportradar/api/football/ncaafb"

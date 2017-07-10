@@ -17,9 +17,10 @@ module Sportradar
           @away_points  = data['away_points']  if data['away_points']
           @home_points  = data['home_points']  if data['home_points']
 
-          # @end_situation   = Sportradar::Api::Nfl::Situation.new data["end_situation"] if data["end_situation"]
+          @end_situation   = Sportradar::Api::Football::Situation.new(data["end_situation"])   if data["end_situation"]
+          @start_situation = Sportradar::Api::Football::Situation.new(data["start_situation"]) if data["start_situation"]
+
           @team_id           = end_situation.team_id if end_situation
-          @home_points       = data["home_points"]
           @play_clock        = data["play_clock"]
           @reference         = data["reference"]
           @score             = data["score"]
@@ -43,7 +44,6 @@ module Sportradar
           @sequence     = data["sequence"]     if data["sequence"]
 
 
-          # @start_situation = Sportradar::Api::Nfl::Situation.new data["start_situation"] if data["start_situation"]
           # @statistics      = Sportradar::Api::Nfl::PlayStatistics.new data["statistics"] if data["statistics"]
           # parse_player if @statistics
           @wall_clock        = data["wall_clock"]

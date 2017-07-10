@@ -61,9 +61,6 @@ module Sportradar
         def conferences
           divisions.flat_map(&:conferences)
         end
-        def teams
-          conferences.flat_map(&:teams)
-        end
 
         def schedule
           get_schedule if games.empty?

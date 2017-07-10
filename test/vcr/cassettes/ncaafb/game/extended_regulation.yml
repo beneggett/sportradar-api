@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/ncaafb-t1/2016/REG/13/ASU/ARI/extended-boxscore.json?api_key=8nxbfm6k546m7mscnmaf9ejh
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=1
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 10 Jul 2017 01:56:11 GMT
+      Expires:
+      - Mon, 10 Jul 2017 01:56:12 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-113.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '155'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '9786'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"f8ac7454-980d-496a-99af-5824d5f3eea2","scheduled":"2016-11-26T02:30:00+00:00","status":"closed","coverage":"full","attendance":50197,"quarter":4,"clock":":00","completed":"2016-11-26T06:10:40+00:00","home_team":{"id":"ARI","name":"Wildcats","market":"Arizona","remaining_challenges":2,"remaining_timeouts":2,"possession":"24:04","points":56,"scoring":[{"quarter":1,"points":7},{"quarter":2,"points":21},{"quarter":3,"points":14},{"quarter":4,"points":14}],"leaders":{"passing":[{"id":"6d5ccbc4-7037-419a-afb0-1cc17ebb396b","name":"Brandon
+        Dawkins","jersey":13,"position":"QB","att":8,"cmp":3,"yds":77,"lg":64,"sk":0,"sk_yds":0.0,"td":1,"int":0,"int_td":0,"fd":1,"sfty":0,"rz_att":0,"rating":159.6,"avg":9.625,"cmp_pct":37.5,"cmp_avg":25.667,"td_pct":12.5,"int_pct":0.0,"yds_10_pls":0,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":1}],"rushing":[{"id":"6d5ccbc4-7037-419a-afb0-1cc17ebb396b","name":"Brandon
+        Dawkins","jersey":13,"position":"QB","att":12,"yds":183,"avg":15.25,"lg":71,"td":2,"fd":5,"fd_pct":41.667,"sfty":0,"rz_att":2,"fum":2,"yds_10_pls":2,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":2},{"id":"442aa94f-09dd-4f90-95a3-5e5c98180eae","name":"Samajie
+        Grant","jersey":10,"position":"WR","att":19,"yds":176,"avg":9.263,"lg":63,"td":3,"fd":6,"fd_pct":31.579,"sfty":0,"rz_att":3,"fum":0,"yds_10_pls":1,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":2}],"receiving":[{"id":"444d4335-f2e9-4aad-93ca-51edf6e74a07","name":"Nate
+        Phillips","jersey":11,"position":"WR","tar":3,"rec":2,"yds":68,"yac":68,"fd":1,"avg":34.0,"td":1,"lg":64,"rz_tar":0,"fum":0,"yds_10_pls":0,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":1},{"id":"be105a19-c179-479a-ab81-ef5c87fe3b4f","name":"Josh
+        Kern","jersey":17,"position":"TE","tar":1,"rec":1,"yds":9,"yac":9,"fd":0,"avg":9.0,"td":0,"lg":9,"rz_tar":0,"fum":0,"yds_10_pls":0,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":0}]}},"away_team":{"id":"ASU","name":"Sun
+        Devils","market":"Arizona State","remaining_challenges":2,"remaining_timeouts":2,"possession":"35:56","points":35,"scoring":[{"quarter":1,"points":7},{"quarter":2,"points":7},{"quarter":3,"points":14},{"quarter":4,"points":7}],"leaders":{"passing":[{"id":"eb00fd25-3a93-4447-8d9c-adcc8a8dafb0","name":"Manny
+        Wilkins","jersey":5,"position":"QB","att":58,"cmp":43,"yds":372,"lg":33,"sk":2,"sk_yds":8.0,"td":3,"int":1,"int_td":0,"fd":17,"sfty":0,"rz_att":3,"rating":141.63,"avg":6.414,"cmp_pct":74.138,"cmp_avg":8.651,"td_pct":5.172,"int_pct":1.724,"yds_10_pls":11,"yds_20_pls":3,"yds_30_pls":1,"yds_40_pls":0,"yds_50_pls":0},{"id":"e06e054a-b6d9-4327-9f81-3fb8a87b7323","name":"N''Keal
+        Harry","jersey":1,"position":"WR","att":1,"cmp":0,"yds":0,"lg":0,"sk":0,"sk_yds":0.0,"td":0,"int":0,"int_td":0,"fd":0,"sfty":0,"rz_att":0,"rating":0.0,"avg":0.0,"cmp_pct":0.0,"cmp_avg":0.0,"td_pct":0.0,"int_pct":0.0,"yds_10_pls":0,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":0}],"rushing":[{"id":"eb00fd25-3a93-4447-8d9c-adcc8a8dafb0","name":"Manny
+        Wilkins","jersey":5,"position":"QB","att":23,"yds":79,"avg":3.435,"lg":12,"td":0,"fd":6,"fd_pct":26.087,"sfty":0,"rz_att":0,"fum":0,"yds_10_pls":1,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":0},{"id":"8089ed5d-144a-4226-a04a-26d07480d094","name":"Demario
+        Richard","jersey":4,"position":"RB","att":7,"yds":34,"avg":4.857,"lg":11,"td":0,"fd":2,"fd_pct":28.571,"sfty":0,"rz_att":1,"fum":0,"yds_10_pls":2,"yds_20_pls":0,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":0}],"receiving":[{"id":"8f415709-f1ad-4a92-a31a-1310f31bd702","name":"Frederick
+        Gammage","jersey":89,"position":"WR","tar":14,"rec":12,"yds":116,"yac":116,"fd":5,"avg":9.667,"td":1,"lg":22,"rz_tar":2,"fum":0,"yds_10_pls":3,"yds_20_pls":1,"yds_30_pls":0,"yds_40_pls":0,"yds_50_pls":0},{"id":"c80b737e-3e6e-45d5-afaa-fe741e6f28f1","name":"Tim
+        White","jersey":12,"position":"WR","tar":8,"rec":4,"yds":69,"yac":69,"fd":3,"avg":17.25,"td":1,"lg":33,"rz_tar":0,"fum":0,"yds_10_pls":1,"yds_20_pls":1,"yds_30_pls":1,"yds_40_pls":0,"yds_50_pls":0}]}},"possession":{"team":"ARI","side":"ARI","yard_line":43,"down":3,"yfd":14},"last_event":{"event":{"id":"29658e08-b093-4aec-befc-3e379f23db87","clock":":00","type":"gameover","updated":"2016-11-26T06:10:40+00:00","summary":"End
+        of Game","sequence":229}},"scoring_drives":[{"sequence":1,"clock":"15:00","quarter":1,"team":"ARI","scores":[{"id":"438430dd-6020-4fc1-bd62-d58f7de846b4","type":"touchdown","clock":"14:02","team":"ARI","quarter":1,"points":6,"summary":"13-B.Dawkins
+        runs 71 yards for a touchdown."},{"id":"e0e23312-c9f8-477b-9ae1-cce197018225","type":"extrapoint","clock":"13:48","team":"ARI","quarter":1,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]},{"sequence":2,"clock":"09:53","quarter":1,"team":"ARI","scores":[{"id":"02bbe676-0c86-4691-9008-9d1165fd6c46","type":"touchdown","clock":"08:01","team":"ASU","quarter":1,"points":6,"summary":"13-B.Dawkins
+        to ARI 43, FUMBLES (1-J.Wicker). 4-K.Crump runs 42 yards for a touchdown."}]},{"sequence":3,"clock":"07:49","quarter":1,"team":"ASU","scores":[{"id":"53687108-3069-4d78-ba04-83cdf603a06c","type":"extrapoint","clock":"07:49","team":"ASU","quarter":1,"points":1,"summary":"5-Z.Gonzalez
+        extra point is good."}]},{"sequence":4,"clock":"01:14","quarter":1,"team":"ARI","scores":[{"id":"5b941627-edb1-4adb-a394-d1bff40d825e","type":"touchdown","clock":"14:28","team":"ARI","quarter":2,"points":6,"summary":"13-B.Dawkins
+        runs 10 yards for a touchdown."},{"id":"bf0eb434-1b21-4110-a47e-3bf57d17ec46","type":"extrapoint","clock":"14:18","team":"ARI","quarter":2,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]},{"sequence":5,"clock":"10:48","quarter":2,"team":"ARI","scores":[{"id":"7fbe5734-2783-494d-a14c-f25cc38f3eb6","type":"touchdown","clock":"10:19","team":"ARI","quarter":2,"points":6,"summary":"13-B.Dawkins
+        complete to 11-N.Phillips. 11-N.Phillips runs 64 yards for a touchdown."},{"id":"102c76ed-5837-45e5-b37b-27efedd504d1","type":"extrapoint","clock":"10:08","team":"ARI","quarter":2,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]},{"sequence":6,"clock":"08:40","quarter":2,"team":"ARI","scores":[{"id":"cdd76b07-c763-4a05-ad62-7a3103ca254a","type":"touchdown","clock":"07:11","team":"ARI","quarter":2,"points":6,"summary":"34-Z.Green
+        runs 1 yard for a touchdown."},{"id":"c6d8ac64-bdde-48ca-8a34-81da94cd1397","type":"extrapoint","clock":"07:07","team":"ARI","quarter":2,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]},{"sequence":7,"clock":"04:54","quarter":2,"team":"ASU","scores":[{"id":"96c431cc-ad10-49ea-8478-bed7f5bfccad","type":"touchdown","clock":":41","team":"ASU","quarter":2,"points":6,"summary":"5-M.Wilkins
+        complete to 12-T.White. 12-T.White runs 21 yards for a touchdown."},{"id":"f6154ec0-ca0b-4946-8e5d-ee2a06d9ec8d","type":"extrapoint","clock":":34","team":"ASU","quarter":2,"points":1,"summary":"5-Z.Gonzalez
+        extra point is good."}]},{"sequence":8,"clock":"15:00","quarter":3,"team":"ASU","scores":[{"id":"b86eb26d-7c5c-43b8-b6b4-73c6b6f7d870","type":"touchdown","clock":"11:19","team":"ASU","quarter":3,"points":6,"summary":"7-K.Ballage
+        runs 2 yards for a touchdown."},{"id":"d6e994d3-2d96-44f1-98c5-881226796341","type":"extrapoint","clock":"11:14","team":"ASU","quarter":3,"points":1,"summary":"5-Z.Gonzalez
+        extra point is good."}]},{"sequence":9,"clock":"11:14","quarter":3,"team":"ARI","scores":[{"id":"6d61972c-2191-487d-ac91-efde627659b0","type":"touchdown","clock":"09:59","team":"ARI","quarter":3,"points":6,"summary":"10-S.Grant
+        runs 9 yards for a touchdown."},{"id":"cecaa9d4-ce6c-4d16-93b7-52b49c2e32d2","type":"extrapoint","clock":"09:52","team":"ARI","quarter":3,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]},{"sequence":10,"clock":"09:52","quarter":3,"team":"ASU","scores":[{"id":"ae40a5fe-e8b5-4758-87ad-530d5a7dad8e","type":"touchdown","clock":"07:35","team":"ASU","quarter":3,"points":6,"summary":"5-M.Wilkins
+        complete to 1-N.Harry. 1-N.Harry runs 16 yards for a touchdown."},{"id":"bc02fca1-1dcd-4774-8906-ce44e0d5c6c9","type":"extrapoint","clock":"07:29","team":"ASU","quarter":3,"points":1,"summary":"5-Z.Gonzalez
+        extra point is good."}]},{"sequence":11,"clock":"07:29","quarter":3,"team":"ARI","scores":[{"id":"81540c4e-f53a-4bd1-8f0e-1f830e96c956","type":"touchdown","clock":"05:48","team":"ARI","quarter":3,"points":6,"summary":"34-Z.Green
+        runs 1 yard for a touchdown."},{"id":"66a16310-c506-43ce-889b-4b91ca39108b","type":"extrapoint","clock":"05:41","team":"ARI","quarter":3,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]},{"sequence":12,"clock":"13:14","quarter":4,"team":"ARI","scores":[{"id":"6f9a31ca-a53e-48cf-aab7-ac3291a982fe","type":"touchdown","clock":"11:52","team":"ARI","quarter":4,"points":6,"summary":"10-S.Grant
+        runs 2 yards for a touchdown."},{"id":"c691364d-a087-4ad1-9233-040bab4f26b0","type":"extrapoint","clock":"11:45","team":"ARI","quarter":4,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]},{"sequence":13,"clock":"11:45","quarter":4,"team":"ASU","scores":[{"id":"1d54e617-7a9a-475c-8c41-8d2edae825c8","type":"touchdown","clock":"08:37","team":"ASU","quarter":4,"points":6,"summary":"5-M.Wilkins
+        complete to 89-F.Gammage. 89-F.Gammage runs 7 yards for a touchdown."},{"id":"7335281f-5cff-4019-ac27-138792774b9c","type":"extrapoint","clock":"08:29","team":"ASU","quarter":4,"points":1,"summary":"5-Z.Gonzalez
+        extra point is good."}]},{"sequence":14,"clock":"08:29","quarter":4,"team":"ARI","scores":[{"id":"d41f3e59-2c5a-40d8-9552-bbb7046c4445","type":"touchdown","clock":"07:57","team":"ARI","quarter":4,"points":6,"summary":"10-S.Grant
+        runs 63 yards for a touchdown."},{"id":"449bed23-c810-4e50-8e38-cad520423214","type":"extrapoint","clock":"07:45","team":"ARI","quarter":4,"points":1,"summary":"30-J.Pollack
+        extra point is good."}]}]}'
+    http_version: 
+  recorded_at: Mon, 10 Jul 2017 01:56:50 GMT
+recorded_with: VCR 3.0.3
