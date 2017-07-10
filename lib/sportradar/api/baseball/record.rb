@@ -12,10 +12,6 @@ module Sportradar
           update(data, **opts)
         end
 
-        def profile
-          Profile.new(self)
-        end
-
         def update(data, **opts)
           @wins               = data["win"]
           @losses             = data["loss"]
