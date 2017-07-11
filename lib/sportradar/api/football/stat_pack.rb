@@ -7,7 +7,7 @@ module Sportradar
         def initialize(data)
           if data['name']
             @response = data
-            @player = Sportradar::Api::Nfl::Player.new(data) # need to handle ncaa/nfl, although it may not matter
+            @player = Sportradar::Api::Football::Nfl::Player.new(data) # need to handle ncaa/nfl, although it may not matter
           else
             @response = data['team'] || data['totals'] || data['kicks']
             @players = parse_into_array(selector: data["players"], klass: self.class) if data["players"]

@@ -56,13 +56,3 @@ require "sportradar/api/football/nfl/event"
 require "sportradar/api/football/nfl/play"
 require "sportradar/api/football/nfl/player"
 
-
-# to be deleted
-# require "sportradar/api/ncaafb/season"
-# require "sportradar/api/ncaafb/week"
-# require "sportradar/api/ncaafb/game"
-# require "sportradar/api/ncaafb/team"
-# require "sportradar/api/ncaafb/player"
-# require "sportradar/api/ncaafb/quarter"
-# require "sportradar/api/ncaafb/drive"
-# require "sportradar/api/ncaafb/play"
