@@ -55,7 +55,8 @@ games.map(&:plays).map(&:count)
 games.map(&:drives).map(&:count)
 
 
-
+uri = '2015/REG/1/WKY/MSH'
+game = Sportradar::Api::Football::Ncaafb::Game.new('uri' => uri)
 ```
 
 

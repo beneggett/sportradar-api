@@ -39,7 +39,7 @@ module Sportradar
           end
 
           def api_key
-            if access_level != 't'
+            if !['t', 'sim-t'].include?(access_level)
               ::Sportradar::Api.api_key_params('ncaafb', 'production')
             else
               ::Sportradar::Api.api_key_params('ncaafb')
@@ -51,7 +51,7 @@ module Sportradar
           end
 
           def allowed_access_levels
-            %w[rt p s b t]
+            %w[rt p s b t sim-t]
           end
 
           def allowed_seasons

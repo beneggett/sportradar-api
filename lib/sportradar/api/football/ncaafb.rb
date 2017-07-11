@@ -243,6 +243,19 @@ module Sportradar
         #   {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_venues)}
         # end
 
+        def self.sim_api
+          Sportradar::Api::Football::Ncaafb::Api.new('sim-t')
+        end
+        def self.simulation
+          new({}, api: sim_api, year: 2015, type: 'reg')
+        end
+        def self.simulations
+          api = sim_api
+          ['2015/REG/1/WKY/MSH', '2015/REG/1/KEN/FLA', '2015/REG/1/WOU/PRST'].map do |game_uri|
+            Game.new({'uri' => game_uri}, api: api)
+          end
+        end
+
       end
     end
   end

@@ -4,8 +4,15 @@ module Sportradar
       class Ncaafb
         class Game < Sportradar::Api::Football::Game
 
+          def initialize(data, **opts)
+            if data['uri']
+              @year, @type, @week_number, @away_alias, @home_alias = data['uri'].split('/')
+            end
+            super
+          end
+
           def path_base
-            "#{ year }/#{ type }/#{ week_number.to_s.rjust(2, '0') }/#{ away_alias }/#{ home_alias }"
+            "#{ year }/#{ type }/#{ week_number.to_s }/#{ away_alias }/#{ home_alias }"
           end
 
           def generate_title
