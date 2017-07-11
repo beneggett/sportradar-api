@@ -11,22 +11,11 @@ module Sportradar
             @access_level = access_level
           end
 
-          def get_data(url)
-            data = get request_url(url)
-            if data.is_a?(::Sportradar::Api::Error)
-              puts request_url(url)
-              puts
-              puts data.inspect
-              raise 'Sportradar error'
-            end
-            data
-          end
-
           def default_year
-            Date.today.year
+            default_date.year
           end
           def default_date
-            Date.today
+            Date.today - 90
           end
           def default_season
             'reg'

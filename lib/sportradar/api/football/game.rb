@@ -60,7 +60,7 @@ module Sportradar
         end
 
         def update(data, source: nil, **opts)
-          @id           = data['id']
+          @id           = data['id'] || @id
           # @year          = data['year'] || @week&.season.year
           # @type          = data['type'] || @week&.season.type
           # @week_number   = data['week'] || @week&.sequence
@@ -73,7 +73,9 @@ module Sportradar
           @coverage      = data['coverage']
           @scheduled     = Time.parse(data["scheduled"]) if data["scheduled"]
           update_teams(data)
-          @status        = data['status']
+          @status        = data['status']  || @status
+          @clock         = data['clock']   || @clock
+          @quarter       = data['quarter'] || @quarter
           @home_rotation = data['home_rotation']
           @away_rotation = data['away_rotation']
           @neutral_site  = data['neutral_site']

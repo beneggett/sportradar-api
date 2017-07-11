@@ -6,6 +6,17 @@ module Sportradar
 
       # attr_reader :url, :headers, :timeout, :api_key
 
+      def get_data(url)
+        data = get request_url(url)
+        if data.is_a?(::Sportradar::Api::Error)
+          puts request_url(url)
+          puts
+          puts data.inspect
+          raise 'Sportradar error'
+        end
+        data
+      end
+
       def get(path, options={})
         url, headers, options, timeout = base_setup(path, options)
         begin

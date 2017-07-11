@@ -23,7 +23,7 @@ module Sportradar
           @home_info = data["home"]
           @away_info = data["away"]
 
-          create_data(@drives_hash, data['pbp'], klass: Drive, api: api, game: self) if data['pbp']
+          create_data(@drives_hash, data['pbp'], klass: drive_class, api: api, game: self) if data['pbp']
 
           self
         end
@@ -32,15 +32,11 @@ module Sportradar
           @drives_hash.values
         end
 
-      end
+        def drive_class
+          Drive
+        end
 
-      # class QuarterScoring < Data
-      #   attr_accessor :home, :away
-      #   def initialize(data)
-      #     @home = OpenStruct.new(data['home'])
-      #     @away = OpenStruct.new(data['away'])
-      #   end
-      # end
+      end
     end
   end
 end
