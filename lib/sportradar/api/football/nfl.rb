@@ -259,6 +259,19 @@ module Sportradar
         #   {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_venues)}
         # end
 
+        def self.sim_api
+          Sportradar::Api::Football::Nfl::Api.new('sim')
+        end
+        def self.simulation
+          new({}, api: sim_api, year: 2015, type: 'reg')
+        end
+        def self.simulations
+          api = sim_api
+          ['f45b4a31-b009-4039-8394-42efbc6d5532', '5a7042cb-fe7a-4838-b93f-6b8c167ec384', '7f761bb5-7963-43ea-a01b-baf4f5d50fe3'].map do |game_id|
+            Game.new({'id' => game_id}, api: api)
+          end
+        end
+
       end
     end
   end

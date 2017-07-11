@@ -51,7 +51,7 @@ module Sportradar
           end
 
           def allowed_access_levels
-            %w[rt p s b t ot]
+            %w[rt p s b t ot sim]
           end
 
           def allowed_seasons
