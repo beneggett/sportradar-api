@@ -6,6 +6,17 @@ module Sportradar
 
       # attr_reader :url, :headers, :timeout, :api_key
 
+      def get_data(url)
+        data = get request_url(url)
+        if data.is_a?(::Sportradar::Api::Error)
+          puts request_url(url)
+          puts
+          puts data.inspect
+          raise 'Sportradar error'
+        end
+        data
+      end
+
       def get(path, options={})
         url, headers, options, timeout = base_setup(path, options)
         begin
@@ -16,8 +27,14 @@ module Sportradar
           rescue EOFError
             raise Sportradar::Api::Error::NoData
         end
-        return Sportradar::Api::Error.new(response.code, response.message, response) unless response.success?
-        response
+        unless response.success?
+          puts url + "?api_key=#{api_key[:api_key]}" # uncomment for debugging
+          puts
+          puts response.inspect
+          Sportradar::Api::Error.new(response.code, response.message, response)
+        else
+          response
+        end
       end
 
       def get_request_info(url)

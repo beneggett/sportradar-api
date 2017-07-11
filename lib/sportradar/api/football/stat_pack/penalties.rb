@@ -7,8 +7,8 @@ module Sportradar
 
       def set_stats
         @response  = (response.dig(1) || {}) if response.is_a? Array
-        @penalties = response.dig('penalties')
-        @yards     = response.dig('yards')
+        @penalties = response.dig('penalties') || response['num']
+        @yards     = response.dig('yards') || response['yds']
       end
 
       def formatted

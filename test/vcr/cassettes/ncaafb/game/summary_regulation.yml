@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/ncaafb-t1/2016/REG/13/ASU/ARI/summary.json?api_key=8nxbfm6k546m7mscnmaf9ejh
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=1
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 10 Jul 2017 01:44:53 GMT
+      Expires:
+      - Mon, 10 Jul 2017 01:44:54 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-118.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '154'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '2883'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"f8ac7454-980d-496a-99af-5824d5f3eea2","scheduled":"2016-11-26T02:30:00+00:00","status":"closed","attendance":50197,"home_team":{"id":"ARI","name":"Wildcats","market":"Arizona","remaining_challenges":2,"remaining_timeouts":2,"points":56,"possession_time":"24:04","first_downs":{"total":19,"passing":1,"rushing":16,"penalty":2},"third_down_efficiency":{"total":{"att":8,"converted":2,"pct":25.0},"passing":0,"rushing":2,"penalty":0},"fourth_down_efficiency":{"total":{"att":1,"converted":0,"pct":0.0},"passing":0,"rushing":0,"penalty":0},"total_yards":{"plays":56,"yds":588,"avg":10.5},"rushing_yards":{"plays":48,"yds":511,"avg":10.646},"passing":{"att":8,"cmp":3,"avg":9.625,"int":0,"sack":0,"yards":{"net_yds":77,"gross_yds":77,"sack_yds":0.0}},"return_yards":{"total":0,"punt_return":{"number":0,"yds":0},"kickoff_return":{"number":2,"yds":30},"int_return":{"number":1,"yds":0}},"kickoffs":{"number":9,"endzone":5,"tb":2},"punts":{"number":4,"avg":36.5,"blk":0,"net_avg":34.75},"penalties":{"number":8,"yds":101},"fumbles":{"number":3,"lost":1},"touchdowns":{"total":8,"passing":1,"rushing":7,"interception":0,"fumble_return":0,"punt_return":0,"kickoff_return":0,"field_goal_return":0},"extra_points":{"total":{"att":8,"made":8},"kicking":{"att":8,"made":8,"blk":0},"two_points":{"att":0,"made":0}},"field_goals":{"att":0,"made":0,"blk":0},"redzone_efficiency":{"att":5,"td":5,"pct":100.0},"goal_efficiency":{"att":5,"td":5,"pct":100.0},"allowed_safeties":0,"safeties":0,"turnovers":1},"away_team":{"id":"ASU","name":"Sun
+        Devils","market":"Arizona State","remaining_challenges":2,"remaining_timeouts":2,"points":35,"possession_time":"35:56","first_downs":{"total":31,"passing":16,"rushing":9,"penalty":6},"third_down_efficiency":{"total":{"att":21,"converted":11,"pct":52.381},"passing":7,"rushing":4,"penalty":0},"fourth_down_efficiency":{"total":{"att":6,"converted":1,"pct":16.667},"passing":0,"rushing":1,"penalty":0},"total_yards":{"plays":98,"yds":492,"avg":5.02},"rushing_yards":{"plays":38,"yds":120,"avg":3.158},"passing":{"att":60,"cmp":43,"avg":6.2,"int":1,"sack":2,"yards":{"net_yds":372,"gross_yds":372,"sack_yds":8.0}},"return_yards":{"total":7,"punt_return":{"number":1,"yds":7},"kickoff_return":{"number":7,"yds":145},"int_return":{"number":0,"yds":0}},"kickoffs":{"number":6,"endzone":5,"tb":4},"punts":{"number":2,"avg":31.5,"blk":0,"net_avg":31.5},"penalties":{"number":8,"yds":61},"fumbles":{"number":2,"lost":1},"touchdowns":{"total":5,"passing":3,"rushing":1,"interception":0,"fumble_return":1,"punt_return":0,"kickoff_return":0,"field_goal_return":0},"extra_points":{"total":{"att":5,"made":5},"kicking":{"att":5,"made":5,"blk":0},"two_points":{"att":0,"made":0}},"field_goals":{"att":1,"made":0,"blk":0},"redzone_efficiency":{"att":3,"td":3,"pct":100.0},"goal_efficiency":{"att":2,"td":2,"pct":100.0},"allowed_safeties":0,"safeties":0,"turnovers":2}}'
+    http_version: 
+  recorded_at: Mon, 10 Jul 2017 01:45:30 GMT
+recorded_with: VCR 3.0.3

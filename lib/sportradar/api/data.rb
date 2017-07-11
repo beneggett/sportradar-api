@@ -48,14 +48,14 @@ module Sportradar
 
       # @param existing [Hash{String=>Data}] Existing data hash, ID => entity
       # @param data [Hash, Array] new data to update with
-      def create_data(existing = {}, data, klass: nil, **opts)
+      def create_data(existing = {}, data, klass: nil, identifier: 'id', **opts)
         existing ||= {} # handles nil case, typically during object instantiation
         case data
         when [], {}
           existing
         when Array
           data.each do |hash|
-            current = existing[hash['id']]
+            current = existing[hash[identifier]]
             if current
               current.update(hash, **opts)
             else
@@ -65,7 +65,7 @@ module Sportradar
             existing[current.id]
           end
         when Hash
-          existing[data['id']] = klass.new(data, **opts)
+          existing[data[identifier]] = klass.new(data, **opts)
         else
           # raise
         end

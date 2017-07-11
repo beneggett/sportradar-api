@@ -86,15 +86,16 @@ summary = sim.match_summary(sim.simulation_match)
 boxscore = sim.match_boxscore(sim.simulation_match)
 ```
 
-### NFL
+### Football
 
-It's possible to find the current simulation game:
+It's possible to use simulation games from Sportradar. This allows you to see what data looks like during a game (including non game APIs), useful for development during the offseason.
 
 ```
-Sportradar::Api::Nfl.new('o').active_simulation
-=>
-https://api.sportradar.us/nfl-sim1/games/f45b4a31-b009-4039-8394-42efbc6d5532/boxscore.xml
-Live Game: Green Bay Packers vs Minnesota Vikings. Q2 00:08.  game_id='f45b4a31-b009-4039-8394-42efbc6d5532'
+Sportradar::Api::Football::Nfl.simulations # => returns array of simulation games. Only 1 is inprogress at a time
+Sportradar::Api::Football::Nfl.simulation  # => returns Sportradar::Api::Football::Nfl instance with a sim api. useful for mid season stats, standings, etc
+
+Sportradar::Api::Football::Ncaafb.simulations # => returns array of simulation games. Only 1 is inprogress at a time
+Sportradar::Api::Football::Ncaafb.simulation  # => returns Sportradar::Api::Football::Ncaafb instance with a sim api. useful for mid season stats, standings, etc
 ```
 
 ## Development

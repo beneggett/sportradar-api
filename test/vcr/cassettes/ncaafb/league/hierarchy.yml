@@ -1,0 +1,327 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/ncaafb-t1/teams/FBS/hierarchy.json?api_key=8nxbfm6k546m7mscnmaf9ejh
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, must-revalidate, max-age=3600
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 10 Jul 2017 00:03:35 GMT
+      Expires:
+      - Mon, 10 Jul 2017 01:03:35 GMT
+      Server:
+      - nginx
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-134.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '151'
+      X-Via:
+      - S3-Proxy
+      Content-Length:
+      - '39064'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"FBS","name":"I-A","conferences":[{"id":"ACC","name":"ACC","subdivisions":[{"id":"ACC-ATLANTIC","name":"ATLANTIC","teams":[{"id":"LOU","name":"Cardinals","market":"Louisville","venue":{"id":"e0947a41-9e85-488e-bcb3-6682dd56283e","country":"USA","name":"Papa
+        John''s Cardinal Stadium","city":"Louisville","state":"KY","capacity":55000,"surface":"artificial","type":"outdoor","zip":"40209","address":"2800
+        S Floyd St"}},{"id":"WF","name":"Demon Deacons","market":"Wake Forest","venue":{"id":"7b816db3-a203-4b08-a060-d80e190067c9","country":"USA","name":"BB&T
+        Field","city":"Winston-Salem","state":"NC","capacity":31500,"surface":"artificial","type":"outdoor","zip":"27105","address":"411
+        Deacon Blvd"}},{"id":"BC","name":"Eagles","market":"Boston College","venue":{"id":"3835030a-1535-431c-b64c-8da813255c06","country":"USA","name":"Alumni
+        Stadium","city":"Chestnut Hill","state":"MA","capacity":44500,"surface":"artificial","type":"outdoor","zip":"02467","address":"140
+        Commonwealth Ave."}},{"id":"SYR","name":"Orange","market":"Syracuse","venue":{"id":"1f635882-4899-4f56-918f-9b5eec26495e","country":"USA","name":"Carrier
+        Dome","city":"Syracuse","state":"NY","capacity":49262,"surface":"artificial","type":"dome","zip":"13244","address":"900
+        Irving Avenue"}},{"id":"FSU","name":"Seminoles","market":"Florida State","venue":{"id":"835c36ed-b506-438b-9452-b42099f38d99","country":"USA","name":"Bobby
+        Bowden Field at Doak Campbell Stadium","city":"Tallahassee","state":"FL","capacity":79560,"surface":"turf","type":"outdoor","zip":"32304","address":"403
+        Stadium Dr"}},{"id":"CLE","name":"Tigers","market":"Clemson","venue":{"id":"708fbe66-4804-4c37-bf78-66d43994208f","country":"USA","name":"Memorial
+        Stadium","city":"Clemson","state":"SC","capacity":81500,"surface":"turf","type":"outdoor","zip":"29634","address":"1
+        Avenue of Champions"}},{"id":"NCST","name":"Wolfpack","market":"North Carolina
+        State","venue":{"id":"ef2311d7-f34c-4ceb-a992-a9d44dfbe52d","country":"USA","name":"Wayne
+        Day Family Field at Carter-Finley Stadium","city":"Raleigh","state":"NC","capacity":57583,"surface":"turf","type":"outdoor","zip":"27607","address":"4600
+        Trinity Road"}}]},{"id":"ACC-COASTAL","name":"COASTAL","teams":[{"id":"DUK","name":"Blue
+        Devils","market":"Duke","venue":{"id":"967304ce-d143-4fdb-b099-40218978a89a","country":"USA","name":"Brooks
+        Field at Wallace Wade Stadium","city":"Durham","state":"NC","capacity":40004,"surface":"turf","type":"outdoor","zip":"27708","address":"110
+        Frank Bassett Dr"}},{"id":"UVA","name":"Cavaliers","market":"Virginia","venue":{"id":"acee161b-e21f-42fe-a2d7-68faeb124b17","country":"USA","name":"Scott
+        Stadium","city":"Charlottesville","state":"VA","capacity":61500,"surface":"turf","type":"outdoor","zip":"22903","address":"1815
+        Stadium Rd."}},{"id":"VT","name":"Hokies","market":"Virginia Tech","venue":{"id":"a4376572-76ac-40a6-9e2b-e94b7a02c208","country":"USA","name":"Lane
+        Stadium","city":"Blacksburg","state":"VA","capacity":65632,"surface":"turf","type":"outdoor","zip":"24060","address":"265
+        Beamer Way"}},{"id":"MFL","name":"Hurricanes","market":"Miami (FL)","venue":{"id":"280bf6ac-33d9-4e2c-a4bd-af2612f61d00","country":"USA","name":"Hard
+        Rock Stadium","city":"Miami Gardens","state":"FL","capacity":65326,"surface":"turf","type":"outdoor","zip":"33056","address":"347
+        Don Shula Dr"}},{"id":"PIT","name":"Panthers","market":"Pittsburgh","venue":{"id":"2842c710-3f8f-49bb-a5a1-3c4fc50ce3be","country":"USA","name":"Heinz
+        Field","city":"Pittsburgh","state":"PA","capacity":68400,"surface":"turf","type":"outdoor","zip":"15212","address":"100
+        Art Rooney Ave"}},{"id":"NC","name":"Tar Heels","market":"North Carolina","venue":{"id":"50369a4d-be44-4097-8dfc-adb224c76561","country":"USA","name":"Kenan
+        Memorial Stadium","city":"Chapel Hill","state":"NC","capacity":63000,"surface":"turf","type":"outdoor","zip":"27514","address":"78
+        Stadium Drive"}},{"id":"GT","name":"Yellow Jackets","market":"Georgia Tech","venue":{"id":"94b4f22d-360d-4c7c-8304-40195f543ebe","country":"USA","name":"Bobby
+        Dodd Stadium at Historic Grant Field","city":"Atlanta","state":"GA","capacity":55000,"surface":"turf","type":"outdoor","zip":"30313","address":"177
+        North Avenue NW"}}]}]},{"id":"AAC","name":"American Athletic","subdivisions":[{"id":"AAC-EAST","name":"EAST","teams":[{"id":"CIN","name":"Bearcats","market":"Cincinnati","venue":{"id":"30807eb2-2e75-4749-a37f-89b30e5801de","country":"USA","name":"Nippert
+        Stadium","city":"Cincinnati ","state":"OH","capacity":40000,"surface":"artificial","type":"outdoor","zip":"45221","address":"2700
+        Bearcats Way"}},{"id":"USF","name":"Bulls","market":"South Florida","venue":{"id":"11833950-c0a5-4188-8a82-b5488211ca80","country":"USA","name":"Raymond
+        James Stadium","city":"Tampa","state":"FL","capacity":65890,"surface":"turf","type":"outdoor","zip":"33607","address":"4201
+        North Dale Mabry Highway"}},{"id":"UCONN","name":"Huskies","market":"Connecticut","venue":{"id":"12b0ae84-0692-4a15-adea-09ae2e1c39f0","country":"USA","name":"Pratt
+        and Whitney Stadium at Rentschler Field","city":"East Hartford","state":"CT","capacity":40642,"surface":"turf","type":"outdoor","zip":"06118","address":"615
+        Silver Lane"}},{"id":"UCF","name":"Knights","market":"UCF","venue":{"id":"07605a2e-b69f-4613-88e5-30b537c935b1","country":"USA","name":"Spectrum
+        Stadium","city":"Orlando","state":"FL","capacity":44206,"surface":"turf","type":"outdoor","zip":"32816","address":"4465
+        Knights Victory Way"}},{"id":"TEM","name":"Owls","market":"Temple","venue":{"id":"a6dfcbd3-6df1-4be0-92f7-1902e90c471d","country":"USA","name":"Lincoln
+        Financial Field","city":"Philadelphia","state":"PA","capacity":69176,"surface":"artificial","type":"outdoor","zip":"19148","address":"1020
+        Pattison Ave"}},{"id":"ECU","name":"Pirates","market":"East Carolina","venue":{"id":"b0fc956a-8688-46b5-83ab-68aa6b465818","country":"USA","name":"Bagwell
+        Field at Dowdy-Ficklen Stadium","city":"Greenville","state":"NC","capacity":50000,"surface":"turf","type":"outdoor","zip":"27858","address":"100
+        Ficklen St"}}]},{"id":"AAC-WEST","name":"WEST","teams":[{"id":"HOU","name":"Cougars","market":"Houston","venue":{"id":"67d3ceac-74eb-43a6-aa52-0bc639949124","country":"USA","name":"John
+        O''Quinn Field at TDECU Stadium","city":"Houston","state":"TX","capacity":40000,"surface":"artificial","type":"outdoor","zip":"77004","address":"3874
+        Holman Street"}},{"id":"TSA","name":"Golden Hurricane","market":"Tulsa","venue":{"id":"0c4a7ad3-5a1a-4ec9-b3a1-a1f4d1e3b03c","country":"USA","name":"Skelly
+        Field at H.A. Chapman Stadium","city":"Tulsa ","state":"OK","capacity":30000,"surface":"artificial","type":"outdoor","zip":"74104","address":"3112
+        East 8th Street"}},{"id":"TUL","name":"Green Wave","market":"Tulane","venue":{"id":"b1ddd612-4d2f-46bc-a75b-6042d5824122","country":"USA","name":"Yulman
+        Stadium","city":"New Orleans","state":"LA","capacity":30000,"surface":"artificial","type":"outdoor","zip":"70118","address":"2900
+        Ben Weiner Drive"}},{"id":"NAV","name":"Midshipmen","market":"Navy","venue":{"id":"c1bdffac-1291-45aa-9e4c-546c1d0e0f30","country":"USA","name":"Navy-Marine
+        Corps Memorial Stadium","city":"Annapolis","state":"MD","capacity":34000,"surface":"artificial","type":"outdoor","zip":"21401","address":"550
+        Taylor Avenue"}},{"id":"SMU","name":"Mustangs","market":"Southern Methodist","venue":{"id":"455833bf-98e1-4d21-806a-449b44d787e4","country":"USA","name":"Gerald
+        J. Ford Stadium","city":"Dallas","state":"TX","capacity":32000,"surface":"artificial","type":"outdoor","zip":"75205","address":"5800
+        Ownby Dr"}},{"id":"MEM","name":"Tigers","market":"Memphis","venue":{"id":"f02c9eb2-0b21-4cea-9f44-7bfac957f7ca","country":"USA","name":"Liberty
+        Bowl Memorial Stadium","city":"Memphis","state":"TN","capacity":59308,"surface":"artificial","type":"outdoor","zip":"38104","address":"335
+        South Hollywood St."}}]}]},{"id":"BIG-12","name":"Big 12","teams":[{"id":"BAY","name":"Bears","market":"Baylor","venue":{"id":"02e0179d-2c03-41ec-b84e-ce37a66bc1c7","country":"USA","name":"McLane
+        Stadium","city":"Waco","state":"TX","capacity":45140,"surface":"artificial","type":"outdoor","zip":"76704","address":"1001
+        S M.L.K. Jr Blvd"}},{"id":"OKS","name":"Cowboys","market":"Oklahoma State","venue":{"id":"98612a89-835b-4ee3-a44d-4841b918262a","country":"USA","name":"Boone
+        Pickens Stadium","city":"Stillwater","state":"OK","capacity":56790,"surface":"artificial","type":"outdoor","zip":"74078","address":"700
+        West Hall of Fame Avenue"}},{"id":"ISU","name":"Cyclones","market":"Iowa State","venue":{"id":"48dccc17-7e5b-49c8-a87d-240d05021943","country":"USA","name":"Jack
+        Trice Stadium","city":"Ames","state":"IA","capacity":61500,"surface":"turf","type":"outdoor","zip":"50010","address":"1798
+        South 4th Street"}},{"id":"TCU","name":"Horned Frogs","market":"TCU","venue":{"id":"044eb351-f9c2-4784-8ea1-1a6e5efe216c","country":"USA","name":"Amon
+        G. Carter Stadium","city":"Fort Worth","state":"TX","capacity":45000,"surface":"turf","type":"outdoor","zip":"76129","address":"2850
+        Stadium Drive"}},{"id":"KAN","name":"Jayhawks","market":"Kansas","venue":{"id":"0befa6a6-87d9-43ad-b2a3-ecc00bca9a1a","country":"USA","name":"Memorial
+        Stadium (Lawrence, KS)","city":"Lawrence","state":"KS","capacity":50071,"surface":"artificial","type":"outdoor","zip":"66044","address":"1101
+        Maine Street"}},{"id":"TEX","name":"Longhorns","market":"Texas","venue":{"id":"94acff7b-6dd4-446b-ba59-3071fd153917","country":"USA","name":"Darrell
+        K Royal-Texas Memorial Stadium","city":"Austin","state":"TX","capacity":100119,"surface":"artificial","type":"outdoor","zip":"78712","address":"2139
+        San Jacinto Blvd"}},{"id":"WVU","name":"Mountaineers","market":"West Virginia","venue":{"id":"280f176a-f48a-4c98-ad55-2b5a98ee74d2","country":"USA","name":"Mountaineer
+        Field at Milan Puskar Stadium","city":"Morgantown","state":"WV","capacity":60000,"surface":"artificial","type":"outdoor","zip":"26505","address":"900
+        Willowdale Road"}},{"id":"TT","name":"Red Raiders","market":"Texas Tech","venue":{"id":"71f1fa87-9d04-42db-86c1-b4bef3024f11","country":"USA","name":"Jones
+        AT&T Stadium","city":"Lubbock","state":"TX","capacity":60454,"surface":"artificial","type":"outdoor","zip":"79409","address":"2526
+        Mac Davis Ln"}},{"id":"OKL","name":"Sooners","market":"Oklahoma","venue":{"id":"ae5bf857-ed28-48b7-b3fc-da1998a7c77d","country":"USA","name":"Gaylord
+        Family Oklahoma Memorial Stadium","city":"Norman","state":"OK","capacity":82112,"surface":"turf","type":"outdoor","zip":"73019","address":"180
+        East Brooks Street"}},{"id":"KST","name":"Wildcats","market":"Kansas State","venue":{"id":"c63bd111-d94a-42e1-bd95-cbb74103552c","country":"USA","name":"Bill
+        Snyder Family Football Stadium","city":"Manhattan","state":"KS","capacity":50000,"surface":"artificial","type":"outdoor","zip":"66502","address":"2201
+        Kimball Ave"}}]},{"id":"BIG-TEN","name":"Big Ten","subdivisions":[{"id":"BIG-TEN-EAST","name":"East","teams":[{"id":"OSU","name":"Buckeyes","market":"Ohio
+        State","venue":{"id":"668dcdfb-06dd-4185-911d-d62891ab9143","country":"USA","name":"Ohio
+        Stadium","city":"Columbus ","state":"OH","capacity":104944,"surface":"artificial","type":"outdoor","zip":"43210","address":"411
+        Woody Hayes Drive"}},{"id":"IU","name":"Hoosiers","market":"Indiana","venue":{"id":"36ac3e20-2bfe-4654-b15a-f6398037156b","country":"USA","name":"Memorial
+        Stadium (Bloomington, IN)","city":"Bloomington","state":"IN","capacity":52929,"surface":"artificial","type":"outdoor","zip":"47408","address":"1001
+        E 17th St"}},{"id":"PSU","name":"Nittany Lions","market":"Penn State","venue":{"id":"ce739138-6c6a-48a7-a2ad-25a18f9c4139","country":"USA","name":"Beaver
+        Stadium","city":"University Park","state":"PA","capacity":106572,"surface":"turf","type":"outdoor","zip":"16802","address":"1
+        Beaver Stadium"}},{"id":"RUT","name":"Scarlet Knights","market":"Rutgers","venue":{"id":"811a4a98-cd29-4d1b-bf45-9f7e9e341cf8","country":"USA","name":"High
+        Point Solutions Stadium","city":"Piscataway","state":"NJ","capacity":52454,"surface":"artificial","type":"outdoor","zip":"08854","address":"1
+        Scarlet Knight Way"}},{"id":"MSU","name":"Spartans","market":"Michigan State","venue":{"id":"9f8efea1-0b91-491e-a6b3-1adbddad8ded","country":"USA","name":"Spartan
+        Stadium","city":"East Lansing","state":"MI","capacity":75005,"surface":"turf","type":"outdoor","zip":"48824","address":"325
+        West Shaw Lane"}},{"id":"MAR","name":"Terrapins","market":"Maryland","venue":{"id":"910a54c9-d15f-4e40-a39e-ae20da947833","country":"USA","name":"Capital
+        One Field at Maryland Stadium","city":"College Park","state":"MD","capacity":51802,"surface":"artificial","type":"outdoor","zip":"20742","address":"90
+        Stadium Drive"}},{"id":"MICH","name":"Wolverines","market":"Michigan","venue":{"id":"5b559a78-26ac-4b95-909e-4580b81ab7d9","country":"USA","name":"Michigan
+        Stadium","city":"Ann Arbor","state":"MI","capacity":107601,"surface":"artificial","type":"outdoor","zip":"48104","address":"1201
+        South Main Street"}}]},{"id":"BIG-TEN-WEST","name":"West","teams":[{"id":"WIS","name":"Badgers","market":"Wisconsin","venue":{"id":"9af4c614-c1c7-4397-af9f-45983d370fc9","country":"USA","name":"Camp
+        Randall Stadium","city":"Madison","state":"WI","capacity":80321,"surface":"artificial","type":"outdoor","zip":"53711","address":"1440
+        Monroe Street"}},{"id":"PUR","name":"Boilermakers","market":"Purdue","venue":{"id":"f972d584-7a77-4462-82e5-0da4dee1dc47","country":"USA","name":"Ross-Ade
+        Stadium","city":"West Lafayette","state":"IN","capacity":57236,"surface":"turf","type":"outdoor","zip":"47907","address":"850
+        Beering Drive"}},{"id":"NEB","name":"Cornhuskers","market":"Nebraska","venue":{"id":"6c656e44-7186-4da9-adfe-0d341bcacf86","country":"USA","name":"Memorial
+        Stadium (Lincoln, NE)","city":"Lincoln ","state":"NE","capacity":86047,"surface":"artificial","type":"outdoor","zip":"68508","address":"600
+        Stadium Drive"}},{"id":"ILL","name":"Fighting Illini","market":"Illinois","venue":{"id":"b94a2088-1be5-4de0-8957-6e1cda199e5f","country":"USA","name":"Memorial
+        Stadium (Champaign, IL)","city":"Champaign","state":"IL","capacity":60670,"surface":"artificial","type":"outdoor","zip":"61820","address":"1402
+        South 1st Street"}},{"id":"MIN","name":"Golden Gophers","market":"Minnesota","venue":{"id":"5f4ad0df-6a7e-42fd-9d04-fe165a183632","country":"USA","name":"TCF
+        Bank Stadium","city":"Minneapolis","state":"MN","capacity":50805,"surface":"artificial","type":"outdoor","zip":"55455","address":"420
+        SE 23rd Avenue"}},{"id":"IOW","name":"Hawkeyes","market":"Iowa","venue":{"id":"967ef86b-d0de-49b7-8984-61f95104d30d","country":"USA","name":"Kinnick
+        Stadium","city":"Iowa City","state":"IA","capacity":70585,"surface":"artificial","type":"outdoor","zip":"52242","address":"886
+        Stadium Drive"}},{"id":"NW","name":"Wildcats","market":"Northwestern","venue":{"id":"c8886fd1-a206-4643-85ca-1aa345c6493e","country":"USA","name":"Ryan
+        Field","city":"Evanston","state":"IL","capacity":47130,"surface":"turf","type":"outdoor","zip":"60201","address":"1501
+        Central Street"}}]}]},{"id":"CONFERENCE-USA","name":"Conference USA","subdivisions":[{"id":"CONFERENCE-USA-EAST","name":"EAST","teams":[{"id":"CHA","name":"49ers","market":"Charlotte","venue":{"id":"5189127d-ea58-4917-84b8-8456f3abb8b2","country":"USA","name":"Jerry
+        Richardson Stadium","city":"Charlotte","state":"NC","capacity":15314,"surface":"artificial","type":"outdoor","zip":"28262","address":"9201
+        University City Blvd."}},{"id":"MTS","name":"Blue Raiders","market":"Middle
+        Tennessee","venue":{"id":"b07ff7f8-8aad-4249-970b-6a65032e6f04","country":"USA","name":"Johnny
+        \"Red\" Floyd Stadium","city":"Murfreesboro","state":"TN","capacity":30788,"surface":"artificial","type":"outdoor","zip":"37132","address":"1327
+        Faulkinberry Dr"}},{"id":"FIU","name":"Golden Panthers","market":"Florida
+        International","venue":{"id":"6e850f85-72c6-4760-9435-f3e5ff4d68c0","country":"USA","name":"Riccardo
+        Silva Stadium","city":"Miami","state":"FL","capacity":20000,"surface":"artificial","type":"outdoor","zip":"33199","address":"11200
+        Southwest 8th Street"}},{"id":"WKY","name":"Hilltoppers","market":"Western
+        Kentucky","venue":{"id":"80256588-53a3-425c-a2af-072fcbb91d78","country":"USA","name":"Houchens
+        Industries-L.T. Smith Stadium","city":"Bowling Green","state":"KY","capacity":22113,"surface":"artificial","type":"outdoor","zip":"42101","address":"1605
+        Avenue of Champions"}},{"id":"ODU","name":"Monarchs","market":"Old Dominion","venue":{"id":"07db5fc7-2be8-4886-97cd-dd7b4c25973f","country":"USA","name":"Foreman
+        Field at S. B. Ballard Stadium","city":"Norfolk","state":"VA","capacity":20118,"surface":"artificial","type":"outdoor","zip":"23529","address":"5115
+        Hampton Boulevard"}},{"id":"FAU","name":"Owls","market":"Florida Atlantic","venue":{"id":"4bdb03d7-023d-47e6-843e-837f6c969c2c","country":"USA","name":"FAU
+        Stadium","city":"Boca Raton","state":"FL","capacity":29419,"surface":"turf","type":"outdoor","zip":"33431","address":"777
+        Glades Road"}},{"id":"MSH","name":"Thundering Herd","market":"Marshall","venue":{"id":"451f7c59-6592-4a33-be06-0d1467a10086","country":"USA","name":"Joan
+        C. Edwards Stadium","city":"Huntington","state":"WV","capacity":38227,"surface":"artificial","type":"outdoor","zip":"25755","address":"2001
+        3rd Avenue"}}]},{"id":"CONFERENCE-USA-WEST","name":"WEST","teams":[{"id":"UAB","name":"Blazers","market":"UAB","venue":{"id":"4e501e5a-dbd2-4d34-a1fc-5689d54cea4a","country":"USA","name":"Legion
+        Field","city":"Birmingham","state":"AL","capacity":71594,"surface":"artificial","type":"outdoor","zip":"35204","address":"400
+        Graymont Avenue West"}},{"id":"LT","name":"Bulldogs","market":"Louisiana Tech","venue":{"id":"072a9696-590e-45e0-99df-6dc6a2152d82","country":"USA","name":"Joe
+        Aillet Stadium","city":"Ruston","state":"LA","capacity":28019,"surface":"artificial","type":"outdoor","zip":"71272","address":"1450
+        West Alabama Avenue"}},{"id":"USM","name":"Golden Eagles","market":"Southern
+        Miss","venue":{"id":"7dc4adc9-2066-4a1a-ab91-782d3c9ae5d4","country":"USA","name":"M.M.
+        Roberts Stadium","city":"Hattiesburg","state":"MS","capacity":36000,"surface":"artificial","type":"outdoor","zip":"39406","address":"118
+        College Drive"}},{"id":"NTX","name":"Mean Green","market":"North Texas","venue":{"id":"d6ad7651-a128-46d5-837a-a11e437fb926","country":"USA","name":"Apogee
+        Stadium","city":"Denton","state":"TX","capacity":30850,"surface":"artificial","type":"outdoor","zip":"76207","address":"1251
+        S Bonnie Brae Street"}},{"id":"TEP","name":"Miners","market":"UTEP","venue":{"id":"1581135f-f4f3-4fc6-a492-ad3f42834a77","country":"USA","name":"Sun
+        Bowl Stadium","city":"El Paso","state":"TX","capacity":51500,"surface":"artificial","type":"outdoor","zip":"79902","address":"2701
+        Sun Bowl Drive"}},{"id":"RICE","name":"Owls","market":"Rice","venue":{"id":"14d0cea2-6517-45ec-8752-dff6134e703d","country":"USA","name":"Rice
+        Stadium","city":"Houston","state":"TX","capacity":47000,"surface":"artificial","type":"outdoor","zip":"77005","address":"6100
+        South Main Street"}},{"id":"UTSA","name":"Roadrunners","market":"UTSA","venue":{"id":"0f0b1691-1f01-41f4-a34d-4f34ac0dc413","country":"USA","name":"Alamodome","city":"San
+        Antonio","state":"TX","capacity":65000,"surface":"artificial","type":"dome","zip":"78203","address":"100
+        Montana Street"}}]}]},{"id":"IA-INDEPENDENTS","name":"IA Independents","teams":[{"id":"ARM","name":"Black
+        Knights","market":"Army","venue":{"id":"dc14f5a5-6105-40ba-9ede-bd1f6ef45632","country":"USA","name":"Michie
+        Stadium","city":"West Point","state":"NY","capacity":38000,"surface":"artificial","type":"outdoor","zip":"10996","address":"700
+        Mills Road"}},{"id":"BYU","name":"Cougars","market":"Brigham Young","venue":{"id":"d290d7c6-d484-4f5d-a40e-14948be79817","country":"USA","name":"LaVell
+        Edwards Stadium","city":"Provo","state":"UT","capacity":63470,"surface":"turf","type":"outdoor","zip":"84604","address":"1700
+        North Canyon Road"}},{"id":"ND","name":"Fighting Irish","market":"Notre Dame","venue":{"id":"2d42c53e-d8ba-418c-80f1-af67ff4c465e","country":"USA","name":"Notre
+        Dame Stadium","city":"South Bend","state":"IN","capacity":80795,"surface":"artificial","type":"outdoor","zip":"46616","address":"Moose
+        Krause Cir"}},{"id":"UMASS","name":"Minutemen","market":"Massachusetts","venue":{"id":"5ee7095f-7102-4b01-ac2d-d19e8a55df60","country":"USA","name":"Warren
+        McGuirk Alumni Stadium","city":"Amherst","state":"MA","capacity":17000,"surface":"artificial","type":"outdoor","zip":"01003","address":"300
+        Stadium Drive"}}]},{"id":"MID-AMERICAN","name":"Mid-American","subdivisions":[{"id":"MID-AMERICAN-EAST","name":"EAST","teams":[{"id":"OHI","name":"Bobcats","market":"Ohio","venue":{"id":"4eabf6a3-e956-466c-9e19-95d03fb2f325","country":"USA","name":"Peden
+        Stadium","city":"Athens","state":"OH","capacity":24000,"surface":"artificial","type":"outdoor","zip":"45701","address":"Richland
+        Avenue & South Green Drive"}},{"id":"BUF","name":"Bulls","market":"Buffalo","venue":{"id":"9dce8c9b-13c6-41a7-a280-4d8993a594f3","country":"USA","name":"UB
+        Stadium","city":"Buffalo","state":"NY","capacity":29013,"surface":"artificial","type":"outdoor","zip":"14260","address":"102
+        Alumni Arena"}},{"id":"BGN","name":"Falcons","market":"Bowling Green","venue":{"id":"acb8a408-e737-4ff7-b0cf-0cb86af1fd52","country":"USA","name":"Doyt
+        L. Perry Stadium","city":"Bowling Green","state":"OH","capacity":24000,"surface":"artificial","type":"outdoor","zip":"43403","address":"1610
+        Stadium Drive"}},{"id":"KNT","name":"Golden Flashes","market":"Kent State","venue":{"id":"24185d11-f2d6-4709-8cf6-f1228f699bd7","country":"USA","name":"Dix
+        Stadium","city":"Kent","state":"OH","capacity":25319,"surface":"artificial","type":"outdoor","zip":"44240","address":"2227
+        Summit Road"}},{"id":"MOH","name":"RedHawks","market":"Miami (OH)","venue":{"id":"ca5dfb37-e021-4c39-837d-5cec0a3ef95c","country":"USA","name":"Fred
+        C. Yager Stadium","city":"Oxford","state":"OH","capacity":24286,"surface":"artificial","type":"outdoor","zip":"45056","address":"700
+        Weeb Ewbank Way"}},{"id":"AKR","name":"Zips","market":"Akron","venue":{"id":"6a483c69-9d91-4817-98b3-4d7c0cc4a4d9","country":"USA","name":"InfoCision
+        Stadium-Summa Field","city":"Akron","state":"OH","capacity":30000,"surface":"artificial","type":"outdoor","zip":"44304","address":"375
+        E Exchange St"}}]},{"id":"MID-AMERICAN-WEST","name":"WEST","teams":[{"id":"WMC","name":"Broncos","market":"Western
+        Michigan","venue":{"id":"0ac9b7f0-2e77-4722-8592-c2cb9966a60a","country":"USA","name":"Waldo
+        Stadium","city":"Kalamazoo ","state":"MI","capacity":30200,"surface":"artificial","type":"outdoor","zip":"49008","address":"1903
+        West Michigan Avenue"}},{"id":"BALL","name":"Cardinals","market":"Ball State","venue":{"id":"7340efc0-759f-4e8a-8d23-f34a89958320","country":"USA","name":"Scheumann
+        Stadium","city":"Muncie","state":"IN","capacity":22500,"surface":"artificial","type":"outdoor","zip":"47304","address":"2800
+        West Bethel Avenue"}},{"id":"CMC","name":"Chippewas","market":"Central Michigan","venue":{"id":"fb8f19d5-b212-491d-a7f1-0b2c18a8cc80","country":"USA","name":"Kelly/Shorts
+        Stadium","city":"Mount Pleasant","state":"MI","capacity":30255,"surface":"artificial","type":"outdoor","zip":"48858","address":"2300
+        East Campus Drive"}},{"id":"EMC","name":"Eagles","market":"Eastern Michigan","venue":{"id":"d14d7167-34ab-465b-a3e9-6a8411502cdc","country":"USA","name":"Rynearson
+        Stadium","city":"Ypsilanti","state":"MI","capacity":30200,"surface":"artificial","type":"outdoor","zip":"48197","address":"184
+        Westview Street"}},{"id":"NIL","name":"Huskies","market":"Northern Illinois","venue":{"id":"d6061916-ff6f-4fc8-9c49-bbd0953af8d7","country":"USA","name":"Brigham
+        Field at Huskie Stadium","city":"DeKalb","state":"IL","capacity":45995,"surface":"artificial","type":"outdoor","zip":"60115","address":"1525
+        W Lincoln Hwy"}},{"id":"TOL","name":"Rockets","market":"Toledo","venue":{"id":"43db741f-27bd-4ddd-95de-012f663a36bc","country":"USA","name":"The
+        Glass Bowl","city":"Toledo","state":"OH","capacity":26248,"surface":"artificial","type":"outdoor","zip":"43606","address":"3044
+        North Glass Bowl Drive"}}]}]},{"id":"MOUNTAIN-WEST","name":"Mountain West","subdivisions":[{"id":"MOUNTAIN-WEST-MOUNTAIN","name":"MOUNTAIN","teams":[{"id":"UTS","name":"Aggies","market":"Utah
+        State","venue":{"id":"005c634f-8de4-4b05-9dee-3e56c31b255b","country":"USA","name":"Merlin
+        Olsen Field at Maverik Stadium","city":"Logan","state":"UT","capacity":25059,"surface":"artificial","type":"outdoor","zip":"84322","address":"1000
+        North 800 East "}},{"id":"BOISE","name":"Broncos","market":"Boise State","venue":{"id":"d013e5b6-671e-4068-a796-71fe144a9d95","country":"USA","name":"Albertsons
+        Stadium","city":"Boise","state":"ID","capacity":36387,"surface":"artificial","type":"outdoor","zip":"83725","address":"1400
+        Bronco Lane"}},{"id":"WYO","name":"Cowboys","market":"Wyoming","venue":{"id":"099c46d0-207c-4f9e-866f-42b61a9129e9","country":"USA","name":"Jonah
+        Field at War Memorial Stadium","city":"Laramie","state":"WY","capacity":29181,"surface":"artificial","type":"outdoor","zip":"82072","address":"East
+        Grand Avenue & North 22nd Street"}},{"id":"AF","name":"Falcons","market":"Air
+        Force","venue":{"id":"935196fd-b20e-4c74-943b-14bb5667efa0","country":"USA","name":"Falcon
+        Stadium","city":"U.S. Air Force Academy","state":"CO","capacity":52237,"surface":"artificial","type":"outdoor","zip":"80840","address":"2169
+        Field House Drive"}},{"id":"NM","name":"Lobos","market":"New Mexico","venue":{"id":"f33068ee-15ce-4ff1-83fa-1eda91396cae","country":"USA","name":"Dreamstyle
+        Stadium","city":"Albuquerque","state":"NM","capacity":39224,"surface":"artificial","type":"outdoor","zip":"87106","address":"1414
+        University Boulevard Southeast "}},{"id":"CSU","name":"Rams","market":"Colorado
+        State","venue":{"id":"4bf5bdde-2d8d-4b86-88a2-770dc8adbab5","country":"USA","name":"Sonny
+        Lubick Field at Hughes Stadium","city":"Fort Collins","state":"CO","capacity":32500,"surface":"artificial","type":"outdoor","zip":"80526","address":"2011
+        South Overland Trail"}}]},{"id":"MOUNTAIN-WEST-WEST","name":"WEST","teams":[{"id":"SDSU","name":"Aztecs","market":"San
+        Diego State","venue":{"id":"6e8879dd-514e-47a6-8363-730aeaa66384","country":"USA","name":"Qualcomm
+        Stadium","city":"San Diego","state":"CA","capacity":70561,"surface":"turf","type":"outdoor","zip":"92108","address":"9449
+        Friars Road"}},{"id":"FRE","name":"Bulldogs","market":"Fresno State","venue":{"id":"61cb257b-0722-4b22-bb42-60cdd8c69473","country":"USA","name":"Bulldog
+        Stadium at Jim Sweeney Field","city":"Fresno","state":"CA","capacity":43560,"surface":"artificial","type":"outdoor","zip":"93710","address":"1600
+        East Bulldog Lane"}},{"id":"UNLV","name":"Rebels","market":"UNLV","venue":{"id":"5cd51fc8-9caa-486a-9dda-846ea2d03c12","country":"USA","name":"Sam
+        Boyd Stadium","city":"Las Vegas","state":"NV","capacity":36800,"surface":"artificial","type":"outdoor","zip":"89122","address":"7000
+        East Russell Road"}},{"id":"SJS","name":"Spartans","market":"San Jose State","venue":{"id":"cb67d94f-ee0b-457e-b7cd-bf23fd742fab","country":"USA","name":"CEFCU
+        Stadium","city":"San Jose","state":"CA","capacity":30456,"surface":"artificial","type":"outdoor","zip":"95112","address":"1257
+        South 10th Street"}},{"id":"HAW","name":"Warriors","market":"Hawaii","venue":{"id":"6a51c53c-cd6a-4aac-b22e-23cf88955356","country":"USA","name":"Hawaiian
+        Tel Federal Credit Union Field ","city":"Honolulu","state":"HI","capacity":50000,"surface":"artificial","type":"outdoor","zip":"96818","address":"99-500
+        Salt Lake Boulevard"}},{"id":"NEV","name":"Wolf Pack","market":"Nevada","venue":{"id":"15e8cfc6-bc73-4767-b357-cb54778e12cf","country":"USA","name":"Mackay
+        Stadium","city":"Reno","state":"NV","capacity":26000,"surface":"artificial","type":"outdoor","zip":"89557","address":"1664
+        N Virginia Street"}}]}]},{"id":"PAC-12","name":"Pac-12","subdivisions":[{"id":"PAC-12-SOUTH","name":"SOUTH","teams":[{"id":"UCLA","name":"Bruins","market":"UCLA","venue":{"id":"18e670be-fbc5-4f4a-afe9-83f8e3e66940","country":"USA","name":"Rose
+        Bowl","city":"Pasadena","state":"CA","capacity":92542,"surface":"turf","type":"outdoor","zip":"91103","address":"1001
+        Rose Bowl Drive"}},{"id":"COL","name":"Buffaloes","market":"Colorado","venue":{"id":"4eef58a5-27ee-480b-8f44-c57d8479d763","country":"USA","name":"Folsom
+        Field","city":"Boulder","state":"CO","capacity":50183,"surface":"turf","type":"outdoor","zip":"80302","address":"2400
+        Colorado Avenue"}},{"id":"ASU","name":"Sun Devils","market":"Arizona State","venue":{"id":"ae923f75-5f89-48ec-9447-9ee05028f0f0","country":"USA","name":"Sun
+        Devil Stadium","city":"Tempe","state":"AZ","capacity":56232,"surface":"turf","type":"outdoor","zip":"85281","address":"500
+        East Veterans Way"}},{"id":"USC","name":"Trojans","market":"USC","venue":{"id":"8df5b87a-35b7-474b-afc0-fc2c17d033f0","country":"USA","name":"Los
+        Angeles Memorial Coliseum","city":"Los Angeles","state":"CA","capacity":93607,"surface":"turf","type":"outdoor","zip":"90037","address":"3911
+        South Figueroa Street"}},{"id":"UTH","name":"Utes","market":"Utah","venue":{"id":"babe8c16-c2b2-4a33-8a4c-e009349c7392","country":"USA","name":"Rice-Eccles
+        Stadium","city":"Salt Lake City","state":"UT","capacity":45807,"surface":"artificial","type":"outdoor","zip":"84112","address":"451
+        South 1400 East"}},{"id":"ARI","name":"Wildcats","market":"Arizona","venue":{"id":"0d3004a2-736f-42c2-973b-31e1391404f4","country":"USA","name":"Arizona
+        Stadium","city":"Tucson","state":"AZ","capacity":55675,"surface":"artificial","type":"outdoor","zip":"85719","address":"545
+        N National Championship Dr."}}]},{"id":"PAC-12-NORTH","name":"NORTH","teams":[{"id":"ORS","name":"Beavers","market":"Oregon
+        State","venue":{"id":"08ebca26-40bd-4112-a917-69c509c7ec7a","country":"USA","name":"Reser
+        Stadium","city":"Corvallis","state":"OR","capacity":44160,"surface":"artificial","type":"outdoor","zip":"97331","address":"660
+        SW 26th Street"}},{"id":"STA","name":"Cardinal","market":"Stanford","venue":{"id":"a338a835-dd2b-4723-a886-d761bbaf491d","country":"USA","name":"Stanford
+        Stadium","city":"Stanford","state":"CA","capacity":50424,"surface":"turf","type":"outdoor","zip":"94305","address":"625
+        Nelson Road"}},{"id":"WST","name":"Cougars","market":"Washington State","venue":{"id":"ff72146a-d976-4d29-9546-3b8d0a5ad11f","country":"USA","name":"Martin
+        Stadium","city":"Pullman","state":"WA","capacity":32952,"surface":"artificial","type":"outdoor","zip":"99164","address":"1775
+        NE Stadium Way"}},{"id":"ORE","name":"Ducks","market":"Oregon","venue":{"id":"ce70e935-5239-49ef-b3db-62ceabbb5cf4","country":"USA","name":"Autzen
+        Stadium","city":"Eugene","state":"OR","capacity":54000,"surface":"artificial","type":"outdoor","zip":"97401","address":"2700
+        Martin Luther King Jr Blvd"}},{"id":"CAL","name":"Golden Bears","market":"California","venue":{"id":"d99f6e35-5322-474f-a256-9ef5f7f077c8","country":"USA","name":"California
+        Memorial Stadium","city":"Berkeley","state":"CA","capacity":62467,"surface":"artificial","type":"outdoor","zip":"94720","address":"2227
+        Piedmont Ave"}},{"id":"WAS","name":"Huskies","market":"Washington","venue":{"id":"1d2d7c40-a4b4-43ec-9463-c1fd1f483ce8","country":"USA","name":"Alaska
+        Airlines Field at Husky Stadium","city":"Seattle","state":"WA","capacity":70083,"surface":"artificial","type":"outdoor","zip":"98105","address":"3800
+        Montlake Blvd NE"}}]}]},{"id":"SEC","name":"SEC","subdivisions":[{"id":"SEC-WEST","name":"WEST","teams":[{"id":"TXAM","name":"Aggies","market":"Texas
+        A&M","venue":{"id":"889f7722-95bd-413a-9b1b-bbec46e490c7","country":"USA","name":"Kyle
+        Field","city":"College Station","state":"TX","capacity":102733,"surface":"turf","type":"outdoor","zip":"77843","address":"756
+        Houston Street"}},{"id":"MSST","name":"Bulldogs","market":"Mississippi State","venue":{"id":"a19f6372-2ec8-48e7-b69b-d0ac5e8d40c7","country":"USA","name":"Davis
+        Wade Stadium at Scott Field","city":"Starkville","state":"MS","capacity":61337,"surface":"turf","type":"outdoor","zip":"39762","address":"90
+        B.S. Hood Drive"}},{"id":"BAMA","name":"Crimson Tide","market":"Alabama","venue":{"id":"3e133141-8ce3-4e3f-a6c3-72d31f9f1401","country":"USA","name":"Bryant-Denny
+        Stadium","city":"Tuscaloosa","state":"AL","capacity":101821,"surface":"turf","type":"outdoor","zip":"35401","address":"920
+        Paul West Bryant Drive"}},{"id":"ARK","name":"Razorbacks","market":"Arkansas","venue":{"id":"84f17139-34a1-4b33-b8de-d100fb5dae25","country":"USA","name":"Donald
+        W. Reynolds Razorback Stadium","city":"Fayetteville","state":"AR","capacity":72000,"surface":"artificial","type":"outdoor","zip":"72701","address":"350
+        North Razorback Road"}},{"id":"MIS","name":"Rebels","market":"Ole Miss","venue":{"id":"a7adc635-7259-4e4f-9e1f-2f88dd192fc3","country":"USA","name":"Vaught-Hemingway
+        Stadium","city":"University","state":"MS","capacity":64038,"surface":"artificial","type":"outdoor","zip":"38677","address":"All-American
+        Drive & Hill Drive"}},{"id":"AUB","name":"Tigers","market":"Auburn","venue":{"id":"532e38f6-b491-4810-a120-c84957934879","country":"USA","name":"Jordan-Hare
+        Stadium","city":"Auburn","state":"AL","capacity":87451,"surface":"turf","type":"outdoor","zip":"36849","address":"251
+        South Donahue Drive"}},{"id":"LSU","name":"Tigers","market":"LSU","venue":{"id":"7781def9-664a-4377-860f-1667e93e510c","country":"USA","name":"Tiger
+        Stadium","city":"Baton Rouge","state":"LA","capacity":102321,"surface":"turf","type":"outdoor","zip":"70803","address":"West
+        Stadium Road"}}]},{"id":"SEC-EAST","name":"EAST","teams":[{"id":"UGA","name":"Bulldogs","market":"Georgia","venue":{"id":"54cbb94e-27cc-4d25-ae2a-ae43645181ac","country":"USA","name":"Sanford
+        Stadium","city":"Athens","state":"GA","capacity":92746,"surface":"turf","type":"outdoor","zip":"30602","address":"100
+        Sanford Drive"}},{"id":"VAN","name":"Commodores","market":"Vanderbilt","venue":{"id":"2f49d92d-c734-4794-bcd5-f830138ae93d","country":"USA","name":"Vanderbilt
+        Stadium","city":"Nashville","state":"TN","capacity":40550,"surface":"artificial","type":"outdoor","zip":"37240","address":"2601
+        Jess Neely Drive"}},{"id":"SC","name":"Gamecocks","market":"South Carolina","venue":{"id":"a9fd6470-7b59-4de1-a667-a14dcec1f20c","country":"USA","name":"Williams-Brice
+        Stadium","city":"Columbia","state":"SC","capacity":80250,"surface":"turf","type":"outdoor","zip":"29201","address":"1125
+        George Rogers Boulevard"}},{"id":"FLA","name":"Gators","market":"Florida","venue":{"id":"08d52bb0-974a-42fe-b5fa-cd0e03fa03af","country":"USA","name":"Ben
+        Hill Griffin Stadium","city":"Gainesville","state":"FL","capacity":88548,"surface":"turf","type":"outdoor","zip":"32611","address":"157
+        Gale Lemerand Drive"}},{"id":"MIZ","name":"Tigers","market":"Missouri","venue":{"id":"0ff7c8e7-3b92-4e79-814a-6e4cb2db9578","country":"USA","name":"Faurot
+        Field at Memorial Stadium","city":"Columbia","state":"MO","capacity":71168,"surface":"artificial","type":"outdoor","zip":"65203","address":"600
+        East Stadium Boulevard"}},{"id":"TEN","name":"Volunteers","market":"Tennessee","venue":{"id":"f6f0f7e6-9b6d-4e5b-b884-40664790ddb8","country":"USA","name":"Neyland
+        Stadium","city":"Knoxville","state":"TN","capacity":102455,"surface":"turf","type":"outdoor","zip":"37996","address":"1600
+        Phillip Fulmer Way, Suite 201"}},{"id":"KEN","name":"Wildcats","market":"Kentucky","venue":{"id":"069f66c7-d648-46a0-b129-01eef3254339","country":"USA","name":"Kroger
+        Field","city":"Lexington","state":"KY","capacity":61000,"surface":"artificial","type":"outdoor","zip":"40502","address":"1540
+        University Drive"}}]}]},{"id":"SUN-BELT","name":"Sun Belt","teams":[{"id":"NMS","name":"Aggies","market":"New
+        Mexico State","venue":{"id":"170baa73-abb9-4247-8aea-190c51233841","country":"USA","name":"Aggie
+        Memorial Stadium","city":"Las Cruces","state":"NM","capacity":30343,"surface":"artificial","type":"outdoor","zip":"88003","address":"1810
+        E University Ave"}},{"id":"TXST","name":"Bobcats","market":"Texas State","venue":{"id":"de7014bf-1a0c-45bb-9b86-90292f8ccce0","country":"USA","name":"Jim
+        Wacker Field at Bobcat Stadium","city":"San Marcos","state":"TX","capacity":30000,"surface":"artificial","type":"outdoor","zip":"78666","address":"1100
+        Aquarena Springs Drive"}},{"id":"CC","name":"Chanticleers","market":"Coastal
+        Carolina","venue":{"id":"8fab2189-2cd4-4d73-bc92-12fb5b47eedb","country":"USA","name":"Brooks
+        Stadium","city":"Conway","state":"SC","capacity":15000,"surface":"artificial","type":"outdoor","zip":"29526","address":"965
+        One Landon Loop"}},{"id":"GSO","name":"Eagles","market":"Georgia Southern","venue":{"id":"d3191a90-4fa2-4201-9713-e60118c2eac7","country":"USA","name":"Allen
+        E. Paulson Stadium","city":"Statesboro","state":"GA","capacity":25000,"surface":"artificial","type":"outdoor","zip":"30458","address":"207
+        Lanier Drive"}},{"id":"SAB","name":"Jaguars","market":"South Alabama","venue":{"id":"dabb9f0e-a9d9-48fa-bcb8-74e7ac13b1b0","country":"USA","name":"Ladd-Peebles
+        Stadium","city":"Mobile","state":"AL","capacity":33471,"surface":"artificial","type":"outdoor","zip":"36604","address":"1621
+        Virginia Street"}},{"id":"APP","name":"Mountaineers","market":"Appalachian
+        State","venue":{"id":"10cfae9a-a327-4550-91e6-b223566d94d0","country":"USA","name":"Kidd
+        Brewer Stadium","city":"Boone","state":"NC","capacity":24050,"surface":"artificial","type":"outdoor","zip":"28608","address":"270
+        Stadium Dr."}},{"id":"GST","name":"Panthers","market":"Georgia State","venue":{"id":"fd518168-c4f1-4f3c-9be3-45adc4e32102","country":"USA","name":"Georgia
+        State Stadium","city":"Atlanta","state":"GA","capacity":23000,"surface":"artificial","type":"outdoor","zip":"30315","address":"755
+        Hank Aaron Dr SE"}},{"id":"ULL","name":"Ragin'' Cajuns","market":"Louisiana-Lafayette","venue":{"id":"f1dfc1a8-b9e6-433c-b978-47b6dba27cfc","country":"USA","name":"Cajun
+        Field","city":"Lafayette","state":"LA","capacity":36900,"surface":"artificial","type":"outdoor","zip":"70506","address":"2351
+        W Congress St"}},{"id":"ARKS","name":"Red Wolves","market":"Arkansas State","venue":{"id":"d23ef60f-4086-4088-b1f2-0fc4fc7a21e7","country":"USA","name":"Centennial
+        Bank Stadium","city":"Jonesboro","state":"AR","capacity":30382,"surface":"artificial","type":"outdoor","zip":"72401","address":"2180
+        Aggie Road"}},{"id":"TRY","name":"Trojans","market":"Troy","venue":{"id":"1c6f005e-7988-4ec9-81ca-48baa9e5c731","country":"USA","name":"Veterans
+        Memorial Stadium","city":"Troy","state":"AL","capacity":30000,"surface":"artificial","type":"outdoor","zip":"36082","address":"5000
+        Veterans Stadium Drive"}},{"id":"IDA","name":"Vandals","market":"Idaho","venue":{"id":"2bb41430-e8e0-45d8-81a4-a6e71cc21808","country":"USA","name":"Kibbie
+        Dome","city":"Moscow","state":"ID","capacity":15200,"surface":"artificial","type":"dome","zip":"83844","address":"South
+        Rayburn Street"}},{"id":"ULM","name":"Warhawks","market":"Louisiana-Monroe","venue":{"id":"3a4e6ebd-cc12-42bd-89cd-b1de2cf7d8ab","country":"USA","name":"JPS
+        Field at Malone Stadium","city":"Monroe","state":"LA","capacity":30427,"surface":"artificial","type":"outdoor","zip":"71203","address":"514
+        Warhawk Way"}}]}]}'
+    http_version: 
+  recorded_at: Mon, 10 Jul 2017 00:04:14 GMT

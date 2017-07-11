@@ -1,13 +1,14 @@
 module Sportradar
   module Api
     class Football::StatPack::ExtraPoints < Football::StatPack
-      attr_accessor :attempts, :made, :blocked, :pass_attempts, :pass_successes, :rush_attempts, :rush_successes, :defense_attempts, :defense_successes, :turnover_successes
+      attr_accessor :attempts, :pct, :made, :blocked, :pass_attempts, :pass_successes, :rush_attempts, :rush_successes, :defense_attempts, :defense_successes, :turnover_successes
 
       def set_stats
-        kick_data = response['kicks'] || response
-        @attempts = kick_data["attempts"]
+        kick_data = response['kicks'] || response['totals'] || response
+        @attempts = kick_data["attempts"] || kick_data["att"]
         @made     = kick_data["made"]
-        @blocked  = kick_data["blocked"]
+        @blocked  = kick_data["blocked"] || kick_data["blk"]
+        @pct      = kick_data["pct"] || (@made.to_f / @attempts.to_i)
         if response['conversions']
           @pass_attempts      = response["pass_attempts"]
           @pass_successes     = response["pass_successes"]

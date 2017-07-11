@@ -3,7 +3,11 @@ require 'test_helper'
 class Sportradar::Api::Football::StatPack::PenaltiesTest < Minitest::Test
 
   def setup
-    @attrs = {"penalties"=>"11", "yards"=>"88", "player"=> [{"name"=>"Keenan Robinson", "jersey"=>"52", "reference"=>"00-0029545", "id"=>"af1648a4-2df1-40ef-b9fe-081d6961a416", "position"=>"LB", "penalties"=>"1", "yards"=>"3"}, {"name"=>"Ty Nsekhe", "jersey"=>"79", "reference"=>"00-0029709", "id"=>"d723ebff-0e9d-42f8-93d2-fe0c02252de8", "position"=>"T", "penalties"=>"1", "yards"=>"10"}, {"name"=>"Derek Carrier", "jersey"=>"89", "reference"=>"00-0029119", "id"=>"d3fab07b-f02a-433d-9612-cb0a751f324d", "position"=>"TE", "penalties"=>"1", "yards"=>"10"}]}
+    @attrs = {"totals"=>{"penalties"=>9, "yards"=>56},
+ "players"=>
+  [{"name"=>"Aaron Rodgers", "jersey"=>"12", "reference"=>"00-0023459", "id"=>"0ce48193-e2fa-466e-a986-33f751add206", "position"=>"QB", "penalties"=>1, "yards"=>5},
+   {"name"=>"T.J. Lang", "jersey"=>"70", "reference"=>"00-0027078", "id"=>"3ebbc479-fec5-4463-8eb1-b9b09b0d3bc2", "position"=>"G", "penalties"=>1, "yards"=>5}]
+ }
   end
 
   def test_stat_pack_penalties_initializes
