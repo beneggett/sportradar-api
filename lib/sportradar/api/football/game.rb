@@ -32,6 +32,10 @@ module Sportradar
           {}
         end
 
+        def period
+          quarter
+        end
+
         def summary_stat(team_id, stat_name)
           scoring.dig(team_id, stat_name)
         end
@@ -89,7 +93,7 @@ module Sportradar
 
           # @links         = data['links'] ? structure_links(data['links']) : {}
 
-          @teams_hash    = { @home.id => @home, @away.id => @away } if @home && @away
+          @teams_hash    = { @home.id => @home, @away.id => @away } if @home.id && @away.id
           @team_ids      = { home: (@home&.id || home_alias), away: (@away&.id || away_alias) }
 
           @scoring_raw.update(data, source: source)
@@ -114,8 +118,14 @@ module Sportradar
           else
             @home.update(data['home_team'], game: self) if data['home_team'].is_a?(Hash)
             @away.update(data['away_team'], game: self) if data['away_team'].is_a?(Hash)
-            @home_alias    = data['home'] if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
-            @away_alias    = data['away'] if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+            if data['home'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+              @home_alias    = data['home']
+              @home.id ||= @home_alias
+            end
+            if data['away'].is_a?(String) # this might actually be team ID and not alias. check in NFL
+              @away_alias    = data['away']
+              @away.id ||= @away_alias
+            end
           end
         end
 
