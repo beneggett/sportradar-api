@@ -4,6 +4,10 @@ module Sportradar
       class Ncaafb
         class Team < Sportradar::Api::Football::Team
 
+          def alias
+            id
+          end
+
           def players
             get_roster if @players_hash.empty?
             @players_hash.values
