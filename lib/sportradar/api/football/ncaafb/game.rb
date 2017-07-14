@@ -16,7 +16,7 @@ module Sportradar
           end
 
           def generate_title
-            if home && away
+            if home.full_name && away.full_name
               "#{home.full_name} vs #{away.full_name}"
             elsif home_alias && away_alias
               "#{home_alias} vs #{away_alias}"

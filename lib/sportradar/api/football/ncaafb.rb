@@ -216,7 +216,7 @@ module Sportradar
         end
 
         def ingest_standings(data)
-          update(data.dig('league','season'), source: :teams)
+          update(data, source: :teams)
           data
         end
 
