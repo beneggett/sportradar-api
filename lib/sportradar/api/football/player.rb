@@ -26,7 +26,7 @@ module Sportradar
           name_full
         end
         def display_name
-          preferred_name || name_full
+          preferred_name ? "#{preferred_name} #{last_name}" : name_full
         end
 
         def birth_date # to match api for NFL::Player
@@ -39,11 +39,11 @@ module Sportradar
 
         def update(data, **opts)
           @status           = data['status']            if data['status']
-          @preferred_name   = data['preferred_name']    if data['preferred_name']
-          @name_full        = data['name_full'] || data['name'] || @name_full
-          @name_first       = data['name_first']        if data['name_first']
-          @name_last        = data['name_last']         if data['name_last']
-          @name_abbr        = data['name_abbr']         if data['name_abbr']
+          @preferred_name   = data['preferred_name']  || data['name_preferred'] || @preferred_name
+          @name_full        = data['name_full']       || data['name']           || @name_full
+          @name_first       = data['name_first']      || data['first_name']     || @name_first
+          @name_last        = data['name_last']       || data['last_name']      || @name_last
+          @name_abbr        = data['name_abbr']       || data['abbr_name']      || @name_abbr
           @height           = data['height']            if data['height']
           @weight           = data['weight']            if data['weight']
           @position         = data['position']          if data['position']
