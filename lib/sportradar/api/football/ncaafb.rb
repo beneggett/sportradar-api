@@ -56,7 +56,7 @@ module Sportradar
           divisions_by_name[code_name]
         end
         private def divisions_by_name
-          @divisions_by_name ||= divisions.map { |d| [d.alias, d] }.to_h
+          @divisions_by_name ||= divisions.map { |d| [d.id, d] }.to_h
         end
         def conferences
           divisions.flat_map(&:conferences)
@@ -178,8 +178,8 @@ module Sportradar
         end
 
         ## hierarchy
-        def get_hierarchy
-          data = api.get_data(path_hierarchy).to_h
+        def get_hierarchy(division = 'FBS')
+          data = api.get_data(path_hierarchy(division)).to_h
           ingest_hierarchy(data)
         end
 

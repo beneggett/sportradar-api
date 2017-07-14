@@ -11,7 +11,7 @@ module Sportradar
 
             @id    = data["id"]
             @name  = data["name"]
-            @alias = data["alias"]
+            @alias = data["alias"] || data["id"]
             update(data, **opts)
           end
 
@@ -28,7 +28,7 @@ module Sportradar
           end
 
           def conferences_by_name
-            @conferences_by_name ||= conferences.map { |c| [c.alias, c] }.to_h
+            @conferences_by_name ||= conferences.map { |c| [c.id, c] }.to_h
           end
 
           def teams

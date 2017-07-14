@@ -11,7 +11,7 @@ module Sportradar
 
             @id    = data["id"]
             @name  = data["name"]
-            @alias = data["alias"]
+            @alias = data["alias"] || data["id"]
             @teams_hash = {}
             @subdivisions_hash = {}
             @assigned_teams = nil
