@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Player < Data
-        attr_accessor :response, :id, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :api
+        attr_accessor :response, :id, :preferred_name, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :api
 
         def initialize(data, **opts)
           @response = data
@@ -14,11 +14,19 @@ module Sportradar
           update(data, **opts)
         end
 
+        def first_name
+          @name_first || @first_name
+        end
+
+        def last_name
+          @name_last || @last_name
+        end
+
         def name # to match api for NFL::Player
           name_full
         end
         def display_name
-          name_full
+          preferred_name || name_full
         end
 
         def birth_date # to match api for NFL::Player
@@ -31,6 +39,7 @@ module Sportradar
 
         def update(data, **opts)
           @status           = data['status']            if data['status']
+          @preferred_name   = data['preferred_name']    if data['preferred_name']
           @name_full        = data['name_full'] || data['name'] || @name_full
           @name_first       = data['name_first']        if data['name_first']
           @name_last        = data['name_last']         if data['name_last']
