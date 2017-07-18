@@ -33,6 +33,11 @@ module Sportradar
             ingest_extended_box(data)
           end
 
+          def queue_extended_box
+            url, headers, options, timeout = api.get_request_info(path_extended_box)
+            {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_extended_box)}
+          end
+
           def ingest_extended_box(data)
             data = data
             update(data, source: :extended_box)
