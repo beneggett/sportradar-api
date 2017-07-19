@@ -13,7 +13,6 @@ module Sportradar
         end
 
         def initialize(data, **opts)
-          @response      = data
           @id            = data["id"]
           @api           = opts[:api]
           @plays_hash    = {}
@@ -23,6 +22,7 @@ module Sportradar
         end
 
         def update(data, **opts)
+          @response       = data
           @type           = data['type']
           @team           = data['team']
           @clock          = data['clock']
