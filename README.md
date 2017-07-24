@@ -92,10 +92,10 @@ It's possible to use simulation games from Sportradar. This allows you to see wh
 
 ```
 sims = Sportradar::Api::Football::Nfl.simulations # => returns array of simulation games. Only 1 is inprogress at a time
-Sportradar::Api::Football::Nfl.simulation  # => returns Sportradar::Api::Football::Nfl instance with a sim api. useful for mid season stats, standings, etc
+nfl = Sportradar::Api::Football::Nfl.simulation  # => returns Sportradar::Api::Football::Nfl instance with a sim api. useful for mid season stats, standings, etc
 
 sims = Sportradar::Api::Football::Ncaafb.simulations # => returns array of simulation games. Only 1 is inprogress at a time
-Sportradar::Api::Football::Ncaafb.simulation  # => returns Sportradar::Api::Football::Ncaafb instance with a sim api. useful for mid season stats, standings, etc
+ncaafb = Sportradar::Api::Football::Ncaafb.simulation  # => returns Sportradar::Api::Football::Ncaafb instance with a sim api. useful for mid season stats, standings, etc
 ```
 
 ## Development

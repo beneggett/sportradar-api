@@ -244,7 +244,7 @@ module Sportradar
         # end
 
         def self.sim_api
-          Sportradar::Api::Football::Ncaafb::Api.new('sim-t')
+          Sportradar::Api::Football::Ncaafb::Api.new.sim!
         end
         def self.simulation
           new({}, api: sim_api, year: 2015, type: 'reg')
@@ -252,7 +252,7 @@ module Sportradar
         def self.simulations
           api = sim_api
           ['2015/REG/1/WKY/MSH', '2015/REG/1/KEN/FLA', '2015/REG/1/WOU/PRST'].map do |game_uri|
-            Game.new({'uri' => game_uri}, api: api)
+            Game.new({'id' => game_uri}).sim!
           end
         end
 

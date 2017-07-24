@@ -5,8 +5,8 @@ module Sportradar
         class Game < Sportradar::Api::Football::Game
 
           def initialize(data, **opts)
-            if data['uri']
-              @year, @type, @week_number, @away_alias, @home_alias = data['uri'].split('/')
+            if data['id'].include?('/')
+              @year, @type, @week_number, @away_alias, @home_alias = data.delete('id').split('/')
             end
             super
           end
@@ -82,6 +82,11 @@ module Sportradar
 
           def api
             @api || Sportradar::Api::Football::Ncaafb::Api.new
+          end
+
+          def sim!
+            @api = api.sim!
+            self
           end
 
         end

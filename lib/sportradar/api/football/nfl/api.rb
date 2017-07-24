@@ -11,6 +11,11 @@ module Sportradar
             @access_level = access_level
           end
 
+          def sim!
+            @access_level = 'sim'
+            self
+          end
+
           def default_year
             default_date.year
           end
