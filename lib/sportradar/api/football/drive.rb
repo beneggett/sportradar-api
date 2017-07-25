@@ -53,6 +53,10 @@ module Sportradar
           @events_hash.values
         end
 
+        def over?
+          !!@end_reason
+        end
+
         def end_reason_possibilities
           [
             'UNKNOWN',

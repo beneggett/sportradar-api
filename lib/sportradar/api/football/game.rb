@@ -393,6 +393,11 @@ module Sportradar
           Team
         end
 
+        def sim!
+          @api = api.sim!
+          self
+        end
+
       end
     end
   end

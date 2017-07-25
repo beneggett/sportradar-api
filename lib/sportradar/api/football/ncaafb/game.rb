@@ -84,11 +84,6 @@ module Sportradar
             @api || Sportradar::Api::Football::Ncaafb::Api.new
           end
 
-          def sim!
-            @api = api.sim!
-            self
-          end
-
         end
       end
     end

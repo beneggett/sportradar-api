@@ -57,6 +57,11 @@ module Sportradar
           end
         end
 
+        def sim!
+          @access_level = 'sim'
+          self
+        end
+
         def get_data(url)
           get request_url(url)
         end
@@ -110,7 +115,7 @@ module Sportradar
         end
 
         def allowed_access_levels
-          %w[p t]
+          %w[p t sim]
         end
 
         def allowed_seasons
