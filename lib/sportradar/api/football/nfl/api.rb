@@ -11,11 +11,6 @@ module Sportradar
             @access_level = access_level
           end
 
-          def sim!
-            @access_level = 'sim'
-            self
-          end
-
           def default_year
             default_date.year
           end
@@ -26,7 +21,7 @@ module Sportradar
             'reg'
           end
           def default_access_level
-            if (ENV['SPORTRADAR_ENV'] || ENV['SPORTRADAR_ENV_MLB'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
+            if (ENV['SPORTRADAR_ENV'] || ENV['SPORTRADAR_ENV_NFL'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
               'p'
             else
               'ot'
@@ -44,7 +39,7 @@ module Sportradar
           end
 
           def api_key
-            if access_level != 'ot'
+            if !['ot', 'sim'].include?(access_level)
               ::Sportradar::Api.api_key_params('nfl', 'production')
             else
               ::Sportradar::Api.api_key_params('nfl')

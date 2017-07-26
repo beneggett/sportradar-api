@@ -100,7 +100,7 @@ module Sportradar
     end
 
     def self.api_key(api, access_level = 'trial')
-      ENV.fetch("SPORTRADAR_#{api.to_s.upcase.gsub('-', '_')}#{'_PRODUCTION' if access_level == 'production'}", "api_key missing for #{api}")
+      ENV.fetch("SPORTRADAR_#{api.to_s.upcase.gsub('-', '_')}#{"_#{access_level.upcase}" if access_level != 'trial'}", "api_key missing for #{api}")
     end
 
     def self.version(api)

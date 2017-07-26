@@ -6,6 +6,16 @@ module Sportradar
 
           # NCAA MB specific
 
+          def period_display
+            if period > 5
+              "#{period - 4}OT"
+            elsif period == 5
+              'OT'
+            else
+              "Q#{period}"
+            end
+          end
+
           def team_class
             Team
           end
@@ -21,6 +31,11 @@ module Sportradar
 
           def api
             @api || Sportradar::Api::Basketball::Ncaamb.new
+          end
+
+          def sim!
+            @api = api.sim!
+            self
           end
 
         end

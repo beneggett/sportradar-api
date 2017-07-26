@@ -57,11 +57,6 @@ module Sportradar
           end
         end
 
-        def sim!
-          @access_level = 'sim'
-          self
-        end
-
         def get_data(url)
           get request_url(url)
         end
@@ -103,7 +98,7 @@ module Sportradar
         end
 
         def api_key
-          if access_level != 't'
+          if !['t', 'sim'].include?(access_level)
             Sportradar::Api.api_key_params('nba', 'production')
           else
             Sportradar::Api.api_key_params('nba')

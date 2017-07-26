@@ -11,8 +11,8 @@ module Sportradar
         end
 
         def sim!
-          @access_level = 'sim'
-          self
+          @version = 5
+          super
         end
 
         def get_data(url)
@@ -43,16 +43,6 @@ module Sportradar
           end
         end
 
-        def league_hierarchy
-          response = get request_url("league/hierarchy")
-          if response.success?
-            Sportradar::Api::Baseball::Mlb::Hierarchy.new(response.to_h, api: self)
-          else
-            response
-          end
-        end
-        alias :hierarchy :league_hierarchy
-
         def content_format
           'json'
         end
@@ -64,15 +54,17 @@ module Sportradar
         end
 
         def api_key
-          if access_level != 't'
+          if !['t', 'sim'].include?(access_level)
             Sportradar::Api.api_key_params('mlb', 'production')
+          elsif 'sim' == access_level
+            Sportradar::Api.api_key_params('mlb', 'simulation')
           else
             Sportradar::Api.api_key_params('mlb')
           end
         end
 
         def version
-          Sportradar::Api.version('mlb')
+          @version || Sportradar::Api.version('mlb')
         end
 
         def allowed_access_levels

@@ -197,6 +197,35 @@ module Sportradar
         end
 
         # status helpers
+        def realtime_state
+          if future?
+            'Scheduled'
+          elsif finished?
+            'Final'
+          elsif postponed?
+            'Postponed'
+          # elsif halftime?
+          #   'Halftime'
+          else
+            clock_display
+          end
+        end
+
+        def clock_display
+          if clock && period
+            "#{clock} #{period_display}"
+          end
+        end
+        def period_display
+          if period > 5
+            "#{period - 4}OT"
+          elsif period == 5
+            'OT'
+          else
+            "Q#{period}"
+          end
+        end
+
         def postponed?
           'postponed' == status
         end

@@ -6,6 +6,11 @@ module Sportradar
 
       # attr_reader :url, :headers, :timeout, :api_key
 
+      def sim!
+        @access_level = 'sim'
+        self
+      end
+
       def get_data(url)
         data = get request_url(url)
         if data.is_a?(::Sportradar::Api::Error)

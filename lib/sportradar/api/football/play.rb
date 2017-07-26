@@ -51,6 +51,14 @@ module Sportradar
           self
         end
 
+        def end_of_regulation?
+          false
+        end
+
+        def halftime?
+          false
+        end
+
         def parse_player
           # TODO: Currently there is an issue where we are only mapping one player_id to a play, but there are plays with multiple players involved.
           play_stats = @statistics.penalty || @statistics.rush || @statistics.return || @statistics.receive

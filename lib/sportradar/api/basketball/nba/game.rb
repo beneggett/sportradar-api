@@ -23,6 +23,11 @@ module Sportradar
             @api || Sportradar::Api::Basketball::Nba.new
           end
 
+          def sim!
+            @api = api.sim!
+            self
+          end
+
         end
       end
     end
