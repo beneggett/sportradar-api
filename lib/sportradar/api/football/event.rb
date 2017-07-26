@@ -26,6 +26,9 @@ module Sportradar
         def events
           [self]
         end
+        def over?
+          false # TODO
+        end
       end
 
     end
