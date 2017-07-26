@@ -292,7 +292,7 @@ module Sportradar
           end
           set_pbp(period_data)
           @pbp = @periods_hash.values
-          check_newness(:pbp, plays.last.updated)
+          check_newness(:pbp, plays.last&.updated)
           check_newness(:score, @score)
           data
         end
