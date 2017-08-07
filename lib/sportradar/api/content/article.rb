@@ -16,7 +16,7 @@ module Sportradar
         @credit = data["credit"]
         @content = data["content"]["long"] if data["content"] && data["content"]["long"]
         @provider = OpenStruct.new(data["provider"]) if data["provider"]
-        @references = parse_into_array(selector: response["refs"]["ref"], klass: Sportradar::Api::Content::Reference) if response["refs"] && response["refs"]["ref"]
+        @references = parse_into_array(selector: response["refs"], klass: Sportradar::Api::Content::Reference) if response["refs"]
       end
 
       def transaction?
