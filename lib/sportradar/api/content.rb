@@ -44,6 +44,10 @@ module Sportradar
         "/content-#{sport}-#{access_level}#{version}/#{path}"
       end
 
+      def content_format
+        'json'
+      end
+
       def api_key
         if access_level == 'p'
           Sportradar::Api.api_key_params("content_#{sport}", "production")
