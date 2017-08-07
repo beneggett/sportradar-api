@@ -222,7 +222,7 @@ module Sportradar
           elsif period == 5
             'OT'
           else
-            "Q#{period}"
+            "#{period}Q"
           end
         end
 

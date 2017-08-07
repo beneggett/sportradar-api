@@ -7,12 +7,12 @@ module Sportradar
           # NCAA MB specific
 
           def period_display
-            if period > 5
-              "#{period - 4}OT"
-            elsif period == 5
+            if period > 3
+              "#{period - 2}OT"
+            elsif period == 3
               'OT'
             else
-              "Q#{period}"
+              "#{period}H"
             end
           end
 
