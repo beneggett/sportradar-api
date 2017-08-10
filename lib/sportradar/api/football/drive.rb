@@ -54,7 +54,7 @@ module Sportradar
         end
 
         def over?
-          !!@end_reason
+          @end_reason != 'UNKNOWN' && !@end_reason.nil?
         end
 
         def end_reason_possibilities
