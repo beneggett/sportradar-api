@@ -39,7 +39,7 @@ module Sportradar
           end
 
           def api_key
-            if !['ot', 'sim'].include?(access_level)
+            if !['ot', 'sim'].include?(access_level) || (default_access_level == 'p' && access_level == 'sim')
               ::Sportradar::Api.api_key_params('nfl', 'production')
             else
               ::Sportradar::Api.api_key_params('nfl')
