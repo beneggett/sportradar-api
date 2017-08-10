@@ -22,7 +22,7 @@ module Sportradar
           end
           def default_access_level
             if (ENV['SPORTRADAR_ENV'] || ENV['SPORTRADAR_ENV_NFL'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
-              'p'
+              'o'
             else
               'ot'
             end
@@ -39,7 +39,7 @@ module Sportradar
           end
 
           def api_key
-            if !['ot', 'sim'].include?(access_level) || (default_access_level == 'p' && access_level == 'sim')
+            if !['ot', 'sim'].include?(access_level) || (default_access_level == 'o' && access_level == 'sim')
               ::Sportradar::Api.api_key_params('nfl', 'production')
             else
               ::Sportradar::Api.api_key_params('nfl')
@@ -51,7 +51,7 @@ module Sportradar
           end
 
           def allowed_access_levels
-            %w[rt p s b t ot sim]
+            %w[rt o p s b t ot sim]
           end
 
           def allowed_seasons
