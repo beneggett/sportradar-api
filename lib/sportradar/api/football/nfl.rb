@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Nfl < Data
-        attr_accessor :response, :id, :name, :alias, :type
+        attr_accessor :response, :id, :name, :alias, :type, :season
         def all_attributes
           [:name, :alias, :leagues, :divisions, :teams]
         end

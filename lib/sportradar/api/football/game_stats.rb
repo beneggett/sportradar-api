@@ -17,16 +17,16 @@ module Sportradar
           @first_downs     = data["first_downs"]
           @interceptions   = data["interceptions"]
           @touchdowns      = data["touchdowns"]
-          @possession_time = data["possession_time"]
-          @avg_gain        = data["avg_gain"]
-          @safeties        = data["safeties"]
-          @turnovers       = data["turnovers"]
-          @play_count      = data["play_count"]
-          @rush_plays      = data["rush_plays"]
-          @total_yards     = data["total_yards"]
-          @lost_fumbles    = data["lost_fumbles"]
-          @penalty_yards   = data["penalty_yards"]
-          @return_yards    = data["return_yards"]
+          @possession_time = data.dig('summary', "possession_time")
+          @avg_gain        = data.dig('summary', "avg_gain")
+          @safeties        = data.dig('summary', "safeties")
+          @turnovers       = data.dig('summary', "turnovers")
+          @play_count      = data.dig('summary', "play_count")
+          @rush_plays      = data.dig('summary', "rush_plays")
+          @total_yards     = data.dig('summary', "total_yards")
+          @lost_fumbles    = data.dig('summary', "lost_fumbles")
+          @penalty_yards   = data.dig('summary', "penalty_yards")
+          @return_yards    = data.dig('summary', "return_yards")
         end
 
         # :skip_test_coverage:
