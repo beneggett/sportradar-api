@@ -26,8 +26,8 @@ module Sportradar
             'reg'
           end
           def default_access_level
-            if (ENV['SPORTRADAR_ENV'] || ENV['SPORTRADAR_ENV_NCAAFB'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
-              'p'
+            if (ENV['SPORTRADAR_ENV'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
+              ENV['SPORTRADAR_ACCESS_NCAAFB'] || 'rt'
             else
               't'
             end
