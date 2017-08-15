@@ -64,6 +64,15 @@ module Sportradar
             data
           end
 
+          def ingest_pbp(data)
+            super.tap {
+              clock = self.plays.last&.clock
+              quarter = self.quarters.last&.number
+              @clock    = clock   if clock
+              @quarter  = quarter if quarter
+            }
+          end
+
           def team_class
             Team
           end
