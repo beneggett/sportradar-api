@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Play < Data
-        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id
+        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type
 
         def initialize(data, **opts)
           @response          = data
@@ -12,8 +12,10 @@ module Sportradar
         end
 
         def update(data, **opts)
-          @description       = data["description"] || data['summary'] || @description
-          @alt_description   = data['alt_description']  if data['alt_description']
+          @api              = opts[:api] || @api
+          @drive            = opts[:drive] || @drive
+          @description      = data["description"] || data['summary'] || @description
+          @alt_description  = data['alt_description'] if data['alt_description']
           @away_points  = data['away_points']  if data['away_points']
           @home_points  = data['home_points']  if data['home_points']
 
@@ -39,10 +41,10 @@ module Sportradar
           @direction    = data["direction"]    if data["direction"]
           @distance     = data["distance"]     if data["distance"]
           @participants = data["participants"] if data["participants"]
-          @details      = data["details"]      if data["details"]
           @play_type    = data["play_type"]    if data["play_type"]
           @sequence     = data["sequence"]     if data["sequence"]
 
+          @details           = data["details"].gsub('.json', '') if data["details"]
 
           # @statistics      = Sportradar::Api::Nfl::PlayStatistics.new data["statistics"] if data["statistics"]
           # parse_player if @statistics

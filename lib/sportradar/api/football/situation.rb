@@ -10,8 +10,12 @@ module Sportradar
           @down       = data["down"]
           @yfd        = data["yfd"]
           @possession = OpenStruct.new(data["possession"]) if data["possession"]
-          @location   = OpenStruct.new(data["location"])   if data["location"]
-          @team_id    = possession.id if possession
+          if data["location"]
+            @location = OpenStruct.new(data["location"])
+          elsif data['side'] && data['yard_line']
+            @location = OpenStruct.new(alias: data['side'], yardline: data['yard_line'])
+          end
+          @team_id    = possession&.id || data["team"]
         end
 
       end

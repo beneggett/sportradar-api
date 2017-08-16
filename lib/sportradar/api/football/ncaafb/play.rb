@@ -9,12 +9,30 @@ module Sportradar
             @parsed_ending ||= parse_description_for_drive_end
           end
 
+
+          def queue_details
+            if @details
+              url, headers, options, timeout = @api.get_request_info(@details)
+              {url: url, headers: headers, params: options, timeout: timeout, callback: method(:update)}
+            end
+          end
+
+          def get_details
+            if @details
+              data = @api.get_data(@details).to_h
+              update(data)
+              data
+            end
+          end
+
         private
 
           def parse_description_for_drive_end
             parsed_ending = case @description
             when /intercepted/i
               :interception
+            when /fumbles/i
+              :fumble
             when /extra point is good/i
               :touchdown
             # when missed extra point
