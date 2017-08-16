@@ -12,7 +12,7 @@ module Sportradar
           end
 
           def sim!
-            @access_level = 'sim-t'
+            @access_level = "sim-#{default_access_level}"
             self
           end
 
@@ -44,7 +44,7 @@ module Sportradar
           end
 
           def api_key
-            if !['t', 'sim-t'].include?(access_level) || (default_access_level == 'rt' && access_level == 'sim-t')
+            if !['t', 'sim-t'].include?(access_level)
               ::Sportradar::Api.api_key_params('ncaafb', 'production')
             else
               ::Sportradar::Api.api_key_params('ncaafb')
