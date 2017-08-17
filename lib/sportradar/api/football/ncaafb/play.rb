@@ -9,6 +9,10 @@ module Sportradar
             @parsed_ending ||= search_for_drive_end
           end
 
+          def counted_play?
+            ['rush', 'pass'].include?(self.play_type) && !self.description.include?('No Play')
+          end
+
           def halftime?
             @description == "End of 1st Half"
           end

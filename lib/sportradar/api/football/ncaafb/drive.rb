@@ -14,11 +14,11 @@ module Sportradar
           end
 
           def play_count
-            plays.count { |play| ['rush', 'pass'].include? play.play_type }
+            plays.count(&:counted_play?)
           end
 
           def gain
-            Array(plays.select { |play| ['rush', 'pass'].include? play.play_type }).sum do |play|
+            Array(plays.select(&:counted_play?)).sum do |play|
               Array(play.players).sum do |p|
                 p.dig('passing', 'yds').to_i + p.dig('rushing', 'yds').to_i
               end
