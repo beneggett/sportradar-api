@@ -13,6 +13,18 @@ module Sportradar
             create_data(@events_hash, data['events'],   klass: Event, api: api, game: self) if data['events']
           end
 
+          def play_count
+            plays.count { |play| ['rush', 'pass'].include? play.play_type }
+          end
+
+          def gain
+            Array(plays.select { |play| ['rush', 'pass'].include? play.play_type }).sum do |play|
+              Array(play.players).sum do |p|
+                p.dig('passing', 'yds').to_i + p.dig('rushing', 'yds').to_i
+              end
+            end
+          end
+
         end
       end
     end

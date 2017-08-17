@@ -11,6 +11,12 @@ module Sportradar
             super
           end
 
+          def clock_display
+            if clock && quarter
+              quarter > 4 ? quarter_display : "#{clock} #{quarter_display}"
+            end
+          end
+
           def path_base
             "#{ year }/#{ type }/#{ week_number.to_s }/#{ away_alias }/#{ home_alias }"
           end

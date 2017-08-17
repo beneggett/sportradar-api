@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Play < Data
-        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type
+        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players
 
         def initialize(data, **opts)
           @response          = data
@@ -43,10 +43,11 @@ module Sportradar
           @participants = data["participants"] if data["participants"]
           @play_type    = data["play_type"]    if data["play_type"]
           @sequence     = data["sequence"]     if data["sequence"]
+          @players      = data["players"]      if data["players"]
 
           @details           = data["details"].gsub('.json', '') if data["details"]
 
-          # @statistics      = Sportradar::Api::Nfl::PlayStatistics.new data["statistics"] if data["statistics"]
+          @statistics      = Sportradar::Api::Football::PlayStatistics.new(data['statistics']) if data['statistics']
           # parse_player if @statistics
           @wall_clock        = data["wall_clock"]
 
