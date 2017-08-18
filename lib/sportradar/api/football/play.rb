@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Play < Data
-        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players
+        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players, :down, :yfd
 
         def initialize(data, **opts)
           @response          = data
@@ -48,7 +48,7 @@ module Sportradar
           @details           = data["details"].gsub('.json', '') if data["details"]
 
           @statistics      = Sportradar::Api::Football::PlayStatistics.new(data['statistics']) if data['statistics']
-          # parse_player if @statistics
+          parse_player if @statistics
           @wall_clock        = data["wall_clock"]
 
           self
@@ -63,7 +63,7 @@ module Sportradar
         end
 
         def down_distance
-          start_situation&.down_distance
+          [@down, @yfd].compact.join(' & ')
         end
 
         def end_of_regulation?
