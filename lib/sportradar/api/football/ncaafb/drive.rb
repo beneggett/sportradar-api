@@ -5,12 +5,12 @@ module Sportradar
         class Drive < Sportradar::Api::Football::Drive
 
           def over?
-            plays.last&.parsed_ending
+            plays.last&.parsed_ending || (overtime? && ['End of Quarter', 'End of Game'].include?(plays.last&.description))
           end
 
           def handle_plays_and_events(data, **opts)
-            create_data(@plays_hash,  data['actions'],  klass: Play,  api: api, game: self) if data['actions']
-            create_data(@events_hash, data['events'],   klass: Event, api: api, game: self) if data['events']
+            create_data(@plays_hash,  data['actions'],  klass: Play,  api: api, drive: self) if data['actions']
+            create_data(@events_hash, data['events'],   klass: Event, api: api, drive: self) if data['events']
           end
 
           def play_count
@@ -30,3 +30,7 @@ module Sportradar
     end
   end
 end
+# e = Event.find 17632;
+# sc = e.sportconnector_game;
+# dr = sc.pbp[-3]
+# pl = dr.plays.last

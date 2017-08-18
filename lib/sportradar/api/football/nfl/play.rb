@@ -4,6 +4,13 @@ module Sportradar
       class Nfl
         class Play < Sportradar::Api::Football::Play
 
+          def down
+            start_situation.down
+          end
+
+          def yfd
+            start_situation.yfd
+          end
           # def parse_player
           #   # TODO: Currently there is an issue where we are only mapping one player_id to a play, but there are plays with multiple players involved.
           #   play_stats = @statistics.penalty || @statistics.rush || @statistics.return || @statistics.receive

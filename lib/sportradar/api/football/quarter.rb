@@ -23,9 +23,13 @@ module Sportradar
           @home_info = data["home"]
           @away_info = data["away"]
 
-          create_data(@drives_hash, data['pbp'], klass: drive_class, api: api, game: self) if data['pbp']
+          create_data(@drives_hash, data['pbp'], klass: drive_class, api: api, quarter: self) if data['pbp']
 
           self
+        end
+
+        def overtime?
+          @number > 4
         end
 
         def drives

@@ -26,6 +26,7 @@ module Sportradar
           @type           = data['type']
           @team           = data['team']
           @clock          = data['clock']
+          @overtime       = !!opts[:quarter]&.overtime? || @overtime
 
           @sequence       = data["sequence"]
           @start_reason   = data["start_reason"]
@@ -43,6 +44,10 @@ module Sportradar
           handle_plays_and_events(data, **opts)
 
           self
+        end
+
+        def overtime?
+          @overtime
         end
 
         def plays

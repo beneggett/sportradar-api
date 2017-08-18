@@ -63,7 +63,7 @@ module Sportradar
         end
 
         def down_distance
-          [@down, @yfd].compact.join(' & ')
+          [down, yfd].compact.join(' & ')
         end
 
         def end_of_regulation?
