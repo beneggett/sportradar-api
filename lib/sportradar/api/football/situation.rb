@@ -18,6 +18,14 @@ module Sportradar
           @team_id    = possession&.id || data["team"]
         end
 
+        def spot
+          [location&.alias, location&.yardline].compact.join(' ')
+        end
+
+        def down_distance
+          [@down, @distance].compact.join(' & ')
+        end
+
       end
     end
   end

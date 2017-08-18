@@ -54,6 +54,18 @@ module Sportradar
           self
         end
 
+        def start_spot
+          start_situation&.spot
+        end
+
+        def end_spot
+          end_situation&.spot
+        end
+
+        def down_distance
+          start_situation&.down_distance
+        end
+
         def end_of_regulation?
           false
         end
