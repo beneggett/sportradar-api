@@ -14,10 +14,12 @@ module Sportradar
           @season = opts[:year]
           @type   = opts[:type]
 
-          @conferences_hash = {}
-          @weeks_hash = {}
-          @games_hash = {}
-          @teams_hash = {}
+          @conferences_hash   = {}
+          @weeks_hash         = {}
+          @depth_charts_hash  = {}
+          # @injuries_hash      = {}
+          @games_hash         = {}
+          @teams_hash         = {}
 
         end
 
@@ -58,6 +60,11 @@ module Sportradar
 
           self
         end
+
+        def weekly_depth_charts(week_number)
+          @depth_charts_hash[week_number] ||= get_weekly_depth_charts(week_number)
+        end
+
         def weeks
           @weeks_hash.values
         end
@@ -150,9 +157,12 @@ module Sportradar
         def path_weekly_schedule(nfl_season_week)
           "games/#{season_year}/#{nfl_season}/#{nfl_season_week}/schedule"
         end
-        # def path_rankings(nfl_season_week, poll_name = 'AP25')
-        #   "polls/#{poll_name}/#{season_year}/#{nfl_season_week}/rankings"
-        # end
+        def path_weekly_depth_charts(nfl_season_week)
+          "seasontd/#{season_year}/#{nfl_season}/#{nfl_season_week}/depth_charts"
+        end
+        def path_weekly_depth_injuries(nfl_season_week)
+          "seasontd/#{season_year}/#{nfl_season}/#{nfl_season_week}/injuries"
+        end
         def path_standings
           "seasontd/#{season_year}/standings"
         end
@@ -191,6 +201,21 @@ module Sportradar
           url, headers, options, timeout = api.get_request_info(path_weekly_schedule(nfl_season_week))
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_weekly_schedule)}
         end
+
+        ## weekly depth charts
+        private def get_weekly_depth_charts(nfl_season_week = 1)
+          data = api.get_data(path_weekly_depth_charts(nfl_season_week)).to_h
+          ingest_weekly_depth_charts(data)
+        end
+
+        private def ingest_weekly_depth_charts(data)
+          LeagueDepthChart.new(data, api: api)
+        end
+
+        # def queue_weekly_depth_charts(nfl_season_week = 1)
+        #   url, headers, options, timeout = api.get_request_info(path_weekly_depth_charts(nfl_season_week))
+        #   {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_weekly_depth_charts)}
+        # end
 
         ## hierarchy
         def get_hierarchy
@@ -291,3 +316,7 @@ res2 = nfl.get_weekly_schedule;
 nfl = Marshal.load(File.binread('nfl.bin'));
 File.binwrite('nfl.bin', Marshal.dump(nfl))
 
+nfl = Sportradar::Api::Football::Nfl.new
+nfl.season = 2016
+res = nfl.get_weekly_depth_charts
+dc = nfl.instance_variable_get(:@depth_charts_hash)

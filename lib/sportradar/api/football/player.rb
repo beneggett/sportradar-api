@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Player < Data
-        attr_accessor :response, :id, :preferred_name, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :api
+        attr_accessor :response, :id, :preferred_name, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :depth, :api
 
         def initialize(data, **opts)
           @response = data
@@ -54,6 +54,7 @@ module Sportradar
           @updated          = data['updated']           if data['updated']           # "2016-07-08T12:11:59+00:00",
 
 
+          @depth            = data['depth']             if data['depth']
           @games_started    = data['games_started']     if data['games_started']
           @games_played     = data['games_played']      if data['games_played']
 # NCAA specific below
