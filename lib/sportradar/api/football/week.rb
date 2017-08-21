@@ -25,7 +25,7 @@ module Sportradar
           @type = opts[:hierarchy].season       if opts[:hierarchy]
 
           @number   = data['number'] || data['title'] || @number
-          @sequence = data['sequence']  if data['sequence']
+          @sequence = data['sequence'] || @sequence || @number
 
           create_data(@games_hash, data['games'],   klass: game_class,   week: self, api: api)
         end
@@ -43,12 +43,12 @@ __END__
 
 
 
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
+ncaafb = Sportradar::Api::Football::Ncaafb.new
+ncaafb = Sportradar::Api::Football::Ncaafb.new
 res1 = ncaafb.get_schedule;
 res2 = ncaafb.get_weekly_schedule;
 
-ncaafb = Sportradar::Api::Football::Ncaafb::Hierarchy.new
+ncaafb = Sportradar::Api::Football::Ncaafb.new
 gg = ncaafb.games;
 g = gg.first;
 g.week
