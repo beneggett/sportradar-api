@@ -7,12 +7,13 @@ module Sportradar
           data = [data] if data.is_a?(Hash)
           @response = data
           data.each do |hash|
-            begin
+            var = instance_variable_get("@#{hash['stat_type']}")
+            unless var
+              instance_variable_set("@#{hash['stat_type']}", [])
+              var = instance_variable_get("@#{hash['stat_type']}")
+            end
             klass = self.class.stat_type_classes[hash['stat_type']] || MiscStatistics
-            instance_variable_set("@#{hash['stat_type']}", klass.new(hash))
-          rescue => e
-            binding.pry
-          end
+            var << klass.new(hash)
           end
         end
 

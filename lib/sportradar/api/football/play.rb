@@ -44,14 +44,19 @@ module Sportradar
           @play_type    = data["play_type"]    if data["play_type"]
           @sequence     = data["sequence"]     if data["sequence"]
           @players      = data["players"]      if data["players"]
+          @deleted      = data["deleted"]      if data["deleted"]
 
           @details           = data["details"].gsub('.json', '') if data["details"]
 
-          @statistics      = Sportradar::Api::Football::PlayStatistics.new(data['statistics']) if data['statistics']
+          @statistics      = data['statistics'] ? Sportradar::Api::Football::PlayStatistics.new(data['statistics']) : OpenStruct.new
           parse_player if @statistics
           @wall_clock        = data["wall_clock"]
 
           self
+        end
+
+        def deleted?
+          !!@deleted
         end
 
         def start_spot
