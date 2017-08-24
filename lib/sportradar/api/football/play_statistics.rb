@@ -18,7 +18,7 @@ module Sportradar
         end
 
         def players
-          @players ||= [:kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :first_down, :field_goal, :extra_point, :defense, :down_conversion].flat_map do |stat_type|
+          @players ||= [:kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :field_goal, :defense, :down_conversion].flat_map do |stat_type|
             Array(send(stat_type)).map { |stat| stat.player.team = stat.team.id; stat.player }
           end
         end
@@ -69,12 +69,13 @@ module Sportradar
       end
 
       class PlayDownConversionStatistics < Data
-        attr_accessor :attempt, :complete, :down, :nullified, :team
+        attr_accessor :attempt, :complete, :down, :nullified, :team, :player
         def initialize(data)
           @attempt   = data['attempt']
           @complete  = data['complete']
           @down      = data['down']
           @team      = OpenStruct.new(data['team']) if data['team']
+          @player    = OpenStruct.new(data['player']) if data['player']
           @nullified = data['nullified']
         end
 
@@ -293,8 +294,8 @@ module Sportradar
           @attempt    = data['attempt']
           @complete   = data['complete']
           @category   = data['category']
-          @player     = data['player']
-          @team       = data['team']
+          @team         = OpenStruct.new(data['team']) if data['team']
+          @player       = OpenStruct.new(data['player']) if data['player']
         end
       end
 
