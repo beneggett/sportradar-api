@@ -160,7 +160,6 @@ module Sportradar
       class PlayFieldGoalStatistics < Data
         attr_accessor :attempt, :att_yards, :missed, :yards, :nullified, :blocked, :team, :player
         def initialize(data)
-          "att"=>1, "made"=>1, "yds"=>17, "att_yds"=>17, "blk"=>0, "ret"=>0}
           @response = data
           @attempt    = data['attempt']   || data['att']
           @att_yards  = data['att_yards']
