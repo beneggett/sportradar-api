@@ -4,6 +4,12 @@ module Sportradar
       class Ncaafb
         class Drive < Sportradar::Api::Football::Drive
 
+          alias :team_id :team
+
+          def end_reason
+            plays.last.parsed_ending || 'UNKNOWN'
+          end
+
           def over?
             plays.last&.parsed_ending || (overtime? && ['End of Quarter', 'End of Game'].include?(plays.last&.description))
           end

@@ -79,6 +79,33 @@ module Sportradar
           false
         end
 
+        def parsed_ending
+          @parsed_ending ||= search_for_drive_end
+        end
+
+        def search_for_drive_end
+          case @play_type
+          when 'kick'
+            nil
+          when 'rush'
+            # check for fumble
+            parse_description_for_drive_end
+          when 'pass'
+            # check for fumble/interception
+            parse_description_for_drive_end
+          when 'punt'
+            :punt
+          when 'penalty'
+            nil
+          when 'fieldgoal'
+            :fg
+          when 'extrapoint'
+            :pat
+          else
+            parse_description_for_drive_end
+          end
+        end
+
         def parse_player
           # TODO: Currently there is an issue where we are only mapping one player_id to a play, but there are plays with multiple players involved.
           play_stats = @statistics.penalty || @statistics.rush || @statistics.return || @statistics.receive

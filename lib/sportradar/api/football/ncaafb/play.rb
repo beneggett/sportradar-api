@@ -5,10 +5,6 @@ module Sportradar
         class Play < Sportradar::Api::Football::Play
 
 
-          def parsed_ending
-            @parsed_ending ||= search_for_drive_end
-          end
-
           def counted_play?
             ['rush', 'pass'].include?(self.play_type) && !self.description.include?('No Play')
           end
@@ -34,28 +30,28 @@ module Sportradar
 
         private
 
-          def search_for_drive_end
-            case @play_type
-            when 'kick'
-              nil
-            when 'rush'
-              # check for fumble
-              parse_description_for_drive_end
-            when 'pass'
-              # check for fumble/interception
-              parse_description_for_drive_end
-            when 'punt'
-              :punt
-            when 'penalty'
-              nil
-            when 'fieldgoal'
-              :fg
-            when 'extrapoint'
-              :pat
-            else
-              parse_description_for_drive_end
-            end
-          end
+          # def search_for_drive_end
+          #   case @play_type
+          #   when 'kick'
+          #     nil
+          #   when 'rush'
+          #     # check for fumble
+          #     parse_description_for_drive_end
+          #   when 'pass'
+          #     # check for fumble/interception
+          #     parse_description_for_drive_end
+          #   when 'punt'
+          #     :punt
+          #   when 'penalty'
+          #     nil
+          #   when 'fieldgoal'
+          #     :fg
+          #   when 'extrapoint'
+          #     :pat
+          #   else
+          #     parse_description_for_drive_end
+          #   end
+          # end
 
           # ["kick", "rush", "pass", "punt", "penalty", nil, "fieldgoal", "extrapoint"]
           def parse_description_for_drive_end

@@ -12,6 +12,10 @@ module Sportradar
             create_data(@events_hash, things['event'], klass: Event, api: api, drive: self) if things['event']
           end
 
+          def team_id
+            plays.last&.start_situation&.team_id
+          end
+
         end
       end
     end

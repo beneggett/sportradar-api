@@ -167,6 +167,18 @@ module Sportradar
           @teams_hash[leading_team_id] || (@away_id == leading_team_id && away) || (@home_id == leading_team_id && home)
         end
 
+        def current_possession_team_id
+          drives.last.team_id
+        end
+
+        def next_possession_team_id
+          (@teams_hash.keys - [current_possession_team_id]).first || (@away_id == current_possession_team_id && @home_id) || (@home_id == current_possession_team_id && @away_id)
+        end
+
+        def team_ids
+          @teams_hash.keys
+        end
+
         def team(team_id)
           @teams_hash[team_id]
         end
