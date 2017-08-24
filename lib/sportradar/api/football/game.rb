@@ -168,7 +168,7 @@ module Sportradar
         end
 
         def current_possession_team_id
-          drives.last.team_id
+          drives.grep(Sportradar::Api::Football::Drive).last.team_id
         end
 
         def next_possession_team_id
