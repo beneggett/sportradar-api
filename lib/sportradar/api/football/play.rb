@@ -44,7 +44,7 @@ module Sportradar
           @play_type    = data["play_type"]    if data["play_type"]
           @sequence     = data["sequence"]     if data["sequence"]
           @players      = data["players"]      if data["players"]
-          @deleted      = data["deleted"]      if data["deleted"]
+          @deleted      = data["deleted"] || @deleted
 
           @details           = data["details"].gsub('.json', '') if data["details"]
 
