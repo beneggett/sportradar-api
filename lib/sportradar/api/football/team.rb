@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Team < Data
-        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats, :seed, :season, :type, :stats
+        attr_accessor :response, :id, :market, :name, :alias, :full_name, :venue, :records, :player_stats, :team_stats, :seed, :season, :type, :stats, :used_timeouts, :remaining_timeouts
 
         def initialize(data, **opts)
           @response = data
@@ -33,6 +33,8 @@ module Sportradar
           @seed     = data['seed'].to_i             if data['seed']
           @alias    = data['alias']                 if data['alias']
           @points   = data['points'].to_i           if data['points']
+          @used_timeouts      = data['used_timeouts']       if data['used_timeouts']
+          @remaining_timeouts = data['remaining_timeouts']  if data['remaining_timeouts']
 
           parse_records(data)                                          if data['records']
           parse_players(data.dig('players'), opts[:game])   if data.dig('players')
@@ -45,6 +47,10 @@ module Sportradar
               opts[:game].update_stats(self, @stats)
             end
           end
+        end
+
+        def timeouts
+          {'used' => used_timeouts, 'remaining' => remaining_timeouts}
         end
         def handle_names(data)
           # need to do some more work here

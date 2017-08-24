@@ -8,6 +8,10 @@ module Sportradar
             id
           end
 
+          def used_timeouts
+            3 - remaining_timeouts
+          end
+
           def players
             get_roster if @players_hash.empty?
             @players_hash.values

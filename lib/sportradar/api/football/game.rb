@@ -29,7 +29,7 @@ module Sportradar
         end
 
         def timeouts
-          {}
+          @teams_hash.map { |t_id, team| [t_id, team.timeouts] }.to_h
         end
 
         def period
