@@ -19,7 +19,7 @@ module Sportradar
 
         def players
           @players ||= [:kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :field_goal, :defense, :down_conversion].flat_map do |stat_type|
-            Array(send(stat_type)).map { |stat| stat.player.team = stat.team.id; stat.player }
+            Array(send(stat_type)).map { |stat| (stat.player.team = stat.team.id; stat.player) if stat.player }.compact # this is cause of kick returns w/ touchbacks
           end
         end
 
