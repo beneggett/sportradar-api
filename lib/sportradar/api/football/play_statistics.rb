@@ -17,8 +17,18 @@ module Sportradar
           end
         end
 
+        def players
+          @players ||= [:kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :first_down, :field_goal, :extra_point, :defense, :down_conversion].flat_map do |stat_type|
+            Array(send(stat_type)).map { |stat| stat.player.team = stat.team.id; stat.player }
+          end
+        end
+
+        def players_by_team
+          @players_by_team ||= players.group_by(&:team)
+        end
+
         def self.stat_type_classes
-          stat_type_classes ||= {
+          @stat_type_classes ||= {
             'kick'            => PlayKickStatistics,
             'return'          => PlayReturnStatistics,
             'rush'            => PlayRushStatistics,
