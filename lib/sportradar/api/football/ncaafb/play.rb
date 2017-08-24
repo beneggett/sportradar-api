@@ -56,6 +56,8 @@ module Sportradar
           # ["kick", "rush", "pass", "punt", "penalty", nil, "fieldgoal", "extrapoint"]
           def parse_description_for_drive_end
             parsed_ending = case @description
+            when /no play/i
+              nil
             when /intercepted/i
               :interception
             when /fumbles/i

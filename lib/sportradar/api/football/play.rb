@@ -43,16 +43,26 @@ module Sportradar
           @participants = data["participants"] if data["participants"]
           @play_type    = data["play_type"]    if data["play_type"]
           @sequence     = data["sequence"]     if data["sequence"]
-          @players      = data["players"]      if data["players"]
+
           @deleted      = data["deleted"] || @deleted
 
           @details           = data["details"].gsub('.json', '') if data["details"]
 
-          @statistics      = data['statistics'] ? Sportradar::Api::Football::PlayStatistics.new(data['statistics']) : OpenStruct.new
-          parse_player if @statistics
+          if data['statistics']
+            @statistics = Sportradar::Api::Football::PlayStatistics.new(data['statistics'])
+          elsif data['players']
+            @statistics = Sportradar::Api::Football::PlayStatistics.new(data['players'])
+          else
+            @statistics ||= OpenStruct.new(players: [])
+          end
+          parse_player
           @wall_clock        = data["wall_clock"]
 
           self
+        end
+
+        def players
+          statistics.players
         end
 
         def deleted?
@@ -94,11 +104,11 @@ module Sportradar
             # check for fumble/interception
             parse_description_for_drive_end
           when 'punt'
-            :punt
+            parse_description_for_drive_end
           when 'penalty'
             nil
           when 'fieldgoal'
-            :fg
+            parse_description_for_drive_end # nullified plays still have FG
           when 'extrapoint'
             :pat
           else
@@ -108,6 +118,8 @@ module Sportradar
 
         def parse_description_for_drive_end
           parsed_ending = case @description
+          when /no play/i
+            nil
           when /intercepted/i
             :interception
           when /fumbles/i
