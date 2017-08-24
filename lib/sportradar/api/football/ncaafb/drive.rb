@@ -25,7 +25,7 @@ module Sportradar
 
           def gain
             Array(plays.select(&:counted_play?)).sum do |play|
-              Array(play.statistics.pass).map(&:yards).inject(:+) + Array(play.statistics.rush).map(&:yards).inject(:+)
+              Array(play.statistics.pass).map(&:yards).inject(:+).to_i + Array(play.statistics.rush).map(&:yards).inject(:+).to_i
             end
           end
 
