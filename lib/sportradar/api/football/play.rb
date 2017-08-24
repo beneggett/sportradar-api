@@ -106,6 +106,34 @@ module Sportradar
           end
         end
 
+        def parse_description_for_drive_end
+          parsed_ending = case @description
+          when /intercepted/i
+            :interception
+          when /fumbles/i
+            :fumble
+          when /extra point is good/i
+            :touchdown
+          # when missed extra point
+          when /punts/i
+            :punt
+          when /Field Goal is No Good. blocked/i
+            :fg
+          when /Field Goal is No Good/i
+            :fg
+          # when missed field goal
+          when /Field Goal is Good/i
+            :fg
+          when "End of 1st Half"
+            :end_of_half
+          else
+            #
+          end
+          if parsed_ending
+            parsed_ending
+          end
+        end
+
         def parse_player
           # TODO: Currently there is an issue where we are only mapping one player_id to a play, but there are plays with multiple players involved.
           play_stats = @statistics.penalty || @statistics.rush || @statistics.return || @statistics.receive
