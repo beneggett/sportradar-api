@@ -59,7 +59,7 @@ module Sportradar
         end
 
         def over?
-          @end_reason != 'UNKNOWN' && !@end_reason.nil? # && !plays.last.parsed_ending # FIXME - maybe fix this. sim games have inconsistent data
+          end_reason != 'UNKNOWN' && !end_reason.nil? # && !plays.last.parsed_ending # FIXME - maybe fix this. sim games have inconsistent data
         end
 
         def end_reason_possibilities
