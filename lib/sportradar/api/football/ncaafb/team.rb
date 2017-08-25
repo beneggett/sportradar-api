@@ -9,7 +9,7 @@ module Sportradar
           end
 
           def used_timeouts
-            3 - remaining_timeouts
+            3 - remaining_timeouts.to_i
           end
 
           def players
