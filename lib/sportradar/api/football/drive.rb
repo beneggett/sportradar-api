@@ -95,14 +95,18 @@ module Sportradar
           case end_reason
           when 'Touchdown', :pat
             'Touchdown'
-          when 'Field Goal', 'Missed FG', "Blocked FG, Downs", 'Muffed FG', 'Blocked FG, Safety', :fg
+          when 'Field Goal', 'Missed FG', "Blocked FG, Downs", 'Muffed FG', :fg
             'Field Goal'
           when 'Downs'
             'Downs'
           when 'Interception', 'Fumble', :fumble, :interception
             'Turnover'
-          when 'Punt', :punt
+          when 'Punt', 'Blocked Punt, Downs', 'Blocked Punt, Safety', :punt
             'Punt'
+          when 'End of Half', 'End of Game'
+            end_reason
+          when 'Safety', 'Blocked FG, Safety'
+            'Safety'
           else
             'Other'
           end
