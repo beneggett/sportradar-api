@@ -23,7 +23,7 @@ module Sportradar
           @home_info = data["home"]
           @away_info = data["away"]
 
-          create_data(@drives_hash, data['pbp'], klass: drive_class, api: api, quarter: self) if data['pbp']
+          opts[:game].update_drives(data['pbp']) if data['pbp']
 
           self
         end

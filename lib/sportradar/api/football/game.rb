@@ -23,6 +23,7 @@ module Sportradar
           @player_stats = {}
 
           @quarters_hash = {}
+          @drives_hash = {}
           @score = {}
 
           update(data, **opts)
@@ -158,6 +159,10 @@ module Sportradar
           @score.merge!(score)
         end
 
+        def update_drives(data)
+          create_data(@drives_hash, data, klass: drive_class, api: api, game: self)
+        end
+
         def leading_team_id
           return nil if tied?
           score.max_by(&:last).first
@@ -205,7 +210,7 @@ module Sportradar
         end
 
         def drives
-          quarters.flat_map(&:drives).compact
+          @drives_hash.values
         end
 
         def plays

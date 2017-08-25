@@ -37,6 +37,9 @@ module Sportradar
             Sportradar::Api::Football::Nfl::Quarter
           end
 
+          def drive_class
+            Sportradar::Api::Football::Nfl::Drive
+          end
 
           def api
             @api || Sportradar::Api::Football::Nfl::Api.new

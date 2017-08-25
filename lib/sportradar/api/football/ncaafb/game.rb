@@ -94,6 +94,9 @@ module Sportradar
             Sportradar::Api::Football::Ncaafb::Quarter
           end
 
+          def drive_class
+            Sportradar::Api::Football::Ncaafb::Drive
+          end
 
           def api
             @api || Sportradar::Api::Football::Ncaafb::Api.new
