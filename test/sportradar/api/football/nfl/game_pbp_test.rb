@@ -20,7 +20,7 @@ class Sportradar::Api::Football::Nfl::GamePbpTest < Minitest::Test
 
   def test_nfl_game_pbp
     assert_equal 4, @game.quarters.size
-    assert_equal 23, @game.drives.size
+    assert_equal 21, @game.drives.size
     assert_equal 168, @game.plays.size
   end
 
