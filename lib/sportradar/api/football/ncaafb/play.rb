@@ -4,6 +4,9 @@ module Sportradar
       class Ncaafb
         class Play < Sportradar::Api::Football::Play
 
+          def yards
+            (counted_play? && (statistics.pass&.first || statistics.rush&.first)&.yards).to_i
+          end
 
           def counted_play?
             ['rush', 'pass'].include?(self.play_type) && !self.description.include?('No Play')

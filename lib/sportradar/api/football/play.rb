@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Play < Data
-        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players, :down, :yfd
+        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players, :down, :yfd, :player_data
 
         def initialize(data, **opts)
           @response          = data
@@ -51,6 +51,7 @@ module Sportradar
           if data['statistics']
             @statistics = Sportradar::Api::Football::PlayStatistics.new(data['statistics'])
           elsif data['players']
+            @player_data = data['players']
             @statistics = Sportradar::Api::Football::PlayStatistics.new(data['players'])
           else
             @statistics ||= OpenStruct.new(players: [])

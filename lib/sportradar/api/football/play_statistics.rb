@@ -8,8 +8,7 @@ module Sportradar
           @response = data
           if data.first['name'] # indicates college data structures. we want to convert it to nfl data structures
             data.map! do |hash|
-              type = self.class.college_type_translations.each_key.detect { |str| hash.key?(str) }
-              binding.pry if type.nil?
+              type = self.class.college_type_translations.each_key.detect { |str| hash.key?(str) } || 'misc'
               stats = hash.delete(type)
               new_team = { 'id' => hash['team'], 'alias' => hash['team'] } # use intermediate variable to avoid temp memory blowup
               new_hash = { 'player' => hash, 'team' => new_team, 'stat_type' => self.class.college_type_translations[type] }.merge(stats)
@@ -53,6 +52,7 @@ module Sportradar
             "interception_return"       => 'return',
             "fumble_return"             => 'return',
             "punt_return"               => 'return',
+            "two_point_conversion"      => 'conversion',
             'misc'                      => 'misc',
           }.freeze
         end
@@ -339,8 +339,8 @@ module Sportradar
         def initialize(data)
           @response = data
           @stat_type  = data['stat_type']
-          @attempt    = data['attempt']
-          @complete   = data['complete']
+          @attempt    = data['attempt'] || data['att']
+          @complete   = data['complete'] || data['cmp']
           @category   = data['category']
           @team         = OpenStruct.new(data['team']) if data['team']
           @player       = OpenStruct.new(data['player']) if data['player']
