@@ -6,6 +6,12 @@ module Sportradar
 
           alias :team_id :team
 
+          def update(data, **opts)
+            super.tap {
+              @sequence = (opts[:game].drives.index(self) || opts[:game].drives.size) + 1 if opts[:game]
+            }
+          end
+
           def end_reason
             plays.last.parsed_ending || 'UNKNOWN'
           end
