@@ -4,6 +4,16 @@ module Sportradar
       class Ncaafb
         class Play < Sportradar::Api::Football::Play
 
+          def play_type
+            if @play_type == 'Kick'
+              'Kickoff'
+            elsif @play_type == 'ExtraPoint'
+              'Extra Point'
+            else
+              super
+            end
+          end
+
           def yards
             (counted_play? && (statistics.pass&.first || statistics.rush&.first)&.yards).to_i
           end
