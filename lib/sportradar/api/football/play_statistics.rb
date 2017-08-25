@@ -2,16 +2,18 @@ module Sportradar
   module Api
     module Football
       class PlayStatistics < Data
-        attr_accessor :response, :kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :first_down, :field_goal, :extra_point, :defense, :down_conversion
+        attr_accessor :response, :kick, :return, :rush, :defense, :receive, :punt, :penalty, :pass, :first_down, :field_goal, :extra_point, :defense, :down_conversion, :fumble
         def initialize(data)
           data = [data] if data.is_a?(Hash)
           @response = data
           if data.first['name'] # indicates college data structures. we want to convert it to nfl data structures
-            data.map! do |hash|
-              type = self.class.college_type_translations.each_key.detect { |str| hash.key?(str) } || 'misc'
-              stats = hash.delete(type)
-              new_team = { 'id' => hash['team'], 'alias' => hash['team'] } # use intermediate variable to avoid temp memory blowup
-              new_hash = { 'player' => hash, 'team' => new_team, 'stat_type' => self.class.college_type_translations[type] }.merge(stats)
+            data = data.flat_map do |hash|
+              types = self.class.college_type_translations.each_key.select { |str| hash.key?(str) }
+              types.map do |type|
+                stats = hash.delete(type)
+                new_team = { 'id' => hash['team'], 'alias' => hash['team'] } # use intermediate variable to avoid temp memory blowup
+                { 'player' => hash, 'team' => new_team, 'stat_type' => self.class.college_type_translations[type] }.merge(stats)
+              end
             end
           end
           data.each do |hash|
@@ -280,12 +282,17 @@ module Sportradar
         attr_reader :own_rec, :own_rec_yards, :forced, :team, :player
         def initialize(data)
           @response = data
+          @oob            = data['oob']
+          @lost           = data['lost']
           @own_rec        = data['own_rec']
           @own_rec_yards  = data['own_rec_yards']
           @forced         = data['forced']
 
           @team        = OpenStruct.new(data['team'])   if data['team']
           @player      = OpenStruct.new(data['player']) if data['player']
+        end
+        def lost?
+          @lost == 1 || @own_rec == 0
         end
       end
         

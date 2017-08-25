@@ -25,9 +25,9 @@ module Sportradar
 
           def get_details
             if @details
-              data = @api.get_data(@details).to_h
-              update(data)
-              data
+              @detailed_data = @api.get_data(@details).to_h
+              update(@detailed_data)
+              @detailed_data
             end
           end
 
@@ -64,7 +64,7 @@ module Sportradar
             when /intercepted/i
               :interception
             when /fumbles/i
-              :fumble
+              self.statistics&.fumble&.first&.lost? && :fumble
             when /extra point is good/i
               :touchdown
             # when missed extra point
