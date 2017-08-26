@@ -102,6 +102,8 @@ module Sportradar
               :fg
             when "End of 1st Half"
               :end_of_half
+            when "End of Game"
+              :end_of_game
             else
               #
             end

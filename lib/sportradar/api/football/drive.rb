@@ -103,8 +103,10 @@ module Sportradar
             'Turnover'
           when 'Punt', 'Blocked Punt, Downs', 'Blocked Punt, Safety', :punt
             'Punt'
-          when 'End of Half', 'End of Game'
-            end_reason
+          when 'End of Half', :end_of_half
+            'End of Half'
+          when 'End of Game', :end_of_game
+            'End of Game'
           when 'Safety', 'Blocked FG, Safety'
             'Safety'
           else
