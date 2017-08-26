@@ -5,13 +5,26 @@ module Sportradar
         class Play < Sportradar::Api::Football::Play
 
           def play_type
-            if @play_type == 'Kick'
-              'Kickoff'
-            elsif @play_type == 'ExtraPoint'
-              'Extra Point'
+            if @play_type.nil?
+              nil
+            elsif @play_type.casecmp? 'kick'
+              'kickoff'
+            elsif @play_type.casecmp? 'extrapoint'
+              'extra point'
+            elsif @play_type.casecmp? 'fieldgoal'
+              'field goal'
             else
               super
             end
+          end
+
+          def clock_seconds
+            m,s = @clock.split(':')
+            m.to_i * 60 + s.to_i
+          end
+
+          def made_first_down?
+            statistics.pass&.first&.firstdown == 1 || statistics.rush&.first&.firstdown == 1
           end
 
           def yards

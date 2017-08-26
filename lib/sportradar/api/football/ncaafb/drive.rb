@@ -15,8 +15,27 @@ module Sportradar
             }
           end
 
+          def duration_seconds
+            start_time = plays.first&.clock_seconds
+            end_time   = plays.last&.clock_seconds
+            if end_time > start_time
+              start_time + 900 - end_time
+            else
+              start_time - end_time
+            end
+          end
+
+          def duration
+            mm, ss = duration_seconds.divmod(60)
+            "#{mm}:#{ss.to_s.rjust(2, '0')}"
+          end
+
           def end_reason
             plays.last.parsed_ending || 'UNKNOWN'
+          end
+
+          def first_downs
+            plays.count(&:made_first_down?)
           end
 
           def over?
