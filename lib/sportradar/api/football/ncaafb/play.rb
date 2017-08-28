@@ -7,6 +7,8 @@ module Sportradar
           def play_type
             if @play_type.nil?
               nil
+            elsif self.timeout?
+              'timeout'
             elsif @play_type.casecmp? 'kick'
               'kickoff'
             elsif @play_type.casecmp? 'extrapoint'
@@ -33,6 +35,14 @@ module Sportradar
 
           def counted_play?
             ['rush', 'pass'].include?(self.play_type) && !self.description.include?('No Play')
+          end
+
+          def play?
+            @event_type.nil?
+          end
+
+          def event?
+            !play?
           end
 
           def halftime?

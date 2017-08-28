@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Play < Data
-        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players, :down, :yfd, :player_data
+        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players, :down, :yfd, :player_data, :event_type
 
         def initialize(data, **opts)
           @response          = data
@@ -22,7 +22,7 @@ module Sportradar
           @end_situation   = Sportradar::Api::Football::Situation.new(data["end_situation"])   if data["end_situation"]
           @start_situation = Sportradar::Api::Football::Situation.new(data["start_situation"]) if data["start_situation"]
 
-          @team_id           = end_situation.team_id if end_situation
+          @team_id           = start_situation.team_id if start_situation
           @play_clock        = data["play_clock"]
           @reference         = data["reference"]
           @score             = data["score"]
@@ -41,8 +41,9 @@ module Sportradar
           @direction    = data["direction"]    if data["direction"]
           @distance     = data["distance"]     if data["distance"]
           @participants = data["participants"] if data["participants"]
-          @play_type    = data["play_type"]    if data["play_type"]
+          @play_type    = data["play_type"] || @play_type || data["event_type"]
           @sequence     = data["sequence"]     if data["sequence"]
+          @event_type   = data["event_type"]   if data["event_type"]
 
           @deleted      = data["deleted"] || @deleted
 
@@ -86,8 +87,12 @@ module Sportradar
           false
         end
 
+        def timeout?
+          ['timeout', 'tvtimeout', 'teamtimeout'].include? @play_type
+        end
+
         def halftime?
-          false
+          @description == "End of 1st Half"
         end
 
         def parsed_ending
