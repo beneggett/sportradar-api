@@ -4,6 +4,10 @@ module Sportradar
       class Nfl
         class Play < Sportradar::Api::Football::Play
 
+          def play?
+            @event_type.nil?
+          end
+
           def down
             start_situation.down
           end
