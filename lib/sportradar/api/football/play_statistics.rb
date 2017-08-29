@@ -173,6 +173,10 @@ module Sportradar
           @player     = OpenStruct.new(data['player']) if data['player']
         end
 
+        def made?
+          @missed == 0 && !nullified?
+        end
+
         def nullified?
           @nullified.to_s == 'true'
         end
@@ -210,6 +214,10 @@ module Sportradar
           @team         = OpenStruct.new(data['team']) if data['team']
           @player       = OpenStruct.new(data['player']) if data['player']
           @nullified    = data['nullified']
+        end
+
+        def touchdown?
+          @touchdown == 1 && !nullified?
         end
 
         def nullified?
@@ -312,6 +320,10 @@ module Sportradar
           @team        = OpenStruct.new(data['team']) if data['team']
           @player      = OpenStruct.new(data['player']) if data['player']
           @nullified = data['nullified']
+        end
+
+        def touchdown?
+          @touchdown == 1 && !nullified?
         end
 
         def nullified?

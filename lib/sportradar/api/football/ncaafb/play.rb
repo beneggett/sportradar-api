@@ -41,6 +41,19 @@ module Sportradar
             @event_type.nil?
           end
 
+          def scoring_play?
+            case @play_type
+            when 'fieldgoal'
+              statistics.field_goal&.made?
+            when 'extrapoint'
+              true # how does a missed PAT come in?
+            when 'safety'
+              true
+            else
+              statistics.pass&.touchdown? || statistics.rush&.touchdown?
+            end
+          end
+
           def event?
             !play?
           end
