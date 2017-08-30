@@ -20,6 +20,10 @@ module Sportradar
             update(data)
           end
 
+          def description
+            "#{(@preferred_name || @first_name)} #{@last_name} is now warming up in the bullpen."
+          end
+
           def update(data, **opts)
             # parse pitches
           end
