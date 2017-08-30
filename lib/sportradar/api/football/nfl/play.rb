@@ -8,6 +8,10 @@ module Sportradar
             @event_type.nil?
           end
 
+          def scoring_play?
+            !!@scoring_play
+          end
+
           def down
             start_situation.down
           end
