@@ -63,17 +63,26 @@ module Sportradar
           end
 
           def queue_details
-            if @details
+            if @details && !has_details?
               url, headers, options, timeout = @api.get_request_info(@details)
-              {url: url, headers: headers, params: options, timeout: timeout, callback: method(:update)}
+              {url: url, headers: headers, params: options, timeout: timeout, callback: method(:update_details)}
             end
           end
 
+          def has_details?
+            !@detailed_data.nil?
+          end
+
+          def update_details(data)
+            @detailed_data = data
+            update(data)
+          end
+
           def get_details
-            if @details
-              @detailed_data = @api.get_data(@details).to_h
-              update(@detailed_data)
-              @detailed_data
+            if @details && !has_details?
+              data = @api.get_data(@details).to_h
+              update_details(data)
+              data
             end
           end
 
