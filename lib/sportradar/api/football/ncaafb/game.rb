@@ -13,7 +13,11 @@ module Sportradar
 
           def clock_display
             if clock && quarter
-              quarter > 4 ? quarter_display : "#{clock} #{quarter_display}"
+              if clock == ':00' && quarter == 2
+                'Halftime'
+              else
+                quarter > 4 ? quarter_display : "#{clock} #{quarter_display}"
+              end
             end
           end
 
