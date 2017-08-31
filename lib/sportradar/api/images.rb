@@ -1,3 +1,4 @@
+# TODO - rework this to v3 of API only
 module Sportradar
   module Api
     class Images < Request
@@ -22,7 +23,7 @@ module Sportradar
           else
             response = get request_url("#{league}/#{image_type}/players/manifest")
           end
-        elsif nfl_premium || usat_premium
+        elsif nfl_premium || usat_premium || sport == 'ncaafb'
           response = get request_url("#{image_type}/players/#{year}/manifest")
         else
           response = get request_url("players/#{image_type}/manifests/all_assets")
@@ -137,10 +138,9 @@ module Sportradar
           'ap_premium'
         elsif usat_premium
           'usat_premium'
-        elsif uses_v2_api?
+        else
           'usat'
-        elsif uses_v3_api?
-          sport == 'mlb' ? 'usat' : 'reuters'
+          # REUTERS IS JUST FOR SOCCER sport == 'mlb' ? 'usat' : 'reuters'
         end
       end
 
@@ -173,11 +173,11 @@ module Sportradar
       end
 
       def v2_api_sports
-        ['golf',  'nascar', 'nba', 'nfl', 'nhl', 'ncaafb', 'ncaamb', 'mls']
+        ['golf',  'nascar', 'nba', 'nfl', 'nhl', 'ncaamb', 'mls']
       end
 
       def v3_api_sports
-        ['mlb', 'soccer', 'cricket', 'f1', 'rugby', 'tennis']
+        ['mlb', 'soccer', 'cricket', 'f1', 'rugby', 'tennis', 'ncaafb',  ]
       end
 
       def soccer_leagues
