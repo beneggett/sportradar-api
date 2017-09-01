@@ -30,7 +30,7 @@ module Sportradar
         end
 
         def turnovers
-          @turnovers || passing.interceptions + fumbles.lost_fumbles
+          @turnovers || passing.interceptions + fumbles&.lost_fumbles.to_i
         end
 
         # :skip_test_coverage:
