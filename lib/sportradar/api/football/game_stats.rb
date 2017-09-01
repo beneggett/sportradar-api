@@ -29,6 +29,10 @@ module Sportradar
           @return_yards    = data.dig('summary', "return_yards")
         end
 
+        def turnovers
+          @turnovers || passing.interceptions + fumbles.lost_fumbles
+        end
+
         # :skip_test_coverage:
         # These are in methods rather than attributes to use them lazily. Each one is tested in it's respective class
         def rushing
