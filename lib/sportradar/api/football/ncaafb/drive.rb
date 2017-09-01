@@ -31,7 +31,13 @@ module Sportradar
           end
 
           def end_reason
-            plays.reverse_each.detect {|pl| !pl.timeout? && pl.play_type != 'penalty' }&.parsed_ending || 'UNKNOWN' # penalty on TD play, assessed on kickoff
+            ending = plays.reverse_each.detect {|pl| !pl.timeout? && pl.play_type != 'penalty' }&.parsed_ending
+            last_play = plays.reverse_each.detect {|pl| !pl.timeout? }
+            ending ||= if last_play.down == 4 && last_play.yards < last_play.yfd
+              'Downs'
+            else
+              'UNKNOWN'
+            end
           end
 
           def first_downs
