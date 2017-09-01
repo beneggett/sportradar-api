@@ -261,7 +261,7 @@ module Sportradar
           elsif postponed?
             'Postponed'
           elsif halftime?
-            'Halftime'
+            'Half'
           else
             clock_display
           end
