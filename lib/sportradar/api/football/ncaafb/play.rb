@@ -30,7 +30,7 @@ module Sportradar
           end
 
           def yards
-            (counted_play? && (statistics.pass&.first || statistics.rush&.first)&.yards).to_i
+            counted_play? ? (statistics.pass&.first || statistics.rush&.first)&.yards.to_i : 0
           end
 
           def counted_play?
