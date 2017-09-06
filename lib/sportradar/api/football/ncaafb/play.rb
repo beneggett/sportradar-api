@@ -33,10 +33,6 @@ module Sportradar
             counted_play? ? (statistics.pass&.first || statistics.rush&.first)&.yards.to_i : 0
           end
 
-          def counted_play?
-            ['rush', 'pass'].include?(self.play_type) && !self.description.include?('No Play')
-          end
-
           def play?
             @event_type.nil?
           end

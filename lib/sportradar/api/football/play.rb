@@ -79,6 +79,10 @@ module Sportradar
           end_situation&.spot
         end
 
+        def counted_play?
+          ['rush', 'pass'].include?(self.play_type) && !self.description.include?('No Play')
+        end
+
         def down_distance
           [down, yfd].compact.join(' & ')
         end
