@@ -50,6 +50,10 @@ module Sportradar
           @overtime
         end
 
+        def halftime?
+          self.end_reason == 'End of Half'
+        end
+
         def plays
           @plays_hash.values
         end

@@ -29,6 +29,9 @@ module Sportradar
         def over?
           false # TODO
         end
+        def halftime?
+          false
+        end
       end
 
     end
