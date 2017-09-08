@@ -20,11 +20,6 @@ module Sportradar
             end
           end
 
-          def clock_seconds
-            m,s = @clock.split(':')
-            m.to_i * 60 + s.to_i
-          end
-
           def made_first_down?
             statistics.pass&.first&.firstdown == 1 || statistics.rush&.first&.firstdown == 1
           end

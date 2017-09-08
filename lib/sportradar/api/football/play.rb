@@ -63,6 +63,11 @@ module Sportradar
           self
         end
 
+        def clock_seconds
+          m,s = @clock.split(':')
+          m.to_i * 60 + s.to_i
+        end
+
         def players
           statistics.players
         end
