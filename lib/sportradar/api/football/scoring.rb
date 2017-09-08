@@ -66,16 +66,11 @@ module Sportradar
         end
 
         def parse_from_pbp(data)
-          # period_name = data.key?('quarter') ? 'quarter' : 'half'
-          # period_name = 'periods'
-          # return {} unless data[period_name] # game hasn't started
-          # quarters = data[period_name]#[1..-1]
-          # overtimes = data['overtime']
-          # overtimes = [overtimes] if !overtimes.is_a?(Array)
-          # quarters = quarters[0] if (quarters.is_a?(Array) && (quarters.size == 1) && quarters.first.is_a?(Array))
-          # data = (quarters + overtimes).compact.map{|q| q['scoring'] }
-          # data.map.with_index(1) { |h, i| [i, { h.dig('home', 'id') => h.dig('home', 'points').to_i, h.dig('away', 'id') => h.dig('away', 'points').to_i }] }.to_h
-          {}
+          return {} unless data['periods']
+          quarters = data['periods']
+          overtimes = Array(data['overtime'])
+          data = (quarters + overtimes).compact.map{|q| q['scoring'] }
+          data.map.with_index(1) { |h, i| [i, { h.dig('home', 'id') => h.dig('home', 'points').to_i, h.dig('away', 'id') => h.dig('away', 'points').to_i }] }.to_h
         end
 
         # def period_name
