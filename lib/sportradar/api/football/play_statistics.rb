@@ -165,8 +165,8 @@ module Sportradar
           @response = data
           @attempt    = data['attempt']   || data['att']
           @att_yards  = data['att_yards']
-          @missed     = data['missed']    || (data['made'] - 1).abs
           @blocked    = data['blocked']   || data['blk']
+          @missed     = data['missed']
           @yards      = data['yards']     || data['yds']
           @nullified  = data['nullified']
           @team       = OpenStruct.new(data['team']) if data['team']
@@ -174,7 +174,11 @@ module Sportradar
         end
 
         def made?
-          @missed == 0 && !nullified?
+          !missed? && !nullified?
+        end
+
+        def missed?
+          @missed == 1 || @blocked == 1
         end
 
         def nullified?
