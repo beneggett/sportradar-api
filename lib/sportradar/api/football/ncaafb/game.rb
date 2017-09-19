@@ -11,6 +11,10 @@ module Sportradar
             super
           end
 
+          def halftime?
+            clock == ':00' && quarter == 2
+          end
+
           def clock_display
             if clock && quarter
               if clock == ':00' && quarter == 2
