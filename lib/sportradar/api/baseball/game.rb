@@ -179,9 +179,9 @@ module Sportradar
           @inning_over = true
           @bases = DEFAULT_BASES.dup
           half, inn = if count['inning_half'] == 'B'
-            ['T', count['inning'] += 1]
+            ['E', count['inning']]
           elsif count['inning_half'] == 'T'
-            ['B', count['inning']]
+            ['M', count['inning']]
           else
             [nil, 1]
           end
@@ -290,7 +290,7 @@ module Sportradar
 
         # status helpers
 
-        def realtime_state
+        def realtime_state(full_word: false)
           if future?
             'Scheduled'
           elsif delayed?
@@ -300,7 +300,7 @@ module Sportradar
           elsif postponed?
             'Postponed'
           else
-            inning_abbr
+            full_word ? inning_word : inning_short
           end
         end
 
@@ -308,8 +308,42 @@ module Sportradar
           if !count.empty?
             inning_half = self.count['inning_half']
             inning = self.count['inning']
-            "#{(inning_half == 'B' ? 'Bottom' : 'Top')} #{(inning || 1).ordinalize}"
+            "#{inning_half || 'T'}#{(inning || 1)}"
           end
+        end
+
+        def inning_short
+          if !count.empty?
+            inning_half = self.count['inning_half']
+            inning = self.count['inning']
+            "#{half_short} #{(inning || 1).ordinalize}"
+          end
+        end
+
+        def inning_word
+          if !count.empty?
+            inning_half = self.count['inning_half']
+            inning = self.count['inning']
+            "#{half_word} #{(inning || 1).ordinalize}"
+          end
+        end
+
+        def half_word
+          {
+            'B' => 'Bottom',
+            'T' => 'Top',
+            'M' => 'Middle',
+            'E' => 'End',
+          }.freeze[self.count['inning_half']]
+        end
+
+        def half_short
+          {
+            'B' => 'Bot',
+            'T' => 'Top',
+            'M' => 'Mid',
+            'E' => 'End',
+          }.freeze[self.count['inning_half']]
         end
 
         def postponed?
