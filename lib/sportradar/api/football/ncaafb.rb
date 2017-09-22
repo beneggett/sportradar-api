@@ -33,6 +33,7 @@ module Sportradar
           # @type     = data.dig('season', 'type')  if data.dig('season', 'type')
 
           create_data(@divisions_hash, data['divisions'], klass: Division,  hierarchy: self, api: api) if data['divisions']
+          create_data(@divisions_hash, data['division'], klass: Division,  hierarchy: self, api: api) if data['division']
           create_data(@teams_hash,     data['teams'],     klass: Team,      hierarchy: self, api: api) if data['teams']
 
           if data['weeks']
@@ -210,8 +211,8 @@ module Sportradar
         end
 
         ## standings
-        def get_standings
-          data = api.get_data(path_standings).to_h
+        def get_standings(division = 'FBS')
+          data = api.get_data(path_standings(division)).to_h
           ingest_standings(data)
         end
 

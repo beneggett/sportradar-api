@@ -12,6 +12,11 @@ module Sportradar
             3 - remaining_timeouts.to_i
           end
 
+          def parse_records(data)
+            @records['overall'] = Record.new(data['overall'], type: 'overall')
+            # data['records'].each { |record| @records[record['record_type']] = Record.new(record, type: record['record_type']) }
+          end
+
           def players
             get_roster if @players_hash.empty?
             @players_hash.values

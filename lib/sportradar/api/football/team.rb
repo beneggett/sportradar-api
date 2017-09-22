@@ -32,11 +32,11 @@ module Sportradar
 
           @seed     = data['seed'].to_i             if data['seed']
           @alias    = data['alias']                 if data['alias']
-          @points   = data['points'].to_i           if data['points']
+          @points   = data['points'].to_i           if data['points'] && data['points'].kind_of?(Integer)
           @used_timeouts      = data['used_timeouts']       if data['used_timeouts']
           @remaining_timeouts = data['remaining_timeouts']  if data['remaining_timeouts']
 
-          parse_records(data)                                          if data['records']
+          parse_records(data)                                          if data['records'] || data['overall']
           parse_players(data.dig('players'), opts[:game])   if data.dig('players')
           # parse_stats(data['statistics'])                             if data['statistics']
           if opts[:game]
