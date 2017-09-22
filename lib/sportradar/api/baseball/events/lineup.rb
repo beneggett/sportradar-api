@@ -19,12 +19,12 @@ module Sportradar
             @preferred_name =  data["preferred_name"]
             @jersey_number  =  data["jersey_number"]
 
-            update(data)
+            # update(data)
           end
 
           def update(data, **opts)
-            lineup = event.half_inning.inning.game.lineup
-            lineup.update_from_lineup_event(data)
+            # lineup = event.half_inning.inning.game.lineup
+            # lineup.update_from_lineup_event(data)
           end
 
           def data_key
