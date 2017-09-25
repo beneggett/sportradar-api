@@ -10,6 +10,14 @@ module Sportradar
         def update(data, source: nil)
           case source
           when :pbp
+            @home = initial_lineup.dup
+            @away = initial_lineup.dup
+            lineups = game.events.select {|ev| ev.lineup }.map(&:lineup)
+            lineups.each do |line|
+              player_data = line.response
+              player_data['id'] = player_data.delete('player_id')
+              update_from_lineup_event(player_data)
+            end
           when :summary
             @roster = (data.dig('home', 'roster') || []) + (data.dig('away', 'roster') || [])
             return unless data.dig('home', 'lineup') && data.dig('away', 'lineup')
@@ -21,10 +29,10 @@ module Sportradar
         end
 
         def update_from_lineup_event(data)
-          if data.dig('lineup', 'team_id') == game.home_id
-            update_home(find_player(data.dig('lineup', 'player_id')), data.dig('lineup', 'order'))
-          elsif data.dig('lineup', 'team_id') == game.away_id
-            update_away(find_player(data.dig('lineup', 'player_id')), data.dig('lineup', 'order'))
+          if data.dig('team_id') == game.home_id
+            update_home(data, data.dig('order'))
+          elsif data.dig('team_id') == game.away_id
+            update_away(data, data.dig('order'))
           end
         end
 
@@ -69,27 +77,27 @@ module Sportradar
         def next_batters(team, number_of_upcoming_batters = 3)
           if team == 'home'
             last_at_bat = game.at_bats.select{|at_bat| at_bat.event.half_inning.half == 'B'}.last
-            if last_at_bat # first inning
-              last_position = @home_team_lineup.detect{|htl| htl['id'] == last_at_bat.hitter_id}&.dig('order')
+            if last_at_bat
+              last_position = @home.detect{|htl| htl['id'] == last_at_bat.hitter_id}&.dig('order')
               upcoming = home.rotate(last_position || 0)
-            else
+            else # first inning
               upcoming = home
             end
           elsif team == 'away'
             last_at_bat = game.at_bats.select{|at_bat| at_bat.event.half_inning.half == 'T'}.last
-            if last_at_bat # first inning
-              last_position = @away_team_lineup.detect{|atl| atl['id'] == last_at_bat.hitter_id}&.dig('order')
+            if last_at_bat
+              last_position = @away.detect{|atl| atl['id'] == last_at_bat.hitter_id}&.dig('order')
               upcoming = away.rotate(last_position || 0)
-            else
+            else # first inning
               upcoming = away
             end
           end
           upcoming[0..(number_of_upcoming_batters - 1)]
-        rescue => e
-          i ||= 0
-          game.get_summary
-          i += 1
-          retry unless i > 2
+        # rescue => e
+        #   i ||= 0
+        #   game.get_summary
+        #   i += 1
+        #   retry unless i > 2
         end
 
         private

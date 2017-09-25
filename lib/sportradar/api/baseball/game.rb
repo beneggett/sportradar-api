@@ -131,7 +131,7 @@ module Sportradar
           update_bases(data)
           parse_pitchers(data) if data['home'] && data['away']
 
-          lineup.update(data, source: source)
+          lineup.update(data, source: source) unless source == :pbp
           if data['scoring']
             parse_score(data['scoring'])
           elsif data.dig('home', 'hits')
@@ -429,6 +429,8 @@ module Sportradar
           innings = data['innings'].each { |inning| inning['id'] = "#{data['id']}-#{inning['number']}" }
           create_data(@innings_hash, innings, klass: Inning, api: api, game: self) if data['innings']
           extract_count(data)
+          lineup.update(data, source: :pbp)
+          # update lineups
           check_newness(:pitches, pitches.last&.id)
           check_newness(:events, events.last&.description)
           check_newness(:score, @score)
