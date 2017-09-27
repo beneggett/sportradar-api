@@ -9,7 +9,7 @@ require_relative 'basketball/plays'
 require_relative 'basketball/scoring'
 
 require_relative 'basketball/nba'
-require_relative 'basketball/nba/hierarchy'
+require_relative 'basketball/nba/api'
 require_relative 'basketball/nba/conference'
 require_relative 'basketball/nba/division'
 require_relative 'basketball/nba/season'

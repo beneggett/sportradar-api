@@ -1,68 +1,105 @@
 module Sportradar
   module Api
     module Basketball
-      class Nba < Request
-        attr_accessor :league, :access_level, :simulation, :error
-
-        def initialize(access_level = default_access_level)
-          @league = 'nba'
-          raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
-          @access_level = access_level
+      class Nba < Data
+        attr_accessor :response, :id, :name, :alias
+        def all_attributes
+          [:name, :alias, :conferences, :divisions, :teams]
         end
 
-        def schedule(season_year = default_year, nba_season = default_season)
-          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? nba_season
-          response = get request_url("games/#{season_year}/#{nba_season}/schedule")
-          if response.success?
-            Sportradar::Api::Basketball::Nba::Season.new(response.to_h, api: self)
+        def initialize(data = {}, **opts)
+          @response = data
+          @api      = opts[:api]
+          @id       = data['id']
+          @season   = opts[:year]
+          @type     = opts[:type]
+
+          @conferences_hash   = {}
+          @weeks_hash         = {}
+          @games_hash         = {}
+          @series_hash        = {}
+          @teams_hash         = {}
+
+          update(data, **opts)
+        end
+
+        def update(data, **opts)
+          @id     = data['id'] if data['id']
+
+          if data['league']
+            @id    = data.dig('league', 'id')
+            @name  = data.dig('league', 'name')
+            @alias = data.dig('league', 'alias')
+          end
+
+          if data['season'].is_a?(Hash)
+            @season   = data.dig('season', 'year')
+            @type     = data.dig('season', 'type')
           else
-            @error = response
+            @season = data['season']  if data['season']
+            @type   = data['type']    if data['type']
+          end
+
+          create_data(@teams_hash,        data['teams'],        klass: Team,        api: api) if data['teams']
+          create_data(@conferences_hash,  data['conferences'],  klass: Conference,  api: api) if data['conferences']
+          create_data(@games_hash,        data['games'],        klass: Game,        api: api) if data['games']
+          create_data(@series_hash,       data['series'],       klass: Series,      api: api) if data['series']
+        end
+
+        def conferences
+          @conferences_hash.values
+        end
+        def divisions
+          conferences.flat_map(&:divisions)
+        end
+
+        def schedule
+          get_schedule if games.empty?
+          self
+        end
+
+        def standings
+          get_standings if divisions.empty? || teams.first&.record.nil?
+          self
+        end
+
+        def hierarchy
+          get_hierarchy if divisions.empty?
+          self
+        end
+
+        def games
+          @games_hash.values
+        end
+
+        def series
+          @series_hash.values
+        end
+
+        def teams
+          teams = divisions.flat_map(&:teams)
+          if teams.empty?
+            if @teams_hash.empty?
+              get_hierarchy
+              divisions.flat_map(&:teams)
+            else
+              @teams_hash.values
+            end
+          else
+            teams
           end
         end
 
-        def daily_schedule(date = default_date, nba_season = default_season)
-          response = get request_url("games/#{ date.year }/#{ date.month }/#{ date.day }/schedule")
-          if response.success?
-            Sportradar::Api::Basketball::Nba::Schedule.new(response.to_h, api: self)
-          else
-            @error = response
-          end
+        def team(team_id)
+          teams.detect { |team| team.id == team_id }
         end
 
-        def series_schedule(season_year = default_year)
-          response = get request_url("series/#{season_year}/pst/schedule")
-          if response.success?
-            Sportradar::Api::Basketball::Nba::Season.new(response.to_h, api: self)
-          else
-            @error = response
-          end
-        end
-
-        def league_hierarchy
-          response = get request_url("league/hierarchy")
-          if response.success?
-            Sportradar::Api::Basketball::Nba::Hierarchy.new(response.to_h, api: self)
-          else
-            response
-          end
-        end
-        alias :hierarchy :league_hierarchy
-
-        def standings(season_year = default_year, nba_season = default_season)
-          response = get request_url("seasontd/#{season_year}/#{nba_season}/standings")
-          if response.success?
-            Sportradar::Api::Basketball::Nba::Hierarchy.new(response.to_h, api: self)
-          else
-            response
-          end
-        end
-
-        def get_data(url)
-          get request_url(url)
+        def api
+          @api || Sportradar::Api::Basketball::Nba::Api.new
         end
 
         def default_year
-          2016
+          (Date.today - 210).year
         end
         def default_date
           Date.today
@@ -70,51 +107,78 @@ module Sportradar
         def default_season
           'reg'
         end
-        def default_access_level
-          if (ENV['SPORTRADAR_ENV'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
-            'p'
-          else
-            't'
-          end
+        def season_year
+          @season || default_year
+        end
+        alias :year :season_year
+        def nba_season
+          @type || default_season
+        end
+        alias :season :nba_season
+
+        def path_schedule
+          "games/#{season_year}/#{nba_season}/schedule"
         end
 
-        def content_format
-          'json'
+        def path_daily_schedule(date = default_date)
+          "games/#{ date.year }/#{ date.month }/#{ date.day }/schedule"
         end
 
-        private
-
-        def check_simulation(game_id)
-          @simulation = true if simulation_games.include?(game_id)
+        def path_series_schedule
+          "series/#{season_year}/pst/schedule"
         end
 
-        def request_url(path)
-          # puts "/nba-#{access_level}#{version}/#{path}"
-          if simulation
-            # "/nfl-sim1/#{path}"
-          else
-            "/nba-#{access_level}#{version}/#{path}"
-          end
+        def path_hierarchy
+          "league/hierarchy"
         end
 
-        def api_key
-          if !['t', 'sim'].include?(access_level)
-            Sportradar::Api.api_key_params('nba', 'production')
-          else
-            Sportradar::Api.api_key_params('nba')
-          end
+        def path_standings
+          "seasontd/#{season_year}/#{nba_season}/standings"
         end
 
-        def version
-          Sportradar::Api.version('nba')
+        def get_schedule
+          data = api.get_data(path_schedule).to_h
+          ingest_schedule(data)
+        end
+        def ingest_schedule(data)
+          update(data, source: :schedule)
+          data
         end
 
-        def allowed_access_levels
-          %w[p t sim]
+        def get_daily_schedule(date = default_date)
+          data = api.get_data(path_daily_schedule(date)).to_h
+          ingest_daily_schedule(data)
+        end
+        def ingest_daily_schedule(data)
+          update(data, source: :daily_schedule)
+          data
         end
 
-        def allowed_seasons
-          ["pre", "reg", "pst"]
+        def get_series_schedule
+          data = api.get_data(path_series_schedule).to_h
+          ingest_series_schedule(data)
+        end
+        def ingest_series_schedule(data)
+          update(data, source: :series_schedule)
+          data
+        end
+
+        def get_hierarchy
+          data = api.get_data(path_hierarchy).to_h
+          ingest_hierarchy(data)
+        end
+        def ingest_hierarchy(data)
+          update(data, source: :hierarchy)
+          data
+        end
+
+        def get_standings
+          data = api.get_data(path_standings).to_h
+          ingest_standings(data)
+        end
+        def ingest_standings(data)
+          update(data, source: :standings)
+          data
         end
 
       end
@@ -124,6 +188,8 @@ end
 
 __END__
 
+st = sr.standings;
 sr = Sportradar::Api::Basketball::Nba.new
-lh = sr.league_hierarchy;
-ls = sr.standings;
+lh = sr.hierarchy;
+t = lh.teams.first;
+t.venue.id
