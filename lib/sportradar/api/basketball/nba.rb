@@ -68,6 +68,11 @@ module Sportradar
           self
         end
 
+        def series_schedule
+          get_series_schedule if series.empty?
+          self
+        end
+
         def games
           @games_hash.values
         end
