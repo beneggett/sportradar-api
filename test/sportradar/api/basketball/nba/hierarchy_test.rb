@@ -3,39 +3,39 @@ require 'test_helper'
 class Sportradar::Api::Basketball::Nba::HierarchyTest < Minitest::Test
 
   def setup
-    sr = Sportradar::Api::Basketball::Nba.new
-    VCR.use_cassette("nba/#{sr.content_format}/league/hierarchy") do
-      @hierarchy = sr.league_hierarchy
+    @nba = Sportradar::Api::Basketball::Nba.new
+    VCR.use_cassette("nba/#{@nba.api.content_format}/league/hierarchy") do
+      @nba.get_hierarchy
     end
   end
 
   def test_it_initializes_an_nba_hierarchy
-    assert [:name, :alias].all? { |att| @hierarchy.send(att) }
-    assert_instance_of Sportradar::Api::Basketball::Nba::Hierarchy, @hierarchy
+    assert [:name, :alias].all? { |att| @nba.send(att) }
+    assert_instance_of Sportradar::Api::Basketball::Nba, @nba
   end
 
   def test_it_has_conferences
-    assert_equal 2, @hierarchy.conferences.size
-    assert_instance_of Sportradar::Api::Basketball::Nba::Conference, @hierarchy.conferences.first
+    assert_equal 2, @nba.conferences.size
+    assert_instance_of Sportradar::Api::Basketball::Nba::Conference, @nba.conferences.first
   end
 
   def test_it_has_divisions
-    assert_equal 6, @hierarchy.divisions.size
-    assert_instance_of Sportradar::Api::Basketball::Nba::Division, @hierarchy.divisions.first
+    assert_equal 6, @nba.divisions.size
+    assert_instance_of Sportradar::Api::Basketball::Nba::Division, @nba.divisions.first
   end
 
   def test_it_has_teams
-    assert_equal 30, @hierarchy.teams.size
-    assert_instance_of Sportradar::Api::Basketball::Nba::Team, @hierarchy.teams.first
+    assert_equal 30, @nba.teams.size
+    assert_instance_of Sportradar::Api::Basketball::Nba::Team, @nba.teams.first
   end
 
   def test_teams_have_venues
-    assert_instance_of Sportradar::Api::Basketball::Venue, @hierarchy.teams.first.venue
+    assert_instance_of Sportradar::Api::Basketball::Venue, @nba.teams.first.venue
   end
 
   def test_teams_have_required_attributes
     attributes = %i[id name alias market full_name]
-    assert @hierarchy.teams.all? { |team| attributes.all? { |att| team.send(att)} }
+    assert @nba.teams.all? { |team| attributes.all? { |att| team.send(att)} }
   end
 
 end
