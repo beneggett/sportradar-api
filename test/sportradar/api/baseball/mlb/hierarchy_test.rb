@@ -3,12 +3,12 @@ require 'test_helper'
 class Sportradar::Api::Baseball::Mlb::HierarchyTest < Minitest::Test
 
   def setup
-    @mlb = Sportradar::Api::Baseball::Mlb::Hierarchy.new
+    @mlb = Sportradar::Api::Baseball::Mlb.new
   end
 
   def test_it_initializes_an_mlb_hierarchy
     # assert [:name, :alias].all? { |att| @mlb.send(att) }
-    assert_instance_of Sportradar::Api::Baseball::Mlb::Hierarchy, @mlb
+    assert_instance_of Sportradar::Api::Baseball::Mlb, @mlb
   end
 
   def test_it_has_leagues
