@@ -118,7 +118,7 @@ module Sportradar
           end
 
           def api
-            @api ||= Sportradar::Api::Basketball::Ncaamb.new
+            @api ||= Sportradar::Api::Basketball::Ncaamb::Api.new
           end
 
         end

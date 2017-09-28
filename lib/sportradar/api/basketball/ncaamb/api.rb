@@ -1,12 +1,12 @@
 module Sportradar
   module Api
     module Basketball
-      class Nba
+      class Ncaamb
         class Api < Request
           attr_accessor :league, :access_level, :error
 
           def initialize(access_level = default_access_level)
-            @league = 'nba'
+            @league = 'ncaamb'
             raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
             @access_level = access_level
           end
@@ -35,19 +35,19 @@ module Sportradar
           private
 
           def request_url(path)
-            "/nba-#{access_level}#{version}/#{path}"
+            "/ncaamb-#{access_level}#{version}/#{path}"
           end
 
           def api_key
             if !['t', 'sim'].include?(access_level) || (access_level == 'sim' && default_access_level == 'p')
-              Sportradar::Api.api_key_params('nba', 'production')
+              Sportradar::Api.api_key_params('ncaamb', 'production')
             else
-              Sportradar::Api.api_key_params('nba')
+              Sportradar::Api.api_key_params('ncaamb')
             end
           end
 
           def version
-            Sportradar::Api.version('nba')
+            Sportradar::Api.version('ncaamb')
           end
 
           def allowed_access_levels
@@ -55,7 +55,7 @@ module Sportradar
           end
 
           def allowed_seasons
-            ["pre", "reg", "pst"]
+            ["pre", "reg", 'ct', "pst"]
           end
 
         end
@@ -66,6 +66,12 @@ end
 
 __END__
 
-sr = Sportradar::Api::Basketball::Nba.new
+sr = Sportradar::Api::Basketball::Ncaamb.new
+ss = sr.schedule(2015, 'ct');
+ss = sr.schedule(2015, 'pst');
+rank = sr.rankings('US');
+ds = sr.daily_schedule;
+
+# not ready
 lh = sr.league_hierarchy;
 ls = sr.standings;
