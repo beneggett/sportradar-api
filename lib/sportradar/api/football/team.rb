@@ -87,7 +87,7 @@ module Sportradar
           create_data(@players_hash, data, klass: player_class, api: api, team: self, game: game)
         end
         def update_player_stats(player, stats, game = nil)
-          game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge!(player: player))
+          game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge(player: player))
         end
 
         def get_roster
