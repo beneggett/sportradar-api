@@ -99,7 +99,7 @@ module Sportradar
         # data retrieval
 
         def get_roster
-          data = api.get_data(path_roster)
+          data = api.get_data(path_roster).to_h
           ingest_roster(data)
         end
         def ingest_roster(data)
@@ -112,7 +112,7 @@ module Sportradar
         end
 
         def get_season_stats(year = Date.today.year)
-          data = api.get_data(path_season_stats(year))
+          data = api.get_data(path_season_stats(year)).to_h
           ingest_season_stats(data)
         end
         def ingest_season_stats(data)

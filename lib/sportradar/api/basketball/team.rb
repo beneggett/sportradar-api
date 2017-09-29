@@ -86,24 +86,6 @@ module Sportradar
         def update_player_stats(player, stats, game = nil)
           game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge!(player: player))
         end
-
-        def get_roster
-          data = api.get_data(path_roster)
-          ingest_roster(data)
-        end
-        def ingest_roster(data)
-          update(data)
-          data
-        end
-
-        def get_season_stats
-          data = api.get_data(path_season_stats)
-          ingest_season_stats(data)
-        end
-        def ingest_season_stats(data)
-          parse_season_stats(data)
-        end
-
         def parse_records(data)
           @records['overall'] = Record.new(data, type: 'overall')
           data['records'].each { |record| @records[record['record_type']] = Record.new(record, type: record['record_type']) }
@@ -117,6 +99,35 @@ module Sportradar
           data
         end
 
+
+        # data retrieval
+
+        def get_roster
+          data = api.get_data(path_roster).to_h
+          ingest_roster(data)
+        end
+        def ingest_roster(data)
+          update(data)
+          data
+        end
+        def queue_roster
+          url, headers, options, timeout = api.get_request_info(path_roster)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_roster)}
+        end
+
+        def get_season_stats(year = Date.today.year)
+          data = api.get_data(path_season_stats(year)).to_h
+          ingest_season_stats(data)
+        end
+        def ingest_season_stats(data)
+          parse_season_stats(data)
+        end
+        def queue_season_stats
+          url, headers, options, timeout = api.get_request_info(path_season_stats)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_season_stats)}
+        end
+
+        # url path helpers
         def path_base
           "teams/#{ id }"
         end
@@ -126,8 +137,8 @@ module Sportradar
         def path_roster
           "#{ path_base }/profile"
         end
-        def path_season_stats
-          "#{ path_base_stats }/statistics"
+        def path_season_stats(year)
+          "#{ path_base_stats(year) }/statistics"
         end
 
       end
