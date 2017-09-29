@@ -1,7 +1,7 @@
 # require_relative 'hockey/season'
 # require_relative 'hockey/game'
 require_relative 'hockey/team'
-# require_relative 'hockey/record'
+require_relative 'hockey/record'
 require_relative 'hockey/venue'
 # require_relative 'hockey/broadcast'
 # require_relative 'hockey/injury'

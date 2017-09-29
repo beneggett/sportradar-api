@@ -2,38 +2,37 @@ module Sportradar
   module Api
     module Hockey
       class Nhl < Data
-        attr_accessor :response, :id, :name, :alias, :year, :type
+        attr_accessor :response, :id, :name, :alias, :season, :type
         def all_attributes
           [:name, :alias, :leagues, :divisions, :teams]
         end
 
         def initialize(data = {}, **opts)
           # @response = data
-          @api  = opts[:api]
-          @id   = data.dig('league', 'id')
+          @api    = opts[:api]
+          @id     = data['id']
+          @season = opts[:year]
+          @type   = opts[:type]
 
           @conferences_hash = {}
           @games_hash = {}
           @teams_hash = {}
 
+          update(data, **opts)
         end
 
         def update(data, source: nil, **opts)
           # update stuff
+          @id       = data.dig('league', 'id')    if data.dig('league', 'id')
           @name     = data.dig('league', 'name')  if data.dig('league', 'name')
           @alias    = data.dig('league', 'alias') if data.dig('league', 'alias')
 
-          @year     = data.dig('season', 'year')  if data.dig('season', 'year')
+          @season   = data.dig('season', 'year')  if data.dig('season', 'year')
           @type     = data.dig('season', 'type')  if data.dig('season', 'type')
 
           @conferences_hash = create_data({}, data['conferences'], klass: Conference, hierarchy: self, api: api) if data['conferences']
-          @teams_hash   = create_data({}, data['teams'],   klass: Team,   hierarchy: self, api: api) if data['teams']
-          if data['games']
-            if data['games'].first.keys == ['game']
-              data['games'].map! { |hash| hash['game'] }
-            end
-            # @games_hash = create_data({}, data['games'],   klass: Game,   hierarchy: self, api: api)
-          end
+          @teams_hash       = create_data({}, data['teams'],   klass: Team,   hierarchy: self, api: api) if data['teams']
+          @games_hash       = create_data({}, data['games'],   klass: Game,   hierarchy: self, api: api) if data['games']
         end
 
         def schedule(year = season_year)
@@ -102,7 +101,7 @@ module Sportradar
           'reg'
         end
         def season_year
-          @year || default_year
+          @season || default_year
         end
         def nhl_season
           @type || default_season
