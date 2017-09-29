@@ -32,7 +32,7 @@ module Sportradar
 
           parse_records(data)                                          if data['records']
 
-          # parse_players(data.dig('players'), opts[:game])   if data.dig('players')
+          parse_players(data.dig('players'), opts[:game])   if data.dig('players')
 
           # if opts[:game]
           #   opts[:game].update_stats(self, data['statistics'])  if data['statistics']
@@ -73,7 +73,7 @@ module Sportradar
           create_data(@players_hash, data, klass: Player, api: api, team: self, game: game)
         end
         def update_player_stats(player, stats, game = nil)
-          game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge!(player: player))
+          game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge(player: player))
         end
         def parse_records(data)
           @records['overall'] = Record.new(data, type: 'overall')
@@ -84,7 +84,7 @@ module Sportradar
           @team_stats = data.dig('statistics')
           update(data)
           player_data = data.dig('players')
-          # create_data(@players_hash, player_data, klass: Player, api: api, team: self)
+          create_data(@players_hash, player_data, klass: Player, api: api, team: self)
           data
         end
 
@@ -92,7 +92,7 @@ module Sportradar
         # data retrieval
 
         def get_roster
-          data = api.get_data(path_roster)
+          data = api.get_data(path_roster).to_h
           ingest_roster(data)
         end
         def ingest_roster(data)
@@ -105,7 +105,7 @@ module Sportradar
         end
 
         def get_season_stats(year = Date.today.year)
-          data = api.get_data(path_season_stats(year))
+          data = api.get_data(path_season_stats(year)).to_h
           ingest_season_stats(data)
         end
         def ingest_season_stats(data)
