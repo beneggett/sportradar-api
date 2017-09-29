@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Nba
         class Player < Data
-          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft
+          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :stats
           # @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]
@@ -70,6 +70,10 @@ module Sportradar
             if avgs = data['average']
               @totals = data['total']
               @averages = avgs
+              @stats = {
+                'total'     => @totals,
+                'averages'  => @averages,
+              }
               @team.update_player_stats(self, avgs)
             end
 

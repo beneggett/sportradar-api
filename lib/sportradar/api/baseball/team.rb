@@ -118,8 +118,8 @@ module Sportradar
         def ingest_season_stats(data)
           parse_season_stats(data)
         end
-        def queue_season_stats
-          url, headers, options, timeout = api.get_request_info(path_season_stats)
+        def queue_season_stats(year = Date.today.year)
+          url, headers, options, timeout = api.get_request_info(path_season_stats(year))
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_season_stats)}
         end
 

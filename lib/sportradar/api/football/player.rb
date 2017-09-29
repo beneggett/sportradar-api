@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Player < Data
-        attr_accessor :response, :id, :preferred_name, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :depth, :api
+        attr_accessor :response, :id, :preferred_name, :number, :name_full, :name_first, :name_last, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :depth, :api, :stats
 
         def initialize(data, **opts)
           @response = data
@@ -62,10 +62,10 @@ module Sportradar
           # update_injuries(data)
           # update_draft(data)
 
-          if stats = data['statistics']
-            @totals = stats
+          if @stats = data['statistics']
+            @totals = @stats
             # binding.pry
-            @team.update_player_stats(self, stats.dup, opts[:game])
+            @team.update_player_stats(self, @stats.dup, opts[:game])
           else
             @totals = {}
           end

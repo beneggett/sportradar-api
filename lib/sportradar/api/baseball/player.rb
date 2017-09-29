@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Baseball
       class Player < Data
-        attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :primary_position, :birth_place, :college, :height, :weight, :draft, :hitting, :pitching, :fielding, :team
+        attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :primary_position, :birth_place, :college, :height, :weight, :draft, :hitting, :pitching, :fielding, :team, :stats
 
         def initialize(data, **opts)
           @response = data # comment this out when done developing
@@ -62,13 +62,13 @@ module Sportradar
           update_draft(data)
 
           @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
-          if stats = data['statistics']
-            @fielding = stats.dig('fielding', 'overall')
-            @pitching = stats.dig('pitching', 'overall')
-            @hitting  = stats.dig('hitting', 'overall')
+          if @stats = data['statistics']
+            @fielding = @stats.dig('fielding', 'overall')
+            @pitching = @stats.dig('pitching', 'overall')
+            @hitting  = @stats.dig('hitting', 'overall')
 
             # used to be @team, lets leave as opt until it needs to go back
-            opts[:team].update_player_stats(self, stats)
+            opts[:team].update_player_stats(self, @stats)
           end
 
           self
