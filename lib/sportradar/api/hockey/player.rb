@@ -55,14 +55,13 @@ module Sportradar
           update_injuries(data)
           update_draft(data)
 
-          if stats = data['statistics']
+          if @stats = data['statistics']
             @team.update_player_stats(self, data['statistics'], opts[:game])
-            @stats = stats
-            @totals = stats['total']
-            @averages = stats['average']
+            @totals = @stats['total']
+            @averages = @stats['average']
 
             # used to be @team, lets leave as opt until it needs to go back
-            opts[:team].update_player_stats(self, stats)
+            opts[:team].update_player_stats(self, @stats)
           end
 
           self
