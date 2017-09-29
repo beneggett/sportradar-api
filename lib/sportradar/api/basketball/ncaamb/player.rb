@@ -71,7 +71,7 @@ module Sportradar
             @team.update_player_stats(self, data['statistics'], opts[:game])  if data['statistics']
             if avgs = data['average']
               @totals = data['total']
-              @averages = avgs.except(:player)
+              @averages = avgs
               @team.update_player_stats(self, avgs)
             end
 
