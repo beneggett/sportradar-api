@@ -13,8 +13,13 @@ module Sportradar
             @name  = data["name"]
             @alias = data["alias"]
             @assigned_teams = nil
+            @teams_hash = {}
 
-            @teams_hash = create_data({}, data["teams"], klass: Team, conference: self, api: @api) # if data["team"]
+            update(data, **opts)
+          end
+
+          def update(data, **opts)
+            create_data(@teams_hash, data["teams"], klass: Team, conference: self, api: @api) # if data["team"]
           end
 
           def teams

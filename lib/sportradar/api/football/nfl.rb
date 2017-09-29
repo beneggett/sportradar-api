@@ -55,7 +55,7 @@ module Sportradar
             if data['games'].first.keys == ['game']
               data['games'].map! { |hash| hash['game'] }
             end
-            @games_hash = create_data(@games_hash, data['games'],   klass: Game,   hierarchy: self, api: api)
+            create_data(@games_hash, data['games'],   klass: Game,   hierarchy: self, api: api)
           end
 
           self
@@ -103,6 +103,7 @@ module Sportradar
           get_schedule if @weeks_hash.empty?
           weeks.flat_map(&:games)
         end
+
         def teams
           teams = divisions.flat_map(&:teams)
           if teams.empty?

@@ -1,82 +1,175 @@
 module Sportradar
   module Api
     module Basketball
-      class Ncaamb < Request
-        attr_accessor :league, :access_level, :simulation, :error
-
-        def initialize(access_level = default_access_level)
-          @league = 'ncaamb'
-          raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
-          @access_level = access_level
+      class Ncaamb < Data
+        attr_accessor :response, :id, :name, :alias
+        def all_attributes
+          [:name, :alias, :conferences, :divisions, :teams]
         end
 
-        def schedule(season_year = default_year, ncaamb_season = default_season)
-          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? ncaamb_season
-          response = get request_url("games/#{season_year}/#{ncaamb_season}/schedule")
-          if response.success?
-            Sportradar::Api::Basketball::Ncaamb::Season.new(response.to_h, api: self)
-          else
-            @error = response
+        def initialize(data = {}, **opts)
+          @response = data
+          @api      = opts[:api]
+          @id       = data['id']
+          @season   = opts[:year]
+          @type     = opts[:type]
+
+          @divisions_hash     = create_data({}, {"id" => "c5a8d640-5093-4044-851d-2c562e929994", "name" => "NCAA Division I", "alias" => "D1"}, klass: Division, api: api)
+          @weeks_hash         = {}
+          @games_hash         = {}
+          @tournaments_hash   = {}
+          @teams_hash         = {}
+
+          update(data, **opts)
+        end
+
+        def update(data, **opts)
+          @id     = data['id'] if data['id']
+
+          if data['league']
+            @id    = data.dig('league', 'id')
+            @name  = data.dig('league', 'name')
+            @alias = data.dig('league', 'alias')
           end
-        end
 
-        def tournaments(season_year = default_year, ncaamb_season = 'pst')
-          raise Sportradar::Api::Error::InvalidSeason unless allowed_seasons.include? ncaamb_season
-          response = get request_url("tournaments/#{season_year}/#{ncaamb_season}/schedule")
-          if response.success?
-            Sportradar::Api::Basketball::Ncaamb::Season.new(response.to_h, api: self)
+          if data['season'].is_a?(Hash)
+            @season   = data.dig('season', 'year')
+            @type     = data.dig('season', 'type')
           else
-            @error = response
+            @season = data['season']  if data['season']
+            @type   = data['type']    if data['type']
           end
+
+          create_data(@teams_hash,        data['teams'],        klass: Team,        api: api) if data['teams']
+          create_data(@divisions_hash,    data['divisions'],    klass: Division,    api: api) if data['divisions']
+          create_data(@games_hash,        data['games'],        klass: Game,        api: api) if data['games']
+          create_data(@tournaments_hash,  data['tournaments'],  klass: Tournament,  api: api) if data['tournaments']
         end
 
-        def conference_tournaments(season_year = default_year)
-          tournaments(season_year, 'ct')
+        def divisions
+          @divisions_hash.values
+        end
+        def division(code_name)
+          divisions_by_name[code_name]
+        end
+        private def divisions_by_name
+          @divisions_by_name ||= divisions.map { |d| [d.alias, d] }.to_h
+        end
+        def conferences
+          divisions.flat_map(&:conferences)
         end
 
-        def daily_schedule(date = default_date)
-          response = get request_url("games/#{ date.year }/#{ date.month }/#{ date.day }/schedule")
-          if response.success?
-            Sportradar::Api::Basketball::Ncaamb::Schedule.new(response.to_h, api: self)
-          else
-            @error = response
-          end
+        def schedule
+          get_schedule if games.empty?
+          self
         end
 
-        def rankings(poll_name, ncaamb_week = nil, season_year = default_year)
-          # response = get request_url("polls/#{poll_name}/#{season_year}/rankings")
-          response = get request_url("polls/#{poll_name}/#{season_year}/#{ncaamb_week}/rankings")
-          if response.success?
-            Sportradar::Api::Poll.new(response.to_h)
-          else
-            @error = response
-          end
+        def standings
+          get_standings if divisions.empty? || teams.first&.record.nil?
+          self
         end
 
         def hierarchy
-          response = get request_url("league/hierarchy")
-          if response.success?
-            Sportradar::Api::Basketball::Ncaamb::Hierarchy.new(response.to_h, api: self)
+          get_hierarchy if divisions.empty?
+          self
+        end
+
+        def tournaments
+          get_tournaments if tournaments.empty?
+          self
+        end
+
+        def games
+          @games_hash.values
+        end
+
+        def teams
+          teams = divisions.flat_map(&:teams)
+          if teams.empty?
+            if @teams_hash.empty?
+              get_hierarchy
+              divisions.flat_map(&:teams)
+            else
+              @teams_hash.values
+            end
           else
-            response
+            teams
           end
         end
 
-        def standings(season_year = default_year, ncaamb_season = default_season)
-          response = get request_url("seasontd/#{season_year}/#{ncaamb_season}/standings")
-          if response.success?
-            Sportradar::Api::Basketball::Ncaamb::Division.new(response.to_h, api: self)
-          else
-            response
-          end
+        def team(team_id)
+          teams.detect { |team| team.id == team_id }
         end
 
-        def get_data(url)
-          get request_url(url)
+        def get_schedule
+          data = api.get_data(path_schedule).to_h
+          ingest_schedule(data)
+        end
+        def ingest_schedule(data)
+          update(data)
+          data
+        end
+
+        def get_tournaments(tourney_season = 'pst')
+          data = api.get_data(path_tournaments(tourney_season)).to_h
+          ingest_tournaments(data)
+        end
+        def ingest_tournaments(data)
+          update(data)
+          data
+        end
+
+        def get_conference_tournaments
+          data = api.get_data(path_conference_tournaments).to_h
+          ingest_conference_tournaments(data)
+        end
+        def ingest_conference_tournaments(data)
+          update(data)
+          data
+        end
+
+        def get_daily_schedule(date = default_date)
+          data = api.get_data(path_daily_schedule(date)).to_h
+          ingest_daily_schedule(data)
+        end
+        def ingest_daily_schedule(data)
+          update(data)
+          data
+        end
+
+        def get_rankings(poll_name, ncaamb_week = nil)
+          data = api.get_data(path_rankings(poll_name, ncaamb_week)).to_h
+          ingest_rankings(data)
+        end
+        def ingest_rankings(data)
+          update(data)
+          data
+        end
+
+        def get_hierarchy
+          data = api.get_data(path_hierarchy).to_h
+          ingest_hierarchy(data)
+        end
+        def ingest_hierarchy(data)
+          update(data)
+          data
+        end
+
+        def get_standings
+          data = api.get_data(path_standings).to_h
+          ingest_standings(data)
+        end
+        def ingest_standings(data)
+          division('D1').update(data)
+          data
+        end
+
+        def api
+          @api || Sportradar::Api::Basketball::Ncaamb::Api.new
         end
 
         def default_year
-          2016
+          (Date.today - 210).year
         end
         def default_date
           Date.today
@@ -84,51 +177,41 @@ module Sportradar
         def default_season
           'reg'
         end
-        def default_access_level
-          if (ENV['SPORTRADAR_ENV'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
-            'p'
-          else
-            't'
-          end
+        def season_year
+          @season || default_year
+        end
+        alias :year :season_year
+        def ncaamb_season
+          @type || default_season
+        end
+        alias :season :ncaamb_season
+
+        def path_schedule
+          "games/#{season_year}/#{ncaamb_season}/schedule"
         end
 
-        def content_format
-          'json'
+        def path_tournaments(tourney_season = 'pst')
+          "tournaments/#{season_year}/#{tourney_season}/schedule"
         end
 
-        private
-
-        def check_simulation(game_id)
-          @simulation = true if simulation_games.include?(game_id)
+        def path_conference_tournaments
+          path_tournaments('ct')
         end
 
-        def request_url(path)
-          # puts "/ncaamb-#{access_level}#{version}/#{path}"
-          if simulation
-            # "/nfl-sim1/#{path}"
-          else
-            "/ncaamb-#{access_level}#{version}/#{path}"
-          end
+        def path_daily_schedule(date = default_date)
+          "games/#{ date.year }/#{ date.month }/#{ date.day }/schedule"
         end
 
-        def api_key
-          if !['t', 'sim'].include?(access_level)
-            Sportradar::Api.api_key_params('ncaamb', 'production')
-          else
-            Sportradar::Api.api_key_params('ncaamb')
-          end
+        def path_rankings(poll_name, ncaamb_week = nil, season_year = default_year)
+          "polls/#{poll_name}/#{season_year}/#{ncaamb_week}/rankings"
         end
 
-        def version
-          Sportradar::Api.version('nba')
+        def path_hierarchy
+          "league/hierarchy"
         end
 
-        def allowed_access_levels
-          %w[p t sim]
-        end
-
-        def allowed_seasons
-          ["pre", "reg", 'ct', "pst"]
+        def path_standings
+          "seasontd/#{season_year}/#{ncaamb_season}/standings"
         end
 
       end

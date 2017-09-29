@@ -3,10 +3,10 @@ require 'test_helper'
 class Sportradar::Api::Basketball::Ncaamb::DivisionTest < Minitest::Test
 
   def setup
-    sr = Sportradar::Api::Basketball::Ncaamb.new
-    VCR.use_cassette("ncaamb/#{sr.content_format}/league/hierarchy") do
-      hierarchy = sr.hierarchy
-      @division = hierarchy.division('D1')
+    @ncaamb = Sportradar::Api::Basketball::Ncaamb.new
+    VCR.use_cassette("ncaamb/#{@ncaamb.api.content_format}/league/hierarchy") do
+      @ncaamb.get_hierarchy
+      @division = @ncaamb.division('D1')
     end
   end
 
