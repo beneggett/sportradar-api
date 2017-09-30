@@ -60,6 +60,10 @@ module Sportradar
             pitches.last&.count.dig('strikes') == 3
           end
 
+          def walk?
+            over? && pitches.last&.ball?
+          end
+
           def runs
             pitches.flat_map {|pitch| pitch.runners&.select  {|x| x.ending_base == 4 } }.compact
           end
