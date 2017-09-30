@@ -66,6 +66,12 @@ module Sportradar
             @totals = @stats
             # binding.pry
             @team.update_player_stats(self, @stats.dup, opts[:game])
+          elsif @stats = data['games_played']
+            @stats = data.dup
+            %w[id name jersey reference position].each do |useless_key|
+              @stats.delete(useless_key)
+            end
+            @totals = @stats
           else
             @totals = {}
           end
