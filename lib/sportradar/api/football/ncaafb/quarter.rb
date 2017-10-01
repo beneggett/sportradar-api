@@ -8,6 +8,14 @@ module Sportradar
             Drive
           end
 
+          def overtime?
+            @number > 4
+          end
+
+          def self.period_index
+            'number'
+          end
+
         end
       end
     end

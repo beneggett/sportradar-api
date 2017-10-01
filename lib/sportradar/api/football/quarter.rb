@@ -6,7 +6,7 @@ module Sportradar
 
         def initialize(data, **opts)
           @response = data
-          @id = data["sequence"]
+          @id = data[self.class.period_index]
           @api = opts[:api]
 
           @drives_hash = {}
@@ -32,7 +32,7 @@ module Sportradar
         end
 
         def overtime?
-          @sequence > 4
+          (@sequence || @number) > 4
         end
 
         def drives

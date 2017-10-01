@@ -371,7 +371,7 @@ module Sportradar
         def ingest_pbp(data)
           data = data
           update(data, source: :pbp)
-          create_data(@quarters_hash, data[period_key], klass: quarter_class, identifier: 'sequence', api: api, game: self) if data[period_key]
+          create_data(@quarters_hash, data[period_key], klass: quarter_class, identifier: quarter_class.period_index, api: api, game: self) if data[period_key]
           check_newness(:pbp, plays.last&.description)
           check_newness(:score, @score)
           @pbp = @quarters_hash.values
