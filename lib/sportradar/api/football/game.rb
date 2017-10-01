@@ -159,8 +159,8 @@ module Sportradar
           @score.merge!(score)
         end
 
-        def update_drives(data)
-          create_data(@drives_hash, data, klass: drive_class, api: api, game: self)
+        def update_drives(data, **opts)
+          create_data(@drives_hash, data, klass: drive_class, api: api, game: self, **opts)
         end
 
         def leading_team_id
@@ -371,7 +371,7 @@ module Sportradar
         def ingest_pbp(data)
           data = data
           update(data, source: :pbp)
-          create_data(@quarters_hash, data[period_key], klass: quarter_class, identifier: 'number', api: api, game: self) if data[period_key]
+          create_data(@quarters_hash, data[period_key], klass: quarter_class, identifier: 'sequence', api: api, game: self) if data[period_key]
           check_newness(:pbp, plays.last&.description)
           check_newness(:score, @score)
           @pbp = @quarters_hash.values

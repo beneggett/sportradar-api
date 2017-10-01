@@ -6,7 +6,7 @@ module Sportradar
 
         def initialize(data, **opts)
           @response = data
-          @id = data["number"]
+          @id = data["sequence"]
           @api = opts[:api]
 
           @drives_hash = {}
@@ -24,7 +24,7 @@ module Sportradar
           @away_info = data["away"]
 
           if data['pbp']
-            opts[:game].update_drives(data['pbp'])
+            opts[:game].update_drives(data['pbp'], quarter: self)
             create_data(@drives_hash, data['pbp'], klass: drive_class, api: api, quarter: self)
           end
 
@@ -32,7 +32,7 @@ module Sportradar
         end
 
         def overtime?
-          @number > 4
+          @sequence > 4
         end
 
         def drives
