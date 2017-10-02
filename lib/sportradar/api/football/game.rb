@@ -173,7 +173,7 @@ module Sportradar
         end
 
         def current_possession_team_id
-          drives.grep(Sportradar::Api::Football::Drive).last&.team_id
+          drives.last&.team_id
         end
 
         def next_possession_team_id
@@ -209,9 +209,14 @@ module Sportradar
           @pbp ||= quarters
         end
 
-        def drives
+        def drives_with_events
           @drives_hash.values
         end
+
+        def drives
+          drives_with_events.grep(Sportradar::Api::Football::Drive)
+        end
+
 
         def plays
           drives.flat_map(&:plays).compact

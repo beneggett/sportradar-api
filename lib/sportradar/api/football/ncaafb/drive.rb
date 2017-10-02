@@ -9,7 +9,7 @@ module Sportradar
           def update(data, **opts)
             super.tap {
               if opts[:game]
-                game_drives = opts[:game].drives.grep(Sportradar::Api::Football::Drive)
+                game_drives = opts[:game].drives
                 @sequence = (game_drives.index(self) || game_drives.size) + 1
               end
             }
