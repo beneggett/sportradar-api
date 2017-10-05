@@ -13,23 +13,6 @@ require "sportradar/api/poll"
 require "sportradar/api/broadcast"
 
 require "sportradar/api/soccer"
-require "sportradar/api/soccer/boxscore"
-require "sportradar/api/soccer/category"
-require "sportradar/api/soccer/fact"
-require "sportradar/api/soccer/hierarchy"
-require "sportradar/api/soccer/match"
-require "sportradar/api/soccer/player"
-require "sportradar/api/soccer/ranking"
-require "sportradar/api/soccer/schedule"
-require "sportradar/api/soccer/season"
-require "sportradar/api/soccer/standing"
-require "sportradar/api/soccer/statistic"
-require "sportradar/api/soccer/summary"
-require "sportradar/api/soccer/team"
-require "sportradar/api/soccer/tournament"
-require "sportradar/api/soccer/tournament_group"
-require "sportradar/api/soccer/venue"
-
 require "sportradar/api/football"
 require "sportradar/api/basketball"
 require "sportradar/api/baseball"
@@ -80,7 +63,7 @@ module Sportradar
         {api: :images, version:   2},
         {api: :live_images, version:  1},
         {api: :olympics, version:   2},
-        {api: :soccer, version:   2},
+        {api: :soccer, version:   3},
         {api: :ncaawb, version:   3},
         {api: :mma, version:  1},
         {api: :cricket, version:    1},
