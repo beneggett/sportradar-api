@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Error
+    class Error < StandardError
       class AuthenticationError < StandardError; end
       class NoApiKey < AuthenticationError; end
       class InvalidResponseFormat < TypeError; end
