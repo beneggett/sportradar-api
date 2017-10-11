@@ -11,7 +11,7 @@ module Sportradar
         @nfl_premium = nfl_premium
         @usat_premium = usat_premium
         @event_id = event_id
-        @date = date.strftime("%Y/%m/%d") if date.present?
+        @date = date.strftime("%Y/%m/%d") if date
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         @access_level = access_level
       end

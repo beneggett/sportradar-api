@@ -23,7 +23,7 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         lineup.update(summary, source: :summary)
         assert_equal lineup.home.length, 9
         assert_equal lineup.away.length, 9
-        assert_equal 'Dustin', lineup.home.first['preferred_name']
+        assert_equal 'Dustin', lineup.home.dig(0, 'preferred_name')
       end
       
       it "creates a lineup from a pbp update" do
@@ -32,7 +32,7 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         lineup.update_from_lineup_event(lineup_update_hash)
         assert_equal lineup.home.length, 9
         assert_equal lineup.away.length, 9
-        assert_equal 'Robbie', lineup.home.first['preferred_name']
+        assert_equal 'Robbie', lineup.home.dig(0, 'preferred_name')
       end
 
       it "sets the next upcoming batters" do
@@ -41,9 +41,9 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         pbp
         next_batters = lineup.next_batters('home', 3)
         assert_equal next_batters.length, 3
-        assert_equal 'Marco', next_batters.first['preferred_name']
-        assert_equal 'Dustin', next_batters.second['preferred_name']
-        assert_equal 'Andrew', next_batters.third['preferred_name']
+        assert_equal 'Marco', next_batters.dig(0, 'preferred_name')
+        assert_equal 'Dustin', next_batters.dig(1, 'preferred_name')
+        assert_equal 'Andrew', next_batters.dig(2, 'preferred_name')
       end
     end
     describe "National" do
@@ -67,7 +67,7 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         pbp
         assert_equal 9, lineup.home.length
         assert_equal 9, lineup.away.length
-        assert_equal 'José', lineup.home.first['preferred_name']
+        assert_equal 'José', lineup.home.dig(0, 'preferred_name')
       end
 
       it "creates a lineup from a pbp update" do
@@ -85,9 +85,9 @@ class Sportradar::Api::Baseball::Mlb::LineupTest < Minitest::Test
         pbp
         next_batters = lineup.next_batters('home', 3)
         assert_equal next_batters.length, 3
-        assert_equal 'Juan', next_batters.first['preferred_name']
-        assert_equal 'Rafael', next_batters.second['preferred_name']
-        assert_equal 'José', next_batters.third['preferred_name']
+        assert_equal 'Juan', next_batters.dig(0, 'preferred_name')
+        assert_equal 'Rafael', next_batters.dig(1, 'preferred_name')
+        assert_equal 'José', next_batters.dig(2, 'preferred_name')
       end
     end
   end
