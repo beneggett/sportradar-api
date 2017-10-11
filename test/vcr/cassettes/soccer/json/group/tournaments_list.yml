@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/tournaments.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=300, public, s-maxage=300
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 Oct 2017 02:48:29 GMT
+      Etag:
+      - W/"02c487ef9a429a2203885be64449185d"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-135.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '37'
+      X-Sbe:
+      - berilia_prod_web2
+      X-Srv:
+      - berilia-prod-varnish1.ch.sportradar.ag
+      X-Varnish:
+      - '70397329'
+      X-Version-Instance:
+      - "/current"
+      Content-Length:
+      - '7534'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-06T02:48:29+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/tournaments.json","tournaments":[{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"},"current_season":{"id":"sr:season:41198","name":"UEFA Champions League
+        17\/18","start_date":"2017-06-27","end_date":"2018-05-27","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:41198","scheduled":192,"played":128,"max_coverage_level":"platinum","max_covered":65,"min_coverage_level":"bronze"}},{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"},"current_season":{"id":"sr:season:42556","name":"LaLiga
+        17\/18","start_date":"2017-08-18","end_date":"2018-05-21","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:42556","scheduled":380,"played":70,"max_coverage_level":"platinum","max_covered":70,"min_coverage_level":"platinum"}},{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"},"current_season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:40942","scheduled":381,"played":70,"max_coverage_level":"platinum","max_covered":70,"min_coverage_level":"platinum"}},{"id":"sr:tournament:23","name":"Serie
+        A","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:31","name":"Italy","country_code":"ITA"},"current_season":{"id":"sr:season:42720","name":"Serie
+        A 17\/18","start_date":"2017-08-19","end_date":"2018-05-21","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:42720","scheduled":380,"played":70,"max_coverage_level":"platinum","max_covered":69,"min_coverage_level":"silver"}},{"id":"sr:tournament:34","name":"Ligue
+        1","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:7","name":"France","country_code":"FRA"},"current_season":{"id":"sr:season:40958","name":"Ligue
+        1 17\/18","start_date":"2017-08-04","end_date":"2018-05-31","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:40958","scheduled":380,"played":80,"max_coverage_level":"platinum","max_covered":80,"min_coverage_level":"platinum"}},{"id":"sr:tournament:35","name":"Bundesliga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:30","name":"Germany","country_code":"DEU"},"current_season":{"id":"sr:season:41576","name":"Bundesliga
+        17\/18","start_date":"2017-08-18","end_date":"2018-05-22","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:41576","scheduled":306,"played":63,"max_coverage_level":"platinum","max_covered":63,"min_coverage_level":"platinum"}},{"id":"sr:tournament:37","name":"Eredivisie","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:35","name":"Netherlands","country_code":"NLD"},"current_season":{"id":"sr:season:41126","name":"Eredivisie
+        17\/18","start_date":"2017-08-11","end_date":"2018-05-21","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:41126","scheduled":306,"played":63,"max_coverage_level":"gold","max_covered":62,"min_coverage_level":"silver"}},{"id":"sr:tournament:38","name":"First
+        Division A","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:33","name":"Belgium","country_code":"BEL"},"current_season":{"id":"sr:season:40926","name":"First
+        Division A 17\/18","start_date":"2017-07-28","end_date":"2018-06-04","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:40926","scheduled":241,"played":72,"max_coverage_level":"gold","max_covered":39,"min_coverage_level":"silver"}},{"id":"sr:tournament:52","name":"Super
+        Lig","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:46","name":"Turkey","country_code":"TUR"},"current_season":{"id":"sr:season:42036","name":"Super
+        Lig 17\/18","start_date":"2017-08-11","end_date":"2018-05-31","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:42036","scheduled":306,"played":63,"max_coverage_level":"gold","max_covered":63,"min_coverage_level":"gold"}},{"id":"sr:tournament:185","name":"Super
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:67","name":"Greece","country_code":"GRC"},"current_season":{"id":"sr:season:42274","name":"Super
+        League 17\/18","start_date":"2017-08-19","end_date":"2018-04-30","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:42274","scheduled":240,"played":48,"max_coverage_level":"gold","max_covered":48,"min_coverage_level":"gold"}},{"id":"sr:tournament:203","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:21","name":"Russia","country_code":"RUS"},"current_season":{"id":"sr:season:41100","name":"Premier
+        League 17\/18","start_date":"2017-07-15","end_date":"2018-06-24","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:41100","scheduled":240,"played":96,"max_coverage_level":"gold","max_covered":95,"min_coverage_level":"silver"}},{"id":"sr:tournament:218","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:86","name":"Ukraine","country_code":"UKR"},"current_season":{"id":"sr:season:40802","name":"Premier
+        League 17\/18","start_date":"2017-07-16","end_date":"2018-05-31","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:40802","scheduled":132,"played":66,"max_coverage_level":"gold","max_covered":65,"min_coverage_level":"silver"}},{"id":"sr:tournament:238","name":"Primeira
+        Liga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:44","name":"Portugal","country_code":"PRT"},"current_season":{"id":"sr:season:41988","name":"Primeira
+        Liga 17\/18","start_date":"2017-08-05","end_date":"2018-05-31","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:41988","scheduled":306,"played":72,"max_coverage_level":"gold","max_covered":72,"min_coverage_level":"gold"}},{"id":"sr:tournament:465","name":"UEFA
+        Super Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"},"current_season":{"id":"sr:season:40792","name":"UEFA Super Cup 2017","start_date":"2017-08-08","end_date":"2017-08-09","year":"2017"},"season_coverage_info":{"season_id":"sr:season:40792","scheduled":1,"played":1,"max_coverage_level":"gold","max_covered":1,"min_coverage_level":"gold"}},{"id":"sr:tournament:679","name":"UEFA
+        Europa League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"},"current_season":{"id":"sr:season:41238","name":"UEFA Europa League
+        17\/18","start_date":"2017-06-29","end_date":"2018-05-17","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:41238","scheduled":416,"played":322,"max_coverage_level":"platinum","max_covered":56,"min_coverage_level":"bronze"}},{"id":"sr:tournament:2324","name":"UEFA
+        Youth League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:392","name":"International
+        Youth"},"current_season":{"id":"sr:season:45144","name":"UEFA Youth League
+        17\/18","start_date":"2017-09-12","end_date":"2018-04-24","year":"17\/18"},"season_coverage_info":{"season_id":"sr:season:45144","scheduled":128,"played":48,"max_coverage_level":"gold","max_covered":10,"min_coverage_level":"silver"}}]}'
+    http_version: 
+  recorded_at: Fri, 06 Oct 2017 02:48:29 GMT
+recorded_with: VCR 3.0.3

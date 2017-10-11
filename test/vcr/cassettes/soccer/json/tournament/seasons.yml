@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/tournaments/sr:tournament:17/seasons.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=300, public, s-maxage=300
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 Oct 2017 03:19:53 GMT
+      Etag:
+      - W/"0618dbbe0c644cfc693f6fe19ff4ae5e"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-113.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '39'
+      X-Sbe:
+      - berilia_prod_web3
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '69399016'
+      X-Version-Instance:
+      - "/current"
+      Content-Length:
+      - '4215'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-06T03:19:53+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/tournament_seasons.json","tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"seasons":[{"id":"sr:season:55","name":"Premier
+        League 93\/94","start_date":"1993-08-14","end_date":"1994-05-08","year":"93\/94","tournament_id":"sr:tournament:17"},{"id":"sr:season:54","name":"Premier
+        League 94\/95","start_date":"1994-08-20","end_date":"1995-05-14","year":"94\/95","tournament_id":"sr:tournament:17"},{"id":"sr:season:53","name":"Premier
+        League 95\/96","start_date":"1995-08-19","end_date":"1996-05-04","year":"95\/96","tournament_id":"sr:tournament:17"},{"id":"sr:season:52","name":"Premier
+        League 96\/97","start_date":"1996-08-17","end_date":"1997-05-11","year":"96\/97","tournament_id":"sr:tournament:17"},{"id":"sr:season:51","name":"Premier
+        League 97\/98","start_date":"1997-08-09","end_date":"1998-05-10","year":"97\/98","tournament_id":"sr:tournament:17"},{"id":"sr:season:50","name":"Premier
+        League 98\/99","start_date":"1998-08-15","end_date":"1999-05-16","year":"98\/99","tournament_id":"sr:tournament:17"},{"id":"sr:season:49","name":"Premier
+        League 99\/00","start_date":"1999-08-07","end_date":"2000-05-14","year":"99\/00","tournament_id":"sr:tournament:17"},{"id":"sr:season:48","name":"Premier
+        League 00\/01","start_date":"2000-08-19","end_date":"2001-05-19","year":"00\/01","tournament_id":"sr:tournament:17"},{"id":"sr:season:47","name":"Premier
+        League 01\/02","start_date":"2001-08-18","end_date":"2002-05-11","year":"01\/02","tournament_id":"sr:tournament:17"},{"id":"sr:season:46","name":"Premier
+        League 02\/03","start_date":"2002-08-17","end_date":"2003-05-11","year":"02\/03","tournament_id":"sr:tournament:17"},{"id":"sr:season:1","name":"Premier
+        League 03\/04","start_date":"2003-08-16","end_date":"2004-05-17","year":"03\/04","tournament_id":"sr:tournament:17"},{"id":"sr:season:2","name":"Premier
+        League 04\/05","start_date":"2004-08-14","end_date":"2005-05-15","year":"04\/05","tournament_id":"sr:tournament:17"},{"id":"sr:season:3","name":"Premier
+        League 05\/06","start_date":"2005-08-13","end_date":"2006-05-07","year":"05\/06","tournament_id":"sr:tournament:17"},{"id":"sr:season:4","name":"Premier
+        League 06\/07","start_date":"2006-08-18","end_date":"2007-05-14","year":"06\/07","tournament_id":"sr:tournament:17"},{"id":"sr:season:581","name":"Premier
+        League 07\/08","start_date":"2007-08-10","end_date":"2008-05-12","year":"07\/08","tournament_id":"sr:tournament:17"},{"id":"sr:season:1544","name":"Premier
+        League 08\/09","start_date":"2008-08-16","end_date":"2009-05-25","year":"08\/09","tournament_id":"sr:tournament:17"},{"id":"sr:season:2139","name":"Premier
+        League 09\/10","start_date":"2009-08-15","end_date":"2010-05-10","year":"09\/10","tournament_id":"sr:tournament:17"},{"id":"sr:season:2746","name":"Premier
+        League 10\/11","start_date":"2010-08-14","end_date":"2011-05-31","year":"10\/11","tournament_id":"sr:tournament:17"},{"id":"sr:season:3391","name":"Premier
+        League 11\/12","start_date":"2011-08-13","end_date":"2012-05-14","year":"11\/12","tournament_id":"sr:tournament:17"},{"id":"sr:season:4710","name":"Premier
+        League 12\/13","start_date":"2012-08-18","end_date":"2013-05-20","year":"12\/13","tournament_id":"sr:tournament:17"},{"id":"sr:season:6311","name":"Premier
+        League 13\/14","start_date":"2013-08-17","end_date":"2014-05-12","year":"13\/14","tournament_id":"sr:tournament:17"},{"id":"sr:season:8186","name":"Premier
+        League 14\/15","start_date":"2014-08-15","end_date":"2015-05-25","year":"14\/15","tournament_id":"sr:tournament:17"},{"id":"sr:season:10412","name":"Premier
+        League 15\/16","start_date":"2015-08-08","end_date":"2016-05-18","year":"15\/16","tournament_id":"sr:tournament:17"},{"id":"sr:season:32887","name":"Premier
+        League 16\/17","start_date":"2016-08-13","end_date":"2017-05-25","year":"16\/17","tournament_id":"sr:tournament:17"},{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"}]}'
+    http_version: 
+  recorded_at: Fri, 06 Oct 2017 03:19:53 GMT
+recorded_with: VCR 3.0.3

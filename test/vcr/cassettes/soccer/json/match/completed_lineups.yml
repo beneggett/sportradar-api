@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/matches/sr:match:11854838/lineups.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=30, public, s-maxage=30
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 11 Oct 2017 17:40:51 GMT
+      Etag:
+      - W/"6be6e2004e9f19ccc219bba66ad0499d"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-128.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '112'
+      X-Sbe:
+      - berilia_prod_web2
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '85427408'
+      X-Version-Instance:
+      - "/current"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-11T17:40:51+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/match_lineups.json","sport_event":{"id":"sr:match:11854838","scheduled":"2017-07-19T17:30:00+00:00","start_time_tbd":false,"tournament_round":{"type":"qualification","name":"cupqround","cup_round_match_number":2,"cup_round_matches":2,"other_match_id":"sr:match:11854798"},"season":{"id":"sr:season:41198","name":"UEFA
+        Champions League 17\/18","start_date":"2017-06-27","end_date":"2018-05-27","year":"17\/18","tournament_id":"sr:tournament:7"},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"competitors":[{"id":"sr:competitor:1284","name":"FC Copenhagen","country":"Denmark","country_code":"DNK","abbreviation":"FCC","qualifier":"home"},{"id":"sr:competitor:2402","name":"MSK
+        Zilina","country":"Slovakia","country_code":"SVK","abbreviation":"ZIL","qualifier":"away"}],"venue":{"id":"sr:venue:936","name":"Parken","capacity":38065,"city_name":"Copenhagen","country_name":"Denmark","map_coordinates":"55.702712,12.572275","country_code":"DNK"}},"lineups":[{"team":"home","manager":{"id":"sr:player:53102","name":"Solbakken,
+        Staale","nationality":"Norway","country_code":"NOR"},"jersey":{"type":"home","base":"ffffff","sleeve":"ffffff","number":"004080","squares":false,"stripes":false,"horizontal_stripes":false,"split":false,"shirt_type":"short_sleeves","sleeve_detail":"004080"},"starting_lineup":[{"id":"sr:player:26025","name":"Olsen,
+        Robin","type":"goalkeeper","jersey_number":25},{"id":"sr:player:72903","name":"Gregus,
+        Jan","type":"midfielder","jersey_number":16},{"id":"sr:player:97060","name":"Sotiriou,
+        Pieros","type":"forward","jersey_number":28},{"id":"sr:player:7085","name":"Bengtsson,
+        Pierre","type":"defender","jersey_number":3},{"id":"sr:player:150630","name":"Toutouh,
+        Youssef","type":"midfielder","jersey_number":24},{"id":"sr:player:46972","name":"Santander,
+        Federico","type":"forward","jersey_number":9},{"id":"sr:player:63273","name":"Matic,
+        Uros","type":"midfielder","jersey_number":8},{"id":"sr:player:153230","name":"Verbic,
+        Benjamin","type":"midfielder","jersey_number":7},{"id":"sr:player:135603","name":"Luftner,
+        Michael","type":"defender","jersey_number":27},{"id":"sr:player:95443","name":"Boilesen,
+        Nicolai","type":"defender","jersey_number":20},{"id":"sr:player:7696","name":"Johansson,
+        Erik","type":"defender","jersey_number":5}],"substitutes":[{"id":"sr:player:15654","name":"Andersen,
+        Stephan","type":"goalkeeper","jersey_number":1},{"id":"sr:player:1050","name":"Antonsson,
+        Mikael","type":"defender","jersey_number":15},{"id":"sr:player:935526","name":"Roerslev,
+        Mads","type":"defender","jersey_number":18},{"id":"sr:player:8521","name":"Kvist,
+        William","type":"midfielder","jersey_number":6},{"id":"sr:player:180477","name":"Thomsen,
+        Nicolaj","type":"midfielder","jersey_number":14},{"id":"sr:player:121260","name":"Kusk,
+        Kasper","type":"midfielder","jersey_number":17},{"id":"sr:player:157637","name":"Pavlovic,
+        Andrija","type":"forward","jersey_number":23}]},{"team":"away","manager":{"id":"sr:player:23892","name":"Gula,
+        Adrian","nationality":"Slovakia","country_code":"SVK"},"jersey":{"type":"home","base":"ffff33","sleeve":"ffff33","number":"339900","squares":false,"stripes":false,"horizontal_stripes":false,"split":false},"starting_lineup":[{"id":"sr:player:151967","name":"Mandous,
+        Ales","type":"goalkeeper","jersey_number":30},{"id":"sr:player:325129","name":"Spalek,
+        Nikolas","type":"forward","jersey_number":10},{"id":"sr:player:293187","name":"Otubanjo,
+        Yusuf","type":"forward","jersey_number":34},{"id":"sr:player:293127","name":"Vavro,
+        Denis","type":"defender","jersey_number":3},{"id":"sr:player:58051","name":"Skvarka,
+        Michal","type":"midfielder","jersey_number":20},{"id":"sr:player:552350","name":"Polievka,
+        Robert","type":"forward","jersey_number":21},{"id":"sr:player:230620","name":"Diaz,
+        Ivan","type":"midfielder","jersey_number":9},{"id":"sr:player:133114","name":"Cociuc,
+        Eugeniu","type":"midfielder","jersey_number":7},{"id":"sr:player:148750","name":"Mazan,
+        Robert","type":"defender","jersey_number":27},{"id":"sr:player:135617","name":"Kasa,
+        Filip","type":"defender","jersey_number":25},{"id":"sr:player:826915","name":"Vallo,
+        Kristian","type":"forward","jersey_number":15}],"substitutes":[{"id":"sr:player:134908","name":"Holec,
+        Dominik","type":"goalkeeper","jersey_number":28},{"id":"sr:player:187223","name":"Kralik,
+        Martin","type":"defender","jersey_number":24},{"id":"sr:player:358692","name":"Chvatal,
+        Juraj","type":"defender","jersey_number":39},{"id":"sr:player:112095","name":"Holubek,
+        Jakub","type":"midfielder","jersey_number":14},{"id":"sr:player:354576","name":"Mraz,
+        Samuel","type":"forward","jersey_number":11},{"id":"sr:player:769431","name":"Jankauskas,
+        Eligijus","type":"forward","jersey_number":29},{"id":"sr:player:280657","name":"Sheydaev,
+        Ramil","type":"forward","jersey_number":90}]}]}'
+    http_version: 
+  recorded_at: Wed, 11 Oct 2017 17:40:51 GMT
+recorded_with: VCR 3.0.3
