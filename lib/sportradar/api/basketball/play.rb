@@ -59,6 +59,12 @@ module Sportradar
             "flagranttwo"           => FlagrantTwo,
             "delay"                 => Delay,
             "ejection"              => Ejection,
+            "defaultviolation"      => DefaultViolation,
+            "defensivegoaltending"  => DefensiveGoalTending,
+            "doublelane"            => DoubleLane,
+            "lane"                  => Lane,
+            "possession"            => Possession,
+            "stoppage"              => Stoppage,
             # abstract types, used for lookup purposes
             "foul"                  => Foul,
             "shotmade"              => ShotMade,
