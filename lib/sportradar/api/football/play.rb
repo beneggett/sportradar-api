@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Football
       class Play < Data
-        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players, :down, :yfd, :player_data, :event_type, :updated
+        attr_accessor :response, :id, :sequence, :reference, :clock, :home_points, :away_points, :type, :play_clock, :wall_clock, :start_situation, :end_situation, :description, :alt_description, :statistics, :score, :scoring_play, :team_id, :player_id, :play_type, :players, :down, :yfd, :player_data, :event_type, :wall_clock
 
         def initialize(data, **opts)
           @response          = data
@@ -32,7 +32,8 @@ module Sportradar
           @clock        = data["clock"]        if data["clock"]
           @type         = data["type"]         if data["type"]
           @summary      = data["summary"]      if data["summary"]
-          @updated      = data["updated"]      if data["updated"]
+          @updated      = Time.parse(data["updated"]) if data["updated"]
+          @wall_clock   = Time.parse(data["wall_clock"]) if data["wall_clock"]
           @side         = data["side"]         if data["side"]
           @yard_line    = data["yard_line"]    if data["yard_line"]
           @down         = data["down"]         if data["down"]
@@ -58,9 +59,12 @@ module Sportradar
             @statistics ||= OpenStruct.new(players: [])
           end
           parse_player
-          @wall_clock        = data["wall_clock"]
 
           self
+        end
+
+        def updated
+          @updated || @wall_clock
         end
 
         def clock_seconds
