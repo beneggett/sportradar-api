@@ -20,8 +20,8 @@ module Sportradar
           # @starting_lineup  = data['starting_lineup'] if data['starting_lineup']
           # @substitutes      = data['substitutes']     if data['substitutes']
 
-          create_data(@starting_hash, data['starting_lineup'], klass: Player, api: api, lineup: self) if data['starting_lineup']
-          create_data(@subs_hash,     data['substitutes'],     klass: Player, api: api, lineup: self) if data['substitutes']
+          create_data(@starting_hash, data['starting_lineup'], klass: Player, api: opts[:api], lineup: self) if data['starting_lineup']
+          create_data(@subs_hash,     data['substitutes'],     klass: Player, api: opts[:api], lineup: self) if data['substitutes']
         end
 
       end
