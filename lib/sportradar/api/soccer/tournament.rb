@@ -52,7 +52,7 @@ module Sportradar
 
         def parse_results(data)
           if data['results']
-            merged_data = data['results'].map { |hash| hash["sport_event"].merge(hash["sport_event_status"]) }
+            merged_data = Soccer.parse_results(data['results'])
             create_data(@matches_hash, merged_data, klass: Match, api: api)
           end
         end

@@ -23,6 +23,9 @@ module Sportradar
           @tournaments_hash.values
         end
 
+        def tournament(id)
+          @tournaments_hash[id]
+        end
 
         def api
           @api ||= Sportradar::Api::Soccer::Api.new(league_group: @league_group)

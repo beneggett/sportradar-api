@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Soccer
       class Season < Data
-        attr_reader :id, :league_group, :name, :category, :current_season, :season_coverage_info
+        attr_reader :id, :league_group, :name, :category, :current_season, :season_coverage_info, :tournament_id
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
@@ -27,6 +27,16 @@ module Sportradar
           @max_coverage_level = data['max_coverage_level']  || @max_coverage_level
           @max_covered        = data['max_covered']         || @max_covered
           @min_coverage_level = data['min_coverage_level']  || @min_coverage_level
+        end
+
+        def get_tournament_id(data, **opts)
+          @tournament_id ||= if opts[:tournament]
+            opts[:tournament].id
+          elsif data['tournament_id']
+            data['tournament_id']
+          elsif data['tournament']
+            data.dig('tournament', 'id')
+          end
         end
 
         def current?

@@ -36,6 +36,7 @@ class Sportradar::Api::Soccer::CompletedMatchTest < Minitest::Test
     assert_equal 152, @match.timeline.size
     assert_equal 64, @match.timeline("throw_in").size
     assert_equal 1, @match.timeline("match_started").size
+    assert_instance_of Sportradar::Api::Soccer::Event, @match.timeline.first
   end
 
   def test_it_gets_lineups

@@ -5,6 +5,7 @@ module Sportradar
         attr_reader :id, :league_group, :scheduled, :start_time_tbd, :status, :tournament_round, :match_status, :venue
         attr_reader :home_score, :away_score, :winner_id, :aggregate_home_score, :aggregate_away_score, :aggregate_winner_id
         attr_reader :referee, :weather_info, :coverage_info
+        attr_reader :home, :away, :tournament_id
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
@@ -15,12 +16,17 @@ module Sportradar
 
           @timeline_hash = {}
           @lineups_hash  = {}
+          get_tournament_id(data, **opts)
+          @home          = Team.new({}, api: api, match: self)
+          @away          = Team.new({}, api: api, match: self)
+          @teams_hash    = { away: @away, home: @home }
 
           update(data, **opts)
         end
 
         def update(data, **opts)
           @league_group = opts[:league_group] || data['league_group'] || @league_group
+          get_tournament_id(data, **opts)
           if data["sport_event"]
             update(data["sport_event"])
           end
@@ -36,6 +42,9 @@ module Sportradar
           end
           if data['lineups']
             create_data(@lineups_hash, data['lineups'], klass: Lineup, identifier: 'team', api: api)
+          end
+          if (stats = data.dig('statistics', 'teams'))
+            update_teams(stats)
           end
 
 
@@ -59,9 +68,40 @@ module Sportradar
           create_data(@timeline_hash, data['timeline'], klass: Event, api: api)
           # @season
           # @tournament
-          # @competitors
+          if data['competitors']
+            update_teams(data['competitors'])
+          end
 
           # parse_nested_data(data)
+        end
+
+        def update_teams(data)
+          home_hash = data.detect { |team_hash| team_hash["qualifier"] == "home" || team_hash["team"] == "home" }
+          away_hash = (data - [home_hash]).first
+          if home_hash && away_hash
+            @home.update(home_hash, match: self)
+            @away.update(away_hash, match: self)
+            @teams_hash[@home.id] = @home
+            @teams_hash[@away.id] = @away
+          end
+        end
+
+        def get_tournament_id(data, **opts)
+          @tournament_id ||= if opts[:tournament]
+            opts[:tournament].id
+          elsif opts[:season]
+            opts[:season].tournament_id
+          elsif opts[:match]
+            opts[:match].tournament_id
+          elsif data['tournament']
+            data.dig('tournament', 'id')
+          elsif data['season']
+            data.dig('season', 'tournament_id')
+          end
+        end
+
+        def team(place_or_id)
+          @teams_hash[place_or_id]
         end
 
         def timeline(type = nil)

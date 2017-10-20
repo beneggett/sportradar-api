@@ -1,0 +1,61 @@
+module Sportradar
+  module Api
+    module Soccer
+      class Player < Data
+
+        attr_reader :id
+
+        def initialize(data = {}, league_group: nil, **opts)
+          @response     = data
+          @id           = data['id'] if data['id']
+          @api          = opts[:api]
+          @league_group = league_group || data['league_group'] || @api&.league_group
+
+          update(data, **opts)
+        end
+
+        def update(data, **opts)
+          @id             = data['id']             if data['id']
+          @league_group = opts[:league_group] || data['league_group'] || @league_group
+
+          @name           = data['name']           if data['name']
+          @type           = data['type']           if data['type']
+          @nationality    = data['nationality']    if data['nationality']
+          @country_code   = data['country_code']   if data['country_code']
+          @height         = data['height']         if data['height']
+          @weight         = data['weight']         if data['weight']
+          @jersey_number  = data['jersey_number']  if data['jersey_number']
+          @preferred_foot = data['preferred_foot'] if data['preferred_foot']
+
+          @date_of_birth  = Date.parse(data['date_of_birth']) if data['date_of_birth']
+        end
+
+        def api
+          @api || Sportradar::Api::Soccer::Api.new(league_group: @league_group)
+        end
+
+        def path_base
+          "players/#{ id }"
+        end
+
+        def path_profile
+          "#{ path_base }/profile"
+        end
+        def get_profile
+          data = api.get_data(path_profile).to_h
+          ingest_profile(data)
+        end
+        def ingest_profile(data)
+          update(data)
+          data
+        end
+        def queue_profile
+          url, headers, options, timeout = api.get_request_info(path_profile)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_profile)}
+        end
+
+      end
+
+    end
+  end
+end
