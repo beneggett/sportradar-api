@@ -11,6 +11,7 @@
 *.swp
 *.o
 *.a
+*.bin
 mkmf.log
 *.sublime-project
 *.sublime-workspace
