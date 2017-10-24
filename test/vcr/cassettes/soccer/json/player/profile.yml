@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/players/sr:player:13249/profile.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=300, public, s-maxage=300
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Oct 2017 18:44:49 GMT
+      Etag:
+      - W/"900bf9458be5d849fe6abfe1c638e69c"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-132.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '311'
+      X-Sbe:
+      - berilia_prod_web3
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '14137405'
+      X-Version-Instance:
+      - "/current"
+      Content-Length:
+      - '22833'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-24T18:44:49+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/player_profile.json","player":{"id":"sr:player:13249","name":"Bravo,
+        Claudio","first_name":"Claudio","last_name":"Bravo","type":"goalkeeper","date_of_birth":"1983-04-13","nationality":"Chile","country_code":"CHL","height":184,"weight":80,"preferred_foot":"right","gender":"male"},"teams":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"}],"roles":[{"type":"player","active":"true","team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},"start_date":"2016-08-25","jersey_number":1},{"type":"player","active":"false","team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"start_date":"2014-07-01","end_date":"2016-08-24","jersey_number":13},{"type":"player","active":"false","team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"start_date":"2006-07-01","end_date":"2014-06-30","jersey_number":1},{"type":"player","active":"false","team":{"id":"sr:competitor:3155","name":"Colo
+        Colo","country":"Chile","country_code":"CHL","abbreviation":"COL"},"start_date":"2002-01-01","end_date":"2006-06-30"},{"type":"player","active":"true","team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"jersey_number":1}],"statistics":{"seasons":[{"id":"sr:season:12214","name":"Copa
+        America 2016","statistics":{"matches_played":6,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":1,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2016-06-26T23:21:32+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:133","name":"Copa
+        America","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:12214","scheduled":34,"played":34,"max_coverage_level":"gold","max_covered":32,"min_coverage_level":"silver"}},{"id":"sr:season:11184","name":"Confederations
+        Cup 2017","statistics":{"matches_played":3,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":1,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2017-07-02T19:48:14+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:460","name":"Confederations
+        Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:11184","scheduled":17,"played":17,"max_coverage_level":"platinum","max_covered":16,"min_coverage_level":"gold"}},{"id":"sr:season:522","name":"Copa
+        America 2007","statistics":{"matches_played":4,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2007-07-07T05:36:01+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:133","name":"Copa
+        America","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}}},{"id":"sr:season:2531","name":"World
+        Championship 2010","statistics":{"matches_played":4,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2010-06-28T17:19:33+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:16","name":"World
+        Championship","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:2531","scheduled":66,"played":64,"max_coverage_level":"silver","max_covered":64,"min_coverage_level":"silver"}},{"id":"sr:season:3125","name":"Copa
+        America 2011","statistics":{"matches_played":3,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":1,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2011-07-17T22:00:07+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:133","name":"Copa
+        America","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:3125","scheduled":26,"played":26,"max_coverage_level":"silver","max_covered":26,"min_coverage_level":"silver"}},{"id":"sr:season:6359","name":"UEFA
+        Champions League 13\/14","statistics":{"matches_played":7,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2013-11-27T18:42:14+00:00"},"team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"season_coverage_info":{"season_id":"sr:season:6359","scheduled":217,"played":216,"max_coverage_level":"silver","max_covered":214,"min_coverage_level":"bronze"}},{"id":"sr:season:7528","name":"World
+        Championship 2014","statistics":{"matches_played":4,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2014-06-28T15:08:13+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:16","name":"World
+        Championship","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:7528","scheduled":66,"played":64,"max_coverage_level":"gold","max_covered":64,"min_coverage_level":"gold"}},{"id":"sr:season:9576","name":"Copa
+        America 2015","statistics":{"matches_played":6,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2015-07-04T19:32:31+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:133","name":"Copa
+        America","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:9576","scheduled":26,"played":26,"max_coverage_level":"gold","max_covered":26,"min_coverage_level":"gold"}},{"id":"sr:season:10700","name":"Super
+        Cup 2015","statistics":{"matches_played":1,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2015-08-17T19:17:55+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:213","name":"Super
+        Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:10700","scheduled":2,"played":2,"max_coverage_level":"gold","max_covered":2,"min_coverage_level":"gold"}},{"id":"sr:season:12140","name":"Club
+        World Cup 2015","statistics":{"matches_played":2,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2015-12-20T09:43:41+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:357","name":"Club
+        World Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"season_coverage_info":{"season_id":"sr:season:12140","scheduled":8,"played":8,"max_coverage_level":"gold","max_covered":8,"min_coverage_level":"gold"}},{"id":"sr:season:33321","name":"Super
+        Cup 2016","statistics":{"matches_played":2,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2016-08-17T20:17:50+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:213","name":"Super
+        Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:33321","scheduled":2,"played":2,"max_coverage_level":"gold","max_covered":2,"min_coverage_level":"gold"}},{"id":"sr:season:35800","name":"FA
+        Cup 16\/17","statistics":{"matches_played":4,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2017-04-23T13:36:56+00:00"},"team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},"tournament":{"id":"sr:tournament:19","name":"FA
+        Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"season_coverage_info":{"season_id":"sr:season:35800","scheduled":161,"played":159,"max_coverage_level":"platinum","max_covered":3,"min_coverage_level":"silver"}},{"id":"sr:season:41116","name":"EFL
+        Cup 17\/18","statistics":{"matches_played":1,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2017-09-20T18:05:24+00:00"},"team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},"tournament":{"id":"sr:tournament:21","name":"EFL
+        Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"season_coverage_info":{"season_id":"sr:season:41116","scheduled":85,"played":77,"max_coverage_level":"gold","max_covered":8,"min_coverage_level":"silver"}},{"id":"sr:season:10982","name":"Joan
+        Gamper Trophy 2015","statistics":{"matches_played":1,"substituted_in":1,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2015-08-05T21:44:17+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:2276","name":"Joan
+        Gamper Trophy","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"season_coverage_info":{"season_id":"sr:season:10982","scheduled":1,"played":1,"max_coverage_level":"gold","max_covered":1,"min_coverage_level":"gold"}},{"id":"sr:season:1487","name":"World
+        Cup 2006, Qualification","statistics":{"matches_played":2,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2005-10-13T00:37:01+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:295","name":"WC
+        Qual, CONMEBOL","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}}},{"id":"sr:season:102","name":"Primera
+        Division 06\/07","statistics":{"matches_played":29,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":3,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2007-05-27T14:46:47+00:00"},"team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}}},{"id":"sr:season:2253","name":"Liga
+        Adelante 09\/10","statistics":{"matches_played":0,"substituted_in":0,"substituted_out":0,"goals_scored":1,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2010-02-14T11:46:01+00:00"},"team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"tournament":{"id":"sr:tournament:54","name":"LaLiga
+        2","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:2253","scheduled":466,"played":462,"max_coverage_level":"silver","max_covered":461,"min_coverage_level":"bronze"}},{"id":"sr:season:2896","name":"Liga
+        BBVA 10\/11","statistics":{"matches_played":38,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":1,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2011-05-21T19:33:48+00:00"},"team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:2896","scheduled":380,"played":380,"max_coverage_level":"silver","max_covered":380,"min_coverage_level":"silver"}},{"id":"sr:season:3502","name":"Primera
+        Division 11\/12","statistics":{"matches_played":37,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":1,"yellow_red_cards":1,"red_cards":0,"last_event_time":"2012-05-12T17:23:43+00:00"},"team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:3502","scheduled":391,"played":390,"max_coverage_level":"silver","max_covered":390,"min_coverage_level":"silver"}},{"id":"sr:season:3554","name":"World
+        Cup 2014, Qualification","statistics":{"matches_played":7,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":1,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2013-10-15T23:25:43+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:295","name":"WC
+        Qual, CONMEBOL","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:3554","scheduled":72,"played":72,"max_coverage_level":"silver","max_covered":72,"min_coverage_level":"silver"}},{"id":"sr:season:4959","name":"Primera
+        Division 12\/13","statistics":{"matches_played":31,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2013-06-01T18:39:53+00:00"},"team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:4959","scheduled":381,"played":381,"max_coverage_level":"silver","max_covered":381,"min_coverage_level":"silver"}},{"id":"sr:season:6559","name":"Primera
+        Division 13\/14","statistics":{"matches_played":37,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":3,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2014-05-18T09:31:33+00:00"},"team":{"id":"sr:competitor:2824","name":"Real
+        Sociedad","country":"Spain","country_code":"ESP","abbreviation":"RSO"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:6559","scheduled":382,"played":380,"max_coverage_level":"silver","max_covered":380,"min_coverage_level":"silver"}},{"id":"sr:season:8578","name":"Primera
+        Division 14\/15","statistics":{"matches_played":37,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":1,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2015-05-23T15:28:12+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:8578","scheduled":381,"played":380,"max_coverage_level":"gold","max_covered":380,"min_coverage_level":"gold"}},{"id":"sr:season:10692","name":"Primera
+        Division 15\/16","statistics":{"matches_played":32,"substituted_in":0,"substituted_out":1,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2016-04-30T20:14:03+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:10692","scheduled":381,"played":380,"max_coverage_level":"gold","max_covered":378,"min_coverage_level":"silver"}},{"id":"sr:season:10872","name":"WC
+        Qualification 2018","statistics":{"matches_played":14,"substituted_in":0,"substituted_out":1,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":3,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2017-10-10T22:54:00+00:00"},"team":{"id":"sr:competitor:4754","name":"Chile","country":"Chile","country_code":"CHL","abbreviation":"CHI"},"tournament":{"id":"sr:tournament:295","name":"WC
+        Qual, CONMEBOL","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:4","name":"International"}},"season_coverage_info":{"season_id":"sr:season:10872","scheduled":90,"played":90,"max_coverage_level":"platinum","max_covered":5,"min_coverage_level":"silver"}},{"id":"sr:season:32887","name":"Premier
+        League 16\/17","statistics":{"matches_played":22,"substituted_in":0,"substituted_out":1,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2017-04-27T20:35:30+00:00"},"team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"season_coverage_info":{"season_id":"sr:season:32887","scheduled":400,"played":391,"max_coverage_level":"platinum","max_covered":379,"min_coverage_level":"silver"}},{"id":"sr:season:33529","name":"LaLiga
+        16\/17","statistics":{"matches_played":1,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2016-08-20T15:20:54+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:8","name":"LaLiga","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:32","name":"Spain","country_code":"ESP"}},"season_coverage_info":{"season_id":"sr:season:33529","scheduled":383,"played":382,"max_coverage_level":"platinum","max_covered":373,"min_coverage_level":"silver"}},{"id":"sr:season:32871","name":"Int.
+        Champions Cup 2016","statistics":{"matches_played":1,"substituted_in":1,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2016-08-06T17:24:07+00:00"},"team":{"id":"sr:competitor:2817","name":"FC
+        Barcelona","country":"Spain","country_code":"ESP","abbreviation":"FCB"},"tournament":{"id":"sr:tournament:1337","name":"Int.
+        Champions Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"season_coverage_info":{"season_id":"sr:season:32871","scheduled":21,"played":21,"max_coverage_level":"platinum","max_covered":8,"min_coverage_level":"silver"}},{"id":"sr:season:33051","name":"UEFA
+        Champions League 16\/17","statistics":{"matches_played":4,"substituted_in":0,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":1,"last_event_time":"2016-11-23T19:03:40+00:00"},"team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"season_coverage_info":{"season_id":"sr:season:33051","scheduled":223,"played":224,"max_coverage_level":"platinum","max_covered":145,"min_coverage_level":"bronze"}},{"id":"sr:season:40942","name":"Premier
+        League 17\/18","statistics":{"matches_played":1,"substituted_in":1,"substituted_out":0,"goals_scored":0,"assists":0,"own_goals":0,"yellow_cards":0,"yellow_red_cards":0,"red_cards":0,"last_event_time":"2017-10-21T13:01:57+00:00"},"team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"season_coverage_info":{"season_id":"sr:season:40942","scheduled":381,"played":90,"max_coverage_level":"platinum","max_covered":90,"min_coverage_level":"platinum"}}],"totals":{"matches_played":341,"substituted_in":3,"substituted_out":3,"goals_scored":1,"assists":0,"own_goals":0,"yellow_cards":16,"yellow_red_cards":1,"red_cards":1,"last_event_time":"2017-10-21T13:01:57+00:00"}}}'
+    http_version: 
+  recorded_at: Tue, 24 Oct 2017 18:44:50 GMT
+recorded_with: VCR 3.0.3

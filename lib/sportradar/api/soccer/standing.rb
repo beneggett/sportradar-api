@@ -10,7 +10,7 @@ module Sportradar
           @api          = opts[:api]
           @league_group = league_group || data['league_group'] || @api&.league_group
 
-          @teams_hash = {}
+          @groups_hash = {}
 
           update(data, **opts)
         end
@@ -19,18 +19,25 @@ module Sportradar
           @type           = data['type']
           @tie_break_rule = data['tie_break_rule'] if data['tie_break_rule']
 
-          if group_data = data.dig('groups', 0, 'team_standings') # this should be looked into more, see if there's ever more than 1 item in the array
-            team_data = group_data.map { |hash| hash['team'] }
-            create_data(@teams_hash, team_data, klass: Team, api: api)
+          if data['groups']
+            create_data(@groups_hash, data['groups'], klass: TeamGroup, api: api, identifier: 'name')
           end
         end
 
+        def groups(name = nil)
+          @groups_hash.values
+        end
+
+        def group(name = nil) # nil represents the complete team listing
+          @groups_hash[name]
+        end
+
         def teams
-          @teams_hash.values
+          @groups_hash.values.flat_map(&:teams)
         end
 
         def team(id)
-          @teams_hash[id]
+          @groups_hash.values.flat_map(&:teams).detect { |team| team.id == id }
         end
 
         def api

@@ -4,6 +4,7 @@ module Sportradar
       class Player < Data
 
         attr_reader :id, :league_group, :name, :type, :nationality, :country_code, :height, :weight, :jersey_number, :preferred_foot, :stats, :date_of_birth, :matches_played
+        alias :position :type
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
@@ -18,7 +19,13 @@ module Sportradar
           @id             = data['id']             if data['id']
           @league_group = opts[:league_group] || data['league_group'] || @league_group
 
+          if data['player']
+            update(data['player'])
+          end
+
           @name           = data['name']           if data['name']
+          @last_name      = data['last_name']      if data['last_name']
+          @first_name     = data['first_name']     if data['first_name']
           @type           = data['type']           if data['type']
           @nationality    = data['nationality']    if data['nationality']
           @country_code   = data['country_code']   if data['country_code']
@@ -31,6 +38,10 @@ module Sportradar
           @stats          = data['statistics']     if data['statistics']
 
           @date_of_birth  = Date.parse(data['date_of_birth']) if data['date_of_birth']
+        end
+
+        def display_name
+          @name || [@first_name, @last_name].join(' ')
         end
 
         def api

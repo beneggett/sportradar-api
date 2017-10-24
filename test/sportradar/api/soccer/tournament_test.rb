@@ -42,6 +42,21 @@ class Sportradar::Api::Soccer::TournamentTest < Minitest::Test
     end
   end
 
+  def test_it_has_info
+    VCR.use_cassette("soccer/#{@tournament.api.content_format}/tournament/info") do
+      res = @tournament.get_info
+      assert_equal 1, @tournament.groups.size
+      assert_instance_of Sportradar::Api::Soccer::TeamGroup, @tournament.groups.first
+      refute @tournament.group.name
+    end
+  end
+
+  def test_it_has_leaders
+    VCR.use_cassette("soccer/#{@tournament.api.content_format}/tournament/leaders") do
+      res = @tournament.get_leaders
+    end
+  end
+
   def test_it_has_live_standings
     VCR.use_cassette("soccer/#{@tournament.api.content_format}/tournament/live_standings") do
       res = @tournament.get_live_standings

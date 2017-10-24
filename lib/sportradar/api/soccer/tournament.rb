@@ -15,6 +15,7 @@ module Sportradar
           @seasons_hash   = {}
           @teams_hash     = {}
           @standings_hash = {}
+          @groups_hash    = {}
 
           update(data, **opts)
         end
@@ -26,6 +27,7 @@ module Sportradar
 
           @category = data['category'] || @category
 
+          parse_info(data)
           parse_season(data)
           parse_results(data)
           parse_schedule(data)
@@ -44,12 +46,26 @@ module Sportradar
           end
         end
 
+        def groups
+          @groups_hash.values
+        end
+
+        def group(name = nil) # nil represents the complete team listing
+          @groups_hash[name]
+        end
+
         def matches
           @matches_hash.values
         end
         alias :games :matches
 
         # parsing helpers
+        def parse_info(data)
+          if data['groups']
+            create_data(@groups_hash, data['groups'], klass: TeamGroup, api: api, identifier: 'name')
+          end
+        end
+
         def parse_season(data)
           if data['season_coverage_info']
             data['season_coverage_info']['id'] ||= data['season_coverage_info'].delete('season_id')
@@ -217,4 +233,11 @@ tour.get_results
 res = tour.get_schedule
 tour.matches.size
 tour
+
+group = Sportradar::Api::Soccer::Group.new(league_group: 'eu')
+res = group.get_tournaments;
+infos = group.tournaments.map{|tour| sleep 1; tour.get_info }
+standings = group.tournaments.map{|tour| sleep 1; tour.get_standings }
+standings = group.tournaments.map{|tour| sleep 1; (tour.get_standings rescue nil) }
+
 
