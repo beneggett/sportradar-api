@@ -161,7 +161,7 @@ module Sportradar
         end
 
         def path_facts
-          "#{ path_base }/facts"
+          "#{ path_base }/funfacts"
         end
         def get_facts
           data = api.get_data(path_facts).to_h

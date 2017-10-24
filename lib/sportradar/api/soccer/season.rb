@@ -17,6 +17,7 @@ module Sportradar
           @league_group       = opts[:league_group] || data['league_group'] || @league_group
           @id                 = data['id'] || data['season_id'] || @id
           @current            = opts[:current] || @current
+          get_tournament_id(data, **opts)
 
           @name               = data['name']                || @name
           @start_date         = data['start_date']          || @start_date

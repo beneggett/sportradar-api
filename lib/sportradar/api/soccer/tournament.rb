@@ -238,6 +238,7 @@ group = Sportradar::Api::Soccer::Group.new(league_group: 'eu')
 res = group.get_tournaments;
 infos = group.tournaments.map{|tour| sleep 1; tour.get_info }
 standings = group.tournaments.map{|tour| sleep 1; tour.get_standings }
+results = group.tournaments.each{|tour| sleep 1; tour.get_results }.flat_map(&:matches)
 standings = group.tournaments.map{|tour| sleep 1; (tour.get_standings rescue nil) }
 
 
