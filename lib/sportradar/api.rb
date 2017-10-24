@@ -92,4 +92,20 @@ module Sportradar
     end
 
   end
+
+  def self.ordinalize_period(i)
+    case i
+    when 1
+      '1st'
+    when 2
+      '2nd'
+    when 3
+      '3rd'
+    when nil
+      ''
+    else
+      "#{i}th"
+    end
+  end
+
 end

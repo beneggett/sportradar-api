@@ -11,8 +11,10 @@ module Sportradar
           @name         = data["name"]
           @league_group = league_group || data['league_group'] || @api&.league_group
 
-          @matches_hash = {}
-          @seasons_hash = {}
+          @matches_hash   = {}
+          @seasons_hash   = {}
+          @teams_hash     = {}
+          @standings_hash = {}
 
           update(data, **opts)
         end
@@ -22,15 +24,24 @@ module Sportradar
             update(data['tournament'])
           end
 
-          @category             = data['category']             || @category
+          @category = data['category'] || @category
 
           parse_season(data)
           parse_results(data)
           parse_schedule(data)
+          parse_standings(data)
         end
 
         def seasons
           @seasons_hash.values
+        end
+
+        def standings(type = nil)
+          if type
+            @standings_hash[type]
+          else
+            @standings_hash.values
+          end
         end
 
         def matches
@@ -47,7 +58,9 @@ module Sportradar
           if data['current_season']
             create_data(@seasons_hash, data['current_season'], klass: Season, api: api, current: true)
           end
-          create_data(@seasons_hash, data['seasons'], klass: Season, api: api) if data['seasons']
+          if data['seasons']
+            create_data(@seasons_hash, data['seasons'], klass: Season, api: api)
+          end
         end
 
         def parse_results(data)
@@ -60,6 +73,12 @@ module Sportradar
         def parse_schedule(data)
           if data['sport_events']
             create_data(@matches_hash, data['sport_events'], klass: Match, api: api)
+          end
+        end
+
+        def parse_standings(data)
+          if data['standings']
+            create_data(@standings_hash, data['standings'], klass: Standing, api: api, identifier: 'type')
           end
         end
 

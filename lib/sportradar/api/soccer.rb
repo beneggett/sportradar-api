@@ -1,6 +1,7 @@
 require_relative 'soccer/api'
 require_relative 'soccer/group'
 require_relative 'soccer/tournament'
+require_relative 'soccer/standing'
 require_relative 'soccer/season'
 require_relative 'soccer/match'
 require_relative 'soccer/event'

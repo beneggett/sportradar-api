@@ -216,6 +216,15 @@ module Sportradar
             "#{clock} #{period_display}"
           end
         end
+        def period_display_long
+          if period > 5
+            "Overtime #{period - 4}"
+          elsif period == 5
+            'Overtime'
+          else
+            "#{Sportradar.ordinalize_period(period)} Quarter"
+          end
+        end
         def period_display
           if period > 5
             "#{period - 4}OT"

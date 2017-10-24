@@ -329,18 +329,7 @@ module Sportradar
         end
 
         def ordinalize_inning(i)
-          case i
-          when 1
-            '1st'
-          when 2
-            '2nd'
-          when 3
-            '3rd'
-          when nil
-            ''
-          else
-            "#{i}th"
-          end
+          Sportradar.ordinalize_period(i)
         end
 
         def half_word

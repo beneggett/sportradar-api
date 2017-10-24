@@ -19,7 +19,7 @@ class Sportradar::Api::Soccer::TournamentTest < Minitest::Test
 
   def test_it_has_seasons
     VCR.use_cassette("soccer/#{@tournament.api.content_format}/tournament/seasons") do
-      @tournament.get_seasons
+      res = @tournament.get_seasons
       assert_equal 25, @tournament.seasons.size
       assert_instance_of Sportradar::Api::Soccer::Season, @tournament.seasons.first
     end
@@ -27,7 +27,7 @@ class Sportradar::Api::Soccer::TournamentTest < Minitest::Test
 
   def test_it_has_a_schedule
     VCR.use_cassette("soccer/#{@tournament.api.content_format}/tournament/schedule") do
-      @tournament.get_schedule
+      res = @tournament.get_schedule
       assert_equal 380, @tournament.matches.size
       assert_instance_of Sportradar::Api::Soccer::Match, @tournament.matches.first
     end
@@ -35,10 +35,21 @@ class Sportradar::Api::Soccer::TournamentTest < Minitest::Test
 
   def test_it_has_results
     VCR.use_cassette("soccer/#{@tournament.api.content_format}/tournament/results") do
-      @tournament.get_results
+      res = @tournament.get_results
       assert_equal 70, @tournament.matches.size
       assert_instance_of Sportradar::Api::Soccer::Match, @tournament.matches.first
       assert_equal "sr:competitor:6", @tournament.matches[2].winner_id
+    end
+  end
+
+  def test_it_has_live_standings
+    VCR.use_cassette("soccer/#{@tournament.api.content_format}/tournament/live_standings") do
+      res = @tournament.get_live_standings
+      assert_equal 3, @tournament.standings.size
+      assert_instance_of Sportradar::Api::Soccer::Standing, @tournament.standings.first
+      assert_instance_of Sportradar::Api::Soccer::Standing, @tournament.standings('total')
+      assert_equal 'total', @tournament.standings('total').type
+      assert_instance_of Sportradar::Api::Soccer::Team, @tournament.standings('total').teams.first
     end
   end
 

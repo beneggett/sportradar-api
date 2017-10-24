@@ -2,9 +2,10 @@ module Sportradar
   module Api
     module Soccer
       class Team < Data
-        attr_reader :id, :league_group, :name, :country, :country_code, :abbreviation, :qualifier, :tournament_id, :venue
+        attr_accessor :tournament_id
+        attr_reader :id, :league_group, :name, :country, :country_code, :abbreviation, :qualifier, :venue
         alias :alias :abbreviation
-        attr_reader :team_statistics, :player_statistics, :jerseys, :manager, :statistics
+        attr_reader :team_statistics, :jerseys, :manager, :statistics
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
@@ -36,9 +37,9 @@ module Sportradar
           @venue        = Venue.new(data['venue'])  if data['venue']
 
           create_data(@players_hash, data['players'], klass: Player, api: api, team: self) if data['players']
+          create_data(@players_hash, data['player_statistics'], klass: Player, api: api, team: self) if data['player_statistics']
 
           # TODO team statistics
-          @player_statistics  = data['player_statistics'] if data['player_statistics']
           @team_statistics    = data['team_statistics']   if data['team_statistics']
 
           create_data(@matches_hash, Soccer.parse_results(data['results']), klass: Match, api: api, team: self) if data['results']
