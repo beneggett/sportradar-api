@@ -80,7 +80,7 @@ module Sportradar
           def update(data, **opts)
             @event_type  = data['event_type']  # "lineupchange",
             @clock       = data['clock']       # "12:00",
-            @updated     = data['updated']     # "2016-10-26T00:07:52+00:00",
+            @updated     = Time.parse(data['updated']) if data['updated']     # "2016-10-26T00:07:52+00:00",
             @description = data['description'] # "Cavaliers lineup change (Richard Jefferson, Kyrie Irving, Mike Dunleavy, Channing Frye, LeBron James)",
             @attribution = data['attribution'] # {"name"=>"Cavaliers", "market"=>"Cleveland", "id"=>"583ec773-fb46-11e1-82cb-f4ce4684ea4c", "team_basket"=>"left"},
             @team_id     = data.dig('attribution', "id")

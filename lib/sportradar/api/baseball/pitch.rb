@@ -25,6 +25,7 @@ module Sportradar
           end
           @description  = data['description']   if data['description']
           @status       = data['status']        if data['status']
+          @created_at   = data['created_at']    if data['created_at']
 
           parse_hit(data)
           parse_runners(data['runners'])        if data['runners']
@@ -34,6 +35,10 @@ module Sportradar
           parse_warming_up(data['warming_up'])  if data['warming_up']
           parse_fielders(data['fielders'])      if data['fielders']
           parse_errors(data['errors'])          if data['errors']
+        end
+
+        def updated
+          @created_at
         end
 
         def pitches

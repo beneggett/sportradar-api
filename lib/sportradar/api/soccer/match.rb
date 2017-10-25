@@ -4,7 +4,7 @@ module Sportradar
       class Match < Data
         attr_reader :id, :league_group, :scheduled, :start_time_tbd, :status, :tournament_round, :match_status, :venue
         attr_reader :home_score, :away_score, :winner_id, :aggregate_home_score, :aggregate_away_score, :aggregate_winner_id
-        attr_reader :referee, :weather_info, :coverage_info
+        attr_reader :referee, :weather_info, :coverage_info, :probabilities
         attr_reader :home, :away, :tournament_id
 
         def initialize(data = {}, league_group: nil, **opts)

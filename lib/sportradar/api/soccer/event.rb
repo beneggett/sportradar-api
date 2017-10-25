@@ -31,6 +31,10 @@ module Sportradar
           @player         = OpenStruct.new(data['player'])      if data['player'] # red/yellow cards
         end
 
+        def updated_at
+          @time
+        end
+
         def minute
           @match_time
         end

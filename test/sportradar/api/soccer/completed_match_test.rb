@@ -45,6 +45,13 @@ class Sportradar::Api::Soccer::CompletedMatchTest < Minitest::Test
     assert_instance_of Sportradar::Api::Soccer::Lineup, @match.lineups('home')
   end
 
+  def test_it_gets_probabilities
+    VCR.use_cassette("soccer/#{@match.api.content_format}/match/completed_probabilities") do
+      @match.get_probabilities
+      assert_includes @match.probabilities, 'markets'
+    end
+  end
+
   def get_timeline
     VCR.use_cassette("soccer/#{@match.api.content_format}/match/completed_timeline") do
       @match.get_timeline

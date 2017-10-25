@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/matches/sr:match:11854838/probabilities.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=30, public, s-maxage=30
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Oct 2017 21:06:02 GMT
+      Etag:
+      - W/"7993b3609b537056f7e76fc5c5eba4d6"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-119.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '433'
+      X-Sbe:
+      - berilia_prod_web1
+      X-Srv:
+      - berilia-prod-varnish1.ch.sportradar.ag
+      X-Varnish:
+      - '17502579'
+      X-Version-Instance:
+      - "/current"
+      Content-Length:
+      - '1398'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-25T21:06:02+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/match_probabilities.json","sport_event":{"id":"sr:match:11854838","scheduled":"2017-07-19T17:30:00+00:00","start_time_tbd":false,"tournament_round":{"type":"qualification","name":"cupqround","cup_round_match_number":2,"cup_round_matches":2,"other_match_id":"sr:match:11854798"},"season":{"id":"sr:season:41198","name":"UEFA
+        Champions League 17\/18","start_date":"2017-06-27","end_date":"2018-05-27","year":"17\/18","tournament_id":"sr:tournament:7"},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"competitors":[{"id":"sr:competitor:1284","name":"FC Copenhagen","country":"Denmark","country_code":"DNK","abbreviation":"FCC","qualifier":"home"},{"id":"sr:competitor:2402","name":"MSK
+        Zilina","country":"Slovakia","country_code":"SVK","abbreviation":"ZIL","qualifier":"away"}],"venue":{"id":"sr:venue:936","name":"Parken","capacity":38065,"city_name":"Copenhagen","country_name":"Denmark","map_coordinates":"55.702712,12.572275","country_code":"DNK"}},"probabilities":{"markets":[{"name":"3way","outcomes":[{"name":"home_team_winner","probability":68.8},{"name":"away_team_winner","probability":12.8},{"name":"draw","probability":18.4}]}]}}'
+    http_version: 
+  recorded_at: Wed, 25 Oct 2017 21:06:02 GMT
+recorded_with: VCR 3.0.3
