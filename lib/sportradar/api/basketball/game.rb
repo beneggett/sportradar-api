@@ -204,13 +204,16 @@ module Sportradar
             'Final'
           elsif postponed?
             'Postponed'
-          # elsif halftime?
-          #   'Halftime'
+          elsif halftime?
+            'Halftime'
           else
             clock_display
           end
         end
 
+        def halftime?
+          clock == '0:00' && quarter == 2
+        end
         def clock_display
           if clock && period
             "#{clock} #{period_display}"
