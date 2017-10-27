@@ -8,7 +8,6 @@ module Sportradar
           @response     = data
           @id           = data["id"]
           @api          = opts[:api]
-          @name         = data["name"]
           @league_group = league_group || data['league_group'] || @api&.league_group
 
           @matches_hash   = {}
@@ -25,6 +24,7 @@ module Sportradar
             update(data['tournament'])
           end
 
+          @name     = data["name"]
           @category = data['category'] || @category
 
           parse_info(data)
@@ -62,39 +62,39 @@ module Sportradar
         # parsing helpers
         def parse_info(data)
           if data['groups']
-            create_data(@groups_hash, data['groups'], klass: TeamGroup, api: api, identifier: 'name')
+            create_data(@groups_hash, data['groups'], klass: TeamGroup, api: api, tournament: self, identifier: 'name')
           end
         end
 
         def parse_season(data)
           if data['season_coverage_info']
             data['season_coverage_info']['id'] ||= data['season_coverage_info'].delete('season_id')
-            create_data(@seasons_hash, data['season_coverage_info'], klass: Season, api: api)
+            create_data(@seasons_hash, data['season_coverage_info'], klass: Season, api: api, tournament: self)
           end
           if data['current_season']
-            create_data(@seasons_hash, data['current_season'], klass: Season, api: api, current: true)
+            create_data(@seasons_hash, data['current_season'], klass: Season, api: api, tournament: self, current: true)
           end
           if data['seasons']
-            create_data(@seasons_hash, data['seasons'], klass: Season, api: api)
+            create_data(@seasons_hash, data['seasons'], klass: Season, api: api, tournament: self)
           end
         end
 
         def parse_results(data)
           if data['results']
             merged_data = Soccer.parse_results(data['results'])
-            create_data(@matches_hash, merged_data, klass: Match, api: api)
+            create_data(@matches_hash, merged_data, klass: Match, api: api, tournament: self)
           end
         end
 
         def parse_schedule(data)
           if data['sport_events']
-            create_data(@matches_hash, data['sport_events'], klass: Match, api: api)
+            create_data(@matches_hash, data['sport_events'], klass: Match, api: api, tournament: self)
           end
         end
 
         def parse_standings(data)
           if data['standings']
-            create_data(@standings_hash, data['standings'], klass: Standing, api: api, identifier: 'type')
+            create_data(@standings_hash, data['standings'], klass: Standing, api: api, tournament: self, identifier: 'type')
           end
         end
 
@@ -210,6 +210,42 @@ module Sportradar
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_leaders)}
         end
 
+        def self.tournament_ids
+          @tournament_ids ||= {
+            # Europe group
+            'eu.uefa_champions_league'  => "sr:tournament:7",
+            'eu.la_liga'                => "sr:tournament:8",
+            'eu.eng_premier_league'     => "sr:tournament:17",
+            'eu.serie_a'                => "sr:tournament:23",
+            'eu.ligue_1'                => "sr:tournament:34",
+            'eu.bundesliga'             => "sr:tournament:35",
+            'eu.eredivisie'             => "sr:tournament:37",
+            'eu.first_division_a'       => "sr:tournament:38",
+            'eu.super_lig'              => "sr:tournament:52",
+            'eu.super_league'           => "sr:tournament:185",
+            'eu.rus_premier_league'     => "sr:tournament:203",
+            'eu.ukr_premier_league'     => "sr:tournament:218",
+            'eu.primeira_liga'          => "sr:tournament:238",
+            'eu.uefa_super_cup'         => "sr:tournament:465",
+            'eu.uefa_europa_league'     => "sr:tournament:679",
+            'eu.uefa_youth_league'      => "sr:tournament:2324",
+            # international (partial listing)
+            "intl.world_cup"              => "sr:tournament:16",
+            "intl.copa_america"           => "sr:tournament:133",
+            "intl.gold_cup"               => "sr:tournament:140",
+            "intl.africa_cup_of_nations"  => "sr:tournament:270",
+            "intl.womens_world_cup"       => "sr:tournament:290",
+            "intl.olympic_games"          => "sr:tournament:436",
+            "intl.olympic_games_women"    => "sr:tournament:437",
+            # other groups below
+          }
+        end
+
+        self.tournament_ids.each do |tour_name, tour_id|
+          group_code, name = tour_name.split('.')
+          define_singleton_method(name) { Sportradar::Api::Soccer::Tournament.new({'id' => tour_id}, league_group: group_code) }
+        end
+
       end
     end
   end
@@ -241,4 +277,32 @@ standings = group.tournaments.map{|tour| sleep 1; tour.get_standings }
 results = group.tournaments.each{|tour| sleep 1; tour.get_results }.flat_map(&:matches)
 standings = group.tournaments.map{|tour| sleep 1; (tour.get_standings rescue nil) }
 
+{"UEFA Champions League"=>"sr:tournament:7",
+ "LaLiga"=>"sr:tournament:8",
+ "Premier League"=>"sr:tournament:218",
+ "Serie A"=>"sr:tournament:23",
+ "Ligue 1"=>"sr:tournament:34",
+ "Bundesliga"=>"sr:tournament:35",
+ "Eredivisie"=>"sr:tournament:37",
+ "First Division A"=>"sr:tournament:38",
+ "Super Lig"=>"sr:tournament:52",
+ "Super League"=>"sr:tournament:185",
+ "Primeira Liga"=>"sr:tournament:238",
+ "UEFA Super Cup"=>"sr:tournament:465",
+ "UEFA Europa League"=>"sr:tournament:679",
+ "UEFA Youth League"=>"sr:tournament:2324"}
 
+sample_leagues = [:la_liga, :eng_premier_league, :bundesliga, :serie_a, :ligue_1]
+tours = sample_leagues.map { |code| Sportradar::Api::Soccer::Tournament.send(code) }
+tours.each{|t| sleep 1; t.get_info }
+teams = tours.flat_map(&:groups).flat_map(&:teams)
+teams.each { |t| sleep 1; t.get_roster }
+
+
+sample_leagues = [:la_liga, :eng_premier_league, :bundesliga, :serie_a, :ligue_1];
+tours = sample_leagues.map { |code| Sportradar::Api::Soccer::Tournament.send(code) };
+tours.each{|t| sleep 1; t.get_info };
+tours.flat_map(&:groups).flat_map(&:teams);
+teams = tours.flat_map(&:groups).flat_map(&:teams);
+teams.each { |t| sleep 1; t.get_roster };
+teams.map {|t| ["#{t.tournament_id} #{t.name}",t.jerseys]}.to_h

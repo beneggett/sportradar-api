@@ -53,7 +53,7 @@ module Sportradar
         end
 
         def allowed_leagues
-          ["eu", "na", "sa", "wc", "as", "af"]
+          ["eu", "am", "as", "intl", "other", "global"]
         end
 
         # def allowed_seasons
