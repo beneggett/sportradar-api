@@ -3,19 +3,54 @@ require 'test_helper'
 class Sportradar::Api::Soccer::TeamTest < Minitest::Test
 
   def setup
-    @attrs = {"id"=>"b78b9f61-0697-4347-a1b6-b7685a130eb1", "name"=>"Salt Lake", "full_name"=>"Real Salt Lake", "alias"=>"SAL", "country_code"=>"USA", "country"=>"United States", "type"=>"team", "reference_id"=>"sr:team:5133", "manager"=> {"id"=>"c0456c5f-51a0-4d12-996f-e3b2a1c7945c", "first_name"=>"Jeff", "last_name"=>"Cassar", "country_code"=>"USA", "country"=>"United States", "birthdate"=>"1974-02-02", "reference_id"=>"sr:manager:539898"}, "roster"=> {"player"=> [{"id"=>"640f8388-9feb-4142-933f-204aecb7ae9f", "first_name"=>"Justen", "last_name"=>"Glad"}] } }
+    data = {"id"=>"sr:competitor:17", "name"=>"Manchester City"}
+    @team = Sportradar::Api::Soccer::Team.new(data, league_group: 'eu')
   end
 
-  def test_it_initializes_a_soccer_team
-    data_object = Sportradar::Api::Soccer::Team.new(@attrs)
-    assert [:name, :full_name, :alias, :country, :country_code, :manager, :players].all? { |e| data_object.attributes.include?(e) }
+  def test_it_initializes_a_team
+    assert_instance_of Sportradar::Api::Soccer::Team, @team
+    assert_equal 'eu', @team.league_group
   end
 
-  def test_it_parses_a_scoring_hash
-    data_object = Sportradar::Api::Soccer::Team.new(@attrs.merge("scoring"=>{"half"=>{"points"=>"0", "number"=>"1"}} ) )
-    assert_equal data_object.first_half_score, "0"
-
+  def test_it_has_players
+    VCR.use_cassette("soccer/#{@team.api.content_format}/team/players") do
+      res = @team.get_roster
+      assert_equal 29, @team.players.size
+      assert_instance_of Sportradar::Api::Soccer::Player, @team.players.first
+    end
   end
 
+  def test_it_has_a_schedule
+    VCR.use_cassette("soccer/#{@team.api.content_format}/team/schedule") do
+      res = @team.get_schedule
+      assert_equal 34, @team.matches.size
+      assert_instance_of Sportradar::Api::Soccer::Match, @team.matches.first
+    end
+  end
+
+  def test_it_has_results
+    VCR.use_cassette("soccer/#{@team.api.content_format}/team/results") do
+      res = @team.get_results
+      assert_equal 10, @team.matches.size
+      assert_instance_of Sportradar::Api::Soccer::Match, @team.matches.first
+      assert_equal "sr:competitor:17", @team.matches[2].winner_id
+    end
+  end
+
+  def test_it_has_statistics
+    VCR.use_cassette("soccer/#{@team.api.content_format}/team/statistics_without_tournament") do
+      assert_raises Sportradar::Api::Error do
+        res = @team.get_statistics
+      end
+    end
+    VCR.use_cassette("soccer/#{@team.api.content_format}/team/statistics") do
+      @team.tournament_id = 'sr:tournament:17'
+      res = @team.get_statistics
+      assert_equal 20, @team.players.size
+      assert_instance_of Sportradar::Api::Soccer::Player, @team.players.first
+      assert_instance_of Hash, @team.players.first.stats
+      assert_equal({"total"=>1, "matches"=>9}, @team.players.first.stats['goals_scored'])
+    end
+  end
 
 end

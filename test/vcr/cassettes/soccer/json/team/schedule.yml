@@ -1,0 +1,231 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/teams/sr:competitor:17/schedule.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=300, public, s-maxage=300
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 23 Oct 2017 22:10:51 GMT
+      Etag:
+      - W/"594534d41cee1b0e22d4ec38064a0e5b"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-118.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '177'
+      X-Sbe:
+      - berilia_prod_web1
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '13034551'
+      X-Version-Instance:
+      - "/current"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-23T22:10:51+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/team_schedule.json","team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},"schedule":[{"id":"sr:match:11280037","scheduled":"1992-08-17T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":1},"season":{"id":"sr:season:39563","name":"Premier
+        League 92\/93","start_date":"1992-08-15","end_date":"1993-05-12","year":"92\/93","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:1","name":"Queens
+        Park Rangers","country":"England","country_code":"ENG","abbreviation":"QPR","qualifier":"away"}]},{"id":"sr:match:12568336","scheduled":"2017-10-24T19:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"cup","name":"round_of_16"},"season":{"id":"sr:season:41116","name":"EFL
+        Cup 17\/18","start_date":"2017-08-07","end_date":"2018-02-28","year":"17\/18","tournament_id":"sr:tournament:21"},"tournament":{"id":"sr:tournament:21","name":"EFL
+        Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:3","name":"Wolverhampton
+        Wanderers","country":"England","country_code":"ENG","abbreviation":"WOL","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830694","scheduled":"2017-10-28T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":10},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:8","name":"West
+        Bromwich Albion","country":"England","country_code":"ENG","abbreviation":"WBA","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:1136","name":"The
+        Hawthorns","capacity":26445,"city_name":"West Bromwich","country_name":"England","map_coordinates":"52.509068,-1.963892","country_code":"ENG"}},{"id":"sr:match:12330556","scheduled":"2017-11-01T19:45:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":4,"group":"F"},"season":{"id":"sr:season:41198","name":"UEFA
+        Champions League 17\/18","start_date":"2017-06-27","end_date":"2018-05-27","year":"17\/18","tournament_id":"sr:tournament:7"},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"competitors":[{"id":"sr:competitor:2714","name":"SSC Napoli","country":"Italy","country_code":"ITA","abbreviation":"NAP","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:872","name":"Stadio
+        San Paolo","capacity":60240,"city_name":"Naples","country_name":"Italy","map_coordinates":"40.827967,14.193008","country_code":"ITA"}},{"id":"sr:match:11830144","scheduled":"2017-11-05T14:15:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":11},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:42","name":"Arsenal","country":"England","country_code":"ENG","abbreviation":"ARS","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830432","scheduled":"2017-11-18T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":12},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:31","name":"Leicester
+        City","country":"England","country_code":"ENG","abbreviation":"LEI","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:2183","name":"King
+        Power Stadium","capacity":32312,"city_name":"Leicester","country_name":"England","map_coordinates":"52.620278,-1.142222","country_code":"ENG"}},{"id":"sr:match:12330560","scheduled":"2017-11-21T19:45:00+00:00","start_time_tbd":true,"status":"not_started","tournament_round":{"type":"group","number":5,"group":"F"},"season":{"id":"sr:season:41198","name":"UEFA
+        Champions League 17\/18","start_date":"2017-06-27","end_date":"2018-05-27","year":"17\/18","tournament_id":"sr:tournament:7"},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:2959","name":"Feyenoord
+        Rotterdam","country":"Netherlands","country_code":"NLD","abbreviation":"FEY","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830730","scheduled":"2017-11-26T16:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":13},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:59","name":"Huddersfield
+        Town","country":"England","country_code":"ENG","abbreviation":"HUD","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:2318","name":"John
+        Smith''s Stadium","capacity":24500,"city_name":"Huddersfield","country_name":"England","map_coordinates":"53.654167,-1.768333","country_code":"ENG"}},{"id":"sr:match:11830140","scheduled":"2017-11-29T20:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":14},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:45","name":"Southampton
+        FC","country":"England","country_code":"ENG","abbreviation":"SOU","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830136","scheduled":"2017-12-03T16:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":15},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:37","name":"West
+        Ham United","country":"England","country_code":"ENG","abbreviation":"WHU","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:12330566","scheduled":"2017-12-06T19:45:00+00:00","start_time_tbd":true,"status":"not_started","tournament_round":{"type":"group","number":6,"group":"F"},"season":{"id":"sr:season:41198","name":"UEFA
+        Champions League 17\/18","start_date":"2017-06-27","end_date":"2018-05-27","year":"17\/18","tournament_id":"sr:tournament:7"},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"competitors":[{"id":"sr:competitor:3313","name":"FC Shakhtar Donetsk","country":"Ukraine","country_code":"UKR","abbreviation":"SHA","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:1189","name":"Metalist
+        Stadium","capacity":38633,"city_name":"Kharkiv","country_name":"Ukraine","map_coordinates":"49.980858,36.261703","country_code":"UKR"}},{"id":"sr:match:11830174","scheduled":"2017-12-10T16:30:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":16},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:35","name":"Manchester
+        United","country":"England","country_code":"ENG","abbreviation":"MUN","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:9","name":"Old
+        Trafford","capacity":75635,"city_name":"Manchester","country_name":"England","map_coordinates":"53.463150,-2.291444","country_code":"ENG"}},{"id":"sr:match:11830546","scheduled":"2017-12-13T19:45:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":17},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:74","name":"Swansea
+        City","country":"England","country_code":"ENG","abbreviation":"SWA","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:1689","name":"Liberty
+        Stadium","capacity":20827,"city_name":"Swansea","country_name":"Wales","map_coordinates":"51.642200,-3.935100","country_code":"WAL"}},{"id":"sr:match:11830152","scheduled":"2017-12-16T17:30:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":18},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:33","name":"Tottenham
+        Hotspur","country":"England","country_code":"ENG","abbreviation":"TOT","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830158","scheduled":"2017-12-23T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":19},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:60","name":"AFC
+        Bournemouth","country":"England","country_code":"ENG","abbreviation":"BOU","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830396","scheduled":"2017-12-27T19:45:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":20},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:39","name":"Newcastle
+        United","country":"England","country_code":"ENG","abbreviation":"NEW","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:765","name":"St
+        James'' Park","capacity":52338,"city_name":"Newcastle upon Tyne","country_name":"England","map_coordinates":"54.975033,-1.615061","country_code":"ENG"}},{"id":"sr:match:11830096","scheduled":"2017-12-31T12:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":21},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:7","name":"Crystal
+        Palace","country":"England","country_code":"ENG","abbreviation":"CRY","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:10","name":"Selhurst
+        Park","capacity":25073,"city_name":"London","country_name":"England","map_coordinates":"51.398333,-0.085556","country_code":"ENG"}},{"id":"sr:match:11830160","scheduled":"2018-01-01T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":22},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:24","name":"Watford
+        FC","country":"England","country_code":"ENG","abbreviation":"WAT","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830470","scheduled":"2018-01-13T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":23},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:44","name":"Liverpool
+        FC","country":"England","country_code":"ENG","abbreviation":"LIV","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:579","name":"Anfield","capacity":54074,"city_name":"Liverpool","country_name":"England","map_coordinates":"53.430622,-2.960919","country_code":"ENG"}},{"id":"sr:match:11830146","scheduled":"2018-01-20T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":24},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:39","name":"Newcastle
+        United","country":"England","country_code":"ENG","abbreviation":"NEW","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830162","scheduled":"2018-01-31T20:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":25},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:8","name":"West
+        Bromwich Albion","country":"England","country_code":"ENG","abbreviation":"WBA","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830056","scheduled":"2018-02-03T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":26},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:6","name":"Burnley
+        FC","country":"England","country_code":"ENG","abbreviation":"BUR","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:806","name":"Turf
+        Moor","capacity":21401,"city_name":"Burnley","country_name":"England","map_coordinates":"53.789167,-2.230278","country_code":"ENG"}},{"id":"sr:match:11830148","scheduled":"2018-02-10T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":27},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:31","name":"Leicester
+        City","country":"England","country_code":"ENG","abbreviation":"LEI","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830360","scheduled":"2018-02-24T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":28},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:42","name":"Arsenal","country":"England","country_code":"ENG","abbreviation":"ARS","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:624","name":"Emirates
+        Stadium","capacity":60272,"city_name":"London","country_name":"England","map_coordinates":"51.555050,-0.108046","country_code":"ENG"}},{"id":"sr:match:11830142","scheduled":"2018-03-03T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":29},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:38","name":"Chelsea
+        FC","country":"England","country_code":"ENG","abbreviation":"CHE","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830018","scheduled":"2018-03-10T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":30},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:29","name":"Stoke
+        City","country":"England","country_code":"ENG","abbreviation":"STK","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:1135","name":"Bet365
+        Stadium","capacity":27740,"city_name":"Stoke","country_name":"England","map_coordinates":"52.988625,-2.174694","country_code":"ENG"}},{"id":"sr:match:11830156","scheduled":"2018-03-17T15:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":31},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:30","name":"Brighton
+        & Hove Albion FC","country":"England","country_code":"ENG","abbreviation":"BHA","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830250","scheduled":"2018-03-31T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":32},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:48","name":"Everton
+        FC","country":"England","country_code":"ENG","abbreviation":"EVE","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:12","name":"Goodison
+        Park","capacity":39571,"city_name":"Liverpool","country_name":"England","map_coordinates":"53.439255,-2.967065","country_code":"ENG"}},{"id":"sr:match:11830134","scheduled":"2018-04-07T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":33},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:35","name":"Manchester
+        United","country":"England","country_code":"ENG","abbreviation":"MUN","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830508","scheduled":"2018-04-14T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":34},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:33","name":"Tottenham
+        Hotspur","country":"England","country_code":"ENG","abbreviation":"TOT","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:8","name":"Wembley
+        Stadium","capacity":90000,"city_name":"London","country_name":"England","map_coordinates":"51.555833,-0.279722","country_code":"ENG"}},{"id":"sr:match:11830154","scheduled":"2018-04-21T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":35},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:74","name":"Swansea
+        City","country":"England","country_code":"ENG","abbreviation":"SWA","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830210","scheduled":"2018-04-28T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":36},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:37","name":"West
+        Ham United","country":"England","country_code":"ENG","abbreviation":"WHU","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:18379","name":"London
+        Stadium","capacity":60000,"city_name":"London","country_name":"England","map_coordinates":"51.538611,-0.016389","country_code":"ENG"}},{"id":"sr:match:11830164","scheduled":"2018-05-05T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":37},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"home"},{"id":"sr:competitor:59","name":"Huddersfield
+        Town","country":"England","country_code":"ENG","abbreviation":"HUD","qualifier":"away"}],"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"}},{"id":"sr:match:11830288","scheduled":"2018-05-13T14:00:00+00:00","start_time_tbd":false,"status":"not_started","tournament_round":{"type":"group","number":38},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"competitors":[{"id":"sr:competitor:45","name":"Southampton
+        FC","country":"England","country_code":"ENG","abbreviation":"SOU","qualifier":"home"},{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI","qualifier":"away"}],"venue":{"id":"sr:venue:2231","name":"St.
+        Mary''s Stadium","capacity":32505,"city_name":"Southampton","country_name":"England","map_coordinates":"50.905833,-1.391111","country_code":"ENG"}}]}'
+    http_version: 
+  recorded_at: Mon, 23 Oct 2017 22:10:50 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/tournaments/sr:tournament:17/info.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=60, public, s-maxage=60
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Oct 2017 18:37:50 GMT
+      Etag:
+      - W/"e9eb3c684373eb9ff3554c2e167aa12c"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-112.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '309'
+      X-Sbe:
+      - berilia_prod_web4
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '14122419'
+      X-Version-Instance:
+      - "/current"
+      Content-Length:
+      - '3134'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-24T18:37:50+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/tournament_info.json","tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"},"current_season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18"}},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"round":{"type":"group","number":9},"season_coverage_info":{"season_id":"sr:season:40942","scheduled":381,"played":90,"max_coverage_level":"platinum","max_covered":90,"min_coverage_level":"platinum"},"coverage_info":{"live_coverage":true},"groups":[{"teams":[{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","abbreviation":"MCI"},{"id":"sr:competitor:35","name":"Manchester
+        United","country":"England","country_code":"ENG","abbreviation":"MUN"},{"id":"sr:competitor:37","name":"West
+        Ham United","country":"England","country_code":"ENG","abbreviation":"WHU"},{"id":"sr:competitor:48","name":"Everton
+        FC","country":"England","country_code":"ENG","abbreviation":"EVE"},{"id":"sr:competitor:45","name":"Southampton
+        FC","country":"England","country_code":"ENG","abbreviation":"SOU"},{"id":"sr:competitor:38","name":"Chelsea
+        FC","country":"England","country_code":"ENG","abbreviation":"CHE"},{"id":"sr:competitor:42","name":"Arsenal","country":"England","country_code":"ENG","abbreviation":"ARS"},{"id":"sr:competitor:39","name":"Newcastle
+        United","country":"England","country_code":"ENG","abbreviation":"NEW"},{"id":"sr:competitor:31","name":"Leicester
+        City","country":"England","country_code":"ENG","abbreviation":"LEI"},{"id":"sr:competitor:44","name":"Liverpool
+        FC","country":"England","country_code":"ENG","abbreviation":"LIV"},{"id":"sr:competitor:33","name":"Tottenham
+        Hotspur","country":"England","country_code":"ENG","abbreviation":"TOT"},{"id":"sr:competitor:8","name":"West
+        Bromwich Albion","country":"England","country_code":"ENG","abbreviation":"WBA"},{"id":"sr:competitor:7","name":"Crystal
+        Palace","country":"England","country_code":"ENG","abbreviation":"CRY"},{"id":"sr:competitor:24","name":"Watford
+        FC","country":"England","country_code":"ENG","abbreviation":"WAT"},{"id":"sr:competitor:29","name":"Stoke
+        City","country":"England","country_code":"ENG","abbreviation":"STK"},{"id":"sr:competitor:6","name":"Burnley
+        FC","country":"England","country_code":"ENG","abbreviation":"BUR"},{"id":"sr:competitor:74","name":"Swansea
+        City","country":"England","country_code":"ENG","abbreviation":"SWA"},{"id":"sr:competitor:30","name":"Brighton
+        & Hove Albion FC","country":"England","country_code":"ENG","abbreviation":"BHA"},{"id":"sr:competitor:60","name":"AFC
+        Bournemouth","country":"England","country_code":"ENG","abbreviation":"BOU"},{"id":"sr:competitor:59","name":"Huddersfield
+        Town","country":"England","country_code":"ENG","abbreviation":"HUD"}]}]}'
+    http_version: 
+  recorded_at: Tue, 24 Oct 2017 18:37:50 GMT
+recorded_with: VCR 3.0.3

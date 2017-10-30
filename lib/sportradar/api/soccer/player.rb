@@ -1,86 +1,73 @@
 module Sportradar
   module Api
-    class Soccer::Player < Data
+    module Soccer
+      class Player < Data
 
-      attr_accessor :id, :first_name, :last_name, :country_code, :country, :reference_id, :full_first_name, :full_last_name, :position, :started, :jersey_number, :tactical_position, :tactical_order, :statistics, :preferred_foot, :birthdate, :height_in, :weight_lb, :height_cm, :weight_kg, :teams, :response, :rank, :total, :statistics, :last_modified
+        attr_reader :id, :league_group, :name, :type, :nationality, :country_code, :height, :weight, :jersey_number, :preferred_foot, :stats, :date_of_birth, :matches_played
+        alias :position :type
 
-      def initialize(data)
-        @response = data
-        @teams = parse_into_array(selector: response["team"], klass: Sportradar::Api::Soccer::Team)  if response["team"]
-        @teams = parse_into_array(selector: response["teams"]["team"], klass: Sportradar::Api::Soccer::Team)  if response["teams"] && response["teams"]["team"]
-        @id = data["id"]
-        @first_name = data["first_name"]
-        @last_name = data["last_name"]
-        @country_code = data["country_code"]
-        @country = data["country"]
-        @reference_id = data["reference_id"]
-        @full_first_name = data["full_first_name"]
-        @full_last_name = data["full_last_name"]
-        @position = data["position"] || primary_team.try(:position)
-        @started = data["started"]
-        @jersey_number = data["jersey_number"] || primary_team.try(:jersey_number)
-        @tactical_position = data["tactical_position"]
-        @tactical_order = data["tactical_order"]
-        @last_modified = data["last_modified"]
+        def initialize(data = {}, league_group: nil, **opts)
+          @response     = data
+          @id           = data['id'] if data['id']
+          @api          = opts[:api]
+          @league_group = league_group || data['league_group'] || @api&.league_group
 
-        # profile
-        @preferred_foot = data["preferred_foot"]
-        @birthdate = data["birthdate"]
-        @height_in = data["height_in"]
-        @weight_lb = data["weight_lb"]
-        @height_cm = data["height_cm"]
-        @weight_kg = data["weight_kg"]
-        @rank = data["rank"]
-        @total = OpenStruct.new data["total"] if data["total"]
-        @statistics = parse_into_array(selector:response["statistics"]["season"], klass: Sportradar::Api::Soccer::Season)  if response["statistics"] &&  response["statistics"]["season"]
-
-      end
-
-      def name
-        [first_name, last_name].join(' ')
-      end
-
-      def full_name
-        full = [full_first_name, full_last_name].join(' ')
-        full == " " ? name : full
-      end
-
-      def position_name
-        positions = {"G" => "Goalie", "D" => "Defender", "M" => "Midfielder", "F" => "Forward", "" => "N/A"}
-        if position
-          positions[position]
-        elsif primary_team.present?
-          positions[primary_team.position]
+          update(data, **opts)
         end
-      end
 
-      def primary_team
-        if teams.count == 1
-          teams.first
-        else
-          teams.find {|team| team.name != team.country_code}
-        end if teams
-      end
+        def update(data, **opts)
+          @id             = data['id']             if data['id']
+          @league_group = opts[:league_group] || data['league_group'] || @league_group
 
+          if data['player']
+            update(data['player'])
+          end
 
-      def tactical_position_name
-        tactical_positions = { "0" => "Unknown", "1" => "Goalkeeper", "2" => "Right Back", "3" => "Central Defender", "4" => "Left Back", "5" => "Right winger", "6" => "Central Midfielder", "7" => "Left Winger", "8" => "Forward" }
-        tactical_positions[tactical_position] if tactical_position
-      end
+          @name           = data['name']           if data['name']
+          @last_name      = data['last_name']      if data['last_name']
+          @first_name     = data['first_name']     if data['first_name']
+          @type           = data['type']           if data['type']
+          @nationality    = data['nationality']    if data['nationality']
+          @country_code   = data['country_code']   if data['country_code']
+          @height         = data['height']         if data['height']
+          @weight         = data['weight']         if data['weight']
+          @jersey_number  = data['jersey_number']  if data['jersey_number']
+          @preferred_foot = data['preferred_foot'] if data['preferred_foot']
+          @matches_played = data['matches_played'] if data['matches_played']
 
-      def age
-        if birthdate.present?
-          now = Time.now.utc.to_date
-          dob = birthdate.to_date
-          now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+          @stats          = data['statistics']     if data['statistics']
+
+          @date_of_birth  = Date.parse(data['date_of_birth']) if data['date_of_birth']
         end
-      end
 
-      def height_ft
-        if height_in.present?
-          feet, inches = height_in.to_i.divmod(12)
-          "#{feet}' #{inches}\""
+        def display_name
+          @name || [@first_name, @last_name].join(' ')
         end
+
+        def api
+          @api || Sportradar::Api::Soccer::Api.new(league_group: @league_group)
+        end
+
+        def path_base
+          "players/#{ id }"
+        end
+
+        def path_profile
+          "#{ path_base }/profile"
+        end
+        def get_profile
+          data = api.get_data(path_profile).to_h
+          ingest_profile(data)
+        end
+        def ingest_profile(data)
+          update(data)
+          data
+        end
+        def queue_profile
+          url, headers, options, timeout = api.get_request_info(path_profile)
+          {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_profile)}
+        end
+
       end
 
     end

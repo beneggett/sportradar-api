@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/tournaments/sr:tournament:17/teams/sr:competitor:17/statistics.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '41'
+      Cache-Control:
+      - max-age=60, public, s-maxage=60
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 23 Oct 2017 22:20:35 GMT
+      Etag:
+      - W/"a8d3de6c6f3acb0811815787f3530327"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-109.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '182'
+      X-Sbe:
+      - berilia_prod_web4
+      X-Shared-Cache:
+      - '1'
+      X-Shared-Cache-Age:
+      - '41'
+      X-Srv:
+      - berilia-prod-varnish1.ch.sportradar.ag
+      X-Varnish:
+      - '12438266'
+      X-Version-Instance:
+      - "/current"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-23T22:20:35+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/tournament_team_statistics.json","tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"},"current_season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18"}},"team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"},"abbreviation":"MCI"},"team_season_coverage":{"scheduled":38,"played":9,"platinum":9},"team_statistics":{"matches_played":9,"matches_won":8,"form":"WWWWWWWDW","goal_attempts":{"total":136,"matches":9},"shots_on_goal":{"total":78,"matches":9},"shots_off_goal":{"total":58,"matches":9},"corner_kicks":{"total":66,"matches":9},"ball_possession":{"total":619,"matches":9},"shots_blocked":{"total":39,"matches":9},"cards_given":{"total":20,"matches":9},"free_kicks":{"total":102,"matches":9},"offsides":{"total":13,"matches":9},"goals_by_foot":{"total":27,"matches":9},"goals_by_head":{"total":4,"matches":9},"goals_scored":{"total":32,"matches":9},"goals_conceded":{"total":4,"matches":9}},"player_statistics":[{"id":"sr:player:11781","name":"Silva,
+        David","matches_played":9,"statistics":{"goals_scored":{"total":1,"matches":9},"cards_given":{"total":1,"matches":9},"offsides":{"total":1,"matches":9},"corner_kicks":{"total":17,"matches":9},"shots_on_goal":{"total":5,"matches":9},"shots_off_goal":{"total":10,"matches":9},"shots_blocked":{"total":4,"matches":9},"assists":{"total":6,"matches":9},"substituted_out":{"total":3,"matches":9},"goal_attempts":{"total":19,"matches":9},"goals_conceded":{"total":4,"matches":9},"clean_sheets":{"total":6,"matches":9}}},{"id":"sr:player:13630","name":"Fernandinho","matches_played":9,"statistics":{"goals_scored":{"total":1,"matches":9},"cards_given":{"total":3,"matches":9},"corner_kicks":{"total":1,"matches":9},"shots_on_goal":{"total":8,"matches":9},"shots_off_goal":{"total":3,"matches":9},"shots_blocked":{"total":2,"matches":9},"substituted_out":{"total":2,"matches":9},"goal_attempts":{"total":13,"matches":9},"goals_conceded":{"total":4,"matches":9},"clean_sheets":{"total":6,"matches":9}}},{"id":"sr:player:24048","name":"Delph,
+        Fabian","matches_played":4,"statistics":{"goals_scored":{"total":1,"matches":4},"shots_on_goal":{"total":2,"matches":4},"shots_blocked":{"total":2,"matches":4},"assists":{"total":1,"matches":4},"substituted_in":{"total":1,"matches":4},"goal_attempts":{"total":4,"matches":4},"goals_conceded":{"total":2,"matches":4},"clean_sheets":{"total":3,"matches":4}}},{"id":"sr:player:70996","name":"De
+        Bruyne, Kevin","matches_played":9,"statistics":{"goals_scored":{"total":1,"matches":9},"offsides":{"total":1,"matches":9},"corner_kicks":{"total":35,"matches":9},"shots_on_goal":{"total":12,"matches":9},"shots_off_goal":{"total":3,"matches":9},"shots_blocked":{"total":5,"matches":9},"assists":{"total":6,"matches":9},"substituted_out":{"total":4,"matches":9},"goal_attempts":{"total":20,"matches":9},"goals_conceded":{"total":4,"matches":9},"clean_sheets":{"total":6,"matches":9}}},{"id":"sr:player:331209","name":"Silva,
+        Bernardo","matches_played":8,"statistics":{"goals_scored":{"total":1,"matches":8},"corner_kicks":{"total":3,"matches":8},"shots_on_goal":{"total":3,"matches":8},"shots_off_goal":{"total":1,"matches":8},"shots_blocked":{"total":1,"matches":8},"substituted_in":{"total":6,"matches":8},"substituted_out":{"total":1,"matches":8},"goal_attempts":{"total":5,"matches":8},"goals_conceded":{"total":1,"matches":8},"clean_sheets":{"total":7,"matches":8}}},{"id":"sr:player:74915","name":"Otamendi,
+        Nicolas","matches_played":9,"statistics":{"goals_scored":{"total":2,"matches":9},"cards_given":{"total":3,"matches":9},"shots_on_goal":{"total":3,"matches":9},"shots_off_goal":{"total":6,"matches":9},"shots_blocked":{"total":3,"matches":9},"goals_by_head":{"total":2,"matches":9},"substituted_out":{"total":1,"matches":9},"goal_attempts":{"total":12,"matches":9},"goals_conceded":{"total":4,"matches":9},"clean_sheets":{"total":6,"matches":9}}},{"id":"sr:player:293519","name":"Sane,
+        Leroy","matches_played":9,"statistics":{"goals_scored":{"total":5,"matches":9},"cards_given":{"total":2,"matches":9},"offsides":{"total":2,"matches":9},"corner_kicks":{"total":10,"matches":9},"shots_on_goal":{"total":7,"matches":9},"shots_off_goal":{"total":4,"matches":9},"shots_blocked":{"total":3,"matches":9},"assists":{"total":4,"matches":9},"substituted_in":{"total":4,"matches":9},"substituted_out":{"total":2,"matches":9},"goal_attempts":{"total":14,"matches":9},"goals_conceded":{"total":3,"matches":9},"clean_sheets":{"total":7,"matches":9}}},{"id":"sr:player:138534","name":"Sterling,
+        Raheem","matches_played":7,"statistics":{"goals_scored":{"total":6,"matches":7},"cards_given":{"total":1,"matches":7},"offsides":{"total":3,"matches":7},"shots_on_goal":{"total":9,"matches":7},"shots_off_goal":{"total":8,"matches":7},"shots_blocked":{"total":5,"matches":7},"assists":{"total":2,"matches":7},"substituted_in":{"total":2,"matches":7},"substituted_out":{"total":1,"matches":7},"goal_attempts":{"total":22,"matches":7},"goals_conceded":{"total":3,"matches":7},"clean_sheets":{"total":5,"matches":7}}},{"id":"sr:player:835751","name":"Jesus,
+        Gabriel","matches_played":8,"statistics":{"goals_scored":{"total":6,"matches":8},"cards_given":{"total":1,"matches":8},"offsides":{"total":5,"matches":8},"shots_on_goal":{"total":10,"matches":8},"shots_off_goal":{"total":6,"matches":8},"shots_blocked":{"total":4,"matches":8},"assists":{"total":1,"matches":8},"goals_by_head":{"total":1,"matches":8},"substituted_in":{"total":1,"matches":8},"substituted_out":{"total":6,"matches":8},"goal_attempts":{"total":20,"matches":8},"goals_conceded":{"total":4,"matches":8},"clean_sheets":{"total":5,"matches":8}}},{"id":"sr:player:17094","name":"Aguero,
+        Sergio","matches_played":7,"statistics":{"goals_scored":{"total":7,"matches":7},"offsides":{"total":1,"matches":7},"shots_on_goal":{"total":14,"matches":7},"shots_off_goal":{"total":12,"matches":7},"shots_blocked":{"total":3,"matches":7},"assists":{"total":3,"matches":7},"goals_by_head":{"total":1,"matches":7},"substituted_in":{"total":1,"matches":7},"substituted_out":{"total":2,"matches":7},"goal_attempts":{"total":29,"matches":7},"goals_conceded":{"total":1,"matches":7},"clean_sheets":{"total":6,"matches":7}}},{"id":"sr:player:124992","name":"Danilo","matches_played":6,"statistics":{"cards_given":{"total":1,"matches":6},"shots_on_goal":{"total":2,"matches":6},"shots_off_goal":{"total":2,"matches":6},"shots_blocked":{"total":1,"matches":6},"substituted_in":{"total":3,"matches":6},"substituted_out":{"total":1,"matches":6},"goal_attempts":{"total":5,"matches":6},"goals_conceded":{"total":1,"matches":6},"clean_sheets":{"total":4,"matches":6}}},{"id":"sr:player:6019","name":"Kompany,
+        Vincent","matches_played":3,"statistics":{"cards_given":{"total":2,"matches":3},"shots_off_goal":{"total":1,"matches":3},"shots_blocked":{"total":1,"matches":3},"goal_attempts":{"total":2,"matches":3},"goal_line_clearances":{"total":2,"matches":3},"interceptions":{"total":8,"matches":3},"passes_short":{"total":5,"successful":5,"matches":3},"passes_medium":{"total":217,"successful":197,"matches":3},"passes_long":{"total":13,"successful":6,"matches":3},"duels_header":{"total":5,"successful":3,"matches":3},"duels_tackle":{"total":18,"successful":9,"matches":3},"goals_conceded":{"total":2,"matches":3},"clean_sheets":{"total":1,"matches":3}}},{"id":"sr:player:139225","name":"Mendy,
+        Benjamin","matches_played":4,"statistics":{"cards_given":{"total":2,"matches":4},"shots_off_goal":{"total":1,"matches":4},"shots_blocked":{"total":2,"matches":4},"assists":{"total":1,"matches":4},"substituted_out":{"total":1,"matches":4},"goal_attempts":{"total":3,"matches":4},"interceptions":{"total":4,"matches":4},"chances_created":{"total":5,"matches":4},"crosses":{"total":28,"successful":8,"matches":4},"passes_short":{"total":17,"successful":16,"matches":4},"passes_medium":{"total":155,"successful":137,"matches":4},"passes_long":{"total":3,"successful":1,"matches":4},"duels_header":{"total":3,"successful":3,"matches":4},"duels_sprint":{"total":4,"successful":2,"matches":4},"duels_tackle":{"total":41,"successful":19,"matches":4},"goals_conceded":{"total":1,"matches":4},"clean_sheets":{"total":3,"matches":4}}},{"id":"sr:player:44614","name":"Walker,
+        Kyle","matches_played":8,"statistics":{"shots_blocked":{"total":1,"matches":8},"own_goals":{"total":1,"matches":8},"assists":{"total":2,"matches":8},"goal_attempts":{"total":1,"matches":8},"goals_conceded":{"total":3,"matches":8},"clean_sheets":{"total":6,"matches":8}}},{"id":"sr:player:152077","name":"Stones,
+        John","matches_played":9,"statistics":{"shots_on_goal":{"total":2,"matches":9},"shots_off_goal":{"total":1,"matches":9},"shots_blocked":{"total":1,"matches":9},"substituted_in":{"total":1,"matches":9},"substituted_out":{"total":2,"matches":9},"goal_attempts":{"total":4,"matches":9},"goals_conceded":{"total":3,"matches":9},"clean_sheets":{"total":6,"matches":9}}},{"id":"sr:player:254491","name":"Ederson","matches_played":9,"statistics":{"substituted_out":{"total":1,"matches":9},"interceptions":{"total":1,"matches":9},"passes_short":{"total":7,"successful":7,"matches":9},"passes_medium":{"total":187,"successful":182,"matches":9},"passes_long":{"total":45,"successful":15,"matches":9},"duels_sprint":{"total":4,"successful":4,"matches":9},"shots_faced":{"total":15,"matches":9}}},{"id":"sr:player:45853","name":"Gundogan,
+        Ilkay","matches_played":4,"statistics":{"shots_blocked":{"total":1,"matches":4},"substituted_in":{"total":4,"matches":4},"goal_attempts":{"total":1,"matches":4},"clean_sheets":{"total":4,"matches":4}}},{"id":"sr:player:42892","name":"Mangala,
+        Eliaquim","matches_played":1,"statistics":{"substituted_in":{"total":1,"matches":1},"clean_sheets":{"total":1,"matches":1}}},{"id":"sr:player:14468","name":"Toure,
+        Yaya","matches_played":2,"statistics":{"substituted_in":{"total":2,"matches":2},"clean_sheets":{"total":2,"matches":2}}},{"id":"sr:player:13249","name":"Bravo,
+        Claudio","matches_played":1,"statistics":{"substituted_in":{"total":1,"matches":1},"passes_medium":{"total":16,"successful":16,"matches":1},"passes_long":{"total":1,"successful":1,"matches":1}}}],"goaltime_statistics":{"scored":{"total":32,"period":[{"name":"0-15","value":0},{"name":"16-30","value":7},{"name":"31-45","value":4},{"name":"46-60","value":5},{"name":"61-75","value":7},{"name":"76-90","value":9}]},"conceded":{"total":4,"period":[{"name":"0-15","value":1},{"name":"16-30","value":0},{"name":"31-45","value":2},{"name":"46-60","value":1},{"name":"61-75","value":0},{"name":"76-90","value":0}]}}}'
+    http_version: 
+  recorded_at: Mon, 23 Oct 2017 22:21:16 GMT
+recorded_with: VCR 3.0.3

@@ -316,7 +316,7 @@ module Sportradar
           if !count.empty?
             inning_half = self.count['inning_half']
             inning = self.count['inning']
-            "#{half_short} #{(inning || 1).ordinalize}"
+            "#{half_short} #{ordinalize_inning(inning || 1)}" # TODO remove AS dependency
           end
         end
 
@@ -324,8 +324,12 @@ module Sportradar
           if !count.empty?
             inning_half = self.count['inning_half']
             inning = self.count['inning']
-            "#{half_word} #{(inning || 1).ordinalize}"
+            "#{half_word} #{ordinalize_inning(inning || 1)}"
           end
+        end
+
+        def ordinalize_inning(i)
+          Sportradar.ordinalize_period(i)
         end
 
         def half_word

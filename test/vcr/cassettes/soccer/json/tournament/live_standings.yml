@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/tournaments/sr:tournament:17/live_standings.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=10, public, s-maxage=10
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 23 Oct 2017 18:07:27 GMT
+      Etag:
+      - W/"2ecd04c5ed6febce229902d9fd25fc86"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1e-117.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '170'
+      X-Sbe:
+      - berilia_prod_web4
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '12515822'
+      X-Version-Instance:
+      - "/current"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-23T18:07:27+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/tournament_live_standings.json","tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"},"current_season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18"}},"season":{"id":"sr:season:40942","name":"Premier
+        League 17\/18","start_date":"2017-08-11","end_date":"2018-05-14","year":"17\/18","tournament_id":"sr:tournament:17"},"standings":[{"tie_break_rule":"In
+        the event that two (or more) teams have an equal number of points, the following
+        rules break the tie:\r\n1. Goal difference\r\n2. Goals scored","type":"total","groups":[{"team_standings":[{"team":{"id":"sr:competitor:17","name":"Manchester
+        City"},"rank":1,"current_outcome":"Champions League","played":9,"win":8,"draw":1,"loss":0,"goals_for":32,"goals_against":4,"goal_diff":28,"points":25},{"team":{"id":"sr:competitor:35","name":"Manchester
+        United"},"rank":2,"current_outcome":"Champions League","played":9,"win":6,"draw":2,"loss":1,"goals_for":22,"goals_against":4,"goal_diff":18,"points":20},{"team":{"id":"sr:competitor:33","name":"Tottenham
+        Hotspur"},"rank":3,"current_outcome":"Champions League","played":9,"win":6,"draw":2,"loss":1,"goals_for":19,"goals_against":6,"goal_diff":13,"points":20},{"team":{"id":"sr:competitor:38","name":"Chelsea
+        FC"},"rank":4,"current_outcome":"Champions League","played":9,"win":5,"draw":1,"loss":3,"goals_for":17,"goals_against":10,"goal_diff":7,"points":16},{"team":{"id":"sr:competitor:42","name":"Arsenal"},"rank":5,"current_outcome":"Europa
+        League","played":9,"win":5,"draw":1,"loss":3,"goals_for":17,"goals_against":12,"goal_diff":5,"points":16},{"team":{"id":"sr:competitor:24","name":"Watford
+        FC"},"rank":6,"played":9,"win":4,"draw":3,"loss":2,"goals_for":15,"goals_against":17,"goal_diff":-2,"points":15},{"team":{"id":"sr:competitor:39","name":"Newcastle
+        United"},"rank":7,"played":9,"win":4,"draw":2,"loss":3,"goals_for":10,"goals_against":8,"goal_diff":2,"points":14},{"team":{"id":"sr:competitor:6","name":"Burnley
+        FC"},"rank":8,"played":9,"win":3,"draw":4,"loss":2,"goals_for":8,"goals_against":9,"goal_diff":-1,"points":13},{"team":{"id":"sr:competitor:44","name":"Liverpool
+        FC"},"rank":9,"played":9,"win":3,"draw":4,"loss":2,"goals_for":14,"goals_against":16,"goal_diff":-2,"points":13},{"team":{"id":"sr:competitor:45","name":"Southampton
+        FC"},"rank":10,"played":9,"win":3,"draw":3,"loss":3,"goals_for":8,"goals_against":9,"goal_diff":-1,"points":12},{"team":{"id":"sr:competitor:59","name":"Huddersfield
+        Town"},"rank":11,"played":9,"win":3,"draw":3,"loss":3,"goals_for":7,"goals_against":10,"goal_diff":-3,"points":12},{"team":{"id":"sr:competitor:30","name":"Brighton
+        & Hove Albion FC"},"rank":12,"played":9,"win":3,"draw":2,"loss":4,"goals_for":9,"goals_against":10,"goal_diff":-1,"points":11},{"team":{"id":"sr:competitor:8","name":"West
+        Bromwich Albion"},"rank":13,"played":9,"win":2,"draw":4,"loss":3,"goals_for":7,"goals_against":10,"goal_diff":-3,"points":10},{"team":{"id":"sr:competitor:31","name":"Leicester
+        City"},"rank":14,"played":9,"win":2,"draw":3,"loss":4,"goals_for":12,"goals_against":14,"goal_diff":-2,"points":9},{"team":{"id":"sr:competitor:74","name":"Swansea
+        City"},"rank":15,"played":9,"win":2,"draw":2,"loss":5,"goals_for":6,"goals_against":10,"goal_diff":-4,"points":8},{"team":{"id":"sr:competitor:37","name":"West
+        Ham United"},"rank":16,"played":9,"win":2,"draw":2,"loss":5,"goals_for":8,"goals_against":17,"goal_diff":-9,"points":8},{"team":{"id":"sr:competitor:29","name":"Stoke
+        City"},"rank":17,"played":9,"win":2,"draw":2,"loss":5,"goals_for":10,"goals_against":20,"goal_diff":-10,"points":8},{"team":{"id":"sr:competitor:48","name":"Everton
+        FC"},"rank":18,"current_outcome":"Relegation","played":9,"win":2,"draw":2,"loss":5,"goals_for":7,"goals_against":18,"goal_diff":-11,"points":8},{"team":{"id":"sr:competitor:60","name":"AFC
+        Bournemouth"},"rank":19,"current_outcome":"Relegation","played":9,"win":2,"draw":1,"loss":6,"goals_for":6,"goals_against":13,"goal_diff":-7,"points":7},{"team":{"id":"sr:competitor:7","name":"Crystal
+        Palace"},"rank":20,"current_outcome":"Relegation","played":9,"win":1,"draw":0,"loss":8,"goals_for":2,"goals_against":19,"goal_diff":-17,"points":3}]}]},{"tie_break_rule":"In
+        the event that two (or more) teams have an equal number of points, the following
+        rules break the tie:\r\n1. Goal difference\r\n2. Goals scored","type":"home","groups":[{"team_standings":[{"team":{"id":"sr:competitor:17","name":"Manchester
+        City"},"rank":1,"played":5,"win":4,"draw":1,"loss":0,"goals_for":21,"goals_against":3,"goal_diff":18,"points":13},{"team":{"id":"sr:competitor:35","name":"Manchester
+        United"},"rank":2,"played":4,"win":4,"draw":0,"loss":0,"goals_for":14,"goals_against":0,"goal_diff":14,"points":12},{"team":{"id":"sr:competitor:42","name":"Arsenal"},"rank":3,"played":4,"win":4,"draw":0,"loss":0,"goals_for":11,"goals_against":3,"goal_diff":8,"points":12},{"team":{"id":"sr:competitor:39","name":"Newcastle
+        United"},"rank":4,"played":5,"win":3,"draw":1,"loss":1,"goals_for":7,"goals_against":4,"goal_diff":3,"points":10},{"team":{"id":"sr:competitor:44","name":"Liverpool
+        FC"},"rank":5,"played":4,"win":2,"draw":2,"loss":0,"goals_for":6,"goals_against":1,"goal_diff":5,"points":8},{"team":{"id":"sr:competitor:33","name":"Tottenham
+        Hotspur"},"rank":6,"played":5,"win":2,"draw":2,"loss":1,"goals_for":7,"goals_against":4,"goal_diff":3,"points":8},{"team":{"id":"sr:competitor:45","name":"Southampton
+        FC"},"rank":7,"played":6,"win":2,"draw":2,"loss":2,"goals_for":6,"goals_against":7,"goal_diff":-1,"points":8},{"team":{"id":"sr:competitor:59","name":"Huddersfield
+        Town"},"rank":8,"played":5,"win":2,"draw":2,"loss":1,"goals_for":4,"goals_against":6,"goal_diff":-2,"points":8},{"team":{"id":"sr:competitor:38","name":"Chelsea
+        FC"},"rank":9,"played":5,"win":2,"draw":1,"loss":2,"goals_for":8,"goals_against":6,"goal_diff":2,"points":7},{"team":{"id":"sr:competitor:30","name":"Brighton
+        & Hove Albion FC"},"rank":10,"played":4,"win":2,"draw":1,"loss":1,"goals_for":5,"goals_against":4,"goal_diff":1,"points":7},{"team":{"id":"sr:competitor:29","name":"Stoke
+        City"},"rank":11,"played":5,"win":2,"draw":1,"loss":2,"goals_for":6,"goals_against":9,"goal_diff":-3,"points":7},{"team":{"id":"sr:competitor:8","name":"West
+        Bromwich Albion"},"rank":12,"played":4,"win":1,"draw":3,"loss":0,"goals_for":4,"goals_against":3,"goal_diff":1,"points":6},{"team":{"id":"sr:competitor:37","name":"West
+        Ham United"},"rank":13,"played":4,"win":2,"draw":0,"loss":2,"goals_for":5,"goals_against":6,"goal_diff":-1,"points":6},{"team":{"id":"sr:competitor:48","name":"Everton
+        FC"},"rank":14,"played":5,"win":2,"draw":0,"loss":3,"goals_for":5,"goals_against":10,"goal_diff":-5,"points":6},{"team":{"id":"sr:competitor:6","name":"Burnley
+        FC"},"rank":15,"played":4,"win":1,"draw":2,"loss":1,"goals_for":2,"goals_against":2,"goal_diff":0,"points":5},{"team":{"id":"sr:competitor:24","name":"Watford
+        FC"},"rank":16,"played":4,"win":1,"draw":2,"loss":1,"goals_for":5,"goals_against":10,"goal_diff":-5,"points":5},{"team":{"id":"sr:competitor:31","name":"Leicester
+        City"},"rank":17,"played":4,"win":1,"draw":1,"loss":2,"goals_for":6,"goals_against":6,"goal_diff":0,"points":4},{"team":{"id":"sr:competitor:60","name":"AFC
+        Bournemouth"},"rank":18,"played":4,"win":1,"draw":1,"loss":2,"goals_for":3,"goals_against":5,"goal_diff":-2,"points":4},{"team":{"id":"sr:competitor:74","name":"Swansea
+        City"},"rank":19,"played":5,"win":1,"draw":0,"loss":4,"goals_for":4,"goals_against":9,"goal_diff":-5,"points":3},{"team":{"id":"sr:competitor:7","name":"Crystal
+        Palace"},"rank":20,"played":4,"win":1,"draw":0,"loss":3,"goals_for":2,"goals_against":7,"goal_diff":-5,"points":3}]}]},{"tie_break_rule":"In
+        the event that two (or more) teams have an equal number of points, the following
+        rules break the tie:\r\n1. Goal difference\r\n2. Goals scored","type":"away","groups":[{"team_standings":[{"team":{"id":"sr:competitor:33","name":"Tottenham
+        Hotspur"},"rank":1,"played":4,"win":4,"draw":0,"loss":0,"goals_for":12,"goals_against":2,"goal_diff":10,"points":12},{"team":{"id":"sr:competitor:17","name":"Manchester
+        City"},"rank":2,"played":4,"win":4,"draw":0,"loss":0,"goals_for":11,"goals_against":1,"goal_diff":10,"points":12},{"team":{"id":"sr:competitor:24","name":"Watford
+        FC"},"rank":3,"played":5,"win":3,"draw":1,"loss":1,"goals_for":10,"goals_against":7,"goal_diff":3,"points":10},{"team":{"id":"sr:competitor:38","name":"Chelsea
+        FC"},"rank":4,"played":4,"win":3,"draw":0,"loss":1,"goals_for":9,"goals_against":4,"goal_diff":5,"points":9},{"team":{"id":"sr:competitor:35","name":"Manchester
+        United"},"rank":5,"played":5,"win":2,"draw":2,"loss":1,"goals_for":8,"goals_against":4,"goal_diff":4,"points":8},{"team":{"id":"sr:competitor:6","name":"Burnley
+        FC"},"rank":6,"played":5,"win":2,"draw":2,"loss":1,"goals_for":6,"goals_against":7,"goal_diff":-1,"points":8},{"team":{"id":"sr:competitor:74","name":"Swansea
+        City"},"rank":7,"played":4,"win":1,"draw":2,"loss":1,"goals_for":2,"goals_against":1,"goal_diff":1,"points":5},{"team":{"id":"sr:competitor:31","name":"Leicester
+        City"},"rank":8,"played":5,"win":1,"draw":2,"loss":2,"goals_for":6,"goals_against":8,"goal_diff":-2,"points":5},{"team":{"id":"sr:competitor:44","name":"Liverpool
+        FC"},"rank":9,"played":5,"win":1,"draw":2,"loss":2,"goals_for":8,"goals_against":15,"goal_diff":-7,"points":5},{"team":{"id":"sr:competitor:45","name":"Southampton
+        FC"},"rank":10,"played":3,"win":1,"draw":1,"loss":1,"goals_for":2,"goals_against":2,"goal_diff":0,"points":4},{"team":{"id":"sr:competitor:39","name":"Newcastle
+        United"},"rank":11,"played":4,"win":1,"draw":1,"loss":2,"goals_for":3,"goals_against":4,"goal_diff":-1,"points":4},{"team":{"id":"sr:competitor:59","name":"Huddersfield
+        Town"},"rank":11,"played":4,"win":1,"draw":1,"loss":2,"goals_for":3,"goals_against":4,"goal_diff":-1,"points":4},{"team":{"id":"sr:competitor:30","name":"Brighton
+        & Hove Albion FC"},"rank":13,"played":5,"win":1,"draw":1,"loss":3,"goals_for":4,"goals_against":6,"goal_diff":-2,"points":4},{"team":{"id":"sr:competitor:42","name":"Arsenal"},"rank":14,"played":5,"win":1,"draw":1,"loss":3,"goals_for":6,"goals_against":9,"goal_diff":-3,"points":4},{"team":{"id":"sr:competitor:8","name":"West
+        Bromwich Albion"},"rank":15,"played":5,"win":1,"draw":1,"loss":3,"goals_for":3,"goals_against":7,"goal_diff":-4,"points":4},{"team":{"id":"sr:competitor:60","name":"AFC
+        Bournemouth"},"rank":16,"played":5,"win":1,"draw":0,"loss":4,"goals_for":3,"goals_against":8,"goal_diff":-5,"points":3},{"team":{"id":"sr:competitor:48","name":"Everton
+        FC"},"rank":17,"played":4,"win":0,"draw":2,"loss":2,"goals_for":2,"goals_against":8,"goal_diff":-6,"points":2},{"team":{"id":"sr:competitor:37","name":"West
+        Ham United"},"rank":18,"played":5,"win":0,"draw":2,"loss":3,"goals_for":3,"goals_against":11,"goal_diff":-8,"points":2},{"team":{"id":"sr:competitor:29","name":"Stoke
+        City"},"rank":19,"played":4,"win":0,"draw":1,"loss":3,"goals_for":4,"goals_against":11,"goal_diff":-7,"points":1},{"team":{"id":"sr:competitor:7","name":"Crystal
+        Palace"},"rank":20,"played":5,"win":0,"draw":0,"loss":5,"goals_for":0,"goals_against":12,"goal_diff":-12,"points":0}]}]}]}'
+    http_version: 
+  recorded_at: Mon, 23 Oct 2017 18:07:26 GMT
+recorded_with: VCR 3.0.3

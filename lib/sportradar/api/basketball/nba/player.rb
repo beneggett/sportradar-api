@@ -85,9 +85,9 @@ module Sportradar
           end
 
           def age
-            if birth_date.present?
+            if birth_date
               now = Time.now.utc.to_date
-              dob = birth_date.to_date
+              dob = Date.parse(birth_date)
               now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
             end
           end

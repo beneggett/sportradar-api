@@ -65,7 +65,8 @@ module Sportradar
             existing[current.id]
           end
         when Hash
-          existing[data[identifier]] = klass.new(data, **opts)
+          existing[data[identifier]] ||= klass.new(data, **opts)
+          existing[data[identifier]].update(data, **opts)
         else
           # raise
         end

@@ -1,6 +1,7 @@
 module Sportradar
   module Api
     class Request
+      attr_reader :qps_allotted, :qps_current, :quota_allotted, :quota_current
 
       include HTTParty
 
@@ -17,9 +18,26 @@ module Sportradar
           puts request_url(url)
           puts
           puts data.inspect
-          raise 'Sportradar error'
+          raise data
         end
+        parse_usage(data.headers)
         data
+      end
+
+      def usage
+        {
+          qps_allotted:   @qps_allotted,
+          qps_current:    @qps_current,
+          quota_allotted: @quota_allotted,
+          quota_current:  @quota_current,
+        }
+      end
+
+      def parse_usage(headers)
+        @qps_allotted   = (headers['x-plan-qps-allotted']   || headers['x-packagekey-qps-allotted']).to_i
+        @qps_current    = (headers['x-plan-qps-current']    || headers['x-packagekey-qps-current']).to_i
+        @quota_allotted = (headers['x-plan-quota-allotted'] || headers['x-packagekey-quota-allotted']).to_i
+        @quota_current  = (headers['x-plan-quota-current']  || headers['x-packagekey-quota-current']).to_i
       end
 
       def get(path, options={})
@@ -62,6 +80,9 @@ module Sportradar
         url += path
       end
       
+      def default_date
+        Date.today
+      end
 
       def date_path(date)
         "#{date.year}/#{date.month}/#{date.day}"

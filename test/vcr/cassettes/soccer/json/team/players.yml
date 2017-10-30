@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/teams/sr:competitor:17/profile.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=60, public, s-maxage=60
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 23 Oct 2017 22:09:42 GMT
+      Etag:
+      - W/"7d70e29e2187d89c9cc2821b15913a95"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-128.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '176'
+      X-Sbe:
+      - berilia_prod_web2
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '11562711'
+      X-Version-Instance:
+      - "/current"
+      Content-Length:
+      - '24205'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-23T22:09:42+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/team_profile.json","team":{"id":"sr:competitor:17","name":"Manchester
+        City","country":"England","country_code":"ENG","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"},"abbreviation":"MCI"},"venue":{"id":"sr:venue:606","name":"Etihad
+        Stadium","capacity":46708,"city_name":"Manchester","country_name":"England","map_coordinates":"53.484592,-2.202695","country_code":"ENG"},"jerseys":[{"type":"home","base":"5badff","sleeve":"ffffff","number":"000040","squares":false,"stripes":false,"horizontal_stripes":false,"split":false,"shirt_type":"short_sleeves","sleeve_detail":"53a9ff"},{"type":"away","base":"800039","sleeve":"541d53","number":"ffffff","squares":false,"stripes":false,"horizontal_stripes":false,"split":false,"shirt_type":"short_sleeves","sleeve_detail":"752b59"},{"type":"goalkeeper","base":"339966","sleeve":"339966","number":"ffffff","squares":false,"stripes":false,"horizontal_stripes":false,"split":false,"shirt_type":"long_sleeves"},{"type":"third","base":"1b3434","sleeve":"ffffff","number":"53a9ff","squares":false,"stripes":false,"horizontal_stripes":false,"split":false,"shirt_type":"short_sleeves","sleeve_detail":"1f3d3d"}],"manager":{"id":"sr:player:53463","name":"Guardiola,
+        Pep","nationality":"Spain","country_code":"ESP"},"players":[{"id":"sr:player:13249","name":"Bravo,
+        Claudio","type":"goalkeeper","date_of_birth":"1983-04-13","nationality":"Chile","country_code":"CHL","height":184,"weight":80,"jersey_number":1,"preferred_foot":"right"},{"id":"sr:player:44614","name":"Walker,
+        Kyle","type":"defender","date_of_birth":"1990-05-28","nationality":"England","country_code":"ENG","height":178,"weight":70,"jersey_number":2,"preferred_foot":"right"},{"id":"sr:player:124992","name":"Danilo","type":"defender","date_of_birth":"1991-07-15","nationality":"Brazil","country_code":"BRA","height":184,"weight":78,"jersey_number":3,"preferred_foot":"right"},{"id":"sr:player:6019","name":"Kompany,
+        Vincent","type":"defender","date_of_birth":"1986-04-10","nationality":"Belgium","country_code":"BEL","height":193,"weight":85,"jersey_number":4,"preferred_foot":"right"},{"id":"sr:player:152077","name":"Stones,
+        John","type":"defender","date_of_birth":"1994-05-28","nationality":"England","country_code":"ENG","height":188,"weight":70,"jersey_number":5,"preferred_foot":"right"},{"id":"sr:player:138534","name":"Sterling,
+        Raheem","type":"midfielder","date_of_birth":"1994-12-08","nationality":"England","country_code":"ENG","height":170,"weight":69,"jersey_number":7,"preferred_foot":"right"},{"id":"sr:player:45853","name":"Gundogan,
+        Ilkay","type":"midfielder","date_of_birth":"1990-10-24","nationality":"Germany","country_code":"DEU","height":180,"weight":80,"jersey_number":8,"preferred_foot":"right"},{"id":"sr:player:17094","name":"Aguero,
+        Sergio","type":"forward","date_of_birth":"1988-06-02","nationality":"Argentina","country_code":"ARG","height":173,"weight":70,"jersey_number":10,"preferred_foot":"right"},{"id":"sr:player:42892","name":"Mangala,
+        Eliaquim","type":"defender","date_of_birth":"1991-02-13","nationality":"France","country_code":"FRA","height":188,"weight":84,"jersey_number":15,"preferred_foot":"left"},{"id":"sr:player:70996","name":"De
+        Bruyne, Kevin","type":"midfielder","date_of_birth":"1991-06-28","nationality":"Belgium","country_code":"BEL","height":181,"weight":68,"jersey_number":17,"preferred_foot":"right"},{"id":"sr:player:24048","name":"Delph,
+        Fabian","type":"midfielder","date_of_birth":"1989-11-21","nationality":"England","country_code":"ENG","height":174,"weight":60,"jersey_number":18,"preferred_foot":"left"},{"id":"sr:player:293519","name":"Sane,
+        Leroy","type":"midfielder","date_of_birth":"1996-01-11","nationality":"Germany","country_code":"DEU","height":183,"weight":75,"jersey_number":19,"preferred_foot":"left"},{"id":"sr:player:331209","name":"Silva,
+        Bernardo","type":"midfielder","date_of_birth":"1994-08-10","nationality":"Portugal","country_code":"PRT","height":173,"weight":64,"jersey_number":20,"preferred_foot":"left"},{"id":"sr:player:11781","name":"Silva,
+        David","type":"midfielder","date_of_birth":"1986-01-08","nationality":"Spain","country_code":"ESP","height":173,"weight":67,"jersey_number":21,"preferred_foot":"left"},{"id":"sr:player:139225","name":"Mendy,
+        Benjamin","type":"defender","date_of_birth":"1994-07-17","nationality":"France","country_code":"FRA","height":185,"weight":85,"jersey_number":22,"preferred_foot":"left"},{"id":"sr:player:352668","name":"Adarabioyo,
+        Tosin","type":"defender","date_of_birth":"1997-09-24","nationality":"England","country_code":"ENG","height":190,"weight":80,"jersey_number":24,"preferred_foot":"right"},{"id":"sr:player:13630","name":"Fernandinho","type":"midfielder","date_of_birth":"1985-05-04","nationality":"Brazil","country_code":"BRA","height":179,"weight":67,"jersey_number":25,"preferred_foot":"right"},{"id":"sr:player:74915","name":"Otamendi,
+        Nicolas","type":"defender","date_of_birth":"1988-02-12","nationality":"Argentina","country_code":"ARG","height":183,"weight":81,"jersey_number":30,"preferred_foot":"right"},{"id":"sr:player:254491","name":"Ederson","type":"goalkeeper","date_of_birth":"1993-08-17","nationality":"Brazil","country_code":"BRA","height":188,"weight":86,"jersey_number":31,"preferred_foot":"left"},{"id":"sr:player:835751","name":"Jesus,
+        Gabriel","type":"forward","date_of_birth":"1997-04-03","nationality":"Brazil","country_code":"BRA","height":175,"weight":73,"jersey_number":33,"preferred_foot":"right"},{"id":"sr:player:287643","name":"Zinchenko,
+        Olexandr","type":"midfielder","date_of_birth":"1996-12-15","nationality":"Ukraine","country_code":"UKR","height":175,"weight":64,"jersey_number":35,"preferred_foot":"left"},{"id":"sr:player:14468","name":"Toure,
+        Yaya","type":"midfielder","date_of_birth":"1983-05-13","nationality":"Ivory
+        Coast","country_code":"CIV","height":188,"weight":90,"jersey_number":42,"preferred_foot":"right"},{"id":"sr:player:1047129","name":"Foden,
+        Philip","type":"midfielder","date_of_birth":"2000-05-28","nationality":"England","country_code":"ENG","height":171,"jersey_number":47,"preferred_foot":"left"},{"id":"sr:player:1047063","name":"Muric,
+        Arijanet","type":"goalkeeper","date_of_birth":"1998-11-07","nationality":"Switzerland","country_code":"CHE","jersey_number":49},{"id":"sr:player:937374","name":"Diaz,
+        Brahim","type":"midfielder","date_of_birth":"1999-08-03","nationality":"Spain","country_code":"ESP","height":170,"weight":68,"jersey_number":55},{"id":"sr:player:1047095","name":"Latibeaudiere,
+        Joel","type":"defender","date_of_birth":"2000-01-06","nationality":"England","country_code":"ENG","height":180,"jersey_number":64},{"id":"sr:player:937340","name":"Grimshaw,
+        Daniel","type":"goalkeeper","date_of_birth":"1998-01-16","nationality":"England","country_code":"ENG","jersey_number":79},{"id":"sr:player:937356","name":"Duhaney,
+        Demeaco","type":"defender","date_of_birth":"1998-10-13","nationality":"England","country_code":"ENG","jersey_number":81},{"id":"sr:player:934542","name":"Wilson,
+        Tyreke","type":"defender","date_of_birth":"1999-12-02","nationality":"Ireland","country_code":"IRL","jersey_number":90}],"statistics":{"seasons":[{"id":"sr:season:54","name":"Premier
+        League 94\/95","statistics":{"matches_played":42,"matches_won":12,"matches_drawn":13,"matches_lost":17,"goals_scored":53,"goals_conceded":64,"group_position":17},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WDDLL","home":"LWWDL","away":"LLWDL"}},{"id":"sr:season:53","name":"Premier
+        League 95\/96","statistics":{"matches_played":38,"matches_won":9,"matches_drawn":11,"matches_lost":18,"goals_scored":33,"goals_conceded":58,"group_position":18},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"LLWWD","home":"DWLWD","away":"DLDLW"}},{"id":"sr:season:203","name":"1st
+        Division 96\/97","statistics":{"matches_played":46,"matches_won":17,"matches_drawn":10,"matches_lost":19,"goals_scored":59,"goals_conceded":59,"group_position":14},"tournament":{"id":"sr:tournament:18","name":"Championship","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WLLDW","home":"WLWLW","away":"DDWLD"}},{"id":"sr:season:202","name":"1st
+        Division 97\/98","statistics":{"matches_played":46,"matches_won":12,"matches_drawn":12,"matches_lost":22,"goals_scored":56,"goals_conceded":57,"group_position":22},"tournament":{"id":"sr:tournament:18","name":"Championship","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"DLLDW","home":"LDWLD","away":"LLDLW"}},{"id":"sr:season:200","name":"1st
+        Division 99\/00","statistics":{"matches_played":46,"matches_won":26,"matches_drawn":11,"matches_lost":9,"goals_scored":78,"goals_conceded":40,"cup_rank":2,"group_position":2},"tournament":{"id":"sr:tournament:18","name":"Championship","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"DWDWW","home":"WWWWW","away":"DWDDW"}},{"id":"sr:season:48","name":"Premier
+        League 00\/01","statistics":{"matches_played":38,"matches_won":8,"matches_drawn":10,"matches_lost":20,"goals_scored":41,"goals_conceded":65,"group_position":18},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WDWLL","home":"LLLWL","away":"DLWDL"}},{"id":"sr:season:198","name":"1st
+        Division 01\/02","statistics":{"matches_played":46,"matches_won":31,"matches_drawn":6,"matches_lost":9,"goals_scored":108,"goals_conceded":52,"group_position":1},"tournament":{"id":"sr:tournament:18","name":"Championship","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWWWW","home":"WWWWW","away":"WLDWW"}},{"id":"sr:season:46","name":"Premier
+        League 02\/03","statistics":{"matches_played":38,"matches_won":15,"matches_drawn":6,"matches_lost":17,"goals_scored":47,"goals_conceded":54,"group_position":9},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWLWL","home":"WDWLL","away":"LLLWW"}},{"id":"sr:season:1","name":"Premier
+        League 03\/04","statistics":{"matches_played":38,"matches_won":9,"matches_drawn":14,"matches_lost":15,"goals_scored":55,"goals_conceded":54,"group_position":16},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"LDWLW","home":"DDLWW","away":"LDDDL"}},{"id":"sr:season:2","name":"Premier
+        League 04\/05","statistics":{"matches_played":38,"matches_won":13,"matches_drawn":13,"matches_lost":12,"goals_scored":47,"goals_conceded":39,"group_position":8},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WDWWD","home":"LWWWD","away":"LDDDW"}},{"id":"sr:season:3","name":"Premier
+        League 05\/06","statistics":{"matches_played":38,"matches_won":13,"matches_drawn":4,"matches_lost":21,"goals_scored":43,"goals_conceded":48,"group_position":15},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"LWLLL","home":"WLLLL","away":"LLLWL"}},{"id":"sr:season:4","name":"Premier
+        League 06\/07","statistics":{"matches_played":38,"matches_won":11,"matches_drawn":9,"matches_lost":18,"goals_scored":29,"goals_conceded":44,"group_position":14},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"LDLLL","home":"LDDLL","away":"WWLDL"}},{"id":"sr:season:581","name":"Premier
+        League 07\/08","statistics":{"matches_played":38,"matches_won":15,"matches_drawn":10,"matches_lost":13,"goals_scored":45,"goals_conceded":53,"group_position":9},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWLLL","home":"DWLWL","away":"DLWLL"}},{"id":"sr:season:1667","name":"UEFA
+        Cup 08\/09","statistics":{"matches_played":4,"matches_won":2,"matches_drawn":1,"matches_lost":1,"goals_scored":6,"goals_conceded":5,"group_name":"A","group_position":1},"tournament":{"id":"sr:tournament:10","name":"UEFA
+        Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"WWDL","home":"WD","away":"WL"}},{"id":"sr:season:1544","name":"Premier
+        League 08\/09","statistics":{"matches_played":38,"matches_won":15,"matches_drawn":5,"matches_lost":18,"goals_scored":58,"goals_conceded":50,"group_position":10},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWLLW","home":"WLWWW","away":"LLWLL"}},{"id":"sr:season:2139","name":"Premier
+        League 09\/10","statistics":{"matches_played":38,"matches_won":18,"matches_drawn":13,"matches_lost":7,"goals_scored":73,"goals_conceded":45,"group_position":5},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"LDWLD","home":"WWLWL","away":"DWWDD"}},{"id":"sr:season:2746","name":"Premier
+        League 10\/11","statistics":{"matches_played":38,"matches_won":21,"matches_drawn":8,"matches_lost":9,"goals_scored":60,"goals_conceded":33,"cup_rank":3,"group_position":3},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WLWWW","home":"WWWWW","away":"LLWLW"}},{"id":"sr:season:3170","name":"Club
+        Friendly Games 2011","statistics":{"matches_played":0,"matches_won":0,"matches_drawn":0,"matches_lost":0,"goals_scored":0,"goals_conceded":0,"group_position":30},"tournament":{"id":"sr:tournament:853","name":"Club
+        Friendly Games","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}}},{"id":"sr:season:3402","name":"Champions League 11\/12","statistics":{"matches_played":6,"matches_won":3,"matches_drawn":1,"matches_lost":2,"goals_scored":9,"goals_conceded":6,"group_name":"A","group_position":3},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"LWWLW","home":"DWW","away":"LWL"}},{"id":"sr:season:3562","name":"Dublin
+        Super Cup 2011","statistics":{"matches_played":2,"matches_won":2,"matches_drawn":0,"matches_lost":0,"goals_scored":6,"goals_conceded":0,"cup_rank":1,"group_position":1},"tournament":{"id":"sr:tournament:911","name":"Dublin
+        Super Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"WW","away":"WW"}},{"id":"sr:season:3391","name":"Premier
+        League 11\/12","statistics":{"matches_played":38,"matches_won":28,"matches_drawn":5,"matches_lost":5,"goals_scored":93,"goals_conceded":29,"cup_rank":1,"group_position":1},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWWWW","home":"WDWWW","away":"DLWWW"}},{"id":"sr:season:4140","name":"Club
+        Friendly Games 2012","statistics":{"matches_played":1,"matches_won":1,"matches_drawn":0,"matches_lost":0,"goals_scored":2,"goals_conceded":0,"group_position":5},"tournament":{"id":"sr:tournament:853","name":"Club
+        Friendly Games","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"W","away":"W"}},{"id":"sr:season:4788","name":"UEFA
+        Champions League 12\/13","statistics":{"matches_played":6,"matches_won":0,"matches_drawn":3,"matches_lost":3,"goals_scored":7,"goals_conceded":11,"group_name":"D","group_position":4},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"DLDDL","home":"DDD","away":"LLL"}},{"id":"sr:season:4710","name":"Premier
+        League 12\/13","statistics":{"matches_played":38,"matches_won":23,"matches_drawn":9,"matches_lost":6,"goals_scored":66,"goals_conceded":34,"cup_rank":2,"group_position":2},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WDWWL","home":"WWWWL","away":"LWLDW"}},{"id":"sr:season:5699","name":"Club
+        Friendly Games 2013","statistics":{"matches_played":1,"matches_won":0,"matches_drawn":0,"matches_lost":1,"goals_scored":1,"goals_conceded":3,"group_position":18},"tournament":{"id":"sr:tournament:853","name":"Club
+        Friendly Games","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"L","home":"L"}},{"id":"sr:season:6359","name":"UEFA
+        Champions League 13\/14","statistics":{"matches_played":6,"matches_won":5,"matches_drawn":0,"matches_lost":1,"goals_scored":18,"goals_conceded":10,"group_name":"D","group_position":2},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"LWWWW","home":"LWW","away":"WWW"}},{"id":"sr:season:6311","name":"Premier
+        League 13\/14","statistics":{"matches_played":38,"matches_won":27,"matches_drawn":5,"matches_lost":6,"goals_scored":102,"goals_conceded":37,"cup_rank":1,"group_position":1},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWWWW","home":"WDWWW","away":"WDLWW"}},{"id":"sr:season:8226","name":"UEFA
+        Champions League 14\/15","statistics":{"matches_played":6,"matches_won":2,"matches_drawn":2,"matches_lost":2,"goals_scored":9,"goals_conceded":8,"group_name":"E","group_position":2},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"DDLWW","home":"DLW","away":"LDW"}},{"id":"sr:season:8034","name":"Int.
+        Champions Cup 2014","statistics":{"matches_played":3,"matches_won":1,"matches_drawn":2,"matches_lost":0,"goals_scored":14,"goals_conceded":13,"group_name":"B","group_position":3},"tournament":{"id":"sr:tournament:1337","name":"Int.
+        Champions Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"WLL","home":"WLL"}},{"id":"sr:season:8186","name":"Premier
+        League 14\/15","statistics":{"matches_played":38,"matches_won":24,"matches_drawn":7,"matches_lost":7,"goals_scored":83,"goals_conceded":38,"cup_rank":2,"group_position":2},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWWWW","home":"WWWWW","away":"LLLWW"}},{"id":"sr:season:10484","name":"UEFA
+        Champions League 15\/16","statistics":{"matches_played":6,"matches_won":4,"matches_drawn":0,"matches_lost":2,"goals_scored":12,"goals_conceded":8,"group_name":"D","group_position":1},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"WWWLW","home":"LWW","away":"WWL"}},{"id":"sr:season:10412","name":"Premier
+        League 15\/16","statistics":{"matches_played":38,"matches_won":19,"matches_drawn":9,"matches_lost":10,"goals_scored":71,"goals_conceded":41,"group_position":4},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"DWLDD","home":"WLWWD","away":"WWDLD"}},{"id":"sr:season:11522","name":"Club
+        Friendly Games 2016","statistics":{"matches_played":1,"matches_won":0,"matches_drawn":0,"matches_lost":1,"goals_scored":0,"goals_conceded":1,"group_position":21},"tournament":{"id":"sr:tournament:853","name":"Club
+        Friendly Games","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"L","away":"L"}},{"id":"sr:season:33051","name":"UEFA
+        Champions League 16\/17","statistics":{"matches_played":6,"matches_won":2,"matches_drawn":3,"matches_lost":1,"goals_scored":12,"goals_conceded":10,"group_name":"C","group_position":2},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"DLWDD","home":"WWD","away":"DLD"}},{"id":"sr:season:32887","name":"Premier
+        League 16\/17","statistics":{"matches_played":38,"matches_won":23,"matches_drawn":9,"matches_lost":6,"goals_scored":80,"goals_conceded":39,"cup_rank":3,"group_position":3},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"DWWWW","home":"WDWWW","away":"DLWDW"}},{"id":"sr:season:38618","name":"Club
+        Friendly Games 2017","statistics":{"matches_played":0,"matches_won":0,"matches_drawn":0,"matches_lost":0,"goals_scored":0,"goals_conceded":0,"group_position":4},"tournament":{"id":"sr:tournament:853","name":"Club
+        Friendly Games","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"W","home":"W"}},{"id":"sr:season:41198","name":"UEFA
+        Champions League 17\/18","statistics":{"matches_played":3,"matches_won":3,"matches_drawn":0,"matches_lost":0,"goals_scored":8,"goals_conceded":1,"group_name":"F","group_position":1},"tournament":{"id":"sr:tournament:7","name":"UEFA
+        Champions League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"WWW","home":"WW","away":"W"}},{"id":"sr:season:41572","name":"Int.
+        Champions Cup 2017","statistics":{"matches_played":3,"matches_won":2,"matches_drawn":0,"matches_lost":1,"goals_scored":7,"goals_conceded":3,"group_position":2},"tournament":{"id":"sr:tournament:1337","name":"Int.
+        Champions Cup","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:393","name":"International
+        Clubs"}},"form":{"total":"LWW","home":"WW","away":"L"}},{"id":"sr:season:40942","name":"Premier
+        League 17\/18","statistics":{"matches_played":9,"matches_won":8,"matches_drawn":1,"matches_lost":0,"goals_scored":32,"goals_conceded":4,"group_position":1},"tournament":{"id":"sr:tournament:17","name":"Premier
+        League","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:1","name":"England","country_code":"ENG"}},"form":{"total":"WWWWW","home":"DWWWW","away":"WWWW"}}]}}'
+    http_version: 
+  recorded_at: Mon, 23 Oct 2017 22:09:41 GMT
+recorded_with: VCR 3.0.3

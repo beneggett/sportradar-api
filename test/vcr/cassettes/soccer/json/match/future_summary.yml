@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sportradar.us/soccer-xt3/eu/en/matches/sr:match:12090446/summary.json?api_key=agc2vm2evsz4hwhf3mh26dss
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=1, public, s-maxage=1
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 10 Oct 2017 22:03:25 GMT
+      Etag:
+      - W/"93c0039c5ae34d39c36a0051e94d2b4e"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish-v4
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1b-118.mashery.com
+      X-Plan-Qps-Allotted:
+      - '1'
+      X-Plan-Qps-Current:
+      - '1'
+      X-Plan-Quota-Allotted:
+      - '1000'
+      X-Plan-Quota-Current:
+      - '87'
+      X-Sbe:
+      - berilia_prod_web1
+      X-Srv:
+      - berilia-prod-varnish2.ch.sportradar.ag
+      X-Varnish:
+      - '82385397'
+      X-Version-Instance:
+      - "/current"
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"generated_at":"2017-10-10T22:03:25+00:00","schema":"http:\/\/schemas.sportradar.com\/bsa\/soccer\/v1\/json\/endpoints\/soccer\/match_summary.json","sport_event":{"id":"sr:match:12090446","scheduled":"2018-05-20T18:45:00+00:00","start_time_tbd":true,"tournament_round":{"type":"group","number":38},"season":{"id":"sr:season:42720","name":"Serie
+        A 17\/18","start_date":"2017-08-19","end_date":"2018-05-21","year":"17\/18","tournament_id":"sr:tournament:23"},"tournament":{"id":"sr:tournament:23","name":"Serie
+        A","sport":{"id":"sr:sport:1","name":"Soccer"},"category":{"id":"sr:category:31","name":"Italy","country_code":"ITA"}},"competitors":[{"id":"sr:competitor:2793","name":"US
+        Sassuolo","country":"Italy","country_code":"ITA","abbreviation":"SAS","qualifier":"home"},{"id":"sr:competitor:2702","name":"AS
+        Roma","country":"Italy","country_code":"ITA","abbreviation":"ROM","qualifier":"away"}],"venue":{"id":"sr:venue:2031","name":"Mapei
+        Stadium","capacity":29546,"city_name":"Reggio Emilia","country_name":"Italy","map_coordinates":"44.713360,10.649211","country_code":"ITA"}},"sport_event_conditions":{"venue":{"id":"sr:venue:2031","name":"Mapei
+        Stadium","capacity":29546,"city_name":"Reggio Emilia","country_name":"Italy","map_coordinates":"44.713360,10.649211","country_code":"ITA"}},"sport_event_status":{"status":"not_started","match_status":"not_started"}}'
+    http_version: 
+  recorded_at: Tue, 10 Oct 2017 22:03:25 GMT
+recorded_with: VCR 3.0.3
