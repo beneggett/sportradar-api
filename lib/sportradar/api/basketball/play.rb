@@ -60,6 +60,7 @@ module Sportradar
             "delay"                 => Delay,
             "ejection"              => Ejection,
             "defaultviolation"      => DefaultViolation,
+            "jumpballviolation"     => JumpballViolation,
             "defensivegoaltending"  => DefensiveGoalTending,
             "doublelane"            => DoubleLane,
             "lane"                  => Lane,
