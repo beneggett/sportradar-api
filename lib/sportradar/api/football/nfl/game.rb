@@ -42,7 +42,7 @@ module Sportradar
           end
 
           def api
-            @api || Sportradar::Api::Football::Nfl::Api.new
+            @api ||= Sportradar::Api::Football::Nfl::Api.new
           end
 
         end

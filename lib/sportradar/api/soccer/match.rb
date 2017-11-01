@@ -6,6 +6,7 @@ module Sportradar
         attr_reader :home_score, :away_score, :winner_id, :aggregate_home_score, :aggregate_away_score, :aggregate_winner_id
         attr_reader :referee, :weather_info, :coverage_info, :probabilities
         attr_reader :home, :away, :tournament_id
+        attr_reader :clock, :period, :score, :scoring, :broadcast, :coverage # these are for consistency with other sports
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
@@ -17,6 +18,7 @@ module Sportradar
           @timeline_hash = {}
           @lineups_hash  = {}
           get_tournament_id(data, **opts)
+          @scoring_raw   = Scoring.new(data, game: self)
           @home          = Team.new({}, api: api, match: self)
           @away          = Team.new({}, api: api, match: self)
           @teams_hash    = { away: @away, home: @home }
@@ -73,6 +75,18 @@ module Sportradar
           end
 
           # parse_nested_data(data)
+        end
+
+        def title
+          [@home, @away].compact.join(' vs ')
+        end
+
+        def realtime_state
+          
+        end
+
+        def scoring
+          @scoring_raw.scores
         end
 
         def update_teams(data)

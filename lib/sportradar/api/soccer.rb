@@ -11,6 +11,7 @@ require_relative 'soccer/team'
 require_relative 'soccer/player'
 require_relative 'soccer/venue'
 require_relative 'soccer/fact'
+require_relative 'soccer/scoring'
 
 module Sportradar
   module Api

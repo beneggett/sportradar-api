@@ -52,6 +52,10 @@ module Sportradar
           end
         end
 
+        def current_season
+          seasons.detect(&:current?)
+        end
+
         def standings(type = nil)
           if type
             @standings_hash[type]

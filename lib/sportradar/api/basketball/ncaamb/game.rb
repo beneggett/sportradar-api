@@ -30,7 +30,7 @@ module Sportradar
           alias :halfs :periods
 
           def api
-            @api || Sportradar::Api::Basketball::Ncaamb::Api.new
+            @api ||= Sportradar::Api::Basketball::Ncaamb::Api.new
           end
 
           def sim!
