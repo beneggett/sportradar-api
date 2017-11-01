@@ -2,9 +2,12 @@ module Sportradar
   module Api
     module Soccer
       class Team < Data
-        attr_accessor :tournament_id
-        attr_reader :id, :league_group, :name, :country, :country_code, :abbreviation, :qualifier, :venue
+        attr_accessor :tournament_id, :venue
+        attr_reader :id, :league_group, :name, :country, :country_code, :abbreviation, :qualifier
         alias :alias :abbreviation
+        alias :market :name
+        alias :display_name :name
+        alias :full_name :name
         attr_reader :team_statistics, :jerseys, :manager, :statistics
 
         def initialize(data = {}, league_group: nil, **opts)

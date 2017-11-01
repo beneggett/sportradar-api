@@ -3,6 +3,8 @@ module Sportradar
     module Soccer
       class Tournament < Data
         attr_reader :id, :league_group, :name, :category
+        alias :display_name :name
+        alias :alias :name
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
@@ -24,8 +26,8 @@ module Sportradar
             update(data['tournament'])
           end
 
-          @name     = data["name"]
-          @category = data['category'] || @category
+          @name     = data["name"]      || @name
+          @category = data['category']  || @category
 
           parse_info(data)
           parse_season(data)
@@ -36,6 +38,18 @@ module Sportradar
 
         def seasons
           @seasons_hash.values
+        end
+
+        def schedule
+          return self if @schedule_retrieved
+          get_schedule
+          self
+        end
+
+        def year
+          if current_season&.year&.split('/')&.last
+            2000 + current_season.year.split('/').last.to_i
+          end
         end
 
         def standings(type = nil)
@@ -150,6 +164,7 @@ module Sportradar
           ingest_schedule(data)
         end
         def ingest_schedule(data)
+          @schedule_retrieved = true
           update(data)
           # TODO parse the rest of the data. keys: ["tournament", "sport_events"]
           data
