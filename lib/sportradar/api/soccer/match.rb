@@ -78,7 +78,7 @@ module Sportradar
         end
 
         def title
-          [@home, @away].compact.join(' vs ')
+          [@home, @away].compact.map(&:name).join(' vs ')
         end
 
         def realtime_state
