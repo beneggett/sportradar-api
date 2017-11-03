@@ -6,12 +6,15 @@ module Sportradar
         attr_reader :home_score, :away_score, :winner_id, :aggregate_home_score, :aggregate_away_score, :aggregate_winner_id
         attr_reader :referee, :weather_info, :coverage_info, :probabilities
         attr_reader :home, :away, :tournament_id
-        attr_reader :clock, :period, :score, :scoring, :broadcast, :coverage # these are for consistency with other sports
+        attr_reader :period, :score, :broadcast, :coverage # these are for consistency with other sports
+        attr_reader :match_time, :stoppage_time
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
           @id           = data['id']
           @api          = opts[:api]
+          @updates      = {}
+          @changes      = {}
 
           @league_group = league_group || data['league_group'] || @api&.league_group
 
@@ -49,7 +52,6 @@ module Sportradar
             update_teams(stats)
           end
 
-
           @scheduled        = Time.parse(data['scheduled'])         if data['scheduled']
           @start_time_tbd   = data['start_time_tbd']                if data.key?('start_time_tbd')
           @status           = data['status']                        if data['status']
@@ -62,14 +64,18 @@ module Sportradar
 
           @home_score       = data['home_score']                    if data['home_score']
           @away_score       = data['away_score']                    if data['away_score']
+          @period           = data['period']                        if data['period']
+          @match_time       = data.dig('clock', 'match_time')       if data.dig('clock', 'match_time')
+          @stoppage_time    = data.dig('clock', 'stoppage_time')    if data.dig('clock', 'stoppage_time')
+          @ball_locations   = data['ball_locations']                if data['ball_locations']
           @winner_id        = data['winner_id']                     if data['winner_id']
 
           @aggregate_home_score = data['aggregate_home_score']      if data['aggregate_home_score']
           @aggregate_away_score = data['aggregate_away_score']      if data['aggregate_away_score']
           @aggregate_winner_id  = data['aggregate_winner_id']       if data['aggregate_winner_id']
+          @scoring_raw.update(data, source: opts[:source])
           create_data(@timeline_hash, data['timeline'], klass: Event, api: api)
-          # @season
-          # @tournament
+
           if data['competitors']
             update_teams(data['competitors'])
           end
@@ -80,14 +86,79 @@ module Sportradar
         def title
           [@home, @away].compact.map(&:name).join(' vs ')
         end
+        def scoring
+          @scoring_raw.scores.each { |period, hash| hash[@home.id] = hash['home']; hash[@away.id] = hash['away'] }
+        end
+        def score
+          {@home.id => @home_score, @away.id => @away_score}
+        end
+
+        # status helpers
+        def realtime_state_short
+          if future?
+            'Scheduled' # ??
+          elsif finished?
+            'FINAL'
+          elsif postponed?
+            'PPD'
+          elsif halftime?
+            'HT'
+          else
+            clock_display
+          end
+        end
 
         def realtime_state
-          
+          if future?
+            'Scheduled'
+          elsif finished?
+            'Final'
+          elsif postponed?
+            'Postponed'
+          elsif halftime?
+            'Halftime'
+          else
+            clock_display
+          end
         end
 
-        def scoring
-          @scoring_raw.scores
+        def halftime?
+          @match_status == "halftime"
         end
+
+        def postponed?
+          'postponed' == status
+        end
+        def unnecessary?
+          'unnecessary' == status
+        end
+        def cancelled?
+          ['unnecessary', 'postponed'].include? status
+        end
+        def future?
+          ['not_started', 'scheduled', 'delayed', 'created', 'time-tbd', 'if-necessary'].include? status
+        end
+        def started?
+          ['live'].include?(@status) || ['halftime', '1st_half', '2nd_half'].include?(@match_status)
+        end
+        def finished?
+          ['complete', 'closed'].include?(@status) || ['ended'].include?(@match_status)
+        end
+        def completed?
+          'complete' == status
+        end
+        def closed?
+          'closed' == status
+        end
+
+        def clock_display
+          if @match_time == '45:00' || @match_time == '90:00' # stoppage time
+            @match_time.split(':').first + ?'
+          else
+            @match_time.split(':').first + ?'
+          end
+        end
+        alias :clock :clock_display
 
         def update_teams(data)
           home_hash = data.detect { |team_hash| team_hash["qualifier"] == "home" || team_hash["team"] == "home" }
@@ -214,12 +285,28 @@ module Sportradar
           ingest_timeline(data)
         end
         def ingest_timeline(data)
-          update(data)
+          update(data, source: :pbp)
+          check_newness(:pbp, timeline.last&.updated)
           data
         end
         def queue_timeline
           url, headers, options, timeout = api.get_request_info(path_timeline)
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_timeline)}
+        end
+
+        # tracking updates
+        def remember(key, object)
+          @updates[key] = object&.dup
+        end
+        def not_updated?(key, object)
+          @updates[key] == object
+        end
+        def changed?(key)
+          @changes[key]
+        end
+        def check_newness(key, new_object)
+          @changes[key] = !not_updated?(key, new_object)
+          remember(key, new_object)
         end
 
       end
@@ -239,6 +326,17 @@ __END__
 "competitors"=>
  [{"id"=>"sr:competitor:2793", "name"=>"US Sassuolo", "country"=>"Italy", "country_code"=>"ITA", "abbreviation"=>"SAS", "qualifier"=>"home"},
   {"id"=>"sr:competitor:2702", "name"=>"AS Roma", "country"=>"Italy", "country_code"=>"ITA", "abbreviation"=>"ROM", "qualifier"=>"away"}]
+
+"sport_event_status"=>
+ {"status"=>"live",
+  "match_status"=>"1st_half",
+  "home_score"=>1,
+  "away_score"=>0,
+  "period"=>1,
+  "clock"=>{"match_time"=>"19:25"},
+  "clock"=>{"match_time"=>"45:00", "stoppage_time"=>"00:05"}
+  "ball_locations"=>[{"x"=>"95", "y"=>"50", "team"=>"away"}, {"x"=>"80", "y"=>"62", "team"=>"home"}, {"x"=>"82", "y"=>"60", "team"=>"home"}, {"x"=>"79", "y"=>"58", "team"=>"home"}]},
+
 
 
 m = Sportradar::Api::Soccer::Match.new({"id"=>"sr:match:12090446"}, league_group: 'eu')

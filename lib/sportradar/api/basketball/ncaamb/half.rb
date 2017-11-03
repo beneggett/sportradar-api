@@ -35,6 +35,15 @@ module Sportradar
             create_data(@plays_hash, data.dig('events'), klass: Play, api: @api, half: self)
           end
 
+          def plays_by_type(play_type, *types)
+            if types.empty?
+              plays.grep(Play.subclass(play_type.delete('_')))
+            else
+              play_classes = [play_type, *types].map { |type| Play.subclass(type.delete('_')) }
+              plays.select { |play| play_classes.any? { |klass| play.kind_of?(klass) } }
+            end
+          end
+
           def plays
             @plays_hash.values
           end

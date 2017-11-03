@@ -15,22 +15,23 @@ module Sportradar
         end
 
         def update(data, source: nil, **opts)
-          new_scores = case source
-          when :box
-            parse_from_box(data)
-          when :timeline
-            parse_from_timeline(data)
-          when :summary
-            parse_from_box(data)
-          else
-            if data['period'] || data['half']
-              parse_from_timeline(data)
-            elsif data['team']
-              parse_from_box(data)
-            else # schedule requests
-              {}
-            end
-          end
+          # new_scores = case source
+          # when :box
+          #   parse_from_box(data)
+          # when :timeline
+          #   parse_from_timeline(data)
+          # when :summary
+          #   parse_from_box(data)
+          # else
+          #   if data['period'] || data['half']
+          #     parse_from_timeline(data)
+          #   elsif data['team']
+          #     parse_from_box(data)
+          #   else # schedule requests
+          #     {}
+          #   end
+          # end
+          new_scores = parse_from_timeline(data)
           # parse data structure
           # handle data from team (all periods)
           # handle data from period (both teams)
@@ -47,6 +48,13 @@ module Sportradar
         private
 
         def parse_from_timeline(data)
+          if data['period_scores']
+            data['period_scores'].map do |hash|
+              [hash["number"], {"home"=>hash['home_score'], "away"=>hash['away_score']}]
+            end.to_h
+          else
+            {}
+          end
         end
 
         # def period_name
