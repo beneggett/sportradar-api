@@ -98,7 +98,7 @@ module Sportradar
           if future?
             'Scheduled' # ??
           elsif finished?
-            'FINAL'
+            'FT'
           elsif postponed?
             'PPD'
           elsif halftime?

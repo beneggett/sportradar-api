@@ -212,7 +212,7 @@ module Sportradar
         end
 
         def halftime?
-          clock == '0:00' && quarter == 2
+          status == 'halftime' || clock == '00:00' && quarter == 2
         end
         def clock_display
           if clock && period
@@ -266,7 +266,7 @@ module Sportradar
         # data retrieval
 
         def get_box
-          data = api.get_data(path_box)
+          data = api.get_data(path_box).to_h
           ingest_box(data)
         end
 
@@ -283,7 +283,7 @@ module Sportradar
         end
 
         def get_pbp
-          data = api.get_data(path_pbp)
+          data = api.get_data(path_pbp).to_h
           ingest_pbp(data)
         end
 
@@ -305,12 +305,13 @@ module Sportradar
           set_pbp(period_data)
           @pbp = @periods_hash.values
           check_newness(:pbp, plays.last&.updated)
+          check_newness(:clock, @clock)
           check_newness(:score, @score)
           data
         end
 
         def get_summary
-          data = api.get_data(path_summary)
+          data = api.get_data(path_summary).to_h
           ingest_summary(data)
         end
 
