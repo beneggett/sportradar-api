@@ -160,6 +160,19 @@ module Sportradar
         end
         alias :clock :clock_display
 
+        def match_seconds
+          return nil unless @match_time
+          mm, ss = @match_time.split(':').map(&:to_i)
+          time = mm * 60 + ss
+          if @match_time == '45:00' || @match_time == '90:00' # stoppage time
+            mm, ss = @stoppage_time.split(':').map(&:to_i)
+            stop_time = mm * 60 + ss
+            time += stop_time
+          end
+          time
+        end
+        alias :game_seconds :match_seconds
+
         def update_teams(data)
           home_hash = data.detect { |team_hash| team_hash["qualifier"] == "home" || team_hash["team"] == "home" }
           away_hash = (data - [home_hash]).first
@@ -287,6 +300,7 @@ module Sportradar
         def ingest_timeline(data)
           update(data, source: :pbp)
           check_newness(:pbp, timeline.last&.updated)
+          check_newness(:clock, self.match_seconds)
           data
         end
         def queue_timeline
