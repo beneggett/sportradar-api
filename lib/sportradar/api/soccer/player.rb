@@ -44,6 +44,14 @@ module Sportradar
           @name || [@first_name, @last_name].join(' ')
         end
 
+        def first_name
+          @name.split()[1]
+        end
+
+        def last_name
+          @name.split()[0].delete(',')
+        end
+
         def api
           @api || Sportradar::Api::Soccer::Api.new(league_group: @league_group)
         end
@@ -67,9 +75,7 @@ module Sportradar
           url, headers, options, timeout = api.get_request_info(path_profile)
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_profile)}
         end
-
       end
-
     end
   end
 end
