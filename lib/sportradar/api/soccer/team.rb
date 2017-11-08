@@ -61,6 +61,8 @@ module Sportradar
             opts[:season].tournament_id
           elsif opts[:match]
             opts[:match].tournament_id
+          elsif data['tournament_id']
+            data['tournament_id']
           elsif data['tournament']
             data.dig('tournament', 'id')
           elsif data['season']
