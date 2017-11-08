@@ -300,7 +300,7 @@ module Sportradar
         def ingest_timeline(data)
           update(data, source: :pbp)
           check_newness(:pbp, timeline.last&.updated)
-          check_newness(:clock, self.match_seconds)
+          check_newness(:clock, self.match_seconds.to_s)
           data
         end
         def queue_timeline

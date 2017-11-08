@@ -45,11 +45,11 @@ module Sportradar
         end
 
         def first_name
-          @name.split()[1]
+          @first_name || (@name && @name.split(', ')[1])
         end
 
         def last_name
-          @name.split()[0].delete(',')
+          @last_name || (@name && @name.split(', ')[0])
         end
 
         def api
