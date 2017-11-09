@@ -235,6 +235,7 @@ module Sportradar
             'eu.uefa_champions_league'  => "sr:tournament:7",
             'eu.la_liga'                => "sr:tournament:8",
             'eu.eng_premier_league'     => "sr:tournament:17",
+            'eu.premier_league'         => "sr:tournament:17",
             'eu.serie_a'                => "sr:tournament:23",
             'eu.ligue_1'                => "sr:tournament:34",
             'eu.bundesliga'             => "sr:tournament:35",
