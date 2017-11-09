@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Play
         class Base < Data
-          attr_accessor :response, :id, :clock, :event_type, :description, :statistics, :score, :team_id, :player_id, :quarter, :half, :updated, :location, :possession, :on_court, :game_seconds, :identifier
+          attr_accessor :response, :id, :clock, :event_type, :description, :statistics, :score, :team_id, :player_id, :quarter, :half, :updated, :location, :possession, :on_court, :on_court_ids, :game_seconds, :identifier
           alias :type :event_type
 
           def initialize(data, **opts)
@@ -87,9 +87,16 @@ module Sportradar
             @location    = data['location']    # {"coord_x"=>"0", "coord_y"=>"0"},
             @possession  = data['possession']  # {"name"=>"Knicks", "market"=>"New York", "id"=>"583ec70e-fb46-11e1-82cb-f4ce4684ea4c"},
             # @on_court    = data['on_court']    # hash
+            handle_on_court(data['on_court']) if data['on_court']
 
             handle_time(data, **opts)
             parse_statistics(data) if data['statistics']
+          end
+
+          def handle_on_court(data)
+            teams = [data['home'], data['away']]
+            @on_court = teams.flat_map { |hash| hash['players'].map { |pl| OpenStruct.new(pl) } }
+            @on_court_ids = @on_court.map(&:id)
           end
 
           def handle_time(data, **opts)
