@@ -31,7 +31,6 @@ module Sportradar
             update(data["team"])
           end
 
-
           @name         = data['name']              if data['name']
           @country      = data['country']           if data['country']
           @country_code = data['country_code']      if data['country_code']

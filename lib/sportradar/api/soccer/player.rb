@@ -34,9 +34,7 @@ module Sportradar
           @jersey_number  = data['jersey_number']  if data['jersey_number']
           @preferred_foot = data['preferred_foot'] if data['preferred_foot']
           @matches_played = data['matches_played'] if data['matches_played']
-
           @stats          = data['statistics']     if data['statistics']
-
           @date_of_birth  = Date.parse(data['date_of_birth']) if data['date_of_birth']
         end
 
@@ -45,11 +43,11 @@ module Sportradar
         end
 
         def first_name
-          @first_name || (@name && @name.split(', ')[1])
+          @name.split()[1]
         end
 
         def last_name
-          @last_name || (@name && @name.split(', ')[0])
+          @name.split()[0].delete(',')
         end
 
         def api
