@@ -2,13 +2,13 @@ module Sportradar
   module Api
     module Soccer
       class Team < Data
-        attr_accessor :tournament_id, :venue
+        attr_accessor :tournament_id, :venue, :player_stats
         attr_reader :id, :league_group, :name, :country, :country_code, :abbreviation, :qualifier
         alias :alias :abbreviation
         alias :market :name
         alias :display_name :name
         alias :full_name :name
-        attr_reader :team_statistics, :jerseys, :manager, :statistics
+        attr_reader :team_stats, :jerseys, :manager, :statistics
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
@@ -17,6 +17,7 @@ module Sportradar
           @league_group = league_group || data['league_group'] || @api&.league_group
 
           @players_hash = {}
+          @player_stats = {}
           @matches_hash = {}
 
           update(data, **opts)
@@ -42,7 +43,7 @@ module Sportradar
           create_data(@players_hash, data['player_statistics'], klass: Player, api: api, team: self) if data['player_statistics']
 
           # TODO team statistics
-          @team_statistics    = data['team_statistics']   if data['team_statistics']
+          @team_stats    = data['team_statistics']   if data['team_statistics']
 
           create_data(@matches_hash, Soccer.parse_results(data['results']), klass: Match, api: api, team: self) if data['results']
           create_data(@matches_hash, data['schedule'],  klass: Match, api: api, team: self) if data['schedule']
@@ -100,7 +101,9 @@ module Sportradar
           url, headers, options, timeout = api.get_request_info(path_roster)
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_roster)}
         end
-
+        def update_player_stats(player, stats, game = nil)
+          game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge(player: player))
+        end
         def path_results
           "#{ path_base }/results"
         end
