@@ -8,6 +8,7 @@ module Sportradar
         attr_reader :home, :away, :tournament_id
         attr_reader :period, :score, :broadcast, :coverage # these are for consistency with other sports
         attr_reader :match_time, :stoppage_time
+        attr_reader :team_stats, :player_stats
 
         def initialize(data = {}, league_group: nil, **opts)
           @response     = data
