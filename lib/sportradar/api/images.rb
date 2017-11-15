@@ -169,7 +169,7 @@ module Sportradar
       end
 
       def allowed_sports
-        v2_api_sports + v3_api_sports
+        v2_api_sports + v3_api_sports + soccer_leagues
       end
 
       def v2_api_sports
