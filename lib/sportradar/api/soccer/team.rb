@@ -102,7 +102,7 @@ module Sportradar
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_roster)}
         end
         def update_player_stats(player, stats, game = nil)
-          game ? game.update_player_stats(player, stats) : @player_stats.merge!(player.id => stats.merge(player: player))
+          game ? game.update_player_stats(player, stats) : @player_stats.merge(player.id => stats.merge(player: player))
         end
         def path_results
           "#{ path_base }/results"

@@ -16,6 +16,10 @@ module Sportradar
             end
           end
 
+          def halftime?
+            status == 'halftime' || clock == '00:00' && period == 1
+          end
+
           def team_class
             Team
           end
