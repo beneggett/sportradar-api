@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Soccer
       class Event < Data
-        attr_reader :id, :type, :time, :period, :period_type, :period_name, :match_time, :team, :x, :y, :outcome, :home_score, :away_score, :goal_scorer, :stoppage_time, :player_out, :player_in, :player
+        attr_reader :id, :type, :time, :period, :period_type, :period_name, :match_time, :team, :x, :y, :outcome, :home_score, :away_score, :goal_scorer, :stoppage_time, :player_out, :player_in, :player, :commentaries
 
         def initialize(data, **opts)
           @response       = data
