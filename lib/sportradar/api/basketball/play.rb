@@ -53,6 +53,7 @@ module Sportradar
             "tvtimeout"             => TvTimeout,
             "clearpathfoul"         => ClearPathFoul,
             "technicalfoul"         => TechnicalFoul,
+            "minortechnicalfoul"    => TechnicalFoul,
             "review"                => Review,
             "defensivethreeseconds" => DefensiveThreeSeconds,
             "flagrantone"           => FlagrantOne,
