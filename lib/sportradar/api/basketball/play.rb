@@ -16,7 +16,7 @@ module Sportradar
         #   end
         # end
         def self.new(data, **opts)
-          klass = subclass(data['event_type'])
+          klass = subclass(data['event_type']) || Base
           klass.new(data, **opts)
         # rescue => e
         #   binding.pry
