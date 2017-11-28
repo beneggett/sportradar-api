@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Soccer
       class Tournament < Data
-        attr_reader :id, :league_group, :name, :category
+        attr_reader :id, :league_group, :name, :category, :coverage_info, :live_coverage, :season_coverage_info
         alias :display_name :name
         alias :alias :name
 
@@ -26,8 +26,10 @@ module Sportradar
             update(data['tournament'])
           end
 
-          @name     = data["name"]      || @name
-          @category = data['category']  || @category
+          @name           = data["name"]          || @name
+          @category       = data['category']      || @category
+          @coverage_info  = data['coverage_info'] || @coverage_info
+          @live_coverage  = data.dig('coverage_info', 'live_coverage') || @live_coverage
 
           parse_info(data)
           parse_season(data)
@@ -86,6 +88,7 @@ module Sportradar
 
         def parse_season(data)
           if data['season_coverage_info']
+            @season_coverage_info = data['season_coverage_info'] if data['season_coverage_info']
             data['season_coverage_info']['id'] ||= data['season_coverage_info'].delete('season_id')
             create_data(@seasons_hash, data['season_coverage_info'], klass: Season, api: api, tournament: self)
           end
