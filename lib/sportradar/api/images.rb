@@ -39,7 +39,6 @@ module Sportradar
       # Coach Manifests
 
       def coach_manifests
-        raise Sportradar::Api::Error::InvalidLeague unless league.nil?
         response = get request_url("coaches/#{image_type}/manifests/all_assets")
         if response.success? && response["assetlist"]
           Sportradar::Api::Images::AssetList.new response["assetlist"]
@@ -50,7 +49,6 @@ module Sportradar
       alias_method :all_coaches, :coach_manifests
 
       def venue_manifests
-        raise Sportradar::Api::Error::InvalidLeague unless league.nil?
         if version == 3
           response = get request_url("venues/manifest")
         else
@@ -97,7 +95,7 @@ module Sportradar
       private
 
       def request_url(path)
-        "/#{sport}-images-#{access_level}#{version}/#{provider}/#{path}"
+        "/#{sport}-images-#{access_level}#{version}/#{provider}/#{( league + '/') if league}/#{path}"
       end
 
       def api_key
