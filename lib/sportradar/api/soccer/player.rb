@@ -10,7 +10,7 @@ module Sportradar
           @response     = data
           @id           = data['id'] if data['id']
           @api          = opts[:api]
-          @team     = opts[:team]
+          @team         = opts[:team]
 
           @league_group = league_group || data['league_group'] || @api&.league_group
 
@@ -39,7 +39,10 @@ module Sportradar
           @stats          = data['statistics']     if data['statistics']
           @date_of_birth  = Date.parse(data['date_of_birth']) if data['date_of_birth']
 
-          @team.update_player_stats(self, data['statistics'], opts[:game]) if data['statistics'] && @team
+          @team.update_player_stats(self, data['statistics']) if data['statistics'] && @team
+          if opts[:match]
+            @team.update_player_stats(self, data, opts[:match])
+          end
 
         end
 

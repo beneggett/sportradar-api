@@ -39,11 +39,15 @@ module Sportradar
           @qualifier    = data['qualifier']         if data['qualifier']
           @venue        = Venue.new(data['venue'])  if data['venue']
 
-          create_data(@players_hash, data['players'], klass: Player, api: api, team: self) if data['players']
-          create_data(@players_hash, data['player_statistics'], klass: Player, api: api, team: self) if data['player_statistics']
+          create_data(@players_hash, data['players'], klass: Player, api: api, team: self, **opts) if data['players']
+          create_data(@players_hash, data['player_statistics'], klass: Player, api: api, team: self, **opts) if data['player_statistics']
 
-          # TODO team statistics
           @team_stats    = data['team_statistics']   if data['team_statistics']
+
+          # parse_players(data.dig('players'), opts[:match])   if data.dig('players')
+          if opts[:match]
+            opts[:match].update_stats(self, data['statistics']) if data['statistics']
+          end
 
           create_data(@matches_hash, Soccer.parse_results(data['results']), klass: Match, api: api, team: self) if data['results']
           create_data(@matches_hash, data['schedule'],  klass: Match, api: api, team: self) if data['schedule']
@@ -68,6 +72,10 @@ module Sportradar
           elsif data['season']
             data.dig('season', 'tournament_id')
           end
+        end
+
+        def update_player_stats(player, stats, game = nil)
+          game ? game.update_player_stats(player, stats) : @player_stats.merge(player.id => stats.merge(player: player))
         end
 
         def players
@@ -101,9 +109,7 @@ module Sportradar
           url, headers, options, timeout = api.get_request_info(path_roster)
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_roster)}
         end
-        def update_player_stats(player, stats, game = nil)
-          game ? game.update_player_stats(player, stats) : @player_stats.merge(player.id => stats.merge(player: player))
-        end
+
         def path_results
           "#{ path_base }/results"
         end

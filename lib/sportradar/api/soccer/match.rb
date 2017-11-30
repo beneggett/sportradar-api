@@ -26,6 +26,9 @@ module Sportradar
           @home          = Team.new({}, api: api, match: self)
           @away          = Team.new({}, api: api, match: self)
           @teams_hash    = { away: @away, home: @home }
+          @team_ids      = { away: @away.id, home: @home.id }
+          @team_stats    = {}
+          @player_stats  = {}
 
           update(data, **opts)
         end
@@ -183,7 +186,18 @@ module Sportradar
             @away.update(away_hash, match: self)
             @teams_hash[@home.id] = @home
             @teams_hash[@away.id] = @away
+            @team_ids = { away: @away.id, home: @home.id }
           end
+        end
+
+        def update_stats(team, stats)
+          @team_stats.merge!(team.id => stats.merge(team: team))
+        end
+        def update_player_stats(player, stats)
+          @player_stats.merge!(player.id => stats.merge!(player: player))
+        end
+        def stats(team_id)
+          team_id.is_a?(Symbol) ? @team_stats[@team_ids[team_id]] : @team_stats[team_id]
         end
 
         def get_tournament_id(data, **opts)
