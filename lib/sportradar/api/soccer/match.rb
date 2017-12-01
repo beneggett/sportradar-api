@@ -169,7 +169,7 @@ module Sportradar
           return nil unless @match_time
           mm, ss = @match_time.split(':').map(&:to_i)
           time = mm * 60 + ss
-          if @match_time == '45:00' || @match_time == '90:00' # stoppage time
+          if @stoppage_time && (@match_time == '45:00' || @match_time == '90:00') # stoppage time
             mm, ss = @stoppage_time.split(':').map(&:to_i)
             stop_time = mm * 60 + ss
             time += stop_time
