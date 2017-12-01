@@ -70,7 +70,7 @@ module Sportradar
           @away_score       = data['away_score']                    if data['away_score']
           @period           = data['period']                        if data['period']
           @match_time       = data.dig('clock', 'match_time')       if data.dig('clock', 'match_time')
-          @stoppage_time    = data.dig('clock', 'stoppage_time')    if data.dig('clock', 'stoppage_time')
+          @stoppage_time    = data.dig('clock', 'stoppage_time')
           @ball_locations   = data['ball_locations']                if data['ball_locations']
           @winner_id        = data['winner_id']                     if data['winner_id']
 
