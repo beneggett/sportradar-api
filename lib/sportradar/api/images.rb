@@ -95,7 +95,7 @@ module Sportradar
       private
 
       def request_url(path)
-        "/#{sport}-images-#{access_level}#{version}/#{provider}/#{( league + '/') if league}/#{path}"
+        "/#{sport}-images-#{access_level}#{version}/#{provider}/#{( league + '/') if league}#{path}"
       end
 
       def api_key

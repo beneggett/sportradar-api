@@ -60,7 +60,7 @@ class Sportradar::Api::ImagesTest < Minitest::Test
 
   def test_it_combines_an_image_url
     url = Sportradar::Api::Images.new('nfl', access_level: 't').image_url('/cool')
-    assert_equal url, "https://api.sportradar.us/nfl-images-t2/usat/cool?api_key=#{api_key(:images_nfl)}"
+    assert_equal "https://api.sportradar.us/nfl-images-t2/usat/cool?api_key=#{api_key(:images_nfl)}", url
   end
 
 
