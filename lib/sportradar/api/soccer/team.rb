@@ -61,10 +61,10 @@ module Sportradar
         def get_tournament_id(data, **opts)
           @tournament_id ||= if opts[:tournament]
             opts[:tournament].id
-          elsif opts[:season]
-            opts[:season].tournament_id
-          elsif opts[:match]
-            opts[:match].tournament_id
+          elsif opts[:season]&.tournament_id
+            opts[:season]&.tournament_id
+          elsif opts[:match]&.tournament_id
+            opts[:match]&.tournament_id
           elsif data['tournament_id']
             data['tournament_id']
           elsif data['tournament']

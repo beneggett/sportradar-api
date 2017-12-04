@@ -23,8 +23,8 @@ module Sportradar
           @lineups_hash  = {}
           get_tournament_id(data, **opts)
           @scoring_raw   = Scoring.new(data, game: self)
-          @home          = Team.new({}, api: api, match: self)
-          @away          = Team.new({}, api: api, match: self)
+          @home          = Team.new(data['home'].to_h, api: api, match: self)
+          @away          = Team.new(data['away'].to_h, api: api, match: self)
           @teams_hash    = { away: @away, home: @home }
           @team_ids      = { away: @away.id, home: @home.id }
           @team_stats    = {}
@@ -225,6 +225,19 @@ module Sportradar
             @timeline_hash.values
           end
         end
+
+        def timeline_by_minute(minute_start, minute_end = nil)
+          if minute_end
+            @timeline_hash.each_value.select { |ev| (minute_start..minute_end).cover?(ev.match_time.to_i) }
+          else
+            @timeline_hash.each_value.select { |ev| minute_start === ev.match_time }
+          end
+        end
+
+        def plays_by_minute(type, minute_start, minute_end = nil)
+          timeline_by_minute(minute_start, minute_end).select { |ev| ev.type == type }
+        end
+
 
         def lineups(which = nil)
           if which
