@@ -3,7 +3,7 @@ module Sportradar
     module Soccer
       class Player < Data
 
-        attr_reader :id, :league_group, :name, :type, :nationality, :country_code, :height, :weight, :jersey_number, :preferred_foot, :stats, :date_of_birth, :matches_played
+        attr_reader :id, :league_group, :name, :type, :nationality, :country_code, :height, :weight, :jersey_number, :preferred_foot, :stats, :date_of_birth, :matches_played, :team
         alias :position :type
 
         def initialize(data = {}, league_group: nil, **opts)
