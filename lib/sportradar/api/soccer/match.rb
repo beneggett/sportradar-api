@@ -146,10 +146,10 @@ module Sportradar
           ['live'].include?(@status) || ['halftime', '1st_half', '2nd_half'].include?(@match_status)
         end
         def finished?
-          ['complete', 'closed'].include?(@status) || ['ended'].include?(@match_status)
+          ['ended', 'complete', 'closed'].include?(@status) || ['ended'].include?(@match_status)
         end
         def completed?
-          'complete' == status
+          ['ended', 'complete'].include? status
         end
         def closed?
           'closed' == status
