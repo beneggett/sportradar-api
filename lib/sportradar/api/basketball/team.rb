@@ -115,7 +115,7 @@ module Sportradar
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_roster)}
         end
 
-        def get_season_stats(year = Date.today.year)
+        def get_season_stats(year = api.default_year)
           data = api.get_data(path_season_stats(year)).to_h
           ingest_season_stats(data)
         end
