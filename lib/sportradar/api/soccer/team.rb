@@ -75,7 +75,7 @@ module Sportradar
         end
 
         def update_player_stats(player, stats, game = nil)
-          game ? game.update_player_stats(player, stats) : @player_stats.merge(player.id => stats.merge(player: player))
+          game ? game.update_player_stats(player, stats) : @player_stats.merge(player.id => stats.to_h.merge(player: player))
         end
 
         def players
