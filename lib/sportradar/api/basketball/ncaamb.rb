@@ -75,8 +75,8 @@ module Sportradar
         end
 
         def tournaments
-          get_tournaments if tournaments.empty?
-          self
+          get_tournaments if @tournaments_hash.empty?
+          @tournaments_hash.values
         end
 
         def games
