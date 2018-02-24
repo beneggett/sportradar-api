@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sportradar-api (0.13.20)
+    sportradar-api (0.13.21)
       activesupport
       httparty (>= 0.14.0)
 
@@ -47,7 +47,7 @@ GEM
     hashdiff (0.3.4)
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
-    i18n (0.9.1)
+    i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     listen (3.1.5)
@@ -87,7 +87,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tins (1.14.0)
-    tzinfo (1.2.4)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
     vcr (3.0.3)
     webmock (3.0.1)
