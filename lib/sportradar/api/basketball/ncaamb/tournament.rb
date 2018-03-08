@@ -91,7 +91,7 @@ module Sportradar
 
           # summary
           def get_summary
-            data = api.get_data(path_summary)
+            data = api.get_data(path_summary).to_h
             ingest_summary(data)
           end
           def queue_summary
@@ -105,7 +105,7 @@ module Sportradar
 
           # schedule
           def get_schedule
-            data = api.get_data(path_schedule)
+            data = api.get_data(path_schedule).to_h
             ingest_schedule(data)
           end
           def queue_schedule

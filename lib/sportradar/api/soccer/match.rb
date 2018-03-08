@@ -157,8 +157,8 @@ module Sportradar
 
         def clock_display
           return unless @match_time
-          if @match_time == '45:00' || @match_time == '90:00' # stoppage time
-            @match_time.split(':').first + ?'
+          if @stoppage_time && (@match_time == '45:00' || @match_time == '90:00') # stoppage time
+            @match_time.split(':').first + ?' + '+' + @stoppage_time.split(':').first
           else
             @match_time.split(':').first + ?'
           end
