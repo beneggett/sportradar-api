@@ -2,6 +2,7 @@ module Sportradar
   module Api
     module Soccer
       class Team < Data
+        attr_reader :response
         attr_accessor :tournament_id, :venue, :player_stats
         attr_reader :id, :league_group, :name, :country, :country_code, :abbreviation, :qualifier
         alias :alias :abbreviation
