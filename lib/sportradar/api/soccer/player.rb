@@ -96,6 +96,14 @@ module Sportradar
           @name || [@first_name, @last_name].join(' ')
         end
 
+        def birth_date
+          @date_of_birth
+        end
+
+        def jersey
+          @jersey_number
+        end
+
         def first_name
           @name.split()[1]
         end

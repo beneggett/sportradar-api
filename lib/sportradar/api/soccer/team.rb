@@ -150,6 +150,9 @@ module Sportradar
           data = api.get_data(path_statistics(tourn_id)).to_h
           ingest_statistics(data)
         end
+        def get_season_stats(*args)
+          get_statistics
+        end
         def ingest_statistics(data)
           update(data)
           data
