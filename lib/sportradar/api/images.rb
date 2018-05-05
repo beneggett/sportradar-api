@@ -23,7 +23,8 @@ module Sportradar
           else
             response = get request_url("#{league}/#{image_type}/players/manifest")
           end
-        elsif nfl_premium || usat_premium || sport == 'ncaafb'
+        elsif nfl_premium || usat_premium || sport == 'ncaafb' || sport == 'nba'
+          year = Date.today.month < 8 ? Date.today.year - 1 : Date.today
           response = get request_url("#{image_type}/players/#{year}/manifest")
         else
           response = get request_url("players/#{image_type}/manifests/all_assets")
@@ -136,6 +137,8 @@ module Sportradar
           'ap_premium'
         elsif usat_premium
           'usat_premium'
+        elsif sport == 'nba'
+          'getty_premium'
         else
           'usat'
           # REUTERS IS JUST FOR SOCCER sport == 'mlb' ? 'usat' : 'reuters'
@@ -143,7 +146,7 @@ module Sportradar
       end
 
       def version
-        if uses_v3_api? || nfl_premium || usat_premium
+        if uses_v3_api? || nfl_premium || usat_premium || sport == 'nba'
           3
         elsif uses_v2_api?
           Sportradar::Api.version('images')
@@ -175,7 +178,7 @@ module Sportradar
       end
 
       def v3_api_sports
-        ['mlb', 'soccer', 'cricket', 'f1', 'rugby', 'tennis', 'ncaafb',  ]
+        ['mlb', 'soccer', 'cricket', 'f1', 'rugby', 'tennis', 'ncaafb', 'nba' ]
       end
 
       def soccer_leagues
