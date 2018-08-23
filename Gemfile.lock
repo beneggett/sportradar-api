@@ -1,16 +1,16 @@
 PATH
   remote: .
   specs:
-    sportradar-api (0.13.26)
+    sportradar-api (0.14.0)
       activesupport
       httparty (>= 0.14.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.1.4)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.5.1)
@@ -45,9 +45,9 @@ GEM
       guard-compat (~> 1.2)
       minitest (>= 3.0)
     hashdiff (0.3.4)
-    httparty (0.15.6)
+    httparty (0.16.2)
       multi_xml (>= 0.5.2)
-    i18n (0.9.5)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     listen (3.1.5)
@@ -115,4 +115,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.15.3
+   1.16.3
