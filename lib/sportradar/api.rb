@@ -60,7 +60,7 @@ module Sportradar
         {api: :nascar, version:   3},
         {api: :odds, version:   1},
         {api: :content, version:  3},
-        {api: :images, version:   2},
+        {api: :images, version:   3},
         {api: :live_images, version:  1},
         {api: :olympics, version:   2},
         {api: :soccer, version:   3},

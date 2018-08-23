@@ -146,11 +146,12 @@ module Sportradar
       end
 
       def version
-        if uses_v3_api? || nfl_premium || usat_premium || sport == 'nba'
-          3
-        elsif uses_v2_api?
-          Sportradar::Api.version('images')
-        end
+        # if uses_v3_api? || nfl_premium || usat_premium || sport == 'nba'
+        #   3
+        # elsif uses_v2_api?
+        #   Sportradar::Api.version('images')
+        # end
+        3
       end
 
       def image_type
