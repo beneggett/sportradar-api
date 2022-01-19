@@ -194,6 +194,7 @@ end
 __END__
 
 st = sr.standings;
+sc = sr.schedule;
 sr = Sportradar::Api::Basketball::Nba.new
 lh = sr.hierarchy;
 t = lh.teams.first;

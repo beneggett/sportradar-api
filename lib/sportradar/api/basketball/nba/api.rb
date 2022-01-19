@@ -22,9 +22,9 @@ module Sportradar
           end
           def default_access_level
             if (ENV['SPORTRADAR_ENV'] || ENV['RACK_ENV'] || ENV['RAILS_ENV']) == 'production'
-              'p'
+              'production'
             else
-              't'
+              'trial'
             end
           end
 
@@ -35,11 +35,11 @@ module Sportradar
           private
 
           def request_url(path)
-            "/nba-#{access_level}#{version}/#{path}"
+            "/nba/#{access_level}/v#{version}/en/#{path}"
           end
 
           def api_key
-            if !['t', 'sim'].include?(access_level) || (access_level == 'sim' && default_access_level == 'p')
+            if !['trial', 'sim'].include?(access_level) || (access_level == 'sim' && default_access_level == 'production')
               Sportradar::Api.api_key_params('nba', 'production')
             else
               Sportradar::Api.api_key_params('nba')
@@ -51,7 +51,7 @@ module Sportradar
           end
 
           def allowed_access_levels
-            %w[p t sim]
+            %w[production trial sim]
           end
 
           def allowed_seasons
