@@ -128,7 +128,7 @@ module Sportradar
           "teams/#{ id }"
         end
         def path_base_stats(season_year = api.default_year, default_season = api.default_season)
-          "seasontd/#{season_year}/#{default_season}/teams/#{id}"
+          "seasons/#{season_year}/#{default_season}/teams/#{id}"
         end
         def path_roster
           "#{ path_base }/profile"

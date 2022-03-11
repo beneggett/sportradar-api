@@ -43,6 +43,10 @@ module Sportradar
           {}
         end
 
+        def period
+          @innings
+        end
+
         def tied?
           @score[away_id].to_i == @score[home_id].to_i
         end
@@ -348,6 +352,10 @@ module Sportradar
             'M' => 'Mid',
             'E' => 'End',
           }.freeze[self.count['inning_half']]
+        end
+
+        def clock
+          half_short
         end
 
         def postponed?

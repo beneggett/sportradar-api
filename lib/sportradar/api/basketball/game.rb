@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Basketball
       class Game < Data
-        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :team_stats, :player_stats, :changes, :media_timeouts
+        attr_accessor :response, :id, :title, :home_id, :away_id, :score, :status, :coverage, :time_zone, :scheduled, :venue, :broadcast, :clock, :duration, :attendance, :team_stats, :player_stats, :changes, :media_timeouts
 
         attr_accessor :period
         @all_hash = {}
@@ -94,6 +94,7 @@ module Sportradar
           @away         = team_class.new(data['away'], api: api, game: self) if data['away']
           @title        = data['title'] || @title || (home && away && "#{home.full_name} vs #{away.full_name}")
 
+          @time_zone    = data.dig("time_zones", "venue") if data.dig("time_zones", "venue")
           @duration     = data['duration']              if data['duration']
           @clock        = data['clock']                 if data['clock']
           @attendance   = data['attendance']            if data['attendance']
