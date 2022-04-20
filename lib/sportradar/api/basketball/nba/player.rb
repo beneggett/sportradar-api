@@ -3,7 +3,7 @@ module Sportradar
     module Basketball
       class Nba
         class Player < Data
-          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :stats, :team
+          attr_accessor :response, :id, :number, :full_name, :first_name, :last_name, :position, :birth_place, :college, :height, :weight, :averages, :totals, :draft, :stats, :team, :not_playing_reason, :not_playing_description
           # @all_hash = {}
           # def self.new(data, **opts)
           #   existing = @all_hash[data['id']]
@@ -57,6 +57,8 @@ module Sportradar
             @experience       = data['experience']        if data['experience']        # "3",
             @birth_place      = data['birth_place'].gsub(',,', ', ')       if data['birth_place']       # "Benin City,, NGA",
             @updated          = data['updated']           if data['updated']           # "2016-07-08T12:11:59+00:00",
+            @not_playing_reason   = data['not_playing_reason']  if data['not_playing_reason']   # "Inactive - Injury/Illness"
+            @not_playing_description  = data['not_playing_description'] if data['not_playing_description']  # "Left Ankle; Sprain"
 
 # NBA specific below
 
