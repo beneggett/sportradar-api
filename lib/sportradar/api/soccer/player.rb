@@ -40,9 +40,11 @@ module Sportradar
           @date_of_birth  = Date.parse(data['date_of_birth']) if data['date_of_birth']
           set_game_stats(data)
 
-          @team.update_player_stats(self, data['statistics']) if data['statistics'] && @team
-          if opts[:match]
-            @team.update_player_stats(self, data, opts[:match])
+          if data['statistics'] && @team
+            @team.update_player_stats(self, data['statistics'])
+            if opts[:match]
+              @team.update_player_stats(self, data['statistics'], opts[:match])
+            end
           end
 
         end

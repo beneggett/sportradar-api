@@ -10,18 +10,18 @@ module Sportradar
         attr_reader :match_time, :stoppage_time
         attr_reader :team_stats, :player_stats
 
-        def initialize(data = {}, league_group: nil, **opts)
+        def initialize(data = {}, season: nil, **opts)
           @response     = data
-          @id           = data['id']
+          @id           = data['id'] || data.dig("sport_event", 'id')
           @api          = opts[:api]
+          @season       = season
           @updates      = {}
           @changes      = {}
 
-          @league_group = league_group || data['league_group'] || @api&.league_group
 
           @timeline_hash = {}
           @lineups_hash  = {}
-          get_tournament_id(data, **opts)
+          # get_tournament_id(data, **opts)
           @scoring_raw   = Scoring.new(data, game: self)
           @home          = Team.new(data['home'].to_h, api: api, match: self)
           @away          = Team.new(data['away'].to_h, api: api, match: self)
@@ -34,8 +34,6 @@ module Sportradar
         end
 
         def update(data, **opts)
-          @league_group = opts[:league_group] || data['league_group'] || @league_group
-          get_tournament_id(data, **opts)
           if data["sport_event"]
             update(data["sport_event"])
           end
@@ -52,7 +50,7 @@ module Sportradar
           if data['lineups']
             create_data(@lineups_hash, data['lineups'], klass: Lineup, identifier: 'team', api: api)
           end
-          if (stats = data.dig('statistics', 'teams'))
+          if (stats = data.dig('statistics', 'totals', 'competitors'))
             update_teams(stats)
           end
 
@@ -252,7 +250,7 @@ module Sportradar
         end
 
         def path_base
-          "matches/#{ id }"
+          "sport_events/#{ id }"
         end
 
         def path_summary
