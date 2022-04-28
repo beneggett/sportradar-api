@@ -107,6 +107,7 @@ module Sportradar
         end
 
         def update(data, source: nil, **opts)
+          @response.merge!(data)
           # via pbp
           @status       = data['status']                if data['status']
           @coverage     = data['coverage']              if data['coverage']

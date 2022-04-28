@@ -28,6 +28,14 @@ module Sportradar
           end
         end
 
+        def full_home
+          @home_team_lineup
+        end
+
+        def full_away
+          @away_team_lineup
+        end
+
         def update_from_lineup_event(data)
           if data.dig('team_id') == game.home_id
             update_home(data, data.dig('order'))
