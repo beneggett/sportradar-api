@@ -137,7 +137,7 @@ module Sportradar
           'ap_premium'
         elsif usat_premium
           'usat_premium'
-        elsif sport == 'nba'
+        elsif ['nba', 'nhl'].include?(sport)
           'getty_premium'
         else
           'usat'
