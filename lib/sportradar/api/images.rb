@@ -24,7 +24,7 @@ module Sportradar
             response = get request_url("#{league}/#{image_type}/players/manifest")
           end
         elsif nfl_premium || usat_premium || sport == 'ncaafb' || sport == 'nba'
-          year = Date.today.month < 8 ? Date.today.year - 1 : Date.today
+          year = Date.today.month < 8 ? Date.today.year - 1 : Date.today.year
           response = get request_url("#{image_type}/players/#{year}/manifest")
         else
           response = get request_url("players/#{image_type}/manifests/all_assets")
