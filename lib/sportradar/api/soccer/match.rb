@@ -55,6 +55,7 @@ module Sportradar
           end
 
           @scheduled        = Time.parse(data['scheduled'])         if data['scheduled']
+          @scheduled        = Time.parse(data['start_time'])        if data['start_time']
           @start_time_tbd   = data['start_time_tbd']                if data.key?('start_time_tbd')
           @status           = data['status']                        if data['status']
           @match_status     = data['match_status']                  if data['match_status']
@@ -66,8 +67,10 @@ module Sportradar
 
           @home_score       = data['home_score']                    if data['home_score']
           @away_score       = data['away_score']                    if data['away_score']
+          @period           = parse_period(data['match_status'])    if data['match_status']
           @period           = data['period']                        if data['period']
           @match_time       = data.dig('clock', 'match_time')       if data.dig('clock', 'match_time')
+          @match_time       = data.dig('clock', 'played')           if data.dig('clock', 'played')
           @stoppage_time    = data.dig('clock', 'stoppage_time')
           @ball_locations   = data['ball_locations']                if data['ball_locations']
           @winner_id        = data['winner_id']                     if data['winner_id']
@@ -126,6 +129,19 @@ module Sportradar
 
         def halftime?
           @match_status == "halftime"
+        end
+
+        def parse_period(status)
+          case status
+          when '1st_half', 'halftime'
+            1
+          when '2nd_half'
+            2
+          when 'overtime', '1st_extra'
+            3
+          when '2nd_extra'
+            4
+          end
         end
 
         def postponed?
