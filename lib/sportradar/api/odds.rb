@@ -1,34 +1,25 @@
 module Sportradar
   module Api
-    class Odds < Request
-      attr_accessor :access_level
-
-      def initialize( access_level = 't')
-        raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
-        @access_level = access_level
-      end
-
-      def odds
-        get request_url, {format: 'none'}
-      end
-      private
-
-      def request_url(path = nil)
-        "/odds-#{access_level}#{version}"
-      end
-
-      def api_key
-        Sportradar::Api.api_key_params("odds")
-      end
-
-      def version
-        Sportradar::Api.version('odds')
-      end
-
-      def allowed_access_levels
-        ['p', 's', 'b', 't']
-      end
+    module Odds
 
     end
   end
 end
+
+require_relative 'odds/api'
+
+require_relative 'odds/book'
+require_relative 'odds/sport'
+require_relative 'odds/competition'
+require_relative 'odds/player'
+require_relative 'odds/player_prop'
+require_relative 'odds/sport_event'
+require_relative 'odds/market'
+require_relative 'odds/book_market'
+require_relative 'odds/outcome'
+
+require_relative 'odds/base'
+require_relative 'odds/player_odds'
+require_relative 'odds/regular_odds'
+require_relative 'odds/prematch_odds'
+require_relative 'odds/probabilities'

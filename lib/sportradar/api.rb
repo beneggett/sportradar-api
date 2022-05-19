@@ -58,7 +58,7 @@ module Sportradar
         {api: :ncaafb, version:   1},
         {api: :golf, version:   2},
         {api: :nascar, version:   3},
-        {api: :odds, version:   1},
+        {api: :odds, version:   2},
         {api: :content, version:  3},
         {api: :images, version:   3},
         {api: :live_images, version:  1},

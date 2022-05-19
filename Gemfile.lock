@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    sportradar-api (0.17.4)
+    sportradar-api (0.17.5.pre)
       activesupport
       httparty (>= 0.14.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.5.1)
+    activesupport (6.1.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
