@@ -3,7 +3,7 @@ module Sportradar
   module Api
     class Images < Request
       attr_accessor :sport, :league, :access_level, :nfl_premium, :usat_premium, :event_id, :date, :live_image_request
-      def initialize( sport, access_level: 't', league: nil, nfl_premium: false, usat_premium: false, event_id: nil, date: nil )
+      def initialize( sport, access_level: 't', league: nil, nfl_premium: false, usat_premium: false, event_id: nil, date: nil, year: nil )
         raise Sportradar::Api::Error::InvalidSport unless allowed_sports.include? sport
         @sport = sport
         raise Sportradar::Api::Error::InvalidLeague unless soccer_leagues.include?(league) || league.nil?
@@ -12,6 +12,7 @@ module Sportradar
         @usat_premium = usat_premium
         @event_id = event_id
         @date = date.strftime("%Y/%m/%d") if date
+        @yar = year
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         @access_level = access_level
       end
@@ -24,8 +25,8 @@ module Sportradar
             response = get request_url("#{league}/#{image_type}/players/manifest")
           end
         elsif nfl_premium || usat_premium || sport == 'ncaafb' || sport == 'nba'
-          year = Date.today.month < 8 ? Date.today.year - 1 : Date.today.year
-          response = get request_url("#{image_type}/players/#{year}/manifest")
+          request_year = @year || (Date.today.month < 8 ? Date.today.year - 1 : Date.today.year)
+          response = get request_url("#{image_type}/players/#{request_year}/manifest")
         else
           response = get request_url("players/#{image_type}/manifests/all_assets")
         end
