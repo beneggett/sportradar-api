@@ -12,7 +12,7 @@ module Sportradar
         @usat_premium = usat_premium
         @event_id = event_id
         @date = date.strftime("%Y/%m/%d") if date
-        @yar = year
+        @year = year
         raise Sportradar::Api::Error::InvalidAccessLevel unless allowed_access_levels.include? access_level
         @access_level = access_level
       end
