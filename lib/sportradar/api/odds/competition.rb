@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Odds
       class Competition < Data
-        attr_accessor :response, :api, :id, :name, :gender, :markets, :futures, :player_props
+        attr_accessor :response, :api, :id, :name, :gender
 
 
         def initialize(data, **opts)
@@ -28,9 +28,13 @@ module Sportradar
         end
 
         def get_player_props
-          data = api.get_data(path_player_props)
+          data = fetch_player_props
           create_data(@sport_events_hash, data["competition_sport_events_players_props"], klass: SportEvent, api: api)
           data
+        end
+
+        def fetch_player_props
+          api.get_data(path_player_props)
         end
 
         # url path helpers

@@ -33,7 +33,7 @@ module Sportradar
         private
 
         def request_url(path)
-          "/soccer/#{access_level}/v#{version}/#{language_code}/#{path}"
+          "/soccer-extended/#{access_level}/v#{version}/#{language_code}/#{path}"
         end
 
         def api_key

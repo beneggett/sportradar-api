@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Odds
       class Market < Data
-        attr_accessor :response, :id, :name
+        attr_accessor :response, :id, :name, :player
 
 
         def initialize(data, **opts)
