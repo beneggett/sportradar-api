@@ -50,7 +50,7 @@ module Sportradar
   module Api
 
     API_GALLERY = [
-        {api: :nfl, version:  1},
+        {api: :nfl, version:  7},
         {api: :mlb, version:  7},
         {api: :nhl, version:  3},
         {api: :nba, version:  7},
