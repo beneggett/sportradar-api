@@ -159,13 +159,13 @@ module Sportradar
           "games/#{season_year}/#{nfl_season}/#{nfl_season_week}/schedule"
         end
         def path_weekly_depth_charts(nfl_season_week)
-          "seasontd/#{season_year}/#{nfl_season}/#{nfl_season_week}/depth_charts"
+          "seasons/#{season_year}/#{nfl_season}/#{nfl_season_week}/depth_charts"
         end
         def path_weekly_depth_injuries(nfl_season_week)
-          "seasontd/#{season_year}/#{nfl_season}/#{nfl_season_week}/injuries"
+          "seasons/#{season_year}/#{nfl_season}/#{nfl_season_week}/injuries"
         end
         def path_standings
-          "seasontd/#{season_year}/standings"
+          "seasons/#{season_year}/standings"
         end
 
         # data retrieval
@@ -321,3 +321,13 @@ nfl = Sportradar::Api::Football::Nfl.new
 nfl.season = 2016
 res = nfl.get_weekly_depth_charts
 dc = nfl.instance_variable_get(:@depth_charts_hash)
+
+
+nfl = Sportradar::Api::Football::Nfl.new
+nfl.season = 2021
+nfl.get_schedule
+g = nfl.games.sample
+data = g.get_statistics
+g.team_stats
+g.team_stats.values.first.dig('rushing', 'yards')
+

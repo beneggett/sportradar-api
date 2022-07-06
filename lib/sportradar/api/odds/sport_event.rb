@@ -30,8 +30,6 @@ module Sportradar
         def update(data, **opts)
           create_data(@player_props_hash,   data['players_props'],    klass: PlayerProp,  api: api)  if data['players_props']
           create_data(@player_markets_hash, data['players_markets'],  klass: Market,      api: api)  if data['players_markets']
-        rescue => e
-          binding.pry
         end
 
       end
