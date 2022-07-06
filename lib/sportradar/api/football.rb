@@ -1,3 +1,4 @@
+require "sportradar/api/football/stats_shim"
 require "sportradar/api/football/stat_pack"
 require "sportradar/api/football/stat_pack/defense"
 require "sportradar/api/football/stat_pack/extra_points"

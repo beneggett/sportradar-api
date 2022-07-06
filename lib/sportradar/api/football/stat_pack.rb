@@ -15,6 +15,10 @@ module Sportradar
           set_stats
         end
 
+        def for_player(id)
+          @players && @players.detect { |stat| stat.player.id == id }
+        end
+
         private
 
         def set_stats

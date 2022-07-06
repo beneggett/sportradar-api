@@ -29,6 +29,10 @@ module Sportradar
           @return_yards    = data.dig('summary', "return_yards")
         end
 
+        def dig(*args)
+          args.inject(self) { |memo, arg| memo.public_send(arg) }
+        end
+
         def turnovers
           @turnovers || passing.interceptions + fumbles&.lost_fumbles.to_i
         end

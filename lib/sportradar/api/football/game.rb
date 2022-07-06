@@ -20,7 +20,7 @@ module Sportradar
 
           @teams_hash = {}
           @team_stats = {}
-          @player_stats = {}
+          @player_stats = StatsShim.new(self)
 
           @quarters_hash = {}
           @drives_hash = {}
@@ -392,6 +392,10 @@ module Sportradar
         def get_statistics
           data = api.get_data(path_statistics).to_h
           ingest_statistics(data)
+        end
+
+        def get_summary
+          get_statistics
         end
 
         def queue_statistics

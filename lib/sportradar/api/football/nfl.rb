@@ -321,3 +321,13 @@ nfl = Sportradar::Api::Football::Nfl.new
 nfl.season = 2016
 res = nfl.get_weekly_depth_charts
 dc = nfl.instance_variable_get(:@depth_charts_hash)
+
+
+nfl = Sportradar::Api::Football::Nfl.new
+nfl.season = 2021
+nfl.get_schedule
+g = nfl.games.sample
+data = g.get_statistics
+g.team_stats
+g.team_stats.values.first.dig('rushing', 'yards')
+
