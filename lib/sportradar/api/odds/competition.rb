@@ -29,12 +29,23 @@ module Sportradar
 
         def get_player_props
           data = fetch_player_props
-          create_data(@sport_events_hash, data["competition_sport_events_players_props"], klass: SportEvent, api: api)
+          prop_data = if data["competition_sport_events_players_props"].size == 10
+            arr = data["competition_sport_events_players_props"]
+            data = fetch_player_props(start: 10)
+            arr += data["competition_sport_events_players_props"]
+            if data["competition_sport_events_players_props"].size == 10
+              data = fetch_player_props(start: 20)
+              arr += data["competition_sport_events_players_props"]
+            end
+          else
+            data["competition_sport_events_players_props"]
+          end
+          create_data(@sport_events_hash, prop_data, klass: SportEvent, api: api)
           data
         end
 
-        def fetch_player_props
-          api.get_data(path_player_props)
+        def fetch_player_props(params = {})
+          api.get_data(path_player_props, params)
         end
 
         # url path helpers

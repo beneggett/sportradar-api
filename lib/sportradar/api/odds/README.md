@@ -13,7 +13,7 @@ sport.get_competitions
 comp = sport.competitions.first
 
 api = Sportradar::Api::Odds::PlayerOdds.api
-comp = Sportradar::Api::Odds::Competition.new({'id' => 'sr:competition:234'}, api: api)
+comp = Sportradar::Api::Odds::Competition.new({'id' => 'sr:competition:109'}, api: api)
 data = comp.get_player_props
 comp.sport_events
 event = comp.sport_events.first

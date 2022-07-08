@@ -12,8 +12,8 @@ module Sportradar
         self
       end
 
-      def get_data(url)
-        data = get request_url(url)
+      def get_data(url, extra_params = {})
+        data = get(request_url(url), extra_params)
         if data.is_a?(::Sportradar::Api::Error)
           puts request_url(url)
           puts
