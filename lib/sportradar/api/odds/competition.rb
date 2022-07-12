@@ -28,18 +28,15 @@ module Sportradar
         end
 
         def get_player_props
-          data = fetch_player_props
-          prop_data = if data["competition_sport_events_players_props"].size == 10
-            arr = data["competition_sport_events_players_props"]
-            data = fetch_player_props(start: 10)
-            arr += data["competition_sport_events_players_props"]
-            if data["competition_sport_events_players_props"].size == 10
-              data = fetch_player_props(start: 20)
-              arr += data["competition_sport_events_players_props"]
+          prop_data = fetch_player_props.fetch('competition_sport_events_players_props', [])
+          if prop_data.size == 10
+            new_data = prop_data
+            while new_data.size == 10
+              new_data = fetch_player_props(start: prop_data.size).fetch('competition_sport_events_players_props', [])
+              prop_data += new_data
             end
-          else
-            data["competition_sport_events_players_props"]
           end
+          data = {'competition_sport_events_players_props' => prop_data }
           create_data(@sport_events_hash, prop_data, klass: SportEvent, api: api)
           data
         end

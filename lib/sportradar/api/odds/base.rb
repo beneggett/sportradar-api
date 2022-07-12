@@ -31,11 +31,27 @@ module Sportradar
         end
 
         def get_event_mappings
-          data = api.get_data(path_event_mappings)
+          data = api.get_data(path_event_mappings).fetch('mappings', [])
+          if data.size == 1000
+            new_data = data
+            while new_data.size == 1000
+              new_data = api.get_data(path_player_mappings, start: data.size).fetch('mappings', [])
+              data += new_data
+            end
+          end
+          {'mappings' => data }
         end
 
         def get_player_mappings
-          data = api.get_data(path_player_mappings)
+          data = api.get_data(path_player_mappings).fetch('mappings', [])
+          if data.size == 1000
+            new_data = data
+            while new_data.size == 1000
+              new_data = api.get_data(path_player_mappings, start: data.size).fetch('mappings', [])
+              data += new_data
+            end
+          end
+          {'mappings' => data }
         end
 
         def get_competitor_mappings
