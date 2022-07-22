@@ -15,6 +15,7 @@ module Sportradar
           @response     = data
           @id           = data['id']
           @api          = opts[:api]
+          @season       = opts[:season]
           @league_group = league_group || data['league_group'] || @api&.league_group
 
           @players_hash = {}
@@ -27,7 +28,7 @@ module Sportradar
         def update(data, **opts)
           @id           = data['id'] if data['id']
           @league_group = opts[:league_group] || data['league_group'] || @league_group
-          get_tournament_id(data, **opts)
+          # get_tournament_id(data, **opts)
 
           if data["team"]
             update(data["team"])
@@ -92,7 +93,7 @@ module Sportradar
         end
 
         def path_base
-          "teams/#{ id }"
+          "competitors/#{ id }"
         end
 
         def path_roster
@@ -143,11 +144,16 @@ module Sportradar
           {url: url, headers: headers, params: options, timeout: timeout, callback: method(:ingest_schedule)}
         end
 
-        def path_statistics(tourn_id = self.tournament_id)
-          "tournaments/#{ tourn_id }/#{ path_base }/statistics"
+        def season_id
+          @season&.id
         end
-        def get_statistics(tourn_id = self.tournament_id)
-          data = api.get_data(path_statistics(tourn_id)).to_h
+
+        def path_statistics(season_id = self.season_id)
+          "seasons/#{ season_id }/#{ path_base }/statistics"
+        end
+        def get_statistics(season_id = self.season_id)
+          return unless season_id
+          data = api.get_data(path_statistics(season_id)).to_h
           ingest_statistics(data)
         end
         def get_season_stats(*args)

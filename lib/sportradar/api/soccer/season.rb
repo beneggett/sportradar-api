@@ -10,6 +10,7 @@ module Sportradar
           @api          = opts[:api]
           @competition  = competition
           @matches_hash = {}
+          @competitors_hash = {}
 
           update(data, **opts)
         end
@@ -31,6 +32,7 @@ module Sportradar
           @min_coverage_level = data['min_coverage_level']  || @min_coverage_level
 
           parse_schedule(data)
+          parse_competitors(data)
         end
 
         # def get_tournament_id(data, **opts)
@@ -51,9 +53,19 @@ module Sportradar
           @matches_hash.values
         end
 
+        def competitors
+          @competitors_hash.values
+        end
+
         def parse_schedule(data)
           if data['schedules']
             create_data(@matches_hash, data['schedules'], klass: Match, api: api, competition: @competition, season: self)
+          end
+        end
+
+        def parse_competitors(data)
+          if data['season_competitors']
+            create_data(@competitors_hash, data['season_competitors'], klass: Team, api: api, competition: @competition, season: self)
           end
         end
 
@@ -74,6 +86,20 @@ module Sportradar
         end
         def ingest_schedule(data)
           @schedule_retrieved = true
+          update(data)
+          # TODO parse the rest of the data. keys: ["tournament", "sport_events"]
+          data
+        end
+
+        def path_competitors
+          "#{ path_base }/competitors"
+        end
+        def get_competitors
+          data = api.get_data(path_competitors).to_h
+          ingest_competitors(data)
+        end
+        def ingest_competitors(data)
+          @competitors_retrieved = true
           update(data)
           # TODO parse the rest of the data. keys: ["tournament", "sport_events"]
           data

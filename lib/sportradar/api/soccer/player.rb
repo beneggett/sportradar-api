@@ -3,7 +3,7 @@ module Sportradar
     module Soccer
       class Player < Data
 
-        attr_reader :id, :league_group, :name, :type, :nationality, :country_code, :height, :weight, :jersey_number, :preferred_foot, :stats, :game_stats, :date_of_birth, :matches_played, :starter
+        attr_reader :id, :league_group, :name, :type, :nationality, :country_code, :height, :weight, :jersey_number, :preferred_foot, :stats, :game_stats, :date_of_birth, :matches_played, :starter, :team
         alias :position :type
 
         def initialize(data = {}, league_group: nil, **opts)
@@ -114,6 +114,10 @@ module Sportradar
 
         def last_name
           @name.split()[0].delete(',')
+        end
+
+        def injured?
+          false
         end
 
         def api

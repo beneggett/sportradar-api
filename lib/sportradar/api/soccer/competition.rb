@@ -52,8 +52,25 @@ module Sportradar
           end
         end
 
+        def hierarchy
+          self.get_seasons
+          season = self.latest_season
+          season.get_competitors
+          season.competitors
+        end
+
+        def teams
+          season = self.latest_season
+          season.get_competitors if season.competitors.empty?
+          season.competitors
+        end
+
         def current_season
           seasons.detect(&:current?)
+        end
+
+        def latest_season
+          seasons.max_by(&:end_date)
         end
 
         def standings(type = nil)
