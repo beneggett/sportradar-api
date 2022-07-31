@@ -14,10 +14,6 @@ module Sportradar
             Player
           end
 
-          def path_season_stats(year = season_year, season = nfl_season)
-            "seasontd/#{year}/#{nfl_season}/teams/#{ id }/statistics"
-          end
-
           def api
             @api || Sportradar::Api::Football::Nfl::Api.new
           end

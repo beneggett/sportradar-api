@@ -139,13 +139,13 @@ module Sportradar
           "teams/#{ id }"
         end
         def path_base_stats(year = season_year, season = default_season)
-          "seasontd/#{year}/#{season}/teams/#{id}"
+          "seasons/#{year}/#{season}/teams/#{id}"
         end
         def path_roster
           "#{ path_base }/profile" # nfl is profile, ncaa is roster
         end
-        def path_season_stats
-          "#{ path_base_stats }/statistics"
+        def path_season_stats(year = season_year, season = default_season)
+          "#{ path_base_stats(year, season) }/statistics"
         end
 
 
