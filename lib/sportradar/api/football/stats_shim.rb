@@ -15,7 +15,7 @@ module Sportradar
               return player.send(stat)
             end
           end
-          0
+          nil
         end
 
       end
