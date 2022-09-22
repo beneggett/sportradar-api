@@ -56,6 +56,7 @@ module Sportradar
           puts response.inspect
           Sportradar::Api::Error.new(response.code, response.message, response)
         else
+          File.write("response.json", JSON.pretty_generate(response.to_h)) if ENV['SPORTRADAR_LOG']
           response
         end
       end

@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Mma
+    module Mma
       class Referee < Data
         attr_accessor :response, :id, :first_name, :last_name
         @all_hash = {}

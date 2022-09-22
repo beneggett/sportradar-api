@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Mma
+    module Mma
       class Result < Data
         attr_accessor :response, :id, :round, :time, :outcome, :submission, :endstrike, :endtarget, :endposition, :winner, :draw
 

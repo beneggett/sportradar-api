@@ -1,80 +1,101 @@
 module Sportradar
   module Api
-    class Mma
+    module Mma
       class Fight < Data
-        attr_accessor :response, :id, :event, :accolade, :scheduled_rounds, :weight_class, :result
-        @all_hash = {}
-        def self.new(data, **opts)
-          existing = @all_hash[data['id']]
-          if existing
-            existing.update(data)
-            # existing.add_event(opts[:event])
-            # existing
-          else
-            @all_hash[data['id']] = super
-          end
-        end
-        def self.all
-          @all_hash.values
-        end
+        attr_accessor :response, :id, :season, :start_time, :start_time_confirmed, :sport_event_context, :coverage, :venue, :status, :match_status, :winner_id, :final_round, :final_round_length, :end_method, :winner, :scheduled_length, :weight_class, :title_fight
 
         def initialize(data, **opts)
           @response = data
           @api      = opts[:api]
-          @event    = opts[:event]
+          @season    = opts[:season]
           @fighters_hash = {}
 
           @id       = data['id']
+          @statistics = {}
 
           update(data)
         end
 
         def fighters
-          @fighters_hash ||= update_fighters(response)
           @fighters_hash.values
         end
 
-        def score
-          result.scores
-        end
-
         def update(data, **opts)
-          @accolade         = data['accolade']         if data['accolade']
-          @scheduled_rounds = data['scheduled_rounds'] if data['scheduled_rounds'] # "3",
-          @weight_class     = data['weight_class']     if data['weight_class'] # {"id"=>"LW", "weight"=>"146-155", "description"=>"Lightweight"},
+          if data["sport_event"]
+            update(data["sport_event"])
+          end
+          if data["sport_event_status"]
+            update(data["sport_event_status"])
+          end
 
-          @referee = Referee.new(data['referee'], fight: self, api: api) if data['referee']
-          @result = Result.new(data['result'], fight: self, api: api) if data['result']
+          @id                   = data['id'] if data['id'] && !@id
+          @start_time           = Time.parse(data['start_time'])  if data['start_time']
+          @start_time_confirmed = data['start_time_confirmed']    if data['start_time_confirmed']
+          @sport_event_context  = data['sport_event_context']     if data['sport_event_context']
+          @coverage             = data['coverage']                if data['coverage']
+          @venue                = data['venue']                   if data['venue']
 
-          update_fighters(data) if data['fighters']
+          @status             = data['status']                    if data['status']
+          @match_status       = data['match_status']              if data['match_status']
+          @winner_id          = data['winner_id']                 if data['winner_id']
+          @final_round        = data['final_round']               if data['final_round']
+          @final_round_length = data['final_round_length']        if data['final_round_length']
+          @end_method         = data['method']                    if data['method']
+          @winner             = data['winner']                    if data['winner']
+          @scheduled_length   = data['scheduled_length']          if data['scheduled_length']
+          @weight_class       = data['weight_class']              if data['weight_class']
+          @title_fight        = data['title_fight']               if data['title_fight']
+
+
+          update_fighters(data) if data['competitors']
 
           self
         end
 
+        def season_id
+          @season&.id || @sport_event_context&.dig('season', 'id')
+        end
+
+        def starts_at
+          @start_time
+        end
+
+        def coverage_level
+          'live' if @coverage&.dig('live')
+        end
+
+        def title
+          fighters.map(&:display_name).join(' vs ')
+        end
+
+        def scheduled
+          @start_time
+        end
+
         def update_fighters(data)
-          create_data(@fighters_hash, response.dig('fighters', 'fighter'), klass: Fighter, api: api, fight: self)
+          if data['competitors']
+            create_data(@fighters_hash, data['competitors'], klass: Fighter, api: api, fight: self)
+          end
         end
         def api
           @api ||= Sportradar::Api::Mma.new
         end
 
 
-        # def path_base
-        #   "games/#{ id }"
-        # end
-        # def path_box
-        #   "#{ path_base }/boxscore"
-        # end
-        # def path_pbp
-        #   "#{ path_base }/pbp"
-        # end
+        def path_base
+          "sport_events/#{ id }"
+        end
 
-        # def get_box
-        #   data = api.get_data(path_box)['game']
-        #   update(data)
-        #   @quarter = data.delete('quarter')
-        #   data
-        # end
+        def path_summary
+          "#{ path_base }/summary"
+        end
+
+        def get_summary
+          data = api.get_data(path_summary)
+          update(data)
+
+          data
+        end
 
         # def get_pbp
         #   data = api.get_data(path_pbp)['game']

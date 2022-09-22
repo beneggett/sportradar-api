@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Mma
+    module Mma
       class Venue < Data
         attr_accessor :response, :id, :name, :address, :city, :state, :country, :zip, :capacity, :timezone
         @all_hash = {}

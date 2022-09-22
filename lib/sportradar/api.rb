@@ -27,17 +27,6 @@ require "sportradar/api/images/ref"
 require "sportradar/api/images/tag"
 
 require "sportradar/api/mma"
-require "sportradar/api/mma/schedule"
-require "sportradar/api/mma/roster"
-require "sportradar/api/mma/fighter"
-require "sportradar/api/mma/event"
-require "sportradar/api/mma/fight"
-require "sportradar/api/mma/judge"
-require "sportradar/api/mma/referee"
-require "sportradar/api/mma/result"
-require "sportradar/api/mma/score"
-require "sportradar/api/mma/venue"
-require "sportradar/api/mma/league"
 
 
 require "sportradar/api/content"
@@ -65,7 +54,7 @@ module Sportradar
         {api: :olympics, version:   2},
         {api: :soccer, version:   4},
         {api: :ncaawb, version:   3},
-        {api: :mma, version:  1},
+        {api: :mma, version:  2},
         {api: :cricket, version:    1},
         {api: :wnba, version:   3},
         {api: :ncaamh, version:   3},

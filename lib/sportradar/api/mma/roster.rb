@@ -1,6 +1,6 @@
 module Sportradar
   module Api
-    class Mma
+    module Mma
       class Roster < Data
         attr_accessor :response, :id, :name, :scheduled, :venue
 

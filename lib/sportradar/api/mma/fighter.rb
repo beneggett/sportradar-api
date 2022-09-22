@@ -1,22 +1,8 @@
 module Sportradar
   module Api
-    class Mma
+    module Mma
       class Fighter < Data
-        attr_accessor :response, :id, :height, :weight, :reach, :stance, :first_name, :nick_name, :last_name, :record, :born, :out_of
-        @all_hash = {}
-        def self.new(data, **opts)
-          existing = @all_hash[data['id']]
-          if existing
-            existing.update(data, **opts)
-            existing.add_fight(opts[:fight])
-            existing
-          else
-            @all_hash[data['id']] = super
-          end
-        end
-        def self.all
-          @all_hash.values
-        end
+        attr_accessor :response, :id, :height, :weight, :reach, :stance, :name, :first_name, :nick_name, :last_name, :record, :born, :out_of, :qualifier, :abbreviation
 
         def initialize(data, **opts)
           @response = data
@@ -36,8 +22,21 @@ module Sportradar
           @fights_hash[fight.id] = fight if fight
         end
 
+        def display_name
+          if first_name && last_name
+            "#{first_name} #{last_name}"
+          else
+            @name || @short_name
+          end
+        end
 
         def update(data, **opts)
+          @name         = data['name']          if data['name']
+          @abbreviation = data['abbreviation']  if data['abbreviation']
+          @short_name   = data['short_name']    if data['short_name']
+
+          @qualifier  = data['qualifier']  if data['qualifier']     # "72",
+          @abbreviation  = data['abbreviation']  if data['abbreviation']     # "72",
           @height     = data['height']     if data['height']     # "72",
           @weight     = data['weight']     if data['weight']     # "170",
           @reach      = data['reach']      if data['reach']      # "",
@@ -45,6 +44,7 @@ module Sportradar
           @first_name = data['first_name'] if data['first_name'] # "Sai",
           @nick_name  = data['nick_name']  if data['nick_name']  # "The Boss",
           @last_name  = data['last_name']  if data['last_name']  # "Wang",
+          @name       = data['name']       if data['name']       # "Wang, Sai",
           @record     = data['record']     if data['record']     # {"wins"=>"6", "losses"=>"4", "draws"=>"1", "no_contests"=>"0"},
           @born       = data['born']       if data['born']       # {"date"=>"1988-01-16", "country_code"=>"UNK", "country"=>"Unknown", "state"=>"", "city"=>""},
           @out_of     = data['out_of']     if data['out_of']     # {"country_code"=>"UNK", "country"=>"Unknown", "state"=>"", "city"=>""}}
