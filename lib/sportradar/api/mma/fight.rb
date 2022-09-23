@@ -2,7 +2,7 @@ module Sportradar
   module Api
     module Mma
       class Fight < Data
-        attr_accessor :response, :id, :season, :start_time, :start_time_confirmed, :sport_event_context, :coverage, :venue, :status, :match_status, :winner_id, :final_round, :final_round_length, :end_method, :winner, :scheduled_length, :weight_class, :title_fight
+        attr_accessor :response, :id, :season, :start_time, :start_time_confirmed, :sport_event_context, :coverage, :venue, :status, :match_status, :winner_id, :final_round, :final_round_length, :end_method, :winner, :scheduled_length, :weight_class, :title_fight, :statistics
 
         def initialize(data, **opts)
           @response = data
@@ -48,6 +48,7 @@ module Sportradar
 
 
           update_fighters(data) if data['competitors']
+          update_statistics(data['statistics']) if data["statistics"]
 
           self
         end
@@ -77,6 +78,20 @@ module Sportradar
             create_data(@fighters_hash, data['competitors'], klass: Fighter, api: api, fight: self)
           end
         end
+
+        def update_statistics(data)
+          @statistics['totals'] = structure_stats(data["totals"]) if data["totals"]
+          if data['periods']
+            data['periods'].each do |round|
+              @statistics[round['number']] = structure_stats(round)
+            end
+          end
+        end
+
+        def structure_stats(data)
+          data['competitors'].map { |comp_data| [comp_data['id'], comp_data.merge(comp_data.delete('statistics'))] }.to_h
+        end
+
         def api
           @api ||= Sportradar::Api::Mma.new
         end
