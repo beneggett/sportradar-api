@@ -21,6 +21,9 @@ module Sportradar
         end
 
         def update(data, **opts)
+          if data["summaries"]
+            update(data["summaries"][0])
+          end
           if data["sport_event"]
             update(data["sport_event"])
           end
@@ -93,7 +96,7 @@ module Sportradar
         end
 
         def api
-          @api ||= Sportradar::Api::Mma.new
+          @api ||= Sportradar::Api::Mma::Api.new
         end
 
 

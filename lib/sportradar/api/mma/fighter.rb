@@ -65,7 +65,7 @@ module Sportradar
           self
         end
         def api
-          @api ||= Sportradar::Api::Mma.new
+          @api ||= Sportradar::Api::Mma::Api.new
         end
 
 
