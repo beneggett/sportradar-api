@@ -4,7 +4,7 @@ module Sportradar
       class Api < Request
         attr_accessor :access_level, :language_code, :error, :base_path
 
-        def initialize(base_path: base_path, access_level: default_access_level, language_code: 'en', **args)
+        def initialize(base_path:, access_level: default_access_level, language_code: 'en', **args)
           @language_code = language_code
           @access_level = access_level
           @base_path = base_path
