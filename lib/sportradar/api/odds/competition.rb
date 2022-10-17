@@ -29,9 +29,9 @@ module Sportradar
 
         def get_player_props
           prop_data = fetch_player_props.fetch('competition_sport_events_players_props', [])
-          if prop_data.size == 10
+          if prop_data.size > 0
             new_data = prop_data
-            while new_data.size == 10
+            while new_data.size > 0
               new_data = fetch_player_props(start: prop_data.size).fetch('competition_sport_events_players_props', [])
               prop_data += new_data
             end
